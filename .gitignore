@@ -1,0 +1,6 @@
+# Managed separately from the RAB.World repository.
+/RAB.Box/
+/RAB.Toolkits/
+
+# Personal material stays outside the shared project repository.
+/__docs/personal/
