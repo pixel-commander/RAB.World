@@ -1,0 +1,235 @@
+RULES: RAB UI — components, styles, OOCSS. Binding. Every rule checkable.
+=========================================================================
+REUSE the vocabulary verbatim. INVENTING a name, token, or pattern when
+one exists is the primary failure. When rules and code drift, fix one;
+never ship the disagreement.
+
+SELF-SIMILAR HANDLER AUTHORITY — BINDING
+A1  INHERIT, DEFAULT, PASS DOWN. This is house law for every component
+    and hook that receives, resolves, or forwards a house handler.
+    A valid incoming handler is authoritative. Use the local implementation
+    only when no valid handler was supplied; apply I1 before resolving.
+    Repack the props/bag with the resolved handler LAST, then pass that
+    bag down to children. Preserve the canonical key and the same function
+    reference at every boundary. The same rule repeats at every depth.
+
+    For props whose handler has already been narrowed to a function or absent:
+      const handleClick = props?.handleClick || ((data, type) => {
+        // Local default mechanics; guard optional data/type per I1.
+      });
+      props = { ...props, handleClick };
+      return <Child {...props} />;
+
+    NEVER overwrite an inherited handler with a local default, wrap it merely
+    to forward it, call both inherited and default implementations, rename
+    its canonical key downstream, or drop the resolved handler from the bag.
+    This authority applies to every handleAnything(data?, type?) in H5.
+    When the parent needs to know which child invoked the shared handler,
+    the child supplies type as the optional source identifier (see H5).
+    DOM sockets use R7. Keep mechanics in the P2/R6 owner; the example shows
+    resolution and propagation, not permission to move mechanics into JSX.
+    Conflicting existing code is migration debt under M1, never precedent.
+
+WORK LOOP
+W1  KEEPER OWNS LIVE VISUAL CHECKS. After a UI change is usable, hand over
+    the page immediately. Do not browser-drive unless asked; the keeper
+    reports problems and the builder fixes them. Run automated checks at end.
+
+RECEIVERS
+I1  RECEIVER: assume input absent or invalid; guard and narrow before use;
+    render only when valid.
+
+GRID
+G1  ATTRIBUTES drive the grid; no Grid component, no layout classes:
+      <section data-grid="{topology}"><tag data-area="{area}"></tag></section>
+    topologies: holy-grail shell side-cols header-main main-footer side-left side-right
+    numeric: data-cols/data-rows 1..12   gap: data-gap=control|content|container|section
+G2  REARRANGE with grid-template-areas in media queries; NEVER reorder DOM.
+G3  GUARD every scrolling track minmax(0,1fr); auto tracks defeat overflow.
+    Column-only topologies still take grid-template-rows: minmax(0,1fr);
+G4  SHELL is 100dvh, overflow hidden; cell overflow never expands body.
+G5  NEST a page topology only inside the shell main cell, guarded per G3.
+G6  NEVER grid-template in component or page css for tracks the
+    vocabulary expresses (data-cols, data-rows, a topology).
+    grid-template outside the system files is a review flag.
+
+CELLS
+C1  ONE cell per area; variants stack classes, never nested divs:
+      <div class="inner {pad} {scroll}">
+    pad = var(--space-md). scroll = overflow auto.
+C2  DROP pad when flush. NEVER padding on [data-area]. NO raw px in cells.
+C3  SCROLL the cell that owns overflow. Header and footer never scroll.
+C4  BREAK the grid at the cell: flex or block only; never another topology.
+C5  NEVER wrap a track-filling grid in flex; auto height can collapse it.
+    Mount an area-owning component directly in [data-area], without .inner.
+    The page root claims the shell cell with flex:1; min-block-size:0.
+
+OOCSS
+S1  ATOMS own skin ONLY: color, background, border, radius, shadow, states.
+    NEVER padding, sizing, layout, structure in an atom.
+S2  COMPONENTS own structure ONLY: display, part layout, gap, padding,
+    part typography. NEVER restate skin an atom owns.
+S3  STACK atom classes in markup to skin; unstack to unskin; never fight
+    an atom with css.
+    containers: container-main container-inset container-float
+                container-grid-cell container-grid-area
+    actions:    action-main action-muted action-nav
+      <article class="stat-card container-main">
+      <button class="nav-item action-nav">
+S4  OVERRIDE per instance via the atom custom property, never a selector:
+      .calendar__day { --container-inset-border: none; }
+S5  EVERY atom property reads var(--atom-part-property, var(--token)).
+S6  INTERACTION STATES (hover, active, focus-visible, disabled) live in
+    the atom. Components never redefine them. Stamps do not generate
+    aria-current/aria-selected styling or selection precedence. Add
+    selection styling only when explicitly requested.
+S7  ATOM NAMES carry their complete family identity everywhere: container-, action-, effect-, grid-.
+    Callers provide the prefix. Stamps validate it; they never infer or compose it.
+    Never prefix an atom with its mounting tag or DOM role.
+
+S8  USE explicit CSS longhands for independently styled properties.
+    Borders declare border-width, border-style, and border-color separately;
+    never use border shorthand. Keep base and variant border skin in the
+    same owning layer so a later layer cannot reset variant colors.
+    WHY: border shorthand sets width, style, and color together, including
+    defaults for omitted values. A winning shorthand can overwrite a
+    separately chosen border-color. Layer precedence beats specificity:
+    a components-layer border can erase atoms-layer area colors even when
+    the area selector is more specific. Longhands keep changes targeted;
+    matching ownership/layers keeps base rules from defeating variants.
+
+TOKENS + LAYERS
+T1  TOKENS only; no raw value where one exists: --space-* --radius-*
+    --border-* --type-* --motion-* --surface-* --content-* --accent-*
+    --danger-* --elevation-* --focus-*.
+T2  LAYER order is law: reset, tokens, grid, atoms, components,
+    dashboards, themes, overrides. Atoms in atoms; component and page
+    css in components; shell layout in dashboards.
+T3  THEMES redefine tokens only. Components never hardcode a color.
+
+COMPONENTS + PAGES
+P1  ONE React anatomy; a component's owning folder is PascalCase, matching
+    its component name. This applies in components/, pages/, and dashboards/.
+    Children nest inside the owner's folder:
+      <Name>/<Name>.tsx             render anatomy only
+      <Name>/<Name>.types.ts        public contract when non-trivial
+      <Name>/css/<name>.css         structure, @layer components
+      <Name>/hooks/use<Name>.ts     state/bag hook when the component has >1 state
+      <Name>/js/*.ts                mechanics, only when it has logic
+      <Name>/demo/Demo.tsx          static exemplar
+      <Name>/settings.ts            registration metadata
+    Omit empty optional files and folders. Existing component CSS beside
+    TSX is migration debt; new and intentionally moved CSS lands in css/.
+P2  MARKUP lives in TSX, never HTML strings. TSX renders the bag; local js
+    modules hold mechanics and the hook binds them. Never use innerHTML.
+P3  PRESENCE IS REGISTRATION. demoRegistry.ts discovers demo/Demo.tsx and
+    settings.ts with import.meta.glob; never hand-register them.
+P4  Demo.tsx lands in the style guide; settings.ts indexed:true lands on
+    Demos. Demos are static exemplars: no fetches or stores.
+P5  NAME component folders, exports, and TSX/types files PascalCase; root class,
+    CSS file, and BEM selectors kebab-case: name, name__part, name--modifier.
+    Hooks are use<Name>.ts.
+P6  DEFINE every class you add; DELETE the unused immediately; no
+    versioned duplicates.
+P7  SPLIT by owned responsibility so one job has a small, complete
+    context. Load that context first; expand only along a real dependency.
+    Do not split one job until navigation becomes the new noise.
+
+REACT BEHAVIOR
+R1  MORE THAN ONE STATE is a state system. Put it in hooks/use<Name>.ts and
+    return one packed bag. JSX never receives raw setters.
+R2  ONE ROOT DOM REF is the component's DOM doorway. Resolve owned
+    descendants beneath it. A non-DOM ref must earn a distinct lifetime
+    and owner; never build a parallel runtime from compensating refs.
+R3  DATA-ID is the behavior address. Target owned DOM elements through
+    the root and stable data-id values. Classes style; data-id identifies.
+    Never guess through element position or borrow a styling selector.
+R4  OPEN/CLOSED/VISIBLE/HIDDEN are DOM presentation. Keep the element
+    mounted and toggle a class or native DOM state. Never create a React
+    state hook whose only job is visibility.
+R5  REACT STATE IS NOT A LAYOUT ENGINE. Position, width, and height live
+    inline on the addressed DOM element; stable layout rules live in CSS.
+    Semantic form choices may select layout vocabulary, but measured or
+    changing geometry never rides a state hook.
+R6  THE HOOK PACKS THE BAG. It binds local js mechanics and returns ready
+    handlers, render values, and dynamic styles. snapshot() reads without
+    updating. Moving useState into a hook does not stop rerenders.
+R7  DOM SOCKETS KEEP THEIR WIRE NAME: onClick={handleClick},
+    onDrag={handleDrag}. If a parent owns two bags, qualify its local
+    wires (handleBag1Click, handleBag2Click), then pass each child the
+    canonical key (handleClick: handleBag1Click). on* is DOM-only.
+R8  RENDER CHURN HAS A BLAST RADIUS. A state update recreates render-local
+    functions and objects; changed identities can retrigger effects, API
+    work, timestamps, and children. Fix the update boundary before adding
+    refs to stabilize the consequences.
+
+HOUSE KEYS
+H1  THE KEYRING is src/HouseKeys.types.ts: one vocabulary file. Add a narrow
+    group only when proven keys exist; never stamp empty proposed groups.
+H2  NO CANNONBALL EXPORT. The filename is not an aggregate interface.
+    Components import narrow groups; never recreate UiProps or HouseKeys.
+H3  ONE KEY, ONE MEANING. Reuse an established key when the meaning matches;
+    keep component-specific types with their component. Promote a new key
+    only after it proves reusable.
+H4  TYPE-ONLY AND DEPENDENCY-LIGHT. Consumers use import type; the keyring
+    imports only external type primitives it truly needs. HouseKeys never
+    depends on components, pages, stores, or feature modules.
+H5  HANDLERS ARE SELF-SIMILAR: handleAnything(data?, type?). data carries
+    the thing; type is an optional source identifier: it tells the parent
+    or handler owner which child or part invoked the shared handler.
+    Supply it when the receiver needs to distinguish sources:
+      handleClick(data, 'bar');     // The bar invoked the shared handler.
+      handleClick(data, 'legend');  // The legend invoked the same handler.
+    The parent can use type to route the action while receiving data in the
+    same first slot. Omit type when source identity is unnecessary. It is
+    the second argument to the handler, not a separate handler prop.
+    Both slots stay optional under I1. HouseKeys.types.ts owns the vocabulary;
+    components narrow HandlerKey<Data>.
+H6  EXTERNAL DATA IS SELF-SIMILAR. Every DB/JSON record enters through
+    DataKeys; owners extend it locally and receivers apply I1.
+H7  NEW IDS USE Date.now() EPOCH MS. A duplicate ID is an execution alarm:
+    fix the repeated trigger or reload; never salt away the evidence.
+
+MIGRATION
+M1  THESE RULES describe the destination. Existing violations are work, not
+    precedent. Move one owned subsystem fully; never add a competing pattern.
+
+FORMS
+F1  IF IT COLLECTS VALUES FOR AN ACTION, IT IS A <form>. A bare control is
+    allowed only when it acts instantly and collects nothing.
+F2  COMPOSE from the form family; never re-invent it. Name every control and
+    collect with FormData; a nameless control collects nothing.
+F3  SUBMIT through the form: type=submit in form__actions, onSubmit(values).
+    Async submits ride status-form. NEVER a click handler on a lone
+    button doing what a submit does.
+F4  THE DOM IS THE FORM STATE. Controls are uncontrolled; values read
+    once via FormData at submit; status, validation, and view toggles
+    write to the DOM (classList, textContent, hidden, aria), NEVER to
+    framework state. In React that is StatelessForm: no useState in or
+    around a form — a re-render must never be able to eat a keystroke.
+
+STAMPS
+ST1 TRUST THE STAMP. Never hand-author a shape a stamp lands or rework it
+    away from the contract. Fix a wrong stamp at src/automation/;
+    manifest.json is the catalog.
+ST2 WHEN ANATOMY MOVES, update RULES and its stamp together. A stale
+    generator never overrules the current contract.
+
+INTERACTIVE EMBEDS
+IE1 Iframes are allowed for standalone interactive pieces in interactive/.
+    Normal application pages and components keep the React anatomy.
+    Background embeds hide their controls and do not capture pointer/focus input.
+
+ST3 STAMPS with templates keep a template/ folder beside the maker script
+    inside the stamp folder, matching the existing house stamps.
+    Stamps copy template files and substitute explicit markers. CSS belongs
+    in a readable template, never an embedded generator string. The maker
+    must not invent selectors, states, or behavior outside the template.
+
+VANILLA ENHANCERS
+V1  Vanilla DOM enhancers live in src/js/<camelCaseName>/<camelCaseName>.js.
+    They accept a DOM element and explicit options, own their created DOM
+    and listeners. Use house-key handlers and expose explicit cleanup.
+    Return data only when the helper has a result to return. React callers
+    only attach/detach.
+    These helpers may create their own DOM; this is an explicit P2 exception.

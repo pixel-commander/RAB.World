@@ -4,3 +4,18 @@
 
 # Personal material stays outside the shared project repository.
 /__docs/personal/
+
+# Local dependencies and Box runtime data.
+node_modules/
+/.rab/
+
+# Local environment settings; keep shareable examples available.
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Operating-system metadata.
+.DS_Store
+Thumbs.db
+Desktop.ini

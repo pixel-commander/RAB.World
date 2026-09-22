@@ -1,0 +1,2 @@
+# Use the house's plain-text model entry point.
+project_doc_fallback_filenames = ["START_HERE.txt"]

@@ -1,0 +1,57 @@
+HANDLER KEY LIST
+===============
+
+Exact names from HandlerKeys in ../../../HouseKeys.types.ts.
+This is a readable reference to that owner, not a second vocabulary authority.
+All keys are optional functions with the shared (data?, type?) shape.
+README.txt explains naming, narrowing, inheritance and DOM wiring.
+
+Actions, values and focus
+  handleClick
+  handleClickOutside
+  handleChange
+  handleDraw
+  handleInputChange
+  handleSubmit
+  handleSave
+  handleCancel
+  handleClose
+  handleToggle
+  handleFilter
+  handleFocus
+  handleBlur
+  handleKeyDown
+  handleSelect
+  handleInsert
+  handleRemove
+  handleClear
+  handleZoom
+  handleURL
+  handleTransfer
+  handleMove
+
+Drag and drop
+  handleDrag
+  handleDrop
+  handleDragOver
+  handleDragEnter
+  handleDragLeave
+  handleDragStart
+  handleDragEnd
+
+Pointer
+  handlePointerDown
+  handlePointerMove
+  handlePointerUp
+  handlePointerCancel
+
+Mouse
+  handleMouseEnter
+  handleMouseLeave
+  handleMouseMove
+  handleMouseUp
+  handleMouseDown
+
+Use the spelling exactly, including handleURL. Event-specific payloads and
+return values belong to the consuming owner's types. A new shared name needs
+an established reusable meaning before promotion to HouseKeys.types.ts.

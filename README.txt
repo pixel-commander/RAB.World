@@ -1,5 +1,10 @@
-RAB.World
-=========
+RAB.World - MODEL PROJECT CONTEXT
+--------------------------------
+
+Audience: LLMs, coding agents and cloud models.
+Read START_HERE.txt first for boot instructions, repository boundaries,
+download/setup commands and the working protocol. This file owns project
+purpose and context. Human documentation lives in __docs.
 
 PROJECT PURPOSE
 
@@ -13,8 +18,9 @@ alongside the findings.
 
 PROJECT HOME
 
-The working project is C:\RAB.World on this computer. Use this root explicitly
-if the session starts in a different directory with the same project name.
+On laptop PIXEL, the working project is C:\RAB.World. Use that root explicitly
+if the session starts in the older saved workspace. On another computer or
+in a cloud environment, use the actual RAB.World checkout root instead.
 
 RAB.Box now runs locally. Older documents or configurations may still refer
 to server locations. Check the current file owner and configured connection
@@ -29,8 +35,9 @@ RAB.Toolkits
 The tools that plug into RAB.Box.
 
 __docs
-The home for documentation files, including explanations of the house and
-training materials developed from code reviews.
+Human documentation: explanations of the house, conventions, examples and
+training materials developed from code reviews. Read task-relevant files
+when needed; this folder is not an automatic model boot bundle.
 
 ganglion
 The intended central home for the skills required to produce acceptable
@@ -55,33 +62,8 @@ review it against the applicable rules, verify the findings, and carry useful
 reasoning and examples into documentation and training material. A review
 claim needs evidence before it becomes an accepted lesson.
 
-COLD START
-
-1. Read this README for the project purpose and the roles of its parts.
-2. Use the current request to identify the area of work. Read that area's
-   AGENTS.md, README and RULES.txt when present before editing it.
-3. Read only the relevant skills, contracts and stamp guides for that task.
-   Keep orientation narrow; __docs is not a bundle to load in full.
-4. Check current names and paths on disk. Prefer the implementation owner's
-   current contract over an older explanatory snapshot in __docs\about.
-5. Reuse canonical names, keys, contracts and existing stamps. Apply each
-   area's own rules; do not impose one toolkit's file layout on everything.
-6. Verify the changed output and behavior with appropriate checks. Report
-   what was observed, what remains unverified, and any missing rule source.
-
-Orientation supplies context. Starting services, executing tools, training
-models, changing configuration or publishing work follows the current task,
-not the fact that those activities are mentioned here.
-
-BOOT ENTRY POINT
-
-AGENTS.md beside this README directs project sessions to this overview.
-Start new project sessions from C:\RAB.World where possible. A session
-opened directly in a nested repository also needs this project overview;
-do not assume its tool automatically loads instructions above that repo.
-
-Keep the project description here as the shared source, with detailed rules
-and implementation guidance at their owners.
+START_HERE.txt owns the boot and working protocol. This README owns project
+context. Detailed rules, skills and contracts stay with their current owners.
 
 Self-similarity is the design target. The purpose described here does not
 mean every existing part has already been verified against that target.
