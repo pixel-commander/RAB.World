@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "change_id": 1790164139622,
+  "captured_at": "2026-09-23T11:49:18.083Z",
+  "status": "captured",
+  "changes": [
+    {
+      "file": "src/DataTable.tsx",
+      "operation": "modified",
+      "before": {
+        "sha256": "a72487f1af3ee1312a12a9e9247224b3935f24a473d27c42964f4316e81d8f31",
+        "bytes": 10088
+      },
+      "after": {
+        "sha256": "66799e7da88820a453f00768830becd2ef79dceee14d7efcdad1358c52253ad9",
+        "bytes": 10113
+      }
+    }
+  ],
+  "renames": [],
+  "approval": null
+}

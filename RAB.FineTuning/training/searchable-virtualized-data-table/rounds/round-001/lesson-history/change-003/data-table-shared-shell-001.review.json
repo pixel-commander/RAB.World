@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "kind": "lesson-review",
+  "lesson_id": "data-table-shared-shell-001",
+  "status": "draft",
+  "skill_id": "shared-shell-grid",
+  "task_family_id": "searchable-virtualized-data-table-shell",
+  "dataset_split": "unassigned",
+  "scope": "This project, where the user specifies data-grid=\"shell\" as the owner of the wrapper layout.",
+  "boundary": "Do not invent or assume shell behavior in projects without the matching shared grid contract.",
+  "reinforces": [],
+  "source_turns": [
+    "turns/turn-008.json"
+  ],
+  "source_changes": [],
+  "selected_blocks": [],
+  "context_needed": "Resolve the imported grid.css and inspect its shell definition before applying the CSS removal.",
+  "grading": {
+    "format_checks": [],
+    "behavior_checks": [],
+    "reviewer_rubric": []
+  },
+  "human_review": null
+}

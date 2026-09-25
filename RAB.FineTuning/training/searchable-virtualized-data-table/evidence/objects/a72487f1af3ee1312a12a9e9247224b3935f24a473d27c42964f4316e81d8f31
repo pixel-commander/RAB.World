@@ -1,0 +1,143 @@
+import { Fragment, type DragEvent, type MouseEvent } from 'react';
+import type { DataTableCell, DataTableProps, DataTableRow } from './DataTable.types';
+import { useDataTable, valueText } from './hooks/useDataTable';
+import './DataTable.css';
+
+const EMPTY_KEYS: string[] = [];
+const COLUMN_MIME = 'application/x-data-table-column';
+const isRowArray = (value: unknown): value is Record<string, unknown>[] => Array.isArray(value) && value.every(item => item !== null && typeof item === 'object' && !Array.isArray(item));
+const setOverflowTooltip = (event: MouseEvent<HTMLElement>) => {
+  const element = event.currentTarget;
+  const text = element.textContent?.trim() ?? '';
+  if (element.scrollWidth > element.clientWidth) element.title = text;
+  else element.removeAttribute('title');
+};
+const closeExpandedRows = (element: HTMLElement) => element.closest('.data-table')?.querySelectorAll('.table-expanded-row.is-open').forEach(row => row.classList.replace('is-open', 'is-closed'));
+const beginColumnDrag = (event: DragEvent<HTMLButtonElement>, key: string) => {
+  event.dataTransfer.effectAllowed = 'move';
+  event.dataTransfer.setData(COLUMN_MIME, key);
+  event.currentTarget.classList.add('is-dragging');
+};
+const allowColumnDrop = (event: DragEvent<HTMLButtonElement>) => {
+  if (!event.dataTransfer.types.includes(COLUMN_MIME)) return;
+  event.preventDefault();
+  event.dataTransfer.dropEffect = 'move';
+};
+const droppedColumn = (event: DragEvent<HTMLButtonElement>) => event.dataTransfer.getData(COLUMN_MIME);
+
+const NestedTable = ({ rows, view_more_key, ignore_keys }: { rows: DataTableRow[]; view_more_key?: string; ignore_keys: string[] }) => {
+  const columns = Object.keys(rows?.[0] ?? {}).filter(key => key !== view_more_key && !ignore_keys.includes(key));
+  const hasNestedRows = Boolean(view_more_key) && rows.some(row => isRowArray(row?.[view_more_key ?? '']) && row?.[view_more_key ?? '']?.length);
+
+  return <table className="data-table table-nested">
+    <thead className="table-header"><tr>
+      {columns.map(key => <th key={key} data-cell={key} className="table-header-cell"><div className="table-header-cell-inner" onMouseEnter={setOverflowTooltip}>{key}</div></th>)}
+      {hasNestedRows && <th data-cell="view-more" className="table-header-cell"><div className="table-header-cell-inner" onMouseEnter={setOverflowTooltip}>View more</div></th>}
+    </tr></thead>
+    <tbody>{rows.map((row, rowIndex) => {
+      const nestedRows = row?.[view_more_key ?? ''];
+      const hasNested = hasNestedRows && isRowArray(nestedRows) && nestedRows.length;
+      return <Fragment key={rowIndex}>
+        <tr className={`table-row ${rowIndex % 2 === 0 ? 'even' : 'odd'}`}>
+          {columns.map((key, columnIndex) => <td key={key} data-cell={key} data-row={rowIndex + 1} data-col={columnIndex + 1} className="table-cell"><div className="table-cell-inner" onMouseEnter={setOverflowTooltip}>{valueText(row?.[key])}</div></td>)}
+          {hasNestedRows && <td data-cell="view-more" className="table-cell"><div className="table-cell-inner">{hasNested && <button type="button" className="table-expand">View more</button>}</div></td>}
+        </tr>
+        {hasNested && <tr className="table-expanded-row-container"><td colSpan={columns.length + 1}><div className="table-expanded-cell"><div className="table-expanded-row is-closed"><NestedTable rows={nestedRows} view_more_key={view_more_key} ignore_keys={ignore_keys} /></div></div></td></tr>}
+      </Fragment>;
+    })}</tbody>
+  </table>;
+};
+
+export const DataTable = <T extends DataTableRow>({
+  data,
+  rowHeight = 44,
+  overscan = 6,
+  className = '',
+  handleClick,
+  handleOrder,
+  handleSave: _handleSave,
+  emptyMessage = 'No matching rows.',
+  searchPlaceholder = 'Search all columns…',
+  legend_key,
+  view_more_key,
+  ignore_keys = EMPTY_KEYS,
+  renderExpandedRow,
+  format,
+}: DataTableProps<T>) => {
+  const {
+    columns, filteredRows, legendItems, moveColumn, observeRow, onScroll, rootRef, search, setSearch, sort, startIndex, totalHeight, toggleSort, viewableRowEnd, viewableRowStart, virtualRowHeight, visibleRows,
+  } = useDataTable({ data, ignore_keys, legend_key, rowHeight, overscan, view_more_key });
+
+  const generatedExpandedRow = (row: T) => {
+    const items = row?.[view_more_key ?? ''];
+    if (!isRowArray(items) || !items.length) return <p className="table-no-items">No items.</p>;
+    return <NestedTable rows={items} view_more_key={view_more_key} ignore_keys={ignore_keys} />;
+  };
+  const expandedRenderer = renderExpandedRow ?? (view_more_key ? generatedExpandedRow : undefined);
+  const columnCount = columns.length + (expandedRenderer ? 1 : 0);
+  const spacerBefore = startIndex * virtualRowHeight;
+  const visibleHeight = visibleRows.length * virtualRowHeight;
+  const spacerAfter = Math.max(0, totalHeight - spacerBefore - visibleHeight);
+  const toggleExpanded = (event: MouseEvent<HTMLTableElement>) => {
+    const target = event.target as HTMLElement;
+    const expanded = target.closest('.table-expand')?.closest('.table-row')?.nextElementSibling?.querySelector('.table-expanded-row');
+    if (!expanded) return;
+    if (expanded.classList.contains('is-open')) {
+      expanded.classList.replace('is-open', 'is-closed');
+      return;
+    }
+    event.currentTarget.querySelectorAll('.table-expanded-row.is-open').forEach(row => row.classList.replace('is-open', 'is-closed'));
+    expanded.classList.replace('is-closed', 'is-open');
+  };
+
+  return (
+    <section className={`data-table-wrapper ${className}`}>
+      <div data-area="header" className="table-panel-header">
+        <div className="table-toolbar">
+          <label className="table-search-label" htmlFor="data-table-search">Search table</label>
+          <input id="data-table-search" className="table-search" value={search} onChange={event => setSearch(event.target.value)} placeholder={searchPlaceholder} type="search" />
+        </div>
+        {legend_key && legendItems.length > 0 && <div className="table-legend" aria-label={`${legend_key} legend`}><span className="table-legend-label">{legend_key}:</span>{legendItems.map(item => <span key={item} className="table-legend-item">{item || 'Empty'}</span>)}</div>}
+      </div>
+
+      <div data-area="main" className="table-main">
+      <div ref={rootRef} className="table-scroll" onScroll={onScroll}>
+        <table className="data-table" onClick={toggleExpanded}>
+          <thead className="table-header">
+            <tr>
+              {columns.map(column => {
+                const direction = sort?.key === column.key ? sort.direction : undefined;
+                const formatted = format?.({ type: 'header', key: column.key, label: column.label });
+                return <th key={column.key} data-cell={column.key} className="table-header-cell" aria-sort={direction === 'asc' ? 'ascending' : direction === 'desc' ? 'descending' : 'none'}><div className="table-header-cell-inner" onMouseEnter={setOverflowTooltip}><button type="button" draggable className="table-sort" onDragStart={event => beginColumnDrag(event, column.key)} onDragOver={allowColumnDrop} onDragEnd={event => event.currentTarget.classList.remove('is-dragging')} onDrop={event => { const from = droppedColumn(event) as Extract<keyof T, string>; if (!from) return; event.preventDefault(); const order = moveColumn(from, column.key); handleOrder?.(order); }} onClick={event => { closeExpandedRows(event.currentTarget); handleClick?.(column, 'header'); toggleSort(column.key); }}><span>{formatted ?? column.label}</span><span aria-hidden="true">{direction === 'asc' ? '▲' : direction === 'desc' ? '▼' : '↕'}</span></button></div></th>;
+              })}
+              {expandedRenderer && <th data-cell="view-more" className="table-header-cell"><div className="table-header-cell-inner" onMouseEnter={setOverflowTooltip}>View more</div></th>}
+            </tr>
+          </thead>
+          <tbody>
+            {spacerBefore > 0 && <tr className="table-spacer"><td colSpan={columnCount} style={{ height: spacerBefore }} /></tr>}
+            {visibleRows.map((row, visibleIndex) => {
+              const rowIndex = startIndex + visibleIndex;
+              return <Fragment key={rowIndex}>
+                <tr ref={visibleIndex === 0 ? observeRow : undefined} className={`table-row ${rowIndex % 2 === 0 ? 'even' : 'odd'}`} onClick={event => { if (!(event.target as HTMLElement).closest('button')) handleClick?.(row, 'row'); }}>
+                  {columns.map((column, columnIndex) => {
+                    const value = row?.[column.key];
+                    const text = valueText(value);
+                    const cell = { type: 'cell', key: column.key, value, row } as DataTableCell<T>;
+                    return <td key={column.key} data-cell={column.key} data-row={rowIndex + 1} data-col={columnIndex + 1} className="table-cell"><div className="table-cell-inner" onMouseEnter={setOverflowTooltip}>{format?.(cell) ?? text}</div></td>;
+                  })}
+                  {expandedRenderer && <td data-cell="view-more" data-row={rowIndex + 1} data-col={columns.length + 1} className="table-cell"><div className="table-cell-inner"><button type="button" className="table-expand">View more</button></div></td>}
+                </tr>
+                {expandedRenderer && <tr className="table-expanded-row-container"><td colSpan={columnCount}><div className="table-expanded-cell"><div className="table-expanded-row is-closed">{expandedRenderer(row)}</div></div></td></tr>}
+              </Fragment>;
+            })}
+            {spacerAfter > 0 && <tr className="table-spacer"><td colSpan={columnCount} style={{ height: spacerAfter }} /></tr>}
+            {(!columns.length || !filteredRows.length) && <tr className="table-empty"><td colSpan={Math.max(columnCount, 1)}>{emptyMessage}</td></tr>}
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <div data-area="footer" className="table-footer">Showing {viewableRowStart.toLocaleString()} / {viewableRowEnd.toLocaleString()} out of {data.length.toLocaleString()} {data.length === 1 ? 'row' : 'rows'}</div>
+    </section>
+  );
+};
