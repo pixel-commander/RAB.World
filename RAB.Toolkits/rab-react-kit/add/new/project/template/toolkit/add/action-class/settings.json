@@ -1,0 +1,47 @@
+{
+  "id": 1790277767768,
+  "name": "action-class",
+  "title": "Add action class",
+  "description": "Scaffolds action-[name].css from its template.",
+  "settings": [
+    {
+      "name": "name",
+      "type": "text",
+      "title": "Name",
+      "description": "Lowercase kebab-case suffix without the action- prefix.",
+      "required": true
+    },
+    {
+      "name": "location",
+      "type": "folder",
+      "title": "Save Folder",
+      "description": "Absolute output folder.",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "title": "Title",
+      "required": false
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "title": "Description",
+      "required": false
+    },
+    {
+      "name": "transmitting",
+      "type": "boolean",
+      "title": "Transmitting",
+      "description": "Omit to use the signal template default.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "create",
+    "target_type": "action-class",
+    "authority": "write"
+  }
+}

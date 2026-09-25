@@ -1,0 +1,28 @@
+{
+  "id": 1790000001004,
+  "name": "docker-ports",
+  "title": "Audit Docker Infrastructure Port Routing",
+  "description": "Scans Docker Compose mappings and Dockerfile EXPOSE declarations for explicit container port topology.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "network",
+    "data_types": [
+      "network",
+      "port",
+      "docker"
+    ],
+    "output": "report",
+    "authority": "read",
+    "signature": "docker-ports"
+  }
+}

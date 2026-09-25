@@ -1,0 +1,35 @@
+{
+  "id": 1790000000602,
+  "name": "hooks",
+  "title": "Find Hooks",
+  "description": "Finds all React hook calls in the loaded project or supplied folder.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    },
+    {
+      "type": "list",
+      "name": "script_extensions",
+      "title": "Script Extensions",
+      "description": "Source extensions to scan. If missing, the runner determines them with the registered child Tool.",
+      "required": true,
+      "try": "determine-script-type"
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "find",
+    "target_type": "hook",
+    "quantifier": "all",
+    "data_types": [
+      "hook",
+      "file"
+    ],
+    "output": "list",
+    "authority": "read"
+  }
+}

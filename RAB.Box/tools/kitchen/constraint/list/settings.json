@@ -1,0 +1,17 @@
+{
+  "id": 1810000000009,
+  "name": "list",
+  "title": "List Kitchen Constraints",
+  "description": "Lists human exclusions and preferences in Kitchen project memory.",
+  "settings": [],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "read",
+    "data_types": [
+      "constraints"
+    ],
+    "returns": [
+      "constraints"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "version": "manifest/v1",
+  "id": 1790304758702,
+  "name": "actions",
+  "title": "actions",
+  "description": "Action atoms",
+  "date_added": "2026-09-25T02:52:38.704Z",
+  "items": [
+    {
+      "id": null,
+      "name": "action-fill-alt",
+      "title": "action-fill-alt",
+      "description": "Secondary blue filled action with a subtle vertical gradient that reverses on hover.",
+      "kind": "action-atom",
+      "path": "action-fill-alt"
+    },
+    {
+      "id": null,
+      "name": "action-ghost",
+      "title": "action-ghost",
+      "description": "Muted default skin with the default navigation skin on hover.",
+      "kind": "action-atom",
+      "path": "action-ghost"
+    },
+    {
+      "id": null,
+      "name": "action-nav-alt",
+      "title": "action-nav-alt",
+      "description": "Navigation action with a 3px bottom border and secondary-blue hover highlight.",
+      "kind": "action-atom",
+      "path": "action-nav-alt"
+    },
+    {
+      "id": null,
+      "name": "action-rail-left",
+      "title": "action-rail-left",
+      "description": "Left accent rail, 3px at the default border token; lighter background that brightens on hover.",
+      "kind": "action-atom",
+      "path": "action-rail-left"
+    }
+  ],
+  "indexed": true
+}

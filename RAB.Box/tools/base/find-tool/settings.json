@@ -1,0 +1,48 @@
+{
+  "id": 1790000000102,
+  "name": "find-tool",
+  "title": "Find Tool",
+  "description": "Searches the real tools folder by current domain, function family, settings text, description, and metadata. Discovery never grants execution authority.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "query",
+      "title": "Query",
+      "description": "Words or phrase used to discover Tools.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "domain",
+      "title": "Domain",
+      "description": "Optional hard domain boundary. Base remains available.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "function_prefix",
+      "title": "Function Prefix",
+      "description": "Optional functional prefix such as find, list, load, view, check, add, remove, update, or delete.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "include_stamps",
+      "title": "Include Stamps",
+      "description": "Allow template-producing stamp-* capabilities in results.",
+      "required": false,
+      "default": true
+    }
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "find",
+    "target_type": "tool",
+    "data_types": [
+      "tool",
+      "settings"
+    ],
+    "output": "list",
+    "authority": "read"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": 1789380000013,
+  "name": "component-note",
+  "title": "Add a test text artifact under a component",
+  "description": "create new text inside a component and return text",
+  "date_added": 1789380000000,
+  "data_types": ["component", "text-content", "parent-component-path"],
+  "options": {
+    "name": {"required": true, "type": "text", "role": "artifact-name", "validate": "project-name", "question": "What should the note be named?"},
+    "parent_path": {"required": true, "type": "text", "role": "parent-path", "validate": "relative-directory", "question": "What component path should own this note?"},
+    "content": {"required": true, "type": "text", "role": "text-content", "question": "What text should the note contain?"}
+  }
+}

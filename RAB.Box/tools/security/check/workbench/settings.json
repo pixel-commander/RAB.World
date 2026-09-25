@@ -1,0 +1,16 @@
+{
+  "id": 1790000000997,
+  "name": "workbench",
+  "title": "Check Workbench Security",
+  "description": "Runs the complete bounded local Magic Box security verification suite against isolated fixtures and a loopback-only ephemeral server.",
+  "settings": [],
+  "meta": {
+    "domain": "security",
+    "operation": "check",
+    "output": "security-report",
+    "authority": "read",
+    "config": {
+      "check": "all"
+    }
+  }
+}

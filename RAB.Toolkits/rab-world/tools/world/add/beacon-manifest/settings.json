@@ -1,0 +1,36 @@
+{
+  "id": 1790304471197,
+  "name": "beacon-manifest",
+  "title": "Add Beacon Manifest",
+  "description": "Creates an empty beacon-owned manifest beside an existing beacon.json, without project registration or project identity.",
+  "settings": [
+    {
+      "name": "beacon_path",
+      "type": "folder",
+      "title": "Beacon Folder",
+      "description": "Absolute folder containing beacon.json. The manifest is created beside it.",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "title": "Title",
+      "description": "Defaults to the beacon title or name.",
+      "required": false
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "title": "Description",
+      "description": "Defaults to the beacon description.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "world",
+    "operation": "create",
+    "target_type": "manifest",
+    "output": "manifest",
+    "authority": "write"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": 1790000000830,
+  "name": "stamp-new",
+  "title": "State Hook Stamp",
+  "description": "Creates a reusable React state hook backed by the native useState API and leaves an explicit extension seat in the generated hook.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Hook Name",
+      "description": "Generated custom hook name, such as useCartState.",
+      "required": true
+    },
+    {
+      "type": "folder",
+      "name": "location",
+      "title": "Location",
+      "description": "Folder that will receive the generated hook file.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "initial_value",
+      "title": "Initial Value",
+      "description": "Initial useState expression.",
+      "required": false,
+      "default": "null"
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "create",
+    "target_type": "hook",
+    "predicate": "state",
+    "native_symbol": "useState",
+    "data_types": [
+      "hook",
+      "tsx"
+    ],
+    "output": "file",
+    "authority": "write"
+  }
+}

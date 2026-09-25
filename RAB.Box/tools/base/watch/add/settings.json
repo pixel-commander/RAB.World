@@ -1,0 +1,57 @@
+{
+  "id": 1790033965172,
+  "name": "add",
+  "title": "Add paths to listener",
+  "description": "Watch an array of configured project paths and update each manifest when settings or folders change.",
+  "settings": [
+    {
+      "name": "paths",
+      "type": "json",
+      "title": "Project paths",
+      "required": true,
+      "description": "Array of saved project path keys or objects with type and per-path conditions, such as [\"components\",{\"type\":\"pages\",\"include\":[\"public/**\"]}]. Use a one-element array for one path."
+    },
+    {
+      "name": "recursive",
+      "type": "boolean",
+      "title": "Include nested items",
+      "required": false
+    },
+    {
+      "name": "include",
+      "type": "json",
+      "title": "Include folder patterns",
+      "required": false,
+      "description": "Root-relative glob array; default [\"**\"]."
+    },
+    {
+      "name": "exclude",
+      "type": "json",
+      "title": "Exclude folder patterns",
+      "required": false,
+      "description": "Root-relative glob array; default []."
+    },
+    {
+      "name": "debounce_ms",
+      "type": "number",
+      "title": "Combine changes (ms)",
+      "required": false,
+      "description": "Default 200; zero runs without delay."
+    },
+    {
+      "name": "reconcile_ms",
+      "type": "number",
+      "title": "Reconcile interval (ms)",
+      "required": false,
+      "description": "Default 30000; minimum 250."
+    }
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "create",
+    "target_type": "listener",
+    "authority": "write"
+  },
+  "indexed": true
+}
+

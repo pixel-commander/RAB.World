@@ -1,0 +1,96 @@
+RRAABBIITT MAGIC BOX v0.8.3 — HOUSE TAGS / DEEP TOOLS
+=====================================================
+
+WHAT CHANGED
+------------
+Tool identity and Tool location are now separate.
+
+  ID    = permanent identity
+  path  = current semantic position in the house
+  tags  = inherited directly from path segments
+  script= executable filename selected at the current position
+
+Example index row:
+
+  {
+    id: 1790000000811,
+    path: "react/count/hooks/use-effect",
+    tags: ["react","count","hooks","use-effect"],
+    script: "count.mjs"
+  }
+
+The scanner now discovers settings.json recursively at arbitrary depth under tools/.
+`template/` trees are never scanned as public Tools.
+
+PERMANENT IDS / MOVES
+---------------------
+A Tool can move to another semantic folder while retaining the same ID. The next scan
+rebuilds path/tags from its new location. Tool lookup also accepts the permanent numeric
+ID, so durable references do not need to depend on the old path. Duplicate IDs are rejected.
+
+PATH INHERITANCE
+----------------
+Path tags are inherited truth. Explicit metadata may add meaning but may not contradict
+the path. Current deterministic checks reject domain, operation, or target_type metadata
+when a deep path already states a conflicting value.
+
+NEAREST-PARENT EXECUTOR
+-----------------------
+A public leaf is still defined by settings.json, but it no longer needs its own script.
+The runtime walks upward to the nearest <folder>.mjs executor.
+
+Example:
+
+  tools/react/count/count.mjs
+  tools/react/count/hooks/state-hooks/settings.json
+  tools/react/count/hooks/use-effect/settings.json
+
+Both public leaves use count.mjs. This keeps the semantic catalog fat while the
+implementation stays skinny.
+
+PATH-WEIGHTED DISCOVERY
+-----------------------
+find-tool now includes path/tag evidence in ranking. Path evidence is heavier than
+ordinary prose matching. A more specific candidate wins when the request supplies an
+extra matching shape; an underspecified request does not get a bonus merely because a
+Tool lives deeper in the tree.
+
+HOOK HOUSE
+----------
+Added:
+
+  base/determine/script-type
+  react/count/hooks/state-hooks
+  react/count/hooks/use-effect
+  react/find/hooks/state-hooks
+  react/find/hooks/use-effect
+  react/hooks/state-hooks/stamp-new
+  react/hooks/use-effect/stamp-new
+
+The generic react/find-hook and react/find-hooks now use the same source-glob engine.
+
+SCRIPT TYPE CONTINUATION
+------------------------
+Hook search/count first uses script_extensions from the current context or the loaded
+project's .rab FACTS.json. If missing, it calls base/determine/script-type, saves the
+result to the project facts, then resumes the original Tool. The next Tool reuses the
+fact instead of rescanning for language type.
+
+HOUSE RESERVED WORDS
+--------------------
+`use-effect` is the canonical house form for React `useEffect`.
+`use-state` is the canonical house form for React `useState`.
+
+Shape 1 currently accepts the native and normalized surfaces:
+
+  use-effect <-> useEffect <-> useeffect
+  use-state  <-> useState  <-> usestate
+
+The folder/tag stays kebab-case; descriptions and native matchers keep framework casing.
+
+FUTURE SEATS
+------------
+The new React hook Stamps materialize working hook files and leave explicit @rab-seat
+markers for later Stamps. This is the first small proof of the larger law: a Stamp
+materializes a finished known shape while leaving known seats for future deterministic
+extension.

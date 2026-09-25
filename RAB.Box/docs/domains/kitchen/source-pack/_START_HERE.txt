@@ -1,0 +1,71 @@
+RRAABBIITT DUMBOT — KITCHEN / BAKING MOOD HANDOFF
+2026-09-17
+
+PURPOSE
+-------
+This pack captures the Kitchen/Baking Mood architecture so it can be merged into the main RRAABBIITT project without re-explaining the design.
+
+Kitchen stays INSIDE THE HOUSE.
+
+Recommended home:
+  tools/kitchen/
+
+Mood law:
+  MOOD = ACTIVE TOOLSET
+
+Baking/Kitchen Mood changes the active Tool set ONLY.
+It does not create a second reducer, parser, memory system, authority system, verifier, receipt shape, blocker system, or execution engine.
+
+CORE LAW
+--------
+CURRENT
+  ↓
+CHILD
+  ↑
+RETURNED_SHAPE + CURRENT
+=
+NEW_CURRENT
+
+Kitchen must reuse the same READY / input-required / conflict / invalid-input / lookup-failed / completed / error mechanics already used by Dev.
+
+SAFETY LAW
+----------
+MATH SOLVES.
+REFERENCES CONSTRAIN.
+MEASUREMENT VERIFIES.
+RECEIPTS PROVE.
+
+Calculated cooking/process time is a PLAN, not proof of food safety.
+For safety-critical work, authoritative targets and actual measurements close the receipt.
+
+FIRST DEMOS
+-----------
+1. Cookies:
+   "I'm baking cookies." → "What kind?" → "Chocolate chip." → recipe lookup → ingredient/equipment check → plan
+
+2. Date dinner:
+   "I have chicken, pasta and tomatoes. My date gets here in 2 hours. No onion, no garlic, she hates mushrooms."
+   → preserve all constraints → filter legal candidates → ask only for missing ingredients/equipment → same Step resumes → executable plan
+
+3. Industrial:
+   belt length + belt speed → residence time
+   belt length + required residence time → belt speed
+   process relationship missing / >1 unconstrained process variable → UNRESOLVED
+
+START HERE
+----------
+1. KITCHEN_WORLD_HANDOFF.md
+2. KITCHEN_TOOL_BLUEPRINT.md
+3. KITCHEN_AUDITS_AND_CHECKERS.md
+4. KITCHEN_MATH_RULES.md
+5. FOOD_PROCESS_EXTENSION.md
+6. TEST_SCENARIOS.md
+7. SAFETY_REFERENCES.json
+8. STARTER_RECIPE_INDEX.json
+9. TODO.md
+
+IMPORTANT
+---------
+The 45 starter recipes are a corpus/index seed, not regulatory safety authority.
+Food safety rules must come from authoritative references or validated process support.
+Industrial thermal-process values must never be invented from generic consumer guidance.

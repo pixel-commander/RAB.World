@@ -1,0 +1,47 @@
+{
+  "id": 1830000000728,
+  "name": "code-review",
+  "title": "Review Proposed Code",
+  "description": "Checks pasted code with existing guards, grids and atoms auditors. Reports findings separately from execution success; saves scratch evidence without changing project source.",
+  "settings": [
+    {
+      "name": "file",
+      "type": "path",
+      "title": "Intended file",
+      "description": "Project-relative filename, such as src/components/Card/Card.tsx or src/atoms/action.css. Review does not change this file.",
+      "required": true
+    },
+    {
+      "name": "code",
+      "type": "textarea",
+      "title": "Proposed code",
+      "description": "Paste the exact code to check. Static checks only; this code is never executed. Maximum 256 KiB combined with supporting CSS.",
+      "required": true
+    },
+    {
+      "name": "css",
+      "type": "textarea",
+      "title": "Supporting CSS (optional)",
+      "description": "CSS for resolving class-based grid/flex layout in JSX. Only the grids check reads this; it is not written to the project.",
+      "required": false
+    },
+    {
+      "name": "checks",
+      "type": "json",
+      "title": "Check groups",
+      "description": "Use [\"all\"] for every available review group, or select one or more group names such as [\"guards\",\"grids\"]. Non-applicable checks are reported as skipped.",
+      "required": false,
+      "default": [
+        "all"
+      ]
+    }
+  ],
+  "meta": {
+    "operation": "inspect",
+    "target_type": "code-review",
+    "authority": "read",
+    "output": "report",
+    "group": "all",
+    "domain": "code-review"
+  }
+}

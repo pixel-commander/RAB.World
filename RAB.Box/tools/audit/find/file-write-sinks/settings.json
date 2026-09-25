@@ -1,0 +1,30 @@
+{
+  "id": 1800000000010,
+  "name": "file-write-sinks",
+  "title": "Find File Write Sinks",
+  "description": "Finds filesystem write APIs that can create or replace local files.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "file-write-sinks",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\b(?:writeFile|writeFileSync|appendFile|appendFileSync|createWriteStream)\\s*\\(",
+      "scope": "code",
+      "kind": "file-write-sink",
+      "heuristic": false,
+      "flags": ""
+    }
+  }
+}

@@ -1,0 +1,42 @@
+RRAABBIITT v0.9.3 VERIFIED RELEASE
+Assembled and verified: 2026-09-17
+
+STATUS: GREEN / VERIFIED
+
+BASE:
+RRAABBIITT_v0.9.2_VERIFIED.zip
+
+ADDED:
+- react/stamp-new-page
+- react/stamp-new-dashboard
+- react/apply/grid-layout
+- react/insert/component-into-area
+- react/apply/scroll-y
+- react/add/scroll-wrapper
+- canonical .scroll-y Grid CSS utility
+- construction order/confluence regression tests
+
+RECOVERY REVIEW:
+- component import collision guard added
+- nested Apply Grid Layout targeting added
+- live Hand terminology cleaned
+- wrapper-folder packaging restored
+
+PRESERVED:
+- NEST-001 scoped Runner behavior
+- Stamp shared-engine dedup
+- addressable construction seats
+- strip-only Scaffolding Cleanup Pass
+- Kitchen/Food Process laws and capabilities
+
+VERIFICATION:
+- focused v0.9.3 construction tests: 8 / 8
+- complete Node surface: 389 / 389
+- language audit: PASS; 249 public capabilities, 0 unavailable
+- main browser harness: 18 checks, 0 JS errors
+- Turn Checker browser harness: 3 checks, 0 JS errors
+
+NEXT LARGE CAMPAIGNS:
+- large rephrase / semantic-equivalence stress matrix
+- broader nested-order matrix
+- deterministic teaching stress matrix

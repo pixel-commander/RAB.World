@@ -1,0 +1,47 @@
+{
+  "id": 1800000000050,
+  "name": "file",
+  "title": "Save File As",
+  "description": "Copies a file to a new name in a selected project folder.",
+  "settings": [
+    {
+      "type": "file",
+      "name": "file",
+      "title": "File",
+      "description": "Optional file/path source.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "component",
+      "title": "Component",
+      "description": "Optional component name source.",
+      "required": false
+    },
+    {
+      "type": "folder",
+      "name": "destination",
+      "title": "Destination Folder",
+      "description": "Project-relative destination folder.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "new_name",
+      "title": "New Name",
+      "description": "New file stem or component name.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "project",
+    "operation": "save",
+    "target_type": "file",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "edit-receipt",
+    "authority": "write"
+  }
+}

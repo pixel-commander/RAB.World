@@ -1,0 +1,116 @@
+{
+  "id": 1790000000992,
+  "name": "element",
+  "title": "Add DOM Element",
+  "description": "Adds a native DOM element inside a resolved component target. Defaults to adding a div inside the highest-level rendered DOM element and can target one or all matching data-area or element nodes while optionally assigning a class.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "component",
+      "title": "Component",
+      "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+      "required": false
+    },
+    {
+      "type": "file",
+      "name": "file",
+      "title": "File",
+      "description": "Optional source file. May be absolute or project-relative.",
+      "required": false
+    },
+    {
+      "type": "path",
+      "name": "path",
+      "title": "Path",
+      "description": "Optional project-relative source file path alias.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "seat_id",
+      "title": "Construction Seat ID",
+      "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "data_area",
+      "title": "Parent Data Area",
+      "description": "Optional data-area value identifying the parent DOM target.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "element",
+      "title": "Parent DOM Element",
+      "description": "Optional parent native DOM element name.",
+      "required": false
+    },
+    {
+      "type": "options",
+      "name": "quantifier",
+      "title": "How Many Parents",
+      "description": "Defaults to one parent. Use all to add the child to every matching parent.",
+      "required": false,
+      "options": [
+        {
+          "name": "one",
+          "description": "First matching parent"
+        },
+        {
+          "name": "all",
+          "description": "All matching parents"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "tag",
+      "title": "New Element",
+      "description": "Native element tag to add. Defaults to div.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "class_name",
+      "title": "Class",
+      "description": "Optional class token(s) placed on the new element.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "new_data_area",
+      "title": "New Data Area",
+      "description": "Optional data-area value placed on the new element.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "new_seat_id",
+      "title": "New Construction Seat ID",
+      "description": "Optional data-rab-seat address to place on the new/wrapper element so later Tools can target it exactly.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "dry_run",
+      "title": "Preview Only",
+      "description": "Return the deterministic edit plan without writing the file.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "create",
+    "target_type": "element",
+    "data_types": [
+      "component",
+      "file",
+      "path",
+      "element",
+      "class"
+    ],
+    "output": "edit-receipt",
+    "authority": "write"
+  }
+}

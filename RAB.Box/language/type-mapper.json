@@ -1,0 +1,8059 @@
+{
+  "version": "0.9.0-language",
+  "purpose": "Lexical candidate types only. This file does not assign final Magic Box seats. Grammar/order/context choose the seat.",
+  "entries": [
+    {
+      "lemma": "a",
+      "forms": [
+        "a"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "above",
+      "forms": [
+        "above"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "above"
+      ]
+    },
+    {
+      "lemma": "absent",
+      "forms": [
+        "absent"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "missing"
+      ]
+    },
+    {
+      "lemma": "abstract",
+      "forms": [
+        "abstract",
+        "abstracts",
+        "abstracted",
+        "abstracting"
+      ],
+      "types": [
+        "verb",
+        "noun",
+        "adjective"
+      ],
+      "senses": [
+        "generalize",
+        "hide-detail",
+        "extract-interface"
+      ]
+    },
+    {
+      "lemma": "across",
+      "forms": [
+        "across"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "across"
+      ]
+    },
+    {
+      "lemma": "active",
+      "forms": [
+        "active"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "active"
+      ]
+    },
+    {
+      "lemma": "add",
+      "forms": [
+        "add",
+        "adds",
+        "added",
+        "adding"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "create",
+        "attach",
+        "insert",
+        "include",
+        "increment"
+      ]
+    },
+    {
+      "lemma": "address",
+      "forms": [
+        "address",
+        "addresses"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "after",
+      "forms": [
+        "after"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "after"
+      ]
+    },
+    {
+      "lemma": "again",
+      "forms": [
+        "again"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "against",
+      "forms": [
+        "against"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "against"
+      ]
+    },
+    {
+      "lemma": "aggregate",
+      "forms": [
+        "aggregate",
+        "aggregates",
+        "aggregated",
+        "aggregating"
+      ],
+      "types": [
+        "verb",
+        "adjective"
+      ],
+      "senses": [
+        "measure"
+      ]
+    },
+    {
+      "lemma": "alias",
+      "forms": [
+        "alias",
+        "aliases"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "all",
+      "forms": [
+        "all"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "all"
+      ]
+    },
+    {
+      "lemma": "along",
+      "forms": [
+        "along"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "along"
+      ]
+    },
+    {
+      "lemma": "already",
+      "forms": [
+        "already"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "also",
+      "forms": [
+        "also"
+      ],
+      "types": [
+        "conjunction"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "although",
+      "forms": [
+        "although"
+      ],
+      "types": [
+        "conjunction"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "ambiguity",
+      "forms": [
+        "ambiguity",
+        "ambiguities"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "ambiguous",
+      "forms": [
+        "ambiguous"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "among",
+      "forms": [
+        "among",
+        "amongst"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "among"
+      ]
+    },
+    {
+      "lemma": "an",
+      "forms": [
+        "an"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "analyze",
+      "forms": [
+        "analyze",
+        "analyzes",
+        "analysed",
+        "analyzed",
+        "analyzing",
+        "analysing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "inspect"
+      ]
+    },
+    {
+      "lemma": "ancestor",
+      "forms": [
+        "ancestor",
+        "ancestors"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "and",
+      "forms": [
+        "and"
+      ],
+      "types": [
+        "conjunction"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "another",
+      "forms": [
+        "another"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "any",
+      "forms": [
+        "any"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "any"
+      ]
+    },
+    {
+      "lemma": "anyone",
+      "forms": [
+        "anyone",
+        "anybody"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "any"
+      ]
+    },
+    {
+      "lemma": "anything",
+      "forms": [
+        "anything"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "any"
+      ]
+    },
+    {
+      "lemma": "app",
+      "forms": [
+        "app",
+        "apps"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "append",
+      "forms": [
+        "append",
+        "appends",
+        "appended",
+        "appending"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "append"
+      ]
+    },
+    {
+      "lemma": "application",
+      "forms": [
+        "application",
+        "applications"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "apply",
+      "forms": [
+        "apply",
+        "applies",
+        "applied",
+        "applying"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "attach",
+        "apply"
+      ]
+    },
+    {
+      "lemma": "are",
+      "forms": [
+        "are"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "area",
+      "forms": [
+        "area",
+        "areas"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "around",
+      "forms": [
+        "around"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "wrap"
+      ]
+    },
+    {
+      "lemma": "as",
+      "forms": [
+        "as"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "as"
+      ]
+    },
+    {
+      "lemma": "at",
+      "forms": [
+        "at"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "at"
+      ]
+    },
+    {
+      "lemma": "atom",
+      "forms": [
+        "atom",
+        "atoms"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "attach",
+      "forms": [
+        "attach",
+        "attaches",
+        "attached",
+        "attaching"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "attach"
+      ]
+    },
+    {
+      "lemma": "attribute",
+      "forms": [
+        "attribute",
+        "attributes"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "audit",
+      "forms": [
+        "audit",
+        "audits"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "audit",
+      "forms": [
+        "audit",
+        "audits",
+        "audited",
+        "auditing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "inspect"
+      ]
+    },
+    {
+      "lemma": "automatically",
+      "forms": [
+        "automatically"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "bag",
+      "forms": [
+        "bag",
+        "bags"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "be",
+      "forms": [
+        "be",
+        "am",
+        "is",
+        "are",
+        "was",
+        "were",
+        "been",
+        "being"
+      ],
+      "types": [
+        "auxiliary"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "because",
+      "forms": [
+        "because"
+      ],
+      "types": [
+        "conjunction"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "before",
+      "forms": [
+        "before"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "before"
+      ]
+    },
+    {
+      "lemma": "behind",
+      "forms": [
+        "behind"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "behind"
+      ]
+    },
+    {
+      "lemma": "below",
+      "forms": [
+        "below"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "child-of"
+      ]
+    },
+    {
+      "lemma": "beneath",
+      "forms": [
+        "beneath"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "below"
+      ]
+    },
+    {
+      "lemma": "beside",
+      "forms": [
+        "beside"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "beside"
+      ]
+    },
+    {
+      "lemma": "between",
+      "forms": [
+        "between"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "between"
+      ]
+    },
+    {
+      "lemma": "beyond",
+      "forms": [
+        "beyond"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "beyond"
+      ]
+    },
+    {
+      "lemma": "bind",
+      "forms": [
+        "bind",
+        "binds",
+        "bound",
+        "binding"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "attach"
+      ]
+    },
+    {
+      "lemma": "blank",
+      "forms": [
+        "blank"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "empty"
+      ]
+    },
+    {
+      "lemma": "bootstrap",
+      "forms": [
+        "bootstrap",
+        "bootstraps",
+        "bootstrapped",
+        "bootstrapping"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "initialize",
+        "create",
+        "start"
+      ]
+    },
+    {
+      "lemma": "both",
+      "forms": [
+        "both"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "all"
+      ]
+    },
+    {
+      "lemma": "boundary",
+      "forms": [
+        "boundary",
+        "boundaries"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "boundary"
+      ]
+    },
+    {
+      "lemma": "brain",
+      "forms": [
+        "brain"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "brain"
+      ]
+    },
+    {
+      "lemma": "branch",
+      "forms": [
+        "branch",
+        "branches"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "broken",
+      "forms": [
+        "broken"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "invalid"
+      ]
+    },
+    {
+      "lemma": "build",
+      "forms": [
+        "build",
+        "builds",
+        "built",
+        "building"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "create",
+        "compile"
+      ]
+    },
+    {
+      "lemma": "but",
+      "forms": [
+        "but"
+      ],
+      "types": [
+        "conjunction"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "button",
+      "forms": [
+        "button",
+        "buttons"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "by",
+      "forms": [
+        "by"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "by"
+      ]
+    },
+    {
+      "lemma": "cache",
+      "forms": [
+        "cache",
+        "caches",
+        "cached",
+        "caching"
+      ],
+      "types": [
+        "noun",
+        "verb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "calculate",
+      "forms": [
+        "calculate",
+        "calculates",
+        "calculated",
+        "calculating"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "measure"
+      ]
+    },
+    {
+      "lemma": "call",
+      "forms": [
+        "call",
+        "calls"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "call",
+      "forms": [
+        "call",
+        "calls",
+        "called",
+        "calling"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "name",
+        "invoke"
+      ]
+    },
+    {
+      "lemma": "callback",
+      "forms": [
+        "callback",
+        "callbacks"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "called",
+      "forms": [
+        "called"
+      ],
+      "types": [
+        "binder"
+      ],
+      "senses": [
+        "name"
+      ]
+    },
+    {
+      "lemma": "can",
+      "forms": [
+        "can"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "can",
+      "forms": [
+        "can"
+      ],
+      "types": [
+        "auxiliary"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "cancel",
+      "forms": [
+        "cancel",
+        "cancels",
+        "cancelled",
+        "canceled",
+        "cancelling",
+        "canceling"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "cancel"
+      ]
+    },
+    {
+      "lemma": "candidate",
+      "forms": [
+        "candidate",
+        "candidates"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "cannot",
+      "forms": [
+        "cannot",
+        "can't"
+      ],
+      "types": [
+        "negation"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "capability",
+      "forms": [
+        "capability",
+        "capabilities"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "change",
+      "forms": [
+        "change",
+        "changes",
+        "changed",
+        "changing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "update",
+        "replace"
+      ]
+    },
+    {
+      "lemma": "chart",
+      "forms": [
+        "chart",
+        "charts"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "check",
+      "forms": [
+        "check",
+        "checks",
+        "checked",
+        "checking"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "inspect",
+        "verify"
+      ]
+    },
+    {
+      "lemma": "child",
+      "forms": [
+        "child",
+        "children"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "choose",
+      "forms": [
+        "choose",
+        "chooses",
+        "chose",
+        "chosen",
+        "choosing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "select"
+      ]
+    },
+    {
+      "lemma": "class",
+      "forms": [
+        "class"
+      ],
+      "types": [
+        "binder"
+      ],
+      "senses": [
+        "class"
+      ]
+    },
+    {
+      "lemma": "class",
+      "forms": [
+        "class",
+        "classes"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "classname",
+      "forms": [
+        "classname",
+        "classnames"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "clear",
+      "forms": [
+        "clear"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "unobstructed"
+      ]
+    },
+    {
+      "lemma": "clear",
+      "forms": [
+        "clear",
+        "clears",
+        "cleared",
+        "clearing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "empty",
+        "reset"
+      ]
+    },
+    {
+      "lemma": "clone",
+      "forms": [
+        "clone",
+        "clones",
+        "cloned",
+        "cloning"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "copy"
+      ]
+    },
+    {
+      "lemma": "code",
+      "forms": [
+        "code"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "collect",
+      "forms": [
+        "collect",
+        "collects",
+        "collected",
+        "collecting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "find"
+      ]
+    },
+    {
+      "lemma": "column",
+      "forms": [
+        "column",
+        "columns",
+        "col",
+        "cols"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "comment",
+      "forms": [
+        "comment",
+        "comments"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "commit",
+      "forms": [
+        "commit",
+        "commits",
+        "committed",
+        "committing"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "save",
+        "version-record",
+        "finalize"
+      ]
+    },
+    {
+      "lemma": "compare",
+      "forms": [
+        "compare",
+        "compares",
+        "compared",
+        "comparing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "inspect"
+      ]
+    },
+    {
+      "lemma": "complete",
+      "forms": [
+        "complete"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "complete"
+      ]
+    },
+    {
+      "lemma": "component",
+      "forms": [
+        "component",
+        "components"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "compute",
+      "forms": [
+        "compute",
+        "computes",
+        "computed",
+        "computing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "measure"
+      ]
+    },
+    {
+      "lemma": "concerning",
+      "forms": [
+        "concerning"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "about"
+      ]
+    },
+    {
+      "lemma": "config",
+      "forms": [
+        "config",
+        "configs",
+        "configuration",
+        "configurations"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "confirm",
+      "forms": [
+        "confirm",
+        "confirms",
+        "confirmed",
+        "confirming"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "confirm"
+      ]
+    },
+    {
+      "lemma": "conflict",
+      "forms": [
+        "conflict",
+        "conflicts"
+      ],
+      "types": [
+        "noun",
+        "verb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "construct",
+      "forms": [
+        "construct",
+        "constructs",
+        "constructed",
+        "constructing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "create"
+      ]
+    },
+    {
+      "lemma": "contain",
+      "forms": [
+        "contain",
+        "contains",
+        "contained",
+        "containing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "parent-of"
+      ]
+    },
+    {
+      "lemma": "container",
+      "forms": [
+        "container",
+        "containers"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "containerize",
+      "forms": [
+        "containerize",
+        "containerizes",
+        "containerized",
+        "containerizing",
+        "containerise",
+        "containerises",
+        "containerised",
+        "containerising"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "wrap",
+        "isolate",
+        "containerize"
+      ]
+    },
+    {
+      "lemma": "content",
+      "forms": [
+        "content"
+      ],
+      "types": [
+        "binder"
+      ],
+      "senses": [
+        "content"
+      ]
+    },
+    {
+      "lemma": "content",
+      "forms": [
+        "content",
+        "contents"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "content-security-policy",
+      "forms": [
+        "content-security-policy"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "content-security-policy"
+      ]
+    },
+    {
+      "lemma": "continue",
+      "forms": [
+        "continue",
+        "continues",
+        "continued",
+        "continuing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "continue"
+      ]
+    },
+    {
+      "lemma": "contract",
+      "forms": [
+        "contract",
+        "contracts"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "contrast",
+      "forms": [
+        "contrast",
+        "contrasts"
+      ],
+      "types": [
+        "noun",
+        "verb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "cookie",
+      "forms": [
+        "cookie",
+        "cookies"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "cookie"
+      ]
+    },
+    {
+      "lemma": "copy",
+      "forms": [
+        "copy",
+        "copies",
+        "copied",
+        "copying"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "copy"
+      ]
+    },
+    {
+      "lemma": "cors",
+      "forms": [
+        "cors"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "cors"
+      ]
+    },
+    {
+      "lemma": "could",
+      "forms": [
+        "could"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "could",
+      "forms": [
+        "could"
+      ],
+      "types": [
+        "auxiliary"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "count",
+      "forms": [
+        "count",
+        "counts"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "count",
+      "forms": [
+        "count",
+        "counts",
+        "counted",
+        "counting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "count"
+      ]
+    },
+    {
+      "lemma": "create",
+      "forms": [
+        "create",
+        "creates",
+        "created",
+        "creating"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "create"
+      ]
+    },
+    {
+      "lemma": "csp",
+      "forms": [
+        "csp"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "content-security-policy"
+      ]
+    },
+    {
+      "lemma": "css",
+      "forms": [
+        "css"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "css"
+      ]
+    },
+    {
+      "lemma": "css",
+      "forms": [
+        "css"
+      ],
+      "types": [
+        "domain-term"
+      ],
+      "senses": [
+        "css"
+      ]
+    },
+    {
+      "lemma": "current",
+      "forms": [
+        "current"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "current"
+      ]
+    },
+    {
+      "lemma": "data",
+      "forms": [
+        "data"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "database",
+      "forms": [
+        "database",
+        "databases"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "datatype",
+      "forms": [
+        "datatype",
+        "datatypes"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "decoder",
+      "forms": [
+        "decoder",
+        "decoders"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "decouple",
+      "forms": [
+        "decouple",
+        "decouples",
+        "decoupled",
+        "decoupling"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "detach",
+        "isolate",
+        "separate"
+      ]
+    },
+    {
+      "lemma": "dehydrate",
+      "forms": [
+        "dehydrate",
+        "dehydrates",
+        "dehydrated",
+        "dehydrating"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "extract",
+        "serialize",
+        "reduce"
+      ]
+    },
+    {
+      "lemma": "delete",
+      "forms": [
+        "delete",
+        "deletes",
+        "deleted",
+        "deleting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "delete"
+      ]
+    },
+    {
+      "lemma": "demo",
+      "forms": [
+        "demo",
+        "demos"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "depend",
+      "forms": [
+        "depend",
+        "depends",
+        "depended",
+        "depending"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "dependency"
+      ]
+    },
+    {
+      "lemma": "dependency",
+      "forms": [
+        "dependency",
+        "dependencies"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "deploy",
+      "forms": [
+        "deploy",
+        "deploys",
+        "deployed",
+        "deploying"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "release",
+        "transmit",
+        "publish"
+      ]
+    },
+    {
+      "lemma": "deprecate",
+      "forms": [
+        "deprecate",
+        "deprecates",
+        "deprecated",
+        "deprecating"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "mark-deprecated",
+        "discourage"
+      ]
+    },
+    {
+      "lemma": "derive",
+      "forms": [
+        "derive",
+        "derives",
+        "derived",
+        "deriving"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "inspect"
+      ]
+    },
+    {
+      "lemma": "descendant",
+      "forms": [
+        "descendant",
+        "descendants"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "description",
+      "forms": [
+        "description",
+        "descriptions"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "deserialize",
+      "forms": [
+        "deserialize",
+        "deserializes",
+        "deserialized",
+        "deserializing",
+        "deserialise",
+        "deserialises",
+        "deserialised",
+        "deserialising"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "decode",
+        "load",
+        "transform"
+      ]
+    },
+    {
+      "lemma": "destination",
+      "forms": [
+        "destination",
+        "destinations"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "destroy",
+      "forms": [
+        "destroy",
+        "destroys",
+        "destroyed",
+        "destroying"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "delete"
+      ]
+    },
+    {
+      "lemma": "detach",
+      "forms": [
+        "detach",
+        "detaches",
+        "detached",
+        "detaching"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "detach"
+      ]
+    },
+    {
+      "lemma": "determine",
+      "forms": [
+        "determine",
+        "determines",
+        "determined",
+        "determining"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "determine"
+      ]
+    },
+    {
+      "lemma": "deterministic",
+      "forms": [
+        "deterministic"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "deterministic"
+      ]
+    },
+    {
+      "lemma": "diff",
+      "forms": [
+        "diff",
+        "diffs",
+        "diffed",
+        "diffing"
+      ],
+      "types": [
+        "noun",
+        "verb"
+      ],
+      "senses": [
+        "contrast",
+        "inspect"
+      ]
+    },
+    {
+      "lemma": "directory",
+      "forms": [
+        "directory",
+        "directories"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "display",
+      "forms": [
+        "display",
+        "displays",
+        "displayed",
+        "displaying"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "display"
+      ]
+    },
+    {
+      "lemma": "div",
+      "forms": [
+        "div",
+        "divs"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "do",
+      "forms": [
+        "do"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "do",
+      "forms": [
+        "do",
+        "does",
+        "did",
+        "doing"
+      ],
+      "types": [
+        "auxiliary"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "does",
+      "forms": [
+        "does"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "dont",
+      "forms": [
+        "dont",
+        "don't"
+      ],
+      "types": [
+        "negation"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "duplicate",
+      "forms": [
+        "duplicate",
+        "duplicated"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "duplicate"
+      ]
+    },
+    {
+      "lemma": "during",
+      "forms": [
+        "during"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "during"
+      ]
+    },
+    {
+      "lemma": "each",
+      "forms": [
+        "each"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "all"
+      ]
+    },
+    {
+      "lemma": "earlier",
+      "forms": [
+        "earlier"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "edit",
+      "forms": [
+        "edit",
+        "edits",
+        "edited",
+        "editing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "update"
+      ]
+    },
+    {
+      "lemma": "effect",
+      "forms": [
+        "effect",
+        "effects"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "effect-hooks",
+      "forms": [
+        "effect-hooks"
+      ],
+      "types": [
+        "domain-term",
+        "reserved"
+      ],
+      "senses": [
+        "effect-hook"
+      ]
+    },
+    {
+      "lemma": "either",
+      "forms": [
+        "either"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "element",
+      "forms": [
+        "element",
+        "elements"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "empty",
+      "forms": [
+        "empty"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "empty"
+      ]
+    },
+    {
+      "lemma": "erase",
+      "forms": [
+        "erase",
+        "erases",
+        "erased",
+        "erasing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "delete"
+      ]
+    },
+    {
+      "lemma": "event",
+      "forms": [
+        "event",
+        "events"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "every",
+      "forms": [
+        "every"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "all"
+      ]
+    },
+    {
+      "lemma": "everyone",
+      "forms": [
+        "everyone",
+        "everybody"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "all"
+      ]
+    },
+    {
+      "lemma": "everything",
+      "forms": [
+        "everything"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "all"
+      ]
+    },
+    {
+      "lemma": "exact",
+      "forms": [
+        "exact"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "exact"
+      ]
+    },
+    {
+      "lemma": "example",
+      "forms": [
+        "example",
+        "examples"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "except",
+      "forms": [
+        "except"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "except"
+      ]
+    },
+    {
+      "lemma": "execute",
+      "forms": [
+        "execute",
+        "executes",
+        "executed",
+        "executing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "execute"
+      ]
+    },
+    {
+      "lemma": "exist",
+      "forms": [
+        "exist",
+        "exists",
+        "existed",
+        "existing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "exist"
+      ]
+    },
+    {
+      "lemma": "existing",
+      "forms": [
+        "existing"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "existing"
+      ]
+    },
+    {
+      "lemma": "export",
+      "forms": [
+        "export",
+        "exports"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "export",
+      "forms": [
+        "export",
+        "exports",
+        "exported",
+        "exporting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "export"
+      ]
+    },
+    {
+      "lemma": "exported",
+      "forms": [
+        "exported"
+      ],
+      "types": [
+        "domain-term"
+      ],
+      "senses": [
+        "exported"
+      ]
+    },
+    {
+      "lemma": "fail",
+      "forms": [
+        "fail",
+        "fails",
+        "failed",
+        "failing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "fail"
+      ]
+    },
+    {
+      "lemma": "failure",
+      "forms": [
+        "failure",
+        "failures"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "fetch",
+      "forms": [
+        "fetch",
+        "fetches",
+        "fetched",
+        "fetching"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "retrieve",
+        "inspect"
+      ]
+    },
+    {
+      "lemma": "few",
+      "forms": [
+        "few"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "some"
+      ]
+    },
+    {
+      "lemma": "field",
+      "forms": [
+        "field",
+        "fields"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "file",
+      "forms": [
+        "file",
+        "files"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "filter",
+      "forms": [
+        "filter",
+        "filters",
+        "filtered",
+        "filtering"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "find"
+      ]
+    },
+    {
+      "lemma": "finally",
+      "forms": [
+        "finally"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "find",
+      "forms": [
+        "find",
+        "finds",
+        "found",
+        "finding"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "find"
+      ]
+    },
+    {
+      "lemma": "fire",
+      "forms": [
+        "fire",
+        "fires",
+        "fired",
+        "firing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "execute"
+      ]
+    },
+    {
+      "lemma": "first",
+      "forms": [
+        "first",
+        "firstly"
+      ],
+      "types": [
+        "adverb",
+        "quantifier"
+      ],
+      "senses": [
+        "one"
+      ]
+    },
+    {
+      "lemma": "folder",
+      "forms": [
+        "folder",
+        "folders"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "footer",
+      "forms": [
+        "footer",
+        "footers"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "for",
+      "forms": [
+        "for"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "for"
+      ]
+    },
+    {
+      "lemma": "form",
+      "forms": [
+        "form",
+        "forms"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "from",
+      "forms": [
+        "from"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "from"
+      ]
+    },
+    {
+      "lemma": "full",
+      "forms": [
+        "full"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "all"
+      ]
+    },
+    {
+      "lemma": "function",
+      "forms": [
+        "function",
+        "functions"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "gather",
+      "forms": [
+        "gather",
+        "gathers",
+        "gathered",
+        "gathering"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "find"
+      ]
+    },
+    {
+      "lemma": "generate",
+      "forms": [
+        "generate",
+        "generates",
+        "generated",
+        "generating"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "create"
+      ]
+    },
+    {
+      "lemma": "get",
+      "forms": [
+        "get",
+        "gets",
+        "got",
+        "getting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "find",
+        "retrieve"
+      ]
+    },
+    {
+      "lemma": "give",
+      "forms": [
+        "give",
+        "gives",
+        "gave",
+        "given",
+        "giving"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "create",
+        "provide"
+      ]
+    },
+    {
+      "lemma": "global",
+      "forms": [
+        "global"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "global"
+      ]
+    },
+    {
+      "lemma": "globally",
+      "forms": [
+        "globally"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "go",
+      "forms": [
+        "go",
+        "goes",
+        "went",
+        "going"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "navigate"
+      ]
+    },
+    {
+      "lemma": "got",
+      "forms": [
+        "got"
+      ],
+      "types": [
+        "polite"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "grammar",
+      "forms": [
+        "grammar",
+        "grammars"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "grid",
+      "forms": [
+        "grid",
+        "grids"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "group",
+      "forms": [
+        "group",
+        "groups"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "guard",
+      "forms": [
+        "guard",
+        "guards"
+      ],
+      "types": [
+        "noun",
+        "verb"
+      ],
+      "senses": [
+        "guard"
+      ]
+    },
+    {
+      "lemma": "have",
+      "forms": [
+        "have",
+        "has",
+        "had",
+        "having"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "possess"
+      ]
+    },
+    {
+      "lemma": "have",
+      "forms": [
+        "have",
+        "has",
+        "had",
+        "having"
+      ],
+      "types": [
+        "auxiliary"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "he",
+      "forms": [
+        "he"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "header",
+      "forms": [
+        "header",
+        "headers"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "her",
+      "forms": [
+        "her"
+      ],
+      "types": [
+        "pronoun",
+        "possessive"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "here",
+      "forms": [
+        "here"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "hers",
+      "forms": [
+        "hers"
+      ],
+      "types": [
+        "possessive"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "him",
+      "forms": [
+        "him"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "his",
+      "forms": [
+        "his"
+      ],
+      "types": [
+        "possessive"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "history",
+      "forms": [
+        "history",
+        "histories"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "home",
+      "forms": [
+        "home",
+        "homes"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "homepage",
+      "forms": [
+        "homepage",
+        "homepages"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "hook",
+      "forms": [
+        "hook",
+        "hooks"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "how",
+      "forms": [
+        "how"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "html",
+      "forms": [
+        "html"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "html"
+      ]
+    },
+    {
+      "lemma": "html",
+      "forms": [
+        "html"
+      ],
+      "types": [
+        "domain-term"
+      ],
+      "senses": [
+        "html"
+      ]
+    },
+    {
+      "lemma": "http",
+      "forms": [
+        "http"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "http"
+      ]
+    },
+    {
+      "lemma": "hydrate",
+      "forms": [
+        "hydrate",
+        "hydrates",
+        "hydrated",
+        "hydrating"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "populate",
+        "restore",
+        "initialize"
+      ]
+    },
+    {
+      "lemma": "i",
+      "forms": [
+        "i"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "speaker"
+      ]
+    },
+    {
+      "lemma": "icon",
+      "forms": [
+        "icon",
+        "icons"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "id",
+      "forms": [
+        "id",
+        "ids"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "image",
+      "forms": [
+        "image",
+        "images"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "import",
+      "forms": [
+        "import",
+        "imports"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "import",
+      "forms": [
+        "import",
+        "imports",
+        "imported",
+        "importing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "import"
+      ]
+    },
+    {
+      "lemma": "imported",
+      "forms": [
+        "imported"
+      ],
+      "types": [
+        "domain-term"
+      ],
+      "senses": [
+        "imported"
+      ]
+    },
+    {
+      "lemma": "in",
+      "forms": [
+        "in"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "inside",
+        "scope"
+      ]
+    },
+    {
+      "lemma": "inactive",
+      "forms": [
+        "inactive"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "inactive"
+      ]
+    },
+    {
+      "lemma": "inbound",
+      "forms": [
+        "inbound"
+      ],
+      "types": [
+        "domain-term"
+      ],
+      "senses": [
+        "inbound"
+      ]
+    },
+    {
+      "lemma": "include",
+      "forms": [
+        "include",
+        "includes",
+        "included",
+        "including"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "include"
+      ]
+    },
+    {
+      "lemma": "index",
+      "forms": [
+        "index",
+        "indexes",
+        "indices"
+      ],
+      "types": [
+        "noun",
+        "verb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "ingest",
+      "forms": [
+        "ingest",
+        "ingests",
+        "ingested",
+        "ingesting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "import",
+        "load",
+        "consume"
+      ]
+    },
+    {
+      "lemma": "initialize",
+      "forms": [
+        "initialize",
+        "initializes",
+        "initialized",
+        "initializing",
+        "initialise",
+        "initialises",
+        "initialised",
+        "initialising"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "create"
+      ]
+    },
+    {
+      "lemma": "input",
+      "forms": [
+        "input",
+        "inputs"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "insert",
+      "forms": [
+        "insert",
+        "inserts",
+        "inserted",
+        "inserting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "insert"
+      ]
+    },
+    {
+      "lemma": "inside",
+      "forms": [
+        "inside"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "inside"
+      ]
+    },
+    {
+      "lemma": "inspect",
+      "forms": [
+        "inspect",
+        "inspects",
+        "inspected",
+        "inspecting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "inspect"
+      ]
+    },
+    {
+      "lemma": "instantiate",
+      "forms": [
+        "instantiate",
+        "instantiates",
+        "instantiated",
+        "instantiating"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "create"
+      ]
+    },
+    {
+      "lemma": "instead",
+      "forms": [
+        "instead"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "intercept",
+      "forms": [
+        "intercept",
+        "intercepts",
+        "intercepted",
+        "intercepting"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "catch",
+        "capture",
+        "interrupt"
+      ]
+    },
+    {
+      "lemma": "into",
+      "forms": [
+        "into"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "inside"
+      ]
+    },
+    {
+      "lemma": "invalid",
+      "forms": [
+        "invalid"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "invalid"
+      ]
+    },
+    {
+      "lemma": "invalidate",
+      "forms": [
+        "invalidate",
+        "invalidates",
+        "invalidated",
+        "invalidating"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "mark-invalid",
+        "expire"
+      ]
+    },
+    {
+      "lemma": "is",
+      "forms": [
+        "is"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "it",
+      "forms": [
+        "it"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "current"
+      ]
+    },
+    {
+      "lemma": "its",
+      "forms": [
+        "its"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "javascript",
+      "forms": [
+        "javascript"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "javascript"
+      ]
+    },
+    {
+      "lemma": "json",
+      "forms": [
+        "json"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "jsx",
+      "forms": [
+        "jsx"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "jsx"
+      ]
+    },
+    {
+      "lemma": "jsx",
+      "forms": [
+        "jsx"
+      ],
+      "types": [
+        "domain-term"
+      ],
+      "senses": [
+        "jsx"
+      ]
+    },
+    {
+      "lemma": "just",
+      "forms": [
+        "just"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "jwt",
+      "forms": [
+        "jwt"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "jwt"
+      ]
+    },
+    {
+      "lemma": "known",
+      "forms": [
+        "known"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "known"
+      ]
+    },
+    {
+      "lemma": "last",
+      "forms": [
+        "last"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "previous"
+      ]
+    },
+    {
+      "lemma": "later",
+      "forms": [
+        "later"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "layout",
+      "forms": [
+        "layout",
+        "layouts"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "leverage",
+      "forms": [
+        "leverage",
+        "leverages",
+        "leveraged",
+        "leveraging"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "use",
+        "apply"
+      ]
+    },
+    {
+      "lemma": "linguistic",
+      "forms": [
+        "linguistic",
+        "linguistics"
+      ],
+      "types": [
+        "adjective",
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "link",
+      "forms": [
+        "link",
+        "links",
+        "linked",
+        "linking"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "attach"
+      ]
+    },
+    {
+      "lemma": "list",
+      "forms": [
+        "list",
+        "lists"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "list",
+      "forms": [
+        "list",
+        "lists",
+        "listed",
+        "listing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "find",
+        "list"
+      ]
+    },
+    {
+      "lemma": "literal",
+      "forms": [
+        "literal",
+        "literals"
+      ],
+      "types": [
+        "noun",
+        "adjective"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "local",
+      "forms": [
+        "local"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "local"
+      ]
+    },
+    {
+      "lemma": "locally",
+      "forms": [
+        "locally"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "locate",
+      "forms": [
+        "locate",
+        "locates",
+        "located",
+        "locating"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "find"
+      ]
+    },
+    {
+      "lemma": "location",
+      "forms": [
+        "location"
+      ],
+      "types": [
+        "binder"
+      ],
+      "senses": [
+        "path"
+      ]
+    },
+    {
+      "lemma": "lockfile",
+      "forms": [
+        "lockfile",
+        "lockfiles"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "lockfile"
+      ]
+    },
+    {
+      "lemma": "log",
+      "forms": [
+        "log",
+        "logs",
+        "logged",
+        "logging"
+      ],
+      "types": [
+        "noun",
+        "verb"
+      ],
+      "senses": [
+        "history",
+        "report",
+        "record"
+      ]
+    },
+    {
+      "lemma": "make",
+      "forms": [
+        "make",
+        "makes",
+        "made",
+        "making"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "create",
+        "cause"
+      ]
+    },
+    {
+      "lemma": "malformed",
+      "forms": [
+        "malformed"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "invalid"
+      ]
+    },
+    {
+      "lemma": "mandatory",
+      "forms": [
+        "mandatory"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "required"
+      ]
+    },
+    {
+      "lemma": "manifest",
+      "forms": [
+        "manifest",
+        "manifests"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "manually",
+      "forms": [
+        "manually"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "many",
+      "forms": [
+        "many"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "many"
+      ]
+    },
+    {
+      "lemma": "match",
+      "forms": [
+        "match",
+        "matches",
+        "matched",
+        "matching"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "find"
+      ]
+    },
+    {
+      "lemma": "may",
+      "forms": [
+        "may"
+      ],
+      "types": [
+        "auxiliary"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "maybe",
+      "forms": [
+        "maybe"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "me",
+      "forms": [
+        "me"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "speaker"
+      ]
+    },
+    {
+      "lemma": "measure",
+      "forms": [
+        "measure",
+        "measures",
+        "measured",
+        "measuring"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "measure"
+      ]
+    },
+    {
+      "lemma": "memory",
+      "forms": [
+        "memory",
+        "memories"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "menu",
+      "forms": [
+        "menu",
+        "menus"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "method",
+      "forms": [
+        "method",
+        "methods"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "metric",
+      "forms": [
+        "metric",
+        "metrics"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "might",
+      "forms": [
+        "might"
+      ],
+      "types": [
+        "auxiliary"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "mine",
+      "forms": [
+        "mine"
+      ],
+      "types": [
+        "possessive"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "minify",
+      "forms": [
+        "minify",
+        "minifies",
+        "minified",
+        "minifying"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "reduce",
+        "compress"
+      ]
+    },
+    {
+      "lemma": "missing",
+      "forms": [
+        "missing"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "missing"
+      ]
+    },
+    {
+      "lemma": "mock",
+      "forms": [
+        "mock",
+        "mocks",
+        "mocked",
+        "mocking"
+      ],
+      "types": [
+        "verb",
+        "noun",
+        "adjective"
+      ],
+      "senses": [
+        "simulate",
+        "substitute",
+        "test-double"
+      ]
+    },
+    {
+      "lemma": "modify",
+      "forms": [
+        "modify",
+        "modifies",
+        "modified",
+        "modifying"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "update"
+      ]
+    },
+    {
+      "lemma": "mount",
+      "forms": [
+        "mount",
+        "mounts",
+        "mounted",
+        "mounting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "attach"
+      ]
+    },
+    {
+      "lemma": "move",
+      "forms": [
+        "move",
+        "moves",
+        "moved",
+        "moving"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "move"
+      ]
+    },
+    {
+      "lemma": "must",
+      "forms": [
+        "must"
+      ],
+      "types": [
+        "auxiliary"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "my",
+      "forms": [
+        "my"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "name",
+      "forms": [
+        "name"
+      ],
+      "types": [
+        "binder"
+      ],
+      "senses": [
+        "name"
+      ]
+    },
+    {
+      "lemma": "name",
+      "forms": [
+        "name",
+        "names"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "name",
+      "forms": [
+        "name",
+        "names",
+        "named",
+        "naming"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "name",
+        "rename"
+      ]
+    },
+    {
+      "lemma": "named",
+      "forms": [
+        "named"
+      ],
+      "types": [
+        "binder"
+      ],
+      "senses": [
+        "name"
+      ]
+    },
+    {
+      "lemma": "near",
+      "forms": [
+        "near"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "near"
+      ]
+    },
+    {
+      "lemma": "need",
+      "forms": [
+        "need",
+        "needs",
+        "needed",
+        "needing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "require"
+      ]
+    },
+    {
+      "lemma": "neither",
+      "forms": [
+        "neither"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "nest",
+      "forms": [
+        "nest",
+        "nests",
+        "nested",
+        "nesting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "insert",
+        "child-of"
+      ]
+    },
+    {
+      "lemma": "nested",
+      "forms": [
+        "nested"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "nested"
+      ]
+    },
+    {
+      "lemma": "network",
+      "forms": [
+        "network",
+        "networks"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "network"
+      ]
+    },
+    {
+      "lemma": "never",
+      "forms": [
+        "never"
+      ],
+      "types": [
+        "negation"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "new",
+      "forms": [
+        "new"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "new"
+      ]
+    },
+    {
+      "lemma": "next",
+      "forms": [
+        "next"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "next"
+      ]
+    },
+    {
+      "lemma": "next",
+      "forms": [
+        "next"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "no",
+      "forms": [
+        "no"
+      ],
+      "types": [
+        "negation"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "no",
+      "forms": [
+        "no"
+      ],
+      "types": [
+        "polite"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "nobody",
+      "forms": [
+        "nobody",
+        "no-one",
+        "noone"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "none"
+      ]
+    },
+    {
+      "lemma": "node",
+      "forms": [
+        "node",
+        "nodes"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "none",
+      "forms": [
+        "none"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "none"
+      ]
+    },
+    {
+      "lemma": "nor",
+      "forms": [
+        "nor"
+      ],
+      "types": [
+        "conjunction"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "normalize",
+      "forms": [
+        "normalize",
+        "normalizes",
+        "normalized",
+        "normalizing",
+        "normalise",
+        "normalises",
+        "normalised",
+        "normalising"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "update"
+      ]
+    },
+    {
+      "lemma": "not",
+      "forms": [
+        "not"
+      ],
+      "types": [
+        "negation"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "nothing",
+      "forms": [
+        "nothing"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "none"
+      ]
+    },
+    {
+      "lemma": "now",
+      "forms": [
+        "now"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "obfuscate",
+      "forms": [
+        "obfuscate",
+        "obfuscates",
+        "obfuscated",
+        "obfuscating"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "hide",
+        "obscure",
+        "transform"
+      ]
+    },
+    {
+      "lemma": "observability",
+      "forms": [
+        "observability"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "inspectability",
+        "monitoring"
+      ]
+    },
+    {
+      "lemma": "of",
+      "forms": [
+        "of"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "of"
+      ]
+    },
+    {
+      "lemma": "off",
+      "forms": [
+        "off"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "from"
+      ]
+    },
+    {
+      "lemma": "okay",
+      "forms": [
+        "okay",
+        "ok"
+      ],
+      "types": [
+        "polite"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "on",
+      "forms": [
+        "on"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "on"
+      ]
+    },
+    {
+      "lemma": "one",
+      "forms": [
+        "one"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "one"
+      ]
+    },
+    {
+      "lemma": "one",
+      "forms": [
+        "one"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "current"
+      ]
+    },
+    {
+      "lemma": "ones",
+      "forms": [
+        "ones"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "plural-current"
+      ]
+    },
+    {
+      "lemma": "only",
+      "forms": [
+        "only"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "onto",
+      "forms": [
+        "onto"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "on"
+      ]
+    },
+    {
+      "lemma": "open",
+      "forms": [
+        "open",
+        "opens",
+        "opened",
+        "opening"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "select"
+      ]
+    },
+    {
+      "lemma": "optimize",
+      "forms": [
+        "optimize",
+        "optimizes",
+        "optimized",
+        "optimizing",
+        "optimise",
+        "optimises",
+        "optimised",
+        "optimising"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "improve",
+        "tune",
+        "reduce"
+      ]
+    },
+    {
+      "lemma": "option",
+      "forms": [
+        "option",
+        "options"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "optional",
+      "forms": [
+        "optional"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "optional"
+      ]
+    },
+    {
+      "lemma": "or",
+      "forms": [
+        "or"
+      ],
+      "types": [
+        "conjunction"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "orchestrate",
+      "forms": [
+        "orchestrate",
+        "orchestrates",
+        "orchestrated",
+        "orchestrating"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "coordinate",
+        "route",
+        "combine",
+        "manage"
+      ]
+    },
+    {
+      "lemma": "orphan",
+      "forms": [
+        "orphan"
+      ],
+      "types": [
+        "domain-term"
+      ],
+      "senses": [
+        "orphaned"
+      ]
+    },
+    {
+      "lemma": "orphaned",
+      "forms": [
+        "orphaned",
+        "orphan"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "orphaned"
+      ]
+    },
+    {
+      "lemma": "other",
+      "forms": [
+        "other"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "otherwise",
+      "forms": [
+        "otherwise"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "our",
+      "forms": [
+        "our"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "ours",
+      "forms": [
+        "ours"
+      ],
+      "types": [
+        "possessive"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "out",
+      "forms": [
+        "out"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "from"
+      ]
+    },
+    {
+      "lemma": "outbound",
+      "forms": [
+        "outbound"
+      ],
+      "types": [
+        "domain-term"
+      ],
+      "senses": [
+        "outbound"
+      ]
+    },
+    {
+      "lemma": "output",
+      "forms": [
+        "output",
+        "outputs"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "output",
+      "forms": [
+        "output",
+        "outputs",
+        "outputting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "return"
+      ]
+    },
+    {
+      "lemma": "outside",
+      "forms": [
+        "outside"
+      ],
+      "types": [
+        "preposition",
+        "adverb"
+      ],
+      "senses": [
+        "outside"
+      ]
+    },
+    {
+      "lemma": "over",
+      "forms": [
+        "over"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "above"
+      ]
+    },
+    {
+      "lemma": "own",
+      "forms": [
+        "own",
+        "owns",
+        "owned",
+        "owning"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "page",
+      "forms": [
+        "page",
+        "pages"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "parent",
+      "forms": [
+        "parent",
+        "parents"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "parse",
+      "forms": [
+        "parse",
+        "parses",
+        "parsed",
+        "parsing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "inspect"
+      ]
+    },
+    {
+      "lemma": "past",
+      "forms": [
+        "past"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "past"
+      ]
+    },
+    {
+      "lemma": "path",
+      "forms": [
+        "path"
+      ],
+      "types": [
+        "binder"
+      ],
+      "senses": [
+        "path"
+      ]
+    },
+    {
+      "lemma": "path",
+      "forms": [
+        "path",
+        "paths"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "perhaps",
+      "forms": [
+        "perhaps"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "phrase",
+      "forms": [
+        "phrase",
+        "phrases"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "pipeline",
+      "forms": [
+        "pipeline",
+        "pipelines",
+        "pipelined",
+        "pipelining"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "route",
+        "flow",
+        "pipeline"
+      ]
+    },
+    {
+      "lemma": "please",
+      "forms": [
+        "please"
+      ],
+      "types": [
+        "polite"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "plus",
+      "forms": [
+        "plus"
+      ],
+      "types": [
+        "conjunction"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "point",
+      "forms": [
+        "point",
+        "points",
+        "pointed",
+        "pointing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "reference"
+      ]
+    },
+    {
+      "lemma": "pollution",
+      "forms": [
+        "pollution"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "pollution"
+      ]
+    },
+    {
+      "lemma": "pool",
+      "forms": [
+        "pool",
+        "pools"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "predicate",
+      "forms": [
+        "predicate",
+        "predicates"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "preset",
+      "forms": [
+        "preset",
+        "presets"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "previous",
+      "forms": [
+        "previous"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "previous"
+      ]
+    },
+    {
+      "lemma": "profile",
+      "forms": [
+        "profile",
+        "profiles"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "project",
+      "forms": [
+        "project",
+        "projects"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "prop",
+      "forms": [
+        "prop",
+        "props"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "property",
+      "forms": [
+        "property",
+        "properties"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "prototype",
+      "forms": [
+        "prototype",
+        "prototypes"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "prototype"
+      ]
+    },
+    {
+      "lemma": "provenance",
+      "forms": [
+        "provenance"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "provision",
+      "forms": [
+        "provision",
+        "provisions",
+        "provisioned",
+        "provisioning"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "provide",
+        "allocate",
+        "initialize"
+      ]
+    },
+    {
+      "lemma": "pull",
+      "forms": [
+        "pull",
+        "pulls",
+        "pulled",
+        "pulling"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "retrieve",
+        "import",
+        "extract"
+      ]
+    },
+    {
+      "lemma": "pure",
+      "forms": [
+        "pure"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "read-only"
+      ]
+    },
+    {
+      "lemma": "push",
+      "forms": [
+        "push",
+        "pushes",
+        "pushed",
+        "pushing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "insert",
+        "export",
+        "transmit"
+      ]
+    },
+    {
+      "lemma": "quantifier",
+      "forms": [
+        "quantifier",
+        "quantifiers"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "rail",
+      "forms": [
+        "rail",
+        "rails"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "rank",
+      "forms": [
+        "rank",
+        "ranks",
+        "ranked",
+        "ranking"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "inspect"
+      ]
+    },
+    {
+      "lemma": "raw",
+      "forms": [
+        "raw"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "raw"
+      ]
+    },
+    {
+      "lemma": "react",
+      "forms": [
+        "react"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "react"
+      ]
+    },
+    {
+      "lemma": "react",
+      "forms": [
+        "react"
+      ],
+      "types": [
+        "domain-term"
+      ],
+      "senses": [
+        "react"
+      ]
+    },
+    {
+      "lemma": "read",
+      "forms": [
+        "read"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "read"
+      ]
+    },
+    {
+      "lemma": "readonly",
+      "forms": [
+        "readonly",
+        "read-only"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "read-only"
+      ]
+    },
+    {
+      "lemma": "rebuild",
+      "forms": [
+        "rebuild",
+        "rebuilds",
+        "rebuilt",
+        "rebuilding"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "create"
+      ]
+    },
+    {
+      "lemma": "receipt",
+      "forms": [
+        "receipt",
+        "receipts"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "record",
+      "forms": [
+        "record",
+        "records"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "recursive",
+      "forms": [
+        "recursive"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "recursive"
+      ]
+    },
+    {
+      "lemma": "recursively",
+      "forms": [
+        "recursively"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "refactor",
+      "forms": [
+        "refactor",
+        "refactors",
+        "refactored",
+        "refactoring"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "restructure",
+        "modify"
+      ]
+    },
+    {
+      "lemma": "reference",
+      "forms": [
+        "reference",
+        "references"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "reference",
+      "forms": [
+        "reference",
+        "references",
+        "referenced",
+        "referencing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "reference"
+      ]
+    },
+    {
+      "lemma": "referenced",
+      "forms": [
+        "referenced"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "referenced"
+      ]
+    },
+    {
+      "lemma": "refresh",
+      "forms": [
+        "refresh",
+        "refreshes",
+        "refreshed",
+        "refreshing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "update"
+      ]
+    },
+    {
+      "lemma": "regarding",
+      "forms": [
+        "regarding"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "about"
+      ]
+    },
+    {
+      "lemma": "register",
+      "forms": [
+        "register",
+        "registers",
+        "registered",
+        "registering"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "include"
+      ]
+    },
+    {
+      "lemma": "registered",
+      "forms": [
+        "registered"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "registered"
+      ]
+    },
+    {
+      "lemma": "regression",
+      "forms": [
+        "regression",
+        "regressions"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "relation",
+      "forms": [
+        "relation",
+        "relations"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "remove",
+      "forms": [
+        "remove",
+        "removes",
+        "removed",
+        "removing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "detach",
+        "delete"
+      ]
+    },
+    {
+      "lemma": "rename",
+      "forms": [
+        "rename",
+        "renames",
+        "renamed",
+        "renaming"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "rename"
+      ]
+    },
+    {
+      "lemma": "render",
+      "forms": [
+        "render",
+        "renders",
+        "rendered",
+        "rendering"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "display"
+      ]
+    },
+    {
+      "lemma": "repeated",
+      "forms": [
+        "repeated"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "duplicate"
+      ]
+    },
+    {
+      "lemma": "rephrase",
+      "forms": [
+        "rephrase",
+        "re-phrase"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "rephrase"
+      ]
+    },
+    {
+      "lemma": "replace",
+      "forms": [
+        "replace",
+        "replaces",
+        "replaced",
+        "replacing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "replace"
+      ]
+    },
+    {
+      "lemma": "report",
+      "forms": [
+        "report",
+        "reports"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "report",
+      "forms": [
+        "report",
+        "reports",
+        "reported",
+        "reporting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "find",
+        "report"
+      ]
+    },
+    {
+      "lemma": "require",
+      "forms": [
+        "require",
+        "requires",
+        "required",
+        "requiring"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "require"
+      ]
+    },
+    {
+      "lemma": "required",
+      "forms": [
+        "required"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "required"
+      ]
+    },
+    {
+      "lemma": "reset",
+      "forms": [
+        "reset",
+        "resets",
+        "resetting"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "delete"
+      ]
+    },
+    {
+      "lemma": "resolve",
+      "forms": [
+        "resolve",
+        "resolves",
+        "resolved",
+        "resolving"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "find"
+      ]
+    },
+    {
+      "lemma": "result",
+      "forms": [
+        "result",
+        "results"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "resume",
+      "forms": [
+        "resume",
+        "resumes",
+        "resumed",
+        "resuming"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "continue"
+      ]
+    },
+    {
+      "lemma": "return",
+      "forms": [
+        "return",
+        "returns",
+        "returned",
+        "returning"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "return"
+      ]
+    },
+    {
+      "lemma": "review",
+      "forms": [
+        "review",
+        "reviews",
+        "reviewed",
+        "reviewing"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "inspect"
+      ]
+    },
+    {
+      "lemma": "root",
+      "forms": [
+        "root",
+        "roots"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "route",
+      "forms": [
+        "route",
+        "routes"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "row",
+      "forms": [
+        "row",
+        "rows"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "run",
+      "forms": [
+        "run",
+        "runs"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "run",
+      "forms": [
+        "run",
+        "runs",
+        "ran",
+        "running"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "execute"
+      ]
+    },
+    {
+      "lemma": "save",
+      "forms": [
+        "save",
+        "saves",
+        "saved",
+        "saving"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "save"
+      ]
+    },
+    {
+      "lemma": "scaffold",
+      "forms": [
+        "scaffold",
+        "scaffolds",
+        "scaffolded",
+        "scaffolding"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "create"
+      ]
+    },
+    {
+      "lemma": "scale",
+      "forms": [
+        "scale",
+        "scales",
+        "scaled",
+        "scaling"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "resize",
+        "measure",
+        "expand",
+        "reduce"
+      ]
+    },
+    {
+      "lemma": "scan",
+      "forms": [
+        "scan",
+        "scans"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "scan",
+      "forms": [
+        "scan",
+        "scans",
+        "scanned",
+        "scanning"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "inspect"
+      ]
+    },
+    {
+      "lemma": "scope",
+      "forms": [
+        "scope",
+        "scopes"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "screen",
+      "forms": [
+        "screen",
+        "screens"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "script",
+      "forms": [
+        "script",
+        "scripts"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "seat",
+      "forms": [
+        "seat",
+        "seats"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "second",
+      "forms": [
+        "second",
+        "secondly"
+      ],
+      "types": [
+        "adverb",
+        "quantifier"
+      ],
+      "senses": [
+        "two"
+      ]
+    },
+    {
+      "lemma": "secret",
+      "forms": [
+        "secret",
+        "secrets"
+      ],
+      "types": [
+        "noun",
+        "adjective"
+      ],
+      "senses": [
+        "secret"
+      ]
+    },
+    {
+      "lemma": "section",
+      "forms": [
+        "section",
+        "sections"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "security",
+      "forms": [
+        "security"
+      ],
+      "types": [
+        "noun",
+        "adjective"
+      ],
+      "senses": [
+        "security"
+      ]
+    },
+    {
+      "lemma": "select",
+      "forms": [
+        "select",
+        "selects",
+        "selected",
+        "selecting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "select"
+      ]
+    },
+    {
+      "lemma": "semantic",
+      "forms": [
+        "semantic"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "semantic"
+      ]
+    },
+    {
+      "lemma": "separately",
+      "forms": [
+        "separately"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "serialize",
+      "forms": [
+        "serialize",
+        "serializes",
+        "serialized",
+        "serializing",
+        "serialise",
+        "serialises",
+        "serialised",
+        "serialising"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "encode",
+        "save",
+        "transform"
+      ]
+    },
+    {
+      "lemma": "session",
+      "forms": [
+        "session",
+        "sessions"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "set",
+      "forms": [
+        "set",
+        "sets",
+        "setting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "set",
+        "update"
+      ]
+    },
+    {
+      "lemma": "setting",
+      "forms": [
+        "setting",
+        "settings"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "several",
+      "forms": [
+        "several"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "some"
+      ]
+    },
+    {
+      "lemma": "she",
+      "forms": [
+        "she"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "should",
+      "forms": [
+        "should"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "should",
+      "forms": [
+        "should"
+      ],
+      "types": [
+        "auxiliary"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "show",
+      "forms": [
+        "show",
+        "shows",
+        "showed",
+        "shown",
+        "showing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "find",
+        "display"
+      ]
+    },
+    {
+      "lemma": "sibling",
+      "forms": [
+        "sibling",
+        "siblings"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "sidebar",
+      "forms": [
+        "sidebar",
+        "sidebars"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "since",
+      "forms": [
+        "since"
+      ],
+      "types": [
+        "preposition",
+        "conjunction"
+      ],
+      "senses": [
+        "since"
+      ]
+    },
+    {
+      "lemma": "site",
+      "forms": [
+        "site",
+        "sites"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "skeleton",
+      "forms": [
+        "skeleton"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "snapshot",
+      "forms": [
+        "snapshot",
+        "snapshots"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "so",
+      "forms": [
+        "so"
+      ],
+      "types": [
+        "conjunction",
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "some",
+      "forms": [
+        "some"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "some"
+      ]
+    },
+    {
+      "lemma": "someone",
+      "forms": [
+        "someone",
+        "somebody"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "some"
+      ]
+    },
+    {
+      "lemma": "something",
+      "forms": [
+        "something"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "some"
+      ]
+    },
+    {
+      "lemma": "source",
+      "forms": [
+        "source",
+        "sources"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "sourcemap",
+      "forms": [
+        "sourcemap",
+        "sourcemaps",
+        "source-map",
+        "source-maps"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "sourcemap"
+      ]
+    },
+    {
+      "lemma": "stack",
+      "forms": [
+        "stack",
+        "stacks"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "stage",
+      "forms": [
+        "stage",
+        "stages",
+        "staged",
+        "staging"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "include",
+        "prepare",
+        "interstitial-state"
+      ]
+    },
+    {
+      "lemma": "stamp",
+      "forms": [
+        "stamp",
+        "stamps"
+      ],
+      "types": [
+        "noun",
+        "verb"
+      ],
+      "senses": [
+        "create"
+      ]
+    },
+    {
+      "lemma": "standard",
+      "forms": [
+        "standard",
+        "standards"
+      ],
+      "types": [
+        "noun",
+        "adjective"
+      ],
+      "senses": [
+        "standard"
+      ]
+    },
+    {
+      "lemma": "start",
+      "forms": [
+        "start",
+        "starts",
+        "started",
+        "starting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "create",
+        "begin"
+      ]
+    },
+    {
+      "lemma": "state",
+      "forms": [
+        "state",
+        "states"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "state-hooks",
+      "forms": [
+        "state-hooks"
+      ],
+      "types": [
+        "domain-term",
+        "reserved"
+      ],
+      "senses": [
+        "state-hook"
+      ]
+    },
+    {
+      "lemma": "stateful",
+      "forms": [
+        "stateful"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "state"
+      ]
+    },
+    {
+      "lemma": "static",
+      "forms": [
+        "static"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "static"
+      ]
+    },
+    {
+      "lemma": "step",
+      "forms": [
+        "step",
+        "steps"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "still",
+      "forms": [
+        "still"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "stream",
+      "forms": [
+        "stream",
+        "streams",
+        "streamed",
+        "streaming"
+      ],
+      "types": [
+        "verb",
+        "noun"
+      ],
+      "senses": [
+        "transmit",
+        "flow",
+        "stream"
+      ]
+    },
+    {
+      "lemma": "stroke",
+      "forms": [
+        "stroke",
+        "strokes"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "style",
+      "forms": [
+        "style",
+        "styles"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "succeed",
+      "forms": [
+        "succeed",
+        "succeeds",
+        "succeeded",
+        "succeeding"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "succeed"
+      ]
+    },
+    {
+      "lemma": "success",
+      "forms": [
+        "success",
+        "successes"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "summarize",
+      "forms": [
+        "summarize",
+        "summarizes",
+        "summarized",
+        "summarizing",
+        "summarise",
+        "summarises",
+        "summarised",
+        "summarising"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "display"
+      ]
+    },
+    {
+      "lemma": "summary",
+      "forms": [
+        "summary",
+        "summaries"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "svg",
+      "forms": [
+        "svg",
+        "svgs"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "swap",
+      "forms": [
+        "swap",
+        "swaps",
+        "swapped",
+        "swapping"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "replace"
+      ]
+    },
+    {
+      "lemma": "switch",
+      "forms": [
+        "switch",
+        "switches",
+        "switched",
+        "switching"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "select",
+        "replace"
+      ]
+    },
+    {
+      "lemma": "table",
+      "forms": [
+        "table",
+        "tables"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "task",
+      "forms": [
+        "task",
+        "tasks"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "tcp",
+      "forms": [
+        "tcp"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "tcp"
+      ]
+    },
+    {
+      "lemma": "telemetry",
+      "forms": [
+        "telemetry"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "metrics",
+        "observations"
+      ]
+    },
+    {
+      "lemma": "tell",
+      "forms": [
+        "tell",
+        "tells",
+        "told",
+        "telling"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "request-output"
+      ]
+    },
+    {
+      "lemma": "test",
+      "forms": [
+        "test",
+        "tests"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "text",
+      "forms": [
+        "text"
+      ],
+      "types": [
+        "binder"
+      ],
+      "senses": [
+        "content"
+      ]
+    },
+    {
+      "lemma": "text",
+      "forms": [
+        "text",
+        "texts"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "thank",
+      "forms": [
+        "thank"
+      ],
+      "types": [
+        "polite"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "thanks",
+      "forms": [
+        "thanks"
+      ],
+      "types": [
+        "polite"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "that",
+      "forms": [
+        "that"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "that",
+      "forms": [
+        "that"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "current"
+      ]
+    },
+    {
+      "lemma": "the",
+      "forms": [
+        "the"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "their",
+      "forms": [
+        "their"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "theirs",
+      "forms": [
+        "theirs"
+      ],
+      "types": [
+        "possessive"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "them",
+      "forms": [
+        "them"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "plural-current"
+      ]
+    },
+    {
+      "lemma": "then",
+      "forms": [
+        "then"
+      ],
+      "types": [
+        "conjunction"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "then",
+      "forms": [
+        "then"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "there",
+      "forms": [
+        "there"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "these",
+      "forms": [
+        "these"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "these",
+      "forms": [
+        "these"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "plural-current"
+      ]
+    },
+    {
+      "lemma": "they",
+      "forms": [
+        "they"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "plural-current"
+      ]
+    },
+    {
+      "lemma": "this",
+      "forms": [
+        "this"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "this",
+      "forms": [
+        "this"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "current"
+      ]
+    },
+    {
+      "lemma": "those",
+      "forms": [
+        "those"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "those",
+      "forms": [
+        "those"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "plural-current"
+      ]
+    },
+    {
+      "lemma": "though",
+      "forms": [
+        "though"
+      ],
+      "types": [
+        "conjunction"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "three",
+      "forms": [
+        "three"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "three"
+      ]
+    },
+    {
+      "lemma": "through",
+      "forms": [
+        "through"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "through"
+      ]
+    },
+    {
+      "lemma": "title",
+      "forms": [
+        "title",
+        "titles"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "tls",
+      "forms": [
+        "tls"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "tls"
+      ]
+    },
+    {
+      "lemma": "to",
+      "forms": [
+        "to"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "to"
+      ]
+    },
+    {
+      "lemma": "together",
+      "forms": [
+        "together"
+      ],
+      "types": [
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "token",
+      "forms": [
+        "token",
+        "tokens"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "tool",
+      "forms": [
+        "tool",
+        "tools"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "topology",
+      "forms": [
+        "topology",
+        "topologies"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": [
+        "topology"
+      ]
+    },
+    {
+      "lemma": "toward",
+      "forms": [
+        "toward",
+        "towards"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "to"
+      ]
+    },
+    {
+      "lemma": "training",
+      "forms": [
+        "training"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "tree",
+      "forms": [
+        "tree",
+        "trees"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "tsx",
+      "forms": [
+        "tsx"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "tsx"
+      ]
+    },
+    {
+      "lemma": "tsx",
+      "forms": [
+        "tsx"
+      ],
+      "types": [
+        "domain-term"
+      ],
+      "senses": [
+        "tsx"
+      ]
+    },
+    {
+      "lemma": "turn",
+      "forms": [
+        "turn",
+        "turns"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "two",
+      "forms": [
+        "two"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "two"
+      ]
+    },
+    {
+      "lemma": "type",
+      "forms": [
+        "type"
+      ],
+      "types": [
+        "binder"
+      ],
+      "senses": [
+        "type"
+      ]
+    },
+    {
+      "lemma": "type",
+      "forms": [
+        "type",
+        "types"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "typescript",
+      "forms": [
+        "typescript"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "typescript"
+      ]
+    },
+    {
+      "lemma": "unbind",
+      "forms": [
+        "unbind",
+        "unbinds",
+        "unbound",
+        "unbinding"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "detach"
+      ]
+    },
+    {
+      "lemma": "under",
+      "forms": [
+        "under"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "child-of"
+      ]
+    },
+    {
+      "lemma": "underneath",
+      "forms": [
+        "underneath"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "below"
+      ]
+    },
+    {
+      "lemma": "unknown",
+      "forms": [
+        "unknown"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "unknown"
+      ]
+    },
+    {
+      "lemma": "unless",
+      "forms": [
+        "unless"
+      ],
+      "types": [
+        "conjunction"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "unlink",
+      "forms": [
+        "unlink",
+        "unlinks",
+        "unlinked",
+        "unlinking"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "detach"
+      ]
+    },
+    {
+      "lemma": "unmount",
+      "forms": [
+        "unmount",
+        "unmounts",
+        "unmounted",
+        "unmounting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "detach"
+      ]
+    },
+    {
+      "lemma": "unreferenced",
+      "forms": [
+        "unreferenced"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "orphaned"
+      ]
+    },
+    {
+      "lemma": "unregister",
+      "forms": [
+        "unregister",
+        "unregisters",
+        "unregistered",
+        "unregistering"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "detach"
+      ]
+    },
+    {
+      "lemma": "unresolved",
+      "forms": [
+        "unresolved"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "until",
+      "forms": [
+        "until",
+        "till"
+      ],
+      "types": [
+        "preposition",
+        "conjunction"
+      ],
+      "senses": [
+        "until"
+      ]
+    },
+    {
+      "lemma": "unused",
+      "forms": [
+        "unused"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "orphaned"
+      ]
+    },
+    {
+      "lemma": "update",
+      "forms": [
+        "update",
+        "updates",
+        "updated",
+        "updating"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "update"
+      ]
+    },
+    {
+      "lemma": "upon",
+      "forms": [
+        "upon"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "on"
+      ]
+    },
+    {
+      "lemma": "us",
+      "forms": [
+        "us"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "speaker+operator"
+      ]
+    },
+    {
+      "lemma": "use",
+      "forms": [
+        "use",
+        "uses",
+        "used",
+        "using"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "use",
+        "attach"
+      ]
+    },
+    {
+      "lemma": "use-effect",
+      "forms": [
+        "use-effect",
+        "useeffect",
+        "useEffect"
+      ],
+      "types": [
+        "domain-term",
+        "reserved"
+      ],
+      "senses": [
+        "effect-hook"
+      ]
+    },
+    {
+      "lemma": "use-state",
+      "forms": [
+        "use-state",
+        "usestate",
+        "useState"
+      ],
+      "types": [
+        "domain-term",
+        "reserved"
+      ],
+      "senses": [
+        "state-hook"
+      ]
+    },
+    {
+      "lemma": "using",
+      "forms": [
+        "using"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "with"
+      ]
+    },
+    {
+      "lemma": "valid",
+      "forms": [
+        "valid"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "valid"
+      ]
+    },
+    {
+      "lemma": "validate",
+      "forms": [
+        "validate",
+        "validates",
+        "validated",
+        "validating"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "verify"
+      ]
+    },
+    {
+      "lemma": "value",
+      "forms": [
+        "value",
+        "values"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "vanilla",
+      "forms": [
+        "vanilla"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "vanilla"
+      ]
+    },
+    {
+      "lemma": "verified",
+      "forms": [
+        "verified"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "verified"
+      ]
+    },
+    {
+      "lemma": "verify",
+      "forms": [
+        "verify",
+        "verifies",
+        "verified",
+        "verifying"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "verify"
+      ]
+    },
+    {
+      "lemma": "via",
+      "forms": [
+        "via"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "with"
+      ]
+    },
+    {
+      "lemma": "view",
+      "forms": [
+        "view",
+        "views"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "viewbox",
+      "forms": [
+        "viewbox",
+        "viewboxes"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "visual",
+      "forms": [
+        "visual"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "visual"
+      ]
+    },
+    {
+      "lemma": "want",
+      "forms": [
+        "want",
+        "wants",
+        "wanted",
+        "wanting"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "request"
+      ]
+    },
+    {
+      "lemma": "we",
+      "forms": [
+        "we"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "speaker+operator"
+      ]
+    },
+    {
+      "lemma": "what",
+      "forms": [
+        "what"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "whatever",
+      "forms": [
+        "whatever"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "when",
+      "forms": [
+        "when"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "where",
+      "forms": [
+        "where"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "whereas",
+      "forms": [
+        "whereas"
+      ],
+      "types": [
+        "conjunction"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "which",
+      "forms": [
+        "which"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "whichever",
+      "forms": [
+        "whichever"
+      ],
+      "types": [
+        "pronoun",
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "while",
+      "forms": [
+        "while"
+      ],
+      "types": [
+        "conjunction"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "who",
+      "forms": [
+        "who"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "whoever",
+      "forms": [
+        "whoever"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "whom",
+      "forms": [
+        "whom"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "whose",
+      "forms": [
+        "whose"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "why",
+      "forms": [
+        "why"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "will",
+      "forms": [
+        "will"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "will",
+      "forms": [
+        "will"
+      ],
+      "types": [
+        "auxiliary"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "with",
+      "forms": [
+        "with"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "with"
+      ]
+    },
+    {
+      "lemma": "within",
+      "forms": [
+        "within"
+      ],
+      "types": [
+        "preposition"
+      ],
+      "senses": [
+        "inside"
+      ]
+    },
+    {
+      "lemma": "without",
+      "forms": [
+        "without"
+      ],
+      "types": [
+        "negation"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "word",
+      "forms": [
+        "word",
+        "words"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "work",
+      "forms": [
+        "work",
+        "works",
+        "worked",
+        "working"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "succeed"
+      ]
+    },
+    {
+      "lemma": "workspace",
+      "forms": [
+        "workspace",
+        "workspaces"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "world",
+      "forms": [
+        "world",
+        "worlds"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "would",
+      "forms": [
+        "would"
+      ],
+      "types": [
+        "question"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "would",
+      "forms": [
+        "would"
+      ],
+      "types": [
+        "auxiliary"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "wrap",
+      "forms": [
+        "wrap",
+        "wraps",
+        "wrapped",
+        "wrapping"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "wrap",
+        "attach"
+      ]
+    },
+    {
+      "lemma": "wrapper",
+      "forms": [
+        "wrapper",
+        "wrappers"
+      ],
+      "types": [
+        "noun"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "writable",
+      "forms": [
+        "writable"
+      ],
+      "types": [
+        "adjective"
+      ],
+      "senses": [
+        "write"
+      ]
+    },
+    {
+      "lemma": "write",
+      "forms": [
+        "write",
+        "writes",
+        "wrote",
+        "written",
+        "writing"
+      ],
+      "types": [
+        "verb"
+      ],
+      "senses": [
+        "write"
+      ]
+    },
+    {
+      "lemma": "yeah",
+      "forms": [
+        "yeah"
+      ],
+      "types": [
+        "polite"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "yep",
+      "forms": [
+        "yep"
+      ],
+      "types": [
+        "polite"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "yes",
+      "forms": [
+        "yes"
+      ],
+      "types": [
+        "polite"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "yet",
+      "forms": [
+        "yet"
+      ],
+      "types": [
+        "conjunction",
+        "adverb"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "you",
+      "forms": [
+        "you"
+      ],
+      "types": [
+        "pronoun"
+      ],
+      "senses": [
+        "operator"
+      ]
+    },
+    {
+      "lemma": "your",
+      "forms": [
+        "your"
+      ],
+      "types": [
+        "determiner"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "yours",
+      "forms": [
+        "yours"
+      ],
+      "types": [
+        "possessive"
+      ],
+      "senses": []
+    },
+    {
+      "lemma": "zero",
+      "forms": [
+        "zero"
+      ],
+      "types": [
+        "quantifier"
+      ],
+      "senses": [
+        "none"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "text": "how many",
+      "types": [
+        "quantifier-phrase"
+      ],
+      "senses": [
+        "count-request"
+      ]
+    },
+    {
+      "text": "project root",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "project-root"
+      ]
+    },
+    {
+      "text": "current project",
+      "types": [
+        "reference-phrase"
+      ],
+      "senses": [
+        "current-project"
+      ]
+    },
+    {
+      "text": "current component",
+      "types": [
+        "reference-phrase"
+      ],
+      "senses": [
+        "current-component"
+      ]
+    },
+    {
+      "text": "the last one",
+      "types": [
+        "reference-phrase"
+      ],
+      "senses": [
+        "previous"
+      ]
+    },
+    {
+      "text": "what we just made",
+      "types": [
+        "reference-phrase"
+      ],
+      "senses": [
+        "previous-result"
+      ]
+    },
+    {
+      "text": "next to",
+      "types": [
+        "preposition-phrase"
+      ],
+      "senses": [
+        "beside"
+      ]
+    },
+    {
+      "text": "child of",
+      "types": [
+        "relation-phrase"
+      ],
+      "senses": [
+        "child-of"
+      ]
+    },
+    {
+      "text": "parent of",
+      "types": [
+        "relation-phrase"
+      ],
+      "senses": [
+        "parent-of"
+      ]
+    },
+    {
+      "text": "with class",
+      "types": [
+        "binder-phrase"
+      ],
+      "senses": [
+        "class"
+      ]
+    },
+    {
+      "text": "with atom",
+      "types": [
+        "binder-phrase"
+      ],
+      "senses": [
+        "atom-resource"
+      ]
+    },
+    {
+      "text": "using atom",
+      "types": [
+        "binder-phrase"
+      ],
+      "senses": [
+        "atom-resource"
+      ]
+    },
+    {
+      "text": "save to",
+      "types": [
+        "binder-phrase"
+      ],
+      "senses": [
+        "destination"
+      ]
+    },
+    {
+      "text": "save it to",
+      "types": [
+        "binder-phrase"
+      ],
+      "senses": [
+        "destination"
+      ]
+    },
+    {
+      "text": "do not",
+      "types": [
+        "negation-phrase"
+      ],
+      "senses": [
+        "deny"
+      ]
+    },
+    {
+      "text": "all of",
+      "types": [
+        "quantifier-phrase"
+      ],
+      "senses": [
+        "all"
+      ]
+    },
+    {
+      "text": "entire project",
+      "types": [
+        "scope-phrase"
+      ],
+      "senses": [
+        "current-project"
+      ]
+    },
+    {
+      "text": "whole project",
+      "types": [
+        "scope-phrase"
+      ],
+      "senses": [
+        "current-project"
+      ]
+    },
+    {
+      "text": "all children",
+      "types": [
+        "scope-phrase"
+      ],
+      "senses": [
+        "recursive"
+      ]
+    },
+    {
+      "text": "everything under",
+      "types": [
+        "scope-phrase"
+      ],
+      "senses": [
+        "recursive"
+      ]
+    },
+    {
+      "text": "state hooks",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "state-hook"
+      ]
+    },
+    {
+      "text": "effect hooks",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "effect-hook"
+      ]
+    },
+    {
+      "text": "file types",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "file-type"
+      ]
+    },
+    {
+      "text": "orphaned files",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "orphan-file"
+      ]
+    },
+    {
+      "text": "orphaned components",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "orphan-component"
+      ]
+    },
+    {
+      "text": "not imported",
+      "types": [
+        "predicate-phrase"
+      ],
+      "senses": [
+        "orphaned"
+      ]
+    },
+    {
+      "text": "nothing references",
+      "types": [
+        "predicate-phrase"
+      ],
+      "senses": [
+        "orphaned"
+      ]
+    },
+    {
+      "text": "no inbound references",
+      "types": [
+        "predicate-phrase"
+      ],
+      "senses": [
+        "orphaned"
+      ]
+    },
+    {
+      "text": "what kind",
+      "types": [
+        "question-phrase"
+      ],
+      "senses": [
+        "type-request"
+      ]
+    },
+    {
+      "text": "project folder",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "project-root"
+      ]
+    },
+    {
+      "text": "project name",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "project-name"
+      ]
+    },
+    {
+      "text": "audit folder",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "audit-root"
+      ]
+    },
+    {
+      "text": "working folder",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "working-root"
+      ]
+    },
+    {
+      "text": "folder to scan",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "scan-root"
+      ]
+    },
+    {
+      "text": "output folder",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "output-root"
+      ]
+    },
+    {
+      "text": "current target",
+      "types": [
+        "reference-phrase"
+      ],
+      "senses": [
+        "current-target"
+      ]
+    },
+    {
+      "text": "previous step",
+      "types": [
+        "reference-phrase"
+      ],
+      "senses": [
+        "previous-step"
+      ]
+    },
+    {
+      "text": "previous result",
+      "types": [
+        "reference-phrase"
+      ],
+      "senses": [
+        "previous-result"
+      ]
+    },
+    {
+      "text": "same project",
+      "types": [
+        "reference-phrase"
+      ],
+      "senses": [
+        "current-project"
+      ]
+    },
+    {
+      "text": "same folder",
+      "types": [
+        "reference-phrase"
+      ],
+      "senses": [
+        "current-folder"
+      ]
+    },
+    {
+      "text": "new group",
+      "types": [
+        "structure-phrase"
+      ],
+      "senses": [
+        "new-group"
+      ]
+    },
+    {
+      "text": "new session",
+      "types": [
+        "structure-phrase"
+      ],
+      "senses": [
+        "new-session"
+      ]
+    },
+    {
+      "text": "new project",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "new-project"
+      ]
+    },
+    {
+      "text": "add to",
+      "types": [
+        "verb-phrase"
+      ],
+      "senses": [
+        "attach-or-insert"
+      ]
+    },
+    {
+      "text": "remove from",
+      "types": [
+        "verb-phrase"
+      ],
+      "senses": [
+        "detach"
+      ]
+    },
+    {
+      "text": "wrap with",
+      "types": [
+        "verb-phrase"
+      ],
+      "senses": [
+        "wrap"
+      ]
+    },
+    {
+      "text": "save as text",
+      "types": [
+        "binder-phrase"
+      ],
+      "senses": [
+        "save-as-text"
+      ]
+    },
+    {
+      "text": "as text",
+      "types": [
+        "binder-phrase"
+      ],
+      "senses": [
+        "save-as-text"
+      ]
+    },
+    {
+      "text": "text file",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "text-file"
+      ]
+    },
+    {
+      "text": "parent path",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "parent-path"
+      ]
+    },
+    {
+      "text": "no longer",
+      "types": [
+        "negation-phrase"
+      ],
+      "senses": [
+        "negated-state"
+      ]
+    },
+    {
+      "text": "does not",
+      "types": [
+        "negation-phrase"
+      ],
+      "senses": [
+        "deny"
+      ]
+    },
+    {
+      "text": "cannot",
+      "types": [
+        "negation-phrase"
+      ],
+      "senses": [
+        "deny"
+      ]
+    },
+    {
+      "text": "can not",
+      "types": [
+        "negation-phrase"
+      ],
+      "senses": [
+        "deny"
+      ]
+    },
+    {
+      "text": "nothing imports",
+      "types": [
+        "predicate-phrase"
+      ],
+      "senses": [
+        "orphaned"
+      ]
+    },
+    {
+      "text": "not referenced",
+      "types": [
+        "predicate-phrase"
+      ],
+      "senses": [
+        "orphaned"
+      ]
+    },
+    {
+      "text": "not used",
+      "types": [
+        "predicate-phrase"
+      ],
+      "senses": [
+        "unused"
+      ]
+    },
+    {
+      "text": "scale up",
+      "types": [
+        "verb-phrase"
+      ],
+      "senses": [
+        "expand",
+        "increase"
+      ]
+    },
+    {
+      "text": "scale down",
+      "types": [
+        "verb-phrase"
+      ],
+      "senses": [
+        "reduce",
+        "decrease"
+      ]
+    },
+    {
+      "text": "deploy to",
+      "types": [
+        "verb-phrase"
+      ],
+      "senses": [
+        "release-to",
+        "transmit-to"
+      ]
+    },
+    {
+      "text": "stream from",
+      "types": [
+        "verb-phrase"
+      ],
+      "senses": [
+        "receive-stream",
+        "retrieve"
+      ]
+    },
+    {
+      "text": "stream to",
+      "types": [
+        "verb-phrase"
+      ],
+      "senses": [
+        "transmit-stream"
+      ]
+    },
+    {
+      "text": "hydrate with",
+      "types": [
+        "verb-phrase"
+      ],
+      "senses": [
+        "populate-with"
+      ]
+    },
+    {
+      "text": "decouple from",
+      "types": [
+        "verb-phrase"
+      ],
+      "senses": [
+        "detach",
+        "isolate"
+      ]
+    },
+    {
+      "text": "hot swap",
+      "types": [
+        "verb-phrase",
+        "noun-phrase"
+      ],
+      "senses": [
+        "replace-live"
+      ]
+    },
+    {
+      "text": "dry run",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "simulation",
+        "non-mutating-test"
+      ]
+    },
+    {
+      "text": "cold start",
+      "types": [
+        "noun-phrase"
+      ],
+      "senses": [
+        "fresh-start"
+      ]
+    },
+    {
+      "text": "tear down",
+      "types": [
+        "verb-phrase"
+      ],
+      "senses": [
+        "remove",
+        "decommission"
+      ]
+    },
+    {
+      "text": "spin up",
+      "types": [
+        "verb-phrase"
+      ],
+      "senses": [
+        "create",
+        "initialize",
+        "start"
+      ]
+    },
+    {
+      "text": "abstract away",
+      "types": [
+        "verb-phrase"
+      ],
+      "senses": [
+        "hide-detail",
+        "generalize"
+      ]
+    }
+  ],
+  "note": "Strict lexical candidate inventory. Words/phrases do not own final seats; grammar, order, Bag/context and known entities resolve each occurrence."
+}

@@ -1,0 +1,75 @@
+RRAABBIITT MAGIC BOX — v0.8 TOOL HOUSE REFACTOR
+===============================================
+
+STRUCTURE
+---------
+- One active Tool registry under tools/<domain>/<name>/.
+- Universal settings.json outer contract: id/name/title/description/settings/meta.
+- template/ mechanically defines a Stamp and requires a stamp-* name.
+- Removed old experimental tools/.../make|find|update hierarchy from the active Tool tree.
+
+SELF-SIMILAR AUTHORING
+----------------------
+- base/stamp-new-stamp uses the canonical tmpl.mjs + settings.json + nested template/ mold.
+- base/stamp-new-tool creates non-Stamp functional Tools.
+- base/stamp-new-key-phrase creates reviewed language phrase records.
+- base/check-tool verifies Tool visibility and description relation after creation.
+- new Tool/Stamp creation reports a post-create visibility check.
+- Workbench settings-type fields now have an Add input field builder.
+
+PROJECT HOUSE KEYS
+------------------
+- list-projects
+- find-project
+- load-project
+- view-chat-history
+- base/stamp-new-project -> type-specific stamp-new-project delegation.
+- React/HTML/Audit project Stamps materialize their own templates.
+
+DISCOVERY
+---------
+- find-tool scans real tools/**/settings.json files.
+- semantic request shape and Tool-description shape contribute to ranking.
+- hard conflicts eliminate candidates before ranking.
+- function prefix is an optional discovery constraint.
+- domain folders are hard direct-search boundaries.
+- read/look discovery can exclude every stamp-* capability.
+- singular/plural hook discovery is tested: find-hook vs find-hooks.
+
+CHAT
+----
+- Chat remains the primary operator Turn stream.
+- Live Tool Finder narrows candidates while typing.
+- A ready group now exposes Confirm & execute and YOLO directly in Chat.
+- Project conversation uses Tool-house list/load/project creation keys.
+
+RE-PHRASE
+---------
+- Dedicated Re-phrase tab invokes only base/re-phrase-check.
+- Example: re-phrase "this didn't work" -> "This failed."
+- Result is derived from lexical/type/sense/negation logic, not a whole-sentence lookup.
+
+AUDIT
+-----
+- Added normalized read-only Tool examples:
+    audit/find-files
+    audit/find-comments
+    audit/find-imports
+    audit/count-file-types
+- React hook Tools remain in react/ and are not leaked into audit direct discovery.
+
+LANGUAGE
+--------
+- Active mapper: 537 entries / 1,073 form occurrences / 1,003 unique forms / 57 phrases.
+- Reviewed key phrases are loaded by the seat parser.
+- Strict unknown handling remains; no spell correction.
+
+PERSISTENCE
+-----------
+- .rab versioned to v0.8 memory/session/failure records.
+- Project settings and PATHS snapshots remain provenance/memory, not replacement truth.
+
+COMPATIBILITY
+-------------
+- Existing engine, mock-project, sensors and legacy Workbench paths are retained while
+  equivalent Tool-house behavior is proven.

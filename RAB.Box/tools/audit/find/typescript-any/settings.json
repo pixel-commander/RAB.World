@@ -1,0 +1,30 @@
+{
+  "id": 1790000000960,
+  "name": "typescript-any",
+  "title": "Find TypeScript any Usage",
+  "description": "Finds common explicit any type escapes.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "typescript-any",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "syntax",
+    "config": {
+      "type": "ts-any"
+    }
+  }
+}

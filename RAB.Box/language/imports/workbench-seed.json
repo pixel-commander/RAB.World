@@ -1,0 +1,83 @@
+{
+  "format": "rraabbiitt-language-resource/v1",
+  "source": {
+    "name": "Original workbench seed; NOT downloaded NLTK data",
+    "url": "https://www.nltk.org/book/ch09.html",
+    "license": "Original example data supplied with this workbench. Source URL explains the feature-grammar approach, not the origin of these entries.",
+    "selection": "Six illustrative entries. No automatic execution mappings."
+  },
+  "entries": [
+    {
+      "id": "create-artifact",
+      "word": "make",
+      "part_of_speech": "verb",
+      "sense": "create-artifact",
+      "forms": [
+        "make",
+        "create"
+      ],
+      "definition": "Propose creating an artifact; actual capability is project-local.",
+      "examples": []
+    },
+    {
+      "id": "create-project",
+      "word": "build",
+      "part_of_speech": "verb",
+      "sense": "create-project",
+      "forms": [
+        "build",
+        "construct"
+      ],
+      "definition": "Construction sense. This is not the same as compiling existing source.",
+      "examples": []
+    },
+    {
+      "id": "compile-source",
+      "word": "build",
+      "part_of_speech": "verb",
+      "sense": "compile-source",
+      "forms": [
+        "build",
+        "compile"
+      ],
+      "definition": "Compilation sense; this prototype does not implement it as an automatic alias.",
+      "examples": []
+    },
+    {
+      "id": "artifact-name",
+      "word": "named",
+      "part_of_speech": "binder",
+      "sense": "artifact-name",
+      "forms": [
+        "named",
+        "called"
+      ],
+      "definition": "Bind a literal to a supported name seat. Preserve its case.",
+      "examples": []
+    },
+    {
+      "id": "project-root",
+      "word": "current project",
+      "part_of_speech": "reference",
+      "sense": "project-root",
+      "forms": [
+        "current project",
+        "here"
+      ],
+      "definition": "A project-scoped reference, not a global absolute path.",
+      "examples": []
+    },
+    {
+      "id": "deny-action",
+      "word": "not",
+      "part_of_speech": "negation",
+      "sense": "deny-action",
+      "forms": [
+        "not",
+        "don't"
+      ],
+      "definition": "Negation must not disappear while interpreting a request.",
+      "examples": []
+    }
+  ]
+}

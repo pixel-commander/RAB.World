@@ -1,0 +1,30 @@
+{
+  "id": 1800000000033,
+  "name": "host-network-mode",
+  "title": "Find Host Network Mode",
+  "description": "Finds container/process configuration using host network mode.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "host-network-mode",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "network_mode\\s*:\\s*[\\\"\\']?host\\b|--network(?:=|\\s+)host\\b",
+      "scope": "all",
+      "kind": "host-network-mode",
+      "heuristic": false,
+      "flags": "i"
+    }
+  }
+}

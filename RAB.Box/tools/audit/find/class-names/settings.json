@@ -1,0 +1,30 @@
+{
+  "id": 1790000000980,
+  "name": "class-names",
+  "title": "Find className/Class Usage",
+  "description": "Finds class-prefixed assignments in UTF-8 text files, splits literal values on whitespace, and marks unresolved dynamic expressions with bounded file/line evidence.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Folder to search recursively. Defaults to the loaded audit project's saved input folder.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "class-name",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "theme",
+    "config": {
+      "type": "class-names"
+    }
+  }
+}

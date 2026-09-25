@@ -1,0 +1,29 @@
+/* Optional --status-form-* overrides inherit from :root or a closer scope. */
+@layer components {
+  .status-form[data-grid='shell'] {
+    min-inline-size: 0;
+    min-block-size: 0;
+    overflow: hidden;
+    gap: var(--status-form-gap, var(--space-sm));
+  }
+
+  .status-form[data-grid='shell'] .status-form__header,
+  .status-form[data-grid='shell'] .status-form__footer {
+    padding: var(--status-form-chrome-padding, var(--space-sm));
+  }
+
+  .status-form[data-grid='shell'] .status-form__header:empty,
+  .status-form[data-grid='shell'] .status-form__footer:empty {
+    padding: 0;
+  }
+
+  .status-form[data-grid='shell'] .status-form__main {
+    min-block-size: 0;
+    overflow: auto;
+    padding: var(--status-form-main-padding, var(--space-lg));
+  }
+
+  .status-form[data-grid='shell'] .status-form-cell[hidden] { display: none; }
+  .status-form[data-grid='shell'] .status-cell { color: var(--status-form-message-color, inherit); }
+  .status-form[data-grid='shell'] .status-cell:empty { display: none; }
+}

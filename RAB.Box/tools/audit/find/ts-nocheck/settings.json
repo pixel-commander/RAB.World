@@ -1,0 +1,32 @@
+{
+  "id": 1790000000938,
+  "name": "ts-nocheck",
+  "title": "Find TS Nocheck Directives",
+  "description": "Finds @ts-nocheck directives.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "ts-nocheck",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "@ts-nocheck\\b",
+      "kind": "ts-nocheck",
+      "scope": "code"
+    }
+  }
+}

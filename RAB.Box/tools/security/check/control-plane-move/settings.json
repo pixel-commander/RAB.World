@@ -1,0 +1,17 @@
+{
+  "id": 1800000000040,
+  "name": "control-plane-move",
+  "title": "Check Control-Plane Moves",
+  "description": "Actively verifies Tool/Stamp path mutation confirmation, traversal, collision, stable-ID preservation, PATHS update and post-move resolution in an isolated House copy.",
+  "settings": [],
+  "meta": {
+    "domain": "security",
+    "operation": "check",
+    "target_type": "control-plane-move",
+    "output": "security-report",
+    "authority": "read",
+    "config": {
+      "check": "control-plane-move"
+    }
+  }
+}

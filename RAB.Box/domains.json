@@ -1,0 +1,69 @@
+{
+  "version": 2,
+  "domains": {
+    "audit": {
+      "title": "Audit",
+      "kind": "toolset",
+      "triggers": [
+        "audit",
+        "scan repo",
+        "scan project",
+        "inspect repo",
+        "inspect project"
+      ],
+      "tool_root": "tools/audit",
+      "results_root": "audit-results",
+      "description": "Read and inspect the selected project with deterministic Tools."
+    },
+    "build": {
+      "title": "Build",
+      "kind": "toolset",
+      "triggers": [
+        "build",
+        "create",
+        "make",
+        "start",
+        "add"
+      ],
+      "tool_root": "tools",
+      "description": "Create or modify artifacts through registered Tools and Stamp Tools."
+    },
+    "kitchen": {
+      "title": "Kitchen",
+      "kind": "toolset",
+      "moods": [
+        "baking",
+        "cooking"
+      ],
+      "triggers": [
+        "kitchen",
+        "bake",
+        "baking",
+        "cook",
+        "cooking",
+        "recipe",
+        "ingredients"
+      ],
+      "tool_root": "tools/kitchen",
+      "required_startup_seats": [
+        "people",
+        "allergy_status"
+      ],
+      "description": "Physical-world cooking and baking Tool set using the same reducer, project memory, verification, receipts, and authority laws as the rest of the House."
+    },
+    "food-process": {
+      "title": "Food Process",
+      "kind": "toolset",
+      "triggers": [
+        "food process",
+        "conveyor",
+        "belt speed",
+        "residence time",
+        "dwell time",
+        "thermal process"
+      ],
+      "tool_root": "tools/food-process",
+      "description": "Industrial food-process Tool set for deterministic math, process constraints, validated authority, measurements, and receipts."
+    }
+  }
+}

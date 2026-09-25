@@ -1,0 +1,4 @@
+@layer components {
+ .dropdown__select { inline-size: 100%; padding: var(--dropdown-padding, var(--space-sm)); color: var(--dropdown-color, var(--content-default)); background: var(--dropdown-background, var(--surface-inset)); border: var(--dropdown-border, var(--border-width) var(--border-style) var(--border-default)); border-radius: var(--dropdown-border-radius, var(--radius-control)); font: var(--dropdown-font, var(--type-body)); }
+ .dropdown__select:focus-visible { outline: var(--dropdown-focus-outline, var(--focus-ring)); outline-offset: var(--focus-offset); }
+}

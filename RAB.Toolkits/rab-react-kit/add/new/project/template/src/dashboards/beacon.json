@@ -1,0 +1,15 @@
+{
+  "name": "dashboards",
+  "id": null,
+  "title": "React dashboards",
+  "description": "React dashboards in this project.",
+  "date_added": null,
+  "path": "src/dashboards",
+  "types": [],
+  "beacon": "on",
+  "reach": [
+    "world",
+    "project"
+  ],
+  "type": "react"
+}

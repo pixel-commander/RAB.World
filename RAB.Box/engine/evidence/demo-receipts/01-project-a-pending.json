@@ -1,0 +1,134 @@
+{
+  "status": "input-required",
+  "authority": 0,
+  "mode": "command",
+  "capability": "react-project",
+  "ticket": {
+    "version": "0.2",
+    "id": 1789384251323,
+    "project_id": "demo-1",
+    "original": "stamp a new react project named \"test-project\" into the current project folder",
+    "contract": "cbc5ac5e67bdabfe77fb019cb11ba8556dadb35a7481107c4e3c83a3b8e544ac",
+    "answers": [],
+    "questions": [
+      {
+        "request_id": 1789384251323,
+        "stamp": "react-project",
+        "key": "type",
+        "title": "type",
+        "type": "text",
+        "role": "project-type",
+        "required": true,
+        "question": "What is the project type? This demo implements app; the word react does not silently fill this field.",
+        "choices": [
+          "app"
+        ],
+        "returnTo": null
+      }
+    ]
+  },
+  "frames": [
+    {
+      "capability": "react-project",
+      "title": "Starting point for a React project",
+      "settings": "stamps/ReactProject/settings.json",
+      "script": "stamps/ReactProject/stamp.mjs",
+      "options": {
+        "name": "test-project",
+        "location": ".",
+        "add_database": false
+      },
+      "seats": [
+        {
+          "key": "name",
+          "required": true,
+          "satisfied": true
+        },
+        {
+          "key": "location",
+          "required": true,
+          "satisfied": true
+        },
+        {
+          "key": "type",
+          "required": true,
+          "satisfied": false
+        },
+        {
+          "key": "add_database",
+          "required": false,
+          "satisfied": true
+        }
+      ],
+      "returnTo": null,
+      "dependencies": [],
+      "worldEvidence": [
+        {
+          "field": "location",
+          "source": "project-relative-directory",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "request_id": 1789384251323,
+      "stamp": "react-project",
+      "key": "type",
+      "title": "type",
+      "type": "text",
+      "role": "project-type",
+      "required": true,
+      "question": "What is the project type? This demo implements app; the word react does not silently fill this field.",
+      "choices": [
+        "app"
+      ],
+      "returnTo": null
+    }
+  ],
+  "evidence": {
+    "react-project.name": [
+      {
+        "source": "explicit-text",
+        "raw": "named \"test-project\"",
+        "start": 26,
+        "end": 46,
+        "role": "artifact-name"
+      }
+    ],
+    "react-project.location": [
+      {
+        "source": "declared-reference",
+        "raw": "into the current project folder",
+        "start": 47,
+        "end": 78,
+        "role": "destination"
+      }
+    ],
+    "react-project.add_database": [
+      {
+        "source": "declared-default",
+        "value": false
+      }
+    ]
+  },
+  "trace": [
+    {
+      "field": "react-project.name",
+      "source": "explicit-text",
+      "raw": "named \"test-project\"",
+      "start": 26,
+      "end": 46,
+      "role": "artifact-name"
+    },
+    {
+      "field": "react-project.location",
+      "source": "declared-reference",
+      "raw": "into the current project folder",
+      "start": 47,
+      "end": 78,
+      "role": "destination"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": 1790000001005,
+  "name": "interface-bindings",
+  "title": "Audit Public Network Interface Bindings",
+  "description": "Finds server listener calls that explicitly bind to wildcard interfaces such as 0.0.0.0 or :: so externally reachable service surfaces can be reviewed.",
+  "settings": [{"type":"folder","name":"folder","title":"Folder","description":"Optional folder to scan. Uses the loaded project root when omitted.","required":false}],
+  "meta": {"domain":"audit","operation":"inspect","target_type":"network","data_types":["network","binding","interface"],"output":"report","authority":"read","signature":"interface-bindings"}
+}

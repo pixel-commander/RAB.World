@@ -1,0 +1,3 @@
+import path from 'node:path';
+import { CODE_EXTS, walkFilesByExt, readText, rel, slash } from '../_shared.mjs';
+export const runStructure=async({sourceFolder,tool})=>{const files=await walkFilesByExt(sourceFolder,CODE_EXTS),rows=[];for(const file of files){if(!/^index\.(?:[cm]?[jt]sx?)$/i.test(path.basename(file)))continue;const text=await readText(file);if(/\bexport\s+\*\s+from\b|\bexport\s*\{[^}]*\}\s*from\b/s.test(text))rows.push({file:rel(sourceFolder,file),kind:'barrel-export'});}rows.sort((a,b)=>a.file.localeCompare(b.file));return{status:'ok',scan:tool.address??tool.key,root:slash(path.resolve(sourceFolder)),totals:{files_scanned:files.length,matches:rows.length},rows};};

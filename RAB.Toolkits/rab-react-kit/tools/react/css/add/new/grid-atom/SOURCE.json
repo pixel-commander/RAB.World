@@ -1,0 +1,10 @@
+{
+  "sources": [
+    {
+      "path": "//Desktop-t72isdi/f/RAB.Box/tools/react/seed/stamp-ui-kit/template/src/atoms/grids",
+      "role": "template source"
+    }
+  ],
+  "adaptation": "Copies the existing grid templates into the tool template. Creation renames the data-grid selector and filename while retaining area names and topology. The shared grid installer remains in Box.",
+  "originals": "Source files remain unchanged."
+}

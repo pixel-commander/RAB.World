@@ -1,0 +1,14 @@
+{
+  "title": "container-machine",
+  "name": "container-machine",
+  "description": "Machined dark chassis container atom.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\container-machine",
+  "type": "container-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304149456,
+  "indexed": true
+}

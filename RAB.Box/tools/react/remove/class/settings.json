@@ -1,0 +1,94 @@
+{
+  "id": 1790000000991,
+  "name": "class",
+  "title": "Remove Class",
+  "description": "Detaches an exact class token from a component DOM target. Resolves a component name or file/path, defaults to the highest-level rendered DOM element, and can target one or all matching data-area or element nodes.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "component",
+      "title": "Component",
+      "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+      "required": false
+    },
+    {
+      "type": "file",
+      "name": "file",
+      "title": "File",
+      "description": "Optional source file. May be absolute or project-relative.",
+      "required": false
+    },
+    {
+      "type": "path",
+      "name": "path",
+      "title": "Path",
+      "description": "Optional project-relative source file path alias.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "seat_id",
+      "title": "Construction Seat ID",
+      "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "data_area",
+      "title": "Data Area",
+      "description": "Optional data-area value identifying the DOM target.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "element",
+      "title": "DOM Element",
+      "description": "Optional native DOM element name.",
+      "required": false
+    },
+    {
+      "type": "options",
+      "name": "quantifier",
+      "title": "How Many",
+      "description": "Defaults to one target. Use all to edit every matching target.",
+      "required": false,
+      "options": [
+        {
+          "name": "one",
+          "description": "First matching target"
+        },
+        {
+          "name": "all",
+          "description": "All matching targets"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "class_name",
+      "title": "Class",
+      "description": "Exact class token to remove.",
+      "required": true
+    },
+    {
+      "type": "boolean",
+      "name": "dry_run",
+      "title": "Preview Only",
+      "description": "Return the deterministic edit plan without writing the file.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "delete",
+    "target_type": "class",
+    "data_types": [
+      "component",
+      "file",
+      "path",
+      "class"
+    ],
+    "output": "edit-receipt",
+    "authority": "write"
+  }
+}

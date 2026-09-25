@@ -1,0 +1,13 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Reads an existing beacon.json and creates an adjacent empty beacon-manifest/v1 record. It does not scan, register a project, or replace a manifest."
+  },
+  "result": {
+    "status": "created",
+    "manifest": "beacon-owned manifest record",
+    "file": "absolute manifest.json path",
+    "verification": "shared artifact-writer receipt"
+  }
+}

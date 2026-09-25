@@ -1,0 +1,187 @@
+RRAABBIITT MAGIC BOX v0.8.5 — FULL HOUSE EXPANSION
+Build: control-plane + DOM mutation + security/generated-code audits
+
+CURRENT PUBLIC HOUSE
+- 151 public capabilities
+- 14 Stamps
+- 137 non-Stamp Tools
+- 0 unavailable
+
+1. CONTROL-PLANE PATH MUTATION
+Added:
+- move-tool        -> base/move/tool
+- move-stamp       -> base/move/stamp
+
+Laws enforced:
+- explicit scope: house or project
+- explicit confirm=true required
+- safe relative semantic destination only
+- path move preserves leaf name (rename is separate)
+- lexical containment + symlink-aware ancestor checks
+- destination collision denied
+- PATHS updated atomically
+- fresh House rescan after move
+- stable ID, kind and new path verified
+- rollback restores PATHS/folder if verification fails
+- natural language relative paths are typed path values, not vocabulary
+- Chat resolves name/address + destination, then asks only for scope and confirmation
+
+Active verifier checks successful Tool and Stamp moves plus denial cases.
+
+2. DOM / COMPONENT SOURCE MUTATION FAMILY
+Existing:
+- add-class
+- change-class
+- remove-class
+- add-element
+
+Added:
+- add-attribute
+- change-attribute
+- remove-attribute
+- add-data-area
+- change-data-area
+- remove-data-area
+- remove-element
+- replace-element
+- wrap-element
+- move-element
+
+Target law:
+component OR file/path -> optional data-area / DOM element -> component root by default.
+"all" edits every match where supported.
+
+Safety:
+- explicit file path must remain inside loaded project lexically AND by realpath
+- symlink escape blocked
+- dynamic JSX class/attribute expressions are refused rather than guessed
+- move-element refuses self/descendant moves
+- dry-run supported by DOM mutation family
+
+3. SECURITY ACTIVE VERIFIERS
+House security checks include:
+- HTTP/token/origin/host boundaries
+- stale revision + completed-run replay
+- receipt-only file viewing
+- receipt path traversal
+- malformed JSON
+- server-owned Tool project/.rab context
+- project PATHS dot-segment rejection
+- project override symlink escape
+- control-plane language mention/negation separation
+- control-plane Tool/Stamp move confirmation/traversal/collision/ID verification
+- DOM edit symlink escape
+- loopback-only workbench binding
+
+Current active receipt:
+- 26 checks
+- 26 passed
+- 0 failed
+
+4. GENERATED FILE / UPLOAD SAFETY AUDITS
+Added read-only semantic audits:
+- find-file-write-sinks
+- find-user-filename-usage (heuristic)
+- find-formdata-file-handling (heuristic)
+- find-executable-file-writes (heuristic)
+- find-svg-upload-handling (heuristic)
+- find-public-upload-serving (heuristic)
+- find-generated-directory-usage
+- find-generated-provenance-markers
+- find-path-input-joins (heuristic)
+
+Composite:
+- inspect-generated-code
+
+Exact compliance Tool:
+- check-generated-files
+  Operator chooses generated_root.
+  Operator controls allowed_extensions.
+  Optional provenance_marker can be required.
+  No fixed src/components/generated convention is imposed.
+
+5. SQLITE FTS5 / DATABASE AUDITS
+- find-fts5-match-queries
+- find-fts5-raw-match-concatenation (heuristic)
+- find-sqlite-open
+- find-sqlite-extension-loading
+- find-mysql-query-calls (heuristic)
+- find-sql-string-interpolation (heuristic)
+
+These report evidence/candidates. They do not claim exploitability from a text match.
+
+6. BACKGROUND PROCESS / SHELL BOUNDARY AUDITS
+- find-child-process-exec
+- find-child-process-spawn
+- find-shell-true
+- find-command-string-composition (heuristic)
+
+7. HOME / LOCAL NETWORK & CONTAINER AUDITS
+No public-hosting assumption is made.
+These inspect accidental/local exposure and containment:
+- find-wildcard-bindings
+- find-lan-addresses
+- find-docker-socket-mounts
+- find-privileged-containers
+- find-host-network-mode
+- find-root-container-user
+- find-database-port-exposure (heuristic)
+- find-cleartext-local-protocols (heuristic)
+- find-admin-routes (heuristic)
+
+Composite:
+- inspect-security-surface
+
+Active:
+- check-local-network proves the Magic Box server binds to 127.0.0.1.
+
+8. AUDIT WALKER EXPANSION
+Shared audit walker now supports:
+- JS/TS source
+- HTML markup
+- CSS-family styles
+- JSON/JSONC/YAML/YML/TOML/INI/CONF/CONFIG
+- Dockerfile and .env family special names
+
+Many semantic Tools still reuse the existing small engine set.
+
+9. LANGUAGE / CONTROL PLANE
+Relative semantic paths such as:
+  base/security/check-tool
+  css/moved/stamp-new-atom
+are protected typed path literals.
+They do not need lexical teaching.
+
+Example Chat turn:
+  move stamp add-atom to css/moved/stamp-new-atom
+
+Resolved automatically:
+  operation = move
+  target_type = stamp
+  address = add-atom
+  destination = css/moved/stamp-new-atom
+
+Still required before execution:
+  scope
+  explicit confirmation
+
+10. VERIFICATION
+Node suite:
+- 287 / 287 PASS
+
+Language audit:
+- PASS
+
+Main browser harness:
+- 18 checks
+- 0 JavaScript errors
+- 390px viewport no horizontal overflow
+
+Turn Checker browser harness:
+- 3 focused checks
+- 0 JavaScript errors
+
+Active security verification:
+- 26 / 26 PASS
+
+Receipts live under verification/.

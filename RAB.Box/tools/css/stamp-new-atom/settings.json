@@ -1,0 +1,47 @@
+{
+  "id": 1790000000501,
+  "name": "stamp-new-atom",
+  "title": "New Atom",
+  "description": "Creates a CSS atom from a small template.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Atom Name",
+      "description": "CSS atom/class name.",
+      "required": true
+    },
+    {
+      "type": "folder",
+      "name": "location",
+      "title": "Location",
+      "description": "Folder where the atom is stored.",
+      "required": true
+    },
+    {
+      "type": "textarea",
+      "name": "styles",
+      "title": "Styles",
+      "description": "CSS declarations for the atom.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "token",
+      "title": "Background Token",
+      "description": "Registered token used when styles are absent.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "css",
+    "operation": "create",
+    "target_type": "atom",
+    "data_types": [
+      "atom",
+      "css"
+    ],
+    "output": "atom",
+    "authority": "write"
+  }
+}

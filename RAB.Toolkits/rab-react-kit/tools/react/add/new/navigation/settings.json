@@ -1,0 +1,67 @@
+{
+  "id": 1789877167204,
+  "name": "navigation",
+  "title": "New Navigation",
+  "description": "Creates a React navigation component from rows with id, name, and path. The generated component accepts selected and handleClick, and marks the selected item for accessibility.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Navigation Name",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "title",
+      "title": "Title",
+      "description": "Optional display title for the generated React navigation component; defaults to its name.",
+      "required": false
+    },
+    {
+      "type": "textarea",
+      "name": "description",
+      "title": "Description",
+      "description": "Optional description for the generated React navigation component.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "indexed",
+      "title": "Include in Index",
+      "description": "Whether the generated item should appear in its project manifest.",
+      "required": false,
+      "default": true
+    },
+    {
+      "type": "folder",
+      "name": "location",
+      "title": "Components Folder",
+      "required": true
+    },
+    {
+      "type": "json",
+      "name": "rows",
+      "title": "Navigation Rows",
+      "description": "Nonempty array of unique {id, name, path} records. Accepts legacy links {label, href} when rows is absent.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "label",
+      "title": "Navigation Label",
+      "required": false,
+      "default": "Main navigation"
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "create",
+    "target_type": "navigation",
+    "data_types": [
+      "component",
+      "navigation"
+    ],
+    "output": "component",
+    "authority": "write"
+  }
+}

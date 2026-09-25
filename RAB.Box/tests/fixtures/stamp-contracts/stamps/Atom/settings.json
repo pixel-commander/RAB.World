@@ -1,0 +1,50 @@
+{
+  "id": 1789380000002,
+  "name": "atom-stamp",
+  "title": "Create one background atom",
+  "description": "create a new atom with a registered token and return the atom",
+  "date_added": 1789380000000,
+  "options": {
+    "name": {
+      "required": true,
+      "type": "text",
+      "role": "class-name",
+      "validate": "css-class",
+      "language": {
+        "prefixes": [
+          "named",
+          "called"
+        ]
+      }
+    },
+    "layer": {
+      "required": true,
+      "type": "text",
+      "role": "css-layer",
+      "enum": [
+        "atoms"
+      ],
+      "default": "atoms"
+    },
+    "token": {
+      "required": true,
+      "type": "text",
+      "role": "appearance-background",
+      "validate": "css-token",
+      "catalog": "tokens",
+      "question": "Which registered background token should the new atom use?",
+      "language": {
+        "prefixes": [
+          "using token",
+          "with token",
+          "token"
+        ]
+      }
+    }
+  },
+  "data_types": [
+    "atom",
+    "css-class",
+    "css-token"
+  ]
+}

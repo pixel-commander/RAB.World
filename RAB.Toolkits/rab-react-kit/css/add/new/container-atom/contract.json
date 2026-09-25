@@ -1,0 +1,40 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "hybrid",
+    "description": "Creates a reusable CSS container skin scaffold with inset and float surface hooks, metadata and a React demo. Components own layout. Uses the inherited new.mjs adapter with Box rendering and artifact-writing helpers."
+  },
+  "result": {
+    "status": "created",
+    "type": "atom",
+    "kind": "container-atom",
+    "name": "supplied atom name",
+    "preset": null,
+    "folder": "absolute atom folder",
+    "file": "absolute CSS file",
+    "path": "absolute CSS file",
+    "settings": {
+      "name": "supplied atom name",
+      "kind": "container-atom",
+      "description": "supplied or preset description",
+      "created": "creation date YYYY-MM-DD",
+      "modified": "creation date YYYY-MM-DD",
+      "id": "positive numeric ID from the shared owner",
+      "title": "generated atom title",
+      "settings": [],
+      "meta": {
+        "kind": "atom"
+      },
+      "indexed": "boolean, default true"
+    },
+    "verification": "shared artifact-writer receipt with created file paths, byte counts and hashes",
+    "provided": {
+      "seats": {
+        "atom_name": "supplied atom name",
+        "file": "absolute CSS file",
+        "path": "absolute CSS file",
+        "folder": "absolute atom folder"
+      }
+    }
+  }
+}

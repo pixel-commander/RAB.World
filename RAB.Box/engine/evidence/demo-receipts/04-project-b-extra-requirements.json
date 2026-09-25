@@ -1,0 +1,169 @@
+{
+  "status": "input-required",
+  "authority": 0,
+  "mode": "command",
+  "capability": "react-project",
+  "ticket": {
+    "version": "0.2",
+    "id": 1789384251392,
+    "project_id": "demo-2",
+    "original": "stamp a new react project named \"test-project\" into the current project folder",
+    "contract": "8ad1b7504f24c3b95fc90065fdc1e4a209cacbaf7aa2ca5f585f17d7c637a801",
+    "answers": [],
+    "questions": [
+      {
+        "request_id": 1789384251392,
+        "stamp": "react-project",
+        "key": "type",
+        "title": "type",
+        "type": "text",
+        "role": "project-type",
+        "required": true,
+        "question": "What is the project type? This demo implements app; the word react does not silently fill this field.",
+        "choices": [
+          "app"
+        ],
+        "returnTo": null
+      },
+      {
+        "request_id": 1789384251392,
+        "stamp": "react-project",
+        "key": "theme",
+        "title": "theme",
+        "type": "text",
+        "role": null,
+        "required": true,
+        "question": "Which theme does this project require: light or dark?",
+        "choices": [
+          "light",
+          "dark"
+        ],
+        "returnTo": null
+      }
+    ]
+  },
+  "frames": [
+    {
+      "capability": "react-project",
+      "title": "Starting point for a React project",
+      "settings": "local-tools/ReactProject/settings.json",
+      "script": "local-tools/ReactProject/stamp.mjs",
+      "options": {
+        "name": "test-project",
+        "location": ".",
+        "add_database": false
+      },
+      "seats": [
+        {
+          "key": "name",
+          "required": true,
+          "satisfied": true
+        },
+        {
+          "key": "location",
+          "required": true,
+          "satisfied": true
+        },
+        {
+          "key": "type",
+          "required": true,
+          "satisfied": false
+        },
+        {
+          "key": "add_database",
+          "required": false,
+          "satisfied": true
+        },
+        {
+          "key": "theme",
+          "required": true,
+          "satisfied": false
+        }
+      ],
+      "returnTo": null,
+      "dependencies": [],
+      "worldEvidence": [
+        {
+          "field": "location",
+          "source": "project-relative-directory",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "request_id": 1789384251392,
+      "stamp": "react-project",
+      "key": "type",
+      "title": "type",
+      "type": "text",
+      "role": "project-type",
+      "required": true,
+      "question": "What is the project type? This demo implements app; the word react does not silently fill this field.",
+      "choices": [
+        "app"
+      ],
+      "returnTo": null
+    },
+    {
+      "request_id": 1789384251392,
+      "stamp": "react-project",
+      "key": "theme",
+      "title": "theme",
+      "type": "text",
+      "role": null,
+      "required": true,
+      "question": "Which theme does this project require: light or dark?",
+      "choices": [
+        "light",
+        "dark"
+      ],
+      "returnTo": null
+    }
+  ],
+  "evidence": {
+    "react-project.name": [
+      {
+        "source": "explicit-text",
+        "raw": "named \"test-project\"",
+        "start": 26,
+        "end": 46,
+        "role": "artifact-name"
+      }
+    ],
+    "react-project.location": [
+      {
+        "source": "declared-reference",
+        "raw": "into the current project folder",
+        "start": 47,
+        "end": 78,
+        "role": "destination"
+      }
+    ],
+    "react-project.add_database": [
+      {
+        "source": "declared-default",
+        "value": false
+      }
+    ]
+  },
+  "trace": [
+    {
+      "field": "react-project.name",
+      "source": "explicit-text",
+      "raw": "named \"test-project\"",
+      "start": 26,
+      "end": 46,
+      "role": "artifact-name"
+    },
+    {
+      "field": "react-project.location",
+      "source": "declared-reference",
+      "raw": "into the current project folder",
+      "start": 47,
+      "end": 78,
+      "role": "destination"
+    }
+  ]
+}

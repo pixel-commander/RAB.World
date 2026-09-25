@@ -1,0 +1,11 @@
+{
+  "id": 1790307334825,
+  "name": "world-scanner",
+  "title": "World Scanner",
+  "description": "Finds beacon.json files below an explicit drive or folder path, then routes valid beacons by world ID.",
+  "settings": [
+    {"name":"path","type":"folder","title":"Path","description":"Absolute drive or folder path where beacon.json files will be found.","required":true},
+    {"name":"worlds_path","type":"folder","title":"Worlds Path","description":"Absolute folder that contains world folders with settings.json.","required":true}
+  ],
+  "meta": {"domain":"world","operation":"scan","target_type":"beacons","output":"manifests","authority":"write"}
+}

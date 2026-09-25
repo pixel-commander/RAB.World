@@ -1,0 +1,14 @@
+{
+  "title": "effect-float",
+  "name": "effect-float",
+  "description": "Raised-depth effect atom.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\effect-float",
+  "type": "effect-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304150198,
+  "indexed": true
+}

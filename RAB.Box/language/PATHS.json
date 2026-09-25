@@ -1,0 +1,33 @@
+{
+  "imports": "imports",
+  "grammar": "examples/seats.fcfg",
+  "resources": [
+    {
+      "id": "book_grammars",
+      "name": "Book grammars",
+      "title": "Feature structures and binding",
+      "description": "Small grammar files used in the NLTK book. The original local seats.fcfg example exercises shared features; NLTK data is a separate optional download.",
+      "kind": "grammar",
+      "url": "https://www.nltk.org/book/ch09.html",
+      "license_note": "Check each downloaded package's license before redistributing it."
+    },
+    {
+      "id": "wordnet",
+      "name": "WordNet",
+      "title": "Words, senses, and synonyms",
+      "description": "Optional exporter produces sense-separated WordNet JSON for human review. WordNet itself is not bundled. No synonym is auto-promoted to an executable alias.",
+      "kind": "lexicon",
+      "url": "https://www.nltk.org/howto/wordnet.html",
+      "license_note": "Retain the license from the exact WordNet corpus you download with any redistributed export."
+    },
+    {
+      "id": "verbnet",
+      "name": "VerbNet",
+      "title": "Verb frames and semantic roles",
+      "description": "Research reference only in this version. No VerbNet import or automatic role mapper is installed.",
+      "kind": "reference",
+      "url": "https://www.nltk.org/api/nltk.corpus.reader.verbnet.html",
+      "license_note": "Check the selected VerbNet package license."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 1789380000011,
+  "name": "sub-component",
+  "title": "Create a nested component",
+  "description": "create a new component inside an existing component and return the nested component",
+  "date_added": 1789380000000,
+  "data_types": ["component", "component-name", "parent-component-path", "project-relative-path"],
+  "options": {
+    "name": {
+      "required": true,
+      "type": "text",
+      "role": "artifact-name",
+      "validate": "identifier",
+      "question": "What is the nested component name?",
+      "language": {"prefixes": ["named", "called", "name"]}
+    },
+    "parent_path": {
+      "required": true,
+      "type": "text",
+      "role": "parent-path",
+      "validate": "relative-directory",
+      "question": "What is the parent component path?",
+      "language": {"prefixes": ["inside", "under", "parent path"]}
+    },
+    "class": {
+      "required": false,
+      "type": "text",
+      "role": "class-name",
+      "validate": "css-class",
+      "language": {"prefixes": ["with class", "class"]}
+    },
+    "save_as_text": {
+      "required": false,
+      "type": "boolean",
+      "default": false,
+      "role": "test-output-mode",
+      "description": "Write the generated component as .txt instead of .tsx for parser/nesting tests.",
+      "language": {"true": ["save as text", "as text", "text file"], "false": ["save as tsx", "as tsx"]}
+    }
+  }
+}

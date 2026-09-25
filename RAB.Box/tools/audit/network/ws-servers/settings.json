@@ -1,0 +1,28 @@
+{
+  "id": 1790000001003,
+  "name": "ws-servers",
+  "title": "Audit WebSocket Server Port Sockets",
+  "description": "Finds ws or socket.io server constructors that explicitly allocate incoming WebSocket ports.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "network",
+    "data_types": [
+      "network",
+      "port",
+      "websocket"
+    ],
+    "output": "report",
+    "authority": "read",
+    "signature": "ws-servers"
+  }
+}

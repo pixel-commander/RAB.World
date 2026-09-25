@@ -1,0 +1,19 @@
+{
+  "id": null,
+  "name": "",
+  "title": "",
+  "description": "",
+  "settings": [],
+  "indexed": true,
+  "meta": {
+    "kind": "manifest",
+    "version": "project-inventory/v3",
+    "collection": "",
+    "project_id": null,
+    "path": "",
+    "conditions": { "recursive": true, "include": ["**"], "exclude": [] },
+    "scanned_at": null,
+    "count": 0
+  },
+  "items": {}
+}

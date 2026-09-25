@@ -1,0 +1,13 @@
+{
+  "seed": 42,
+  "depth": 4,
+  "width": 2,
+  "areas": 3,
+  "atomTypes": 3,
+  "groups": { "layout": { "enabled": true, "coverage": 1 } },
+  "features": { "loops": { "enabled": true, "coverage": 0.75 } },
+  "errors": {
+    "css": { "mode": "count", "amount": 1 },
+    "convention-arrow": { "mode": "count", "amount": 1 }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "file-operation",
+    "description": "Removes a named path from saved project settings and unregisters its listener. Source items and the last manifest are preserved.",
+    "reviewed_at": "2026-09-21"
+  }
+}

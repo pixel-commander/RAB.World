@@ -1,0 +1,5 @@
+INHERIT=../RULE.txt; SCOPE=freshness and discovery diagnostics.
+REFRESH=listTools({fresh:true,context}) or scan({fresh:true,context}); context.project.root selects project source.
+HTTP=GET /api/tools and POST /api/tools/find handlers request fresh scan; internal calls may cache; no watcher claim.
+READ=items + unavailable; no settings.json means skipped; invalid definitions report reasons; duplicate IDs/full paths quarantine all contenders.
+FILTERS=domain/includeStamps can hide valid entries; discoverable does not establish correct execution or chat selection.

@@ -1,0 +1,111 @@
+{
+  "version": "tool-contract/v1",
+  "select": "meta.config.metric",
+  "variants": {
+    "conditional-density": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "value": "number",
+            "kind": "string",
+            "line": "number",
+            "text": "string",
+            "heuristic": "boolean"
+          }
+        ],
+        "heuristic": "boolean"
+      }
+    },
+    "deep-nesting": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "value": "number",
+            "kind": "string",
+            "line": "number",
+            "text": "string",
+            "heuristic": "boolean"
+          }
+        ],
+        "heuristic": "boolean"
+      }
+    },
+    "huge-functions": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "value": "number",
+            "kind": "string",
+            "line": "number",
+            "heuristic": "boolean"
+          }
+        ],
+        "heuristic": "boolean"
+      }
+    },
+    "large-files": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "value": "number",
+            "kind": "string"
+          }
+        ],
+        "heuristic": "boolean"
+      }
+    },
+    "long-lines": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "value": "number",
+            "kind": "string",
+            "line": "number",
+            "text": "string"
+          }
+        ],
+        "heuristic": "boolean"
+      }
+    }
+  }
+}

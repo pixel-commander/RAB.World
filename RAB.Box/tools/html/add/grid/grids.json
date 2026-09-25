@@ -1,0 +1,13 @@
+{
+  "version": "rraabbiitt-grids/v0.8.5",
+  "layouts": {
+    "side-left": {"areas":["side","main"]},
+    "side-right": {"areas":["main","side"]},
+    "header-main": {"areas":["header","main"]},
+    "main-footer": {"areas":["main","footer"]},
+    "shell": {"areas":["header","main","footer"]},
+    "side-cols": {"areas":["left","main","right"]},
+    "holy-grail": {"areas":["header","left","main","right","footer"]}
+  },
+  "gaps": ["control","content","container","section"]
+}

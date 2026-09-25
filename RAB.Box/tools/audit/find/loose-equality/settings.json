@@ -1,0 +1,30 @@
+{
+  "id": 1790000000970,
+  "name": "loose-equality",
+  "title": "Find Loose Equality Operators",
+  "description": "Finds == and != operators while excluding === and !==.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "equality-operator",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "syntax",
+    "config": {
+      "type": "loose-equality"
+    }
+  }
+}

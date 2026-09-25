@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Copies the HTML project tree and fills project tokens through runProjectStamp.",
+    "reviewed_at": "2026-09-20"
+  }
+}

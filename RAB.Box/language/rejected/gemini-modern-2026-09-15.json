@@ -1,0 +1,15 @@
+{
+  "source": "Rejected or rewritten material from Gemini Shape-1 batch",
+  "items": [
+    {"item":"shack","reason":"Generated software senses were not defensible lexical meanings."},
+    {"item":"optimize -> valid","reason":"Validity can be an outcome, not a lexical sense of optimize."},
+    {"item":"deploy -> environment","reason":"Environment is a deployment destination/context, not a sense of deploy."},
+    {"item":"serialize -> sort","reason":"Sorting is not a lexical sense of serialize."},
+    {"item":"deprecate -> invalid","reason":"Deprecated and invalid are distinct states."},
+    {"item":"refactor -> rephrase","reason":"Code refactoring and linguistic rephrasing are distinct senses."},
+    {"item":"leverage -> dependency","reason":"Dependency is not a lexical sense of leverage."},
+    {"item":"invalidate -> delete","reason":"Marking invalid/expired does not imply deletion."},
+    {"item":"commit to -> save|attach","reason":"The ordinary phrase means pledge/choose/persist-with, not file save/attachment."},
+    {"item":"log out -> display|return","reason":"Strong existing meaning is ending an authenticated session."}
+  ]
+}

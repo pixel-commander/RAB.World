@@ -1,0 +1,33 @@
+{
+  "version": "tool-contract/v1",
+  "result": {
+    "reference": {
+      "version": "\"folder-records/v1\"",
+      "project_id": "number",
+      "kind": "string",
+      "id": "number",
+      "file": "absolute path",
+      "settings_file": "absolute path",
+      "state_file": "absolute path"
+    },
+    "state": {
+      "version": "\"folder-record-state/v1\"",
+      "id": "number",
+      "project_id": "number",
+      "kind": "string",
+      "status": "string",
+      "start_date": "ISO date",
+      "end_date": "ISO date | null",
+      "records": "number",
+      "committed_bytes": "number",
+      "queue_bytes": "number",
+      "queue_read": "number",
+      "counts": {
+        "[count]": "number"
+      },
+      "progress": "object | null",
+      "error": "object | null",
+      "updated_at": "ISO date"
+    }
+  }
+}

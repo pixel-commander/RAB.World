@@ -1,0 +1,32 @@
+@layer components {
+  .panel {
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+  }
+
+  .panel__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-lg);
+    border-block-end: var(--border-width) var(--border-style) var(--border-subtle);
+  }
+
+  .panel__title {
+    font: var(--type-label);
+    color: var(--content-strong);
+  }
+
+  .panel__body {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .panel__body--flush {
+    padding: 0;
+    overflow-x: auto;
+  }
+}

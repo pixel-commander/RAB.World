@@ -1,0 +1,46 @@
+NAMED PROJECT SESSIONS
+======================
+
+User contract — September 21, 2026
+
+Projects own their configuration. Sessions own their conversation and work
+history. Session listings do not belong in the project's settings.json.
+
+The first session created with a new project is named "project start". This
+name is intentionally shared across projects; numeric IDs identify sessions.
+Later sessions are explicitly created by the user and require a nonblank
+name. Title defaults to the name; description is optional.
+
+Storage within the selected project's .rab memory directory:
+
+  settings.json                 project configuration, not a session list
+  sessions.json                 map of session summaries keyed by numeric ID
+  sessions/
+    <numeric-session-id>/
+      settings.json             session identity and parent project
+      state.json                bag, groups, steps, turns, status, revision
+  runs/
+    <numeric-session-id>/       separately stored execution records
+
+The JSON map keys are strings; each entry's id remains a number. The session
+folder is the authoritative full record; the map is its listing summary.
+Existing session folders are preserved. Loading a list must not create a
+session or execute its tools.
+
+Interface behavior:
+
+- The main navigation holds the project selector, aligned to the right.
+- Selecting a project loads its session choices; it does not create a session.
+- Continue restores a selected saved session without replaying completed work.
+- View displays saved session history without making it executable work.
+- New session asks for a name before creating its numeric folder.
+- Project setup before the first session uses a temporary draft. It is not
+  an unnamed saved session. A draft is not guaranteed to survive a restart.
+
+House context is initialized from the selected project. A new session does
+not inherit another session's current target or pending steps. Continuing a
+saved session retains its own bag, groups, steps and turns.
+
+Clearing sessions is a separate, destructive operation and is not implemented
+or authorized by these changes. Any future clear operation must account for
+session-linked runs and receipts without deleting project settings or source.

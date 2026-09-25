@@ -1,0 +1,25 @@
+{
+  "version": "rraabbiitt-seat-schema/v0.6",
+  "core_seats": [
+    "domain",
+    "operation",
+    "target",
+    "target_type",
+    "quantifier",
+    "predicate",
+    "relation",
+    "name",
+    "value",
+    "reference",
+    "scope",
+    "output"
+  ],
+  "capability_metadata": ["data_types"],
+  "laws": [
+    "Words do not own seats; grammatical roles, order, context and known entities fill seats.",
+    "Unknown ordinary words are language gaps, not variables.",
+    "Quoted literals, explicit names, paths and verified project resources may bypass lexical lookup as typed values.",
+    "Filled seats eliminate impossible meanings before ranking remaining candidates.",
+    "Broad discovery never grants execution authority."
+  ]
+}

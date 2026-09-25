@@ -1,0 +1,28 @@
+{
+  "id": 1790000001001,
+  "name": "express-listen",
+  "title": "Audit Express Server Sockets",
+  "description": "Identifies runtime service entry points opening HTTP listeners through explicit .listen(port) calls.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "network",
+    "data_types": [
+      "network",
+      "port",
+      "http"
+    ],
+    "output": "report",
+    "authority": "read",
+    "signature": "express-listen"
+  }
+}

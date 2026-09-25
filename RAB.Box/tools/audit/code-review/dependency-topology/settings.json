@@ -1,0 +1,27 @@
+{
+  "id": 1790000001512,
+  "name": "dependency-topology",
+  "title": "Audit Dependency Topology",
+  "description": "Validates a declared dependency graph for cycles, missing dependency nodes, self edges, and duplicate edges without scheduling execution.",
+  "settings": [
+    {
+      "type": "textarea",
+      "name": "graph",
+      "title": "Dependency Graph",
+      "description": "JSON object mapping node names to dependency arrays.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "code-review",
+    "data_types": [
+      "code-review",
+      "dependency-topology"
+    ],
+    "output": "report",
+    "authority": "read",
+    "rule": "dependency-topology"
+  }
+}

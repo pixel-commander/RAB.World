@@ -1,0 +1,1 @@
+{"id":"authority.write.001","concept":"authority","kind":"authority","given":{"authority":"write","action":"world-write"},"expected":{"allowed":true}}

@@ -1,0 +1,11 @@
+{
+  "id": 1790029669459,
+  "name": "react",
+  "title": "React UI Toolkit",
+  "description": "React UI toolkit with semantic creation paths and the shared container-atom, action-atom, effect-atom and grid-atom types.",
+  "settings": [],
+  "meta": {
+    "kind": "toolkit",
+    "project_type": "react"
+  }
+}

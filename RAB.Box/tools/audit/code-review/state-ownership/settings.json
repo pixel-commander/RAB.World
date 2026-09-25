@@ -1,0 +1,27 @@
+{
+  "id": 1790000001401,
+  "name": "state-ownership",
+  "title": "Audit Component State Ownership",
+  "description": "Flags components owning more than one useState hook so mutable ownership can move to hooks/useComponentName.ts.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to review. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "code-review",
+    "data_types": [
+      "code-review",
+      "state-ownership"
+    ],
+    "output": "report",
+    "authority": "read",
+    "rule": "state-ownership"
+  }
+}

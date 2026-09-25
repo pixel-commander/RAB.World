@@ -1,0 +1,47 @@
+RRAABBIITT v0.9.2
+Date: 2026-09-17
+Status: VERIFIED
+
+1. NEST-001 nested seat-scope repair
+   - bridge/tool-house.mjs separates promoted/session seats from task-local seats
+   - ancestor locals no longer implicitly satisfy nested Child settings
+   - existing settings[].try continuation remains Runner-owned
+   - explicit nested return binding remains legal
+   - root promotion is restricted to previously approved promotion channels
+
+2. Stamp shared-engine dedup
+   - tools/_stamp-engines.mjs owns three shared executor families
+   - 7 Stamp executors are thin wrappers
+   - stable IDs, semantic identities, folders, settings and templates remain unchanged
+
+3. Addressable construction seats
+   - HTML grid Stamp emits data-rab-seat addresses and rab-seat marker comments
+   - React DOM edit Tools may target seat_id
+   - add/wrap may emit new_seat_id
+   - move may target to_seat_id
+
+4. Scaffolding Cleanup Pass
+   - List Construction Seats: read-only inventory Tool
+   - Scaffolding Cleanup Pass: write Tool with strip-only authority
+   - removes data-rab-seat attributes and rab-seat marker comments only
+   - no resolution, inference, relocation or styling authority
+
+5. Documentation / vocabulary
+   - docs/GLOSSARY.md maps RRAABBIITT terms to common engineering language
+   - docs/CONSTRUCTION_SEATS.md defines addressable build markers and cleanup behavior
+
+6. Verification
+   - added nested-seat-scope-v092 regression tests
+   - added construction-scaffolding-v092 regression tests
+   - refreshed v0.9.2 capability-count / grid-marker expectations
+   - full Node suite: 381 / 381
+   - language audit: PASS
+   - browser main: 18 checks, 0 JS errors
+   - browser Turn Checker: 3 checks, 0 JS errors
+
+Deferred construction capabilities:
+- stamp-new-page
+- stamp-new-dashboard
+- apply-grid-layout
+- insert-component-into-area
+- scroll wrapper / scroll-y behavior

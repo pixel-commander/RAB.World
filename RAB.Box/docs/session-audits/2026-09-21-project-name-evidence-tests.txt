@@ -1,0 +1,15 @@
+✔ exact Box text find all css files plans .css before execution and returns only CSS files (9245.2714ms)
+✔ explicit folder and CSS modifier beat stale session seats and saved paths (12493.1097ms)
+✔ CSS modifier parsing is token-scoped and does not replace general file defaults (5265.8548ms)
+✔ saved investigation, declaration, prepared plan, approved writer, verification and handoff retain linked evidence (27321.7195ms)
+✔ plans reject unknown intent, non-token skin, traversal and changed source revisions (24219.5591ms)
+✔ HTTP endpoint requires existing token/session and rejects foreign reports (8480.6468ms)
+✔ saved revisions reject modified and deleted source reports on disk (10065.4458ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 70485.6746

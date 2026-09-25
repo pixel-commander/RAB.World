@@ -1,0 +1,102 @@
+{
+  "id": 1790250816592,
+  "name": "beacons",
+  "title": "Create Folder Beacon",
+  "description": "Creates beacon.json in a project-relative folder for an updater to discover.",
+  "settings": [
+    {
+      "name": "name",
+      "type": "text",
+      "title": "Beacon Name",
+      "description": "Name describing this folder's role; identity is allocated separately.",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "title": "Title",
+      "description": "Human-readable title. Defaults to the beacon name when omitted.",
+      "required": false
+    },
+    {
+      "name": "path",
+      "type": "path",
+      "title": "Folder Path",
+      "description": "Folder to save beacon.json in. With a world selected, its root is prepended to this relative path. Without a selected world, supply an absolute folder path.",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "title": "Description",
+      "description": "What this folder contains.",
+      "required": false,
+      "default": ""
+    },
+    {
+      "name": "types",
+      "type": "json",
+      "title": "Content Types",
+      "description": "Enter a JSON array, for example [\"ui\", \"functions\"]. Allowed: ui, docs, tools, audits, functions. Defaults to [].",
+      "required": false,
+      "items": {
+        "type": "string",
+        "enum": [
+          "ui",
+          "docs",
+          "tools",
+          "audits",
+          "functions"
+        ]
+      },
+      "default": []
+    },
+    {
+      "name": "beacon",
+      "type": "options",
+      "title": "Beacon State",
+      "description": "State advertised to the updater. Creating a beacon does not start an updater.",
+      "required": false,
+      "default": "on",
+      "enum": [
+        "on",
+        "off"
+      ],
+      "options": [
+        {
+          "name": "on",
+          "description": "Enabled"
+        },
+        {
+          "name": "off",
+          "description": "Disabled"
+        }
+      ]
+    },
+    {
+      "name": "reach",
+      "type": "json",
+      "title": "Reach",
+      "description": "JSON array containing world, project, or both. Defaults to [\"world\", \"project\"].",
+      "required": false,
+      "default": [
+        "world",
+        "project"
+      ],
+      "items": {
+        "type": "string",
+        "enum": [
+          "world",
+          "project"
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "domain": "world",
+    "operation": "create",
+    "target_type": "beacon",
+    "output": "beacon",
+    "authority": "write"
+  }
+}

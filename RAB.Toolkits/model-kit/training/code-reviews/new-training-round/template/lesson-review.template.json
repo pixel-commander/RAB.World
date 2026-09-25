@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "kind": "lesson-review",
+  "lesson_id": "",
+  "status": "draft",
+  "skill_id": "",
+  "task_family_id": "",
+  "dataset_split": "unassigned",
+  "scope": "",
+  "boundary": "",
+  "reinforces": [],
+  "source_turns": [],
+  "source_changes": [],
+  "selected_blocks": [],
+  "context_needed": "",
+  "grading": {
+    "format_checks": [],
+    "behavior_checks": [],
+    "reviewer_rubric": []
+  },
+  "human_review": null
+}

@@ -1,0 +1,44 @@
+RRAABBIITT — v0.2 COMPLETED HANDOFF
+===================================
+This file is a development checkpoint, not conversation history.
+
+User goal:
+Three entrances (Magic Box, cloud LLM, local LLM) feed one typed request.
+Stable capability names. Current project PATHS.json locates stamp settings/scripts.
+House keys: id, name, title, description, date_added, options.
+Required/optional seats come from runtime settings, not model memory.
+Ask only for missing answers; preserve caller while a dependency runs.
+
+This package implements that bounded adapter experiment. v0.1 is preserved.
+Run: node demo.mjs. Tests: node --test tests/*.test.mjs.
+Windows users: RUN_DEMO.cmd / RUN_TESTS.cmd.
+
+Your example:
+  stamp a new react project named "test-project" into the current project folder
+Fills name=test-project, location=.; asks for type.
+The sample explicitly defines type=app, not a guess about your real type field.
+Project B adds required theme without changing the engine.
+
+make a div with class x
+  -> check catalog
+  -> existing: use
+  -> confirmed absent: project-declared atom-stamp dependency
+  -> ask for token if not in text
+  -> resume -> atom mutation -> verify -> original div mutation -> verify -> receipt
+
+Options object is retained; arrays with explicit key also normalize.
+JSON default. Trusted settings.js supported only with host opt-in.
+No arbitrary prose-to-meaning guarantee. Grammar and field language metadata
+are explicit, configurable, and fail closed on unsupported input.
+A full feature grammar / NLTK integration is not included.
+
+Do not replace the user's existing stamp-maker or world-view. Adapt one real
+existing stamp to docs/CONTRACTS.txt, or adapt this loader to the real format.
+Actual production PATHS/settings/script files have not been supplied.
+
+Test result: 146/146 on Linux Node 22.16.0, plus actual temp-workspace demo.
+See TEST_REPORT.txt for scope and untested areas.
+
+The equation is in docs/MATH.txt:
+  λP.λQ.∀x(P(x) → Q(x))
+It checks required-seat completeness. It is not the parser or authorization.

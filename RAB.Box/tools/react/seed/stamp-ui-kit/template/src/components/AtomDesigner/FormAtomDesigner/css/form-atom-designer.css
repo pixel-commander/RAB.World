@@ -1,0 +1,28 @@
+@layer components {
+  .form-atom-designer { display: flex; flex-direction: column; gap: var(--space-md); padding: var(--space-sm); }
+  .form-atom-designer__states { display: flex; gap: var(--space-2xs); }
+  .form-atom-designer__state { padding: var(--space-xs) var(--space-md); }
+  .form-atom-designer__rows { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--space-2xs) var(--space-sm); }
+  .form-atom-designer__prop { font: var(--type-label); color: var(--content-muted); }
+  .form-atom-designer__prop--side { padding-inline-start: var(--space-md); font: var(--type-code); }
+  .form-atom-designer__link { display: flex; align-items: center; gap: var(--space-2xs); flex: none; margin-inline-start: auto; font: var(--type-label); color: var(--content-muted); cursor: pointer; }
+  .form-atom-designer__link-box { accent-color: var(--accent-default); }
+  .form-atom-designer__control { position: relative; display: flex; align-items: center; gap: var(--space-sm); min-inline-size: 0; }
+  .form-atom-designer__pick-button, .form-atom-designer__option { display: flex; align-items: center; gap: var(--space-sm); inline-size: 100%; padding: var(--space-2xs) var(--space-sm); text-align: start; }
+  .form-atom-designer__swatch { flex: none; inline-size: 1rem; block-size: 1rem; border: var(--border-width) var(--border-style) var(--border-subtle); border-radius: var(--radius-control); background: var(--form-atom-designer-swatch, transparent); }
+  .form-atom-designer__swatch--none { background: linear-gradient(to top right, transparent calc(50% - var(--border-width)), var(--border-danger), transparent calc(50% + var(--border-width))); }
+  .form-atom-designer__pick-name { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: var(--type-code); }
+  .form-atom-designer__pick-name--mirror { color: var(--content-muted); }
+  .form-atom-designer__menu { position: absolute; z-index: 3; inset-block-start: 100%; inset-inline: 0; display: flex; flex-direction: column; gap: var(--space-2xs); margin: var(--space-2xs) 0 0; padding: var(--space-2xs); max-block-size: 16rem; overflow: auto; list-style: none; }
+  .form-atom-designer__menu[hidden] { display: none; } .form-atom-designer__option-item { display: flex; }
+  .form-atom-designer__select, .form-atom-designer__effect-input, .form-atom-designer__effect-name { inline-size: 100%; padding: var(--space-2xs) var(--space-sm); border: var(--border-width) var(--border-style) var(--border-subtle); border-radius: var(--radius-control); background: var(--surface-inset); color: var(--content-default); font: var(--type-code); }
+  .form-atom-designer__effect-host:empty { display: none; }
+  .form-atom-designer__effect { display: flex; flex-direction: column; gap: var(--space-sm); padding: var(--space-sm); }
+  .form-atom-designer__effect-form { display: flex; flex-direction: column; gap: var(--space-sm); }
+  .form-atom-designer__effect-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-sm); }
+  .form-atom-designer__effect-field { display: flex; flex-direction: column; gap: var(--space-2xs); font: var(--type-label); color: var(--content-muted); }
+  .form-atom-designer__effect-field--check { flex-direction: row; align-items: center; gap: var(--space-sm); }
+  .form-atom-designer__effect-color { display: grid; grid-template-columns: 6rem minmax(0, 1fr); align-items: center; gap: var(--space-sm); }
+  .form-atom-designer__effect-save button { padding: var(--space-sm) var(--space-lg); }
+  .form-atom-designer__effect-status { margin: 0; font: var(--type-label); color: var(--content-muted); }
+}

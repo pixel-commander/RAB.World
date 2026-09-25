@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "composite",
+    "description": "Calls react/add/class with scroll-y. It edits the class assignment; it does not emit the utility stylesheet.",
+    "reviewed_at": "2026-09-20"
+  }
+}

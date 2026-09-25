@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "composite",
+    "description": "Reads html/add/grid/grids.json, then delegates attribute and div creation to DOM editors. Has no template folder, but does depend on external layout data.",
+    "reviewed_at": "2026-09-20"
+  }
+}

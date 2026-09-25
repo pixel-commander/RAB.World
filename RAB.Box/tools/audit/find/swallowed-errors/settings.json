@@ -1,0 +1,30 @@
+{
+  "id": 1790000000958,
+  "name": "swallowed-errors",
+  "title": "Find Swallowed Error Candidates",
+  "description": "Flags catch bindings that are not referenced inside the captured block. This is a heuristic candidate scan.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "catch-block",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "syntax",
+    "config": {
+      "type": "swallowed-errors"
+    }
+  }
+}

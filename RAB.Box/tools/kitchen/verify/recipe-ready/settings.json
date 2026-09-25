@@ -1,0 +1,27 @@
+{
+  "id": 1810000000024,
+  "name": "recipe-ready",
+  "title": "Verify Recipe Ready",
+  "description": "Verifies whether a recipe candidate has enough deterministic evidence to be executable; starter-index-only recipes remain unresolved.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "recipe",
+      "title": "Recipe",
+      "description": "recipe",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "read",
+    "data_types": [
+      "verified",
+      "status"
+    ],
+    "returns": [
+      "verified",
+      "status"
+    ]
+  }
+}

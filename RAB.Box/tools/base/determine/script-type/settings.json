@@ -1,0 +1,10 @@
+{
+  "id": 1790000000801,
+  "name": "script-type",
+  "title": "Determine Script Type",
+  "description": "Determines the JavaScript and TypeScript source file types present in the loaded project so other Tools can reuse the result.",
+  "settings": [
+    {"type":"folder","name":"folder","title":"Folder","description":"Optional folder to inspect. Uses the loaded project root when omitted.","required":false}
+  ],
+  "meta": {"domain":"base","operation":"determine","target_type":"script","data_types":["file","javascript","typescript","tsx"],"output":"project-fact","authority":"read"}
+}

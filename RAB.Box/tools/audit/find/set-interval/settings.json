@@ -1,0 +1,32 @@
+{
+  "id": 1790000000952,
+  "name": "set-interval",
+  "title": "Find setInterval Calls",
+  "description": "Finds setInterval call sites.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "interval",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bsetInterval\\s*\\(",
+      "kind": "set-interval",
+      "scope": "code"
+    }
+  }
+}

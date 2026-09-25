@@ -1,0 +1,9 @@
+{
+  "id": "__PROJECT_ID__",
+  "name": "__PROJECT_NAME__",
+  "type": "magic-box",
+  "paths": {
+    "output": "output",
+    "audit_results": "audit-results"
+  }
+}

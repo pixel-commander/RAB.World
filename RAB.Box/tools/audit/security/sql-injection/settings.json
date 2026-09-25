@@ -1,0 +1,27 @@
+{
+  "id": 1790000001104,
+  "name": "sql-injection",
+  "title": "Audit Unparameterized Database Queries",
+  "description": "Finds SQL execution sinks receiving interpolated templates or concatenated query text.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "security",
+    "data_types": [
+      "security",
+      "sql"
+    ],
+    "output": "report",
+    "authority": "read",
+    "target": "sql-injection"
+  }
+}

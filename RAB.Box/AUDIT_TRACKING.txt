@@ -1,0 +1,135 @@
+Audit execution tracking
+========================
+
+The shared entry point is bridge/tool-house.mjs runTool(). Chat execution and
+service.toolsRun() use it. Composite Tools call helpers.runTool() to use the same
+binding, execution records, session and parent linkage. Importing a Tool module
+and invoking its run() directly bypasses this infrastructure.
+
+Project input
+-------------
+In an Audit project, every top-level invocation re-reads the selected project's
+settings.json paths.folder. It must name an existing absolute directory outside
+.rab storage. A drive or parent folder containing .rab remains allowed; scanners
+exclude .rab. Missing, malformed, deleted or non-directory input blocks execution
+with AUDIT_PATH_REQUIRED, even when the caller supplied an override.
+
+A declared folder input defaults to that saved setting, ahead of old session seats
+or PROJECT.json paths.folder.value. Explicit valid folder inputs remain overrides.
+Chat's derived folder input is rebound when execution begins, so edits to project
+settings after planning take effect. Other declared path inputs keep their existing
+saved-project binding. Project creation still belongs to audit/stamp-new-project.
+
+Storage (all paths below are relative to the selected .rab project directory)
+---------------------------------------------------------------------------
+New Audit projects use .rab/projects/<project-name>/; for example, a project named
+save-shit saves in .rab/projects/save-shit/. The existing safe path-segment rules
+normalize spaces and punctuation, while settings.json keeps the full display name.
+An existing folder is never overwritten or given an automatic hash suffix. Existing
+ID/hash project folders remain loadable at their saved locations.
+
+settings.json                             project configuration
+sessions/<session-id>.json                 conversation and result references
+runs/<session-id>/<execution-id>.json       one small record per Tool invocation
+receipts/<session-id>/<step-id>.json        Chat step receipt with report references
+audit-results/<session-id>/<report>.json    full audit result, one per top-level run
+telemetry/events.jsonl                     compact lifecycle events
+telemetry/HEALTH.json                      per-Tool counts and timing aggregates
+
+paths.results may override audit-results within the project. RAB_HOME chooses the
+.rab home; it does not change the shape within a project. The runner never writes
+tracking or audit reports to the folder being scanned. When .rab lives underneath
+the scanned parent, only the excluded .rab storage is written.
+
+Selected sessions retain their session_id. A project-bound one-off call without a
+session creates one and returns session_id. The existing non-project low-level
+Tool API still works, but has no project in which to persist records.
+
+Turns and Steps
+--------------
+sessions/<session-id>.json contains bag, turns[], steps[] and groups[]. A turn records
+its id, timestamp (at), input text, mode, stepIds and, when supplied by the conversation
+handler, a reply. A step records its id, turnIds, groupId, capability, options, gaps,
+status and eventual receipt. One turn can create multiple steps; multiple turns can
+fill the inputs of one step. saveSession() atomically replaces the complete session
+JSON after a turn or execution update. Results stay in the separate report files.
+
+base/load-project accepts a project name, project key or exact root folder and loads
+settings plus the most recently created saved session and its turns. In Chat, use
+"load project save-shit" to switch to that project and restore its session.
+base/list-projects returns only project names in items[]. A missing load returns
+that same names-only list. Chat says "No project found", displays the available
+names, and waits for another name in the same lookup step. It does not turn a miss
+into a project-creation prompt. Project lists and load replies omit folder paths.
+
+In Chat, "nevermind" (also "never mind") cancels the unfinished steps in the current
+flow before input binding. The cancellation turn and cancelled statuses persist in
+the same session. Completed work remains recorded; queued work cannot execute. The
+next request starts a fresh flow. With nothing pending, Chat says so without adding
+a new step. This is conversation control, not an interrupt for an executing Tool.
+
+Record shape: tool-execution/v1
+-------------------------------
+{
+  "version": "tool-execution/v1",
+  "execution_id": "unique UUID",
+  "parent_execution_id": null,
+  "session_id": "saved session ID",
+  "project_key": "selected project key",
+  "tool": { "id": 123, "address": "audit/find/todos" },
+  "options": { "folder": "C:\\source-to-audit" },
+  "start_date": "2026-09-19T18:00:00.000Z",
+  "end_date": "2026-09-19T18:00:00.025Z",
+  "duration_ms": 25.0,
+  "status": "completed",
+  "result_ref": {
+    "version": "tool-result-ref/v1",
+    "file": "absolute path to the saved report",
+    "pointer": "#/result"
+  },
+  "result_bytes": 1024,
+  "error": null
+}
+
+start_date/end_date are UTC wall-clock dates. duration_ms uses a monotonic clock
+from runner entry through binding, execution and root report persistence, before
+the final tracking/telemetry writes. Parent duration includes children: do not add
+parent and child durations to calculate a session's elapsed time.
+
+Records are first saved as running, then completed, blocked or failed. Startup
+reconciliation marks unfinished records interrupted; an unknown end_date and
+duration_ms stay null. Execution UUIDs distinguish repeated task-1 labels.
+Completed means the Tool returned successfully, not that the audit found no issues.
+
+options larger than 2048 JSON bytes become {omitted,bytes,sha256}; error messages
+are capped at 2048 characters. Actual options/results remain in the audit report.
+result_bytes measures the uncompressed JSON result at return, not report-file size.
+For runtime graphs that are not directly JSON-safe, the existing shape codec is
+used for this measurement. Reports and run records are different files.
+
+Report ownership and composition
+--------------------------------
+bridge/rab-memory.mjs saveToolResult() remains the sole report writer. Only
+top-level read executions in Audit projects save reports. Children share that
+report and reference their result with a JSON Pointer. A child result omitted from
+the parent's return is retained under child_results. A failed composite can save
+its completed children's partial results once.
+
+Reports retain the full root result. Trace entries, seats and transition metadata
+avoid copying that result again. Generated internal references use {$ref: pointer}.
+Session and receipt files retain report references instead of embedding results.
+Object/large seats are restored from those references when a later Tool needs them.
+Tool authors can still return redundant fields inside their own root result; this
+integration does not truncate audit evidence or change individual Tool contracts.
+
+runTool() returns execution and tracking_file alongside result_file and its existing
+live result. Failed calls expose execution and tracking_file on the thrown error.
+The in-memory/API result is still full-sized; consumers needing only tracking should
+use execution/tracking_file. Telemetry does not embed returned seat values.
+
+Owners: tool-house.mjs invokes/times; tool-tracking.mjs defines projections;
+rab-memory.mjs persists; session-planner.mjs links Chat receipts;
+service.mjs supplies the selected project/session; usage-ledger.mjs aggregates.
+
+Verification: tests/audit-tracking.test.mjs plus existing project conversation,
+usage-health, nested-seat and Tool/session runner regression tests.

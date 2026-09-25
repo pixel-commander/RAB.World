@@ -1,0 +1,1061 @@
+{
+  "format": "magic-box-typed-lexicon",
+  "version": "0.1.0",
+  "status": "Proposed seed and bounded dry-run demonstration; not a recovered house registry.",
+  "scope": "Component-authoring commands, capability questions, and a small statement subset.",
+  "normalization": {
+    "keywords": "case-insensitive",
+    "quoted_values": "preserve exact content and case",
+    "unknown": "retain position; return structured failure; never delete",
+    "bare_names": "not supported in demo; quote name/class values",
+    "incomplete_or_ambiguous": "no execution"
+  },
+  "entry_contract": {
+    "id": "stable semantic ID",
+    "forms": "explicit spellings; no fuzzy match",
+    "family": "job/category",
+    "accepts": "conceptual argument types, not an executable type checker",
+    "returns": "conceptual result type",
+    "meaning": "local interpretation contract",
+    "support": "demo = used by one or more declared grammar rules; reserved = dictionary seed only, not implemented"
+  },
+  "entries": [
+    {
+      "id": "ref.i",
+      "forms": [
+        "i"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityRef",
+      "meaning": "Resolve the speaker in the supplied context.",
+      "support": "demo",
+      "case": "subject",
+      "binding": "speaker"
+    },
+    {
+      "id": "ref.me",
+      "forms": [
+        "me"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityRef",
+      "meaning": "Same speaker entity as I; object position.",
+      "support": "demo",
+      "case": "object",
+      "binding": "speaker"
+    },
+    {
+      "id": "ref.you",
+      "forms": [
+        "you"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityRef",
+      "meaning": "Resolve the addressee; not automatically the owner.",
+      "support": "demo",
+      "case": "both",
+      "binding": "addressee"
+    },
+    {
+      "id": "ref.we",
+      "forms": [
+        "we"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityRef",
+      "meaning": "Resolve an explicitly supplied speaker-group. Do not infer membership.",
+      "support": "demo",
+      "case": "subject",
+      "binding": "speakerGroup"
+    },
+    {
+      "id": "ref.us",
+      "forms": [
+        "us"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityRef",
+      "meaning": "Same explicitly supplied group as we; object position.",
+      "support": "demo",
+      "case": "object",
+      "binding": "speakerGroup"
+    },
+    {
+      "id": "ref.they",
+      "forms": [
+        "they"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityRef",
+      "meaning": "Resolve one explicitly supplied referent; it can be singular or plural.",
+      "support": "demo",
+      "case": "subject",
+      "binding": "they"
+    },
+    {
+      "id": "ref.them",
+      "forms": [
+        "them"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityRef",
+      "meaning": "Same referent as they; object position.",
+      "support": "demo",
+      "case": "object",
+      "binding": "they"
+    },
+    {
+      "id": "ref.it",
+      "forms": [
+        "it"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityRef",
+      "meaning": "Resolve the explicitly bound current thing. Never invent it from recency alone.",
+      "support": "demo",
+      "case": "both",
+      "binding": "it"
+    },
+    {
+      "id": "ref.he",
+      "forms": [
+        "he"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityRef",
+      "meaning": "Resolve the explicitly supplied he referent.",
+      "support": "demo",
+      "case": "subject",
+      "binding": "he"
+    },
+    {
+      "id": "ref.him",
+      "forms": [
+        "him"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityRef",
+      "meaning": "Same referent as he; object position.",
+      "support": "demo",
+      "case": "object",
+      "binding": "he"
+    },
+    {
+      "id": "ref.she",
+      "forms": [
+        "she"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityRef",
+      "meaning": "Resolve the explicitly supplied she referent.",
+      "support": "demo",
+      "case": "subject",
+      "binding": "she"
+    },
+    {
+      "id": "ref.her",
+      "forms": [
+        "her"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityRef",
+      "meaning": "Object-pronoun sense only here. The possessive use needs its own construction.",
+      "support": "demo",
+      "case": "object",
+      "binding": "she"
+    },
+    {
+      "id": "ref.this",
+      "forms": [
+        "this"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityRef",
+      "meaning": "Resolve a demonstrative in scope. Not globally synonymous with it.",
+      "support": "reserved"
+    },
+    {
+      "id": "ref.that",
+      "forms": [
+        "that"
+      ],
+      "family": "reference",
+      "accepts": [],
+      "returns": "EntityOrEventRef",
+      "meaning": "Resolve a demonstrative in scope. May point at an event; not only an object.",
+      "support": "reserved"
+    },
+    {
+      "id": "possessive.speaker",
+      "forms": [
+        "my",
+        "mine"
+      ],
+      "family": "possession",
+      "accepts": [
+        "EntityRef",
+        "Spec"
+      ],
+      "returns": "Spec",
+      "meaning": "Describe ownership by speaker. My and mine occupy different grammatical positions.",
+      "support": "reserved"
+    },
+    {
+      "id": "possessive.addressee",
+      "forms": [
+        "your",
+        "yours"
+      ],
+      "family": "possession",
+      "accepts": [
+        "EntityRef",
+        "Spec"
+      ],
+      "returns": "Spec",
+      "meaning": "Describe ownership by addressee. Possession is not authorization.",
+      "support": "reserved"
+    },
+    {
+      "id": "possessive.group",
+      "forms": [
+        "our",
+        "ours"
+      ],
+      "family": "possession",
+      "accepts": [
+        "EntityRef",
+        "Spec"
+      ],
+      "returns": "Spec",
+      "meaning": "Describe ownership by a resolved speaker-group.",
+      "support": "reserved"
+    },
+    {
+      "id": "possessive.other",
+      "forms": [
+        "their",
+        "theirs"
+      ],
+      "family": "possession",
+      "accepts": [
+        "EntityRef",
+        "Spec"
+      ],
+      "returns": "Spec",
+      "meaning": "Describe ownership by a resolved they referent.",
+      "support": "reserved"
+    },
+    {
+      "id": "det.new",
+      "forms": [
+        "a",
+        "an"
+      ],
+      "family": "determiner",
+      "accepts": [
+        "BuildableKind"
+      ],
+      "returns": "Spec",
+      "meaning": "Introduce one new spec in a CREATE construction. The demo does not validate a/an phonetic agreement.",
+      "support": "demo"
+    },
+    {
+      "id": "det.existing",
+      "forms": [
+        "the"
+      ],
+      "family": "determiner",
+      "accepts": [
+        "Description",
+        "Context"
+      ],
+      "returns": "EntityRef",
+      "meaning": "Request an existing scoped referent. Do not treat as noise or alias of a.",
+      "support": "reserved"
+    },
+    {
+      "id": "modifier.new",
+      "forms": [
+        "new"
+      ],
+      "family": "modifier",
+      "accepts": [
+        "Spec"
+      ],
+      "returns": "Spec",
+      "meaning": "Mark a creation as new. Legal only in the declared creation construction.",
+      "support": "demo"
+    },
+    {
+      "id": "action.create",
+      "forms": [
+        "make",
+        "create",
+        "build"
+      ],
+      "family": "action",
+      "accepts": [
+        "EntityRef",
+        "Spec"
+      ],
+      "returns": "ActionPlan",
+      "meaning": "CREATE aliases only inside this component-authoring language. Build can mean other things outside this scope.",
+      "support": "demo",
+      "operation": "create"
+    },
+    {
+      "id": "action.add",
+      "forms": [
+        "add",
+        "insert"
+      ],
+      "family": "action",
+      "accepts": [
+        "EntityRef",
+        "EntityRef"
+      ],
+      "returns": "ActionPlan",
+      "meaning": "Add an item to a target. Requires both item and target.",
+      "support": "reserved"
+    },
+    {
+      "id": "action.remove",
+      "forms": [
+        "remove",
+        "delete"
+      ],
+      "family": "action",
+      "accepts": [
+        "EntityRef"
+      ],
+      "returns": "ActionPlan",
+      "meaning": "Propose removal. Destructive authorization remains external.",
+      "support": "reserved"
+    },
+    {
+      "id": "action.move",
+      "forms": [
+        "move"
+      ],
+      "family": "action",
+      "accepts": [
+        "EntityRef",
+        "EntityRef"
+      ],
+      "returns": "ActionPlan",
+      "meaning": "Move item to destination. Source/destination ownership must be checked.",
+      "support": "reserved"
+    },
+    {
+      "id": "action.rename",
+      "forms": [
+        "rename"
+      ],
+      "family": "action",
+      "accepts": [
+        "EntityRef",
+        "Name"
+      ],
+      "returns": "ActionPlan",
+      "meaning": "Rename an existing entity without changing its identity.",
+      "support": "reserved"
+    },
+    {
+      "id": "action.set",
+      "forms": [
+        "set",
+        "assign"
+      ],
+      "family": "action",
+      "accepts": [
+        "EntityRef",
+        "PropertyKey",
+        "Value"
+      ],
+      "returns": "ActionPlan",
+      "meaning": "Set a typed property to a supplied value.",
+      "support": "reserved"
+    },
+    {
+      "id": "kind.component",
+      "forms": [
+        "component"
+      ],
+      "family": "entity-kind",
+      "accepts": [],
+      "returns": "BuildableKind",
+      "meaning": "A component specification, not an already-existing component instance.",
+      "support": "demo",
+      "value": "component"
+    },
+    {
+      "id": "kind.button",
+      "forms": [
+        "button"
+      ],
+      "family": "entity-kind",
+      "accepts": [],
+      "returns": "BuildableKind",
+      "meaning": "A button specification; the actual house stamp is supplied by the host.",
+      "support": "demo",
+      "value": "button"
+    },
+    {
+      "id": "kind.form",
+      "forms": [
+        "form"
+      ],
+      "family": "entity-kind",
+      "accepts": [],
+      "returns": "BuildableKind",
+      "meaning": "A form specification; the actual house stamp is supplied by the host.",
+      "support": "demo",
+      "value": "form"
+    },
+    {
+      "id": "kind.page",
+      "forms": [
+        "page"
+      ],
+      "family": "entity-kind",
+      "accepts": [],
+      "returns": "BuildableKind",
+      "meaning": "A page specification; the actual house stamp is supplied by the host.",
+      "support": "demo",
+      "value": "page"
+    },
+    {
+      "id": "kind.folder",
+      "forms": [
+        "folder",
+        "directory"
+      ],
+      "family": "entity-kind",
+      "accepts": [],
+      "returns": "FolderKind",
+      "meaning": "Folder/directory aliases within the filesystem domain, not a component CREATE kind.",
+      "support": "reserved"
+    },
+    {
+      "id": "kind.file",
+      "forms": [
+        "file"
+      ],
+      "family": "entity-kind",
+      "accepts": [],
+      "returns": "FileKind",
+      "meaning": "File kind for audit/navigation; not automatically a create capability.",
+      "support": "reserved"
+    },
+    {
+      "id": "modifier.name",
+      "forms": [
+        "named",
+        "called"
+      ],
+      "family": "modifier",
+      "accepts": [
+        "Name",
+        "Spec"
+      ],
+      "returns": "Spec",
+      "meaning": "Fill spec.name, preserving the supplied literal exactly.",
+      "support": "demo",
+      "seat": "name"
+    },
+    {
+      "id": "relation.with",
+      "forms": [
+        "with"
+      ],
+      "family": "attachment-marker",
+      "accepts": [
+        "Complement"
+      ],
+      "returns": "Attachment",
+      "meaning": "Requires a typed complement: with class LITERAL differs from with PERSON. Not a free-floating modifier.",
+      "support": "demo"
+    },
+    {
+      "id": "seat.class",
+      "forms": [
+        "class"
+      ],
+      "family": "seat-marker",
+      "accepts": [
+        "ClassToken",
+        "Spec"
+      ],
+      "returns": "Spec",
+      "meaning": "In WITH CLASS, fill the root CSS-class slot. Not a JavaScript class declaration.",
+      "support": "demo",
+      "seat": "classes"
+    },
+    {
+      "id": "relation.inside",
+      "forms": [
+        "inside",
+        "within"
+      ],
+      "family": "relation",
+      "accepts": [
+        "EntityRef",
+        "ContainerRef"
+      ],
+      "returns": "Placement",
+      "meaning": "Describe nesting. Does not insert/move anything until an action explicitly requests it.",
+      "support": "reserved"
+    },
+    {
+      "id": "relation.into",
+      "forms": [
+        "into"
+      ],
+      "family": "relation",
+      "accepts": [
+        "EntityRef",
+        "ContainerRef"
+      ],
+      "returns": "Placement",
+      "meaning": "Destination marker used with compatible move/insert actions.",
+      "support": "reserved"
+    },
+    {
+      "id": "relation.before",
+      "forms": [
+        "before"
+      ],
+      "family": "relation",
+      "accepts": [
+        "EntityOrEventRef",
+        "EntityOrEventRef"
+      ],
+      "returns": "Relation",
+      "meaning": "Order relation. Structural and temporal senses must be selected by the construction.",
+      "support": "reserved"
+    },
+    {
+      "id": "relation.after",
+      "forms": [
+        "after"
+      ],
+      "family": "relation",
+      "accepts": [
+        "EntityOrEventRef",
+        "EntityOrEventRef"
+      ],
+      "returns": "Relation",
+      "meaning": "Order relation; not sufficient to choose time versus sibling position.",
+      "support": "reserved"
+    },
+    {
+      "id": "relation.has",
+      "forms": [
+        "have",
+        "has"
+      ],
+      "family": "relation",
+      "accepts": [
+        "EntityRef",
+        "PropertyOrEntity"
+      ],
+      "returns": "Proposition",
+      "meaning": "Present possession/property sense. Auxiliary uses need separate grammar.",
+      "support": "reserved"
+    },
+    {
+      "id": "relation.had",
+      "forms": [
+        "had"
+      ],
+      "family": "relation",
+      "accepts": [
+        "EntityRef",
+        "PropertyOrEntity"
+      ],
+      "returns": "PastProposition",
+      "meaning": "Past possession/property; never silently converted into a current fact.",
+      "support": "reserved"
+    },
+    {
+      "id": "relation.owns",
+      "forms": [
+        "own",
+        "owns"
+      ],
+      "family": "relation",
+      "accepts": [
+        "EntityRef",
+        "EntityRef"
+      ],
+      "returns": "Proposition",
+      "meaning": "Ownership relation. An assertion about ownership is not permission.",
+      "support": "reserved"
+    },
+    {
+      "id": "modal.can",
+      "forms": [
+        "can"
+      ],
+      "family": "modal",
+      "accepts": [
+        "EntityRef",
+        "ActionPlan"
+      ],
+      "returns": "Proposition",
+      "meaning": "Ability/capability in the bounded domain. Syntax selects claim versus question; can is not itself truth.",
+      "support": "demo"
+    },
+    {
+      "id": "modal.cannot",
+      "forms": [
+        "cannot",
+        "can't"
+      ],
+      "family": "modal",
+      "accepts": [
+        "EntityRef",
+        "ActionPlan"
+      ],
+      "returns": "NegatedProposition",
+      "meaning": "Negate a capability proposition. Never treat as noise. A negative sentence is not automatically false.",
+      "support": "reserved"
+    },
+    {
+      "id": "modal.must",
+      "forms": [
+        "must"
+      ],
+      "family": "modal",
+      "accepts": [
+        "Proposition"
+      ],
+      "returns": "Requirement",
+      "meaning": "An obligation. It needs a scope and trusted policy source, not just keyword presence.",
+      "support": "reserved"
+    },
+    {
+      "id": "modal.should",
+      "forms": [
+        "should"
+      ],
+      "family": "modal",
+      "accepts": [
+        "Proposition"
+      ],
+      "returns": "Recommendation",
+      "meaning": "Recommendation, not an unconditional requirement.",
+      "support": "reserved"
+    },
+    {
+      "id": "attitude.need",
+      "forms": [
+        "need"
+      ],
+      "family": "attitude",
+      "accepts": [
+        "EntityRef",
+        "Spec"
+      ],
+      "returns": "NeedStatement",
+      "meaning": "Record a stated need. In this demo it does NOT authorize CREATE.",
+      "support": "demo"
+    },
+    {
+      "id": "attitude.want",
+      "forms": [
+        "want"
+      ],
+      "family": "attitude",
+      "accepts": [
+        "EntityRef",
+        "Spec"
+      ],
+      "returns": "WantStatement",
+      "meaning": "Record a stated desire. In this demo it does NOT authorize CREATE.",
+      "support": "demo"
+    },
+    {
+      "id": "attitude.inflected",
+      "forms": [
+        "needs",
+        "wants"
+      ],
+      "family": "attitude",
+      "accepts": [
+        "EntityRef",
+        "Spec"
+      ],
+      "returns": "Statement",
+      "meaning": "Third-person forms are reserved until agreement rules are implemented.",
+      "support": "reserved"
+    },
+    {
+      "id": "query.what",
+      "forms": [
+        "what"
+      ],
+      "family": "query",
+      "accepts": [
+        "TypedHole",
+        "Proposition"
+      ],
+      "returns": "Query",
+      "meaning": "Request values for a designated hole, not simply a yes/no answer.",
+      "support": "demo"
+    },
+    {
+      "id": "query.which",
+      "forms": [
+        "which"
+      ],
+      "family": "query",
+      "accepts": [
+        "Domain",
+        "Predicate"
+      ],
+      "returns": "Query",
+      "meaning": "Select items from a declared domain.",
+      "support": "reserved"
+    },
+    {
+      "id": "query.who",
+      "forms": [
+        "who"
+      ],
+      "family": "query",
+      "accepts": [
+        "PersonHole",
+        "Proposition"
+      ],
+      "returns": "Query",
+      "meaning": "Request a person or actor in a known role.",
+      "support": "reserved"
+    },
+    {
+      "id": "query.where",
+      "forms": [
+        "where"
+      ],
+      "family": "query",
+      "accepts": [
+        "LocationHole",
+        "Proposition"
+      ],
+      "returns": "Query",
+      "meaning": "Request a location in the current world.",
+      "support": "reserved"
+    },
+    {
+      "id": "query.when",
+      "forms": [
+        "when"
+      ],
+      "family": "query",
+      "accepts": [
+        "TimeHole",
+        "Proposition"
+      ],
+      "returns": "Query",
+      "meaning": "Request a time; rule/conditional uses need separate grammar.",
+      "support": "reserved"
+    },
+    {
+      "id": "query.why",
+      "forms": [
+        "why"
+      ],
+      "family": "query",
+      "accepts": [
+        "ReasonHole",
+        "Proposition"
+      ],
+      "returns": "Query",
+      "meaning": "Request stored reasons/evidence, not an invented causal story.",
+      "support": "reserved"
+    },
+    {
+      "id": "query.how",
+      "forms": [
+        "how"
+      ],
+      "family": "query",
+      "accepts": [
+        "MethodHole",
+        "Proposition"
+      ],
+      "returns": "Query",
+      "meaning": "Request a method; how many is a separate quantity construction.",
+      "support": "reserved"
+    },
+    {
+      "id": "quantifier.every",
+      "forms": [
+        "every",
+        "each",
+        "all"
+      ],
+      "family": "quantifier",
+      "accepts": [
+        "Predicate<T>",
+        "Predicate<T>",
+        "Domain<T>"
+      ],
+      "returns": "Proposition",
+      "meaning": "ALL-of-type meaning: for all x in D, P(x) implies Q(x). These forms are not syntactically interchangeable.",
+      "support": "reserved"
+    },
+    {
+      "id": "quantifier.some",
+      "forms": [
+        "some"
+      ],
+      "family": "quantifier",
+      "accepts": [
+        "Predicate<T>",
+        "Predicate<T>",
+        "Domain<T>"
+      ],
+      "returns": "Proposition",
+      "meaning": "At least one x satisfies both predicates, in the logical sense chosen here.",
+      "support": "reserved"
+    },
+    {
+      "id": "quantifier.none",
+      "forms": [
+        "no",
+        "none"
+      ],
+      "family": "quantifier",
+      "accepts": [
+        "Predicate<T>",
+        "Predicate<T>",
+        "Domain<T>"
+      ],
+      "returns": "Proposition",
+      "meaning": "No x satisfies both predicates. No and none require different syntax.",
+      "support": "reserved"
+    },
+    {
+      "id": "logic.and",
+      "forms": [
+        "and"
+      ],
+      "family": "connective",
+      "accepts": [
+        "Expression<T>",
+        "Expression<T>"
+      ],
+      "returns": "Expression<T>",
+      "meaning": "Combine compatible expressions. Boolean conjunction, class-list joining and action sequencing are distinct constructions.",
+      "support": "reserved"
+    },
+    {
+      "id": "logic.or",
+      "forms": [
+        "or"
+      ],
+      "family": "connective",
+      "accepts": [
+        "Proposition",
+        "Proposition"
+      ],
+      "returns": "Proposition",
+      "meaning": "Logical disjunction. Not an instruction to choose arbitrarily.",
+      "support": "reserved"
+    },
+    {
+      "id": "logic.not",
+      "forms": [
+        "not"
+      ],
+      "family": "connective",
+      "accepts": [
+        "Proposition"
+      ],
+      "returns": "Proposition",
+      "meaning": "Negate a scoped proposition. Negation is never a stop word.",
+      "support": "reserved"
+    },
+    {
+      "id": "logic.if",
+      "forms": [
+        "if"
+      ],
+      "family": "condition-marker",
+      "accepts": [
+        "Proposition",
+        "Consequence"
+      ],
+      "returns": "Conditional",
+      "meaning": "Open a condition scope. No work before the condition is resolved.",
+      "support": "reserved"
+    },
+    {
+      "id": "logic.then",
+      "forms": [
+        "then"
+      ],
+      "family": "condition-marker",
+      "accepts": [
+        "Conditional"
+      ],
+      "returns": "Conditional",
+      "meaning": "Mark a consequence or order in a declared construction.",
+      "support": "reserved"
+    },
+    {
+      "id": "audit.count",
+      "forms": [
+        "count"
+      ],
+      "family": "audit-operator",
+      "accepts": [
+        "Domain<T>"
+      ],
+      "returns": "Integer",
+      "meaning": "Count a known finite domain. Unknown/incomplete scan is not exact total.",
+      "support": "reserved"
+    },
+    {
+      "id": "audit.most",
+      "forms": [
+        "most"
+      ],
+      "family": "audit-operator",
+      "accepts": [
+        "Domain<T>",
+        "Metric<T>"
+      ],
+      "returns": "Set<T>",
+      "meaning": "In WHICH/HAS THE MOST, return all maximizing items. Most X are Y is a different quantifier sense.",
+      "support": "reserved"
+    },
+    {
+      "id": "audit.fewest",
+      "forms": [
+        "fewest"
+      ],
+      "family": "audit-operator",
+      "accepts": [
+        "Domain<T>",
+        "Metric<T>"
+      ],
+      "returns": "Set<T>",
+      "meaning": "Return all minimizing items; retain ties.",
+      "support": "reserved"
+    },
+    {
+      "id": "predicate.required",
+      "forms": [
+        "required"
+      ],
+      "family": "predicate",
+      "accepts": [
+        "Seat"
+      ],
+      "returns": "Boolean",
+      "meaning": "Whether a declared schema seat is required.",
+      "support": "reserved"
+    },
+    {
+      "id": "predicate.valid",
+      "forms": [
+        "valid"
+      ],
+      "family": "predicate",
+      "accepts": [
+        "TypedValue",
+        "Contract"
+      ],
+      "returns": "Boolean",
+      "meaning": "Whether the value passes the supplied check; not proof of all desirable properties.",
+      "support": "reserved"
+    },
+    {
+      "id": "predicate.registered",
+      "forms": [
+        "registered"
+      ],
+      "family": "predicate",
+      "accepts": [
+        "EntityRef",
+        "WorldSnapshot"
+      ],
+      "returns": "Boolean",
+      "meaning": "Registered in the supplied snapshot, whose completeness/freshness must be established by the host.",
+      "support": "reserved"
+    },
+    {
+      "id": "predicate.exists",
+      "forms": [
+        "exists"
+      ],
+      "family": "predicate",
+      "accepts": [
+        "EntityRef",
+        "WorldSnapshot"
+      ],
+      "returns": "Boolean",
+      "meaning": "Exists in the supplied scope, not an omniscient existence claim.",
+      "support": "reserved"
+    },
+    {
+      "id": "politeness.please",
+      "forms": [
+        "please"
+      ],
+      "family": "politeness",
+      "accepts": [],
+      "returns": "NoSemanticChange",
+      "meaning": "Accepted only at the beginning of a supported command or capability question.",
+      "support": "demo"
+    }
+  ],
+  "literal_rules": [
+    {
+      "kind": "Name",
+      "source": "quoted text after named/called",
+      "validation": "ASCII name beginning A-Z, remaining characters A-Z/a-z/0-9",
+      "case": "preserve",
+      "registration": "a declaration can introduce a new name; collision checking belongs to the host"
+    },
+    {
+      "kind": "ClassToken",
+      "source": "quoted text after with class",
+      "validation": "one nonempty token without whitespace, and exact membership in world.classTokens",
+      "case": "preserve",
+      "registration": "must already exist in supplied world registry; quoting is not approval"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NLTK: Analyzing the Meaning of Sentences",
+      "url": "https://www.nltk.org/book/ch10.html",
+      "role": "Background on compositional meaning, predicates, lambda abstraction and natural-language database queries. The proposed lexicon is our design, not copied from NLTK."
+    },
+    {
+      "title": "NLTK: CCG with semantics",
+      "url": "https://www.nltk.org/howto/ccg_semantics.html",
+      "role": "Example implementation where lexical categories and lambda meanings combine under grammar rules."
+    },
+    {
+      "title": "Attempto Controlled English 6.7 in a Nutshell",
+      "url": "https://attempto.ifi.uzh.ch/site/docs/ace_nutshell.html",
+      "role": "Precedent for separating function words, domain vocabulary, construction rules and interpretation rules. This demo is not an ACE implementation."
+    }
+  ]
+}

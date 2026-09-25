@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Fills the hook-name token in tmpl.tsx through runReactHookStamp; the effect and dependency seats remain for later work.",
+    "reviewed_at": "2026-09-20"
+  }
+}

@@ -1,0 +1,19 @@
+@layer components {
+.calendar-page { flex: 1; }
+.calendar-page > [data-area='side'] { inline-size: 19rem; }
+.calendar__note { font: var(--type-label); }
+.calendar__pending { display: block; }
+.proposal { display: flex; flex-direction: column; align-items: stretch; gap: var(--space-lg); padding: var(--space-md); }
+.proposal__main { display: flex; flex-direction: column; gap: var(--space-2xs); }
+.proposal__title { overflow-wrap: anywhere; }
+.proposal__meta { font: var(--type-label); }
+.proposal__source { font: var(--type-code); overflow-wrap: anywhere; }
+.proposal__actions { display: flex; gap: var(--space-sm); }
+.proposal__approve, .proposal__reject { padding: var(--space-xs) var(--space-md); }
+@media (max-width: 768px) { .calendar-page > [data-area='side'] { inline-size: auto; } }
+}
+
+@layer components {
+  .calendar-page > [data-area]:not([data-rows]):not([data-grid]) { grid-template-rows: minmax(0, 1fr); }
+  .calendar-page > [data-area] > .inner:not([data-rows]):not([data-grid]) { display: flex; flex-direction: column; gap: var(--space-lg); min-inline-size: 0; min-block-size: 0; }
+}

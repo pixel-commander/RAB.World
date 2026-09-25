@@ -1,0 +1,14 @@
+{
+  "id": 1790000000920,
+  "name": "paths",
+  "title": "Add Project Path",
+  "description": "Adds or updates a named path in the saved project's settings and attaches it to the shared listener.",
+  "settings": [
+    {"type":"text","name":"name","title":"Name","description":"Stable project path key such as components or css.","required":true},
+    {"type":"path","name":"path","title":"Path","description":"Project-relative path value.","required":true},
+    {"type":"text","name":"description","title":"Description","description":"Optional meaning of this project path.","required":false},
+    {"type":"json","name":"types","title":"Types","description":"Optional list of item type names.","required":false},
+    {"type":"json","name":"expected","title":"Expected current value","description":"Optional expected value for a guarded update.","required":false}
+  ],
+  "meta": {"domain":"project","operation":"create","target_type":"path","output":"project-fact","authority":"write"}
+}

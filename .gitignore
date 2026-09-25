@@ -1,6 +1,4 @@
-# Managed separately from the RAB.World repository.
-/RAB.Box/
-/RAB.Toolkits/
+# RAB.Box and RAB.Toolkits are ordinary folders in this repository.
 
 # Personal material stays outside the shared project repository.
 /__docs/personal/
@@ -8,6 +6,9 @@
 # Local dependencies and Box runtime data.
 node_modules/
 /.rab/
+__pycache__/
+unsloth_compiled_cache/
+*.pyc
 
 # Local environment settings; keep shareable examples available.
 .env

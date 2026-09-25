@@ -1,0 +1,27 @@
+{
+  "id": 1810000000015,
+  "name": "check-inventory",
+  "title": "Check Recipe Inventory",
+  "description": "Checks whether inventory can be evaluated for a recipe and returns UNRESOLVED when the starter index lacks authored ingredients.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "recipe",
+      "title": "Recipe",
+      "description": "recipe",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "read",
+    "data_types": [
+      "inventory",
+      "missing"
+    ],
+    "returns": [
+      "inventory",
+      "missing"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": 1790000001206,
+  "name": "content-security-policy",
+  "title": "Audit Content Security Policy Evidence",
+  "description": "Catalogs CSP configuration evidence in application and hosting files, or reports that CSP was not detected locally without claiming an external host or CDN lacks it.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional project or deployment folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "hosting",
+    "data_types": ["hosting", "csp"],
+    "output": "report",
+    "authority": "read",
+    "check": "csp-headers"
+  }
+}

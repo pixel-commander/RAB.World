@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "path": "//Desktop-t72isdi/f/automation-factory/stamp-factory/__atom-button",
+      "role": "template source"
+    },
+    {
+      "path": "//Desktop-t72isdi/f/RAB.Box/tools/react/seed/stamp-ui-kit/template/src/atoms/actions",
+      "role": "current shared skin-token vocabulary"
+    },
+    {
+      "path": "../../../../add/new/project/template/RULES.txt",
+      "role": "current action-state contract"
+    }
+  ],
+  "adaptation": "Adapts the original interactive-skin mold to the house action-atom type. The class is independent of HTML tag. Shared :active/.is-active token styling, focus-visible and aria-disabled styling follow current React rules; component code owns behavior and semantic state.",
+  "originals": "Source files remain unchanged."
+}

@@ -1,0 +1,11 @@
+{
+  "project": {
+    "id": "__PROJECT_ID__",
+    "name": "__PROJECT_NAME__",
+    "title": "__PROJECT_NAME__",
+    "description": "React project created by Magic Box."
+  },
+  "stamps": {},
+  "tools": {},
+  "catalogs": {}
+}

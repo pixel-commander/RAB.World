@@ -1,0 +1,7 @@
+{
+  "source_tool_id": 1830000000001,
+  "source_tool": "react/stamp-new-page",
+  "source_root": "//Desktop-t72isdi/f/RAB.Box/tools/react/stamp-new-page",
+  "relocated_to": "react/add/new/page",
+  "note": "Moved into the React toolkit with its existing numeric identity. The original built-in tool location is retired."
+}

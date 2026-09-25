@@ -1,0 +1,634 @@
+AUDIT FACTORY METHODS AND SCENARIOS
+
+PURPOSE
+
+This document turns the Audit Factory vision into reusable investigation
+methods and human-interface scenarios.
+
+The common interaction is:
+
+  detect something
+    -> gather evidence
+    -> create a specific investigation
+    -> produce an answer with confidence
+    -> offer bounded actions
+    -> generate a plan when requested
+    -> verify any executed work
+
+Questions shown in the interface are readable labels for investigation jobs.
+The user does not need to write prompts. The system determines what evidence is
+required, performs the investigation, reports gaps honestly, and offers typed
+choices for routing the result.
+
+
+METHOD 1: TRACE AN ENDPOINT
+
+Investigation:
+
+  What calls this endpoint?
+
+Method:
+
+  Find the route definition.
+  Resolve its handler and middleware.
+  Search frontend request functions.
+  Search tests, scripts, webhooks, and documentation.
+  Check runtime logs when available and authorized.
+  Include declared external consumers.
+
+Scenario:
+
+  The system finds POST /api/events, two internal callers, and no recent
+  runtime traffic.
+
+  Conclusion: Internally reachable, externally unknown
+  Confidence: Medium
+
+  Available actions:
+
+    inspect callers
+    check runtime
+    mark external
+    investigate with cloud
+    ignore with reason
+    leave unresolved
+
+
+METHOD 2: RESOLVE A TOKEN
+
+Investigation:
+
+  Where does this token ultimately get its value?
+
+Method:
+
+  Find every declaration.
+  Follow imports and stylesheet order.
+  Track theme overrides.
+  Resolve fallback chains.
+  Inspect the runtime computed value when available.
+  Identify every consumer.
+
+Scenario:
+
+  --surface-panel
+    -> fallback: --surface-main
+    -> overridden by themes/dark/tokens.css
+    -> computed value: #202429
+    -> consumed by 14 selectors
+
+The interface shows the chain instead of requiring the user to read several
+stylesheets and reconstruct the cascade manually.
+
+
+METHOD 3: FIND DESIGN-SYSTEM BYPASSES
+
+Investigation:
+
+  Which components bypass the atom system?
+
+Method:
+
+  Build a registry of canonical atoms and tokens.
+  Inspect mounted classes.
+  Detect inline skin properties.
+  Find raw colors, borders, radii, and shadows.
+  Compare component CSS with properties owned by atoms.
+  Separate intentional overrides from accidental restatement.
+
+Scenario:
+
+  CalendarDay uses container-inset but restates its border and background in
+  component CSS.
+
+  Classification:
+
+    intentional override
+    atom bypass
+    migration debt
+    unknown
+
+
+METHOD 4: ESTIMATE REMOVAL IMPACT
+
+Investigation:
+
+  What breaks if this file is removed?
+
+Method:
+
+  Find static importers.
+  Follow re-exports.
+  Search configuration and build references.
+  Detect dynamic imports and registration by presence.
+  Check routes, tests, assets, and runtime observations.
+  Calculate dependent fan-in.
+
+Scenario:
+
+  A file has no direct imports, but import.meta.glob discovers it.
+
+  Removal risk: High
+  Reason: Presence is registration
+  Affected feature: LoginForm demo
+
+This prevents a false unused-file conclusion.
+
+
+METHOD 5: FIND ACTIVE, POORLY TESTED AREAS
+
+Investigation:
+
+  Which areas are both active and poorly tested?
+
+Method:
+
+  Read Git change frequency and churn.
+  Map test coverage to files.
+  Add complexity and recent defects.
+  Exclude generated and vendor material.
+  Rank intersections instead of individual metrics.
+
+Scenario:
+
+  auth/session.ts
+  Changes in 90 days: 37
+  Branch coverage: 18 percent
+  Complexity: High
+  Bug-fix commits: 6
+
+  Conclusion: Characterization tests should precede refactoring.
+
+
+METHOD 6: EXPLAIN COUPLING
+
+Investigation:
+
+  Why do these modules change together?
+
+Method:
+
+  Calculate Git co-change frequency.
+  Compare the import graph.
+  Look for shared schemas, tokens, events, APIs, and owners.
+  Inspect commit messages.
+  Determine whether the coupling is declared or hidden.
+
+Scenario:
+
+  The calendar and billing modules change together but do not import one
+  another. Both independently encode subscription-period rules.
+
+  Likely cause: Duplicated business contract
+  Confidence: High
+
+  Available actions:
+
+    create shared-owner plan
+    keep separate intentionally
+    investigate with cloud
+    leave unresolved
+
+
+METHOD 7: FOLLOW SENSITIVE DATA
+
+Investigation:
+
+  Show every path user email takes.
+
+Method:
+
+  Begin at every input and import source.
+  Follow names, aliases, and transformations.
+  Trace request and response properties.
+  Follow validators and handlers.
+  Identify database, logs, analytics, cookies, caches, and exports.
+  Mark trust-boundary crossings.
+
+Scenario:
+
+  LoginForm.email
+    -> FormData["email"]
+    -> POST /api/login
+    -> validateLogin.email
+    -> users.email lookup
+    -> audit log metadata
+
+The important finding is not merely that email exists. It is that email enters
+an audit log and may require masking.
+
+
+METHOD 8: DETECT DOCUMENTATION CONTRADICTIONS
+
+Investigation:
+
+  Which documentation contradicts the implementation?
+
+Method:
+
+  Extract commands, routes, paths, environment keys, and public names from
+  documentation.
+  Compare them with package scripts, route tables, files, and code usage.
+  Distinguish missing documentation from directly false documentation.
+  Preserve both sides as evidence.
+
+Scenario:
+
+  README says: npm start
+  package.json provides: npm run dev
+  launch.cmd invokes: npm run dev
+
+  Conclusion: README command is stale.
+
+
+METHOD 9: PRIORITIZE NORMALIZATION
+
+Investigation:
+
+  What should be normalized first?
+
+Method:
+
+  Cluster perceptually or structurally similar items.
+  Determine whether they share a semantic role.
+  Count consumers.
+  Estimate replacement certainty and effort.
+  Identify dependencies between changes.
+  Rank by reach, confidence, benefit, and cost.
+
+Scenario:
+
+  11 near-identical border colors
+  43 consumers
+  Same semantic role
+  Exact token replacement available
+
+  Recommendation: Normalize locally
+  Confidence: 98 percent
+
+Another color cluster may represent danger, warning, and disabled states. That
+cluster requires human review even when its values are visually similar.
+
+
+METHOD 10: DETERMINE AUTOMATION SAFETY
+
+Investigation:
+
+  Can this component be safely refactored automatically?
+
+Method:
+
+  Confirm that it matches a canonical stamp.
+  Resolve all imports and consumers.
+  Check public contracts.
+  Detect dynamic behavior.
+  Estimate affected scope.
+  Define verification.
+  Stop if an unknown shape appears.
+
+Scenario A:
+
+  Component matches old anatomy.
+  All consumers use the same contract.
+  Canonical stamp exists.
+  No dynamic registration is found.
+  Build and tests are available.
+
+  Disposition: Safe automatically
+
+Scenario B:
+
+  The component exposes a public API or several valid designs exist.
+
+  Disposition: Cloud refactor or human review
+
+
+METHOD 11: CLASSIFY DUPLICATE CANDIDATES
+
+Investigation:
+
+  What is the relationship between these files?
+
+Method:
+
+  Compare hashes.
+  Compare normalized syntax trees.
+  Compare exports.
+  Compare dependencies and consumers.
+  Compare Git histories.
+  Check generated and vendor markers.
+  Determine runtime reachability.
+
+Scenario:
+
+  Button.tsx
+  legacy/Button.tsx
+
+  Text similarity: 91 percent
+  Shared exports: 4 of 5
+  Consumers: 18 versus 2
+  Recent changes: 12 versus 0
+
+  Relationship choices:
+
+    exact duplicates
+    intentional variants
+    generated copy
+    compatibility copy
+    diverged copies
+    unknown
+
+  Importance choices:
+
+    critical
+    active
+    supporting
+    replaceable
+    obsolete
+    unknown
+
+  Disposition choices:
+
+    keep both
+    normalize
+    consolidate
+    deprecate one
+    investigate
+    ignore
+
+Same filename and similar file size only trigger an investigation. They are not
+proof of duplication.
+
+
+METHOD 12: HANDLE A SANDBOX
+
+Investigation:
+
+  Should this area influence conclusions?
+
+Method:
+
+  Detect an unusual or disconnected folder.
+  Show what audit noise it produces.
+  Let the keeper declare its role through typed options.
+  Store an exclusion instead of deleting evidence.
+
+Scenario:
+
+  Scope: src/sandbox/**
+  Purpose: Experimental work
+  Disposition: Ignore architecture and duplication
+  Still scan: Secrets and critical security
+
+The report continues to state that the area was excluded.
+
+Useful exclusion scopes:
+
+  this finding
+  this file
+  this folder
+  this rule at this location
+  this run
+  until a date
+  until the area becomes reachable
+  everything except security
+  never analyze automatically
+
+
+METHOD 13: ESCALATE AN UNKNOWN
+
+Investigation:
+
+  How should this unresolved gap be investigated?
+
+Method:
+
+  State why current evidence is insufficient.
+  Identify additional evidence that could answer it.
+  Estimate local and cloud cost.
+  Show disclosure scope.
+  Offer typed routing choices.
+
+Scenario:
+
+  The system cannot determine whether an endpoint has external consumers.
+
+  Available actions:
+
+    inspect server logs locally
+    prepare cloud investigation
+    assign human review
+    leave unresolved
+
+Unknown is a valid state. It never silently becomes false, safe, unused, or
+healthy.
+
+
+METHOD 14: AUDIT AI COST
+
+Investigation:
+
+  Where is AI spending producing value or waste?
+
+Method:
+
+  Record model, tokens, cache usage, duration, and cost.
+  Associate spend with the workflow phase.
+  Connect each run to accepted or rejected output.
+  Detect repeated discovery and overlapping context.
+  Compare local and cloud alternatives.
+  Connect spend to human time saved and risk reduced.
+
+Scenario:
+
+  $42,000 total
+  $18,000 repeated project discovery
+   $9,000 implementation
+   $6,000 verification
+   $5,000 abandoned output
+   $4,000 accepted semantic reasoning
+
+  Conclusion:
+
+    Cache project knowledge and reserve cloud reasoning for the hard
+    remainder.
+
+Useful cost relationships:
+
+  cost per task
+  cost per accepted result
+  cost per resolved unknown
+  cost per generated plan
+  cost per successful refactor
+  cost per verification pass
+  cost by workflow phase
+  cost of retries and failed runs
+  cost avoided through local scripts and caching
+  estimated versus actual cost
+  model comparison for equivalent outcomes
+  human time saved versus model cost
+  risk reduction versus cost
+
+
+METHOD 15: HAND OFF HARD WORK
+
+Investigation:
+
+  What does the team or model need to complete this safely?
+
+Method:
+
+  Reduce the problem to the smallest coherent scope.
+  Include evidence and unresolved gaps.
+  Attach applicable rules and stamps.
+  Declare forbidden actions.
+  Define acceptance criteria.
+  Provide verification commands.
+  Set a stop condition for scope expansion.
+
+Scenario:
+
+  Objective:
+    Consolidate two authentication state owners.
+
+  Scope:
+    Four components and one hook.
+
+  Preserve:
+    Public LoginForm contract.
+
+  Use:
+    Canonical state-owner stamp.
+
+  Stop if:
+    The backend contract must change.
+
+  Verify:
+    Build, authentication tests, route test, and re-audit.
+
+
+METHOD 16: TEACH THE PROJECT
+
+Investigation:
+
+  What fact cannot be resolved from project evidence alone?
+
+Method:
+
+  Perform every available local investigation first.
+  Isolate the exact missing intent or external knowledge.
+  Present closed, typed options.
+  Always provide Unknown.
+  Store the selected answer separately from observed evidence.
+  Attach scope, source, author, timestamp, and invalidation conditions.
+  Revisit the declaration when relevant code changes.
+
+Scenario:
+
+  System investigation:
+    What calls POST /api/events?
+
+  Observed evidence:
+    Two internal callers are resolved. External usage cannot be observed.
+
+  Keeper decision:
+
+    internal only
+    external client
+    both
+    no longer used
+    unknown
+
+The answer becomes declared project knowledge. It does not erase the observed
+evidence or pretend to be statically proven.
+
+
+METHOD 17: ROOT-CAUSE COLLAPSE
+
+Investigation:
+
+  Are these findings independent, or are they symptoms of one cause?
+
+Method:
+
+  Group findings by dependency, missing definition, shared owner, and common
+  evidence chain.
+  Trace each symptom backward until its evidence diverges.
+  Preserve the affected consumers.
+  Report the root cause separately from its blast radius.
+
+Scenario:
+
+  One undefined token produces 80 missing-background findings.
+
+  Report:
+
+    Root cause: 1
+    Affected consumers: 80
+    Proposed repair: Restore or replace the canonical token
+
+Do not present the project as having 81 unrelated problems.
+
+
+METHOD 18: VERIFY A COMPLETED PLAN
+
+Investigation:
+
+  Did the work produce the approved result without new damage?
+
+Method:
+
+  Preserve a before-state identity and evidence snapshot.
+  Run the declared build and tests.
+  Repeat relevant audits.
+  Compare public contracts.
+  Perform visual or runtime checks when required.
+  Report improvements, regressions, and unresolved differences.
+
+Scenario:
+
+  Plan:
+    Consolidate 11 border colors into --border-subtle.
+
+  Verification:
+
+    all intended consumers changed
+    no unrelated colors changed
+    build passed
+    visual snapshots matched approved tolerance
+    raw-value audit decreased by 11
+    no new undefined-token findings
+
+The local evidence accepts or rejects work regardless of whether a script,
+person, or cloud model performed it.
+
+
+REUSABLE INTERFACE
+
+Every scenario can use the same small interaction model:
+
+  SUBJECT
+    What is being examined?
+
+  INVESTIGATION
+    What should the system determine?
+
+  EVIDENCE
+    What was observed, skipped, or unavailable?
+
+  CONCLUSION
+    What does the combined evidence suggest?
+
+  CONFIDENCE
+    How certain, current, and complete is the result?
+
+  ACTION
+    run local script
+    investigate with cloud
+    assign human review
+    add to plan
+    teach project
+    ignore with scope and reason
+    leave unresolved
+
+The interface stays simple while the investigation system remains deep.

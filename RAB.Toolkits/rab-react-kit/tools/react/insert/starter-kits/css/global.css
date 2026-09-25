@@ -1,0 +1,75 @@
+@layer reset, tokens, grid, atoms, components, dashboards, themes, overrides;
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  :where(html, body) {
+    min-width: 100dvw;
+    min-height: 100dvh;
+  }
+
+  :where(html) {
+    scroll-behavior: smooth;
+  }
+
+  :where(#root) {
+    display: grid;
+    min-block-size: 100dvh;
+    min-inline-size: 0;
+  }
+
+  :where(body) {
+    margin: 0;
+    color: var(--content-default);
+    background: var(--surface-app);
+    font: var(--type-body);
+    text-rendering: optimizeLegibility;
+  }
+
+  :where(button, input, select, textarea) {
+    color: inherit;
+    font: inherit;
+  }
+
+  :where(button) {
+    margin: 0;
+  }
+
+  :where(h1, h2, h3, p) {
+    margin: 0;
+  }
+
+  :where(a) {
+    color: inherit;
+  }
+}
+
+/* Vanilla area resizer: the handle occupies a real 5px grid track. */
+@layer overrides {
+  [data-resize-edge] { display: grid; gap: 0; }
+  [data-resize-edge='right'] { grid-template-columns: auto 5px; grid-template-rows: minmax(0, 1fr); grid-template-areas: 'content handle'; }
+  [data-resize-edge='left'] { grid-template-columns: 5px auto; grid-template-rows: minmax(0, 1fr); grid-template-areas: 'handle content'; }
+  [data-resize-edge='bottom'] { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 5px; grid-template-areas: 'content' 'handle'; }
+  [data-resize-edge='top'] { grid-template-columns: minmax(0, 1fr); grid-template-rows: 5px auto; grid-template-areas: 'handle' 'content'; }
+  .area-resizable__content { grid-area: content; min-inline-size: 0; min-block-size: 0; }
+  .area-resizable__handle { grid-area: handle; min-inline-size: 0; min-block-size: 0; touch-action: none; user-select: none; cursor: ew-resize; background-color: transparent; }
+  [data-resize-edge='top'] > .area-resizable__handle,
+  [data-resize-edge='bottom'] > .area-resizable__handle { cursor: ns-resize; }
+  .area-resizable__handle:hover { background-color: var(--accent-default); }
+  .area-resizable__handle:focus-visible { background-color: var(--accent-default); outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+  .area-resizable__handle[data-dragging] { background-color: var(--accent-default); }
+}
+
+@layer overrides {
+  [data-drop-zone][data-drop-active] {
+    outline-width: var(--border-width);
+    outline-style: solid;
+    outline-color: var(--accent-secondary);
+    outline-offset: calc(-1 * var(--border-width));
+    background-color: var(--accent-soft);
+  }
+}

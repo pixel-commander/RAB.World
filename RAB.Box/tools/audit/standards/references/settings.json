@@ -1,0 +1,27 @@
+{
+  "id": 1790000001504,
+  "name": "references",
+  "title": "Audit Local References",
+  "description": "Checks local href/src/url references and same-document fragments without crawling the internet.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to review. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "standards",
+    "data_types": [
+      "standards",
+      "references"
+    ],
+    "output": "report",
+    "authority": "read",
+    "standard": "references"
+  }
+}

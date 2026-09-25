@@ -1,0 +1,121 @@
+{
+  "status": "ready",
+  "authority": 0,
+  "mode": "command",
+  "capability": "react-project",
+  "ticket": {
+    "version": "0.2",
+    "id": 1789384251323,
+    "project_id": "demo-1",
+    "original": "stamp a new react project named \"test-project\" into the current project folder",
+    "contract": "cbc5ac5e67bdabfe77fb019cb11ba8556dadb35a7481107c4e3c83a3b8e544ac",
+    "answers": [
+      {
+        "request_id": 1789384251323,
+        "stamp": "react-project",
+        "values": {
+          "type": "app"
+        }
+      }
+    ],
+    "questions": []
+  },
+  "frames": [
+    {
+      "capability": "react-project",
+      "title": "Starting point for a React project",
+      "settings": "stamps/ReactProject/settings.json",
+      "script": "stamps/ReactProject/stamp.mjs",
+      "options": {
+        "name": "test-project",
+        "location": ".",
+        "type": "app",
+        "add_database": false
+      },
+      "seats": [
+        {
+          "key": "name",
+          "required": true,
+          "satisfied": true
+        },
+        {
+          "key": "location",
+          "required": true,
+          "satisfied": true
+        },
+        {
+          "key": "type",
+          "required": true,
+          "satisfied": true
+        },
+        {
+          "key": "add_database",
+          "required": false,
+          "satisfied": true
+        }
+      ],
+      "returnTo": null,
+      "dependencies": [],
+      "worldEvidence": [
+        {
+          "field": "location",
+          "source": "project-relative-directory",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "questions": [],
+  "evidence": {
+    "react-project.name": [
+      {
+        "source": "explicit-text",
+        "raw": "named \"test-project\"",
+        "start": 26,
+        "end": 46,
+        "role": "artifact-name"
+      }
+    ],
+    "react-project.location": [
+      {
+        "source": "declared-reference",
+        "raw": "into the current project folder",
+        "start": 47,
+        "end": 78,
+        "role": "destination"
+      }
+    ],
+    "react-project.type": [
+      {
+        "source": "clarification",
+        "request_id": 1789384251323,
+        "stamp": "react-project"
+      }
+    ],
+    "react-project.add_database": [
+      {
+        "source": "declared-default",
+        "value": false
+      }
+    ]
+  },
+  "trace": [
+    {
+      "field": "react-project.name",
+      "source": "explicit-text",
+      "raw": "named \"test-project\"",
+      "start": 26,
+      "end": 46,
+      "role": "artifact-name"
+    },
+    {
+      "field": "react-project.location",
+      "source": "declared-reference",
+      "raw": "into the current project folder",
+      "start": 47,
+      "end": 78,
+      "role": "destination"
+    }
+  ],
+  "reply_text": "app"
+}

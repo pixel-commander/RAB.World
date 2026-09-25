@@ -1,0 +1,21 @@
+@layer grid {
+  [data-grid='grid-dashboard'] {
+    grid-template-columns: auto auto minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+    grid-template-rows: auto auto minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+    grid-template-areas:
+      'main-nav main-nav main-nav main-nav main-nav main-nav'
+      'side-nav left tabs-nav tabs-nav tabs-nav right'
+      'side-nav left main main main right'
+      'side-nav left main main main right'
+      'side-nav left main main main right'
+      'side-nav footer footer footer footer footer';
+  }
+
+  [data-grid='grid-dashboard'] > [data-area='main-nav'] { grid-area: main-nav; }
+  [data-grid='grid-dashboard'] > [data-area='side-nav'] { grid-area: side-nav; }
+  [data-grid='grid-dashboard'] > [data-area='left'] { grid-area: left; }
+  [data-grid='grid-dashboard'] > [data-area='tabs-nav'] { grid-area: tabs-nav; }
+  [data-grid='grid-dashboard'] > [data-area='right'] { grid-area: right; }
+  [data-grid='grid-dashboard'] > [data-area='main'] { grid-area: main; }
+  [data-grid='grid-dashboard'] > [data-area='footer'] { grid-area: footer; }
+}

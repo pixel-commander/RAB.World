@@ -1,0 +1,85 @@
+@layer components {
+  .daily-calendar { display: block; block-size: 100%; }
+  .daily-calendar__hour { font: var(--type-body); }
+  .daily-calendar [data-area] { overflow: hidden; --container-inset-radius: 0; }
+}
+
+@layer components {
+  [data-grid='daily-schedule'] {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: repeat(24, minmax(0, 1fr));
+    grid-template-areas:
+      'time-00 slot-00'
+      'time-01 slot-01'
+      'time-02 slot-02'
+      'time-03 slot-03'
+      'time-04 slot-04'
+      'time-05 slot-05'
+      'time-06 slot-06'
+      'time-07 slot-07'
+      'time-08 slot-08'
+      'time-09 slot-09'
+      'time-10 slot-10'
+      'time-11 slot-11'
+      'time-12 slot-12'
+      'time-13 slot-13'
+      'time-14 slot-14'
+      'time-15 slot-15'
+      'time-16 slot-16'
+      'time-17 slot-17'
+      'time-18 slot-18'
+      'time-19 slot-19'
+      'time-20 slot-20'
+      'time-21 slot-21'
+      'time-22 slot-22'
+      'time-23 slot-23';
+  }
+  [data-grid='daily-schedule'] > [data-area='time-00'] { grid-area: time-00; }
+  [data-grid='daily-schedule'] > [data-area='slot-00'] { grid-area: slot-00; }
+  [data-grid='daily-schedule'] > [data-area='time-01'] { grid-area: time-01; }
+  [data-grid='daily-schedule'] > [data-area='slot-01'] { grid-area: slot-01; }
+  [data-grid='daily-schedule'] > [data-area='time-02'] { grid-area: time-02; }
+  [data-grid='daily-schedule'] > [data-area='slot-02'] { grid-area: slot-02; }
+  [data-grid='daily-schedule'] > [data-area='time-03'] { grid-area: time-03; }
+  [data-grid='daily-schedule'] > [data-area='slot-03'] { grid-area: slot-03; }
+  [data-grid='daily-schedule'] > [data-area='time-04'] { grid-area: time-04; }
+  [data-grid='daily-schedule'] > [data-area='slot-04'] { grid-area: slot-04; }
+  [data-grid='daily-schedule'] > [data-area='time-05'] { grid-area: time-05; }
+  [data-grid='daily-schedule'] > [data-area='slot-05'] { grid-area: slot-05; }
+  [data-grid='daily-schedule'] > [data-area='time-06'] { grid-area: time-06; }
+  [data-grid='daily-schedule'] > [data-area='slot-06'] { grid-area: slot-06; }
+  [data-grid='daily-schedule'] > [data-area='time-07'] { grid-area: time-07; }
+  [data-grid='daily-schedule'] > [data-area='slot-07'] { grid-area: slot-07; }
+  [data-grid='daily-schedule'] > [data-area='time-08'] { grid-area: time-08; }
+  [data-grid='daily-schedule'] > [data-area='slot-08'] { grid-area: slot-08; }
+  [data-grid='daily-schedule'] > [data-area='time-09'] { grid-area: time-09; }
+  [data-grid='daily-schedule'] > [data-area='slot-09'] { grid-area: slot-09; }
+  [data-grid='daily-schedule'] > [data-area='time-10'] { grid-area: time-10; }
+  [data-grid='daily-schedule'] > [data-area='slot-10'] { grid-area: slot-10; }
+  [data-grid='daily-schedule'] > [data-area='time-11'] { grid-area: time-11; }
+  [data-grid='daily-schedule'] > [data-area='slot-11'] { grid-area: slot-11; }
+  [data-grid='daily-schedule'] > [data-area='time-12'] { grid-area: time-12; }
+  [data-grid='daily-schedule'] > [data-area='slot-12'] { grid-area: slot-12; }
+  [data-grid='daily-schedule'] > [data-area='time-13'] { grid-area: time-13; }
+  [data-grid='daily-schedule'] > [data-area='slot-13'] { grid-area: slot-13; }
+  [data-grid='daily-schedule'] > [data-area='time-14'] { grid-area: time-14; }
+  [data-grid='daily-schedule'] > [data-area='slot-14'] { grid-area: slot-14; }
+  [data-grid='daily-schedule'] > [data-area='time-15'] { grid-area: time-15; }
+  [data-grid='daily-schedule'] > [data-area='slot-15'] { grid-area: slot-15; }
+  [data-grid='daily-schedule'] > [data-area='time-16'] { grid-area: time-16; }
+  [data-grid='daily-schedule'] > [data-area='slot-16'] { grid-area: slot-16; }
+  [data-grid='daily-schedule'] > [data-area='time-17'] { grid-area: time-17; }
+  [data-grid='daily-schedule'] > [data-area='slot-17'] { grid-area: slot-17; }
+  [data-grid='daily-schedule'] > [data-area='time-18'] { grid-area: time-18; }
+  [data-grid='daily-schedule'] > [data-area='slot-18'] { grid-area: slot-18; }
+  [data-grid='daily-schedule'] > [data-area='time-19'] { grid-area: time-19; }
+  [data-grid='daily-schedule'] > [data-area='slot-19'] { grid-area: slot-19; }
+  [data-grid='daily-schedule'] > [data-area='time-20'] { grid-area: time-20; }
+  [data-grid='daily-schedule'] > [data-area='slot-20'] { grid-area: slot-20; }
+  [data-grid='daily-schedule'] > [data-area='time-21'] { grid-area: time-21; }
+  [data-grid='daily-schedule'] > [data-area='slot-21'] { grid-area: slot-21; }
+  [data-grid='daily-schedule'] > [data-area='time-22'] { grid-area: time-22; }
+  [data-grid='daily-schedule'] > [data-area='slot-22'] { grid-area: slot-22; }
+  [data-grid='daily-schedule'] > [data-area='time-23'] { grid-area: time-23; }
+  [data-grid='daily-schedule'] > [data-area='slot-23'] { grid-area: slot-23; }
+}

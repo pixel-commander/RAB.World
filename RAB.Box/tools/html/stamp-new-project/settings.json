@@ -1,0 +1,40 @@
+{
+  "id": 1790000000301,
+  "name": "stamp-new-project",
+  "title": "New Html Project",
+  "description": "Creates a html project from the html project template.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Project Name",
+      "description": "Project name.",
+      "required": true
+    },
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Parent Folder",
+      "description": "Folder that will contain the project.",
+      "required": true
+    },
+    {
+      "type": "folder",
+      "name": "custom_toolkit_path",
+      "title": "Custom Toolkit Path",
+      "description": "Optional absolute path to an external toolkit. Saved in the new project settings.json; toolkit files stay outside the project.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "html",
+    "operation": "create",
+    "target_type": "project",
+    "data_types": [
+      "project",
+      "path"
+    ],
+    "output": "project",
+    "authority": "write"
+  }
+}

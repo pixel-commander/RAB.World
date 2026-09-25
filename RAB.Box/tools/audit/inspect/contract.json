@@ -1,0 +1,90 @@
+{
+  "version": "tool-contract/v1",
+  "select": "meta.target_type",
+  "variants": {
+    "generated-code": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "summary": {
+          "tools": "number",
+          "total_matches": "number",
+          "heuristic_matches": "number"
+        },
+        "reports": {
+          "[child tool name]": "ChildResult"
+        },
+        "provided": {
+          "seats": {
+            "generated_code_report": {
+              "[child tool name]": "ChildResult"
+            }
+          }
+        }
+      }
+    },
+    "security-surface": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "summary": {
+          "tools": "number",
+          "total_matches": "number",
+          "heuristic_matches": "number"
+        },
+        "reports": {
+          "[child tool name]": "ChildResult"
+        },
+        "provided": {
+          "seats": {
+            "security_surface_report": {
+              "[child tool name]": "ChildResult"
+            }
+          }
+        }
+      }
+    },
+    "theme": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "summary": {
+          "declared_components": "number",
+          "unique_classes": "number",
+          "unique_components_used": "number",
+          "unique_tokens": "number"
+        },
+        "reports": {
+          "[child tool name]": "ChildResult"
+        },
+        "provided": {
+          "seats": {
+            "theme_report": {
+              "classUses": [
+                {
+                  "name": "string",
+                  "count": "number"
+                }
+              ],
+              "componentUses": [
+                {
+                  "name": "string",
+                  "count": "number"
+                }
+              ],
+              "tokenUses": [
+                {
+                  "name": "string",
+                  "count": "number"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

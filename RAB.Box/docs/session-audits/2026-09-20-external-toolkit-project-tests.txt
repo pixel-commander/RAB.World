@@ -1,0 +1,43 @@
+✔ linked tools use existing catalog, inherited executor, contracts, binding and runner without importing on discovery (215.9214ms)
+✔ project override selects linked implementation, composite inherits it, explicit IDs/paths retain meaning and receipts survive save (1664.3103ms)
+✔ local project overrides stay contained and working beside linked toolkits (73.7183ms)
+✔ duplicate IDs and full paths quarantine all contenders, including the house tool (47.9574ms)
+✔ derived alias collision remains ambiguous across kits, with explicit identity available (57.0156ms)
+✔ disabled/missing/malformed links are explicit, cache refresh works, and unrelated fixtures never inherit links (45.0623ms)
+✔ link writes are idempotent and duplicate canonical roots are diagnosed without double scanning (43.9095ms)
+✔ contract and template root escapes never become runnable (41.8284ms)
+✔ catalog service includes a fresh linked toolkit without initializing project memory (44.0483ms)
+✔ project-only custom_toolkit_path never leaks across A, B, no project, and A again (100.0574ms)
+✔ duplicate toolkit identities quarantine every root regardless of link order (40.5705ms)
+✔ unlink follows the same canonical root as link, and disconnected roots can be disabled (36.1432ms)
+✔ rejecting the 65th link preserves the original config bytes (32.4809ms)
+✔ project intent uses parsed meanings and guards questions, history, negation and other targets (38.0876ms)
+✔ new project keeps one pending step, asks type/name/folder, waits for confirmation, creates files and switches context (4227.8257ms)
+✔ missing lookup lists only available names and retries the same step without starting creation (9097.2997ms)
+✔ an unresolved project lookup survives session restoration and accepts a new load command (3342.0112ms)
+✔ an explicit new-project request can replace a pending load retry (1892.5608ms)
+✔ ambiguous project names stay unresolved and allow another name without showing paths (5026.4319ms)
+✔ cancellation and an existing destination do not create or overwrite projects (3565.2406ms)
+✔ Magic Box setup asks name and folder, stamps local settings, and restores its saved session (3489.7003ms)
+✔ audit setup keeps settings, sessions and results in one .rab project and leaves the input untouched (20007.897ms)
+✔ audit setup cancels early, rejects invalid targets or .rab itself, and allows a corrected folder (7331.1859ms)
+✔ parent-folder audit saves inside nested .rab while excluding it from scans (8371.1107ms)
+✔ direct Audit Stamp preserves quoted display names and creates only a .rab project (1602.656ms)
+✔ Windows drive root can be saved as the default audit folder without scanning the drive (1751.0732ms)
+✔ project inspection reads current settings from disk and reports invalid or missing settings (7086.5823ms)
+✔ public CLI prepares without writing, then executes the native stamp with verified output (2909.2973ms)
+✔ migrated parent and child stamps preserve props, classes, metadata and verified files (4327.1485ms)
+✔ page content is escaped as text, remains overridable and keeps construction seats (1376.3232ms)
+✔ token-backed atoms require registered tokens and cannot overwrite existing CSS (3800.9529ms)
+✔ artifact preflight rejects traversal, duplicate paths, and escaping allowed roots before writing (47.2706ms)
+✔ React project template is verified without modifying its existing scaffold contract (1258.6157ms)
+✔ optional StyleGuide and SQLite payload survive without replacing current package setup (1712.5423ms)
+✔ Workbench missing-atom question resumes the same ticket through native child calls (3732.4729ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 77094.5882

@@ -1,0 +1,30 @@
+{
+  "id": 1800000000024,
+  "name": "sql-string-interpolation",
+  "title": "Find SQL String Interpolation",
+  "description": "Finds candidate SQL template strings containing runtime interpolation.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "sql-string-interpolation",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "`\\s*(?:SELECT|INSERT|UPDATE|DELETE|REPLACE)[^`]*\\$\\{",
+      "scope": "code",
+      "kind": "sql-interpolation-candidate",
+      "heuristic": true,
+      "flags": "i"
+    }
+  }
+}

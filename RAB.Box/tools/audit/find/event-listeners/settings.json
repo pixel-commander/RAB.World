@@ -1,0 +1,32 @@
+{
+  "id": 1790000000950,
+  "name": "event-listeners",
+  "title": "Find Event Listener Registrations",
+  "description": "Finds addEventListener call sites.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "event-listener",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\baddEventListener\\s*\\(",
+      "kind": "event-listener",
+      "scope": "code"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "composite",
+    "description": "Calls react/wrap/element to construct a div with scroll-y around the selected target.",
+    "reviewed_at": "2026-09-20"
+  }
+}

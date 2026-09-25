@@ -1,0 +1,19 @@
+{
+  "name": "rraabbiitt-kitchen-baking-pack",
+  "version": "0.1-handoff",
+  "date": "2026-09-17",
+  "purpose": "Kitchen/Baking Mood merge/handoff pack with safety provenance, math, tools, audits, tests, starter recipe index, and industrial extension.",
+  "files": [
+    "FOOD_PROCESS_EXTENSION.md",
+    "KITCHEN_AUDITS_AND_CHECKERS.md",
+    "KITCHEN_MATH_RULES.md",
+    "KITCHEN_TOOL_BLUEPRINT.md",
+    "KITCHEN_WORLD_HANDOFF.md",
+    "PROJECT_MEMORY_EXAMPLE.json",
+    "SAFETY_REFERENCES.json",
+    "STARTER_RECIPE_INDEX.json",
+    "TEST_SCENARIOS.md",
+    "TODO.md",
+    "_START_HERE.txt"
+  ]
+}

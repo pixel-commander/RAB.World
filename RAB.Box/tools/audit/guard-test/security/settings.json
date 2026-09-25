@@ -1,0 +1,20 @@
+{
+  "id": 1790000001302,
+  "name": "security",
+  "title": "Cross-Examine Security Guards",
+  "description": "Runs isolated known-bad and known-good synthetic fixtures through every defensive code-security audit Tool and reports whether each guard behaves as expected.",
+  "settings": [],
+  "meta": {
+    "domain": "audit",
+    "operation": "check",
+    "target_type": "guard",
+    "data_types": [
+      "security",
+      "guard",
+      "regression"
+    ],
+    "output": "report",
+    "authority": "read",
+    "check": "security"
+  }
+}

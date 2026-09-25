@@ -1,0 +1,31 @@
+{
+  "id": 1790000000973,
+  "name": "long-lines",
+  "title": "Find Long Lines",
+  "description": "Finds code lines above the configured character threshold.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "long-line",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "metric",
+    "config": {
+      "metric": "long-lines",
+      "threshold": 120
+    }
+  }
+}

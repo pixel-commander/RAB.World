@@ -1,0 +1,21 @@
+{
+  "version": "tool-contract/v1",
+  "select": "meta.engine",
+  "variants": {
+    "line": {
+      "extends": "../_engines/line-pattern.contract.json"
+    },
+    "structure": {
+      "extends": "../_engines/structure.contract.json"
+    },
+    "theme": {
+      "extends": "../_engines/theme.contract.json"
+    },
+    "metric": {
+      "extends": "../_engines/metric.contract.json"
+    },
+    "syntax": {
+      "extends": "../_engines/syntax.contract.json"
+    }
+  }
+}

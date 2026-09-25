@@ -1,0 +1,442 @@
+{
+  "id": 1830000000726,
+  "stage": "C:\\Users\\pixelcommander\\.rab\\temp\\test\\1830000000726\\tool-scaffold",
+  "stamp": "base/stamp-new-tool",
+  "receipts": [
+    {
+      "status": "created",
+      "type": "base",
+      "name": "code-review",
+      "address": "code-review",
+      "id": 1830000000728,
+      "path": "base/code-review",
+      "settings": {
+        "id": 1830000000728,
+        "name": "code-review",
+        "title": "Review Proposed Code",
+        "description": "Checks pasted code with existing guards, grids and atoms auditors. Reports findings separately from execution success; saves scratch evidence without changing project source.",
+        "settings": [
+          {
+            "name": "file",
+            "type": "path",
+            "title": "Intended file",
+            "description": "Project-relative filename, such as src/components/Card/Card.tsx or src/atoms/action.css. Review does not change this file.",
+            "required": true
+          },
+          {
+            "name": "code",
+            "type": "textarea",
+            "title": "Proposed code",
+            "description": "Paste the exact code to check. Static checks only; this code is never executed. Maximum 256 KiB combined with supporting CSS.",
+            "required": true
+          },
+          {
+            "name": "css",
+            "type": "textarea",
+            "title": "Supporting CSS (optional)",
+            "description": "CSS for resolving class-based grid/flex layout in JSX. Only the grids check reads this; it is not written to the project.",
+            "required": false
+          },
+          {
+            "name": "checks",
+            "type": "json",
+            "title": "Check groups",
+            "description": "Omit for all groups, or supply an array such as [\"guards\",\"grids\"] or [\"atoms\"]. Non-applicable groups are reported as skipped.",
+            "required": false,
+            "default": [
+              "guards",
+              "grids",
+              "atoms"
+            ]
+          }
+        ],
+        "meta": {
+          "operation": "inspect",
+          "target_type": "code-review",
+          "authority": "read",
+          "output": "report",
+          "group": "all"
+        }
+      },
+      "inherited_executor": false,
+      "registered": false,
+      "check": {
+        "visible": true,
+        "key": "base/code-review",
+        "rank": 1,
+        "request_shape": {
+          "seats": {
+            "domain": "audit",
+            "operation": null,
+            "target": null,
+            "target_type": "code",
+            "quantifier": null,
+            "predicate": {
+              "value": "pasted",
+              "type": "predicate",
+              "known": false
+            },
+            "relation": "with",
+            "name": null,
+            "value": null,
+            "reference": null,
+            "scope": null,
+            "output": null
+          },
+          "data_types": [
+            "code"
+          ],
+          "complete": false
+        },
+        "relation_error": null
+      }
+    },
+    {
+      "status": "created",
+      "type": "base",
+      "name": "guards",
+      "address": "code-review-guards",
+      "id": 1830000000730,
+      "path": "base/code-review/guards",
+      "settings": {
+        "id": 1830000000730,
+        "name": "guards",
+        "title": "Review Code Guards",
+        "description": "Checks pasted JavaScript or TypeScript with the existing Bag/collection guards and prop-renaming auditors.",
+        "settings": [
+          {
+            "name": "file",
+            "type": "path",
+            "title": "Intended file",
+            "description": "Project-relative filename, such as src/components/Card/Card.tsx or src/atoms/action.css. Review does not change this file.",
+            "required": true
+          },
+          {
+            "name": "code",
+            "type": "textarea",
+            "title": "Proposed code",
+            "description": "Paste the exact code to check. Static checks only; this code is never executed. Maximum 256 KiB combined with supporting CSS.",
+            "required": true
+          },
+          {
+            "name": "css",
+            "type": "textarea",
+            "title": "Supporting CSS (optional)",
+            "description": "CSS for resolving class-based grid/flex layout in JSX. Only the grids check reads this; it is not written to the project.",
+            "required": false
+          }
+        ],
+        "meta": {
+          "operation": "inspect",
+          "target_type": "code-review",
+          "authority": "read",
+          "output": "report",
+          "group": "guards"
+        }
+      },
+      "inherited_executor": true,
+      "registered": false,
+      "check": {
+        "visible": true,
+        "key": "base/code-review/guards",
+        "rank": 1,
+        "request_shape": {
+          "seats": {
+            "domain": "audit",
+            "operation": null,
+            "target": null,
+            "target_type": null,
+            "quantifier": null,
+            "predicate": null,
+            "relation": "with",
+            "name": null,
+            "value": null,
+            "reference": null,
+            "scope": null,
+            "output": null
+          },
+          "data_types": [],
+          "complete": false
+        },
+        "relation_error": null
+      }
+    },
+    {
+      "status": "created",
+      "type": "base",
+      "name": "grids",
+      "address": "code-review-grids",
+      "id": 1830000000732,
+      "path": "base/code-review/grids",
+      "settings": {
+        "id": 1830000000732,
+        "name": "grids",
+        "title": "Review Code Grids",
+        "description": "Checks pasted JSX or TSX for Grid to Flex to Grid ancestry, using the existing grid continuity auditor.",
+        "settings": [
+          {
+            "name": "file",
+            "type": "path",
+            "title": "Intended file",
+            "description": "Project-relative filename, such as src/components/Card/Card.tsx or src/atoms/action.css. Review does not change this file.",
+            "required": true
+          },
+          {
+            "name": "code",
+            "type": "textarea",
+            "title": "Proposed code",
+            "description": "Paste the exact code to check. Static checks only; this code is never executed. Maximum 256 KiB combined with supporting CSS.",
+            "required": true
+          },
+          {
+            "name": "css",
+            "type": "textarea",
+            "title": "Supporting CSS (optional)",
+            "description": "CSS for resolving class-based grid/flex layout in JSX. Only the grids check reads this; it is not written to the project.",
+            "required": false
+          }
+        ],
+        "meta": {
+          "operation": "inspect",
+          "target_type": "grid",
+          "authority": "read",
+          "output": "report",
+          "group": "grids"
+        }
+      },
+      "inherited_executor": true,
+      "registered": false,
+      "check": {
+        "visible": true,
+        "key": "base/code-review/grids",
+        "rank": 1,
+        "request_shape": {
+          "seats": {
+            "domain": "audit",
+            "operation": null,
+            "target": "Flex",
+            "target_type": "grid",
+            "quantifier": null,
+            "predicate": null,
+            "relation": "to",
+            "name": null,
+            "value": null,
+            "reference": null,
+            "scope": null,
+            "output": null
+          },
+          "data_types": [
+            "grid"
+          ],
+          "complete": false
+        },
+        "relation_error": null
+      }
+    },
+    {
+      "status": "created",
+      "type": "base",
+      "name": "atoms",
+      "address": "code-review-atoms",
+      "id": 1830000000734,
+      "path": "base/code-review/atoms",
+      "settings": {
+        "id": 1830000000734,
+        "name": "atoms",
+        "title": "Review Code Atoms",
+        "description": "Checks pasted CSS with the existing token and state auditors, including duplicate is-active states.",
+        "settings": [
+          {
+            "name": "file",
+            "type": "path",
+            "title": "Intended file",
+            "description": "Project-relative filename, such as src/components/Card/Card.tsx or src/atoms/action.css. Review does not change this file.",
+            "required": true
+          },
+          {
+            "name": "code",
+            "type": "textarea",
+            "title": "Proposed code",
+            "description": "Paste the exact code to check. Static checks only; this code is never executed. Maximum 256 KiB combined with supporting CSS.",
+            "required": true
+          },
+          {
+            "name": "css",
+            "type": "textarea",
+            "title": "Supporting CSS (optional)",
+            "description": "CSS for resolving class-based grid/flex layout in JSX. Only the grids check reads this; it is not written to the project.",
+            "required": false
+          }
+        ],
+        "meta": {
+          "operation": "inspect",
+          "target_type": "atom",
+          "authority": "read",
+          "output": "report",
+          "group": "atoms"
+        }
+      },
+      "inherited_executor": true,
+      "registered": false,
+      "check": {
+        "visible": true,
+        "key": "base/code-review/atoms",
+        "rank": null,
+        "request_shape": {
+          "seats": {
+            "domain": "audit",
+            "operation": null,
+            "target": null,
+            "target_type": "token",
+            "quantifier": null,
+            "predicate": "duplicate",
+            "relation": "with",
+            "name": null,
+            "value": null,
+            "reference": null,
+            "scope": null,
+            "output": null
+          },
+          "data_types": [
+            "token"
+          ],
+          "complete": false
+        },
+        "relation_error": null
+      }
+    },
+    {
+      "status": "created",
+      "type": "base",
+      "name": "write",
+      "address": "code-review-write",
+      "id": 1830000000736,
+      "path": "base/code-review/write",
+      "settings": {
+        "id": 1830000000736,
+        "name": "write",
+        "title": "Review and Write New File",
+        "description": "Reruns selected code checks and creates a new file in the selected project only if they pass. Requires explicit confirmation; existing files are never overwritten.",
+        "settings": [
+          {
+            "name": "file",
+            "type": "path",
+            "title": "Intended file",
+            "description": "Project-relative filename, such as src/components/Card/Card.tsx or src/atoms/action.css. Review does not change this file.",
+            "required": true
+          },
+          {
+            "name": "code",
+            "type": "textarea",
+            "title": "Proposed code",
+            "description": "Paste the exact code to check. Static checks only; this code is never executed. Maximum 256 KiB combined with supporting CSS.",
+            "required": true
+          },
+          {
+            "name": "css",
+            "type": "textarea",
+            "title": "Supporting CSS (optional)",
+            "description": "CSS for resolving class-based grid/flex layout in JSX. Only the grids check reads this; it is not written to the project.",
+            "required": false
+          },
+          {
+            "name": "checks",
+            "type": "json",
+            "title": "Check groups",
+            "description": "Omit for all groups, or supply an array such as [\"guards\",\"grids\"] or [\"atoms\"]. Non-applicable groups are reported as skipped.",
+            "required": false,
+            "default": [
+              "guards",
+              "grids",
+              "atoms"
+            ]
+          },
+          {
+            "name": "confirm",
+            "type": "boolean",
+            "title": "Confirm new file write",
+            "description": "True permits creation after the checks pass. False or omitted refuses writing.",
+            "required": false,
+            "default": false
+          }
+        ],
+        "meta": {
+          "operation": "create",
+          "target_type": "reviewed-code",
+          "authority": "write",
+          "output": "file"
+        }
+      },
+      "inherited_executor": false,
+      "registered": false,
+      "check": {
+        "visible": true,
+        "key": "base/code-review/write",
+        "rank": 1,
+        "request_shape": {
+          "seats": {
+            "domain": "audit",
+            "operation": "select",
+            "target": null,
+            "target_type": "code",
+            "quantifier": null,
+            "predicate": null,
+            "relation": null,
+            "name": null,
+            "value": null,
+            "reference": null,
+            "scope": null,
+            "output": null
+          },
+          "data_types": [
+            "code"
+          ],
+          "complete": false
+        },
+        "relation_error": null
+      }
+    }
+  ],
+  "installed": {
+    "status": "verified",
+    "verification": "created-files-match-approved-plan-sha256",
+    "destination": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\code-review",
+    "files": [
+      {
+        "path": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\code-review\\atoms\\settings.json",
+        "bytes": 1187,
+        "sha256": "060d4251cc51317e19adfb44187a5272269b247f9841f69b2400dc94ba410745"
+      },
+      {
+        "path": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\code-review\\code-review.mjs",
+        "bytes": 117,
+        "sha256": "6971122c7bcf383b224661210a2ec154be4c81b87bc202c7ed8e677d81f25399"
+      },
+      {
+        "path": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\code-review\\grids\\settings.json",
+        "bytes": 1191,
+        "sha256": "6a1f9d4475f319ed13c96e285febaa8f8cba3523101878a57f0c33de0ea26330"
+      },
+      {
+        "path": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\code-review\\guards\\settings.json",
+        "bytes": 1204,
+        "sha256": "cdb360e4cb3effdbea487095370b4d4c8683b1db5d2345372b91f0b8031da790"
+      },
+      {
+        "path": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\code-review\\settings.json",
+        "bytes": 1627,
+        "sha256": "de5875efd17efdeda61809b36096a4e1bc89a48c9f5144a6f9473fe73ad6e454"
+      },
+      {
+        "path": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\code-review\\write\\settings.json",
+        "bytes": 1850,
+        "sha256": "1132154010db05489c48838f8c3f5fc3626258dcab0ac8b42806bbf093619a99"
+      },
+      {
+        "path": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\code-review\\write\\write.mjs",
+        "bytes": 111,
+        "sha256": "c0001e2a270ee40c727ba74c3e10ee86d1da02736ac4b647a08b7e9e771d7f02"
+      }
+    ]
+  }
+}

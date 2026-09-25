@@ -1,0 +1,12 @@
+{
+  "id": 1790251534124,
+  "name": "world",
+  "title": "New World",
+  "description": "Creates a named world for this computer/user instance under .rab/worlds, using the shared memory and template owners.",
+  "settings": [
+    {"name":"name","type":"text","title":"World Name","description":"One folder name for .rab/worlds/[name].","required":true},
+    {"name":"title","type":"text","title":"Title","description":"Display title; defaults to the world name.","required":false},
+    {"name":"description","type":"textarea","title":"Description","description":"What this world provides for its projects.","required":false,"default":""}
+  ],
+  "meta":{"domain":"world","operation":"create","target_type":"world","output":"world","authority":"write"}
+}

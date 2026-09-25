@@ -1,0 +1,20 @@
+@import '../../../atoms/actions/action-rail-left/action-rail-left.css';
+@layer components {
+  .calendar { block-size: 100%; }
+  .calendar__header { display: block; padding: var(--space-md); }
+  .calendar__toolbar, .calendar__tabs { display: flex; align-items: center; flex-wrap: wrap; }
+  .calendar__toolbar h2 { font: var(--type-heading); margin-inline-end: auto; }
+  .calendar__toolbar button, .calendar__tabs button { padding: var(--space-sm) var(--space-md); }
+  .calendar__body { display: block; padding: var(--space-md); }
+  .calendar__day { --container-inset-radius: 0; overflow: hidden; overflow-wrap: anywhere; }
+  .calendar__date { text-align: start; font: var(--type-label); font-weight: normal; }
+  .calendar__add { font: var(--type-label); font-weight: normal; }
+  .calendar__events { display: block; overflow: hidden; padding: var(--space-2xs); }
+  .event { margin-block: var(--space-sm); padding: var(--space-xs); font: var(--type-label); font-weight: normal; }
+  .calendar__location { display: block; font: var(--type-code); }
+}
+
+@layer components {
+  .calendar > [data-area]:not([data-rows]):not([data-grid]) { grid-template-rows: minmax(0, 1fr); }
+  .calendar > [data-area] > .inner:not([data-rows]):not([data-grid]) { min-inline-size: 0; min-block-size: 0; }
+}

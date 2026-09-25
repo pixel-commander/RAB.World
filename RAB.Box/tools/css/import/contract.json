@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "Constructs a relative @import statement and prepends it if missing.",
+    "reviewed_at": "2026-09-20"
+  }
+}

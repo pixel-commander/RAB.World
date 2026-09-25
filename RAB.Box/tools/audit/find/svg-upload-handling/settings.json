@@ -1,0 +1,30 @@
+{
+  "id": 1800000000014,
+  "name": "svg-upload-handling",
+  "title": "Find SVG Handling",
+  "description": "Finds SVG MIME/extension handling that deserves active-content review in upload or rendering paths.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "svg-upload-handling",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "(?:image/svg\\+xml|\\.svg\\b)",
+      "scope": "all",
+      "kind": "svg-handling-candidate",
+      "heuristic": true,
+      "flags": "i"
+    }
+  }
+}

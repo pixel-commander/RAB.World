@@ -1,0 +1,32 @@
+{
+  "id": 1810000000004,
+  "name": "remove",
+  "title": "Remove Allergy",
+  "description": "Explicitly removes one human-declared project allergy and requires allergy-status review rather than silently claiming none.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "person",
+      "title": "Person",
+      "description": "person",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "allergen",
+      "title": "Allergen",
+      "description": "allergen",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "train",
+    "data_types": [
+      "allergy_status"
+    ],
+    "returns": [
+      "allergy_status"
+    ]
+  }
+}

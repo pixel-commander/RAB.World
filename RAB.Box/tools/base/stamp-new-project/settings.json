@@ -1,0 +1,86 @@
+{
+  "id": 1790000000205,
+  "name": "stamp-new-project",
+  "title": "New Project",
+  "description": "Creates a project with a name and paths, then adds its ID, name, title and description to the high-level projects manifest.",
+  "settings": [
+    {
+      "type": "options",
+      "name": "type",
+      "title": "Project Type",
+      "description": "Which project family should own this project?",
+      "required": true,
+      "options": [
+        {
+          "name": "magic-box",
+          "description": "Locally saved Magic Box project session"
+        },
+        {
+          "name": "react",
+          "description": "React project"
+        },
+        {
+          "name": "html",
+          "description": "Vanilla HTML project"
+        },
+        {
+          "name": "audit",
+          "description": "Audit workspace"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Project Name",
+      "description": "Name for the new project.",
+      "required": true
+    },
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Root Path",
+      "description": "For Audit: the existing folder to inspect. For other types: the root path; the new project is installed at root path/name.",
+      "required": true
+    },
+    {
+      "type": "folder",
+      "name": "custom_toolkit_path",
+      "title": "Custom Toolkit Path",
+      "description": "Optional absolute path to an external toolkit. Saved in the new project settings.json; toolkit files stay outside the project.",
+      "required": false
+    },
+    {
+      "type": "json",
+      "name": "paths",
+      "title": "Paths",
+      "description": "Optional House Keys path records.",
+      "required": false
+    },
+    {
+      "type": "json",
+      "name": "toolkits",
+      "title": "Toolkits",
+      "description": "Optional House Keys toolkit records.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "add_ui_kit",
+      "title": "Add UI Kit",
+      "description": "React only: seed the UI-kit template and finalize its temporary markers.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "create",
+    "target_type": "project",
+    "data_types": [
+      "project",
+      "path"
+    ],
+    "output": "project",
+    "authority": "write"
+  }
+}

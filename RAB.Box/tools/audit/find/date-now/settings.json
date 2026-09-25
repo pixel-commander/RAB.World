@@ -1,0 +1,32 @@
+{
+  "id": 1790000000954,
+  "name": "date-now",
+  "title": "Find Date.now Usage",
+  "description": "Finds Date.now call sites.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "time-read",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bDate\\.now\\s*\\(",
+      "kind": "date-now",
+      "scope": "code"
+    }
+  }
+}

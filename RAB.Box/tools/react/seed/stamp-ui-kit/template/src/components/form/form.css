@@ -1,0 +1,22 @@
+@layer components {
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    min-inline-size: 0;
+  }
+
+  .form--pad {
+    padding: var(--space-lg);
+  }
+
+  .form__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+  }
+
+  .form__actions button {
+    padding: var(--space-sm) var(--space-lg);
+  }
+}

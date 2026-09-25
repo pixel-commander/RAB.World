@@ -1,0 +1,30 @@
+{
+  "id": 1800000000036,
+  "name": "cleartext-local-protocols",
+  "title": "Find Cleartext Local Protocols",
+  "description": "Finds HTTP/WS URLs targeting loopback or private-LAN addresses.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "cleartext-local-protocols",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\b(?:http|ws)://(?:localhost|127\\.0\\.0\\.1|10\\.|192\\.168\\.|172\\.(?:1[6-9]|2\\d|3[01])\\.)",
+      "scope": "all",
+      "kind": "cleartext-local-protocol-candidate",
+      "heuristic": true,
+      "flags": "i"
+    }
+  }
+}

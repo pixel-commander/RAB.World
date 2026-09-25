@@ -1,0 +1,7 @@
+{
+  "source_tool_id": 1790000000401,
+  "source_tool": "react/stamp-new-component",
+  "source_root": "//Desktop-t72isdi/f/RAB.Box/tools/react/stamp-new-component",
+  "relocated_to": "react/add/new/component",
+  "note": "Moved into the React toolkit with its existing numeric identity. The original built-in tool location is retired."
+}

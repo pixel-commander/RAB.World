@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Loads phrase.json and fills a language record. Writes JSON data rather than application code.",
+    "reviewed_at": "2026-09-20"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": 1790000000986,
+  "name": "component-usage",
+  "title": "Count Component Usage",
+  "description": "Aggregates JSX component usage counts by component name.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "count",
+    "target_type": "component-usage",
+    "data_types": [
+      "file",
+      "count"
+    ],
+    "output": "count",
+    "authority": "read",
+    "aggregate_from": "find-component-usage"
+  }
+}

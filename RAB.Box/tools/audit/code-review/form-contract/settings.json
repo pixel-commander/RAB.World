@@ -1,0 +1,48 @@
+{
+  "id": 1790000001511,
+  "name": "form-contract",
+  "title": "Audit Form Contract",
+  "description": "Compares frontend field names, FormData extraction keys, and optional schema field keys to expose deterministic contract drift.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to review. Uses the loaded project root when omitted.",
+      "required": false
+    },
+    {
+      "type": "file",
+      "name": "frontend_file",
+      "title": "Frontend File",
+      "description": "Optional exact frontend form file.",
+      "required": false
+    },
+    {
+      "type": "file",
+      "name": "server_file",
+      "title": "Server File",
+      "description": "Optional exact FormData extraction file.",
+      "required": false
+    },
+    {
+      "type": "file",
+      "name": "schema_file",
+      "title": "Schema File",
+      "description": "Optional JSON schema/field definition file.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "code-review",
+    "data_types": [
+      "code-review",
+      "form-contract"
+    ],
+    "output": "report",
+    "authority": "read",
+    "rule": "form-contract"
+  }
+}

@@ -1,0 +1,33 @@
+✔ project intent uses parsed meanings and guards questions, history, negation and other targets (21.1895ms)
+✔ new project keeps one pending step, asks type/name/folder, waits for confirmation, creates files and switches context (3471.9323ms)
+✔ missing lookup lists only available names and retries the same step without starting creation (6653.0814ms)
+✔ an unresolved project lookup survives session restoration and accepts a new load command (2286.7818ms)
+✔ an explicit new-project request can replace a pending load retry (1287.2709ms)
+✔ existing duplicate labels stay unresolved and allow another name without showing paths (2106.46ms)
+✔ cancellation and an existing destination do not create or overwrite projects (2445.5294ms)
+✔ Magic Box setup asks name and folder, stamps local settings, and restores its saved session (2235.4875ms)
+✔ audit setup keeps settings, sessions and results in one .rab project and leaves the input untouched (13205.542ms)
+✔ audit setup cancels early, rejects invalid targets or .rab itself, and allows a corrected folder (4917.8527ms)
+✔ parent-folder audit saves inside nested .rab while excluding it from scans (4813.1371ms)
+✔ direct Audit Stamp preserves valid names and creates only a .rab project (868.7803ms)
+✔ Windows drive root can be saved as the default audit folder without scanning the drive (1020.7984ms)
+✔ project inspection reads current settings from disk and reports invalid or missing settings (4525.9242ms)
+✔ development projects save memory by name and reopen by numeric ID in a fresh owner (2125.2274ms)
+✔ concurrent development stamps cannot write two source projects for the same memory name (882.0252ms)
+✔ registered numeric project directories and their sessions remain readable without moving (1020.2643ms)
+✔ existing named contents and junctions are refused before source artifacts are written (1236.7347ms)
+✔ named projects cannot reuse an identity or restart allocation after reservation state is lost (918.3267ms)
+✔ cross-process cold project saves preserve every key, session, nested result reference and source (12252.2973ms)
+✔ same-process concurrent updates serialize; full snapshot saves remain replacements (1938.4551ms)
+✔ corrupt project metadata is not silently replaced; lock releases after failure (133.1201ms)
+✔ distinct projects stay isolated and result references cannot cross project boundaries (1166.9306ms)
+✔ interrupted lock owners time out visibly without stealing locks (183.3303ms)
+✔ report reader validates containment, size and envelope without initializing project memory (45.9358ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 49998.386

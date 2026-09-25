@@ -1,0 +1,40 @@
+GEMINI — NEXT SHAPE-1 ROUND
+===========================
+
+Your role is POSSIBILITY GENERATION for Shape 1 only.
+
+Please propose legitimate missing:
+- lemmas
+- surface/inflected forms
+- grammatical/lexical types
+- candidate lexical senses
+- reusable multi-word constructions
+
+Rules:
+1. Preserve real ambiguity. Do not choose final meaning.
+2. A sense must be a plausible lexical/semantic meaning of the word itself.
+   Do not infer downstream RRAABBIITT Tool effects.
+3. Do not map directly to Tools, commands, final semantic seats, or execution.
+4. Do not invent typo variants.
+5. Do not memorize whole commands as phrases; prefer reusable constructions.
+6. Preserve irregular morphology correctly.
+7. Return new additions/corrections separately; do not rewrite the live mapper.
+8. Flag suspicious existing entries instead of silently fixing them.
+9. Quantity is NOT a goal. Useful coverage is.
+
+Good:
+  pull -> retrieve | import | extract
+  remove -> detach | delete
+  add -> create | attach | insert | include | increment
+
+Bad:
+  invalidate -> delete            (downstream effect leakage)
+  leverage -> dependency          (not a lexical sense)
+  optimize -> valid               (possible outcome, not meaning)
+
+The target pipeline is:
+  many surface forms
+    -> Shape-1 possibilities
+    -> Shape-2 grammar/order/context narrowing
+    -> canonical semantic seats
+    -> deterministic Tool matching

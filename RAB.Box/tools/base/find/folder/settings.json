@@ -1,0 +1,11 @@
+{
+  "id": 1790000000911,
+  "name": "folder",
+  "title": "Find Folder",
+  "description": "Finds a folder by name inside the loaded project or supplied folder.",
+  "settings": [
+    {"type":"text","name":"name","title":"Name","description":"Folder name to find.","required":true},
+    {"type":"folder","name":"folder","title":"Folder","description":"Optional folder to search. Uses the loaded project root when omitted.","required":false}
+  ],
+  "meta": {"domain":"base","operation":"find","target_type":"folder","output":"list","authority":"read"}
+}

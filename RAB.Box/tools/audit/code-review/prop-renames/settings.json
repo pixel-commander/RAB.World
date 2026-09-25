@@ -1,0 +1,27 @@
+{
+  "id": 1790000001403,
+  "name": "prop-renames",
+  "title": "Audit Prop Renames",
+  "description": "Flags direct aliases that rename incoming props without transforming the value.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to review. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "code-review",
+    "data_types": [
+      "code-review",
+      "prop-renames"
+    ],
+    "output": "report",
+    "authority": "read",
+    "rule": "prop-renames"
+  }
+}

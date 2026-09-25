@@ -1,0 +1,22 @@
+{
+  "id": 1800000000038,
+  "name": "generated-code",
+  "title": "Inspect Generated Code Safety",
+  "description": "Chains generated-file/upload audits to map filesystem write sinks, user-controlled filenames, FormData handling, executable source writes, SVG handling, public upload serving, generated directories, provenance markers, and input-derived path joins.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to inspect. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "generated-code",
+    "output": "report",
+    "authority": "read"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "version": "tool-contract/v1",
+  "result": {
+    "status": "string",
+    "report": {
+      "version": "\"stamp-visibility-report/v0.9\"",
+      "project": {
+        "id": "string",
+        "root": "string"
+      },
+      "summary": {
+        "registered_stamps": "number",
+        "description_complete": "number",
+        "generated_unregistered": "number"
+      },
+      "stamps": [
+        {
+          "name": "string",
+          "registered": "boolean",
+          "executable": "boolean",
+          "description": "string",
+          "description_complete": "boolean",
+          "shape": {
+            "[seat]": "value"
+          },
+          "data_types": [
+            "string"
+          ],
+          "neighbors": [
+            {
+              "name": "string",
+              "score": "number",
+              "ratio": "number",
+              "matches": [
+                "string"
+              ]
+            }
+          ]
+        }
+      ],
+      "generated": [
+        {
+          "folder": "string",
+          "name": "string",
+          "registered": "boolean",
+          "registration": "object | null",
+          "settings_present": "boolean"
+        }
+      ]
+    },
+    "provided": {
+      "seats": {
+        "report": "Same report object"
+      }
+    }
+  }
+}

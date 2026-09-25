@@ -1,0 +1,32 @@
+{
+  "id": 1790000000951,
+  "name": "set-timeout",
+  "title": "Find setTimeout Calls",
+  "description": "Finds setTimeout call sites.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "timer",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bsetTimeout\\s*\\(",
+      "kind": "set-timeout",
+      "scope": "code"
+    }
+  }
+}

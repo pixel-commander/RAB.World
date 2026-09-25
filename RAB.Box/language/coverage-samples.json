@@ -1,0 +1,41 @@
+{
+  "version": "rraabbiitt-language-coverage/v0.6",
+  "note": "Approved language probes. These are parser tests, not execution permissions.",
+  "samples": [
+    {"text":"find all orphaned files","context":{"domain":"audit"},"expect":{"operation":"find","target_type":"file","quantifier":"all","predicate":"orphaned","output":"list"}},
+    {"text":"show every unused file","context":{"domain":"audit"},"expect":{"operation":"find","target_type":"file","quantifier":"all","predicate":"orphaned","output":"list"}},
+    {"text":"get every unreferenced file","context":{"domain":"audit"},"expect":{"operation":"find","target_type":"file","quantifier":"all","predicate":"orphaned","output":"list"}},
+    {"text":"report files that nothing references","context":{"domain":"audit"},"expect":{"operation":"find","target_type":"file","predicate":"orphaned","output":"report"}},
+    {"text":"count all orphaned files","context":{"domain":"audit"},"expect":{"operation":"count","target_type":"file","quantifier":"all","predicate":"orphaned","output":"count"}},
+    {"text":"audit all orphan files","context":{},"expect":{"domain":"audit","operation":"find","target_type":"file","quantifier":"all","predicate":"orphaned"}},
+    {"text":"find all the state hooks","context":{"domain":"audit"},"expect":{"operation":"find","target_type":"hook","quantifier":"all","predicate":"state"}},
+    {"text":"show state hooks","context":{"domain":"audit"},"expect":{"operation":"find","target_type":"hook","predicate":"state"}},
+    {"text":"get useState hooks","context":{"domain":"audit"},"expect":{"operation":"find","target_type":"hook","predicate":"state"}},
+    {"text":"find effect hooks","context":{"domain":"audit"},"expect":{"operation":"find","target_type":"hook","predicate":"effect"}},
+    {"text":"show useEffect hooks","context":{"domain":"audit"},"expect":{"operation":"find","target_type":"hook","predicate":"effect"}},
+    {"text":"get me the imports","context":{"domain":"audit"},"expect":{"operation":"find","target_type":"import"}},
+    {"text":"show me components","context":{"domain":"audit"},"expect":{"operation":"find","target_type":"component"}},
+    {"text":"find all comments","context":{"domain":"audit"},"expect":{"operation":"find","target_type":"comment","quantifier":"all"}},
+    {"text":"find all svg","context":{"domain":"audit"},"expect":{"operation":"find","target_type":"svg","quantifier":"all"}},
+    {"text":"audit C:\\project to tell me all orphaned files","context":{},"expect":{"domain":"audit","operation":"find","target_type":"file","predicate":"orphaned"}},
+    {"text":"I want to audit C:\\project","context":{},"expect":{"domain":"audit","operation":"inspect"}},
+    {"text":"now run hooks audit","context":{"domain":"audit"},"expect":{"domain":"audit","operation":"find","target_type":"hook"}},
+
+    {"text":"create component TestOne","context":{"domain":"react"},"expect":{"operation":"create","target_type":"component","name":"TestOne"}},
+    {"text":"make a new component called TestOne","context":{"domain":"react"},"expect":{"operation":"create","target_type":"component","name":"TestOne"}},
+    {"text":"build component named TestOne","context":{"domain":"react"},"expect":{"operation":"create","target_type":"component","name":"TestOne"}},
+    {"text":"scaffold component TestOne","context":{"domain":"react"},"expect":{"operation":"create","target_type":"component","name":"TestOne"}},
+    {"text":"add component to TestOne called Menu","context":{"domain":"react"},"expect":{"operation":"create","target_type":"component","target":"TestOne","relation":"child-of","name":"Menu"}},
+    {"text":"add div to Header","context":{"domain":"react"},"expect":{"operation":"create","target_type":"div","target":"Header","relation":"child-of"},"known":[{"name":"Header","type":"component"}]},
+    {"text":"add div with class container-sub","context":{"domain":"react"},"expect":{"operation":"create","target_type":"div","reference":"container-sub"}},
+    {"text":"create atom container-main","context":{"domain":"react"},"expect":{"operation":"create","target_type":"atom","name":"container-main"}},
+    {"text":"create page HomePage","context":{"domain":"react"},"expect":{"operation":"create","target_type":"page","name":"HomePage"}},
+    {"text":"stamp a new react project named TestProject","context":{},"expect":{"domain":"react","operation":"create","target_type":"project","name":"TestProject"}},
+    {"text":"create a new react project named TestProject","context":{},"expect":{"domain":"react","operation":"create","target_type":"project","name":"TestProject"}},
+    {"text":"create a new stamp named audit-orphans","context":{"domain":"react"},"expect":{"operation":"create","target_type":"stamp","name":"audit-orphans"}},
+
+    {"text":"nd thwies willll sete tehm all fof","context":{},"expect_failure":"unknown-word"},
+    {"text":"remove container-main","context":{"domain":"react"},"expect_failure":"ambiguous-seat"},
+    {"text":"do not create component TestOne","context":{"domain":"react"},"expect_failure":"negation"}
+  ]
+}

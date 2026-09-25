@@ -1,0 +1,55 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import path from 'node:path';
+import os from 'node:os';
+import { mkdir, mkdtemp, readFile, writeFile, access } from 'node:fs/promises';
+import { pathToFileURL } from 'node:url';
+import { run } from './signal.mjs';
+
+test('signal template writes a complete record and preserves false and existing content', async () => {
+  assert.ok(process.env.RAB_BOX_ROOT, 'Set RAB_BOX_ROOT to the Box source root.');
+  const load = relative => import(pathToFileURL(path.join(process.env.RAB_BOX_ROOT, relative)));
+  const { createRabMemory } = await load('bridge/rab-memory.mjs');
+  const { makeItemSettings, assertItemSettings } = await load('bridge/rab-node.mjs');
+  const { writeArtifactPlan, renderTemplateTree } = await load('tools/_artifact-plan.mjs');
+  const { createToolHouse } = await load('bridge/tool-house.mjs');
+  const parent = path.join(os.homedir(), '.rab', 'tests');
+  await mkdir(parent, { recursive: true });
+  const fixture = await mkdtemp(path.join(parent, 'signal-'));
+  const root = path.join(fixture, 'source');
+  await mkdir(root);
+  const memory = createRabMemory({ rabHome: path.join(fixture, 'memory') });
+  const tool = JSON.parse(await readFile(new URL('./settings.json', import.meta.url), 'utf8'));
+  const helpers = { writeArtifactPlan, renderTemplateTree, createItemSettings: async input => makeItemSettings({ ...input, id: await memory.allocateId() }) };
+  const create = (options, context = { project: { root } }) => run({ options, context, tool, helpers });
+  const options = { name: 'AdminCard', path: 'components/AdminCard', type: 'component', description: 'Quotes "and"\nnewlines', transmitting: false };
+  const bound = createToolHouse({ root: process.env.RAB_BOX_ROOT }).bindSettings(tool, { name: 'A', path: 'a' });
+  assert.deepEqual(bound.missing, []);
+  assert.equal(bound.options.transmitting, true);
+  const result = await create(options);
+  const signal = JSON.parse(await readFile(result.file, 'utf8'));
+  assertItemSettings(signal);
+  for (const [key, value] of Object.entries(options)) assert.deepEqual(signal[key], value);
+  assert.equal(signal.title, options.name);
+  assert.ok(Number.isSafeInteger(signal.id));
+  assert.equal(result.verification.files.length, 3);
+  const contract = JSON.parse(await readFile(path.join(result.folder, 'contract.json'), 'utf8'));
+  assert.equal(contract.source.kind, 'unclassified');
+  assert.match(await readFile(path.join(result.folder, 'README.txt'), 'utf8'), /AdminCard/);
+  const standalone = await create({ name: 'Standalone', path: path.join(fixture, 'standalone') }, {});
+  assert.equal(standalone.signal.transmitting, true);
+  assert.equal(standalone.signal.type, '');
+  assert.notEqual(standalone.signal.id, signal.id);
+  await assert.rejects(create(options), { code: 'EEXIST' });
+  assert.equal(JSON.parse(await readFile(result.file, 'utf8')).transmitting, false);
+  const collision = path.join(root, 'collision');
+  await mkdir(collision);
+  await writeFile(path.join(collision, 'README.txt'), 'Keep this');
+  await assert.rejects(create({ name: 'Collision', path: 'collision' }), { code: 'EEXIST' });
+  await assert.rejects(access(path.join(collision, 'settings.json')), { code: 'ENOENT' });
+  assert.equal(await readFile(path.join(collision, 'README.txt'), 'utf8'), 'Keep this');
+  for (const invalid of [{ transmitting: 'false' }, { path: '../escape' }, { type: false }, { name: '' }]) {
+    await assert.rejects(create({ ...options, ...invalid }), { code: 'BAD_INPUT' });
+  }
+  console.log(`Generated signal inspected: ${result.folder}`);
+});

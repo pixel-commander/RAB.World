@@ -1,0 +1,51 @@
+{
+  "id": 1790000000930,
+  "name": "stamp-new",
+  "title": "Add Grid",
+  "description": "Creates a known HTML grid topology from the parent Tool-local grids.json catalog and leaves explicit data-rab-seat construction addresses for future Tools/Stamps.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Grid Name",
+      "description": "Output fragment name without extension.",
+      "required": false,
+      "default": "grid"
+    },
+    {
+      "type": "folder",
+      "name": "location",
+      "title": "Location",
+      "description": "Folder that receives the HTML grid fragment.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "layout",
+      "title": "Grid Layout",
+      "description": "Topology key from grids.json.",
+      "required": false,
+      "default": "shell"
+    },
+    {
+      "type": "text",
+      "name": "gap",
+      "title": "Gap",
+      "description": "Grid gap token: control, content, container, or section.",
+      "required": false,
+      "default": "content"
+    }
+  ],
+  "meta": {
+    "domain": "html",
+    "operation": "create",
+    "target_type": "grid",
+    "data_types": [
+      "grid",
+      "html"
+    ],
+    "output": "html-fragment",
+    "authority": "write",
+    "resource": "../grids.json"
+  }
+}

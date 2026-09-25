@@ -1,0 +1,6 @@
+INHERIT=../RULE.txt; SCOPE=discoverable definition.
+SETTINGS=required id,name,title,description,settings,meta; name==leaf; title/description nonempty; settings=array; meta=object; path/meta agree.
+ID=permanent unique numeric observed timestamp through shared owner; preserve on move.
+EXEC=leaf-name.mjs or nearest parent-folder-name.mjs inside tools tree; discovery does not execute it.
+STAMP=template/ determines kind; prefix not required; stamp- without template/ remains rejected.
+CONTRACT=optional declarative contract.json may be inherited; malformed supplied contract makes tool unavailable; no automatic result validation.

@@ -1,0 +1,13 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "hybrid",
+    "description": "Scans the separate working copy, stores exact file versions once by SHA-256, and records before/after manifests, focused changes and a binary-capable Git patch. Never edits the working copy or original archive."
+  },
+  "result": {
+    "status": "captured / begun / inspected",
+    "change": "session-relative evidence directory",
+    "changed_files": "created/deleted/modified paths with hashes and byte counts",
+    "renames": "explicit associations supplied by reviewer"
+  }
+}

@@ -1,0 +1,12 @@
+@layer components {
+ .list-atom-designer__item[hidden], .list-atom-designer__empty[hidden] { display: none; }
+ .list-atom-designer__search { display: flex; flex-direction: column; gap: var(--space-2xs); padding: var(--space-sm); font: var(--type-label); }
+ .list-atom-designer__search-input { min-inline-size: 0; inline-size: 100%; padding: var(--space-xs) var(--space-sm); font: inherit; }
+ .list-atom-designer__empty { margin: 0; padding: var(--space-sm); font: var(--type-label); }
+ .list-atom-designer__item { display: block; inline-size: 100%; padding: var(--space-sm); text-align: start; font: var(--type-label); cursor: pointer; overflow-wrap: anywhere; }
+ .list-atom-designer { min-inline-size: 0; }
+  .list-atom-designer__kinds { display: flex; gap: var(--space-2xs); padding: var(--space-sm) var(--space-sm) 0; }
+  .list-atom-designer__kind { flex: 1; padding: var(--space-xs) var(--space-sm); text-align: center; }
+  .list-atom-designer__list { display: flex; flex-direction: column; gap: var(--space-2xs); padding: var(--space-sm); }
+ @media(max-width:768px) { .list-atom-designer__list { flex-direction:row; flex-wrap:wrap; } }
+}

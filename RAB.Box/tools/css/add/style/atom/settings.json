@@ -1,0 +1,34 @@
+{
+  "id": 1790000001411,
+  "name": "atom",
+  "title": "Add CSS to Atom",
+  "description": "Adds or updates declarations on an existing Atom resolved by atom name inside the loaded project.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "atom_name",
+      "title": "Atom Name",
+      "description": "Existing Atom/class name to update.",
+      "required": true
+    },
+    {
+      "type": "textarea",
+      "name": "styles",
+      "title": "Styles",
+      "description": "CSS declarations or a JSON property/value object.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "css",
+    "operation": "create",
+    "target_type": "atom",
+    "data_types": [
+      "css",
+      "atom",
+      "style"
+    ],
+    "output": "css-update",
+    "authority": "write"
+  }
+}

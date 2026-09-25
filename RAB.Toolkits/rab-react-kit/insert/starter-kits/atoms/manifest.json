@@ -1,0 +1,134 @@
+{
+  "atoms": [
+    {
+      "name": "action-fill-alt",
+      "kind": "action-atom",
+      "created": "2026-09-15",
+      "description": "Secondary blue filled action with a subtle vertical gradient that reverses on hover.",
+      "modified": "2026-09-15",
+      "shelf": "actions",
+      "css": "atoms/actions/action-fill-alt/action-fill-alt.css"
+    },
+    {
+      "name": "action-ghost",
+      "kind": "action-atom",
+      "created": "2026-09-17",
+      "description": "Muted default skin with the default navigation skin on hover.",
+      "modified": "2026-09-17",
+      "shelf": "actions",
+      "css": "atoms/actions/action-ghost/action-ghost.css"
+    },
+    {
+      "name": "action-nav-alt",
+      "kind": "action-atom",
+      "created": "2026-09-15",
+      "description": "Navigation action with a 3px bottom border and secondary-blue hover highlight.",
+      "modified": "2026-09-15",
+      "shelf": "actions",
+      "css": "atoms/actions/action-nav-alt/action-nav-alt.css"
+    },
+    {
+      "name": "action-rail-left",
+      "kind": "action-atom",
+      "created": "2026-09-10",
+      "description": "Left accent rail, 3px at the default border token; lighter background that brightens on hover.",
+      "modified": "2026-09-10",
+      "shelf": "actions",
+      "css": "atoms/actions/action-rail-left/action-rail-left.css"
+    },
+    {
+      "name": "container-cell",
+      "kind": "container-atom",
+      "created": "2026-09-14",
+      "description": "Neutral cell surface with inset and floating depth modifiers backed by reusable effect atoms.",
+      "modified": "2026-09-14",
+      "shelf": "containers",
+      "css": "atoms/containers/container-cell/container-cell.css"
+    },
+    {
+      "name": "container-machine",
+      "kind": "container-atom",
+      "created": "2026-09-14",
+      "description": "Machined dark chassis surface adapted from the factory-control-center site chrome.",
+      "modified": "2026-09-14",
+      "shelf": "containers",
+      "css": "atoms/containers/container-machine/container-machine.css"
+    },
+    {
+      "name": "container-metal",
+      "kind": "container-atom",
+      "created": "2026-09-14",
+      "description": "Flat lighter machined surface with a subtle gradient, strong border, and no depth shadow.",
+      "modified": "2026-09-14",
+      "shelf": "containers",
+      "css": "atoms/containers/container-metal/container-metal.css"
+    },
+    {
+      "name": "container-neon-corner",
+      "kind": "container-atom",
+      "created": "2026-09-14",
+      "description": "Reusable neon chassis corner with primary and secondary ink variants.",
+      "modified": "2026-09-14",
+      "shelf": "containers",
+      "css": "atoms/containers/container-neon-corner/container-neon-corner.css"
+    },
+    {
+      "name": "effect-float",
+      "kind": "effect-atom",
+      "created": "2026-09-14",
+      "description": "Reusable raised depth treatment backed by the theme floating elevation token.",
+      "modified": "2026-09-14",
+      "shelf": "effects",
+      "css": "atoms/effects/effect-float/effect-float.css"
+    },
+    {
+      "name": "effect-inset",
+      "kind": "effect-atom",
+      "created": "2026-09-14",
+      "description": "Reusable recessed depth treatment backed by the theme inset elevation token.",
+      "modified": "2026-09-14",
+      "shelf": "effects",
+      "css": "atoms/effects/effect-inset/effect-inset.css"
+    },
+    {
+      "name": "grid-dashboard",
+      "kind": "grid-atom",
+      "created": "2026-09-03",
+      "type": "dashboard",
+      "description": "6-col dashboard shell: main-nav band, side-nav | left | tabs-nav | main | right, footer",
+      "modified": "2026-09-03",
+      "shelf": "grids",
+      "css": "atoms/grids/grid-dashboard/grid-dashboard.css"
+    },
+    {
+      "name": "grid-dashboard-alt",
+      "kind": "grid-atom",
+      "created": "2026-09-03",
+      "type": "dashboard",
+      "description": "grid-dashboard without the tabs-nav band (that row left empty)",
+      "modified": "2026-09-03",
+      "shelf": "grids",
+      "css": "atoms/grids/grid-dashboard-alt/grid-dashboard-alt.css"
+    },
+    {
+      "name": "grid-test",
+      "kind": "grid-atom",
+      "created": "2026-09-15",
+      "type": "misc",
+      "description": "container grid for component",
+      "modified": "2026-09-15",
+      "shelf": "grids",
+      "css": "atoms/grids/grid-test/grid-test.css"
+    },
+    {
+      "name": "grid-test-1",
+      "kind": "grid-atom",
+      "created": "2026-09-10",
+      "type": "misc",
+      "description": "asdfasdf",
+      "modified": "2026-09-10",
+      "shelf": "grids",
+      "css": "atoms/grids/grid-test-1/grid-test-1.css"
+    }
+  ]
+}

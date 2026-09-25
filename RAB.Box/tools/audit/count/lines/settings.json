@@ -1,0 +1,26 @@
+{
+  "id": 1790000000984,
+  "name": "lines",
+  "title": "Count Source Lines",
+  "description": "Counts lines across supported code files and returns per-file counts.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "count",
+    "target_type": "line",
+    "data_types": [
+      "file",
+      "count"
+    ],
+    "output": "count",
+    "authority": "read"
+  }
+}

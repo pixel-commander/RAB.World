@@ -1,0 +1,14 @@
+{
+  "id": 1789380000012,
+  "name": "new-page",
+  "title": "Create a page",
+  "description": "create a new page in the current project and return the page",
+  "date_added": 1789380000000,
+  "data_types": ["page", "page-name", "project-relative-path", "text-content"],
+  "options": {
+    "name": {"required": true, "type": "text", "role": "artifact-name", "validate": "identifier", "question": "What is the page name?", "language": {"prefixes": ["named", "called", "name"]}},
+    "location": {"required": true, "type": "text", "role": "destination", "validate": "relative-directory", "question": "What is the pages path for this project?"},
+    "content": {"required": false, "type": "text", "role": "text-content", "language": {"prefixes": ["says", "text", "content"]}},
+    "save_as_text": {"required": false, "type": "boolean", "default": false, "role": "test-output-mode", "language": {"true": ["save as text", "as text"], "false": ["save as tsx", "as tsx"]}}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": 1790000000910,
+  "name": "file",
+  "title": "Find File",
+  "description": "Finds a file by name inside the loaded project or supplied folder.",
+  "settings": [
+    {"type":"text","name":"name","title":"Name","description":"File name to find.","required":true},
+    {"type":"folder","name":"folder","title":"Folder","description":"Optional folder to search. Uses the loaded project root when omitted.","required":false}
+  ],
+  "meta": {"domain":"base","operation":"find","target_type":"file","output":"list","authority":"read"}
+}

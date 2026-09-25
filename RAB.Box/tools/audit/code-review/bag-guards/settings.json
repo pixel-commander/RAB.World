@@ -1,0 +1,27 @@
+{
+  "id": 1790000001404,
+  "name": "bag-guards",
+  "title": "Audit Bag and Collection Guards",
+  "description": "Checks optional access on Bag/data collections and explicit fallback values for optional mapped leaves.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to review. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "code-review",
+    "data_types": [
+      "code-review",
+      "bag-guards"
+    ],
+    "output": "report",
+    "authority": "read",
+    "rule": "bag-guards"
+  }
+}

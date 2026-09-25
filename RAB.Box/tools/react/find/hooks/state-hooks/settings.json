@@ -1,0 +1,10 @@
+{
+  "id": 1790000000820,
+  "name": "state-hooks",
+  "title": "Find State Hooks",
+  "description": "Finds React state hooks by locating native useState calls in the loaded project.",
+  "settings": [
+    {"type":"folder","name":"folder","title":"Folder","description":"Optional folder to scan. Uses the loaded project root when omitted.","required":false}
+  ],
+  "meta": {"domain":"react","operation":"find","target_type":"hook","predicate":"state","native_symbol":"useState","quantifier":"all","data_types":["hook","file"],"output":"list","authority":"read"}
+}

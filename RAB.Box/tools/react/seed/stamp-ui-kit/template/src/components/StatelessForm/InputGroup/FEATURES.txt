@@ -1,0 +1,24 @@
+== FEATURES -- history, comments migrated verbatim (2026-08-17) ==
+
+---- InputGroup.tsx ----
+
+line 8:
+InputGroup is the field shell: label (+ required mark), the control, then hint and error. Every
+   other field in the package wears it rather than restating that stack, which is why an error
+   line looks identical under a dropdown and under a date picker.
+
+   With no children it IS a text field — a bare InputGroup is the text case, not a separate
+   TextInput beside it. description is the hint; error is the failure sentence.
+
+line 48:
+the DETAILS box: the same field, taller. input_type is already how a caller says what kind
+             of box this is, so a paragraph is one more value of it rather than a second component —
+             and it wears .ui-field-input, so it needs no css of its own.
+
+---- InputGroup.types.ts ----
+
+line 6:
+* html input type for the bare-text case
+
+line 8:
+* the skin, swappable

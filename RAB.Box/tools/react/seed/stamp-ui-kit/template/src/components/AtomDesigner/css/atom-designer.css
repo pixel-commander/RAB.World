@@ -1,0 +1,23 @@
+@layer components {
+  .atom-designer__code { min-block-size: 0; min-inline-size: 0; }
+  .atom-designer-demo {
+    min-block-size: 44rem;
+  }
+  .atom-designer { min-inline-size: 0; min-block-size: 0; block-size: 100%; }
+  .atom-designer > [data-area='left'] { inline-size: 12rem; background: var(--surface-inset); }
+  .atom-designer > [data-area='right'] { inline-size: 30rem; background: var(--surface-inset); }
+  .atom-designer__settings { min-inline-size: 0; }
+  .atom-designer__stage-area { position: relative; flex: 1; min-block-size: 0; overflow: hidden; touch-action: none; user-select: none; cursor: crosshair; background: var(--atom-designer-stage-ground, transparent); }
+  .atom-designer__stage-bar { display: flex; justify-content: end; padding: var(--space-2xs) var(--space-sm); }
+  .atom-designer__stage-color { display: flex; align-items: center; gap: var(--space-xs); font: var(--type-label); color: var(--content-muted); }
+  .atom-designer__stage-hint { position: absolute; inset: 0; display: grid; place-content: center; margin: 0; font: var(--type-label); color: var(--content-muted); pointer-events: none; }
+  .atom-designer__box { position: absolute; z-index: 1; display: flex; align-items: center; justify-content: center; overflow: hidden; touch-action: none; user-select: none; cursor: move; }
+  .atom-designer__box-core { display: grid; place-content: center; min-inline-size: 0; min-block-size: 0; }
+  .atom-designer__box-core--fill { flex: 1; align-self: stretch; }
+  .atom-designer__draft { position: absolute; z-index: 2; border: var(--border-width) dashed var(--accent-default); border-radius: var(--radius-control); background: var(--surface-selected); pointer-events: none; }
+  @media (max-width: 768px) { .atom-designer > [data-area='left'], .atom-designer > [data-area='right'] { inline-size: auto; } }
+}
+@layer components {
+  .atom-designer > [data-area]:not([data-rows]):not([data-grid]) { grid-template-rows: minmax(0, 1fr); }
+  .atom-designer > [data-area] > .inner:not([data-rows]):not([data-grid]) { display: flex; flex-direction: column; gap: var(--space-lg); min-inline-size: 0; min-block-size: 0; }
+}

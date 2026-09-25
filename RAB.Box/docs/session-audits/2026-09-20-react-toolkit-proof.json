@@ -1,0 +1,137 @@
+{
+  "file": "C:\\Users\\pixelcommander\\.rab\\temp\\test\\1830000000043\\proof.json",
+  "generated": "C:\\Users\\pixelcommander\\.rab\\temp\\test\\1830000000043\\react-toolkit-proof",
+  "tasks": [
+    {
+      "id": 1830000000044,
+      "tool": {
+        "address": "new-react-project",
+        "id": 1830000000036,
+        "path": "react/projects/stamp-rraabbiitt",
+        "key": "react/projects/stamp-rraabbiitt",
+        "kind": "stamp",
+        "source": "project",
+        "toolkit": {
+          "id": 1830000000035,
+          "name": "magic-box-tools",
+          "root": "C:\\magic-box-tools"
+        },
+        "implementation_source": "toolkit",
+        "source_file": "C:\\Users\\pixelcommander\\.rab\\temp\\test\\1830000000043\\controller\\PATHS.json",
+        "shadowed": {
+          "id": 1790000000300,
+          "path": "react/stamp-new-project",
+          "source": "house"
+        }
+      },
+      "status": "completed",
+      "tracking_file": "C:\\Users\\pixelcommander\\.rab\\projects\\1830000000043\\runs\\1830000000046\\1830000000044.json"
+    },
+    {
+      "id": 1830000000049,
+      "tool": {
+        "address": null,
+        "id": 1830000000037,
+        "path": "react/grid/seed/stamp-baseline",
+        "key": "react/grid/seed/stamp-baseline",
+        "kind": "stamp",
+        "source": "toolkit",
+        "toolkit": {
+          "id": 1830000000035,
+          "name": "magic-box-tools",
+          "root": "C:\\magic-box-tools"
+        },
+        "implementation_source": "toolkit",
+        "source_file": "C:\\magic-box-tools\\tools\\react\\grid\\seed\\stamp-baseline\\settings.json",
+        "shadowed": null
+      },
+      "status": "completed",
+      "tracking_file": "C:\\Users\\pixelcommander\\.rab\\projects\\1830000000043\\runs\\1830000000046\\1830000000049.json"
+    },
+    {
+      "id": 1830000000050,
+      "tool": {
+        "address": null,
+        "id": 1830000000038,
+        "path": "react/atoms/seed/stamp-baseline",
+        "key": "react/atoms/seed/stamp-baseline",
+        "kind": "stamp",
+        "source": "toolkit",
+        "toolkit": {
+          "id": 1830000000035,
+          "name": "magic-box-tools",
+          "root": "C:\\magic-box-tools"
+        },
+        "implementation_source": "toolkit",
+        "source_file": "C:\\magic-box-tools\\tools\\react\\atoms\\seed\\stamp-baseline\\settings.json",
+        "shadowed": null
+      },
+      "status": "completed",
+      "tracking_file": "C:\\Users\\pixelcommander\\.rab\\projects\\1830000000043\\runs\\1830000000046\\1830000000050.json"
+    },
+    {
+      "id": 1830000000051,
+      "tool": {
+        "address": null,
+        "id": 1830000000040,
+        "path": "react/hooks/seed/stamp-use-url",
+        "key": "react/hooks/seed/stamp-use-url",
+        "kind": "stamp",
+        "source": "toolkit",
+        "toolkit": {
+          "id": 1830000000035,
+          "name": "magic-box-tools",
+          "root": "C:\\magic-box-tools"
+        },
+        "implementation_source": "toolkit",
+        "source_file": "C:\\magic-box-tools\\tools\\react\\hooks\\seed\\stamp-use-url\\settings.json",
+        "shadowed": null
+      },
+      "status": "completed",
+      "tracking_file": "C:\\Users\\pixelcommander\\.rab\\projects\\1830000000043\\runs\\1830000000046\\1830000000051.json"
+    },
+    {
+      "id": 1830000000052,
+      "tool": {
+        "address": null,
+        "id": 1830000000042,
+        "path": "react/components/seed/selected",
+        "key": "react/components/seed/selected",
+        "kind": "tool",
+        "source": "toolkit",
+        "toolkit": {
+          "id": 1830000000035,
+          "name": "magic-box-tools",
+          "root": "C:\\magic-box-tools"
+        },
+        "implementation_source": "toolkit",
+        "source_file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\selected\\settings.json",
+        "shadowed": null
+      },
+      "status": "completed",
+      "tracking_file": "C:\\Users\\pixelcommander\\.rab\\projects\\1830000000043\\runs\\1830000000046\\1830000000052.json"
+    },
+    {
+      "id": 1830000000053,
+      "tool": {
+        "address": "1830000000039",
+        "id": 1830000000039,
+        "path": "react/components/seed/stamp-site-chrome",
+        "key": "react/components/seed/stamp-site-chrome",
+        "kind": "stamp",
+        "source": "toolkit",
+        "toolkit": {
+          "id": 1830000000035,
+          "name": "magic-box-tools",
+          "root": "C:\\magic-box-tools"
+        },
+        "implementation_source": "toolkit",
+        "source_file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\stamp-site-chrome\\settings.json",
+        "shadowed": null
+      },
+      "status": "completed",
+      "tracking_file": "C:\\Users\\pixelcommander\\.rab\\projects\\1830000000043\\runs\\1830000000046\\1830000000053.json"
+    }
+  ],
+  "source_files_unchanged": 40
+}

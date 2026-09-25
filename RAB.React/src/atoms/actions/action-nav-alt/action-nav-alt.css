@@ -1,0 +1,43 @@
+@layer atoms {
+  .action-nav-alt {
+    color: var(--action-nav-alt-color, var(--content-default));
+    background: var(--action-nav-alt-background, var(--surface-float));
+    border: var(--action-nav-alt-border, none);
+    border-bottom: var(--action-nav-alt-border-bottom, 3px var(--border-style) var(--border-default));
+    border-radius: var(--action-nav-alt-radius, 0);
+    box-shadow: var(--action-nav-alt-shadow, none);
+    font: var(--action-nav-alt-font, var(--type-body));
+    cursor: var(--action-nav-alt-cursor, pointer);
+    text-decoration: var(--action-nav-alt-text-decoration, none);
+    transition:
+      color var(--motion-fast),
+      background-color var(--motion-fast),
+      border-color var(--motion-fast),
+      box-shadow var(--motion-fast);
+  }
+
+  .action-nav-alt:hover {
+    color: var(--action-nav-alt-hover-color, var(--content-strong));
+    background: var(--action-nav-alt-hover-background, var(--surface-hover));
+    border-bottom-color: var(--action-nav-alt-hover-border-color, var(--accent-secondary));
+  }
+
+  .action-nav-alt:active {
+    color: var(--action-nav-alt-active-color, var(--content-strong));
+    background: var(--action-nav-alt-active-background, var(--surface-active));
+  }
+
+  .action-nav-alt:focus-visible {
+    outline: var(--action-nav-alt-focus-outline, var(--focus-ring));
+    outline-offset: var(--action-nav-alt-focus-offset, var(--focus-offset));
+  }
+
+
+  .action-nav-alt:is(:disabled, [aria-disabled='true']) {
+    color: var(--action-nav-alt-disabled-color, var(--content-disabled));
+    background: var(--action-nav-alt-disabled-background, var(--surface-disabled));
+    border-bottom-color: var(--action-nav-alt-disabled-border-color, var(--border-subtle));
+    cursor: not-allowed;
+    opacity: var(--action-nav-alt-disabled-opacity, var(--disabled-opacity));
+  }
+}

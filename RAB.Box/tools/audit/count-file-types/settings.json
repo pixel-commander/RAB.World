@@ -1,0 +1,10 @@
+{
+  "id": 1790000000712,
+  "name": "count-file-types",
+  "title": "Count File Types",
+  "description": "Counts files by extension under an audit folder.",
+  "settings": [
+    {"type":"folder","name":"folder","title":"Folder","description":"Folder to scan.","required":true}
+  ],
+  "meta": {"domain":"audit","operation":"count","target_type":"file","quantifier":"all","predicate":"file-type","data_types":["file","path","count"],"output":"report","authority":"read"}
+}

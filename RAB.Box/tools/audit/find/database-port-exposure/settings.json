@@ -1,0 +1,30 @@
+{
+  "id": 1800000000035,
+  "name": "database-port-exposure",
+  "title": "Find Database Port Publishing",
+  "description": "Finds common database ports published through container/config mappings.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "database-port-exposure",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "(?:3306|5432|6379)\\s*:\\s*(?:3306|5432|6379)",
+      "scope": "config",
+      "kind": "database-port-exposure-candidate",
+      "heuristic": true,
+      "flags": "i"
+    }
+  }
+}

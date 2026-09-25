@@ -1,0 +1,27 @@
+{
+  "id": 1790000001405,
+  "name": "house-key",
+  "title": "Audit Tool House Keys",
+  "description": "Checks public Tool settings.json files for the canonical House keys and leaf-name identity.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to review. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "code-review",
+    "data_types": [
+      "code-review",
+      "house-key"
+    ],
+    "output": "report",
+    "authority": "read",
+    "rule": "house-key"
+  }
+}

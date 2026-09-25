@@ -1,0 +1,16 @@
+{
+  "version": "0.6",
+  "project_id": "mock-project",
+  "paths": {
+    "components": "components",
+    "atoms": "atoms",
+    "pages": "pages",
+    "output": "output",
+    "audit_results": "audit-results",
+    "generated_stamps": "generated-stamps"
+  },
+  "defaults": {
+    "save_as_text": false
+  },
+  "note": "Project-local path truth for the v0.6 workbench. Magic Box mirrors this into .rab when the project opens."
+}

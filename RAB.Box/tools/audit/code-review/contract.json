@@ -1,0 +1,259 @@
+{
+  "version": "tool-contract/v1",
+  "select": "meta.rule",
+  "variants": {
+    "bag-guards": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "rule": "string",
+            "source_scope": "string",
+            "expression": "string",
+            "expected": "string",
+            "message?": "string"
+          }
+        ]
+      }
+    },
+    "conventions": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "rule": "string",
+            "source_scope": "string",
+            "expected": "string",
+            "found?": "string",
+            "message": "string"
+          }
+        ]
+      }
+    },
+    "css-states": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "rule": "string",
+            "source_scope": "string",
+            "selector?": "string",
+            "first_line?": "number",
+            "property?": "string",
+            "message": "string"
+          }
+        ]
+      }
+    },
+    "css-tokens": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "rule": "string",
+            "source_scope": "string",
+            "selector": "string",
+            "property": "string",
+            "value": "string",
+            "raw_value": "string",
+            "expected_category": "string",
+            "message": "string"
+          }
+        ]
+      }
+    },
+    "dependency-topology": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "null",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number",
+          "nodes": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "rule": "string",
+            "node?": "string",
+            "dependency?": "string",
+            "cycle?": [
+              "string"
+            ]
+          }
+        ],
+        "roots": [
+          "string"
+        ]
+      }
+    },
+    "form-contract": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "rule": "string",
+            "source_scope": "string",
+            "field": "string",
+            "side": "string",
+            "message": "string"
+          }
+        ]
+      }
+    },
+    "grid-continuity": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "rule": "string",
+            "source_scope": "string",
+            "chain": [
+              "string"
+            ],
+            "expected": "string",
+            "message": "string"
+          }
+        ]
+      }
+    },
+    "house-key": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "rule": "string",
+            "source_scope": "string",
+            "house_key?": "string",
+            "expected?": "string | string[]",
+            "found?": "string",
+            "message?": "string"
+          }
+        ]
+      }
+    },
+    "prop-renames": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "rule": "string",
+            "source_scope": "string",
+            "prop": "string",
+            "alias": "string",
+            "expected": "string"
+          }
+        ]
+      }
+    },
+    "state-ownership": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "rule": "string",
+            "source_scope": "string",
+            "state_hooks": "number",
+            "expected": "string",
+            "hook_exists": "boolean",
+            "message": "string"
+          }
+        ]
+      }
+    }
+  }
+}

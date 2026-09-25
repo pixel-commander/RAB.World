@@ -1,0 +1,33 @@
+{
+  "id": 1810000000022,
+  "name": "get-target",
+  "title": "Get Home Cooking Safety Target",
+  "description": "Looks up a packaged U.S. home-cooking temperature/rest target by explicit reference scope. Generic consumer targets are not industrial process authority.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "food",
+      "title": "Food",
+      "description": "food",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "scope",
+      "title": "Scope",
+      "description": "scope",
+      "required": false,
+      "default": "consumer-home-cooking-us"
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "read",
+    "data_types": [
+      "target"
+    ],
+    "returns": [
+      "target"
+    ]
+  }
+}

@@ -1,0 +1,318 @@
+MAGIC BOX -- TYPED WORD MAP v0.1
+================================
+
+    λP.λQ.∀x(P(x) → Q(x))
+    = give me two predicates; test that every P is also Q in domain D.
+
+WORD MAP -> GRAMMAR -> TYPED AST -> EXISTING STAMPS/RUNTIME
+
+73 proposed lexical entries; 93 spellings/forms.
+27 entries are used by the demo grammar. 46 are RESERVED, not implemented.
+This is a generated readable view of lexicon.json, not a second authority.
+
+INPUT:
+    make a component named "DatePicker" with class 'container-main'
+
+JOBS:
+    make             CREATE
+    a component      new component specification
+    named            fill name seat
+    "DatePicker"     literal value; preserve case
+    with class       fill CSS-class seat on the same specification
+    'container-main' exact registry lookup; never invent class membership
+
+OWNER IS A SEAT, NOT A PRONOUN CLASS.
+I/me refer to the speaker; you refers to the addressee.
+With me binds partner, not owner. We/us need explicit group binding.
+
+ENTRIES
+=======
+
+REFERENCE
+---------
+i  [DEMO]
+  (context or literal kind) -> EntityRef
+  Resolve the speaker in the supplied context.
+me  [DEMO]
+  (context or literal kind) -> EntityRef
+  Same speaker entity as I; object position.
+you  [DEMO]
+  (context or literal kind) -> EntityRef
+  Resolve the addressee; not automatically the owner.
+we  [DEMO]
+  (context or literal kind) -> EntityRef
+  Resolve an explicitly supplied speaker-group. Do not infer membership.
+us  [DEMO]
+  (context or literal kind) -> EntityRef
+  Same explicitly supplied group as we; object position.
+they  [DEMO]
+  (context or literal kind) -> EntityRef
+  Resolve one explicitly supplied referent; it can be singular or plural.
+them  [DEMO]
+  (context or literal kind) -> EntityRef
+  Same referent as they; object position.
+it  [DEMO]
+  (context or literal kind) -> EntityRef
+  Resolve the explicitly bound current thing. Never invent it from recency alone.
+he  [DEMO]
+  (context or literal kind) -> EntityRef
+  Resolve the explicitly supplied he referent.
+him  [DEMO]
+  (context or literal kind) -> EntityRef
+  Same referent as he; object position.
+she  [DEMO]
+  (context or literal kind) -> EntityRef
+  Resolve the explicitly supplied she referent.
+her  [DEMO]
+  (context or literal kind) -> EntityRef
+  Object-pronoun sense only here. The possessive use needs its own construction.
+this  [RESERVED]
+  (context or literal kind) -> EntityRef
+  Resolve a demonstrative in scope. Not globally synonymous with it.
+that  [RESERVED]
+  (context or literal kind) -> EntityOrEventRef
+  Resolve a demonstrative in scope. May point at an event; not only an object.
+
+POSSESSION
+----------
+my | mine  [RESERVED]
+  EntityRef -> Spec -> Spec
+  Describe ownership by speaker. My and mine occupy different grammatical positions.
+your | yours  [RESERVED]
+  EntityRef -> Spec -> Spec
+  Describe ownership by addressee. Possession is not authorization.
+our | ours  [RESERVED]
+  EntityRef -> Spec -> Spec
+  Describe ownership by a resolved speaker-group.
+their | theirs  [RESERVED]
+  EntityRef -> Spec -> Spec
+  Describe ownership by a resolved they referent.
+
+DETERMINER
+----------
+a | an  [DEMO]
+  BuildableKind -> Spec
+  Introduce one new spec in a CREATE construction. The demo does not validate a/an phonetic agreement.
+the  [RESERVED]
+  Description -> Context -> EntityRef
+  Request an existing scoped referent. Do not treat as noise or alias of a.
+
+MODIFIER
+--------
+new  [DEMO]
+  Spec -> Spec
+  Mark a creation as new. Legal only in the declared creation construction.
+
+ACTION
+------
+make | create | build  [DEMO]
+  EntityRef -> Spec -> ActionPlan
+  CREATE aliases only inside this component-authoring language. Build can mean other things outside this scope.
+add | insert  [RESERVED]
+  EntityRef -> EntityRef -> ActionPlan
+  Add an item to a target. Requires both item and target.
+remove | delete  [RESERVED]
+  EntityRef -> ActionPlan
+  Propose removal. Destructive authorization remains external.
+move  [RESERVED]
+  EntityRef -> EntityRef -> ActionPlan
+  Move item to destination. Source/destination ownership must be checked.
+rename  [RESERVED]
+  EntityRef -> Name -> ActionPlan
+  Rename an existing entity without changing its identity.
+set | assign  [RESERVED]
+  EntityRef -> PropertyKey -> Value -> ActionPlan
+  Set a typed property to a supplied value.
+
+ENTITY-KIND
+-----------
+component  [DEMO]
+  (context or literal kind) -> BuildableKind
+  A component specification, not an already-existing component instance.
+button  [DEMO]
+  (context or literal kind) -> BuildableKind
+  A button specification; the actual house stamp is supplied by the host.
+form  [DEMO]
+  (context or literal kind) -> BuildableKind
+  A form specification; the actual house stamp is supplied by the host.
+page  [DEMO]
+  (context or literal kind) -> BuildableKind
+  A page specification; the actual house stamp is supplied by the host.
+folder | directory  [RESERVED]
+  (context or literal kind) -> FolderKind
+  Folder/directory aliases within the filesystem domain, not a component CREATE kind.
+file  [RESERVED]
+  (context or literal kind) -> FileKind
+  File kind for audit/navigation; not automatically a create capability.
+
+MODIFIER
+--------
+named | called  [DEMO]
+  Name -> Spec -> Spec
+  Fill spec.name, preserving the supplied literal exactly.
+
+ATTACHMENT-MARKER
+-----------------
+with  [DEMO]
+  Complement -> Attachment
+  Requires a typed complement: with class LITERAL differs from with PERSON. Not a free-floating modifier.
+
+SEAT-MARKER
+-----------
+class  [DEMO]
+  ClassToken -> Spec -> Spec
+  In WITH CLASS, fill the root CSS-class slot. Not a JavaScript class declaration.
+
+RELATION
+--------
+inside | within  [RESERVED]
+  EntityRef -> ContainerRef -> Placement
+  Describe nesting. Does not insert/move anything until an action explicitly requests it.
+into  [RESERVED]
+  EntityRef -> ContainerRef -> Placement
+  Destination marker used with compatible move/insert actions.
+before  [RESERVED]
+  EntityOrEventRef -> EntityOrEventRef -> Relation
+  Order relation. Structural and temporal senses must be selected by the construction.
+after  [RESERVED]
+  EntityOrEventRef -> EntityOrEventRef -> Relation
+  Order relation; not sufficient to choose time versus sibling position.
+have | has  [RESERVED]
+  EntityRef -> PropertyOrEntity -> Proposition
+  Present possession/property sense. Auxiliary uses need separate grammar.
+had  [RESERVED]
+  EntityRef -> PropertyOrEntity -> PastProposition
+  Past possession/property; never silently converted into a current fact.
+own | owns  [RESERVED]
+  EntityRef -> EntityRef -> Proposition
+  Ownership relation. An assertion about ownership is not permission.
+
+MODAL
+-----
+can  [DEMO]
+  EntityRef -> ActionPlan -> Proposition
+  Ability/capability in the bounded domain. Syntax selects claim versus question; can is not itself truth.
+cannot | can't  [RESERVED]
+  EntityRef -> ActionPlan -> NegatedProposition
+  Negate a capability proposition. Never treat as noise. A negative sentence is not automatically false.
+must  [RESERVED]
+  Proposition -> Requirement
+  An obligation. It needs a scope and trusted policy source, not just keyword presence.
+should  [RESERVED]
+  Proposition -> Recommendation
+  Recommendation, not an unconditional requirement.
+
+ATTITUDE
+--------
+need  [DEMO]
+  EntityRef -> Spec -> NeedStatement
+  Record a stated need. In this demo it does NOT authorize CREATE.
+want  [DEMO]
+  EntityRef -> Spec -> WantStatement
+  Record a stated desire. In this demo it does NOT authorize CREATE.
+needs | wants  [RESERVED]
+  EntityRef -> Spec -> Statement
+  Third-person forms are reserved until agreement rules are implemented.
+
+QUERY
+-----
+what  [DEMO]
+  TypedHole -> Proposition -> Query
+  Request values for a designated hole, not simply a yes/no answer.
+which  [RESERVED]
+  Domain -> Predicate -> Query
+  Select items from a declared domain.
+who  [RESERVED]
+  PersonHole -> Proposition -> Query
+  Request a person or actor in a known role.
+where  [RESERVED]
+  LocationHole -> Proposition -> Query
+  Request a location in the current world.
+when  [RESERVED]
+  TimeHole -> Proposition -> Query
+  Request a time; rule/conditional uses need separate grammar.
+why  [RESERVED]
+  ReasonHole -> Proposition -> Query
+  Request stored reasons/evidence, not an invented causal story.
+how  [RESERVED]
+  MethodHole -> Proposition -> Query
+  Request a method; how many is a separate quantity construction.
+
+QUANTIFIER
+----------
+every | each | all  [RESERVED]
+  Predicate<T> -> Predicate<T> -> Domain<T> -> Proposition
+  ALL-of-type meaning: for all x in D, P(x) implies Q(x). These forms are not syntactically interchangeable.
+some  [RESERVED]
+  Predicate<T> -> Predicate<T> -> Domain<T> -> Proposition
+  At least one x satisfies both predicates, in the logical sense chosen here.
+no | none  [RESERVED]
+  Predicate<T> -> Predicate<T> -> Domain<T> -> Proposition
+  No x satisfies both predicates. No and none require different syntax.
+
+CONNECTIVE
+----------
+and  [RESERVED]
+  Expression<T> -> Expression<T> -> Expression<T>
+  Combine compatible expressions. Boolean conjunction, class-list joining and action sequencing are distinct constructions.
+or  [RESERVED]
+  Proposition -> Proposition -> Proposition
+  Logical disjunction. Not an instruction to choose arbitrarily.
+not  [RESERVED]
+  Proposition -> Proposition
+  Negate a scoped proposition. Negation is never a stop word.
+
+CONDITION-MARKER
+----------------
+if  [RESERVED]
+  Proposition -> Consequence -> Conditional
+  Open a condition scope. No work before the condition is resolved.
+then  [RESERVED]
+  Conditional -> Conditional
+  Mark a consequence or order in a declared construction.
+
+AUDIT-OPERATOR
+--------------
+count  [RESERVED]
+  Domain<T> -> Integer
+  Count a known finite domain. Unknown/incomplete scan is not exact total.
+most  [RESERVED]
+  Domain<T> -> Metric<T> -> Set<T>
+  In WHICH/HAS THE MOST, return all maximizing items. Most X are Y is a different quantifier sense.
+fewest  [RESERVED]
+  Domain<T> -> Metric<T> -> Set<T>
+  Return all minimizing items; retain ties.
+
+PREDICATE
+---------
+required  [RESERVED]
+  Seat -> Boolean
+  Whether a declared schema seat is required.
+valid  [RESERVED]
+  TypedValue -> Contract -> Boolean
+  Whether the value passes the supplied check; not proof of all desirable properties.
+registered  [RESERVED]
+  EntityRef -> WorldSnapshot -> Boolean
+  Registered in the supplied snapshot, whose completeness/freshness must be established by the host.
+exists  [RESERVED]
+  EntityRef -> WorldSnapshot -> Boolean
+  Exists in the supplied scope, not an omniscient existence claim.
+
+POLITENESS
+----------
+please  [DEMO]
+  (context or literal kind) -> NoSemanticChange
+  Accepted only at the beginning of a supported command or capability question.
+
+RUN THE BOUNDED DEMO
+====================
+node demo.mjs
+node --test compiler.test.mjs
+
+Parsed is NOT authorized. Queries never trigger writes.
+Unknown/unhandled input invalidates the whole parse.
+Required seats are taken from the full schema, not only the input.
+The EVERY predicate is not an English parser or a correctness oracle.
+
+See grammar.txt for EXACT supported sentence patterns.
+See README.txt for integration boundaries, evidence limits, and sources.

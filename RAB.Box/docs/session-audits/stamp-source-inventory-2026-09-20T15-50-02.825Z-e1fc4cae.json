@@ -1,0 +1,5091 @@
+{
+  "version": "stamp-source-audit/v2",
+  "audited_at": "2026-09-20T15:50:02.825Z",
+  "root": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3",
+  "scope": {
+    "catalog": "Current shared Tool House discovery",
+    "excluded_domains": [
+      "kitchen"
+    ],
+    "inspected": [
+      "writer settings",
+      "resolved writer executors",
+      "owner contracts",
+      "local template files"
+    ],
+    "excluded": [
+      "legacy project registries",
+      "packaged engine examples",
+      "transitive implementation dependencies",
+      "audit project contents"
+    ],
+    "tool_execution": false
+  },
+  "totals": {
+    "discovered": 226,
+    "unavailable": 0,
+    "writers": 57,
+    "with_template_path": 18,
+    "without_template_path": 39,
+    "unclassified": 56
+  },
+  "writers": [
+    {
+      "id": 1790000000302,
+      "key": "audit/stamp-new-project",
+      "title": "New Audit Project",
+      "authority": "write",
+      "settings_file": "tools/audit/stamp-new-project/settings.json",
+      "executor": "tools/audit/stamp-new-project/stamp-new-project.mjs",
+      "executor_owner": "audit/stamp-new-project",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Project Name",
+          "description": "Project name.",
+          "required": true
+        },
+        {
+          "type": "folder",
+          "name": "folder",
+          "title": "Folder to Audit",
+          "description": "Existing folder to inspect. Project files and results stay in .rab; this folder is read-only input.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "audit",
+        "operation": "create",
+        "target_type": "project",
+        "data_types": [
+          "project",
+          "path"
+        ],
+        "output": "project",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/audit/stamp-new-project/template",
+        "files": [
+          {
+            "path": "tools/audit/stamp-new-project/template/audit-results/README.txt",
+            "bytes": 203,
+            "placeholders": []
+          },
+          {
+            "path": "tools/audit/stamp-new-project/template/PATHS.json",
+            "bytes": 222,
+            "placeholders": [
+              "__PROJECT_ID__",
+              "__PROJECT_NAME__"
+            ]
+          },
+          {
+            "path": "tools/audit/stamp-new-project/template/README.txt",
+            "bytes": 286,
+            "placeholders": [
+              "__PROJECT_NAME__",
+              "__AUDIT_FOLDER__"
+            ]
+          },
+          {
+            "path": "tools/audit/stamp-new-project/template/settings.json",
+            "bytes": 161,
+            "placeholders": [
+              "__PROJECT_ID__",
+              "__PROJECT_NAME__",
+              "__AUDIT_FOLDER__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "hybrid",
+      "classification_owner": "tools/audit/stamp-new-project/contract.json",
+      "classification_reason": "Renders the project template through runProjectStamp, verifies written files, and initializes project memory and the saved audit path."
+    },
+    {
+      "id": 1790000001520,
+      "key": "base/form/stamp-validator",
+      "title": "Stamp FormData Validator",
+      "authority": "write",
+      "settings_file": "tools/base/form/stamp-validator/settings.json",
+      "executor": "tools/base/form/stamp-validator/stamp-validator.mjs",
+      "executor_owner": "base/form/stamp-validator",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Name",
+          "description": "Generated validator function and file name.",
+          "required": true
+        },
+        {
+          "type": "folder",
+          "name": "location",
+          "title": "Location",
+          "description": "Output folder.",
+          "required": true
+        },
+        {
+          "type": "textarea",
+          "name": "fields",
+          "title": "Fields",
+          "description": "JSON array of {name,type,required,values?} contracts.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "base",
+        "operation": "create",
+        "target_type": "form-validator",
+        "data_types": [
+          "form",
+          "formdata",
+          "validator"
+        ],
+        "output": "form-validator",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/base/form/stamp-validator/template",
+        "files": [
+          {
+            "path": "tools/base/form/stamp-validator/template/tmpl.mjs",
+            "bytes": 149,
+            "placeholders": [
+              "__FUNCTION_NAME__",
+              "__FIELD_BLOCK__",
+              "__RETURN_FIELDS__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000999,
+      "key": "base/move/stamp",
+      "title": "Move Stamp Path",
+      "authority": "write",
+      "settings_file": "tools/base/move/stamp/settings.json",
+      "executor": "tools/base/move/move.mjs",
+      "executor_owner": "base/move",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "address",
+          "title": "Stamp Address",
+          "description": "Flat PATHS address of the Stamp to move.",
+          "required": true
+        },
+        {
+          "type": "options",
+          "name": "scope",
+          "title": "Scope",
+          "description": "Move the House Stamp or a project-local override.",
+          "required": true,
+          "options": [
+            {
+              "name": "house",
+              "description": "House PATHS/tool root"
+            },
+            {
+              "name": "project",
+              "description": "Loaded project PATHS/project root"
+            }
+          ],
+          "question": "Move the House capability or a project-local override?"
+        },
+        {
+          "type": "path",
+          "name": "destination",
+          "title": "Destination",
+          "description": "New semantic path relative to tools/ for House scope or project root for project scope. Leaf name must remain unchanged.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "confirm",
+          "title": "Confirm",
+          "description": "Explicit operator confirmation for this control-plane mutation.",
+          "required": true,
+          "question": "Confirm this control-plane path move?"
+        }
+      ],
+      "declared_metadata": {
+        "domain": "base",
+        "operation": "move",
+        "target_type": "stamp",
+        "output": "control-plane-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000998,
+      "key": "base/move/tool",
+      "title": "Move Tool Path",
+      "authority": "write",
+      "settings_file": "tools/base/move/tool/settings.json",
+      "executor": "tools/base/move/move.mjs",
+      "executor_owner": "base/move",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "address",
+          "title": "Tool Address",
+          "description": "Flat PATHS address of the Tool to move.",
+          "required": true
+        },
+        {
+          "type": "options",
+          "name": "scope",
+          "title": "Scope",
+          "description": "Move the House capability or a project-local override.",
+          "required": true,
+          "options": [
+            {
+              "name": "house",
+              "description": "House PATHS/tool root"
+            },
+            {
+              "name": "project",
+              "description": "Loaded project PATHS/project root"
+            }
+          ],
+          "question": "Move the House capability or a project-local override?"
+        },
+        {
+          "type": "path",
+          "name": "destination",
+          "title": "Destination",
+          "description": "New semantic path relative to tools/ for House scope or project root for project scope. Leaf name must remain unchanged.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "confirm",
+          "title": "Confirm",
+          "description": "Explicit operator confirmation for this control-plane mutation.",
+          "required": true,
+          "question": "Confirm this control-plane path move?"
+        }
+      ],
+      "declared_metadata": {
+        "domain": "base",
+        "operation": "move",
+        "target_type": "tool",
+        "output": "control-plane-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000207,
+      "key": "base/stamp-new-key-phrase",
+      "title": "New Key Phrase",
+      "authority": "write",
+      "settings_file": "tools/base/stamp-new-key-phrase/settings.json",
+      "executor": "tools/base/stamp-new-key-phrase/stamp-new-key-phrase.mjs",
+      "executor_owner": "base/stamp-new-key-phrase",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "phrase",
+          "title": "Phrase",
+          "description": "The phrase to teach.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "types",
+          "title": "Types",
+          "description": "Comma-separated lexical/phrase type candidates.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "senses",
+          "title": "Senses",
+          "description": "Comma-separated semantic sense candidates.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "base",
+        "operation": "create",
+        "target_type": "key-phrase",
+        "data_types": [
+          "language",
+          "phrase"
+        ],
+        "output": "key-phrase",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/base/stamp-new-key-phrase/template",
+        "files": [
+          {
+            "path": "tools/base/stamp-new-key-phrase/template/phrase.json",
+            "bytes": 59,
+            "placeholders": []
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000205,
+      "key": "base/stamp-new-project",
+      "title": "New Project",
+      "authority": "write",
+      "settings_file": "tools/base/stamp-new-project/settings.json",
+      "executor": "tools/base/stamp-new-project/stamp-new-project.mjs",
+      "executor_owner": "base/stamp-new-project",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "options",
+          "name": "type",
+          "title": "Project Type",
+          "description": "Which project family should own this project?",
+          "required": true,
+          "options": [
+            {
+              "name": "magic-box",
+              "description": "Locally saved Magic Box project session"
+            },
+            {
+              "name": "react",
+              "description": "React project"
+            },
+            {
+              "name": "html",
+              "description": "Vanilla HTML project"
+            },
+            {
+              "name": "audit",
+              "description": "Audit workspace"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Project Name",
+          "description": "Name for the new project.",
+          "required": true
+        },
+        {
+          "type": "folder",
+          "name": "folder",
+          "title": "Folder",
+          "description": "For Audit: the existing folder to inspect. For other types: the parent for the new project folder.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "base",
+        "operation": "create",
+        "target_type": "project",
+        "data_types": [
+          "project",
+          "path"
+        ],
+        "output": "project",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/base/stamp-new-project/template",
+        "files": [
+          {
+            "path": "tools/base/stamp-new-project/template/audit-results/README.txt",
+            "bytes": 75,
+            "placeholders": []
+          },
+          {
+            "path": "tools/base/stamp-new-project/template/output/README.txt",
+            "bytes": 69,
+            "placeholders": []
+          },
+          {
+            "path": "tools/base/stamp-new-project/template/PATHS.json",
+            "bytes": 219,
+            "placeholders": [
+              "__PROJECT_ID__",
+              "__PROJECT_NAME__"
+            ]
+          },
+          {
+            "path": "tools/base/stamp-new-project/template/README.txt",
+            "bytes": 271,
+            "placeholders": [
+              "__PROJECT_NAME__"
+            ]
+          },
+          {
+            "path": "tools/base/stamp-new-project/template/settings.json",
+            "bytes": 161,
+            "placeholders": [
+              "__PROJECT_ID__",
+              "__PROJECT_NAME__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000103,
+      "key": "base/stamp-new-stamp",
+      "title": "New Stamp",
+      "authority": "write",
+      "settings_file": "tools/base/stamp-new-stamp/settings.json",
+      "executor": "tools/base/stamp-new-stamp/stamp-new-stamp.mjs",
+      "executor_owner": "base/stamp-new-stamp",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "options",
+          "name": "type",
+          "title": "Type",
+          "description": "Domain folder for the new Stamp.",
+          "required": true,
+          "options": [
+            {
+              "name": "base",
+              "description": "Core house capabilities"
+            },
+            {
+              "name": "react",
+              "description": "React capabilities"
+            },
+            {
+              "name": "html",
+              "description": "HTML capabilities"
+            },
+            {
+              "name": "css",
+              "description": "CSS capabilities"
+            },
+            {
+              "name": "audit",
+              "description": "Audit capabilities"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Name",
+          "description": "Name of the new Stamp. stamp- will be added if omitted.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "title",
+          "title": "Title",
+          "description": "Human readable title for the new Stamp.",
+          "required": true
+        },
+        {
+          "type": "textarea",
+          "name": "description",
+          "title": "Description",
+          "description": "What the new Stamp materializes.",
+          "required": true
+        },
+        {
+          "type": "settings",
+          "name": "settings",
+          "title": "Run Settings",
+          "description": "Required and optional inputs for running the generated Stamp.",
+          "required": false
+        },
+        {
+          "type": "json",
+          "name": "meta",
+          "title": "Meta",
+          "description": "Optional house metadata for the generated Stamp.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "base",
+        "operation": "create",
+        "target_type": "stamp",
+        "data_types": [
+          "stamp",
+          "tool"
+        ],
+        "output": "stamp",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/base/stamp-new-stamp/template",
+        "files": [
+          {
+            "path": "tools/base/stamp-new-stamp/template/settings.json",
+            "bytes": 146,
+            "placeholders": [
+              "__STAMP_NAME__",
+              "__STAMP_TITLE__",
+              "__STAMP_DESCRIPTION__"
+            ]
+          },
+          {
+            "path": "tools/base/stamp-new-stamp/template/template/README.txt",
+            "bytes": 106,
+            "placeholders": []
+          },
+          {
+            "path": "tools/base/stamp-new-stamp/template/tmpl.mjs",
+            "bytes": 166,
+            "placeholders": [
+              "__STAMP_NAME__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000206,
+      "key": "base/stamp-new-tool",
+      "title": "New Tool",
+      "authority": "write",
+      "settings_file": "tools/base/stamp-new-tool/settings.json",
+      "executor": "tools/base/stamp-new-tool/stamp-new-tool.mjs",
+      "executor_owner": "base/stamp-new-tool",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "path",
+          "title": "Semantic Path",
+          "description": "Optional tools-root relative semantic path such as audit/find/todos. When supplied it determines domain and leaf name.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "type",
+          "title": "Type",
+          "description": "Domain folder for legacy flat creation when path is omitted.",
+          "required": false,
+          "options": [
+            {
+              "name": "base",
+              "description": "Core house capabilities"
+            },
+            {
+              "name": "react",
+              "description": "React capabilities"
+            },
+            {
+              "name": "html",
+              "description": "HTML capabilities"
+            },
+            {
+              "name": "css",
+              "description": "CSS capabilities"
+            },
+            {
+              "name": "audit",
+              "description": "Audit capabilities"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Name",
+          "description": "Leaf Tool name for legacy flat creation when path is omitted.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "address",
+          "title": "House Address",
+          "description": "Optional flat PATHS key. Defaults from the semantic path, for example audit/find/todos -> find-todos.",
+          "required": false
+        },
+        {
+          "type": "boolean",
+          "name": "inherit_executor",
+          "title": "Inherit Executor",
+          "description": "When true, create only the semantic leaf settings and require a nearest-parent executor instead of creating a leaf executor.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "title",
+          "title": "Title",
+          "description": "Human readable Tool title.",
+          "required": true
+        },
+        {
+          "type": "textarea",
+          "name": "description",
+          "title": "Description",
+          "description": "What the Tool does.",
+          "required": true
+        },
+        {
+          "type": "settings",
+          "name": "settings",
+          "title": "Run Settings",
+          "description": "Inputs for running the generated Tool.",
+          "required": false
+        },
+        {
+          "type": "json",
+          "name": "meta",
+          "title": "Meta",
+          "description": "Optional house metadata.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "base",
+        "operation": "create",
+        "target_type": "tool",
+        "data_types": [
+          "tool"
+        ],
+        "output": "tool",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/base/stamp-new-tool/template",
+        "files": [
+          {
+            "path": "tools/base/stamp-new-tool/template/settings.json",
+            "bytes": 118,
+            "placeholders": [
+              "__TOOL_NAME__",
+              "__TOOL_TITLE__",
+              "__TOOL_DESCRIPTION__"
+            ]
+          },
+          {
+            "path": "tools/base/stamp-new-tool/template/tmpl.mjs",
+            "bytes": 119,
+            "placeholders": [
+              "__TOOL_NAME__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000001510,
+      "key": "code/patch/managed-block",
+      "title": "Patch Managed Code Block",
+      "authority": "write",
+      "settings_file": "tools/code/patch/managed-block/settings.json",
+      "executor": "tools/code/patch/patch.mjs",
+      "executor_owner": "code/patch",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Existing source file to patch.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "boundary_tag",
+          "title": "Boundary Tag",
+          "description": "Stable RRAABBIITT ownership tag.",
+          "required": true
+        },
+        {
+          "type": "textarea",
+          "name": "content",
+          "title": "Managed Content",
+          "description": "Desired content inside the owned boundary.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "create_if_missing",
+          "title": "Create if Missing",
+          "description": "Create one managed region when no boundary exists.",
+          "required": false,
+          "default": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "code",
+        "operation": "update",
+        "target_type": "managed-block",
+        "data_types": [
+          "code",
+          "managed-block"
+        ],
+        "output": "file",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1820000000002,
+      "key": "code/scaffolding/cleanup",
+      "title": "Scaffolding Cleanup Pass",
+      "authority": "write",
+      "settings_file": "tools/code/scaffolding/cleanup/settings.json",
+      "executor": "tools/code/scaffolding/cleanup/cleanup.mjs",
+      "executor_owner": "code/scaffolding/cleanup",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Artifact file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Project-relative artifact path alias.",
+          "required": false
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Report exactly which construction markers would be removed without writing the file.",
+          "required": false,
+          "default": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "code",
+        "operation": "cleanup",
+        "target_type": "construction-scaffolding",
+        "data_types": [
+          "file",
+          "path",
+          "construction-seat"
+        ],
+        "output": "cleanup-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000001413,
+      "key": "css/add/state/atom",
+      "title": "Add CSS State to Atom",
+      "authority": "write",
+      "settings_file": "tools/css/add/state/atom/settings.json",
+      "executor": "tools/css/add/add.mjs",
+      "executor_owner": "css/add",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "atom_name",
+          "title": "Atom Name",
+          "description": "Existing Atom/class name to update.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "state",
+          "title": "State",
+          "description": "hover, active, is-active, focus, focus-visible, focus-within, disabled, checked, or visited. Use active, is-active to share one rule. Colon/dot prefixes are accepted.",
+          "required": true
+        },
+        {
+          "type": "textarea",
+          "name": "styles",
+          "title": "Styles",
+          "description": "CSS declarations or a JSON property/value object.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "css",
+        "operation": "create",
+        "target_type": "atom",
+        "data_types": [
+          "css",
+          "atom",
+          "state"
+        ],
+        "output": "css-update",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000001414,
+      "key": "css/add/state/class",
+      "title": "Add CSS State to Class",
+      "authority": "write",
+      "settings_file": "tools/css/add/state/class/settings.json",
+      "executor": "tools/css/add/add.mjs",
+      "executor_owner": "css/add",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "location",
+          "title": "CSS Location",
+          "description": "CSS file path, or a folder containing one unique stylesheet with the class.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "class_name",
+          "title": "Class Name",
+          "description": "CSS class name or selector.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "state",
+          "title": "State",
+          "description": "hover, active, is-active, focus, focus-visible, focus-within, disabled, checked, or visited. Use active, is-active to share one rule. Colon/dot prefixes are accepted.",
+          "required": true
+        },
+        {
+          "type": "textarea",
+          "name": "styles",
+          "title": "Styles",
+          "description": "CSS declarations or a JSON property/value object.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "css",
+        "operation": "create",
+        "target_type": "class",
+        "data_types": [
+          "css",
+          "class",
+          "state"
+        ],
+        "output": "css-update",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000001411,
+      "key": "css/add/style/atom",
+      "title": "Add CSS to Atom",
+      "authority": "write",
+      "settings_file": "tools/css/add/style/atom/settings.json",
+      "executor": "tools/css/add/add.mjs",
+      "executor_owner": "css/add",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "atom_name",
+          "title": "Atom Name",
+          "description": "Existing Atom/class name to update.",
+          "required": true
+        },
+        {
+          "type": "textarea",
+          "name": "styles",
+          "title": "Styles",
+          "description": "CSS declarations or a JSON property/value object.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "css",
+        "operation": "create",
+        "target_type": "atom",
+        "data_types": [
+          "css",
+          "atom",
+          "style"
+        ],
+        "output": "css-update",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000001412,
+      "key": "css/add/style/class",
+      "title": "Add CSS to Class",
+      "authority": "write",
+      "settings_file": "tools/css/add/style/class/settings.json",
+      "executor": "tools/css/add/add.mjs",
+      "executor_owner": "css/add",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "location",
+          "title": "CSS Location",
+          "description": "CSS file path, or a folder containing one unique stylesheet with the class.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "class_name",
+          "title": "Class Name",
+          "description": "CSS class name or selector.",
+          "required": true
+        },
+        {
+          "type": "textarea",
+          "name": "styles",
+          "title": "Styles",
+          "description": "CSS declarations or a JSON property/value object.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "css",
+        "operation": "create",
+        "target_type": "class",
+        "data_types": [
+          "css",
+          "class",
+          "style"
+        ],
+        "output": "css-update",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000931,
+      "key": "css/grid/stamp-install",
+      "title": "Install Grid CSS",
+      "authority": "write",
+      "settings_file": "tools/css/grid/stamp-install/settings.json",
+      "executor": "tools/css/grid/stamp-install/stamp-install.mjs",
+      "executor_owner": "css/grid/stamp-install",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "CSS Folder Name",
+          "description": "Folder name used by the child resolver when css_path is missing.",
+          "required": false,
+          "default": "css"
+        },
+        {
+          "type": "folder",
+          "name": "css_path",
+          "title": "CSS Path",
+          "description": "CSS folder. If missing, the runner tries the registered find-folder Tool.",
+          "required": true,
+          "try": "find-folder"
+        }
+      ],
+      "declared_metadata": {
+        "domain": "css",
+        "operation": "create",
+        "target_type": "grid",
+        "data_types": [
+          "grid",
+          "css"
+        ],
+        "output": "css-file",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/css/grid/stamp-install/template",
+        "files": [
+          {
+            "path": "tools/css/grid/stamp-install/template/grid.css",
+            "bytes": 4983,
+            "placeholders": []
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000932,
+      "key": "css/import/file",
+      "title": "Import CSS",
+      "authority": "write",
+      "settings_file": "tools/css/import/file/settings.json",
+      "executor": "tools/css/import/import.mjs",
+      "executor_owner": "css/import",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "file",
+          "title": "CSS File",
+          "description": "CSS source file to import.",
+          "required": true
+        },
+        {
+          "type": "file",
+          "name": "entry",
+          "title": "CSS Entry",
+          "description": "CSS entry file that receives the relative @import.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "css",
+        "operation": "import",
+        "target_type": "file",
+        "data_types": [
+          "css",
+          "import"
+        ],
+        "output": "css-entry",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000501,
+      "key": "css/stamp-new-atom",
+      "title": "New Atom",
+      "authority": "write",
+      "settings_file": "tools/css/stamp-new-atom/settings.json",
+      "executor": "tools/css/stamp-new-atom/stamp-new-atom.mjs",
+      "executor_owner": "css/stamp-new-atom",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Atom Name",
+          "description": "CSS atom/class name.",
+          "required": true
+        },
+        {
+          "type": "folder",
+          "name": "location",
+          "title": "Location",
+          "description": "Folder where the atom is stored.",
+          "required": true
+        },
+        {
+          "type": "textarea",
+          "name": "styles",
+          "title": "Styles",
+          "description": "CSS declarations for the atom.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "token",
+          "title": "Background Token",
+          "description": "Registered token used when styles are absent.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "css",
+        "operation": "create",
+        "target_type": "atom",
+        "data_types": [
+          "atom",
+          "css"
+        ],
+        "output": "atom",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/css/stamp-new-atom/template",
+        "files": [
+          {
+            "path": "tools/css/stamp-new-atom/template/tmpl.css",
+            "bytes": 35,
+            "placeholders": [
+              "__ATOM_NAME__",
+              "__ATOM_STYLES__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000930,
+      "key": "html/add/grid/stamp-new",
+      "title": "Add Grid",
+      "authority": "write",
+      "settings_file": "tools/html/add/grid/stamp-new/settings.json",
+      "executor": "tools/html/add/grid/stamp-new/stamp-new.mjs",
+      "executor_owner": "html/add/grid/stamp-new",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Grid Name",
+          "description": "Output fragment name without extension.",
+          "required": false,
+          "default": "grid"
+        },
+        {
+          "type": "folder",
+          "name": "location",
+          "title": "Location",
+          "description": "Folder that receives the HTML grid fragment.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "layout",
+          "title": "Grid Layout",
+          "description": "Topology key from grids.json.",
+          "required": false,
+          "default": "shell"
+        },
+        {
+          "type": "text",
+          "name": "gap",
+          "title": "Gap",
+          "description": "Grid gap token: control, content, container, or section.",
+          "required": false,
+          "default": "content"
+        }
+      ],
+      "declared_metadata": {
+        "domain": "html",
+        "operation": "create",
+        "target_type": "grid",
+        "data_types": [
+          "grid",
+          "html"
+        ],
+        "output": "html-fragment",
+        "authority": "write",
+        "resource": "../grids.json"
+      },
+      "template": {
+        "path": "tools/html/add/grid/stamp-new/template",
+        "files": [
+          {
+            "path": "tools/html/add/grid/stamp-new/template/tmpl.html",
+            "bytes": 80,
+            "placeholders": [
+              "__GRID_LAYOUT__",
+              "__GRID_GAP__",
+              "__GRID_AREAS__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000301,
+      "key": "html/stamp-new-project",
+      "title": "New Html Project",
+      "authority": "write",
+      "settings_file": "tools/html/stamp-new-project/settings.json",
+      "executor": "tools/html/stamp-new-project/stamp-new-project.mjs",
+      "executor_owner": "html/stamp-new-project",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Project Name",
+          "description": "Project name.",
+          "required": true
+        },
+        {
+          "type": "folder",
+          "name": "folder",
+          "title": "Parent Folder",
+          "description": "Folder that will contain the project.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "html",
+        "operation": "create",
+        "target_type": "project",
+        "data_types": [
+          "project",
+          "path"
+        ],
+        "output": "project",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/html/stamp-new-project/template",
+        "files": [
+          {
+            "path": "tools/html/stamp-new-project/template/css/README.txt",
+            "bytes": 18,
+            "placeholders": []
+          },
+          {
+            "path": "tools/html/stamp-new-project/template/index.html",
+            "bytes": 138,
+            "placeholders": [
+              "__PROJECT_NAME__"
+            ]
+          },
+          {
+            "path": "tools/html/stamp-new-project/template/js/README.txt",
+            "bytes": 19,
+            "placeholders": []
+          },
+          {
+            "path": "tools/html/stamp-new-project/template/PATHS.json",
+            "bytes": 221,
+            "placeholders": [
+              "__PROJECT_ID__",
+              "__PROJECT_NAME__"
+            ]
+          },
+          {
+            "path": "tools/html/stamp-new-project/template/settings.json",
+            "bytes": 154,
+            "placeholders": [
+              "__PROJECT_ID__",
+              "__PROJECT_NAME__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000920,
+      "key": "project/add/paths",
+      "title": "Add Project Path",
+      "authority": "write",
+      "settings_file": "tools/project/add/paths/settings.json",
+      "executor": "tools/project/add/add.mjs",
+      "executor_owner": "project/add",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Name",
+          "description": "Stable project path key such as components or css.",
+          "required": true
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Project-relative path value.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "project",
+        "operation": "create",
+        "target_type": "path",
+        "output": "project-fact",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000045,
+      "key": "project/copy/component",
+      "title": "Copy Component",
+      "authority": "write",
+      "settings_file": "tools/project/copy/component/settings.json",
+      "executor": "tools/project/copy/copy.mjs",
+      "executor_owner": "project/copy",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional file/path source.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional component name source.",
+          "required": false
+        },
+        {
+          "type": "folder",
+          "name": "destination",
+          "title": "Destination Folder",
+          "description": "Project-relative destination folder.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "new_name",
+          "title": "New Name",
+          "description": "Optional new component name for the copied/moved artifact.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "project",
+        "operation": "copy",
+        "target_type": "component",
+        "data_types": [
+          "component",
+          "path"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000044,
+      "key": "project/copy/file",
+      "title": "Copy File",
+      "authority": "write",
+      "settings_file": "tools/project/copy/file/settings.json",
+      "executor": "tools/project/copy/copy.mjs",
+      "executor_owner": "project/copy",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional file/path source.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional component name source.",
+          "required": false
+        },
+        {
+          "type": "folder",
+          "name": "destination",
+          "title": "Destination Folder",
+          "description": "Project-relative destination folder.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "project",
+        "operation": "copy",
+        "target_type": "file",
+        "data_types": [
+          "file",
+          "path"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000053,
+      "key": "project/delete/component",
+      "title": "Delete Component",
+      "authority": "write",
+      "settings_file": "tools/project/delete/component/settings.json",
+      "executor": "tools/project/delete/delete.mjs",
+      "executor_owner": "project/delete",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional file/path source.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional component name source.",
+          "required": false
+        },
+        {
+          "type": "boolean",
+          "name": "confirm",
+          "title": "Confirm Delete",
+          "description": "Must be true to perform destructive deletion.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "project",
+        "operation": "delete",
+        "target_type": "component",
+        "data_types": [
+          "component",
+          "path"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000052,
+      "key": "project/delete/file",
+      "title": "Delete File",
+      "authority": "write",
+      "settings_file": "tools/project/delete/file/settings.json",
+      "executor": "tools/project/delete/delete.mjs",
+      "executor_owner": "project/delete",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional file/path source.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional component name source.",
+          "required": false
+        },
+        {
+          "type": "boolean",
+          "name": "confirm",
+          "title": "Confirm Delete",
+          "description": "Must be true to perform destructive deletion.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "project",
+        "operation": "delete",
+        "target_type": "file",
+        "data_types": [
+          "file",
+          "path"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000047,
+      "key": "project/move/component",
+      "title": "Move Component",
+      "authority": "write",
+      "settings_file": "tools/project/move/component/settings.json",
+      "executor": "tools/project/move/move.mjs",
+      "executor_owner": "project/move",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional file/path source.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional component name source.",
+          "required": false
+        },
+        {
+          "type": "folder",
+          "name": "destination",
+          "title": "Destination Folder",
+          "description": "Project-relative destination folder.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "new_name",
+          "title": "New Name",
+          "description": "Optional new component name for the copied/moved artifact.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "project",
+        "operation": "move",
+        "target_type": "component",
+        "data_types": [
+          "component",
+          "path"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000046,
+      "key": "project/move/file",
+      "title": "Move File",
+      "authority": "write",
+      "settings_file": "tools/project/move/file/settings.json",
+      "executor": "tools/project/move/move.mjs",
+      "executor_owner": "project/move",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional file/path source.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional component name source.",
+          "required": false
+        },
+        {
+          "type": "folder",
+          "name": "destination",
+          "title": "Destination Folder",
+          "description": "Project-relative destination folder.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "project",
+        "operation": "move",
+        "target_type": "file",
+        "data_types": [
+          "file",
+          "path"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000921,
+      "key": "project/remove/paths",
+      "title": "Remove Project Path",
+      "authority": "write",
+      "settings_file": "tools/project/remove/paths/settings.json",
+      "executor": "tools/project/remove/remove.mjs",
+      "executor_owner": "project/remove",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Name",
+          "description": "Project path key to remove.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "project",
+        "operation": "delete",
+        "target_type": "path",
+        "output": "project-fact",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000049,
+      "key": "project/rename/component",
+      "title": "Rename Component",
+      "authority": "write",
+      "settings_file": "tools/project/rename/component/settings.json",
+      "executor": "tools/project/rename/rename.mjs",
+      "executor_owner": "project/rename",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional file/path source.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional component name source.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "new_name",
+          "title": "New Name",
+          "description": "New file stem or component name.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "project",
+        "operation": "rename",
+        "target_type": "component",
+        "data_types": [
+          "component",
+          "path"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000048,
+      "key": "project/rename/file",
+      "title": "Rename File",
+      "authority": "write",
+      "settings_file": "tools/project/rename/file/settings.json",
+      "executor": "tools/project/rename/rename.mjs",
+      "executor_owner": "project/rename",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional file/path source.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional component name source.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "new_name",
+          "title": "New Name",
+          "description": "New file stem or component name.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "project",
+        "operation": "rename",
+        "target_type": "file",
+        "data_types": [
+          "file",
+          "path"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000051,
+      "key": "project/save/component",
+      "title": "Save Component As",
+      "authority": "write",
+      "settings_file": "tools/project/save/component/settings.json",
+      "executor": "tools/project/save/save.mjs",
+      "executor_owner": "project/save",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional file/path source.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional component name source.",
+          "required": false
+        },
+        {
+          "type": "folder",
+          "name": "destination",
+          "title": "Destination Folder",
+          "description": "Project-relative destination folder.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "new_name",
+          "title": "New Name",
+          "description": "New file stem or component name.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "project",
+        "operation": "save",
+        "target_type": "component",
+        "data_types": [
+          "component",
+          "path"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000050,
+      "key": "project/save/file",
+      "title": "Save File As",
+      "authority": "write",
+      "settings_file": "tools/project/save/file/settings.json",
+      "executor": "tools/project/save/save.mjs",
+      "executor_owner": "project/save",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional file/path source.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional component name source.",
+          "required": false
+        },
+        {
+          "type": "folder",
+          "name": "destination",
+          "title": "Destination Folder",
+          "description": "Project-relative destination folder.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "new_name",
+          "title": "New Name",
+          "description": "New file stem or component name.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "project",
+        "operation": "save",
+        "target_type": "file",
+        "data_types": [
+          "file",
+          "path"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000000,
+      "key": "react/add/attribute",
+      "title": "Add Attribute",
+      "authority": "write",
+      "settings_file": "tools/react/add/attribute/settings.json",
+      "executor": "tools/react/add/add.mjs",
+      "executor_owner": "react/add",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Data Area",
+          "description": "Optional data-area value identifying the source DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element name identifying the source target.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many",
+          "description": "Defaults to one target. Use all to edit every matching target where supported.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching target"
+            },
+            {
+              "name": "all",
+              "description": "All matching targets"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "attribute_name",
+          "title": "Attribute Name",
+          "description": "Static attribute name to add.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "attribute_value",
+          "title": "Attribute Value",
+          "description": "Static attribute value to add.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "attribute",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "attribute"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000989,
+      "key": "react/add/class",
+      "title": "Add Class",
+      "authority": "write",
+      "settings_file": "tools/react/add/class/settings.json",
+      "executor": "tools/react/add/add.mjs",
+      "executor_owner": "react/add",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Data Area",
+          "description": "Optional data-area value identifying the DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element name such as div, main, section, or button.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many",
+          "description": "Defaults to one target. Use all to edit every matching target.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching target"
+            },
+            {
+              "name": "all",
+              "description": "All matching targets"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "class_name",
+          "title": "Class",
+          "description": "Class token or whitespace-separated class tokens to add.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "class",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "class"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000003,
+      "key": "react/add/data-area",
+      "title": "Add Data Area",
+      "authority": "write",
+      "settings_file": "tools/react/add/data-area/settings.json",
+      "executor": "tools/react/add/add.mjs",
+      "executor_owner": "react/add",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Data Area",
+          "description": "Optional data-area value identifying the source DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element name identifying the source target.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many",
+          "description": "Defaults to one target. Use all to edit every matching target where supported.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching target"
+            },
+            {
+              "name": "all",
+              "description": "All matching targets"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "new_data_area",
+          "title": "Data Area Value",
+          "description": "data-area value to add.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "data-area",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "data-area"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000992,
+      "key": "react/add/element",
+      "title": "Add DOM Element",
+      "authority": "write",
+      "settings_file": "tools/react/add/element/settings.json",
+      "executor": "tools/react/add/add.mjs",
+      "executor_owner": "react/add",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Parent Data Area",
+          "description": "Optional data-area value identifying the parent DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "Parent DOM Element",
+          "description": "Optional parent native DOM element name.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many Parents",
+          "description": "Defaults to one parent. Use all to add the child to every matching parent.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching parent"
+            },
+            {
+              "name": "all",
+              "description": "All matching parents"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "tag",
+          "title": "New Element",
+          "description": "Native element tag to add. Defaults to div.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "class_name",
+          "title": "Class",
+          "description": "Optional class token(s) placed on the new element.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "new_data_area",
+          "title": "New Data Area",
+          "description": "Optional data-area value placed on the new element.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "new_seat_id",
+          "title": "New Construction Seat ID",
+          "description": "Optional data-rab-seat address to place on the new/wrapper element so later Tools can target it exactly.",
+          "required": false
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "element",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "element",
+          "class"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1830000000005,
+      "key": "react/add/scroll-wrapper",
+      "title": "Add Scroll Wrapper",
+      "authority": "write",
+      "settings_file": "tools/react/add/scroll-wrapper/settings.json",
+      "executor": "tools/react/add/scroll-wrapper/scroll-wrapper.mjs",
+      "executor_owner": "react/add/scroll-wrapper",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component/page name.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source path.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact construction seat target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "area",
+          "title": "Grid Area",
+          "description": "Optional data-area target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "new_seat_id",
+          "title": "Wrapper Construction Seat ID",
+          "description": "Optional construction address for the new wrapper.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "scroll-wrapper",
+        "data_types": [
+          "component",
+          "element",
+          "wrapper",
+          "scroll"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1830000000002,
+      "key": "react/apply/grid-layout",
+      "title": "Apply Grid Layout",
+      "authority": "write",
+      "settings_file": "tools/react/apply/grid-layout/settings.json",
+      "executor": "tools/react/apply/grid-layout/grid-layout.mjs",
+      "executor_owner": "react/apply/grid-layout",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Page or Component",
+          "description": "Optional React page/component name to receive the grid.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file to receive the grid.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat target for a nested grid.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "area",
+          "title": "Target Data Area",
+          "description": "Optional data-area target for a nested grid when an exact seat is not supplied.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "layout",
+          "title": "Grid Layout",
+          "description": "Known layout name from the shared grid catalog.",
+          "required": false,
+          "default": "header-main"
+        },
+        {
+          "type": "text",
+          "name": "gap",
+          "title": "Grid Gap",
+          "description": "Grid gap token.",
+          "required": false,
+          "default": "content"
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "apply",
+        "target_type": "grid",
+        "data_types": [
+          "page",
+          "component",
+          "grid",
+          "data-area",
+          "construction-seat"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1830000000004,
+      "key": "react/apply/scroll-y",
+      "title": "Set Scroll Y",
+      "authority": "write",
+      "settings_file": "tools/react/apply/scroll-y/settings.json",
+      "executor": "tools/react/apply/scroll-y/scroll-y.mjs",
+      "executor_owner": "react/apply/scroll-y",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component/page name.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source path.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact construction seat target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "area",
+          "title": "Grid Area",
+          "description": "Optional data-area target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element target.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "apply",
+        "target_type": "scroll-y",
+        "data_types": [
+          "component",
+          "element",
+          "scroll"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000001,
+      "key": "react/change/attribute",
+      "title": "Change Attribute",
+      "authority": "write",
+      "settings_file": "tools/react/change/attribute/settings.json",
+      "executor": "tools/react/change/change.mjs",
+      "executor_owner": "react/change",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Data Area",
+          "description": "Optional data-area value identifying the source DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element name identifying the source target.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many",
+          "description": "Defaults to one target. Use all to edit every matching target where supported.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching target"
+            },
+            {
+              "name": "all",
+              "description": "All matching targets"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "attribute_name",
+          "title": "Attribute Name",
+          "description": "Static attribute name to change.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "attribute_value",
+          "title": "New Attribute Value",
+          "description": "Replacement static attribute value.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "update",
+        "target_type": "attribute",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "attribute"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000990,
+      "key": "react/change/class",
+      "title": "Change Class",
+      "authority": "write",
+      "settings_file": "tools/react/change/class/settings.json",
+      "executor": "tools/react/change/change.mjs",
+      "executor_owner": "react/change",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Data Area",
+          "description": "Optional data-area value identifying the DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element name.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many",
+          "description": "Defaults to one target. Use all to edit every matching target.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching target"
+            },
+            {
+              "name": "all",
+              "description": "All matching targets"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "from_class",
+          "title": "Existing Class",
+          "description": "Exact class token to replace.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "to_class",
+          "title": "New Class",
+          "description": "Replacement class token.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "update",
+        "target_type": "class",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "class"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000004,
+      "key": "react/change/data-area",
+      "title": "Change Data Area",
+      "authority": "write",
+      "settings_file": "tools/react/change/data-area/settings.json",
+      "executor": "tools/react/change/change.mjs",
+      "executor_owner": "react/change",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Data Area",
+          "description": "Optional data-area value identifying the source DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element name identifying the source target.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many",
+          "description": "Defaults to one target. Use all to edit every matching target where supported.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching target"
+            },
+            {
+              "name": "all",
+              "description": "All matching targets"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "new_data_area",
+          "title": "New Data Area",
+          "description": "Replacement data-area value.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "update",
+        "target_type": "data-area",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "data-area"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000830,
+      "key": "react/hooks/state-hooks/stamp-new",
+      "title": "State Hook Stamp",
+      "authority": "write",
+      "settings_file": "tools/react/hooks/state-hooks/stamp-new/settings.json",
+      "executor": "tools/react/hooks/state-hooks/stamp-new/stamp-new.mjs",
+      "executor_owner": "react/hooks/state-hooks/stamp-new",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Hook Name",
+          "description": "Generated custom hook name, such as useCartState.",
+          "required": true
+        },
+        {
+          "type": "folder",
+          "name": "location",
+          "title": "Location",
+          "description": "Folder that will receive the generated hook file.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "initial_value",
+          "title": "Initial Value",
+          "description": "Initial useState expression.",
+          "required": false,
+          "default": "null"
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "hook",
+        "predicate": "state",
+        "native_symbol": "useState",
+        "data_types": [
+          "hook",
+          "tsx"
+        ],
+        "output": "file",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/react/hooks/state-hooks/stamp-new/template",
+        "files": [
+          {
+            "path": "tools/react/hooks/state-hooks/stamp-new/template/tmpl.tsx",
+            "bytes": 191,
+            "placeholders": [
+              "__HOOK_NAME__",
+              "__INITIAL_VALUE__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000831,
+      "key": "react/hooks/use-effect/stamp-new",
+      "title": "useEffect Stamp",
+      "authority": "write",
+      "settings_file": "tools/react/hooks/use-effect/stamp-new/settings.json",
+      "executor": "tools/react/hooks/use-effect/stamp-new/stamp-new.mjs",
+      "executor_owner": "react/hooks/use-effect/stamp-new",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Hook Name",
+          "description": "Generated custom hook name, such as useWindowTitle.",
+          "required": true
+        },
+        {
+          "type": "folder",
+          "name": "location",
+          "title": "Location",
+          "description": "Folder that will receive the generated hook file.",
+          "required": true
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "hook",
+        "predicate": "effect",
+        "native_symbol": "useEffect",
+        "data_types": [
+          "hook",
+          "tsx"
+        ],
+        "output": "file",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/react/hooks/use-effect/stamp-new/template",
+        "files": [
+          {
+            "path": "tools/react/hooks/use-effect/stamp-new/template/tmpl.tsx",
+            "bytes": 168,
+            "placeholders": [
+              "__HOOK_NAME__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1830000000003,
+      "key": "react/insert/component-into-area",
+      "title": "Insert Component Into Area",
+      "authority": "write",
+      "settings_file": "tools/react/insert/component-into-area/settings.json",
+      "executor": "tools/react/insert/component-into-area/component-into-area.mjs",
+      "executor_owner": "react/insert/component-into-area",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component To Insert",
+          "description": "React component name to insert, such as SiteNav.",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "into_component",
+          "title": "Target Page or Component",
+          "description": "Optional target React page/component name.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "Target File",
+          "description": "Optional target source file.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Target Path",
+          "description": "Optional project-relative target source path.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "area",
+          "title": "Grid Area",
+          "description": "Optional data-area target such as header or main.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "insert",
+        "target_type": "component-use",
+        "data_types": [
+          "component",
+          "page",
+          "data-area",
+          "construction-seat"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000009,
+      "key": "react/move/element",
+      "title": "Move DOM Element",
+      "authority": "write",
+      "settings_file": "tools/react/move/element/settings.json",
+      "executor": "tools/react/move/move.mjs",
+      "executor_owner": "react/move",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Data Area",
+          "description": "Optional data-area value identifying the source DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element name identifying the source target.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many",
+          "description": "Defaults to one target. Use all to edit every matching target where supported.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching target"
+            },
+            {
+              "name": "all",
+              "description": "All matching targets"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "to_seat_id",
+          "title": "Destination Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the destination DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "to_data_area",
+          "title": "Destination Data Area",
+          "description": "Destination data-area value.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "to_element",
+          "title": "Destination Element",
+          "description": "Destination native DOM element name.",
+          "required": false
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "move",
+        "target_type": "element",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "element"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000002,
+      "key": "react/remove/attribute",
+      "title": "Remove Attribute",
+      "authority": "write",
+      "settings_file": "tools/react/remove/attribute/settings.json",
+      "executor": "tools/react/remove/remove.mjs",
+      "executor_owner": "react/remove",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Data Area",
+          "description": "Optional data-area value identifying the source DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element name identifying the source target.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many",
+          "description": "Defaults to one target. Use all to edit every matching target where supported.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching target"
+            },
+            {
+              "name": "all",
+              "description": "All matching targets"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "attribute_name",
+          "title": "Attribute Name",
+          "description": "Static attribute name to remove.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "delete",
+        "target_type": "attribute",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "attribute"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000991,
+      "key": "react/remove/class",
+      "title": "Remove Class",
+      "authority": "write",
+      "settings_file": "tools/react/remove/class/settings.json",
+      "executor": "tools/react/remove/remove.mjs",
+      "executor_owner": "react/remove",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Data Area",
+          "description": "Optional data-area value identifying the DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element name.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many",
+          "description": "Defaults to one target. Use all to edit every matching target.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching target"
+            },
+            {
+              "name": "all",
+              "description": "All matching targets"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "class_name",
+          "title": "Class",
+          "description": "Exact class token to remove.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "delete",
+        "target_type": "class",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "class"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000005,
+      "key": "react/remove/data-area",
+      "title": "Remove Data Area",
+      "authority": "write",
+      "settings_file": "tools/react/remove/data-area/settings.json",
+      "executor": "tools/react/remove/remove.mjs",
+      "executor_owner": "react/remove",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Data Area",
+          "description": "Optional data-area value identifying the source DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element name identifying the source target.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many",
+          "description": "Defaults to one target. Use all to edit every matching target where supported.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching target"
+            },
+            {
+              "name": "all",
+              "description": "All matching targets"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "delete",
+        "target_type": "data-area",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "data-area"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000006,
+      "key": "react/remove/element",
+      "title": "Remove DOM Element",
+      "authority": "write",
+      "settings_file": "tools/react/remove/element/settings.json",
+      "executor": "tools/react/remove/remove.mjs",
+      "executor_owner": "react/remove",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Data Area",
+          "description": "Optional data-area value identifying the source DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element name identifying the source target.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many",
+          "description": "Defaults to one target. Use all to edit every matching target where supported.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching target"
+            },
+            {
+              "name": "all",
+              "description": "All matching targets"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "delete",
+        "target_type": "element",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "element"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000007,
+      "key": "react/replace/element",
+      "title": "Replace DOM Element",
+      "authority": "write",
+      "settings_file": "tools/react/replace/element/settings.json",
+      "executor": "tools/react/replace/replace.mjs",
+      "executor_owner": "react/replace",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Data Area",
+          "description": "Optional data-area value identifying the source DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element name identifying the source target.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many",
+          "description": "Defaults to one target. Use all to edit every matching target where supported.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching target"
+            },
+            {
+              "name": "all",
+              "description": "All matching targets"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "replacement_tag",
+          "title": "Replacement Tag",
+          "description": "Native DOM tag that replaces the selected tag.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "update",
+        "target_type": "element",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "element"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000401,
+      "key": "react/stamp-new-component",
+      "title": "New Component",
+      "authority": "write",
+      "settings_file": "tools/react/stamp-new-component/settings.json",
+      "executor": "tools/react/stamp-new-component/stamp-new-component.mjs",
+      "executor_owner": "react/stamp-new-component",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Component Name",
+          "description": "Component name.",
+          "required": true
+        },
+        {
+          "type": "folder",
+          "name": "location",
+          "title": "Location",
+          "description": "Folder that will contain the component folder.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "save_as_text",
+          "title": "Save As Text",
+          "description": "Save the generated component as .txt for testing.",
+          "required": false,
+          "default": false
+        },
+        {
+          "type": "text",
+          "name": "class_name",
+          "title": "Default Class",
+          "description": "Optional default class tokens composed with the caller className.",
+          "required": false,
+          "default": ""
+        },
+        {
+          "type": "boolean",
+          "name": "ensure_atoms",
+          "title": "Resolve Atom Dependencies",
+          "description": "Verify default atom classes exist; create missing background atoms through the shared runner.",
+          "required": false,
+          "default": false
+        },
+        {
+          "type": "text",
+          "name": "background_token",
+          "title": "Background Token",
+          "description": "Registered token for missing atom dependencies.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "component",
+        "data_types": [
+          "component",
+          "tsx"
+        ],
+        "output": "component",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/react/stamp-new-component/template",
+        "files": [
+          {
+            "path": "tools/react/stamp-new-component/template/tmpl.tsx",
+            "bytes": 397,
+            "placeholders": [
+              "__COMPONENT_NAME__",
+              "__DEFAULT_CLASS__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1830000000006,
+      "key": "react/stamp-new-dashboard",
+      "title": "New Dashboard",
+      "authority": "write",
+      "settings_file": "tools/react/stamp-new-dashboard/settings.json",
+      "executor": "tools/react/stamp-new-dashboard/stamp-new-dashboard.mjs",
+      "executor_owner": "react/stamp-new-dashboard",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Dashboard Page Name",
+          "description": "Dashboard page component name.",
+          "required": true
+        },
+        {
+          "type": "folder",
+          "name": "page_location",
+          "title": "Pages Location",
+          "description": "Optional pages folder; defaults from project settings.",
+          "required": false
+        },
+        {
+          "type": "folder",
+          "name": "component_location",
+          "title": "Components Location",
+          "description": "Optional components folder; defaults from project settings.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "layout",
+          "title": "Grid Layout",
+          "description": "Dashboard grid layout.",
+          "required": false,
+          "default": "header-main"
+        },
+        {
+          "type": "text",
+          "name": "nav_name",
+          "title": "Navigation Component",
+          "description": "Navigation component created/reused for the dashboard.",
+          "required": false,
+          "default": "SiteNav"
+        },
+        {
+          "type": "text",
+          "name": "nav_area",
+          "title": "Navigation Area",
+          "description": "Grid area that receives the navigation component.",
+          "required": false,
+          "default": "header"
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "dashboard",
+        "data_types": [
+          "dashboard",
+          "page",
+          "grid",
+          "component"
+        ],
+        "output": "dashboard",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/react/stamp-new-dashboard/template",
+        "files": [
+          {
+            "path": "tools/react/stamp-new-dashboard/template/dashboard.json",
+            "bytes": 84,
+            "placeholders": []
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1789877167204,
+      "key": "react/stamp-new-nav",
+      "title": "New Navigation",
+      "authority": "write",
+      "settings_file": "tools/react/stamp-new-nav/settings.json",
+      "executor": "tools/react/stamp-new-nav/stamp-new-nav.mjs",
+      "executor_owner": "react/stamp-new-nav",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Navigation Name",
+          "required": true
+        },
+        {
+          "type": "folder",
+          "name": "location",
+          "title": "Components Folder",
+          "required": true
+        },
+        {
+          "type": "json",
+          "name": "links",
+          "title": "Navigation Links",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "label",
+          "title": "Navigation Label",
+          "required": false,
+          "default": "Main navigation"
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "navigation",
+        "data_types": [
+          "component",
+          "navigation"
+        ],
+        "output": "component",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/react/stamp-new-nav/template",
+        "files": [
+          {
+            "path": "tools/react/stamp-new-nav/template/README.txt",
+            "bytes": 106,
+            "placeholders": []
+          },
+          {
+            "path": "tools/react/stamp-new-nav/template/tmpl.tsx",
+            "bytes": 906,
+            "placeholders": [
+              "__COMPONENT_NAME__",
+              "__NAV_LINKS__",
+              "__NAV_LABEL__",
+              "__NAV_CLASS__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1830000000001,
+      "key": "react/stamp-new-page",
+      "title": "New Page",
+      "authority": "write",
+      "settings_file": "tools/react/stamp-new-page/settings.json",
+      "executor": "tools/react/stamp-new-page/stamp-new-page.mjs",
+      "executor_owner": "react/stamp-new-page",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Page Name",
+          "description": "React page component name.",
+          "required": true
+        },
+        {
+          "type": "folder",
+          "name": "location",
+          "title": "Pages Location",
+          "description": "Optional pages folder. Defaults to the loaded project's configured pages path or src/pages.",
+          "required": false
+        },
+        {
+          "type": "textarea",
+          "name": "content",
+          "title": "Initial Content",
+          "description": "Default text; supplied children take precedence.",
+          "required": false,
+          "default": ""
+        },
+        {
+          "type": "boolean",
+          "name": "save_as_text",
+          "title": "Save As Text",
+          "description": "Text output for tests.",
+          "required": false,
+          "default": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "page",
+        "data_types": [
+          "page",
+          "tsx",
+          "construction-seat"
+        ],
+        "output": "page",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/react/stamp-new-page/template",
+        "files": [
+          {
+            "path": "tools/react/stamp-new-page/template/tmpl.tsx",
+            "bytes": 409,
+            "placeholders": [
+              "__PAGE_NAME__",
+              "__PAGE_CONTENT__",
+              "__PAGE_SLUG__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000300,
+      "key": "react/stamp-new-project",
+      "title": "New React Project",
+      "authority": "write",
+      "settings_file": "tools/react/stamp-new-project/settings.json",
+      "executor": "tools/react/stamp-new-project/stamp-new-project.mjs",
+      "executor_owner": "react/stamp-new-project",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Project Name",
+          "description": "Project name.",
+          "required": true
+        },
+        {
+          "type": "folder",
+          "name": "folder",
+          "title": "Parent Folder",
+          "description": "Folder that will contain the project.",
+          "required": true
+        },
+        {
+          "type": "options",
+          "name": "starter",
+          "title": "Starter",
+          "description": "Minimal app or token/atom/Button/StyleGuide examples.",
+          "required": false,
+          "default": "minimal",
+          "enum": [
+            "minimal",
+            "style-guide"
+          ],
+          "options": [
+            {
+              "name": "minimal",
+              "description": "Minimal app"
+            },
+            {
+              "name": "style-guide",
+              "description": "Style guide examples"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "name": "add_database",
+          "title": "Include SQLite Demo",
+          "description": "Local seed database and inspection script only; does not deploy an API.",
+          "required": false,
+          "default": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "project",
+        "data_types": [
+          "project",
+          "path"
+        ],
+        "output": "project",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/react/stamp-new-project/template",
+        "files": [
+          {
+            "path": "tools/react/stamp-new-project/template/.gitignore",
+            "bytes": 34,
+            "placeholders": []
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/index.html",
+            "bytes": 272,
+            "placeholders": [
+              "__PROJECT_NAME__"
+            ]
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/package.json",
+            "bytes": 422,
+            "placeholders": [
+              "__NPM_NAME__"
+            ]
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/PATHS.json",
+            "bytes": 222,
+            "placeholders": [
+              "__PROJECT_ID__",
+              "__PROJECT_NAME__"
+            ]
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/README.md",
+            "bytes": 724,
+            "placeholders": [
+              "__PROJECT_NAME__"
+            ]
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/RULES.txt",
+            "bytes": 1155,
+            "placeholders": []
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/settings.json",
+            "bytes": 183,
+            "placeholders": [
+              "__PROJECT_ID__",
+              "__PROJECT_NAME__"
+            ]
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/src/App.tsx",
+            "bytes": 152,
+            "placeholders": [
+              "__PROJECT_NAME__"
+            ]
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/src/atoms/README.txt",
+            "bytes": 21,
+            "placeholders": []
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/src/components/README.txt",
+            "bytes": 28,
+            "placeholders": []
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/src/main.tsx",
+            "bytes": 277,
+            "placeholders": []
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/src/pages/README.txt",
+            "bytes": 23,
+            "placeholders": []
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/src/vite-env.d.ts",
+            "bytes": 38,
+            "placeholders": []
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/tsconfig.json",
+            "bytes": 348,
+            "placeholders": []
+          },
+          {
+            "path": "tools/react/stamp-new-project/template/vite.config.mjs",
+            "bytes": 195,
+            "placeholders": []
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1790000000402,
+      "key": "react/stamp-sub-component",
+      "title": "Sub Component",
+      "authority": "write",
+      "settings_file": "tools/react/stamp-sub-component/settings.json",
+      "executor": "tools/react/stamp-sub-component/stamp-sub-component.mjs",
+      "executor_owner": "react/stamp-sub-component",
+      "inherited_executor": false,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Component Name",
+          "description": "Child component name.",
+          "required": true
+        },
+        {
+          "type": "folder",
+          "name": "parent_path",
+          "title": "Parent Path",
+          "description": "Resolved parent component folder; normally supplied by Magic Box or a previous receipt.",
+          "required": true
+        },
+        {
+          "type": "boolean",
+          "name": "save_as_text",
+          "title": "Save As Text",
+          "description": "Save generated output as .txt for testing.",
+          "required": false,
+          "default": false
+        },
+        {
+          "type": "text",
+          "name": "class_name",
+          "title": "Default Class",
+          "description": "Default atom classes composed with the caller className.",
+          "required": false,
+          "default": ""
+        },
+        {
+          "type": "boolean",
+          "name": "ensure_atoms",
+          "title": "Resolve Atom Dependencies",
+          "description": "Verify default atom classes exist; create missing background atoms through the shared runner.",
+          "required": false,
+          "default": false
+        },
+        {
+          "type": "text",
+          "name": "background_token",
+          "title": "Background Token",
+          "description": "Registered token for missing atom dependencies.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "component",
+        "relation": "child-of",
+        "data_types": [
+          "component",
+          "path"
+        ],
+        "output": "component",
+        "authority": "write"
+      },
+      "template": {
+        "path": "tools/react/stamp-sub-component/template",
+        "files": [
+          {
+            "path": "tools/react/stamp-sub-component/template/tmpl.tsx",
+            "bytes": 397,
+            "placeholders": [
+              "__COMPONENT_NAME__",
+              "__DEFAULT_CLASS__"
+            ]
+          }
+        ]
+      },
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    },
+    {
+      "id": 1800000000008,
+      "key": "react/wrap/element",
+      "title": "Wrap DOM Element",
+      "authority": "write",
+      "settings_file": "tools/react/wrap/element/settings.json",
+      "executor": "tools/react/wrap/wrap.mjs",
+      "executor_owner": "react/wrap",
+      "inherited_executor": true,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "component",
+          "title": "Component",
+          "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+          "required": false
+        },
+        {
+          "type": "file",
+          "name": "file",
+          "title": "File",
+          "description": "Optional source file. May be absolute or project-relative.",
+          "required": false
+        },
+        {
+          "type": "path",
+          "name": "path",
+          "title": "Path",
+          "description": "Optional project-relative source file path alias.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "seat_id",
+          "title": "Construction Seat ID",
+          "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "data_area",
+          "title": "Data Area",
+          "description": "Optional data-area value identifying the source DOM target.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "element",
+          "title": "DOM Element",
+          "description": "Optional native DOM element name identifying the source target.",
+          "required": false
+        },
+        {
+          "type": "options",
+          "name": "quantifier",
+          "title": "How Many",
+          "description": "Defaults to one target. Use all to edit every matching target where supported.",
+          "required": false,
+          "options": [
+            {
+              "name": "one",
+              "description": "First matching target"
+            },
+            {
+              "name": "all",
+              "description": "All matching targets"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "wrapper_tag",
+          "title": "Wrapper Tag",
+          "description": "Native wrapper tag. Defaults to div.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "class_name",
+          "title": "Wrapper Class",
+          "description": "Optional class token(s) on the wrapper.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "new_data_area",
+          "title": "Wrapper Data Area",
+          "description": "Optional data-area value on the wrapper.",
+          "required": false
+        },
+        {
+          "type": "text",
+          "name": "new_seat_id",
+          "title": "New Construction Seat ID",
+          "description": "Optional data-rab-seat address to place on the new/wrapper element so later Tools can target it exactly.",
+          "required": false
+        },
+        {
+          "type": "boolean",
+          "name": "dry_run",
+          "title": "Preview Only",
+          "description": "Return the deterministic edit plan without writing the file.",
+          "required": false
+        }
+      ],
+      "declared_metadata": {
+        "domain": "react",
+        "operation": "create",
+        "target_type": "element",
+        "data_types": [
+          "component",
+          "file",
+          "path",
+          "wrapper"
+        ],
+        "output": "edit-receipt",
+        "authority": "write"
+      },
+      "template": null,
+      "implementation_classification": "unclassified",
+      "classification_owner": null,
+      "classification_reason": "Template presence is observed; generation, editing, delegation, and file-operation behavior require an owning contract or a separate source review."
+    }
+  ],
+  "unavailable": [],
+  "skipped": [],
+  "notices": [
+    "Classifications come from discovered owner contracts. Undeclared behavior stays unclassified; a template path does not establish the complete implementation behavior.",
+    "Counts are calculated from this snapshot and are not requirements on the installed inventory."
+  ],
+  "source_files": [
+    {
+      "path": "tools/audit/stamp-new-project/contract.json",
+      "sha256": "cfe4bc30b8828454b9aebdb8cfdf130eaa9733fe0cb8d142201bc45eef514fac",
+      "bytes": 1073
+    },
+    {
+      "path": "tools/audit/stamp-new-project/settings.json",
+      "sha256": "73b8e734441c06c548c11390de190aa14d6ff3262fc12d5c11fe77a60519a38d",
+      "bytes": 802
+    },
+    {
+      "path": "tools/audit/stamp-new-project/stamp-new-project.mjs",
+      "sha256": "8539b777e3104a3573e98ae09e489ce4230954132a3cacab454c7c59735cc834",
+      "bytes": 1746
+    },
+    {
+      "path": "tools/audit/stamp-new-project/template/audit-results/README.txt",
+      "sha256": "42a8bb15bdae5300b6c5d7be7a95961590d270b9ef8130cce3ff42959758c2c7",
+      "bytes": 203
+    },
+    {
+      "path": "tools/audit/stamp-new-project/template/PATHS.json",
+      "sha256": "c1efe91b089d7178b4e42ea7fef41bdc4c6bc237c170cd27bd8283ac148a041c",
+      "bytes": 222
+    },
+    {
+      "path": "tools/audit/stamp-new-project/template/README.txt",
+      "sha256": "5547ea642f5c3bfc1e0d8e6668c0d8405ab29b8b2c29778512f6d89a7365a361",
+      "bytes": 286
+    },
+    {
+      "path": "tools/audit/stamp-new-project/template/settings.json",
+      "sha256": "7dd5268aa19824c85891b1f0e5da97ccf13e3fddf94022996f6b4f9a3f97ea92",
+      "bytes": 161
+    },
+    {
+      "path": "tools/base/form/stamp-validator/settings.json",
+      "sha256": "c6f66fe7486e0595bf42ab7ba6ce29194696ca3d2e8396c6a1073a5e964c99e7",
+      "bytes": 994
+    },
+    {
+      "path": "tools/base/form/stamp-validator/stamp-validator.mjs",
+      "sha256": "5bb0af47c791a32af4718ae59990c7fa9c71a91b081937a4ca822ae53a561700",
+      "bytes": 3820
+    },
+    {
+      "path": "tools/base/form/stamp-validator/template/tmpl.mjs",
+      "sha256": "bd60d7763959c608075d5b14badf688be111b373207bcd421ba2b0f43eefd1f2",
+      "bytes": 149
+    },
+    {
+      "path": "tools/base/move/move.mjs",
+      "sha256": "b9f4993ff76fb8719fca2996d6c4b6cd5e4d208cc61e1f1b23aa7d98ac81ffe6",
+      "bytes": 5856
+    },
+    {
+      "path": "tools/base/move/stamp/settings.json",
+      "sha256": "2ab3162847b07c04b0c6351520beb9d259f58253650cbe8a1c91bdf549bf5bb4",
+      "bytes": 1659
+    },
+    {
+      "path": "tools/base/move/tool/settings.json",
+      "sha256": "afa693c02c67bf93cfeeeb42611d371dabd40b07ff3629655763ce3c28d2a39d",
+      "bytes": 1658
+    },
+    {
+      "path": "tools/base/stamp-new-key-phrase/settings.json",
+      "sha256": "317e17377967c20c0052f6f097b1de6bb1633de5a428b036aba62fc1d69e3e31",
+      "bytes": 760
+    },
+    {
+      "path": "tools/base/stamp-new-key-phrase/stamp-new-key-phrase.mjs",
+      "sha256": "ee58980913476d20b8c2cceadc8755182d5610cac1f2c8bf92354cb7f38ebd85",
+      "bytes": 912
+    },
+    {
+      "path": "tools/base/stamp-new-key-phrase/template/phrase.json",
+      "sha256": "e048fa12a550ea850018f38c529f124da8059f43b7c3203672196d5d08a31021",
+      "bytes": 59
+    },
+    {
+      "path": "tools/base/stamp-new-project/settings.json",
+      "sha256": "f09a8a0dc6c1c4e5864ed4ca28fecfe62abe949bca55adb52363d35946f24e5b",
+      "bytes": 989
+    },
+    {
+      "path": "tools/base/stamp-new-project/stamp-new-project.mjs",
+      "sha256": "dee58a5f147d9a7424fbc21c33cb2a4178f0d671dca6a74caac423c3a49827a3",
+      "bytes": 672
+    },
+    {
+      "path": "tools/base/stamp-new-project/template/audit-results/README.txt",
+      "sha256": "4e8840a4cbc06f52469332ca6e24d80d2593c9c11c2dbd6ff30811214b0fcc75",
+      "bytes": 75
+    },
+    {
+      "path": "tools/base/stamp-new-project/template/output/README.txt",
+      "sha256": "4477b2f39014cdccb929a6ac132e7f0cea278f17682a449da9da5dd861b24d94",
+      "bytes": 69
+    },
+    {
+      "path": "tools/base/stamp-new-project/template/PATHS.json",
+      "sha256": "d2377142833e1cbfbda78ea5b796d94d967cd5f1af10088883e0ea7b57b8fe87",
+      "bytes": 219
+    },
+    {
+      "path": "tools/base/stamp-new-project/template/README.txt",
+      "sha256": "f988d598c65b71ed0fd8660673b0f293ce9781598063cb7c12cee68a161b123e",
+      "bytes": 271
+    },
+    {
+      "path": "tools/base/stamp-new-project/template/settings.json",
+      "sha256": "63ca90a16ad9c139a9ed02ef7b0aec77a25cfcba2a85c231cafd09f9d8a8eedb",
+      "bytes": 161
+    },
+    {
+      "path": "tools/base/stamp-new-stamp/settings.json",
+      "sha256": "49abe2eb6fed81047992f92196185d1d8357a255328dbc3f74058569d91ab736",
+      "bytes": 1838
+    },
+    {
+      "path": "tools/base/stamp-new-stamp/stamp-new-stamp.mjs",
+      "sha256": "d89e30d9ac370f68a81e499669e23ea2890e2ea00f757e510caab62287ccf0bf",
+      "bytes": 2849
+    },
+    {
+      "path": "tools/base/stamp-new-stamp/template/settings.json",
+      "sha256": "c600615b99334e6e2e8ed713292e57dc1da3a07a70b933a0847ecb64995f7dc4",
+      "bytes": 146
+    },
+    {
+      "path": "tools/base/stamp-new-stamp/template/template/README.txt",
+      "sha256": "c89b4ce0f023b14dc11a327c26460547bcd7bf6157bf3a4590cae313664d768c",
+      "bytes": 106
+    },
+    {
+      "path": "tools/base/stamp-new-stamp/template/tmpl.mjs",
+      "sha256": "e5c410481c1a9b77b2b4718ebe17f164ca9974b83c200c484db8a2c434c002f5",
+      "bytes": 166
+    },
+    {
+      "path": "tools/base/stamp-new-tool/settings.json",
+      "sha256": "86052c89a783475a923028301247f285b7b4b3d42e7c4a8a7bac6fb3fdcaed48",
+      "bytes": 2748
+    },
+    {
+      "path": "tools/base/stamp-new-tool/stamp-new-tool.mjs",
+      "sha256": "f3e748ad043193e9fb85ce0682e6b38501b20e3d15fdc87904e8f58329a5b128",
+      "bytes": 5331
+    },
+    {
+      "path": "tools/base/stamp-new-tool/template/settings.json",
+      "sha256": "74f724e2702b00136855e38ed598513e5460de1a8a63de1467a2d7dfba5fcfcb",
+      "bytes": 118
+    },
+    {
+      "path": "tools/base/stamp-new-tool/template/tmpl.mjs",
+      "sha256": "46c5e7037746b16b77873e34813362a67c885774fb1bd05f99bfa956291f711c",
+      "bytes": 119
+    },
+    {
+      "path": "tools/code/patch/managed-block/settings.json",
+      "sha256": "4bb7ae55b5674986f8a9cf72a7cbbcd0833e4ba25cced4a235547b47dbb2e509",
+      "bytes": 1238
+    },
+    {
+      "path": "tools/code/patch/patch.mjs",
+      "sha256": "f06b9c99073bc69e8bd9196d91d734ecbc027927d6c9fe0935fdc70443055bf4",
+      "bytes": 1805
+    },
+    {
+      "path": "tools/code/scaffolding/cleanup/cleanup.mjs",
+      "sha256": "7d23d4e1d85dedec020749e51653a690736ce86ee8dcff03b6e2acf71670de65",
+      "bytes": 588
+    },
+    {
+      "path": "tools/code/scaffolding/cleanup/settings.json",
+      "sha256": "f504a1c7e43d4815e22d3ddc2bb75909e6cf1e6e0e1e6ff9c3682187b83de803",
+      "bytes": 1130
+    },
+    {
+      "path": "tools/css/add/add.mjs",
+      "sha256": "43b8a24bdf40ec0ff258e68da8518d83afd65fe5cc5d80e039731648310719b1",
+      "bytes": 7107
+    },
+    {
+      "path": "tools/css/add/state/atom/settings.json",
+      "sha256": "149b7006db9b383e1e368e9a76e2234b66e702dfa9c88c8deaec65412d48c2aa",
+      "bytes": 1125
+    },
+    {
+      "path": "tools/css/add/state/class/settings.json",
+      "sha256": "d89580b083e23ebd3a6a3714bf87b6edeb05868b90ec3c149132b8604925334e",
+      "bytes": 1346
+    },
+    {
+      "path": "tools/css/add/style/atom/settings.json",
+      "sha256": "f75bd36f495aebf8155e3ebec40104c9c08c8a18cfc38b1817ccd1cb20c5b21d",
+      "bytes": 783
+    },
+    {
+      "path": "tools/css/add/style/class/settings.json",
+      "sha256": "e5724a26abd77207066a154fd2fa696719889736dc1bb05411df6e2bf81a818c",
+      "bytes": 1015
+    },
+    {
+      "path": "tools/css/grid/stamp-install/settings.json",
+      "sha256": "dd0038825a45edb1ac24928b04a818e1bef6a1111d583044cf44f150413fda69",
+      "bytes": 770
+    },
+    {
+      "path": "tools/css/grid/stamp-install/stamp-install.mjs",
+      "sha256": "7ced77cc486351094f6cd76f9b9ec4ec2abc250fdde55ed5bc61f3edb7b7c620",
+      "bytes": 479
+    },
+    {
+      "path": "tools/css/grid/stamp-install/template/grid.css",
+      "sha256": "ba83254895144f7c1948d59e9e5732b728c964ba7e4e4e995b64f4179db94508",
+      "bytes": 4983
+    },
+    {
+      "path": "tools/css/import/file/settings.json",
+      "sha256": "46172e018f18292ad33fd5cbc581de65d96cb921aeea5e8fdc3d0af30d4513be",
+      "bytes": 759
+    },
+    {
+      "path": "tools/css/import/import.mjs",
+      "sha256": "a1885f840c68c568eaff7a57d09bedb44e2afd9483fe53064ce56e70dfcabf6b",
+      "bytes": 907
+    },
+    {
+      "path": "tools/css/stamp-new-atom/settings.json",
+      "sha256": "0247681e6ea0f6459ee55662e2254f74a1867fe4a793b36f499009033b928802",
+      "bytes": 1028
+    },
+    {
+      "path": "tools/css/stamp-new-atom/stamp-new-atom.mjs",
+      "sha256": "a107c7309663c0be0f9e66d392326653a86f755dedafd8e673410fcca5bba981",
+      "bytes": 2473
+    },
+    {
+      "path": "tools/css/stamp-new-atom/template/tmpl.css",
+      "sha256": "4d53c95fb0c362d344d4896ae74a22899eff9feb15b2a4e5a73bee306d389d03",
+      "bytes": 35
+    },
+    {
+      "path": "tools/html/add/grid/stamp-new/settings.json",
+      "sha256": "93db853b297636c30f67abe92b2faf4640083d737e99d33092d22ac08caaea7e",
+      "bytes": 1295
+    },
+    {
+      "path": "tools/html/add/grid/stamp-new/stamp-new.mjs",
+      "sha256": "2ab64ce78b5b379871add4f5c04b19ee4b80c5f2d513413e231a45a219a0df23",
+      "bytes": 1752
+    },
+    {
+      "path": "tools/html/add/grid/stamp-new/template/tmpl.html",
+      "sha256": "4a127b238d12e67b4c5858c9483863c5d146de35083b4352780a9710d8d94394",
+      "bytes": 80
+    },
+    {
+      "path": "tools/html/stamp-new-project/settings.json",
+      "sha256": "d1098dfda06bc181258597e4146ea646e3c9c91a52b56a017d143610815c975d",
+      "bytes": 713
+    },
+    {
+      "path": "tools/html/stamp-new-project/stamp-new-project.mjs",
+      "sha256": "42135a45f1145d02254c357f0d259481c5f753459e7eba26bbfa0ddabeea71cb",
+      "bytes": 106
+    },
+    {
+      "path": "tools/html/stamp-new-project/template/css/README.txt",
+      "sha256": "170390658696b738d33c2550412b2dbd340f8b5cf798f064ab4bd42681e0743e",
+      "bytes": 18
+    },
+    {
+      "path": "tools/html/stamp-new-project/template/index.html",
+      "sha256": "0a21b1f6b8a8fb2d182941f96616b43549a820cd027ef4473a270d4ed8396198",
+      "bytes": 138
+    },
+    {
+      "path": "tools/html/stamp-new-project/template/js/README.txt",
+      "sha256": "403e6c0a5651db904a8d61376b4eea4d64a89803d0b1186a2f56bd07edc22dbc",
+      "bytes": 19
+    },
+    {
+      "path": "tools/html/stamp-new-project/template/PATHS.json",
+      "sha256": "ceb7e8313a467330336841e6f018e5f2eb6dfec4345cc57c0c4fc1aeee89959f",
+      "bytes": 221
+    },
+    {
+      "path": "tools/html/stamp-new-project/template/settings.json",
+      "sha256": "14d900a37ee286a03910d0211ad08454711833b381bd93633fba52a4b8bddf7f",
+      "bytes": 154
+    },
+    {
+      "path": "tools/project/add/add.mjs",
+      "sha256": "08ec173d4a714efd0271c3bd67030b8cc1851d3441547488d2e74976e3432d1a",
+      "bytes": 550
+    },
+    {
+      "path": "tools/project/add/paths/settings.json",
+      "sha256": "46f256081cff7d5edb39435ee2cb29df7e7f1120e30ac46bf1a18441a5493622",
+      "bytes": 551
+    },
+    {
+      "path": "tools/project/copy/component/settings.json",
+      "sha256": "9896959dc190b74a3efdc99b101b50befab9a739662d8de8338c1be5c308a502",
+      "bytes": 1131
+    },
+    {
+      "path": "tools/project/copy/copy.mjs",
+      "sha256": "f61bc894f8308ad8d996422e0495abd097efd0f88f30fe403914399efe6e74af",
+      "bytes": 186
+    },
+    {
+      "path": "tools/project/copy/file/settings.json",
+      "sha256": "9c65e1e530a0ba70e434158d59ec1d7d5cefed0f136b8afe63195dc9e44761bc",
+      "bytes": 918
+    },
+    {
+      "path": "tools/project/delete/component/settings.json",
+      "sha256": "69efdc4ce1626a70297e2f96822d8f9da714324cfac3db2817b26843af075a64",
+      "bytes": 909
+    },
+    {
+      "path": "tools/project/delete/delete.mjs",
+      "sha256": "3bea12e4c85706794627b47a4c4d76c16bd2fd5595235e2baec7d0c4bab2b0fd",
+      "bytes": 188
+    },
+    {
+      "path": "tools/project/delete/file/settings.json",
+      "sha256": "a9da4fe5c4e73187901400601a7147a3d7a780a40741698fdfa1bbaed1805fce",
+      "bytes": 883
+    },
+    {
+      "path": "tools/project/move/component/settings.json",
+      "sha256": "db7c4911a485a28f1c7934fa1b77662384fad53540eb441c6dc73acceda32fea",
+      "bytes": 1131
+    },
+    {
+      "path": "tools/project/move/file/settings.json",
+      "sha256": "cc27cd8e256474d79b43386997bebb28efd701879d27cc3bb94a54b5645d751d",
+      "bytes": 910
+    },
+    {
+      "path": "tools/project/move/move.mjs",
+      "sha256": "742c2a6e6c8b84cef96b5c75085e206249e5159c58650f1763c08a99e92e9693",
+      "bytes": 186
+    },
+    {
+      "path": "tools/project/remove/paths/settings.json",
+      "sha256": "4ef604e0e5b924eb82fbb1e6fe8dd2ba563b6b1879c96f845cf28aa4fa1516a4",
+      "bytes": 425
+    },
+    {
+      "path": "tools/project/remove/remove.mjs",
+      "sha256": "5137233bafe33dc6d552113b354b1cfcacb1ec1a23fcc15cd302383a5e8e95bd",
+      "bytes": 534
+    },
+    {
+      "path": "tools/project/rename/component/settings.json",
+      "sha256": "4b0c05ee2123c20e3f6627f043c3ecba19eba486feb4f6efa4f58528538d34ad",
+      "bytes": 933
+    },
+    {
+      "path": "tools/project/rename/file/settings.json",
+      "sha256": "dcecf96bc9232a5f5eeabff755b1d690abb7344c74eaef22832396a3ecdd8fc2",
+      "bytes": 878
+    },
+    {
+      "path": "tools/project/rename/rename.mjs",
+      "sha256": "cb61f6399f14431c0114853b7c292123750e018cf4f27b958dc5d6a193862095",
+      "bytes": 188
+    },
+    {
+      "path": "tools/project/save/component/settings.json",
+      "sha256": "31990ad659ab82836effa1c843380f36ad54b697bb0d2a0d10b3c999d07cde8b",
+      "bytes": 1103
+    },
+    {
+      "path": "tools/project/save/file/settings.json",
+      "sha256": "3c9de27e2a9727bfda80004b6109630c8ad5b73c3fa5b4a939057ec8db31eb8e",
+      "bytes": 1052
+    },
+    {
+      "path": "tools/project/save/save.mjs",
+      "sha256": "ea46dd6e91a51863ed0ba820eac9ca41bf5ac2a8b6d19ac5c10d1c3a597a343e",
+      "bytes": 189
+    },
+    {
+      "path": "tools/react/add/add.mjs",
+      "sha256": "8adea2bd8071b0c585357aa9e12055b9078e225f46577c93bb262549547986fb",
+      "bytes": 206
+    },
+    {
+      "path": "tools/react/add/attribute/settings.json",
+      "sha256": "2aced5856046c828245ca2476e6929d333b4f29ddf564011705f21826c01eb67",
+      "bytes": 2754
+    },
+    {
+      "path": "tools/react/add/class/settings.json",
+      "sha256": "973ea65dbf01eb324cd924b128088263ca396f5ae7622bf0e6029e16843e17b9",
+      "bytes": 2671
+    },
+    {
+      "path": "tools/react/add/data-area/settings.json",
+      "sha256": "2f6df5f5a9c724b8dcc8ec582524c619c7b8af1481e58288e308f3a68a6352ee",
+      "bytes": 2519
+    },
+    {
+      "path": "tools/react/add/element/settings.json",
+      "sha256": "5cb2387d1da0446876c2be506918f4fb46f75484badb11677ac7bef59f72486d",
+      "bytes": 3354
+    },
+    {
+      "path": "tools/react/add/scroll-wrapper/scroll-wrapper.mjs",
+      "sha256": "f32752abdf722bdcef2dd1008e05fa4428f7aea1830964a665170d2a64562160",
+      "bytes": 545
+    },
+    {
+      "path": "tools/react/add/scroll-wrapper/settings.json",
+      "sha256": "0bb2c34b6f9c62862680ef155950e477060d42c48ca918621fddf5819f8fe945",
+      "bytes": 1340
+    },
+    {
+      "path": "tools/react/apply/grid-layout/grid-layout.mjs",
+      "sha256": "5db6fb436af3b596d42be1b3ffc4e599380e39b84f384c2ef7dca6bb511e0ae8",
+      "bytes": 2451
+    },
+    {
+      "path": "tools/react/apply/grid-layout/settings.json",
+      "sha256": "c40ecf9193e73b81eacbddf266406568c034f9f1a4d9bb7559812822b60fb275",
+      "bytes": 1929
+    },
+    {
+      "path": "tools/react/apply/scroll-y/scroll-y.mjs",
+      "sha256": "107f14c4357913a67b17e23193db615208de0c2e2e1b4302ab5fd8f4e14b3142",
+      "bytes": 486
+    },
+    {
+      "path": "tools/react/apply/scroll-y/settings.json",
+      "sha256": "551b16f995c9aff70977502825e51ed06cc62a2e54b7225833f5e23a05fefa93",
+      "bytes": 1096
+    },
+    {
+      "path": "tools/react/change/attribute/settings.json",
+      "sha256": "add4b2eef63b8d88f475cf025d4cc2b373b054d3a8bfbe8bf4e9a8481225e484",
+      "bytes": 2789
+    },
+    {
+      "path": "tools/react/change/change.mjs",
+      "sha256": "3d792b85e5f06fd2d411bc347a877922c92320a180cae89859965c53fa3093e4",
+      "bytes": 171
+    },
+    {
+      "path": "tools/react/change/class/settings.json",
+      "sha256": "7a51d75a9dd0021da7e1e631f7db3ccd2b9a2372119932db30535574bd60251f",
+      "bytes": 2815
+    },
+    {
+      "path": "tools/react/change/data-area/settings.json",
+      "sha256": "081f4058eb3657130a803ed91845c81112f7e1d70b77e8465051114487f4f1ca",
+      "bytes": 2526
+    },
+    {
+      "path": "tools/react/hooks/state-hooks/stamp-new/settings.json",
+      "sha256": "10651255e34c063ef57ef19dcc629ad56f9775cb70560bb125454d9dbd1a86ed",
+      "bytes": 1073
+    },
+    {
+      "path": "tools/react/hooks/state-hooks/stamp-new/stamp-new.mjs",
+      "sha256": "3a2f83e19085e30b9c5181f3f9a286341107bf148f98523171390f763607a7f8",
+      "bytes": 305
+    },
+    {
+      "path": "tools/react/hooks/state-hooks/stamp-new/template/tmpl.tsx",
+      "sha256": "3d40e0b3f586660b65dd98f0a36df125dfe982772717cfa125f4ea46f4a2d6e7",
+      "bytes": 191
+    },
+    {
+      "path": "tools/react/hooks/use-effect/stamp-new/settings.json",
+      "sha256": "2a9afee3a08b00944f189127379568bb94ea0d8c1823524767d30c98806b07fb",
+      "bytes": 875
+    },
+    {
+      "path": "tools/react/hooks/use-effect/stamp-new/stamp-new.mjs",
+      "sha256": "048e037c0bf48d11db3b06cb418a5a725c0cce29c4431d2e03163302a05422a4",
+      "bytes": 268
+    },
+    {
+      "path": "tools/react/hooks/use-effect/stamp-new/template/tmpl.tsx",
+      "sha256": "f14d562ec8c971bd9f9a1be74547813ea64e8e33a0a1ef3111e5bff46c872a23",
+      "bytes": 168
+    },
+    {
+      "path": "tools/react/insert/component-into-area/component-into-area.mjs",
+      "sha256": "77df879a7e019367b577c7b37995267f499e51316c82d320a663aa0c85bbd487",
+      "bytes": 4985
+    },
+    {
+      "path": "tools/react/insert/component-into-area/settings.json",
+      "sha256": "a2f7ff4d6819a333e48e547ce04970f78cc7b2e12965619b8f177cd6c0f0e16a",
+      "bytes": 1292
+    },
+    {
+      "path": "tools/react/move/element/settings.json",
+      "sha256": "0bb6a107b16fadb2e284b82113d115e73cea13d1a8e8bb9960c397a279272517",
+      "bytes": 3010
+    },
+    {
+      "path": "tools/react/move/move.mjs",
+      "sha256": "53e891f6747fbace7672dcd7fe4220ad81e44ae28b9bfb1129d723836642b556",
+      "bytes": 129
+    },
+    {
+      "path": "tools/react/remove/attribute/settings.json",
+      "sha256": "9bd9cfa3d20923ecd347fe54174b4d74427355a7d6c2e0318662d501b925f5aa",
+      "bytes": 2596
+    },
+    {
+      "path": "tools/react/remove/class/settings.json",
+      "sha256": "df339d19b78d052cd4d85f548ff2351189494342a2230fbad64081bb0b87bf00",
+      "bytes": 2606
+    },
+    {
+      "path": "tools/react/remove/data-area/settings.json",
+      "sha256": "963f20d1e72369595078572b88b752061a700397d39dbf3fdfd665257ed9bc35",
+      "bytes": 2358
+    },
+    {
+      "path": "tools/react/remove/element/settings.json",
+      "sha256": "d284103a251d2263c13411eb09f19eef800258c2c8036051ace09c4e07acef5f",
+      "bytes": 2410
+    },
+    {
+      "path": "tools/react/remove/remove.mjs",
+      "sha256": "87366fcde1a82576b16cdb74954795724c7c7a93b65467846cc0a864aec4a377",
+      "bytes": 171
+    },
+    {
+      "path": "tools/react/replace/element/settings.json",
+      "sha256": "d1539ef333237040152ca32c07c2edd88624aa81a4f9d677f7b134d36139d4c9",
+      "bytes": 2571
+    },
+    {
+      "path": "tools/react/replace/replace.mjs",
+      "sha256": "ba333577b7c728a8bc39653e2ed24db6acf2f561aa400c253aef3497c6914f70",
+      "bytes": 132
+    },
+    {
+      "path": "tools/react/stamp-new-component/settings.json",
+      "sha256": "a182da7fe644bcaf961a2b963eee3ba0b08071d566bf90604fbc107acd888e0c",
+      "bytes": 1665
+    },
+    {
+      "path": "tools/react/stamp-new-component/stamp-new-component.mjs",
+      "sha256": "018e29950da01137318c0a7a3f6fba8dfef9615bc8629966d9a394b02873ef2e",
+      "bytes": 305
+    },
+    {
+      "path": "tools/react/stamp-new-component/template/tmpl.tsx",
+      "sha256": "d4c40b38a0583d43cf19f45af22cd3de3299be7fff2d8279bc6f805d97c25037",
+      "bytes": 397
+    },
+    {
+      "path": "tools/react/stamp-new-dashboard/settings.json",
+      "sha256": "55219b71d6c435866cc0f10371800cf5b8771a58e88978e84cf1920418eb0601",
+      "bytes": 1413
+    },
+    {
+      "path": "tools/react/stamp-new-dashboard/stamp-new-dashboard.mjs",
+      "sha256": "3adec1f41a84f037f3180ea718e629411470d6fcf81b7cebe6434a72aacc4fa9",
+      "bytes": 1648
+    },
+    {
+      "path": "tools/react/stamp-new-dashboard/template/dashboard.json",
+      "sha256": "74148d840e52b6c3d1a1933fa5981b23b3f5c7f19bc8ef8e5546e026305c6dd0",
+      "bytes": 84
+    },
+    {
+      "path": "tools/react/stamp-new-nav/settings.json",
+      "sha256": "cc47907e2291cb3250d3c7eb3b780e11c301725c8444aaf0508b3f20f631bb7b",
+      "bytes": 961
+    },
+    {
+      "path": "tools/react/stamp-new-nav/stamp-new-nav.mjs",
+      "sha256": "7012e76f2d0775697f021f80cdeeff090628f1f5cd76888c20bb3938ac845d4c",
+      "bytes": 1340
+    },
+    {
+      "path": "tools/react/stamp-new-nav/template/README.txt",
+      "sha256": "c89b4ce0f023b14dc11a327c26460547bcd7bf6157bf3a4590cae313664d768c",
+      "bytes": 106
+    },
+    {
+      "path": "tools/react/stamp-new-nav/template/tmpl.tsx",
+      "sha256": "c84b93b10b12299aae28d95a064adb34318344f136063fae96f6362bfaa96a65",
+      "bytes": 906
+    },
+    {
+      "path": "tools/react/stamp-new-page/settings.json",
+      "sha256": "be793156bc34a621f6b711d2313008a163f41c52bf43bb29e6bc78b07477a55b",
+      "bytes": 1280
+    },
+    {
+      "path": "tools/react/stamp-new-page/stamp-new-page.mjs",
+      "sha256": "c1dd94f2e0ef33ac6ea4395e7bab48c68b73c0f7dc168ad43bafdfbba69c3059",
+      "bytes": 1886
+    },
+    {
+      "path": "tools/react/stamp-new-page/template/tmpl.tsx",
+      "sha256": "f92eeeeb5c2b3eb35486e2e6723ada9318dddf7c55eceb1b918966a0905b97b7",
+      "bytes": 409
+    },
+    {
+      "path": "tools/react/stamp-new-project/settings.json",
+      "sha256": "7a3fb3f852f60031eb27bca6e1a69ae77b569175c4e7975427fe46d2d503450a",
+      "bytes": 1470
+    },
+    {
+      "path": "tools/react/stamp-new-project/stamp-new-project.mjs",
+      "sha256": "efd71b65c9e7c2eec9ddefbffb876324ed2c1a43ee076b6c7da7aa49e4a0e2c4",
+      "bytes": 734
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/.gitignore",
+      "sha256": "e0ab3351730b0d3ebb5620838cc09d64e0881344b14715effb8fc3431acd1b98",
+      "bytes": 34
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/index.html",
+      "sha256": "d776217e30e2ef74b85cd7a5d7d3c00c05b9ae4a3852af5d5898fd76f7e8e846",
+      "bytes": 272
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/package.json",
+      "sha256": "68e8260f7ba21c748d35a638e65e06343419f5940f6d5b38fb9489eb63265537",
+      "bytes": 422
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/PATHS.json",
+      "sha256": "a2b7a6416a9e74c9bb86dceaf7ad6d814a2c211cb5c04e45505a1aaa470356ab",
+      "bytes": 222
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/README.md",
+      "sha256": "2988b95c4508c444bfd953fbc6e8784b0d20373193f1dee2ea472b3604e3a7b5",
+      "bytes": 724
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/RULES.txt",
+      "sha256": "970d75b4235288540e49846864e6a7e55b668dff5f2e13c8d9f6a6a50ecc12b4",
+      "bytes": 1155
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/settings.json",
+      "sha256": "88c83a569f4d6927f5486913c2020917b9b3bfc53c571271b8a5d3fc7d08f617",
+      "bytes": 183
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/src/App.tsx",
+      "sha256": "27d5189af44079b471ed386ab590632af0f72b0bf0e170a644f0c5e2311a48a4",
+      "bytes": 152
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/src/atoms/README.txt",
+      "sha256": "a67d11ccdeca121cca279947cf886f143b01b091af0471f2438f0645bd9fc78d",
+      "bytes": 21
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/src/components/README.txt",
+      "sha256": "f00e45e72a061c6be0828514225ed2b346c44732a1fa33671b5ff2f08a715ba2",
+      "bytes": 28
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/src/main.tsx",
+      "sha256": "f67b490eaaa78823ffb4ddadb3f784ea09ce505be1148b263d5d07cd245cdbeb",
+      "bytes": 277
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/src/pages/README.txt",
+      "sha256": "e19a6247037c3129ea049344083720d58d05289d3e13fba5c21fdc2a316a4d10",
+      "bytes": 23
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/src/vite-env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "bytes": 38
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/tsconfig.json",
+      "sha256": "d196896d7c6bd96bdba7af5e97c74df2a88912f32a5e40e951e423974c00ab44",
+      "bytes": 348
+    },
+    {
+      "path": "tools/react/stamp-new-project/template/vite.config.mjs",
+      "sha256": "d980bdc4f42e2f30f6b9a537554c5ab2b9ad84d6b652ddc9d52b243b14a3ce3e",
+      "bytes": 195
+    },
+    {
+      "path": "tools/react/stamp-sub-component/settings.json",
+      "sha256": "fd8c7669ea9d8d272420eb1323807436d4b50078fdef8979033b3dc5ffe5a5eb",
+      "bytes": 1736
+    },
+    {
+      "path": "tools/react/stamp-sub-component/stamp-sub-component.mjs",
+      "sha256": "88fe6eb15a9cf1a87b46228d2b3cdeffeb68a0d1ee953a99bd63c6ac55725760",
+      "bytes": 308
+    },
+    {
+      "path": "tools/react/stamp-sub-component/template/tmpl.tsx",
+      "sha256": "d4c40b38a0583d43cf19f45af22cd3de3299be7fff2d8279bc6f805d97c25037",
+      "bytes": 397
+    },
+    {
+      "path": "tools/react/wrap/element/settings.json",
+      "sha256": "ac29d25b5ccc33ab2172529e8dc08a6bd59fcea79c216efde37ec8b102596365",
+      "bytes": 3211
+    },
+    {
+      "path": "tools/react/wrap/wrap.mjs",
+      "sha256": "46924b373f3873a39ae22054ae3a04c7dde528000d5ac222b28d597292b1a84c",
+      "bytes": 129
+    }
+  ]
+}

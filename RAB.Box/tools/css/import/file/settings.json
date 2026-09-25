@@ -1,0 +1,33 @@
+{
+  "id": 1790000000932,
+  "name": "file",
+  "title": "Import CSS",
+  "description": "Adds a relative CSS @import from a source file into a CSS entry file without duplicating an existing import.",
+  "settings": [
+    {
+      "type": "file",
+      "name": "file",
+      "title": "CSS File",
+      "description": "CSS source file to import.",
+      "required": true
+    },
+    {
+      "type": "file",
+      "name": "entry",
+      "title": "CSS Entry",
+      "description": "CSS entry file that receives the relative @import.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "css",
+    "operation": "import",
+    "target_type": "file",
+    "data_types": [
+      "css",
+      "import"
+    ],
+    "output": "css-entry",
+    "authority": "write"
+  }
+}

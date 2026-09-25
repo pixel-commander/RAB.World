@@ -1,0 +1,5 @@
+{
+  "version":"tool-contract/v1",
+  "source":{"kind":"internal","description":"Reads common source settings descriptors and refreshes one saved manifest, preserving source IDs. Incomplete scans and older saved contracts do not replace the prior manifest."},
+  "result":{"status":"string","type":"string","count":"number","items":[{"id":"number","name":"string","title":"string","description":"string","indexed":"boolean","settings":["object"],"meta":"object","path":"string","kind":"string"}],"manifest?":"string","message?":"string","unavailable?":[{"path":"string","code":"string","message":"string"}]}
+}

@@ -1,0 +1,46 @@
+MAGIC BOX v0.2 — ACTUAL TEST RECORD
+==================================
+Build checked: 2026-09-14
+Execution environment: Linux, Node.js v22.16.0.
+
+Command:
+  node --test tests/schema.test.mjs tests/language.test.mjs tests/runtime.test.mjs tests/cli.test.mjs
+
+Tests: 146
+Passed: 146
+Failed: 0
+Skipped: 0
+Cancelled: 0
+Raw TAP: test-results.tap
+
+Command:
+  node demo.mjs
+Exit status: 0
+Raw output: demo-results.txt
+Complete example request/clarification/receipt JSON: evidence/demo-receipts/
+
+Observed end-to-end demo results:
+  Project A: original React-project sentence asks for type; reply app.
+             Creates and byte-verifies 20 files.
+  Project B: same sentence asks for type and theme; reply type app theme dark.
+             Creates and byte-verifies 22 files.
+  Missing class x: atom-stamp asks for token and retains div-stamp.class returnTo.
+                  Reply --surface-main; writes atom, verifies it, then writes div.
+  Existing class: creates DatePicker without running atom-stamp.
+
+Included tests exercise: object/array options, JSON and trusted JS settings,
+project-local name bindings, current PATHS reload, stale-contract rejection,
+conflicts, ambiguity, unconsumed text/negation, typed clarification, continuation,
+lookup failures, create-only plans, paths, trusted-script failures and CLI flows.
+Every src/*.mjs passed node --check. All packaged JSON parsed successfully.
+
+Limits of this result:
+  Windows CMD launchers supplied but NOT executed on Windows.
+  Generated React npm installation, build and browser rendering NOT tested.
+  Supplied file/plan verification is not proof of application correctness.
+  Production Factory, real house scripts, cloud and local model adapters NOT connected.
+  No general-English guarantee, no untrusted-code sandbox, no cross-process
+  exactly-once guarantee. See docs/KNOWN_LIMITS.txt.
+
+Original v0.1 ZIP unchanged. SHA-256:
+c7822fb89b9e2af2a6667c5e024ba1a2610c4b29b04f78c48c78f326b783c12d

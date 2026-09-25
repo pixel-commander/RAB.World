@@ -1,0 +1,14 @@
+RRAABBIITT MAGIC BOX — v0.7 TOOL HOUSE REFACTOR
+================================================
+
+- Added tools/ as the new house-key umbrella with domain folders: base/react/html/css/audit.
+- Added a strict universal Tool settings envelope: id/name/title/description/settings/meta.
+- Added structural Stamp law: any Tool with template/ must use stamp-* prefix.
+- Added tools/base/find-tool; searches real tools/**/settings.json and has authority 0.
+- Added tools/base/re-phrase-check; deterministic lexical/sense rephrasing with visible gaps.
+- Added tools/base/stamp-new-stamp with template/tmpl.mjs, template/settings.json and nested template/.
+- Added generic Tool discovery/run bridge and /api/tools endpoints.
+- Added Re-phrase tab while preserving Chat, Workbench and Language Lab.
+- Re-phrase example `re-phrase "this didn't work"` composes known contraction + negation + predicate/opposite logic into `This failed.`.
+- Added word entries for work/fail/succeed/rephrase and semantic-relations.json.
+- Existing v0.6 stamps/sensors/runtime remain preserved as migration source material, not the new Tool registry.

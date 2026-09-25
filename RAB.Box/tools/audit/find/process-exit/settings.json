@@ -1,0 +1,30 @@
+{
+  "id": 1790000000961,
+  "name": "process-exit",
+  "title": "Find process.exit Calls",
+  "description": "Finds process.exit call sites.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "process-exit",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "syntax",
+    "config": {
+      "type": "process-exit"
+    }
+  }
+}

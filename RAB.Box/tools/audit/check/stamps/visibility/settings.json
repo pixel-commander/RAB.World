@@ -1,0 +1,30 @@
+{
+  "id": 1800000000054,
+  "name": "visibility",
+  "title": "Check Stamp Visibility",
+  "description": "Checks registered project Stamps and reports generated Stamp skeletons that are not registered for execution.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Project Folder",
+      "description": "Project root to inspect. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "check",
+    "target_type": "stamp",
+    "data_types": [
+      "stamp",
+      "capability",
+      "seat-shape"
+    ],
+    "output": "report",
+    "authority": "read",
+    "returns": [
+      "report"
+    ]
+  }
+}

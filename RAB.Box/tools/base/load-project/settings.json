@@ -1,0 +1,8 @@
+{
+  "id": 1790000000203,
+  "name": "load-project",
+  "title": "Load Project",
+  "description": "Loads a known project, snapshots its settings into .rab memory, and restores saved session history. If no project matches, returns the available projects so the caller can retry.",
+  "settings": [{"type":"text","name":"name","title":"Project Name","description":"Known project name, project key, or exact root folder.","required":true}],
+  "meta": {"domain":"base","operation":"load","target_type":"project","data_types":["project","settings","chat-history"],"output":"project","authority":"read"}
+}

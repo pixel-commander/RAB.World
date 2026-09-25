@@ -1,0 +1,27 @@
+{
+  "id": 1790000001402,
+  "name": "conventions",
+  "title": "Audit Component Conventions",
+  "description": "Checks deterministic component file and folder conventions including main filename, types, CSS, hooks, and demo placement.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to review. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "code-review",
+    "data_types": [
+      "code-review",
+      "conventions"
+    ],
+    "output": "report",
+    "authority": "read",
+    "rule": "conventions"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "original_files_unchanged": 40,
+  "cases": [
+    {
+      "label": "invalid-name",
+      "code": "BAD_INPUT",
+      "message": "Use a lowercase kebab project name and an absolute parent folder.",
+      "status": "failed"
+    },
+    {
+      "label": "wrong-toolkit",
+      "code": "BAD_TOOLKIT",
+      "message": "This project adapter must retain its own toolkit root so its saved override remains resolvable.",
+      "status": "failed"
+    },
+    {
+      "label": "duplicate-selection",
+      "code": "BAD_INPUT",
+      "message": "Unavailable or duplicate component seed: react/components/seed/stamp-site-chrome",
+      "status": "failed"
+    },
+    {
+      "label": "missing-selection",
+      "code": "BAD_INPUT",
+      "message": "Unavailable or duplicate component seed: react/components/seed/stamp-missing",
+      "status": "failed"
+    }
+  ]
+}

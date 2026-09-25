@@ -1,0 +1,7 @@
+{
+  "name": "effect-float",
+  "kind": "effect-atom",
+  "created": "2026-09-14",
+  "description": "Reusable raised depth treatment backed by the theme floating elevation token.",
+  "modified": "2026-09-14"
+}

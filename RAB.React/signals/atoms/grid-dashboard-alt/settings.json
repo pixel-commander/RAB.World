@@ -1,0 +1,14 @@
+{
+  "title": "grid-dashboard-alt",
+  "name": "grid-dashboard-alt",
+  "description": "Alternate dashboard layout grid atom.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\grid-dashboard-alt",
+  "type": "grid-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304150729,
+  "indexed": true
+}

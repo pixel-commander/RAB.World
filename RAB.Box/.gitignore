@@ -1,0 +1,38 @@
+# Saved state and generated output
+.rab/
+/audit-results/*
+!/audit-results/README.txt
+/runs/*
+!/runs/README.txt
+/verification/
+/coverage/
+/dist/
+/build/
+
+# Installed dependencies and caches
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+
+# Machine-specific toolkit links; copy TOOLKITS.example.json on a new machine.
+/TOOLKITS.json
+/.toolkit-links-lock/
+
+# Credentials, local environment, and temporary files
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.p12
+*.pfx
+*.key
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db

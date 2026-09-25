@@ -1,0 +1,249 @@
+RRAABBIITT MAGIC BOX v0.8.5 — SUSTAINED / STATEFUL TEST REPORT
+================================================================
+Date: 2026-09-16 local / 2026-09-17 UTC test artifacts
+
+PURPOSE
+-------
+This pass intentionally exercised behavior through the Magic Box / Workbench surfaces,
+not only isolated functions. The focus was the exact high-risk areas requested:
+
+- project path memory
+- multi-Turn Step continuation
+- execution after a path is learned
+- Box-owned .rab/PROJECT.json path memory
+- reuse of PROJECT.json paths by later Tools
+- live training / same-Step repair
+- cold reuse of positive training
+- generic Tool / search / Stamp chaining
+- repeated soak runs to look for state leakage or flakes
+
+SUSTAINED TESTING
+-----------------
+More than five minutes of cumulative active test execution was run across repeated:
+
+- full Node suite cycles
+- focused stateful Node integration cycles
+- language audits
+- Turn Checker browser cycles
+- main Workbench browser cycle
+- custom browser/API project-path + training scenarios
+
+Completed clean repeated runs included:
+
+- multiple full-suite passes
+- repeated 28-test stateful groups across project/session/Turn Checker/PATHS behavior
+- repeated Turn Checker browser passes
+- repeated custom Workbench project-path/training UI passes
+
+One combined soak process stalled once after nine consecutive clean stateful iterations.
+The exact combined test command was immediately isolated and rerun: 28/28 passed in
+3.64 seconds. The stall did not reproduce and is not currently classified as a Box
+deadlock. It remains worth watching in future overnight/long soak runs.
+
+REAL BUG #1 FOUND — PROJECT PATH VS LEGACY STAMP WRITE ROOT
+-----------------------------------------------------------
+Scenario:
+
+  Turn 1:
+    add component PathMemoryOne
+
+  Box:
+    asks for missing components path
+
+  Turn 2:
+    src/components
+
+Before fix:
+
+- the same Step resumed correctly
+- settings.json paths.components was saved correctly
+- the Step became READY
+- execution then failed because legacy new-component still enforced literal write_roots:
+    components
+- planned destination:
+    src/components/PathMemoryOne
+  was rejected as outside the old write root
+
+Fix:
+
+Legacy Stamp execution now resolves each declared write root through current
+project settings paths when a matching project path key exists.
+
+Example:
+
+  PATHS write root:
+    components
+
+  current project settings:
+    paths.components = src/components
+
+  effective allowed write root:
+    src/components
+
+The mapped value is still validated as a safe project-relative path. If no matching
+project path key exists, the declared literal write root remains in effect.
+
+Regression added:
+
+  saved project path is also enforced as the current legacy Stamp write root at execution
+
+Verified result:
+
+- same Step resumes
+- current project path becomes execution authority
+- component is actually created under src/components
+
+REAL BUG #2 FOUND — PROJECT.json PATH MEMORY WAS WRITE-ONLY FOR GENERIC RUNNER
+-----------------------------------------------------------------------------
+Scenario:
+
+  project/add/paths
+    name = css_path
+    path = src/css
+
+The Tool correctly saved:
+
+  .rab/projects/<project>/PROJECT.json
+
+but a later Tool with a matching required seat:
+
+  grid-css
+    css_path
+
+still spawned:
+
+  find-folder
+
+instead of reusing known project memory.
+
+That contradicted the intended resolution order:
+
+  current Turn
+  -> current Step / Bag
+  -> project/.rab memory
+  -> child resolver/search Tool
+  -> ask human
+
+Fix:
+
+Before settings[].try is allowed to spawn a child Tool, the generic Tool runner now checks
+Box-owned PROJECT.json for a path whose key exactly matches the missing setting name.
+
+NAME IS THE SOCKET remains the rule.
+
+Example:
+
+  PROJECT.json:
+    paths.css_path.value = src/css
+
+  Tool setting:
+    name = css_path
+    type = folder
+
+The runner hydrates css_path from project memory before trying find-folder.
+Project-relative folder/file values are resolved against the loaded project root for Tool
+execution, while the stored PROJECT.json value remains project-relative.
+
+Task trace provenance records:
+
+  source: project-path:css_path
+  stored: src/css
+
+Regression added:
+
+  Box-owned PROJECT.json path memory fills matching Tool seats before settings try rediscovery
+
+Verified result:
+
+- grid-css executes with one Task
+- no find-folder child is spawned
+- src/css/grid.css is created
+
+CUSTOM MAGIC BOX / UI SCENARIO — PASS
+-------------------------------------
+The custom browser/API integration pass verified all of the following through the actual
+Workbench / Turn Checker flow:
+
+1. UI booted against real local server.
+2. Missing components path was exposed instead of invented.
+3. Second Turn filled the path and resumed the SAME Step ID.
+4. Project settings persisted paths.components = src/components.
+5. UI execution created PathMemoryOne under src/components.
+6. Later component Step reused the saved path without asking again.
+7. Tool Runner wrote positive css_path memory to Box-owned PROJECT.json.
+8. Tool Runner removed the path without deleting project source files.
+9. Re-added PROJECT.json css_path was reused by grid-css without rediscovery.
+10. Live Chat preserved known structure around an unresolved typed token.
+11. Project-only teaching repaired the SAME live Step ID.
+12. Previous parse was retained in parseHistory.
+13. Training stored only the positive mapping; no durable negative "unknown" record.
+14. Fresh session reused the positive training without another teaching Turn.
+15. Untrained "hack" case exposed the missing operation and lawful recovery path without
+    persisting hack as negative vocabulary.
+
+Verification artifacts:
+
+  verification/custom-magicbox-integration-v0.8.5.json
+  verification/custom-magicbox-integration-v0.8.5.png
+
+COLD TRAINING TEST — PASS
+-------------------------
+A project-only teaching mapping was created, then a fresh Workbench instance and fresh
+session were constructed against the same .rab home.
+
+Result:
+
+  taught token -> state
+  fresh Workbench -> fresh session -> same phrase
+  resolved immediately to find-state-hooks
+
+This proves the useful mapping is persisted, not merely retained in a parser cache.
+
+FINAL CLEAN RECEIPT
+-------------------
+Node suite:
+
+  273 tests
+  273 passed
+  0 failed
+  0 skipped
+
+Language audit:
+
+  PASS
+
+Main browser harness:
+
+  18 checks
+  0 JavaScript errors
+  390px viewport: no horizontal overflow
+
+Turn Checker browser harness:
+
+  3 focused checks
+  0 JavaScript errors
+
+Tool House:
+
+  40 public capabilities
+  14 Stamps
+  26 non-Stamp Tools
+  0 unavailable
+
+CURRENT CONCLUSION
+------------------
+The requested project-memory / multi-Turn / training tests were valuable: they found two
+real cross-layer defects that unit success alone had not exposed. Both are now fixed and
+covered by regressions.
+
+The strongest current behavior is now:
+
+  partial Turn
+  -> preserve known seats
+  -> ask only for missing project path / semantic seat
+  -> same Step resumes
+  -> positive memory persists
+  -> later Tool reuses matching memory before searching again
+  -> explicit current input still wins
+  -> execution rails honor current project path truth
+

@@ -1,0 +1,8 @@
+{
+  "id": 1790000000204,
+  "name": "view-chat-history",
+  "title": "View Chat History",
+  "description": "Returns saved Magic Box chat turns for a known project. Uses the current project when supplied by context.",
+  "settings": [{"type":"text","name":"project","title":"Project","description":"Optional project name. Current project is used when available.","required":false}],
+  "meta": {"domain":"base","operation":"view","target_type":"chat-history","data_types":["project","chat-history"],"output":"list","authority":"read"}
+}

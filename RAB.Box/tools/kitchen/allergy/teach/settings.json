@@ -1,0 +1,32 @@
+{
+  "id": 1810000000003,
+  "name": "teach",
+  "title": "Teach Allergy",
+  "description": "Teaches one explicit human-declared food allergy as a project-scoped hard safety constraint.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "person",
+      "title": "Person",
+      "description": "person",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "allergen",
+      "title": "Allergen",
+      "description": "allergen",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "train",
+    "data_types": [
+      "allergy"
+    ],
+    "returns": [
+      "allergy"
+    ]
+  }
+}

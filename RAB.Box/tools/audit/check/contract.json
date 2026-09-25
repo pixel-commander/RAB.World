@@ -1,0 +1,29 @@
+{
+  "version": "tool-contract/v1",
+  "result": {
+    "status": "string",
+    "scan": "string",
+    "root": "string",
+    "totals": {
+      "files_scanned": "number",
+      "violations": "number"
+    },
+    "rows": [
+      {
+        "file": "string",
+        "kind": "string",
+        "extension?": "string",
+        "allowed?": [
+          "string"
+        ],
+        "marker?": "string"
+      }
+    ],
+    "policy": {
+      "allowed_extensions": [
+        "string"
+      ],
+      "provenance_marker": "string | null"
+    }
+  }
+}

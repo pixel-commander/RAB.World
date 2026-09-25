@@ -1,0 +1,59 @@
+{
+  "status": "completed",
+  "authority": 1,
+  "receipt": {
+    "id": 1789384251554,
+    "project_id": "demo-1",
+    "capability": "component-stamp",
+    "original": "make a component named \"DatePicker\" with class \"container-main\"",
+    "contract": "df00495e349358fcd1df3b81bd8157cdde2334efdfcb4b30eb3877fd70db870e",
+    "finished_at": "2026-09-14T11:10:51.602Z",
+    "evidence": {
+      "component-stamp.name": [
+        {
+          "source": "explicit-text",
+          "raw": "named \"DatePicker\"",
+          "start": 17,
+          "end": 35,
+          "role": "artifact-name"
+        }
+      ],
+      "component-stamp.class": [
+        {
+          "source": "explicit-text",
+          "raw": "with class \"container-main\"",
+          "start": 36,
+          "end": 63,
+          "role": "class-name"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "capability": "component-stamp",
+        "options": {
+          "name": "DatePicker",
+          "class": "container-main"
+        },
+        "returnTo": null,
+        "status": "verified",
+        "verification": "created-files-match-approved-plan-sha256",
+        "destination": "components/DatePicker",
+        "files": [
+          {
+            "path": "components/DatePicker/DatePicker.tsx",
+            "bytes": 68,
+            "sha256": "b24e14c47d97ddbf808cc446d843b777fbd19040005d4c3abb8240bcfe4c422c"
+          },
+          {
+            "path": "components/DatePicker/README.txt",
+            "bytes": 80,
+            "sha256": "da7c5822415c4fc0578ef32abe79c05a3aa332a98a23eeca9705715bd8193684"
+          }
+        ]
+      }
+    ],
+    "verification": "file materialization verified; see each stamp’s scope in README",
+    "cloud_calls": 0
+  }
+}

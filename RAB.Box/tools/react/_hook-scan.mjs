@@ -1,0 +1,3 @@
+import {readdir,readFile,lstat} from 'node:fs/promises';import path from 'node:path';
+const walk=async(root,out=[])=>{for(const e of await readdir(root,{withFileTypes:true})){const p=path.join(root,e.name);if(e.isDirectory()){if(!['node_modules','.git','.rab'].includes(e.name))await walk(p,out);}else if(e.isFile()&&/\.(?:jsx?|tsx?)$/i.test(e.name))out.push(p);}return out;};
+export const scan=async(folder,hook,firstOnly=false)=>{const matches=[];for(const file of await walk(path.resolve(folder))){const text=await readFile(file,'utf8');let at=text.indexOf(`${hook}(`);while(at>=0){matches.push({file,index:at,hook});if(firstOnly)return matches;at=text.indexOf(`${hook}(`,at+1);}}return matches;};

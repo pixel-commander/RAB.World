@@ -1,0 +1,30 @@
+{
+  "id": 1800000000020,
+  "name": "fts5-raw-match-concatenation",
+  "title": "Find FTS5 Raw MATCH Composition",
+  "description": "Finds candidate MATCH expressions composed with interpolation or string concatenation rather than a fixed query shape.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "fts5-raw-match-concatenation",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "MATCH[^\\n]*(?:\\$\\{|[\\\"\\']\\s*\\+|\\+\\s*[A-Za-z_$])",
+      "scope": "code",
+      "kind": "fts5-raw-composition-candidate",
+      "heuristic": true,
+      "flags": "i"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "version": "audit-result/v1",
+  "shape": {
+    "version": "\"audit-result/v1\"",
+    "project_id": "number | string",
+    "session_id": "number | null",
+    "step_id": "number | null",
+    "execution_id": "number | null",
+    "saved_at": "ISO date",
+    "tool": {
+      "key": "string",
+      "path": "string",
+      "script": "string",
+      "script_owner": "string",
+      "name": "string",
+      "title": "string",
+      "domain": "string",
+      "kind": "string",
+      "authority_class": "string",
+      "source": "string",
+      "address": "string | null",
+      "id": "number",
+      "tags": [
+        "string"
+      ],
+      "meta": "object",
+      "contract": {
+        "consumes": [
+          "string"
+        ],
+        "returns": [
+          "string"
+        ]
+      },
+      "shadowed": "value | null",
+      "toolkit?": {
+        "$nullable": {
+          "id": "number",
+          "name": "string",
+          "root": "absolute path"
+        }
+      },
+      "implementation_source?": "string",
+      "source_file?": "absolute path"
+    },
+    "options": {
+      "[input name]": "value"
+    },
+    "result": "ResultShape | null",
+    "error?": {
+      "$nullable": {
+        "code": "string",
+        "message": "string"
+      }
+    },
+    "child_results": {
+      "[execution_id]": "ChildResult"
+    },
+    "seats": {
+      "[seat]": "value | { $ref: JSON pointer }"
+    },
+    "authority": "string",
+    "transition": {
+      "$nullable": {
+        "task_id": "number",
+        "capability": "string",
+        "authority": "string"
+      }
+    },
+    "tasks": [
+      {
+        "execution_id": "number",
+        "parent_execution_id": "number | null",
+        "tool": {
+          "id": "number | null",
+          "address": "string",
+          "toolkit?": {
+            "$nullable": {
+              "id": "number",
+              "name": "string",
+              "root": "absolute path"
+            }
+          },
+          "implementation_source?": "string",
+          "source_file?": "absolute path",
+          "source?": "string",
+          "shadowed?": "value | null"
+        },
+        "status": "string",
+        "result_ref": {
+          "$nullable": {
+            "$ref": "JSON pointer"
+          }
+        },
+        "error": {
+          "$nullable": {
+            "code": "string",
+            "message": "string"
+          }
+        }
+      }
+    ]
+  }
+}

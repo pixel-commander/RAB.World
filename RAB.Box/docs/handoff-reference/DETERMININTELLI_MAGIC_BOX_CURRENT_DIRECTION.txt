@@ -1,0 +1,323 @@
+DETERMININTELLI — MAGIC BOX CURRENT DIRECTION
+Updated: 2026-09-14
+
+PURPOSE
+-------
+Preserve the current architecture and latest decisions for the determinintelli project.
+This is a design/handoff note only. No source code has been modified by this note.
+
+CORE IDEA
+---------
+The Magic Box should not require one exact phrase, one exact word order, or one turn per stamp.
+
+Target behavior:
+
+human request
+→ resolve domain
+→ carry current Bag / project facts
+→ broadly discover candidate capabilities
+→ distinguish operations, targets, supplied values, constraints
+→ choose one resolved plan
+→ bind inputs to current stamp/settings contracts
+→ ask only for genuinely unresolved seats
+→ execute deterministic Hands/Stamps
+→ verify
+→ receipt
+→ returned result becomes addressable state for the next operation
+
+The fuzzy part is allowed at the entrance.
+Authority becomes progressively more exact before execution.
+
+KEY LAW
+-------
+Broad search collects candidates.
+Broad search does NOT grant execution authority.
+
+Do not require every word in the human request to match stamp metadata.
+Values such as project names, component names, paths, text content, class names, etc.
+must survive the request without being treated as mandatory search terms.
+
+MULTI-STAMP REQUESTS
+--------------------
+The desired unit is:
+
+ONE HUMAN REQUEST
+→ ONE RESOLVED PLAN
+→ ZERO OR MORE STAMP INVOCATIONS
+
+Multiple candidate stamps can mean:
+1. alternatives — competing ways to satisfy the same intention
+2. complementary steps — several operations required by one outcome
+
+Do not automatically treat multiple matches as ambiguity.
+
+Example:
+"add component 'newthing' and make it say hello world"
+
+Possible flow:
+1. resolve component-stamp
+2. bind name=newthing
+3. stamp creates the component according to the current project's contract
+4. stamp/receipt returns an addressable result:
+   type=component
+   name=newthing
+   path=/src/components/newthing
+5. returned result becomes CURRENT TARGET in the Bag
+6. "it" resolves to that returned component
+7. resolve content/update capability
+8. execute against the receipt-backed path
+
+Important:
+The next path is not guessed from English or convention.
+The project/stamp contract creates or returns the path.
+Execution produces new addressable state.
+
+Concrete self-similar shape:
+
+CURRENT
+↓
+CHILD
+↑
+RETURNED SHAPE + CURRENT
+=
+NEW CURRENT
+
+BAG / CONTINUITY
+----------------
+The box should remain oriented while work continues.
+
+Examples of durable/current facts:
+- project root
+- selected project/world
+- current domain, such as audit
+- current target
+- previously created/result object
+- resolved path
+- unresolved seats
+- parent request / continuation
+
+Project facts should be exact/durable where appropriate.
+Conversation-local state can live in the Bag.
+
+Example:
+"I want to run an audit"
+→ domain=audit
+→ ask project/path only if not already resolved
+→ retain those facts
+→ "find orphaned files"
+→ resolve audit-orphans using current project/path
+→ run it without asking for the path again
+
+UNKNOWN CAPABILITY
+------------------
+Example:
+"find all the robot dicks in the code"
+
+Correct behavior:
+- retain known context:
+  domain=audit
+  project/current path known
+- requested capability unresolved
+- do NOT invent an interpretation
+- show known relevant audit options
+- human can select/clarify
+- if human defines a stable phrase for an existing capability, it can become an approved alias
+- if no capability exists, this may expose a missing script/stamp to build and register
+
+UNKNOWN LANGUAGE IS NOT FAILURE.
+It is a bounded unresolved state.
+
+SELF-SIMILARITY
+---------------
+The same structural law should recur across:
+- project
+- folder
+- component
+- stamp
+- seat
+- audit result
+- visualization
+- returned execution state
+
+Do not create duplicate truth models for every view.
+
+Examples:
+HOUSE SHAPE
+→ tree projection
+→ city projection
+→ pie projection
+→ bar projection
+→ graph projection
+
+Same source shape, different lens.
+
+AUDIT DUMBOTS — GOOD NEXT DOMAIN
+--------------------------------
+Audit work may be the best next proving ground because it is primarily read/measure,
+not write/mutate.
+
+The user already has many fast audit scripts such as:
+- glob *.tsx
+- scan useState()
+- scan useEffect()
+- find functions
+- find imports
+- find calls
+- find parent component
+- count relationships
+- count components
+- find orphaned files/components
+- import/imported-by relationships
+- folder/file counts
+- repo structural metrics
+
+Important audit principle:
+Use the cheapest instrument that answers the actual question.
+
+Example:
+"how many files contain useEffect("
+→ text/glob scan may be the exact instrument
+
+Only escalate to deeper parsing/AST-style analysis when the question actually requires
+compiler-grade structural proof.
+
+AST vocabulary can be useful as a shared naming system, but should not automatically
+replace the user's existing fast scanners.
+
+AUDIT DUMBOT MODEL
+------------------
+Audit scripts are SENSORS.
+
+Hands = change the world
+Sensors = measure the world
+Stamps = prove / contract the work
+Recipes/Plans = compose capabilities
+Magic Box = resolve human intent into those pieces
+
+Example:
+"show me orphaned components using state"
+
+could resolve to:
+component inventory
++ imported-by/orphan scan
++ hook scan
++ set intersection
++ presentation projection
+
+The apparent intelligence comes from composing exact measurements,
+not from an LLM estimating repo facts.
+
+Useful authority split:
+READ / DERIVE
+→ broader freedom
+
+CREATE / MODIFY
+→ resolved target + valid required seats
+
+DELETE
+→ stronger target resolution / confirmation
+
+VISUALIZATION
+-------------
+The user's existing city visualization is another projection of the same house shape.
+
+Examples:
+repo/root folder = city/world
+folders = blocks
+subfolders/files = buildings/units
+metrics can control:
+- building size
+- footprint
+- height
+- file-type appearance
+- orphan state
+- file count
+- folder size
+- import traffic / relationships
+- hook pressure
+- violations
+
+Key law:
+Do not rebuild special "city truth."
+Render the existing canonical house/audit result through a city lens.
+
+Pie charts, tree views, bar charts, city views, etc. can all consume the same canonical shape.
+
+INDUSTRY / RESEARCH POSITIONING
+-------------------------------
+"Deterministic Intelligence" remains the user's umbrella term, not a standard industry term.
+
+Closest established neighborhoods include:
+- semantic parsing
+- task-oriented NLU
+- schema-guided intent/slot filling
+- action/capability schemas
+- deterministic workflow/rules engines
+- automated planning / HTN
+- continuations
+- feature structures / unification
+- symbolic / neuro-symbolic orchestration
+
+Useful description:
+"progressive compilation of ambiguous human intent into verified deterministic capability"
+
+Distinctive project direction:
+UNKNOWN
+→ model/human helps resolve
+
+KNOWN
+→ stamp it
+
+REPEATED
+→ script it
+
+PROVEN
+→ remove AI from that known step
+
+The system gets more capable by needing less general intelligence for mature paths.
+
+DO NOT DRIFT INTO
+-----------------
+- requiring exact full-sentence matches
+- requiring every request word to match one stamp
+- one-turn-per-stamp interaction
+- treating every multiple-match case as ambiguity
+- guessing paths from convention when a stamp/receipt can establish them
+- semantic retrieval for facts the house can calculate exactly
+- adding expensive AST/compiler analysis unless the audit question earns that cost
+- letting fuzzy language directly grant execution authority
+- creating a separate truth model for every visualization
+
+IMMEDIATE PRACTICAL DIRECTION
+-----------------------------
+Audit-first is a strong next branch.
+
+Reason:
+- mostly read-only
+- existing large library of deterministic audit scripts
+- easy to verify
+- fast
+- low mutation risk
+- produces structured facts that naturally feed charts/city/tree/pie projections
+- good proving ground for multi-capability composition
+- lets Magic Box practice domain/context retention without risking source modification
+
+Suggested first audit conversation:
+1. "I want to run an audit"
+2. resolve/store current project + root
+3. "what would you like to audit?"
+4. user asks:
+   - full audit
+   - orphaned files
+   - component counts
+   - hook usage
+   - imports
+   - etc.
+5. Magic Box resolves known audit sensor(s)
+6. run exact scripts
+7. normalize result into canonical house shape
+8. render requested projection
+9. preserve project/audit Bag for follow-up questions
+
+No new architecture is required.
+This is the existing Magic Box / Dumbot / Stamp / Bag / self-similar house being applied to a read-heavy domain.

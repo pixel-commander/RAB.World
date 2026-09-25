@@ -1,0 +1,22 @@
+RRAABBIITT MAGIC BOX — v0.6 CHANGES
+===================================
+
+- Added RUN / GROUP / STEP / TURN / TASK session model.
+- One Enter press is a Turn; Steps may span Turns; one Turn may emit multiple Steps.
+- Added persistent Bag/context with address stack and parent/result inheritance.
+- Added top-level/nested component and div planning, branch-back to known parents,
+  and new-group behavior for unrelated new roots.
+- Added project-local path/settings repair and same-Step resume.
+- Added ~/.rab (or RAB_HOME) Box-owned memory with sibling projects/, failures/ and
+  training/ roots. Failures are quarantined evidence, not project truth.
+- Added 12-seat semantic frame + data_types metadata.
+- Added strict type mapper with 500+ lexical entries / ~1000 forms and operator
+  override support. No spell correction; unknown words remain blockers.
+- Same parser now compiles request language and capability descriptions.
+- Added shape comparison/ranking with hard conflicts on core seats.
+- Added audit domain lock and Sensor discovery from the supplied audit-factory sample.
+- Added new-component, sub-component, sub-div, new-page, component-note, stamp-maker.
+- Added save_as_text test mode on relevant generation stamps.
+- Added stamp visibility checker Sensor.
+- Added language coverage/minimal-pair tests and full capability-description tests.
+- Preserved prior language/NLTK/WordNet material as reference, not runtime authority.

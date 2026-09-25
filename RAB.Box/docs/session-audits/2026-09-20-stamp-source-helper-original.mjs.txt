@@ -1,0 +1,182 @@
+import { readFile, readdir, mkdir, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+
+const root='C:/Users/pixelcommander/Desktop/RRAABBIITT_v0.9.3';
+const output=path.join(path.dirname(fileURLToPath(import.meta.url)),'reports');
+const {createToolHouse}=await import(pathToFileURL(path.join(root,'bridge/tool-house.mjs')));
+const {items,unavailable}=await createToolHouse({root}).listTools();
+const catalog=items.filter(t=>t.domain!=='kitchen');
+const writers=catalog.filter(t=>t.authorityClass==='write');
+const slash=value=>value.replaceAll('\\','/');
+const fingerprints=new Map();
+const read=async file=>{
+  const absolute=path.resolve(root,file),buffer=await readFile(absolute);
+  fingerprints.set(absolute,createHash('sha256').update(buffer).digest('hex'));
+  return buffer.toString('utf8');
+};
+const filesUnder=async dir=>{
+  const out=[];
+  for(const entry of await readdir(dir,{withFileTypes:true})){
+    const file=path.join(dir,entry.name);
+    if(entry.isDirectory())out.push(...await filesUnder(file));
+    else if(entry.isFile())out.push(file);
+  }
+  return out.sort();
+};
+const lineFor=(text,needle)=>Math.max(1,text.split('\n').findIndex(line=>line.includes(needle))+1);
+const sourceLink=(file,label,line=1)=>`[${label}](<${slash(path.resolve(root,file))}:${line}>)`;
+
+const templateNotes={
+  'audit/stamp-new-project':['Project template tree','Copies settings, PATHS, and README files through runProjectStamp, substitutes project/input values, and initializes project memory. Creates audit storage scaffolding rather than application source.'],
+  'base/form/stamp-validator':['Hybrid: wrapper + compiler','Reads template/tmpl.mjs. compile() builds field extraction, coercion, and validation statements and inserts them into the wrapper. Outputs <name>.mjs.'],
+  'base/stamp-new-key-phrase':['JSON template','Loads phrase.json and fills a language record. Writes JSON data rather than application code.'],
+  'base/stamp-new-project':['Conditional template / delegator','Uses its own project tree for type=magic-box; other types delegate to <type>/stamp-new-project. The local template does not represent every branch.'],
+  'base/stamp-new-stamp':['Stamp scaffold mold','Copies a tool skeleton and nested template/ folder, expands tmpl.mjs, and fills settings.json. The generated executor initially returns template-not-implemented.'],
+  'base/stamp-new-tool':['Tool scaffold mold','Copies a tool skeleton and fills settings.json; expands tmpl.mjs unless inherit_executor=true removes it and uses a parent executor. The new local executor is initially a placeholder.'],
+  'css/grid/stamp-install':['Static source file','Copies template/grid.css to the selected CSS directory without overwriting an existing grid.css.'],
+  'css/stamp-new-atom':['CSS template','Fills tmpl.css with an atom name and caller-supplied declarations; writes <name>.css.'],
+  'html/add/grid/stamp-new':['Hybrid: wrapper + generated markup','Reads tmpl.html and the parent grids.json catalog. Builds the section elements and construction-seat comments internally, then inserts them into the wrapper.'],
+  'html/stamp-new-project':['Project template tree','Copies the HTML project tree and fills project tokens through runProjectStamp.'],
+  'react/hooks/state-hooks/stamp-new':['TSX template','Fills hook-name and initial-value tokens in tmpl.tsx through runReactHookStamp.'],
+  'react/hooks/use-effect/stamp-new':['TSX template','Fills the hook-name token in tmpl.tsx through runReactHookStamp; the effect and dependency seats remain for later work.'],
+  'react/stamp-new-component':['TSX template','Fills the component name and default class in tmpl.tsx through runReactComponentStamp; .tsx or .txt output.'],
+  'react/stamp-sub-component':['TSX template','Fills tmpl.tsx through runReactComponentStamp under a supplied parent path; .tsx or .txt output.'],
+  'react/stamp-new-page':['TSX template','Fills page name and slug in tmpl.tsx, including an addressable page-root construction seat.'],
+  'react/stamp-new-nav':['TSX template + input data','Uses the component writer with tmpl.tsx, serializing validated link data and label into its placeholders. The component structure is in the template.'],
+  'react/stamp-new-project':['Project template tree','Copies the complete React/Vite/TypeScript source and configuration tree; fills project tokens and initializes project memory.'],
+  'react/stamp-new-dashboard':['Recipe / composite','template/dashboard.json only specifies layout, nav component, and nav area. Page and nav code come from child stamps; grid application and insertion come from child editing tools.']
+};
+const internalNotes=new Map();
+const add=(key,mode,note,owner)=>internalNotes.set(key,{mode,note,owner});
+for(const mode of ['add','change','remove'])for(const target of ['attribute','class','data-area'])add(`react/${mode}/${target}`,'Source editor',`Computes a ${mode} edit on an existing JSX/HTML ${target}; the shared DOM engine writes the modified file.`,'tools/react/_dom-edit.mjs');
+for(const mode of ['add','remove','replace','move','wrap'])add(`react/${mode}/element`,'Markup generator / editor',`The shared DOM engine implements ${mode}-element. It constructs markup or edits existing ranges; there is no local template file.`,'tools/react/_dom-edit.mjs');
+add('react/add/scroll-wrapper','Delegating editor','Calls react/wrap/element to construct a div with scroll-y around the selected target.','tools/react/_dom-edit.mjs');
+add('react/apply/scroll-y','Delegating editor','Calls react/add/class with scroll-y. It edits the class assignment; it does not emit the utility stylesheet.','tools/react/_dom-edit.mjs');
+add('react/apply/grid-layout','Catalog-driven composite editor','Reads html/add/grid/grids.json, then delegates attribute and section creation to DOM editors. Has no template folder, but does depend on external layout data.','tools/react/_dom-edit.mjs');
+add('react/insert/component-into-area','Import generator + delegated JSX edit','Builds and writes a relative import line, then calls react/add/element to insert component use.','tools/react/insert/component-into-area/component-into-area.mjs');
+for(const operation of ['style','state'])for(const target of ['atom','class'])add(`css/add/${operation}/${target}`,'CSS generator / editor','Parses declarations, constructs selectors and rule blocks, and merges them into the selected stylesheet.','tools/css/add/add.mjs');
+add('css/import/file','CSS import generator','Constructs a relative @import statement and prepends it if missing.','tools/css/import/import.mjs');
+add('code/patch/managed-block','Caller-content patcher','Builds the managed boundary markers and inserts caller-supplied content. The body is not synthesized by the tool.','tools/code/patch/patch.mjs');
+add('code/scaffolding/cleanup','Source cleanup','Removes construction-seat attributes/comments from existing code; generates no new application logic.','tools/code/scaffolding/_scaffolding.mjs');
+for(const operation of ['copy','move','rename','save'])add(`project/${operation}/component`,'Conditional source rewrite','Copies or moves an existing component. When its effective name changes, the shared artifact engine rewrites matching identifiers and filenames; without a name change it is a file operation.','tools/project/_artifact-edit.mjs');
+const otherNotes=new Map([
+  ['base/move/stamp','Moves an existing capability and updates PATHS; preserves the leaf name and existing code.'],
+  ['base/move/tool','Moves an existing capability and updates PATHS; preserves the leaf name and existing code.'],
+  ['project/add/paths','Writes a named project-path record in memory.'],
+  ['project/remove/paths','Removes a named project-path record.'],
+  ...['copy','move','rename','save','delete'].map(operation=>[`project/${operation}/file`,'Copies, moves, renames, saves a copy, or deletes existing file content; does not generate source text.']),
+  ['project/delete/component','Deletes the existing component artifact.']
+]);
+const templateBacked=[],internal=[],other=[];
+for(const tool of writers){
+  const source=await read(tool.scriptFile);await read(tool.settingsFile);
+  const row={key:tool.key,id:tool.id,catalog_kind:tool.kind,script:slash(path.relative(root,tool.scriptFile)),script_line:lineFor(source,'export const run'),inputs:tool.settings.map(field=>field.name),dry_run_declared:tool.settings.some(field=>field.name==='dry_run')};
+  if(tool.template){
+    assert.ok(templateNotes[tool.key],`Unclassified template: ${tool.key}`);
+    const templates=[];
+    for(const file of await filesUnder(tool.template)){
+      const text=await read(file);
+      templates.push({path:slash(path.relative(tool.template,file)),bytes:Buffer.byteLength(text),placeholders:[...new Set(text.match(/__[A-Z][A-Z0-9_]*__/g)??[])]});
+    }
+    templateBacked.push({...row,template_root:slash(path.relative(root,tool.template)),mode:templateNotes[tool.key][0],note:templateNotes[tool.key][1],templates});
+  }else if(internalNotes.has(tool.key)){
+    const classification=internalNotes.get(tool.key);await read(classification.owner);
+    internal.push({...row,...classification});
+  }else{
+    assert.ok(otherNotes.has(tool.key),`Unclassified writer: ${tool.key}`);
+    other.push({...row,note:otherNotes.get(tool.key)});
+  }
+}
+assert.equal(templateBacked.length,18);assert.equal(internal.length,29);assert.equal(other.length,10);
+assert.equal(templateBacked.length+internal.length+other.length,writers.length);
+for(const file of ['tools/_stamp-engines.mjs','tools/html/add/grid/grids.json','tools/css/_states.mjs','tools/css/_stylesheet.mjs','bridge/tool-house.mjs','engine/src/mutation-plan.mjs','HOST.json'])await read(file);
+
+const legacy=[];
+const manifest=JSON.parse(await read('mock-project/PATHS.json'));
+const legacyNotes={
+  'react-project':'External template.json holds files as {path,text} records; the plan substitutes the name and optionally adds database files.',
+  'atom-stamp':'Builds CSS, JSON settings, and README text as inline strings.',
+  'div-stamp':'Builds an HTML document and README text as inline strings.',
+  'component-stamp':'Builds a TSX component and README text as inline strings.',
+  'new-component':'Builds TSX (or text), settings JSON, and README content internally.',
+  'sub-component':'Builds nested TSX (or text), settings JSON, and README content internally.',
+  'new-page':'Builds TSX (or text) and settings JSON internally.',
+  'component-note':'Wraps caller-supplied content in a planned text file; it is a note writer, not an application-code generator.',
+  'stamp-maker':'Builds settings, registration, and an inline stamp.mjs skeleton; generated stamp code still contains a TODO.',
+  'sub-div':'Builds a TSX div (or text representation) and settings JSON internally.'
+};
+for(const [key,entry]of Object.entries(manifest.stamps)){
+  const script=`mock-project/${entry.script}`,source=await read(script);await read(`mock-project/${entry.settings}`);
+  const supporting=[];
+  for(const [name,file]of Object.entries(entry.supporting_files??{})){await read(`mock-project/${file}`);supporting.push({name,path:`mock-project/${file}`});}
+  assert.ok(legacyNotes[key],key);
+  legacy.push({key,script,script_line:lineFor(source,'export const plan'),classification:supporting.length?'template-backed':'internal',note:legacyNotes[key],supporting});
+}
+const examples=[];
+for(const parent of ['engine/examples/project-a/stamps','engine/examples/project-b/local-tools'])for(const entry of await readdir(path.join(root,parent),{withFileTypes:true})){
+  if(!entry.isDirectory())continue;
+  const script=`${parent}/${entry.name}/stamp.mjs`,source=await read(script);
+  const external=source.includes('assets.template');
+  if(external)await read(`${parent}/${entry.name}/template.json`);
+  examples.push({script,classification:external?'template-backed':'internal',note:entry.name==='ReactProject'&&parent.includes('project-b')?'Template JSON plus internally generated theme CSS.':'Example variant; excluded from shared catalog and default-project counts.'});
+}
+const changed=[];
+for(const [file,hash]of fingerprints)if(createHash('sha256').update(await readFile(file)).digest('hex')!==hash)changed.push(file);
+assert.deepEqual(changed,[],'Source changed during the audit; re-read before publishing.');
+const report={version:'stamp-source-audit/v1',audited_at:new Date().toISOString(),root,scope:'Shared catalog, configured default mock-project legacy stamps, and packaged engine examples. kitchen excluded. No stamp execution, no .rab browsing, no app changes.',counts:{catalog_entries:catalog.length,write_capabilities:writers.length,template_backed:templateBacked.length,internal_code_writers:internal.length,other_writers:other.length,legacy_template_backed:legacy.filter(x=>x.classification==='template-backed').length,legacy_internal:legacy.filter(x=>x.classification==='internal').length,example_instances:examples.length},template_backed:templateBacked,internal_code_writers:internal,other_writers:other,legacy,examples,unavailable:unavailable.filter(x=>!x.key.startsWith('kitchen/')),source_sha256:Object.fromEntries([...fingerprints].map(([file,hash])=>[slash(path.relative(root,file)),hash]))};
+const lines=[
+  '# Stamp and code-writer source audit','',
+  `Audited: ${report.audited_at}. Root: ${root}.`,
+  '',report.scope,'',
+  'The shared catalog contains **18 template-backed stamps**, **29 internal code generators/editors**, and **10 other write capabilities**. All 57 declared write capabilities are accounted for. There are 226 catalog entries outside kitchen.',
+  '',
+  'The two main lists use the primary source model: entries with an external template remain in list 1 even when they also compile or assemble code. Hybrids and delegates are explicitly labeled. An internal editor may transform existing code or use caller-supplied content; it is not necessarily a generator of new code.',
+  '',
+  `Catalog kind is currently determined only by whether a template directory exists: ${sourceLink('bridge/tool-house.mjs','tool-house.mjs',128)}. That label does not distinguish templates, compilers, composites, editors, or data writers.`,
+  '',
+  '## 1. Template-backed stamps — shared catalog (18)','',
+  '| Stamp | Template files | How output is produced |','|---|---|---|',
+  ...templateBacked.map(row=>`| ${sourceLink(row.script,row.key,row.script_line)} | ${row.templates.map(file=>'`'+file.path+'`').join(', ')} | **${row.mode}.** ${row.note} |`),
+  '',
+  '## 2. Code produced or edited internally — shared catalog (29)','',
+  '| Tool | Method | Source behavior |','|---|---|---|',
+  ...internal.map(row=>`| ${sourceLink(row.script,row.key,row.script_line)} | ${row.mode} | ${row.note} Shared owner: ${sourceLink(row.owner,path.basename(row.owner))}. |`),
+  '',
+  '## Older project stamps — configured default mock-project','',
+  'These ten are registered by the default project in HOST.json. They are separate from the shared Toolbox catalog. Their plan() functions return { destination, files: [{ path, text }] }; engine/src/mutation-plan.mjs performs the actual writes.',
+  '',
+  '| List | Registered stamp | Method |','|---|---|---|',
+  ...legacy.map(row=>`| ${row.classification==='template-backed'?'1 — external template':'2 — internal content'} | ${sourceLink(row.script,row.key,row.script_line)} | ${row.note} |`),
+  '',
+  '## Other writers — excluded from code-generation lists (10)','',
+  'These can alter files or metadata, but do not synthesize source code. Component copy/move/rename/save are already in list 2 because their optional renaming can rewrite source identifiers.',
+  '',
+  '| Tool | Reason |','|---|---|',
+  ...other.map(row=>`| ${sourceLink(row.script,row.key,row.script_line)} | ${row.note} |`),
+  '',
+  '## Packaged engine examples — eight physical stamp instances','',
+  'Kept separate so example copies do not inflate live catalog counts. Both example projects have Atom, Component, Div, and ReactProject. ReactProject uses template.json; the other three construct inline strings. Project-b ReactProject also generates theme CSS internally.',
+  '',
+  ...examples.map(row=>`- ${sourceLink(row.script,row.script)} — ${row.classification}. ${row.note}`),
+  '',
+  '## Suggested Toolbox plan','',
+  '1. Add an output-source description beside the existing result shape: template files, internal generation/editing, or a recipe/composite. Do not infer this solely from kind=stamp.',
+  '2. For template-backed entries, show the actual template file tree, raw content, and placeholder names. A raw template is not the final generated output. For wrapper/compiler hybrids, show both the wrapper and the internally generated portion.',
+  '3. For internal writers, show intended output paths and a generated-file preview or before/after diff using explicit sample inputs. Clearly distinguish generated code, caller-supplied content, source transformations, and plain data.',
+  '4. For composites, show the child sequence and collect previews from the same child owners. Dashboard should expose its recipe and child artifacts, not pretend dashboard.json is its generated source.',
+  '5. Reuse the older engine’s plan shape where appropriate: { destination, files: [{ path, text }] }. Modern run() writers would need a shared planning/rendering boundary so preview and execution use the same logic. Reading source shows that dry_run is not universal; do not invoke an arbitrary write tool just to preview it.',
+  '',
+  'No implementation change is included in this audit. All findings come from file inspection and catalog metadata; no write capability was executed. JSON companion records IDs, executors, declared inputs, template placeholders, and source hashes.',
+  ''
+];
+await mkdir(output,{recursive:true});
+const name=`stamp-source-audit-${report.audited_at.replaceAll(':','-').replace(/\.\d{3}Z$/,'Z')}`;
+const jsonFile=path.join(output,`${name}.json`),mdFile=path.join(output,`${name}.md`);
+await writeFile(jsonFile,JSON.stringify(report,null,2)+'\n',{flag:'wx'});
+await writeFile(mdFile,lines.join('\n'),{flag:'wx'});
+const saved=JSON.parse(await readFile(jsonFile,'utf8'));
+assert.equal(saved.template_backed.length+saved.internal_code_writers.length+saved.other_writers.length,saved.counts.write_capabilities);
+console.log(JSON.stringify({report:mdFile,json:jsonFile,counts:report.counts,source_files:fingerprints.size,source_unchanged:true,unavailable:report.unavailable},null,2));

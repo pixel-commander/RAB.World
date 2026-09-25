@@ -1,0 +1,15 @@
+{
+  "id": 1830000000003,
+  "name": "component-into-area",
+  "title": "Insert Component Into Area",
+  "description": "Inserts a React component into one exact construction seat or named data-area and adds its deterministic relative import.",
+  "settings": [
+    {"type":"text","name":"component","title":"Component To Insert","description":"React component name to insert, such as SiteNav.","required":true},
+    {"type":"text","name":"into_component","title":"Target Page or Component","description":"Optional target React page/component name.","required":false},
+    {"type":"file","name":"file","title":"Target File","description":"Optional target source file.","required":false},
+    {"type":"path","name":"path","title":"Target Path","description":"Optional project-relative target source path.","required":false},
+    {"type":"text","name":"seat_id","title":"Construction Seat ID","description":"Optional exact data-rab-seat target.","required":false},
+    {"type":"text","name":"area","title":"Grid Area","description":"Optional data-area target such as header or main.","required":false}
+  ],
+  "meta": {"domain":"react","operation":"insert","target_type":"component-use","data_types":["component","page","data-area","construction-seat"],"output":"edit-receipt","authority":"write"}
+}

@@ -1,0 +1,28 @@
+== FEATURES -- history, comments migrated verbatim (2026-08-17) ==
+
+---- RadioGroup.tsx ----
+
+line 15:
+RadioGroup is ONE component with three modes — list (the default marks), chip (pill tags), scroll
+   (a bounded, optionally searchable box). They are modes because they are the same question asked
+   three ways; three components would have been three places to fix a selected colour.
+
+   can_add appends to the set: in chip mode a dashed "+ ADD" pill, in list/scroll a "+ ADD ITEM"
+   row, and when has_search is on, a "+" beside the search box that takes whatever was typed.
+   New words are reported with handleInsert(word) — the caller decides whether they persist.
+
+   Selection reports twice on purpose: handleSelect(value) for "a thing was chosen", and
+   handleChange(value) for "the held value is now this", because a form watches one and a filter
+   watches the other.
+
+   The marks are option-mark with a round box — a radio by dress, one pick by rule.
+
+line 73:
+ENTER HERE IS OURS, NOT THE FORM'S. This control is a FIELD -- mounted inside a real <form>
+     (Form.tsx resolves it as a field type), and Enter in a text input is the browser's "submit
+     the form". Committing a new word without stopping the event ALSO submitted the form around
+     it, reloading the page and throwing away everything typed. It read as a click handler
+     refreshing the page; it was the keypress, one layer up.
+
+     preventDefault stops the submit and nothing else -- the commit still runs. A form's own
+     commit is a submit BUTTON, never a stray Enter in a search box. -> hooks/useForm.ts

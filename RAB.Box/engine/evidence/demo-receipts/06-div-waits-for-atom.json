@@ -1,0 +1,171 @@
+{
+  "status": "input-required",
+  "authority": 0,
+  "mode": "command",
+  "capability": "div-stamp",
+  "ticket": {
+    "version": "0.2",
+    "id": 1789384251458,
+    "project_id": "demo-1",
+    "original": "make a div with class x",
+    "contract": "95bca508af116134d7e3fe31e63aaf46d1e123255815e24b70f36038288f6a25",
+    "answers": [],
+    "questions": [
+      {
+        "request_id": 1789384251458,
+        "stamp": "atom-stamp",
+        "key": "token",
+        "title": "token",
+        "type": "text",
+        "role": "appearance-background",
+        "required": true,
+        "question": "Which registered background token should the new atom use?",
+        "returnTo": {
+          "request_id": 1789384251458,
+          "stamp": "div-stamp",
+          "key": "class"
+        }
+      }
+    ]
+  },
+  "frames": [
+    {
+      "capability": "atom-stamp",
+      "title": "Create one background atom",
+      "settings": "stamps/Atom/settings.json",
+      "script": "stamps/Atom/stamp.mjs",
+      "options": {
+        "name": "x",
+        "layer": "atoms"
+      },
+      "seats": [
+        {
+          "key": "name",
+          "required": true,
+          "satisfied": true
+        },
+        {
+          "key": "layer",
+          "required": true,
+          "satisfied": true
+        },
+        {
+          "key": "token",
+          "required": true,
+          "satisfied": false
+        }
+      ],
+      "returnTo": {
+        "request_id": 1789384251458,
+        "stamp": "div-stamp",
+        "key": "class"
+      },
+      "dependencies": [],
+      "worldEvidence": []
+    },
+    {
+      "capability": "div-stamp",
+      "title": "Create a div demonstration",
+      "settings": "stamps/Div/settings.json",
+      "script": "stamps/Div/stamp.mjs",
+      "options": {
+        "class": "x",
+        "name": "demo-div"
+      },
+      "seats": [
+        {
+          "key": "name",
+          "required": true,
+          "satisfied": true
+        },
+        {
+          "key": "class",
+          "required": true,
+          "satisfied": true
+        }
+      ],
+      "returnTo": null,
+      "dependencies": [
+        {
+          "capability": "atom-stamp",
+          "catalog": "classes",
+          "value": "x",
+          "returnTo": {
+            "request_id": 1789384251458,
+            "stamp": "div-stamp",
+            "key": "class"
+          }
+        }
+      ],
+      "worldEvidence": [
+        {
+          "field": "class",
+          "catalog": "classes",
+          "source": "atoms",
+          "value": "x",
+          "observed": "complete directory enumeration"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "request_id": 1789384251458,
+      "stamp": "atom-stamp",
+      "key": "token",
+      "title": "token",
+      "type": "text",
+      "role": "appearance-background",
+      "required": true,
+      "question": "Which registered background token should the new atom use?",
+      "returnTo": {
+        "request_id": 1789384251458,
+        "stamp": "div-stamp",
+        "key": "class"
+      }
+    }
+  ],
+  "evidence": {
+    "div-stamp.class": [
+      {
+        "source": "explicit-text",
+        "raw": "with class x",
+        "start": 11,
+        "end": 23,
+        "role": "class-name"
+      }
+    ],
+    "div-stamp.name": [
+      {
+        "source": "declared-default",
+        "value": "demo-div"
+      }
+    ],
+    "atom-stamp.name": [
+      {
+        "source": "parent-binding",
+        "returnTo": {
+          "request_id": 1789384251458,
+          "stamp": "div-stamp",
+          "key": "class"
+        }
+      }
+    ],
+    "atom-stamp.layer": [
+      {
+        "source": "declared-default",
+        "value": "atoms"
+      }
+    ]
+  },
+  "trace": [
+    {
+      "field": "div-stamp.class",
+      "source": "explicit-text",
+      "raw": "with class x",
+      "start": 11,
+      "end": 23,
+      "role": "class-name"
+    }
+  ]
+}

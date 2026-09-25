@@ -1,0 +1,1 @@
+{"id":"reduction.project-seat.001","concept":"reduction","kind":"reduce-layers","given":{"current":{"name":"TestKit"},"layers":[{"source":"project","owner":"project-1","values":{"components_path":"src/components"}}]},"expected":{"components_path":"src/components","name":"TestKit"}}

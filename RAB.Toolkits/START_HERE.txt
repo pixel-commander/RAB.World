@@ -1,0 +1,236 @@
+RAB.World - MODEL START HERE
+---------------------------
+
+Audience: LLMs, coding agents and cloud models arriving with no context.
+This is the canonical project boot and working-instructions file.
+README.txt holds model-facing project context. __docs holds human docs.
+Write house guidance as plain-text .txt files; do not introduce .md files.
+
+For an LLM or cloud model: this document is setup guidance, not a request
+to execute every command. Follow the current user's task. If you only have
+web access, read the files and explain what remains unavailable; do not
+claim that you cloned, configured or ran the project.
+
+
+BOOT IN THIS ORDER
+------------------
+
+1. Read this file, then README.txt beside it.
+2. Identify the current user's request and the real checkout location.
+3. Check the owning repository's status and relevant local instructions.
+4. Read only the rules, skills, contracts and stamp guides needed for the
+   requested area, including its RULES.txt and existing agent instructions.
+5. Complete the requested work and verify its output and behavior.
+
+On PIXEL, C:\Users\pixelcommander\Documents\ChatGPT\RAB.World is an older
+saved workspace that only points to C:\RAB.World. Use C:\RAB.World explicitly
+for project commands there. Elsewhere, use the actual checkout root and
+configured remotes; do not assume access to the laptop or house server.
+
+Preserve house boot and world-resolution instructions supplied to the
+session. This project is not a replacement for the server-owned registry.
+Server drive letters are not laptop drive letters. An old path in copied
+documentation does not prove a current location or working connection.
+
+Keep orientation narrow. Personal material is outside project boot context;
+access it only when explicitly requested. Do not load __docs in full.
+Prefer the implementation owner's current contract over an older snapshot
+in __docs/about. Report missing guidance and unverified behavior plainly.
+
+The current user request defines the work. Reading a plan, review, example
+or historical record does not authorize executing the work it describes.
+Starting services, running training, changing configuration or publishing
+work follows the current task's scope. After orientation, complete that
+task. For orientation alone, give a short project summary and material gaps.
+
+Reuse canonical names, keys, contracts and existing stamps. Apply each
+area's own rules; do not impose one toolkit's file layout on everything.
+Preserve existing local work. Verify produced output and behavior, and
+distinguish observed facts from assumptions and intended future features.
+
+
+1. UNDERSTAND THE GIT STRUCTURE
+------------------------------
+
+The workspace contains independent Git repositories:
+
+  RAB.World/                    Parent repository
+    .git/
+    .codex/config.toml         Codex discovery of START_HERE.txt
+    START_HERE.txt              Model boot and working instructions
+    README.txt                  Model project context
+    HouseKeys.types.ts          Shared house vocabulary
+    __docs/                    Human documentation and training material
+    __shared/                  Shared internal/admin interface home
+    ganglion/                  Intended central skill home
+    RAB.Box/                   Independent Box repository
+      .git/
+    RAB.Toolkits/              Independent toolkit repository
+      .git/
+
+Repository addresses:
+  https://github.com/pixel-commander/RAB.World.git
+  https://github.com/pixel-commander/RAB.Box.git
+  https://github.com/pixel-commander/RAB.Toolkits.git
+
+RAB.World ignores /RAB.Box/ and /RAB.Toolkits/. It does not track their
+contents or pin their commits. These are independent nested clones, not
+Git submodules. Cloning or pulling RAB.World does not download or update
+the other repositories.
+
+Each repository owns its history, branches, commits and pushes. A clean
+parent status does not mean the child repositories are clean. A parent
+push does not publish child changes.
+
+Personal material is excluded from the shared repository and cold boot.
+Git tracks files, so an empty planned folder such as ganglion may be absent
+from a fresh clone until its first file is committed.
+
+
+2. DOWNLOAD A FRESH WORKSPACE
+----------------------------
+
+You need Git and access to the repositories. Use git clone for a working
+checkout: a ZIP download or copied source folder does not include Git
+history or establish a connection to its remote.
+
+Choose a parent directory where you are allowed to create the workspace.
+On laptop PIXEL, the established project home is C:\RAB.World, so a fresh
+setup there would start from C:\. On another machine or in a cloud workspace,
+use its actual writable parent directory instead.
+
+From that parent directory, run:
+
+  git clone https://github.com/pixel-commander/RAB.World.git RAB.World
+  git -C RAB.World clone https://github.com/pixel-commander/RAB.Box.git RAB.Box
+  git -C RAB.World clone https://github.com/pixel-commander/RAB.Toolkits.git RAB.Toolkits
+
+These commands create the layout above. Each clone uses its remote's
+default branch; do not assume all repositories use the same branch name.
+
+If a destination already contains files, inspect it first. Do not clone
+over it, replace its history, or discard local changes as a setup shortcut.
+For an existing checkout, go to the update workflow below.
+
+Git reference: https://git-scm.com/docs/git-clone
+
+
+3. VERIFY THE REPOSITORY BOUNDARIES
+---------------------------------
+
+From inside the downloaded RAB.World folder, run:
+
+  git rev-parse --show-toplevel
+  git -C RAB.Box rev-parse --show-toplevel
+  git -C RAB.Toolkits rev-parse --show-toplevel
+
+Each command must report its own repository root. If the Box command
+reports the RAB.World root, Box is only an ordinary folder in that copy;
+it is not an independent checkout yet. The same check applies to Toolkits.
+
+Confirm the remotes and working state:
+
+  git remote -v
+  git -C RAB.Box remote -v
+  git -C RAB.Toolkits remote -v
+  git status --short --branch
+  git -C RAB.Box status --short --branch
+  git -C RAB.Toolkits status --short --branch
+
+The origin URLs should match the repository addresses in section 1.
+
+
+4. CONNECT BOX TO A LOCAL TOOLKIT WHEN NEEDED
+-------------------------------------------
+
+Having the repositories beside each other does not automatically register
+a toolkit with Box. First read Box's current agent instructions and README,
+and the relevant toolkit's RULES.txt.
+
+Box reads machine-specific toolkit links from RAB.Box/TOOLKITS.json. That
+file is ignored by the Box repository. A fresh Box clone supplies
+TOOLKITS.example.json as a starting point. Preserve existing local links
+when configuring an already-used checkout.
+
+The current React toolkit root is RAB.Toolkits/rab-react-kit. A toolkit
+root must contain settings.json and tools/. The model-kit folder currently
+contains rule guidance; it is not an executable toolkit root.
+
+For a fresh setup at C:\RAB.World, the local TOOLKITS.json can contain:
+
+  {
+    "version": "toolkit-links/v1",
+    "toolkits": [
+      {
+        "path": "C:/RAB.World/RAB.Toolkits/rab-react-kit",
+        "enabled": true
+      }
+    ]
+  }
+
+Use the real absolute toolkit path on the current machine. For example,
+a cloud checkout needs its own absolute path, not the laptop's C: path
+or an old Desktop-t72isdi share from copied documentation.
+
+Box requires Node.js 22 or newer. When running Box is part of the task,
+launch it from RAB.Box with node server.mjs --open, or use RUN_UI.cmd on
+Windows. The normal local address is http://127.0.0.1:52814. An existing
+instance should be checked before another is started.
+
+In a cloud environment, use its supported preview/port-forwarding mechanism;
+the cloud machine's localhost is not automatically the reader's localhost.
+
+Box-owned saved work belongs in the executing user's home .rab directory,
+separate from these source checkouts. Cloning proves the source is present;
+runtime, interface and toolkit behavior still need appropriate verification.
+
+
+5. UPDATE AND SAVE THE RIGHT REPOSITORY
+-------------------------------------
+
+Inspect status and preserve local work before pulling. From RAB.World:
+
+  git pull --ff-only
+  git -C RAB.Box pull --ff-only
+  git -C RAB.Toolkits pull --ff-only
+
+Update only the repositories required by the current task. If a pull fails
+because of local changes or divergent history, inspect and resolve that
+condition; do not force-reset or delete work to make the command pass.
+
+For authorized changes, review the diff, stage the intended files, commit
+and push inside the owning repository. Use git -C RAB.Box ... or
+git -C RAB.Toolkits ... when working from the parent directory.
+
+Do not force-add the ignored child folders to RAB.World. A task that changes
+multiple repositories needs a separate commit/push for each. Record the
+relevant commit IDs when reporting results that depend on their combination.
+Uncommitted or unpushed local fixes are not included in another machine's clone.
+
+
+6. HOW MODELS FIND THIS FILE
+---------------------------
+
+For any model, use an explicit entry instruction:
+
+  Read START_HERE.txt in the RAB.World root, then README.txt. Follow the
+  relevant area instructions and complete the current task.
+
+This repository's .codex/config.toml sets:
+
+  project_doc_fallback_filenames = ["START_HERE.txt"]
+
+Codex can discover this file through that configuration in a trusted
+project. A new session must load the configuration. Project-local settings
+are ignored in untrusted projects. Other hosts may need explicit entry
+instructions; do not assume they automatically discover .txt files.
+
+A session opened directly in a nested repository also needs this parent
+boot file and README; its host may stop discovery at that repository root.
+
+Codex discovery and project configuration references:
+  https://learn.chatgpt.com/docs/agent-configuration/agents-md
+  https://learn.chatgpt.com/docs/config-file/config-basic
+
+Continue with README.txt beside this file for the project's purpose and
+the roles of its parts. Keep detailed implementation rules with their owners.

@@ -1,0 +1,75 @@
+@layer themes {
+  :root,
+  [data-theme='default'],
+  [data-theme='dark'] {
+    color-scheme: dark;
+
+    --surface-transparent: transparent;
+    --surface-app: #010207;
+    --surface-main: #12151f;
+    --surface-inset: #07090d;
+    --surface-float: #1a2030;
+    --surface-hover: #232b3c;
+    --surface-active: #2e3545;
+    --surface-selected: #32132f;
+    --surface-disabled: #0a0c11;
+    --surface-scrim: rgb(1 2 7 / 78%);
+    --content-strong: #f7f3fa;
+    --content-default: #dfe4ee;
+    --content-inverse: #010207;
+    --content-muted: #98a1b3;
+    --content-disabled: #58647a;
+    --content-accent: #ffd2f3;
+    --content-danger: #ffd9a8;
+    --border-subtle: #212838;
+    --border-default: #2e3545;
+    --border-strong: #4a566d;
+    --border-focus: var(--accent-secondary);
+    --border-danger: #ffb454;
+    --accent-default: #ff2ed1;
+    --accent-soft: #35102f;
+    --accent-secondary: rgb(var(--color-secondary-rgb));
+    --success-default: rgb(var(--color-tertiary-rgb));
+    --danger-default: #ffb454;
+    --danger-soft: #2c1a08;
+    --color-primary-rgb: 255, 46, 209;
+    --color-secondary-rgb: 41, 182, 255;
+    --color-tertiary-rgb: 63, 224, 129;
+    --color-quaternary-rgb: 255, 180, 84;
+    --elevation-inset: inset 0 1px 0 rgb(255 255 255 / 4%), inset 0 4px 14px rgb(0 0 0 / 62%);
+    --elevation-float: 0 0 0 1px #05060a, 0 12px 32px rgb(0 0 0 / 48%), 0 0 24px rgb(255 46 209 / 8%);
+
+    --container-main-background: linear-gradient(180deg, #151925 0%, #0d1017 100%);
+    --container-main-border: var(--border-width) var(--border-style) var(--border-default);
+    --container-main-shadow: inset 0 1px 0 rgb(255 255 255 / 6%), 0 0 0 1px #05060a;
+    --container-inset-background: linear-gradient(180deg, #080a0f 0%, #05060a 100%);
+    --container-inset-border: var(--border-width) var(--border-style) var(--border-default);
+    --container-float-background: linear-gradient(180deg, #202637 0%, #11151f 100%);
+    --container-float-border: var(--border-width) var(--border-style) var(--border-default);
+
+    --action-main-background: linear-gradient(180deg, #171c29 0%, #0d1017 100%);
+    --action-main-border: var(--border-width) var(--border-style) var(--border-default);
+    --action-main-shadow: inset 0 1px 0 rgb(255 255 255 / 7%), 0 2px 5px rgb(0 0 0 / 42%);
+    --action-main-hover-background: linear-gradient(180deg, #242b3d 0%, #141925 100%);
+    --action-main-hover-border-color: var(--border-strong);
+    --action-muted-background: linear-gradient(180deg, #0b0e14 0%, #06070b 100%);
+    --action-ghost-background: linear-gradient(180deg, #0b0e14 0%, #06070b 100%);
+    --action-muted-shadow: var(--elevation-inset);
+    --action-muted-hover-background: linear-gradient(180deg, #151a25 0%, #0b0e14 100%);
+
+    --code-default: #dfe4ee;
+    --code-comment: #6fba82;
+    --code-string: #ffb454;
+    --code-keyword: #ff5fdd;
+    --code-number: #6ff0a8;
+    --code-function: #5fc8ff;
+    --code-property: #a9e2ff;
+    --code-atrule: #ff8ee6;
+    --code-custom-prop: #29b6ff;
+    --code-punctuation: #98a1b3;
+    --code-selection: rgb(255 46 209 / 24%);
+    --code-gutter: #58647a;
+    --code-gutter-active: #ffd2f3;
+    --code-line-active: rgb(255 255 255 / 4%);
+  }
+}

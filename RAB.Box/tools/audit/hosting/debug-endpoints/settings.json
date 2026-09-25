@@ -1,0 +1,24 @@
+{
+  "id": 1790000001204,
+  "name": "debug-endpoints",
+  "title": "Audit Production Debug Controls",
+  "description": "Finds explicit debug, test-endpoint, or authentication-bypass controls that survive into deployment-bound code.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional project or deployment folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "hosting",
+    "data_types": ["hosting", "debug"],
+    "output": "report",
+    "authority": "read",
+    "check": "debug-code"
+  }
+}

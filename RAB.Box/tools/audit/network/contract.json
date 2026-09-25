@@ -1,0 +1,228 @@
+{
+  "version": "tool-contract/v1",
+  "select": "meta.signature",
+  "variants": {
+    "dev-cors-policies": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "signature": "string",
+            "source_scope": "string",
+            "policy": "string",
+            "environment_guard": "string",
+            "confidence": "string"
+          }
+        ]
+      }
+    },
+    "docker-ports": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "signature": "string",
+            "transport": "string",
+            "implementation": "string",
+            "host_port": {
+              "$nullable": {
+                "expression": "string",
+                "resolved": "number | null"
+              }
+            },
+            "container_port": {
+              "expression": "string",
+              "resolved": "number | null"
+            }
+          }
+        ]
+      }
+    },
+    "exposed-admin-routes": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "signature": "string",
+            "source_scope": "string",
+            "method": "string",
+            "route": "string",
+            "auth_evidence": "string",
+            "classification": "string",
+            "confidence": "string"
+          }
+        ]
+      }
+    },
+    "express-listen": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "signature": "string",
+            "transport": "string",
+            "implementation": "string",
+            "host": "null",
+            "port": {
+              "expression": "string",
+              "resolved": "number | null"
+            }
+          }
+        ]
+      }
+    },
+    "interface-bindings": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "signature": "string",
+            "source_scope": "string",
+            "host": {
+              "expression": "string",
+              "value": "string",
+              "scope": "string"
+            },
+            "port": {
+              "$nullable": {
+                "expression": "string",
+                "resolved": "number | null"
+              }
+            },
+            "confidence": "string"
+          }
+        ]
+      }
+    },
+    "node-http": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "signature": "string",
+            "transport": "string",
+            "implementation": "string",
+            "host": "null",
+            "port": {
+              "expression": "string",
+              "resolved": "number | null"
+            }
+          }
+        ]
+      }
+    },
+    "unencrypted-protocols": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "signature": "string",
+            "source_scope": "string",
+            "protocol": "string",
+            "endpoint": "string",
+            "host": "string",
+            "scope": "string",
+            "confidence": "string"
+          }
+        ]
+      }
+    },
+    "ws-servers": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "signature": "string",
+            "transport": "string",
+            "implementation": "string",
+            "host": "null",
+            "port": {
+              "expression": "string",
+              "resolved": "number | null"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

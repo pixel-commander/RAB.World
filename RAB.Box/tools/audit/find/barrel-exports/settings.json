@@ -1,0 +1,30 @@
+{
+  "id": 1790000000977,
+  "name": "barrel-exports",
+  "title": "Find Barrel Export Files",
+  "description": "Finds index.* files that re-export symbols from other modules.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "barrel-export",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "structure",
+    "config": {
+      "rule": "barrel-export"
+    }
+  }
+}

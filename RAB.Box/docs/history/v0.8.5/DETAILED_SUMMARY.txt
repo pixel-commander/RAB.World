@@ -1,0 +1,1443 @@
+DETERMININTELLI / RRAABBIITT MAGIC BOX
+v0.8.5 — DETAILED CURRENT-STATE SUMMARY
+Date: 2026-09-15 / 2026-09-16 build receipt
+
+======================================================================
+1. EXECUTIVE SUMMARY
+======================================================================
+
+RRAABBIITT Magic Box v0.8.5 turns the earlier green v0.8.4 baseline into a
+deeper, more self-similar Tool House where language interpretation, Tool
+resolution, nested execution, missing-seat resolution, teaching, and operator
+inspection all follow the same contracts.
+
+The central idea is:
+
+  messy / incomplete human language
+      ->
+  preserve whatever structure is actually known
+      ->
+  resolve a typed semantic shape
+      ->
+  resolve a lawful Tool from PATHS + path/tag evidence
+      ->
+  fill required seats from current Turn / Step / Bag / project / child Tools
+      ->
+  execute only when the symbolic contract is complete
+      ->
+  keep the entire chain visible in Task traces and receipts
+
+v0.8.5 is NOT a move toward a giant fuzzy language model deciding everything.
+The useful "neuro-symbolic" idea retained is:
+
+  candidate / proposal may be fuzzy
+  symbolic contracts own execution authority
+
+The Box can tolerate unknown words without inventing their meaning, but it also
+does not waste durable memory recording words merely because they are unknown.
+
+Final verified package state:
+
+  Version:               0.8.5
+  Public capabilities:   40
+  Stamps:                14
+  Non-Stamp Tools:       26
+  Unavailable:           0
+
+  Node tests:            273 / 273 PASS
+  Language audit:        PASS
+  Main browser harness:  18 checks, 0 JavaScript errors
+  Turn Checker harness:  3 focused checks, 0 JavaScript errors
+
+Important provenance note:
+The original rraabbiitt-magic-box-v0.8.5-nested-house source tree was not
+uploaded in this chat. This v0.8.5 package was reconstructed from the uploaded
+v0.8.4 green package plus the supplied v0.8.5 handoff/spec, and then tested
+from source. The package records that fact explicitly.
+
+
+======================================================================
+2. CORE SELF-SIMILAR LAW
+======================================================================
+
+The recurring runtime law remains:
+
+  CURRENT
+    ↓
+  CHILD
+    ↑
+  RETURNED SHAPE + CURRENT
+  =
+  NEW CURRENT
+
+This is intended to apply at multiple scales:
+
+  - language composition
+  - nested Tools
+  - Stamps
+  - child resolver Tools
+  - Steps
+  - Bag state
+  - project facts
+  - generated products
+  - future provider wrappers
+
+A child does not own what happens next. The runner owns:
+
+  - parentTaskId
+  - child invocation
+  - trace chronology
+  - returned-seat extraction
+  - shared-seat packing
+  - parent resume
+  - receipts
+
+There is deliberately no callback field that every Stamp must implement.
+
+
+======================================================================
+3. TOOL HOUSE MODEL
+======================================================================
+
+Everything invokable is a Tool.
+
+A Stamp is a Tool that materializes a known shape from a template/ folder.
+
+Public capability folders may be arbitrarily deep.
+
+Example:
+
+  tools/react/find/hooks/state-hooks/settings.json
+
+The semantic path is:
+
+  react/find/hooks/state-hooks
+
+and therefore inherited tags include:
+
+  react
+  find
+  hooks
+  state-hooks
+
+Canonical identity model:
+
+  {
+    id,
+    path,
+    tags,
+    script
+  }
+
+Meaning:
+
+  id     = permanent identity
+  path   = current semantic / physical position
+  tags   = inherited meaning derived from path
+  script = current executor
+
+Important law:
+
+  ID IS IDENTITY.
+  PATH IS CURRENT POSITION / SHAPE.
+
+A Tool can move without losing identity.
+
+Path/tag law:
+
+  Path tags are inherited truth.
+  Explicit metadata may add meaning.
+  Explicit metadata may not contradict the path.
+
+This is important for deterministic capability resolution. A candidate whose path
+contains one meaningful extra matching tag should beat a more generic candidate
+when the rest of the evidence is otherwise comparable.
+
+Example:
+
+  "find hooks"
+      ->
+  react/find/hooks
+
+  "find state hooks"
+      ->
+  react/find/hooks/state-hooks
+
+The second wins because the extra state-hooks semantic evidence is present.
+
+
+======================================================================
+4. MANY SEMANTIC KEYS, FEW ENGINES
+======================================================================
+
+The House is allowed to contain many precise semantic leaves without duplicating
+implementation.
+
+Example shape:
+
+  react/count/count.mjs
+  react/count/hooks/settings.json
+  react/count/hooks/state-hooks/settings.json
+  react/count/hooks/use-effect/settings.json
+
+The nested public Tools can inherit the nearest parent executor.
+
+This keeps the semantic catalog rich while keeping implementation small.
+
+The same pattern is used for generic find/count behavior.
+
+
+======================================================================
+5. FLAT PATHS ADDRESS BOOK
+======================================================================
+
+The filesystem is deep.
+
+PATHS.json remains flat.
+
+That means the House can physically express semantic inheritance while callers
+still use short direct addresses.
+
+Conceptually:
+
+  PATHS.stamps["add-component"]
+      -> { id, path: "react/stamp-new-component" }
+
+  PATHS.tools["find-hooks"]
+      -> { id, path: "react/find/hooks" }
+
+  PATHS.tools["find-state-hooks"]
+      -> { id, path: "react/find/hooks/state-hooks" }
+
+The short PATHS key is the direct House address.
+
+The deep path is the current semantic position.
+
+The stable ID identifies the actual capability across moves.
+
+
+======================================================================
+6. PROJECT PATHS OVERRIDE / HIJACK
+======================================================================
+
+A loaded project may provide its own PATHS.json binding for the same House
+address.
+
+Conceptually:
+
+  HOUSE PATHS
+  +
+  PROJECT PATHS
+  =
+  EFFECTIVE PATHS FOR CURRENT PROJECT / BAG
+
+Project binding wins for that project.
+
+The House implementation remains inspectable as shadowed provenance.
+
+This lets a stable intention such as:
+
+  add-component
+
+remain the same human/House key while a particular project supplies its own
+implementation.
+
+
+======================================================================
+7. RUN / GROUP / STEP / TURN / TASK
+======================================================================
+
+The current terminology remains:
+
+  RUN
+    whole working session
+
+  GROUP
+    related branch/context of work
+
+  STEP
+    one semantic unit of work; may span multiple Turns
+
+  TURN
+    one user submit / Enter
+
+  TASK
+    one Tool invocation inside a Step
+
+This distinction matters because a user correction does not need to create a
+new semantic job. It can repair the same Step.
+
+Resolution precedence is approximately:
+
+  explicit current Turn
+  -> current Step
+  -> parent/context chain
+  -> Bag / Run facts
+  -> project facts / .rab memory
+  -> previous receipts
+  -> legal default
+  -> child resolver Tool
+  -> ask human
+
+Newest explicit correction beats stale stored memory.
+
+
+======================================================================
+8. GENERIC TOOL CHAINING
+======================================================================
+
+Chaining is NOT Stamp-specific.
+
+The same runner contract applies to:
+
+  - Stamps
+  - ordinary Tools
+  - find/search Tools
+  - count Tools
+  - resolver Tools
+  - importer Tools
+  - future provider wrappers
+  - any other public invokable Tool subtype
+
+The generic chain is:
+
+  CURRENT
+      ->
+  CHILD TOOL
+      ->
+  typed / named returned seats
+      ->
+  RUNNER-OWNED SHARED SEAT BAG
+      ->
+  CURRENT RESUMES
+      ->
+  later sibling / parent / Step may reuse matching seats
+
+The child never owns continuation.
+
+The runner owns continuation.
+
+
+======================================================================
+9. RUNNER-OWNED NAMED SEAT BAG
+======================================================================
+
+v0.8.5 adds / proves named-seat propagation across Tool kinds.
+
+A child can return reusable named values through supported return shapes such as:
+
+  result.provided.value
+  result.provided.path
+  result.provided.file
+  result.provided.seats
+  result[field.name]
+  result.path
+  result.file
+  continuation.seat + continuation.value
+
+The runner can pack those values into the shared seat state.
+
+A later Tool that declares a setting with the same name may inherit that value
+rather than rediscovering it.
+
+Important precedence law:
+
+  explicit current options
+      beat
+  inherited seat values
+
+This means inheritance helps with continuity but cannot silently override what
+the operator just said.
+
+Task traces expose seat changes and provenance so automatic resolution does not
+become hidden magic.
+
+
+======================================================================
+10. settings[].try — DECLARATIVE CHILD RESOLUTION
+======================================================================
+
+A Tool setting may declare a resolver hint.
+
+Example:
+
+  {
+    "name": "css_path",
+    "type": "path",
+    "required": true,
+    "try": "find-folder"
+  }
+
+Meaning:
+
+  1. normal context resolution tries first
+  2. if the required seat remains empty
+  3. the runner invokes the PATHS key named by try
+  4. the child Tool returns a compatible value
+  5. the runner fills the same named seat
+  6. the parent resumes
+
+This is not a callback.
+
+The child is visible as a child Task with parentTaskId and an AUTO reason.
+
+v0.8.5 proves this behavior end-to-end with a public Tool and also uses the
+mechanism in the grid/CSS slice.
+
+
+======================================================================
+11. TASK TRACE IDENTITY
+======================================================================
+
+Task traces distinguish:
+
+  direct House address
+  canonical Tool path
+  stable ID
+  Tool kind
+  parent task
+  AUTO vs DIRECT execution
+  reason
+  options
+  seat changes
+  result / error
+
+This removes ambiguity such as whether a trace should show only:
+
+  determine-script-type
+
+or only:
+
+  base/determine/script-type
+
+Both forms have meaning:
+
+  address = direct PATHS socket used
+  path    = canonical current Tool position
+
+
+======================================================================
+12. LANGUAGE PIPELINE
+======================================================================
+
+The language system is organized as a shape pipeline.
+
+SHAPE 0 — RAW INPUT
+  Preserve exact original input.
+
+SHAPE 1 — LEXICAL POSSIBILITIES
+  type-mapper.json answers:
+    "What could this word / phrase be?"
+
+  It preserves legitimate ambiguity.
+  It does not decide execution.
+
+SHAPE 2 — TYPED COMPOSITION / NARROWING
+  Uses:
+    - order
+    - grammar / position
+    - phrase structure
+    - context
+    - known entities
+    - already-filled seats
+    - hard contradictions
+    - explicit type compatibility
+
+  This is where unknown words may receive an inferred ROLE without receiving an
+  invented MEANING.
+
+SHAPE 3 — CANONICAL MAGIC BOX SEATS
+  Examples:
+    domain
+    operation
+    target
+    target_type
+    quantifier
+    predicate
+    relation
+    name
+    value
+    reference
+    scope
+    output
+
+SHAPE 4 — TOOL CANDIDATES
+  Current PATHS / Tool House candidates are generated using domain and path/tag
+  semantics.
+
+SHAPE 5 — TOOL MATCH / RANK
+  Hard contradictions reject candidates.
+  Compatible path/seat evidence ranks survivors.
+
+SHAPE 6 — TOOL SETTINGS / EXECUTION
+  Required settings are filled from:
+    current Turn
+    open Step
+    parent/context
+    Bag
+    project/.rab memory
+    previous receipts
+    legal defaults
+    child resolvers
+
+  Then:
+    visible plan
+    confirmation / permitted execution mode
+    execution
+    receipt
+    Bag / context update
+
+
+======================================================================
+13. TYPED UNKNOWN HOLES
+======================================================================
+
+An unknown word does not have to destroy the whole parse.
+
+Example:
+
+  find fuck-off hooks
+
+The Box can still preserve:
+
+  operation   = find
+  target_type = hook
+
+and infer that "fuck-off" occupies a predicate/modifier position.
+
+Transient active-Step representation may look conceptually like:
+
+  {
+    value: "fuck-off",
+    type: "predicate",
+    known: false
+  }
+
+The key point is:
+
+  role may be inferred
+  meaning is NOT invented
+
+Execution authority remains blocked while a required meaningful seat is
+unresolved.
+
+
+======================================================================
+14. UNKNOWN DOES NOT MEAN DURABLE MEMORY
+======================================================================
+
+A major law clarified during this work:
+
+  UNKNOWN != KNOWLEDGE
+
+The Box should NOT build a database of words it does not know.
+
+That would waste storage and would be weaker than simply not having the word.
+
+Therefore:
+
+  unknown token
+      ->
+  may remain temporarily visible in the current Turn / Step
+      ->
+  may help expose which seat failed
+      ->
+  is NOT persisted merely as "unknown"
+      ->
+  disappears unless positively taught
+
+Durable memory is for positive useful knowledge.
+
+Example:
+
+  "hack"
+
+should not create:
+
+  hack = unknown
+
+If the operator intentionally teaches:
+
+  hack means add
+
+then the positive mapping may be saved with provenance.
+
+If the operator simply rephrases:
+
+  add TestKit to GetSome
+
+there is no reason to save "hack" at all.
+
+
+======================================================================
+15. RECOVERY WHEN LANGUAGE IS INCOMPLETE
+======================================================================
+
+The current direction is NOT:
+
+  fail -> dead end
+
+and NOT:
+
+  unknown word -> automatically teach it
+
+Instead the Box can use the partial semantic shape and actual Tool House to expose
+the missing seat and legal positive fills.
+
+Example:
+
+  input:
+    hack a new component named "do-it"
+
+The Box may already know:
+
+  target_type = component
+  name        = do-it
+
+but be missing:
+
+  operation
+
+Recovery can therefore show:
+
+  KNOWN
+    target_type = component
+    name = do-it
+
+  MISSING
+    operation
+
+  LAWFUL FILLS FROM CURRENT HOUSE
+    add/create
+    find
+    update
+    remove
+    ...only if actually compatible with the current shape
+
+The user can then:
+
+  - pick a lawful fill
+  - rephrase
+  - add more evidence
+  - deliberately teach a positive mapping
+
+The exact recovery UX should continue to be tested rather than frozen too early.
+
+A useful possible strategy to test is:
+
+  zero legal fills
+    -> ask / rephrase
+
+  exactly one legal fill
+    -> propose it
+
+  a small number of legal fills
+    -> show choices
+
+  too many legal fills
+    -> ask for narrowing evidence
+
+
+======================================================================
+16. TURN CHECKER
+======================================================================
+
+v0.8.5 adds a Turn Checker tab as a first-class operator/debug/training surface.
+
+The Turn Checker exposes the language chain instead of hiding it.
+
+It can show:
+
+  - raw Turn
+  - lexical candidates
+  - typed composition
+  - canonical seats
+  - unresolved seats
+  - Tool candidates
+  - path/tag evidence
+  - resolved capability
+  - execution authority
+  - blocking boundary
+  - teaching / recheck behavior
+  - Step / Task trace
+
+The important value is not just debugging.
+
+It gives a precise answer to:
+
+  "WHERE did understanding stop?"
+
+Examples:
+
+  tokenization             PASS
+  lexical lookup           PASS
+  operation                PASS
+  target_type              PASS
+  predicate meaning        BLOCKED
+
+or:
+
+  language                 PASS
+  typed composition        PASS
+  capability resolution    BLOCKED
+
+or:
+
+  language                 PASS
+  capability               PASS
+  parent Tool              PASS
+  child resolver css_path  BLOCKED
+
+
+======================================================================
+17. SHARED LANGUAGE COMPILER ACROSS TABS
+======================================================================
+
+Re-phrase and Turn Checker are intended to expose the SAME language/compiler
+frame.
+
+Normal Chat is also wired through the current Tool House path for the supported
+find/count language.
+
+This is important because separate parsers in separate tabs would create
+different truths.
+
+The surfaces may have different views.
+
+The compiler path should be shared.
+
+
+======================================================================
+18. INLINE TEACHING / SAME-STEP REPAIR
+======================================================================
+
+v0.8.5 demonstrates positive teaching that repairs the same active semantic unit.
+
+Verified Turn Checker flow:
+
+  input:
+    find fuck-off hooks
+
+  initial result:
+    find preserved
+    hook preserved
+    fuck-off typed as unresolved predicate
+    execution authority BLOCKED
+
+  operator teaching:
+    project-only mapping:
+      fuck-off -> state
+
+  then:
+    training receipt written
+    same Turn rechecked
+    matching live Chat Step can be repaired in place
+    capability resolves to find-state-hooks
+    authority becomes CLEAR
+
+The old parse is retained in history/provenance rather than silently rewritten.
+
+Teaching scope includes:
+
+  - project-only
+  - House-proposed
+
+The intended law remains:
+
+  no silent global learning from one correction
+
+
+======================================================================
+19. REQUIRED LANGUAGE -> TOOL RESOLUTION NOW COVERED
+======================================================================
+
+The following required phrases are covered by v0.8.5 regression tests:
+
+  find all hooks
+      -> PATHS.tools["find-hooks"]
+      -> react/find/hooks
+
+  find hooks
+      -> PATHS.tools["find-hooks"]
+      -> react/find/hooks
+
+  find state hooks
+      -> PATHS.tools["find-state-hooks"]
+      -> react/find/hooks/state-hooks
+
+  count hooks
+      -> PATHS.tools["count-hooks"]
+      -> react/count/hooks
+
+  count files
+      -> PATHS.tools["count-files"]
+      -> audit/count/files
+
+  count components
+      -> PATHS.tools["count-components"]
+      -> react/count/components
+
+Path/tag semantics are used as the strongest structural matching evidence.
+
+
+======================================================================
+20. CURRENT PUBLIC HOUSE
+======================================================================
+
+Current total:
+
+  40 public capabilities
+  14 Stamps
+  26 non-Stamp Tools
+  0 unavailable
+
+STAMPS
+------
+
+  new-stamp
+    base/stamp-new-stamp
+
+  new-tool
+    base/stamp-new-tool
+
+  new-key-phrase
+    base/stamp-new-key-phrase
+
+  new-project
+    base/stamp-new-project
+
+  new-react-project
+    react/stamp-new-project
+
+  new-html-project
+    html/stamp-new-project
+
+  new-audit-project
+    audit/stamp-new-project
+
+  add-atom
+    css/stamp-new-atom
+
+  add-component
+    react/stamp-new-component
+
+  add-sub-component
+    react/stamp-sub-component
+
+  add-state-hook
+    react/hooks/state-hooks/stamp-new
+
+  add-use-effect
+    react/hooks/use-effect/stamp-new
+
+  add-grid
+    html/add/grid/stamp-new
+
+  grid-css
+    css/grid/stamp-install
+
+
+NON-STAMP TOOLS
+---------------
+
+  check-tool
+    base/check-tool
+
+  determine-script-type
+    base/determine/script-type
+
+  find-project
+    base/find-project
+
+  find-tool
+    base/find-tool
+
+  list-projects
+    base/list-projects
+
+  load-project
+    base/load-project
+
+  re-phrase-check
+    base/re-phrase-check
+
+  view-chat-history
+    base/view-chat-history
+
+  count-file-types
+    audit/count-file-types
+
+  find-comments
+    audit/find-comments
+
+  find-files
+    audit/find-files
+
+  find-imports
+    audit/find-imports
+
+  count-state-hooks
+    react/count/hooks/state-hooks
+
+  count-use-effect
+    react/count/hooks/use-effect
+
+  find-state-hooks
+    react/find/hooks/state-hooks
+
+  find-use-effect
+    react/find/hooks/use-effect
+
+  find-hook
+    react/find-hook
+
+  find-hooks
+    react/find/hooks
+
+  count-hooks
+    react/count/hooks
+
+  count-components
+    react/count/components
+
+  count-files
+    audit/count/files
+
+  find-file
+    base/find/file
+
+  find-folder
+    base/find/folder
+
+  add-project-path
+    project/add/paths
+
+  remove-project-path
+    project/remove/paths
+
+  import-css
+    css/import/file
+
+
+======================================================================
+21. GENERIC SOURCE SCANNING
+======================================================================
+
+The current generic source-scan direction supports deterministic scanning of
+common source extensions including:
+
+  ts
+  tsx
+  js
+  jsx
+  mjs
+  cjs
+
+Common generated / irrelevant locations are excluded, including:
+
+  node_modules
+  .git
+  .rab
+  dist
+  build
+  coverage
+  .next
+  out
+
+Script type detection can persist reusable project facts such as:
+
+  script_extensions
+  script_language
+
+so later Tools do not have to rediscover them every time.
+
+
+======================================================================
+22. PROJECT PATH MEMORY
+======================================================================
+
+Generic project path Tools exist:
+
+  project/add/paths
+  project/remove/paths
+
+Useful project facts / paths can therefore be stored under Box-owned project
+memory rather than hard-coded into individual Stamps.
+
+The broader intended pattern remains:
+
+  discover once
+  save a positive reusable fact
+  reuse it later by matching seat name
+
+
+======================================================================
+23. GRID SLICE
+======================================================================
+
+v0.8.5 includes the first grid slice built on the generic machinery instead of
+one-off dependency code.
+
+Included:
+
+  html/add/grid/stamp-new
+  css/grid/stamp-install
+  css/import/file
+
+The HTML grid Stamp:
+
+  - owns Tool-local grids.json
+  - uses that local topology data
+  - materializes the known grid shape
+  - leaves explicit future area seats for later Stamps
+
+The grid CSS Stamp:
+
+  - installs the canonical supplied grid.css
+  - resolves css_path declaratively
+  - uses the generic resolver path
+  - refuses silent overwrite
+
+The CSS import Tool:
+
+  - remains a normal generic Tool
+  - accepts source CSS + CSS entry information
+  - computes a relative @import
+  - is idempotent
+
+A generic find-folder absolute-parent-path bug was found while building this
+slice and fixed in the generic engine rather than patched inside the grid Stamp.
+
+
+======================================================================
+24. REACT HOUSE RESERVED LANGUAGE
+======================================================================
+
+House-facing reserved forms remain normalized independently from framework
+spelling.
+
+Examples:
+
+  use-effect
+    -> native React useEffect
+
+  use-state
+    -> native React useState
+
+This allows stable House language without requiring folder names and internal
+semantic keys to copy framework casing.
+
+
+======================================================================
+25. .rab PROJECT MEMORY MODEL
+======================================================================
+
+The architectural direction remains that .rab is Box-owned reusable memory,
+while project source files remain canonical project truth.
+
+Representative shape:
+
+  ~/.rab/
+    settings.json
+    projects/
+      <project-id>--<root-hash>/
+        PROJECT.json
+        PROJECT_SETTINGS.snapshot.json
+        PROJECT_PATHS.snapshot.json
+        RESOURCES.json
+        FACTS.json
+        ALIASES.json
+        MEMORY.txt
+        runs/
+        receipts/
+        sessions/
+        indexes/
+    failures/
+      <project-id>--<root-hash>/
+    training/
+    language/
+
+Failures remain quarantined from successful runtime truth.
+
+
+======================================================================
+26. AUTOMATIC DOES NOT MEAN SECRET
+======================================================================
+
+Automatic child Tools are allowed.
+
+Automatic resolver Tools are allowed.
+
+Reusable project-fact lookup is allowed.
+
+The requirement is observability.
+
+The right-side Task trace should show:
+
+  - what ran
+  - which Tool/address/path handled it
+  - parent Task
+  - AUTO or DIRECT
+  - why it ran
+  - what seats it received
+  - what seats it returned
+  - what changed
+  - result/error
+  - what was persisted
+
+The goal is less interruption without less visibility.
+
+
+======================================================================
+27. REFERENCE MATERIAL / NEURO-SYMBOLIC DECISION
+======================================================================
+
+External neuro-symbolic / pure-symbolic material provided during the session was
+used as reference / idea fuel only.
+
+It is NOT runtime authority.
+
+It is NOT copied into the package.
+
+Useful idea retained:
+
+  fuzzy or learned layers may propose candidates;
+  deterministic symbolic contracts decide whether execution is lawful.
+
+Ideas rejected or modified:
+
+  - hard-coded Python token guesses as the real architecture
+  - "unknown word" databases
+  - silent self-termination
+  - negative vocabulary training
+  - treating legacy Hand as a new equal top-level public species
+  - allowing neural confidence to grant execution authority
+
+The current public taxonomy remains:
+
+  Tool
+    -> Stamp is a subtype
+
+
+======================================================================
+28. BRIDGE / SERVICE SAFETY MODEL
+======================================================================
+
+The bridge keeps execution behind server-owned run state.
+
+Important current service behavior includes:
+
+  - client sends run ID + revision
+  - stale revision can return conflict rather than silently racing
+  - completed run does not execute again through the adapter
+  - execution-started state is saved before engine work
+  - only files named by a completed receipt are exposed by output viewer
+  - language imports are validated data resources
+  - no arbitrary shell/file HTTP endpoint
+  - local Host / Origin checks
+  - no CORS exposure by default
+
+These controls are useful local-workbench protections, but they are not claimed
+to be full multi-user authentication or an untrusted-code sandbox.
+
+
+======================================================================
+29. VERIFICATION RECEIPT
+======================================================================
+
+NODE SUITE
+----------
+
+Command:
+
+  npm test
+
+Result:
+
+  273 tests
+  273 passed
+  0 failed
+  0 skipped
+
+Receipt:
+
+  verification/final-all-tests-v0.8.5.tap
+
+
+LANGUAGE AUDIT
+--------------
+
+Command:
+
+  npm run language:audit
+
+Result:
+
+  PASS
+
+  575 mapper entries
+  1,226 form occurrences
+  1,155 unique form strings
+  70 multi-word phrases
+
+Receipt:
+
+  verification/language-audit.json
+
+
+MAIN BROWSER HARNESS
+--------------------
+
+Command:
+
+  python tests/browser_interaction.py
+
+Result:
+
+  18 checks
+  0 JavaScript errors
+  390px viewport: no horizontal overflow
+
+Receipt:
+
+  verification/browser-test-v0.8.5-main.stdout.txt
+
+
+TURN CHECKER BROWSER HARNESS
+----------------------------
+
+Command:
+
+  python tests/browser_turn_checker_v085.py
+
+Result:
+
+  3 focused checks
+  0 JavaScript errors
+
+Verified browser flow:
+
+  find fuck-off hooks
+      ->
+  find + hook preserved
+      ->
+  fuck-off typed as unresolved predicate
+      ->
+  execution authority BLOCKED
+      ->
+  project-only teaching: fuck-off -> state
+      ->
+  training receipt
+      ->
+  same Turn rechecked
+      ->
+  find-state-hooks resolved
+      ->
+  execution authority CLEAR
+
+Receipts:
+
+  verification/browser-turn-checker-v0.8.5.json
+  verification/browser-turn-checker-v0.8.5.stdout.txt
+  verification/browser-turn-checker-v0.8.5.png
+
+
+======================================================================
+30. NEW v0.8.5 REGRESSION COVERAGE
+======================================================================
+
+The 273-test suite includes coverage for:
+
+  - deep nested House paths remain canonical
+  - PATHS remains a flat direct address book
+  - required find/count language resolves through current path/tag semantics
+  - typed unknown holes preserve known structure
+  - unresolved meaningful holes do not receive execution authority
+  - settings[].try visibly spawns a child Tool
+  - child result fills the named seat
+  - parent resumes
+  - traces expose both direct address and canonical path
+  - Turn Checker shows exact language/Tool boundary
+  - project teaching repairs/rechecks the same Turn
+  - normal Chat resolves through the current Tool House
+  - Turn Checker teaching can repair a matching live Chat Step
+  - grid Stamp uses Tool-local topology data
+  - grid output leaves future area seats
+  - grid.css resolves css_path declaratively
+  - grid.css refuses silent overwrite
+  - CSS import computes relative idempotent @import
+  - runner-owned seat bag propagates returns across ordinary/search Tools
+  - inherited seats can prevent redundant resolver calls
+  - Stamp -> Stamp nesting uses the same Task trace contract
+  - Turn Checker recovery exposes missing seat + lawful positive fills
+  - negative-vocabulary persistence is not required for recovery
+
+
+======================================================================
+31. CURRENT UI SURFACES
+======================================================================
+
+The v0.8.5 workbench documentation identifies these major tabs:
+
+  Chat
+  Workbench
+  Language lab
+  Re-phrase
+  Turn checker
+
+Their purposes differ, but language-facing surfaces should converge on the same
+compiler truth rather than each carrying an independent parser.
+
+
+======================================================================
+32. WHAT v0.8.5 DELIBERATELY DOES NOT DO
+======================================================================
+
+v0.8.5 does not attempt to solve everything.
+
+It deliberately avoids:
+
+  - making an LLM the final authority
+  - persisting every unknown word
+  - giant negative rule lists
+  - one implementation per semantic Tool leaf
+  - callback fields embedded in every Stamp
+  - path-as-identity
+  - filesystem-shaped PATHS registries
+  - hiding automatic child work
+  - silently overwriting grid.css
+  - forcing every phrase into academic truth-value semantics
+  - exception-driven "try left(right), then right(left)" type composition
+  - treating every failed wording as something that must be taught
+
+
+======================================================================
+33. IMPORTANT OPEN DESIGN AREA: RECOVERY UX
+======================================================================
+
+The architecture now has enough information to make smarter recovery possible.
+
+The exact interaction policy should still be experimentally tested.
+
+For a partial shape, the Box can potentially:
+
+  A. show the missing seat only
+
+  B. show the missing seat plus legal House fills
+
+  C. offer one likely legal fill when there is exactly one
+
+  D. ask the user to rephrase
+
+  E. let the user deliberately teach a positive mapping
+
+The important law is that recovery should be generated from:
+
+  current partial semantic shape
+  +
+  actual legal Tool House contracts
+
+rather than canned apology text or hallucinated synonyms.
+
+Turn Checker is the proper place to test these strategies.
+
+
+======================================================================
+34. NEXT LOGICAL WORK
+======================================================================
+
+The best next work is not "add lots more features."
+
+The current foundation should be exercised.
+
+Recommended next sequence:
+
+  1. Build a library of real messy Turns.
+  2. Run them through Turn Checker.
+  3. Record exactly which Shape / seat fails.
+  4. Test missing-seat recovery strategies.
+  5. Confirm that lawful fills come from the current Tool House.
+  6. Confirm rephrasing solves disposable wording without adding memory.
+  7. Confirm teaching stores only useful positive mappings.
+  8. Confirm taught mappings do not damage close contrast/regression cases.
+  9. Exercise long Tool chains:
+       search -> resolve -> Stamp -> import -> inspect
+ 10. Exercise project PATHS overrides through those chains.
+ 11. Exercise multiple children returning seats to one parent.
+ 12. Exercise sibling Tools reusing returned seats.
+ 13. Continue adding product slices only after the generic chain remains green.
+
+The important question going forward is not:
+
+  "Can the Box guess what I meant?"
+
+It is:
+
+  "How much of my intent can the Box prove, what exact seat is still missing,
+   and what lawful next move can it offer without inventing truth?"
+
+
+======================================================================
+35. START / VERIFY
+======================================================================
+
+Runtime requirement:
+
+  Node >= 22
+
+Useful package commands:
+
+  npm start
+      starts the workbench server
+
+  npm test
+      runs Node regression suites
+
+  npm run language:audit
+      audits the language resources
+
+  npm run language:review
+      runs the Shape-1 language review helper
+
+
+======================================================================
+36. FINAL STATE IN ONE SENTENCE
+======================================================================
+
+RRAABBIITT Magic Box v0.8.5 is now a tested deep Tool House where stable
+addresses resolve semantic Tools, partial language can preserve typed known
+structure, unresolved seats block authority without becoming negative memory,
+any Tool subtype can participate in runner-owned nested execution, returned
+named seats can flow back through the shared Bag, and the operator can inspect
+and teach the exact boundary through Turn Checker instead of guessing where the
+system failed.
+
+END OF SUMMARY
+
+======================================================================
+37. SUSTAINED PROJECT-MEMORY / TRAINING SOAK FINDINGS
+======================================================================
+
+A sustained >5 minute stateful/UI test pass found and fixed two integration defects:
+
+1. A project path learned across Turns could make a Step READY while the legacy Stamp
+   execution rail still enforced the old literal write root. Legacy write roots now resolve
+   through the current matching project settings path, so current project path truth and
+   execution authority agree.
+
+2. project/add/paths correctly wrote Box-owned PROJECT.json memory, but the generic Tool
+   runner did not consult that memory before settings[].try spawned a search child. The
+   runner now hydrates a missing Tool seat from PROJECT.json when the saved path key matches
+   the setting name. Project memory therefore beats rediscovery, preserving NAME IS THE
+   SOCKET and the intended resolution order.
+
+Additional cold test:
+  project-only positive training survives a fresh Workbench instance and new session.
+
+Final receipt after these fixes:
+  273 / 273 Node tests PASS
+  language audit PASS
+  main browser 18 checks / 0 JavaScript errors
+  Turn Checker browser 3 checks / 0 JavaScript errors
+
+See SOAK_TEST_REPORT.txt for the full scenarios and receipts.

@@ -1,0 +1,10 @@
+{
+  "id": 1790000000921,
+  "name": "paths",
+  "title": "Remove Project Path",
+  "description": "Removes a named path from saved project settings and detaches its shared listener without deleting source files.",
+  "settings": [
+    {"type":"text","name":"name","title":"Name","description":"Project path key to remove.","required":true}
+  ],
+  "meta": {"domain":"project","operation":"delete","target_type":"path","output":"project-fact","authority":"write"}
+}

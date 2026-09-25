@@ -1,0 +1,26 @@
+{
+  "version": "tool-contract/v1",
+  "result": {
+    "status": "string",
+    "scan": "string",
+    "root": "string",
+    "totals": {
+      "files_scanned": "number",
+      "files_with_comments": "number",
+      "comments": "number"
+    },
+    "rows": [
+      {
+        "file": "string",
+        "count": "number",
+        "comments": [
+          {
+            "line": "number",
+            "kind": "string",
+            "text": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": 1790000000943,
+  "name": "z-index",
+  "title": "Find z-index Declarations",
+  "description": "Finds z-index declarations in style files.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "z-index",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bz-index\\s*:",
+      "kind": "z-index",
+      "scope": "style"
+    }
+  }
+}

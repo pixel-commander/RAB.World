@@ -1,0 +1,30 @@
+{
+  "id": 1800000000023,
+  "name": "mysql-query-calls",
+  "title": "Find MySQL Query Calls",
+  "description": "Finds common MySQL-style query/execute call sites for parameterization review.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "mysql-query-calls",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\b(?:mysql|pool|connection|conn|db)\\.(?:query|execute)\\s*\\(",
+      "scope": "code",
+      "kind": "mysql-query-candidate",
+      "heuristic": true,
+      "flags": "i"
+    }
+  }
+}

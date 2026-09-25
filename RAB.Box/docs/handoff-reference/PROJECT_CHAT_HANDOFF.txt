@@ -1,0 +1,143 @@
+RRAABBIITT — FACTORY FINDER / MAGIC BOX ALIGNMENT HANDOFF
+=======================================================
+Review date: 2026-09-14
+Basis: uploaded FactoryFinder(2).zip, current user clarification, screenshot,
+and inspection of the earlier rraabbiitt-magic-box-v0.3-with-ui.zip.
+Review only. No replacement engine, source edits or production execution.
+
+THE ACTUAL TARGET
+-----------------
+One human request describes a complete outcome and can resolve into multiple
+stamp invocations. The human must not issue a separate turn for every stamp or
+manually choose each complementary operation. Internal one-turn workers are still
+compatible with this: the run owns the full request and continuations.
+
+Candidate discovery should allow any relevant query concept to retrieve an item.
+Discovery is not authorization. Do not execute all results, use the first match,
+or silently ignore unsupported clauses/negation. Literal names and destinations
+are values to bind, not words required to occur in every catalog entry.
+
+WHAT THE UPLOADED FINDER ACTUALLY DOES
+------------------------------------
+- Mounted src/App.tsx renders FactoryFinder and its hook.
+- Vite mounts a read-only /api/catalog/(stamps|brain) API.
+- settings.json selects the root manifest.json snapshot for Stamps.
+- Root manifest contains 18 stamp entries. Raw fields include name, description,
+  save_location, indexed, demo_settings, folder, script.
+- demo_settings is an array of field records: key, required, type, description.
+- src/automation/manifest.json is a DIFFERENT seven-entry local catalog, with
+  corresponding local settings/scripts. Do not silently merge the two roots.
+- src/atoms/manifest.json holds existing atom entries, not creation contracts.
+- Root react candidates are portable-react-project and rraabbiitt-react-project.
+  Do not silently alias both to the earlier fixture name react-project.
+- rraabbiitt-react-project advertises Home and container-main in its scaffold.
+  Verify actual project state after materialization before planning duplicate work.
+- page and theme in the root snapshot say 'empty: no template yet'. Indexed does
+  not mean executable, complete, or appropriate to the request.
+- No full PATHS runtime mapping was provided by this Finder snapshot. Keep the
+  intended project-local PATHS authority from the wider house design; do not claim
+  it is already implemented in the Finder's read-only catalog endpoint.
+- normalize() uses catalog-array positions as display IDs while preserving raw
+  metadata. Those indices must not become durable execution/clarification IDs.
+
+EXACT MATCHING BOTTLENECK
+-------------------------
+src/components/factory-finder/js/search.ts:21 requires:
+    terms.every(term => item.fields.some(field => field.text.includes(term)))
+
+Words are lowercased whitespace splits; fields are flattened metadata values.
+All words can occur in different fields. Phrase mode requires a complete string
+within a single field. These are intentional search modes, not a semantic planner.
+
+Actual probes on the supplied root manifest:
+    react project                    -> 2 all-word matches
+    react project test-project       -> 0 all-word matches
+    react project container-main     -> 1 all-word match
+    full original React request      -> 0 all-word matches
+
+Changing raw every to raw some on the full original sentence retrieves all 18
+entries, partly due to short/common substring matches such as 'a'. Add broad
+concept retrieval; do not promote its output to execution authority. Preserve the
+original complete request separately; words excluded from search are NOT erased
+from meaning, negation, constraints or later clarification.
+
+WHERE THE EARLIER PROTOTYPE WAS TOO NARROW
+----------------------------------------
+Useful pieces: runtime contract loading, typed options, missing-input tickets,
+parent/dependency returns, verification and receipt plumbing.
+Too narrow: one top-level command construction; findHeads() requires exactly one
+capability; parseModifiers() binds the rest to that capability/dependency family.
+Runtime also rejects a repeated capability frame in one request. A compound plan
+must identify invocations by step/frame, not just by capability: creating two
+components legitimately uses the same stamp twice with different inputs.
+The prior fixture options/PATHS envelopes need an adapter to the REAL catalog;
+the user's manifests must not be rewritten just to fit the demo's inventions.
+
+NEXT DESIGN BOUNDARY — NOT IMPLEMENTED BY THIS REVIEW
+----------------------------------------------------
+Original request
+ -> candidate collection across relevant concepts
+ -> requested operation / target / values / relationships / constraints
+ -> distinguish alternatives from complementary steps
+ -> resolve current project contracts and actual resource state
+ -> bind available values and account for EVERY requested clause
+ -> ask only for missing/ambiguous/contradictory information
+ -> order explicit stamp invocations by dependencies
+ -> execute through existing Hands/guards
+ -> verify requested outcome and record receipts
+
+Examples that must not collapse into one operation:
+- Add container-main to a selected element: attach existing class.
+- Remove container-main from that element: detach class, not delete its CSS.
+- Replace container-inset with container-main on that element: scoped replacement.
+- Rename the atom definition container-inset to container-main: definition/ref
+  migration, a separate operation requiring its own supported capability.
+- Create a new atom container-card: definition creation with required inputs.
+
+No evidence yet that the root sample provides all edit/rename/text-setting Hands.
+Report those as capability gaps until the actual project registry supplies them.
+The same words may support multiple scopes; unresolved intent requires a question.
+
+SCHEMA NOTE
+-----------
+demo_settings provides useful fields, but cannot alone establish complete script
+input semantics. Example: the local React maker explicitly requires save-location
+and derives further required inputs from scaffold placeholders. Its demo_settings
+only advertises name. Preserve both requirements through a host contract or
+explicit adapter; do not assume an empty demo_settings array means no inputs.
+Descriptions help retrieval; they do not mechanically declare effects/permissions.
+
+SCREENSHOT
+----------
+The separate Dumbot screen says 'Local · no LLM · preview only' and 'Exact phrase
+memory and a small grammar. Stamp execution is not connected.' It also displays
+'Failed to fetch'. This shows the language-preview interface but not its backend
+source, and does not establish the cause of its fetch failure. The Finder ZIP's
+mounted UI is different. Do not claim to have reviewed the pictured backend.
+
+MATH
+----
+E = λP.λQ.∀x(P(x) → Q(x))
+Can express the bounded required-seat check over ALL declared seats:
+    every required seat has a supported, valid binding.
+It does not infer intent, resolve synonyms, discover a plan or prove global
+correctness. Whole-request coverage is separate from completeness of one stamp.
+
+TEST RECEIPT
+------------
+Node v22.16.0, Linux.
+Command: node --experimental-strip-types --test tests/search.test.mjs
+9 passed; 1 failed because the configured external R:\rraabbiitt brain directory
+is unavailable in this environment. Not a passing full-suite claim. No npm install,
+React production build, browser launch or stamp execution was attempted.
+Additional read-only search probes are in search-probes.txt. These illustrate the
+current search behavior, not performance of an implemented language upgrade.
+
+FINISH LINE FOR THE NEXT SLICE
+-----------------------------
+One multi-intention request over the user's real manifest resolves into an
+inspectable plan; repeat invocations work; create/use/remove/replace stay distinct;
+supplied fields stay attached to the correct invocation; missing capabilities and
+unresolved text remain visible; execution stays blocked until the necessary intent,
+contract and authority checks pass. Do not replace the Factory or train a new model
+as a prerequisite for this slice.

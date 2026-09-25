@@ -1,0 +1,30 @@
+{
+  "id": 1800000000034,
+  "name": "root-container-user",
+  "title": "Find Root Container Users",
+  "description": "Finds Docker/container declarations explicitly running as root/UID 0.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "root-container-user",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "(?:^|\\s)USER\\s+root\\b|\\buser\\s*:\\s*[\\\"\\']?(?:0|root)\\b",
+      "scope": "all",
+      "kind": "root-container-user",
+      "heuristic": false,
+      "flags": "i"
+    }
+  }
+}

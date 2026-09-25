@@ -1,0 +1,306 @@
+{
+  "version": "tool-contract/v1",
+  "select": "meta.check",
+  "variants": {
+    "all": {
+      "result": {
+        "status": "string",
+        "mode": "string",
+        "totals": {
+          "checks": "number",
+          "passed": "number",
+          "failed": "number"
+        },
+        "rows": [
+          {
+            "family": "string",
+            "tool": "string",
+            "pass": "boolean",
+            "caught_bad": "boolean",
+            "accepted_good": "boolean",
+            "bad_matches?": "number | null",
+            "good_matches?": "number | null",
+            "error_code?": "string",
+            "error?": "string"
+          }
+        ],
+        "families": [
+          {
+            "status": "string",
+            "mode": "string",
+            "family": "string",
+            "totals": {
+              "checks": "number",
+              "passed": "number",
+              "failed": "number"
+            },
+            "rows": [
+              {
+                "tool": "string",
+                "pass": "boolean",
+                "caught_bad": "boolean",
+                "accepted_good": "boolean",
+                "bad_matches?": "number | null",
+                "good_matches?": "number | null",
+                "error_code?": "string",
+                "error?": "string"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "brain-access": {
+      "result": {
+        "status": "string",
+        "mode": "string",
+        "source_machine": "string",
+        "target": "string",
+        "boundary": "string",
+        "note": "string",
+        "redirects_followed": "boolean",
+        "unauthenticated": {
+          "reachable": "boolean",
+          "outcome": "string",
+          "status?": "number | null",
+          "headers?": {
+            "content_type": "string | null",
+            "content_length": "string | null",
+            "location": "string | null",
+            "server": "string | null",
+            "www_authenticate": "string | null"
+          },
+          "bytes_read?": "number",
+          "truncated?": "boolean",
+          "error_code?": "string",
+          "elapsed_ms": "number",
+          "classification": "string",
+          "marker_found": "boolean | null",
+          "body_sha256": "string | null"
+        },
+        "authentication": {
+          "configured": "boolean",
+          "credential_available": "boolean",
+          "credential_source": "string | null",
+          "result": {
+            "$nullable": {
+              "reachable": "boolean",
+              "outcome": "string",
+              "status?": "number | null",
+              "headers?": {
+                "content_type": "string | null",
+                "content_length": "string | null",
+                "location": "string | null",
+                "server": "string | null",
+                "www_authenticate": "string | null"
+              },
+              "bytes_read?": "number",
+              "truncated?": "boolean",
+              "error_code?": "string",
+              "elapsed_ms": "number",
+              "classification": "string",
+              "marker_found": "boolean | null",
+              "body_sha256": "string | null"
+            }
+          }
+        },
+        "expectations?": [
+          {
+            "expected": "value",
+            "actual": "value",
+            "pass": "boolean"
+          }
+        ]
+      }
+    },
+    "hosting": {
+      "result": {
+        "status": "string",
+        "mode": "string",
+        "family": "string",
+        "totals": {
+          "checks": "number",
+          "passed": "number",
+          "failed": "number"
+        },
+        "rows": [
+          {
+            "tool": "string",
+            "pass": "boolean",
+            "caught_bad": "boolean",
+            "accepted_good": "boolean",
+            "bad_matches?": "number | null",
+            "good_matches?": "number | null",
+            "error_code?": "string",
+            "error?": "string"
+          }
+        ]
+      }
+    },
+    "http-boundary": {
+      "result": {
+        "status": "string",
+        "mode": "string",
+        "source_machine": "string",
+        "target": "string",
+        "method": "string",
+        "redirects_followed": "boolean",
+        "unauthenticated": {
+          "reachable": "boolean",
+          "outcome": "string",
+          "status?": "number | null",
+          "headers?": {
+            "content_type": "string | null",
+            "content_length": "string | null",
+            "location": "string | null",
+            "server": "string | null",
+            "www_authenticate": "string | null"
+          },
+          "bytes_read?": "number",
+          "truncated?": "boolean",
+          "error_code?": "string",
+          "elapsed_ms": "number",
+          "classification": "string"
+        },
+        "authentication": {
+          "configured": "boolean",
+          "credential_available": "boolean",
+          "credential_source": "string | null",
+          "result": {
+            "$nullable": {
+              "reachable": "boolean",
+              "outcome": "string",
+              "status?": "number | null",
+              "headers?": {
+                "content_type": "string | null",
+                "content_length": "string | null",
+                "location": "string | null",
+                "server": "string | null",
+                "www_authenticate": "string | null"
+              },
+              "bytes_read?": "number",
+              "truncated?": "boolean",
+              "error_code?": "string",
+              "elapsed_ms": "number",
+              "classification": "string"
+            }
+          }
+        },
+        "expectations?": [
+          {
+            "expected": "value",
+            "actual": "value",
+            "pass": "boolean"
+          }
+        ]
+      }
+    },
+    "network": {
+      "result": {
+        "status": "string",
+        "mode": "string",
+        "family": "string",
+        "totals": {
+          "checks": "number",
+          "passed": "number",
+          "failed": "number"
+        },
+        "rows": [
+          {
+            "tool": "string",
+            "pass": "boolean",
+            "caught_bad": "boolean",
+            "accepted_good": "boolean",
+            "bad_matches?": "number | null",
+            "good_matches?": "number | null",
+            "error_code?": "string",
+            "error?": "string"
+          }
+        ]
+      }
+    },
+    "security": {
+      "result": {
+        "status": "string",
+        "mode": "string",
+        "family": "string",
+        "totals": {
+          "checks": "number",
+          "passed": "number",
+          "failed": "number"
+        },
+        "rows": [
+          {
+            "tool": "string",
+            "pass": "boolean",
+            "caught_bad": "boolean",
+            "accepted_good": "boolean",
+            "bad_matches?": "number | null",
+            "good_matches?": "number | null",
+            "error_code?": "string",
+            "error?": "string"
+          }
+        ]
+      }
+    },
+    "tcp-reachability": {
+      "result": {
+        "status": "string",
+        "mode": "string",
+        "source_machine": "string",
+        "target": {
+          "host": "string",
+          "port": "number"
+        },
+        "reachable": "boolean",
+        "outcome": "string",
+        "local_address?": "string | null",
+        "remote_address?": "string | null",
+        "remote_family?": "string | null",
+        "error_code?": "string",
+        "elapsed_ms": "number",
+        "expectation?": {
+          "expected": "value",
+          "actual": "value",
+          "pass": "boolean"
+        }
+      }
+    },
+    "tls-boundary": {
+      "result": {
+        "status": "string",
+        "mode": "string",
+        "source_machine": "string",
+        "target": {
+          "host": "string",
+          "port": "number",
+          "server_name": "string | null"
+        },
+        "elapsed_ms": "number",
+        "reachable": "boolean",
+        "outcome": "string",
+        "authorized?": "boolean",
+        "authorization_error?": "string | null",
+        "protocol?": "string | null",
+        "cipher?": "string | null",
+        "certificate?": {
+          "$nullable": {
+            "subject_cn": "string | null",
+            "issuer_cn": "string | null",
+            "valid_from": "string | null",
+            "valid_to": "string | null",
+            "fingerprint256": "string | null"
+          }
+        },
+        "error_code?": "string",
+        "expectations?": [
+          {
+            "expected": "value",
+            "actual": "value",
+            "pass": "boolean"
+          }
+        ]
+      }
+    }
+  }
+}

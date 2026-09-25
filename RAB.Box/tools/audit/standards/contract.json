@@ -1,0 +1,113 @@
+{
+  "version": "tool-contract/v1",
+  "select": "meta.standard",
+  "variants": {
+    "css": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "authority": "string",
+            "rule": "string",
+            "severity": "string",
+            "message": "string"
+          }
+        ],
+        "standard": "string"
+      }
+    },
+    "html": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "authority": "string",
+            "rule": "string",
+            "severity": "string",
+            "message": "string",
+            "expected?": "string | null",
+            "attribute?": "string",
+            "id?": "string",
+            "first_line?": "number"
+          }
+        ],
+        "standard": "string"
+      }
+    },
+    "references": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "authority": "string",
+            "rule": "string",
+            "severity": "string",
+            "message": "string",
+            "reference": "string",
+            "target?": "string"
+          }
+        ],
+        "standard": "string"
+      }
+    },
+    "svg": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "authority": "string",
+            "rule": "string",
+            "severity": "string",
+            "message": "string",
+            "expected?": "string | null",
+            "attribute?": "string",
+            "id?": "string",
+            "first_line?": "number",
+            "reference?": "string"
+          }
+        ],
+        "standard": "string"
+      }
+    }
+  }
+}

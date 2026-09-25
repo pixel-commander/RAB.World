@@ -1,0 +1,62 @@
+SELF CODE REVIEW
+
+Purpose: Model judgment after deterministic tools have reported their facts.
+This is a review instruction file, not an implemented checker or a new tool runner.
+The source rule cards and provenance are in ../RULES.txt. Load only the cards
+relevant to the current change, not the entire collection on every review.
+
+INPUT
+The user's request, selected project rules, changed code, relevant inventory
+results, deterministic audit findings, and relevant source rule cards.
+Use existing audit owners, including classname audit tools. Their results are
+evidence; their code does not decide whether a design is appropriate.
+
+APPROVAL ROUTING
+Hard failures require correction. Approval-required findings pause completion of
+that finding until an LLM or human decision is recorded; they are not all hard
+failures. The LLM reviews ordinary cases within the user's existing rules and
+exceptions. Escalate extreme/exceptional cases or requested binding-rule changes
+to the human. Unknown evidence remains unknown until established.
+Approval identifies the occurrence, reviewer, evidence, and reason. It is not a
+blanket permission for other occurrences; materially changed code needs review.
+
+RULE: SEPARATE observed facts from your judgments; never describe a model conclusion as a deterministic tool result.
+EXAMPLE: Tool: class is defined in Events/css/events.css. Review: its skin duplicates container-main unnecessarily.
+
+RULE: REVIEW whether an existing catalog item satisfies the request before justifying a new atom, component, page, or local style.
+EXAMPLE: Read container-main's contract before deciding that Events needs another container skin.
+
+RULE: JUSTIFY new styling's shared, component, page, or local owner using its purpose; a matching filename alone does not prove correct ownership.
+EXAMPLE: events-body layout belongs locally; reusable container skin belongs to its atom owner.
+
+RULE: INSPECT structural findings before choosing repairs; an unmarked wrapper between grid markers is observable, but the correct redesign requires judgment.
+EXAMPLE: Decide whether to remove an unnecessary wrapper or use a registered layout; never add data-grid merely to silence a check.
+
+RULE: REVIEW dynamic style purpose and data flow against the positioning/color exception; variable syntax alone does not establish that a value is permitted.
+EXAMPLE: left: pointerX may represent positioning; padding: spacing is not granted the same exception.
+
+RULE: RESOLVE approval-required findings explicitly: approve within an existing allowance, require a fix, or escalate an exceptional departure to the human.
+EXAMPLE: Inline color finding -> identify chosenColor's runtime source -> approve
+dynamic color with evidence. A static color overriding a shared atom -> require
+the CSS/atom correction. A requested broader exception -> human decision.
+PROMPT: Is this overriding existing styling, or supplying dynamic positioning or
+color? What makes inline ownership necessary here?
+
+RULE: REVIEW collection identity, nullability, and child-bag meaning against actual data contracts; passing syntax checks cannot establish those design choices.
+EXAMPLE: An index key can compile while still being unsuitable for a reordered list.
+
+RULE: REVIEW handler authority, component boundaries, and update ownership against intent; do not infer design quality from folder names or hook counts.
+EXAMPLE: Moving state into a hook does not prove that repeated effects or form keystroke loss are fixed.
+
+RULE: RESOLVE uncertain evidence before concluding; report remaining uncertainty explicitly instead of treating unavailable checks or unknown structure as a pass.
+EXAMPLE: An unresolved child root leaves the structural audit unknown until its actual markup is established.
+
+RULE: FIX concrete findings, rerun affected tools, then inspect the finished output against the user's request and applicable project rules.
+EXAMPLE: After changing a stamp, generate and inspect an example; report what was actually verified.
+
+OUTPUT
+For each judgment: relevant file/location, rule, evidence, conclusion, and proposed
+or completed correction. For approval-required findings, include the disposition,
+reviewer, and approval/fix/escalation reason. Preserve the original automated
+finding separately from the review decision. State remaining unknowns and the verification performed.
+Keep the review focused on changed behavior and actual dependencies.

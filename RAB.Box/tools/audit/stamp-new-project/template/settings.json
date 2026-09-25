@@ -1,0 +1,9 @@
+{
+  "id": "__PROJECT_ID__",
+  "name": "__PROJECT_NAME__",
+  "type": "audit",
+  "paths": {
+    "folder": "__AUDIT_FOLDER__",
+    "results": "audit-results"
+  }
+}

@@ -1,0 +1,5 @@
+INHERIT=../RULE.txt; SCOPE=discovery sources.
+ROOTS=Box/tools; enabled TOOLKITS.json roots/tools; selected source settings.json.custom_toolkit_path/tools.
+TOOLKIT=root settings.json with house keys and meta.kind=toolkit + contained real tools/; link contract=../../../paths/toolkits/RULE.txt.
+WALK=recursive directories; skip template,node_modules,.git,.rab,symlink directories; arbitrary project folders not auto-scanned.
+HOST=paths belong to executing machine; preserve explicit UNC paths for server shares.

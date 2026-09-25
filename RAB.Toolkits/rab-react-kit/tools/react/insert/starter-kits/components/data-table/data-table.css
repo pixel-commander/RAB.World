@@ -1,0 +1,52 @@
+@layer components {
+  .data-table {
+    inline-size: 100%;
+    border-collapse: collapse;
+    font: var(--type-body);
+  }
+
+  .data-table th {
+    font: var(--type-label);
+    color: var(--content-muted);
+    text-align: start;
+    padding: var(--space-md) var(--space-lg);
+    border-block-end: var(--border-width) var(--border-style) var(--border-default);
+  }
+
+  .data-table td {
+    padding: var(--space-md) var(--space-lg);
+    border-block-end: var(--border-width) var(--border-style) var(--border-subtle);
+    color: var(--content-default);
+  }
+
+  .data-table tr:last-child td {
+    border-block-end: none;
+  }
+
+  .data-table tbody tr:hover {
+    background: var(--surface-hover);
+  }
+
+  .status-pill {
+    display: inline-block;
+    font: var(--type-label);
+    border-radius: var(--radius-container);
+    padding-block: var(--space-2xs);
+    padding-inline: var(--space-sm);
+  }
+
+  .status-pill--ok {
+    background: var(--accent-soft);
+    color: var(--content-accent);
+  }
+
+  .status-pill--warn {
+    background: var(--surface-active);
+    color: var(--content-muted);
+  }
+
+  .status-pill--down {
+    background: var(--danger-soft);
+    color: var(--content-danger);
+  }
+}

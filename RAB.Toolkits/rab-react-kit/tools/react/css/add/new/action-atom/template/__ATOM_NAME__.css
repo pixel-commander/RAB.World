@@ -1,0 +1,27 @@
+@layer atoms {
+  .__ATOM_NAME__ {
+    __ATOM_STYLES__
+  }
+
+  .__ATOM_NAME__:hover {
+    background: var(--__ATOM_NAME__-hover-background, var(--surface-hover));
+  }
+
+  .__ATOM_NAME__:active,
+  .__ATOM_NAME__.is-active {
+    color: var(--__ATOM_NAME__-active-color, var(--content-strong));
+    background: var(--__ATOM_NAME__-active-background, var(--surface-active));
+  }
+
+  .__ATOM_NAME__:focus-visible {
+    outline: var(--__ATOM_NAME__-focus-outline, var(--focus-ring));
+    outline-offset: var(--__ATOM_NAME__-focus-offset, var(--focus-offset));
+  }
+
+  .__ATOM_NAME__:is(:disabled, [aria-disabled='true']) {
+    color: var(--__ATOM_NAME__-disabled-color, var(--content-disabled));
+    background: var(--__ATOM_NAME__-disabled-background, var(--surface-disabled));
+    opacity: var(--__ATOM_NAME__-disabled-opacity, var(--disabled-opacity));
+    cursor: not-allowed;
+  }
+}

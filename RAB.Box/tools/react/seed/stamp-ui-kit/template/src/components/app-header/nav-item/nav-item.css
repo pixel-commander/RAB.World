@@ -1,0 +1,19 @@
+@layer components {
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+    text-align: start;
+  }
+
+  .nav-item__badge {
+    margin-inline-start: auto;
+    font: var(--type-label);
+    color: var(--content-muted);
+    background: var(--surface-inset);
+    border-radius: var(--radius-container);
+    padding-block: var(--space-2xs);
+    padding-inline: var(--space-sm);
+  }
+}

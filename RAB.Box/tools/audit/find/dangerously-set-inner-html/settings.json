@@ -1,0 +1,32 @@
+{
+  "id": 1790000000940,
+  "name": "dangerously-set-inner-html",
+  "title": "Find dangerouslySetInnerHTML",
+  "description": "Finds React dangerouslySetInnerHTML usages without claiming exploitability.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "dangerous-html-usage",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bdangerouslySetInnerHTML\\b",
+      "kind": "dangerously-set-inner-html",
+      "scope": "code"
+    }
+  }
+}

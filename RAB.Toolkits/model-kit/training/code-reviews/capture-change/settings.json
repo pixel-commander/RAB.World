@@ -1,0 +1,57 @@
+{
+  "id": 1790163090688,
+  "name": "capture-change",
+  "title": "Capture Review Change",
+  "description": "Records exact file versions and focused change evidence without copying package archives.",
+  "settings": [
+    {
+      "name": "session",
+      "type": "path",
+      "title": "Session folder",
+      "required": true
+    },
+    {
+      "name": "action",
+      "type": "text",
+      "title": "Action",
+      "required": true,
+      "enum": [
+        "baseline",
+        "begin",
+        "finish",
+        "status"
+      ]
+    },
+    {
+      "name": "round",
+      "type": "text",
+      "title": "Round name (begin)",
+      "required": false
+    },
+    {
+      "name": "reason",
+      "type": "textarea",
+      "title": "Focused reason (begin)",
+      "required": false
+    },
+    {
+      "name": "source_turns",
+      "type": "json",
+      "title": "Supporting turn paths (begin)",
+      "required": false
+    },
+    {
+      "name": "renames",
+      "type": "json",
+      "title": "Explicit from/to rename pairs (finish)",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "model-kit",
+    "operation": "create",
+    "target_type": "review-change",
+    "authority": "write",
+    "output": "evidence"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": 1790000000103,
+  "name": "stamp-new-stamp",
+  "title": "New Stamp",
+  "description": "Creates a new stamp-* Tool from the standard Stamp mold. The selected type chooses the tools/<type>/ folder.",
+  "settings": [
+    {
+      "type": "options",
+      "name": "type",
+      "title": "Type",
+      "description": "Domain folder for the new Stamp.",
+      "required": true,
+      "options": [
+        { "name": "base", "description": "Core house capabilities" },
+        { "name": "react", "description": "React capabilities" },
+        { "name": "html", "description": "HTML capabilities" },
+        { "name": "css", "description": "CSS capabilities" },
+        { "name": "audit", "description": "Audit capabilities" }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Name",
+      "description": "Name of the new Stamp. stamp- will be added if omitted.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "title",
+      "title": "Title",
+      "description": "Human readable title for the new Stamp.",
+      "required": true
+    },
+    {
+      "type": "textarea",
+      "name": "description",
+      "title": "Description",
+      "description": "What the new Stamp materializes.",
+      "required": true
+    },
+    {
+      "type": "settings",
+      "name": "settings",
+      "title": "Run Settings",
+      "description": "Required and optional inputs for running the generated Stamp.",
+      "required": false
+    },
+    {
+      "type": "json",
+      "name": "meta",
+      "title": "Meta",
+      "description": "Optional house metadata for the generated Stamp.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "create",
+    "target_type": "stamp",
+    "data_types": ["stamp", "tool"],
+    "output": "stamp",
+    "authority": "write"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "magic-box-stamps-demo",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test tests/schema.test.mjs tests/language.test.mjs tests/runtime.test.mjs tests/cli.test.mjs",
+    "demo": "node demo.mjs"
+  }
+}

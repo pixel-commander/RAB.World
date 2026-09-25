@@ -1,0 +1,8 @@
+{
+  "name": "grid-dashboard",
+  "kind": "grid-atom",
+  "created": "2026-09-03",
+  "type": "dashboard",
+  "description": "6-col dashboard shell: main-nav band, side-nav | left | tabs-nav | main | right, footer",
+  "modified": "2026-09-03"
+}

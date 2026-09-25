@@ -1,0 +1,11 @@
+@layer components {
+ .select-list { margin: 0; min-inline-size: 0; padding: var(--select-list-padding, var(--space-sm)); border: var(--select-list-border, var(--border-width) var(--border-style) var(--border-default)); border-radius: var(--select-list-border-radius, var(--radius-control)); color: var(--select-list-color, var(--content-default)); }
+ .select-list__options { display: flex; flex-direction: column; gap: var(--select-list-gap, var(--space-xs)); }
+ .select-list__option { display: flex; align-items: center; gap: var(--select-list-option-gap, var(--space-sm)); padding: var(--select-list-option-padding, var(--space-xs)); cursor: pointer; }
+ .select-list__option[hidden] { display: none; }
+ .select-list--chips .select-list__options { flex-direction: row; flex-wrap: wrap; }
+ .select-list--scroll .select-list__options { max-block-size: var(--select-list-max-height, 12rem); overflow: auto; }
+ .select-list__add { display: flex; gap: var(--select-list-gap, var(--space-xs)); margin-block-start: var(--space-sm); }
+ .select-list__search, .select-list__add input { padding: var(--select-list-input-padding, var(--space-xs)); min-inline-size: 0; }
+ .select-list input { accent-color: var(--select-list-accent-color, var(--accent-default)); }
+}

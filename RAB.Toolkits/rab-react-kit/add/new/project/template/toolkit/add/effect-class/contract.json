@@ -1,0 +1,15 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Copies only template/effect-[name].css, replacing [name] in filename and content. Never overwrites output."
+  },
+  "result": {
+    "status": "created",
+    "name": "supplied suffix",
+    "class_name": "prefixed CSS class",
+    "file": "absolute CSS path",
+    "verification": "artifact receipt",
+    "settings": "Generated signal settings from template/settings.json; supplied values override defaults."
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "version":"tool-contract/v1",
+  "source":{"kind":"template","description":"Delegates to Box's shared world stamp helper. The memory owner resolves .rab/worlds/[name] and allocates identity; the artifact writer renders and verifies the local template without overwriting an existing world."},
+  "result":{"status":"created","world":{"id":"positive numeric identity","name":"world name","root":"absolute .rab/worlds/[name] folder"},"settings":"rab-node/v1 world descriptor","box_memory":"same absolute world root","verification":"shared artifact-writer receipt"}
+}

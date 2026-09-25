@@ -1,0 +1,72 @@
+{
+  "id": 1790031603507,
+  "name": "action-atom",
+  "title": "New Action Atom",
+  "description": "Creates a tag-neutral CSS skin for interactive elements, including navigation links and controls, with hover, active, persistent is-active, focus and disabled states plus a React link demo.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Atom Name",
+      "description": "Lowercase kebab-case CSS class name.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "title",
+      "title": "Title",
+      "description": "Optional display title for the generated action atom; defaults to its name.",
+      "required": false
+    },
+    {
+      "type": "textarea",
+      "name": "description",
+      "title": "Description",
+      "description": "Optional description for the generated action atom.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "indexed",
+      "title": "Include in Index",
+      "description": "Whether the generated item should appear in its project manifest.",
+      "required": false,
+      "default": true
+    },
+    {
+      "type": "folder",
+      "name": "location",
+      "title": "Atoms Folder",
+      "description": "Parent folder that will contain the new named atom folder.",
+      "required": true
+    },
+    {
+      "type": "textarea",
+      "name": "styles",
+      "title": "Base Skin",
+      "description": "Optional CSS skin declarations using shared project tokens. Components own layout; supply declarations without selectors or braces.",
+      "required": false,
+      "default": ""
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "subject": "css",
+    "operation": "create",
+    "target_type": "atom",
+    "atom_kind": "action-atom",
+    "data_types": [
+      "css",
+      "atom",
+      "action-atom"
+    ],
+    "output": "atom",
+    "authority": "write",
+    "returns": [
+      "atom_name",
+      "file",
+      "path",
+      "folder"
+    ]
+  }
+}

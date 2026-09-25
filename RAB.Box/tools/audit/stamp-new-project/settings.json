@@ -1,0 +1,40 @@
+{
+  "id": 1790000000302,
+  "name": "stamp-new-project",
+  "title": "New Audit Project",
+  "description": "Creates an audit project in .rab with a saved input folder and local results.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Project Name",
+      "description": "Project name.",
+      "required": true
+    },
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder to Audit",
+      "description": "Existing folder to inspect. Project files and results stay in .rab; this folder is read-only input.",
+      "required": true
+    },
+    {
+      "type": "folder",
+      "name": "custom_toolkit_path",
+      "title": "Custom Toolkit Path",
+      "description": "Optional absolute path to an external toolkit. Saved in the new project settings.json; toolkit files stay outside the project.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "create",
+    "target_type": "project",
+    "data_types": [
+      "project",
+      "path"
+    ],
+    "output": "project",
+    "authority": "write"
+  }
+}

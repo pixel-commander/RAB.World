@@ -1,0 +1,69 @@
+RRAABBIITT MAGIC BOX v0.8.5 — COMPACT HANDOFF
+==============================================
+
+STATE
+-----
+- package version: 0.8.5
+- Tool House: 40 public capabilities / 14 Stamps / 26 Tools / 0 unavailable
+- Node tests: 273/273 passing
+- Language audit: passing
+- Main browser harness: 18 checks / 0 JS errors
+- Turn Checker browser harness: 3 focused checks / 0 JS errors
+
+DONE IN THIS SLICE
+------------------
+1. Stabilized the nested House design without flattening paths.
+2. Current path/tag capability resolution handles:
+     find all hooks
+     find hooks
+     find state hooks
+     count hooks
+     count files
+     count components
+3. Shape 2 preserves typed unknown holes.
+4. Added Turn Checker tab exposing Shape 0 through Shape 5 and exact failure boundary.
+5. Re-phrase exposes the same shared compiler frame.
+6. Added project-only and House-proposed teaching with training receipts.
+7. Project teaching rechecks the same Turn and can repair the matching live Chat Step.
+8. Demonstrated settings[].try through visible parent/child Task execution.
+9. Added the grid slice:
+     html/add/grid/stamp-new
+     css/grid/stamp-install
+     css/import/file
+10. Fixed generic find-folder handling of absolute glob parent paths.
+11. Added runner-owned named-seat propagation across all Tool kinds:
+      - settings[].try child returns fill the parent socket
+      - returned continuation/provided.seats values enter the shared seat bag
+      - later Tool invocations can inherit those seats by matching setting name
+      - Task traces expose seat deltas and parent/child provenance
+12. Turn Checker recovery now reports the missing seat plus lawful positive fills from the current Tool House. Rephrase remains valid; unresolved words are not stored as negative knowledge.
+
+GENERIC CHAIN LAW
+-----------------
+Everything invokable goes through the same runner contract. Stamp, normal Tool, finder/search Tool, counter, resolver, importer, and future provider wrappers are not special cases for chaining.
+
+CURRENT
+  -> CHILD TOOL
+  -> typed/named returned seats
+  -> runner seat bag
+  -> CURRENT resumes
+  -> later sibling/Step may reuse the same named seat
+
+Explicit options win over inherited seats. A child never owns continuation; the runner owns parentTaskId, trace, seat packing, and resume.
+
+LANGUAGE MEMORY RULE
+--------------------
+Do not store negative vocabulary just to remember that a word is unknown.
+Unknown surface text can remain ephemeral in the active Step/check when grammar proves a
+meaningful seat. It becomes durable only through a positive operator teaching receipt.
+
+REFERENCE MATERIAL
+------------------
+The neuro-symbolic / pure-symbolic text supplied during this work was used as idea fuel only.
+It is not runtime authority and is not copied into the package.
+
+PROVENANCE
+----------
+The original v0.8.5-nested-house source tree was not among the uploaded files in this chat.
+This package was reconstructed from the uploaded v0.8.4 green package plus the supplied
+v0.8.5 handoff/spec, then tested from source.

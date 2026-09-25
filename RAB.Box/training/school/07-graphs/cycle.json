@@ -1,0 +1,1 @@
+{"id":"graphs.cycle.001","concept":"graphs","kind":"graph-cycle","given":{"graph":{"directed":true,"vertices":["A","B","C"],"edges":[{"from":"A","to":"B"},{"from":"B","to":"C"},{"from":"C","to":"A"}]}},"expected":{"dag":false,"cycles":[["A","B","C","A"]]}}

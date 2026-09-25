@@ -1,0 +1,25 @@
+{
+  "id": 1810000000016,
+  "name": "check-constraints",
+  "title": "Check Recipe Constraints",
+  "description": "Checks recipe candidate conflicts against scoped allergies and human exclusions without promoting starter metadata into safety proof.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "recipe",
+      "title": "Recipe",
+      "description": "recipe",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "read",
+    "data_types": [
+      "conflicts"
+    ],
+    "returns": [
+      "conflicts"
+    ]
+  }
+}

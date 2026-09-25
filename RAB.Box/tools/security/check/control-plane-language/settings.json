@@ -1,0 +1,16 @@
+{
+  "id": 1790000000996,
+  "name": "control-plane-language",
+  "title": "Check Control-Plane Language",
+  "description": "Checks direct, mentioned and negated path-change language so descriptive text is not promoted into control-plane write authority.",
+  "settings": [],
+  "meta": {
+    "domain": "security",
+    "operation": "check",
+    "output": "security-report",
+    "authority": "read",
+    "config": {
+      "check": "control-plane-language"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": 1810000000100,
+  "name": "process-authority",
+  "title": "Check Process Authority",
+  "description": "Checks industrial process authority prerequisites: scientific/technical support plus practical in-plant data, with revalidation required after process changes.",
+  "settings": [
+    {
+      "type": "boolean",
+      "name": "has_scientific_support",
+      "title": "Has Scientific Support",
+      "description": "has scientific support",
+      "required": true
+    },
+    {
+      "type": "boolean",
+      "name": "has_in_plant_data",
+      "title": "Has In Plant Data",
+      "description": "has in plant data",
+      "required": true
+    },
+    {
+      "type": "boolean",
+      "name": "process_changed",
+      "title": "Process Changed",
+      "description": "process changed",
+      "required": false,
+      "default": false
+    }
+  ],
+  "meta": {
+    "domain": "food-process",
+    "authority": "read",
+    "data_types": [
+      "verified",
+      "missing"
+    ],
+    "returns": [
+      "verified",
+      "missing"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "container-cell",
+  "kind": "container-atom",
+  "created": "2026-09-14",
+  "description": "Neutral cell surface with inset and floating depth modifiers backed by reusable effect atoms.",
+  "modified": "2026-09-14"
+}

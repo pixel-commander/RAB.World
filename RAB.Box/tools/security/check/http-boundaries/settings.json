@@ -1,0 +1,16 @@
+{
+  "id": 1790000000993,
+  "name": "http-boundaries",
+  "title": "Check HTTP Boundaries",
+  "description": "Actively probes the local workbench HTTP boundary for token, Origin, Host, hidden-route, path traversal, stale revision, replay, receipt and malformed-body enforcement.",
+  "settings": [],
+  "meta": {
+    "domain": "security",
+    "operation": "check",
+    "output": "security-report",
+    "authority": "read",
+    "config": {
+      "check": "http-boundaries"
+    }
+  }
+}

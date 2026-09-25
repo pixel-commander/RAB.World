@@ -1,0 +1,37 @@
+{
+  "id": 1830000000730,
+  "name": "guards",
+  "title": "Review Code Guards",
+  "description": "Checks pasted JavaScript or TypeScript with the existing Bag/collection guards and prop-renaming auditors.",
+  "settings": [
+    {
+      "name": "file",
+      "type": "path",
+      "title": "Intended file",
+      "description": "Project-relative filename, such as src/components/Card/Card.tsx or src/atoms/action.css. Review does not change this file.",
+      "required": true
+    },
+    {
+      "name": "code",
+      "type": "textarea",
+      "title": "Proposed code",
+      "description": "Paste the exact code to check. Static checks only; this code is never executed. Maximum 256 KiB combined with supporting CSS.",
+      "required": true
+    },
+    {
+      "name": "css",
+      "type": "textarea",
+      "title": "Supporting CSS (optional)",
+      "description": "CSS for resolving class-based grid/flex layout in JSX. Only the grids check reads this; it is not written to the project.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "operation": "inspect",
+    "target_type": "code-review",
+    "authority": "read",
+    "output": "report",
+    "group": "guards",
+    "domain": "code-review"
+  }
+}

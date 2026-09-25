@@ -1,0 +1,27 @@
+{
+  "id": 1790000000987,
+  "name": "theme-token-usage",
+  "title": "Count Theme Token Usage",
+  "description": "Aggregates theme token/custom-property occurrences by token name.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "count",
+    "target_type": "theme-token",
+    "data_types": [
+      "file",
+      "count"
+    ],
+    "output": "count",
+    "authority": "read",
+    "aggregate_from": "find-theme-tokens"
+  }
+}

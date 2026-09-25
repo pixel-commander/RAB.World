@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "hybrid",
+    "description": "Reads template/tmpl.mjs. compile() builds field extraction, coercion, and validation statements and inserts them into the wrapper. Outputs <name>.mjs.",
+    "reviewed_at": "2026-09-20"
+  }
+}

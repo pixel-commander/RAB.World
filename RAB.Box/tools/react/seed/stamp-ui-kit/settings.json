@@ -1,0 +1,8 @@
+{
+  "id": 1790010746497,
+  "name": "stamp-ui-kit",
+  "title": "Seed React UI Kit",
+  "description": "Copies the UI-kit template tree into the selected React project without overwriting source files.",
+  "settings": [],
+  "meta": {"domain":"react","operation":"create","target_type":"ui-kit","authority":"write"}
+}

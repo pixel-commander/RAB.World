@@ -1,0 +1,7 @@
+{
+  "runs": "runs",
+  "interface": "magic-box/index.html",
+  "language": "language",
+  "allow_executable_settings": false,
+  "candidate_catalog": "catalog/factoryfinder-manifest.json"
+}

@@ -1,0 +1,8 @@
+{
+  "id": 1790000001006,
+  "name": "unencrypted-protocols",
+  "title": "Audit Cleartext Infrastructure Protocols",
+  "description": "Catalogs explicit http:// and ws:// endpoints in code and configuration, classifying loopback versus non-loopback usage for defensive review.",
+  "settings": [{"type":"folder","name":"folder","title":"Folder","description":"Optional folder to scan. Uses the loaded project root when omitted.","required":false}],
+  "meta": {"domain":"audit","operation":"inspect","target_type":"network","data_types":["network","transport","cleartext"],"output":"report","authority":"read","signature":"unencrypted-protocols"}
+}

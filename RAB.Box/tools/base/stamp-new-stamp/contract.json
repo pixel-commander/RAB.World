@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "hybrid",
+    "description": "Copies the stamp scaffold and its nested template, expands executable placeholders, and generates tool settings.",
+    "reviewed_at": "2026-09-20"
+  }
+}

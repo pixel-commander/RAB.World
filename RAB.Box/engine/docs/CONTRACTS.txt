@@ -1,0 +1,187 @@
+PROJECT ADAPTER CONTRACT
+========================
+Proposed adapter format, not a recovered production house file.
+
+PATHS.json
+----------
+{
+  "project": { "id": "my-project", "name": "My project" },
+  "stamps": {
+    "react-project": {
+      "settings": "stamps/ReactProject/settings.json",
+      "script": "stamps/ReactProject/stamp.mjs",
+      "language": {
+        "verbs": ["stamp", "make", "create", "build", "start"],
+        "names": ["react project", "react app"]
+      },
+      "write_roots": ["."],
+      "supporting_files": {
+        "template": "stamps/ReactProject/template.json"
+      }
+    }
+  },
+  "catalogs": {}
+}
+
+Stable name -> current local paths. The exact reserved name itself is also
+an accepted noun phrase. Alias matching is exact, case-insensitive language
+matching, NOT nearest-neighbor matching. Literal values preserve case.
+
+write_roots are project-relative directories. A new output must be inside
+one of them. "." permits new directories anywhere under the selected root;
+use a narrower root for real deployment. Existing directories are never replaced.
+
+Supporting files that affect a plan must be declared for fingerprinting.
+Transitive JS imports are NOT automatically discovered or fingerprinted.
+
+SETTINGS
+--------
+{
+  "id": 1789380000001,
+  "name": "react-project",
+  "title": "Starting point for a full React project",
+  "description": "Create a new folder at the selected path and populate a starter.",
+  "date_added": 1789380000000,
+  "options": {
+    "name": {
+      "required": true,
+      "type": "text",
+      "role": "artifact-name",
+      "validate": "project-name",
+      "language": { "prefixes": ["named", "called"] }
+    },
+    "location": {
+      "required": true,
+      "type": "text",
+      "role": "destination",
+      "validate": "relative-directory",
+      "language": {
+        "prefixes": ["into", "in", "under"],
+        "references": { "the current project folder": ".", "here": "." }
+      }
+    },
+    "type": { "required": true, "type": "text" },
+    "add_database": {
+      "required": false,
+      "type": "boolean",
+      "default": false,
+      "language": {
+        "true": ["with a database"],
+        "false": ["without a database"]
+      }
+    }
+  }
+}
+
+This generic contract does NOT define type for you. The runnable example
+adds enum:["app"] and documents that local meaning.
+
+For executable settings.js in an ESM project:
+  export default { ...the same object... };
+
+Enable it explicitly and point PATHS.json at it. Do not maintain both JSON
+and JS as competing authorities. The loader reads only the configured one.
+
+ARRAY EQUIVALENT
+----------------
+"options": [
+  { "key": "name", "required": true, "type": "text" },
+  { "key": "type", "required": true, "type": "text" },
+  { "key": "add_database", "required": false, "type": "boolean" }
+]
+
+Use key rather than repurposing name, since name is itself a common input.
+Array order controls the prompt order only; it does not impose word order.
+
+FIELD SEMANTICS
+---------------
+required: a real Boolean, not an inferred absence rule
+ type: text | boolean | number
+ default: applied only if explicitly declared and the field is absent
+ enum: exact choices, case-sensitive values
+ role: semantic identity carried with evidence and UI metadata
+ question: exact fallback wording for missing input
+ validate: project-name | identifier | css-class | css-token | relative-directory
+ catalog: name of a current project catalog that must contain the value
+ language.prefixes: phrase that introduces a value
+ language.references: explicitly named references and their values
+ language.true/false: complete supported Boolean phrases
+
+Every field additionally accepts its exact key and capability.key.
+role does not parse prose by itself; language bindings map supported phrases
+to fields. Title/description do not become executable instructions.
+
+GRAMMAR ACTUALLY IMPLEMENTED
+---------------------------
+COMMAND := [please] VERB [a | an] [new] CAPABILITY MODIFIER* [ . | ! ]
+QUERY   := [please] can you VERB [a | an] [new] CAPABILITY MODIFIER* [ ? | . | ! ]
+
+MODIFIER := FIELD_PREFIX [=] VALUE
+          | FIELD_PREFIX [=] DECLARED_REFERENCE
+          | DECLARED_BOOLEAN_PHRASE
+
+VALUE := quoted string | one bare lexical unit
+
+Modifier order is free where the supplied field bindings are unambiguous.
+Comma / and may separate modifiers, but cannot start/end an empty clause.
+Names, types and tokens are not inferred merely because they occur somewhere.
+The head/action frame still has a defined structure. This is not arbitrary
+English and does not support multi-command sentences, generic NOT/IF/UNLESS,
+pronoun resolution, WH questions, or unbounded syntactic dependencies.
+Unsupported text cannot be dropped to recover a positive command.
+
+CLARIFICATION
+-------------
+answerText(ticket, "type app theme dark") binds explicitly named pending fields.
+answerText(ticket, "app") works when exactly one field is pending.
+answerText(ticket, "app", {stamp:"react-project", key:"type"}) uses an explicit
+return address supplied by the UI, even when other fields are pending.
+A structured Answer is {request_id, stamp, values:{...}}.
+Already bound fields cannot be replaced via clarification. Start a changed
+request instead; conflicting values do not silently overwrite one another.
+
+CATALOGS
+--------
+"tokens": { "kind": "json", "path": "tokens.json" }
+  file: { "complete": true, "values": ["--surface-main"] }
+
+"classes": { "kind": "folders", "path": "atoms", "marker": "atom.css" }
+  catalog membership means a same-named real directory with the marker file.
+  It does not prove the CSS selector is semantically correct; host stamps do that.
+
+Missing catalog / malformed catalog / missing marker => lookup-failed.
+Only complete successful inspection can establish absence.
+
+DEPENDENCY RULE
+---------------
+Under PATHS.stamps.div-stamp:
+"dependencies": [{
+  "field": "class",
+  "catalog": "classes",
+  "capability": "atom-stamp",
+  "bindings": { "name": "class" }
+}]
+
+Meaning: if the class does not exist, the project allows asking atom-stamp
+to produce it. Bind child name from parent class. The child has its own
+settings and unresolved seats; its return address is the parent class seat.
+Host write authorization still gates both child and parent.
+
+STAMP/MUTATION PROTOCOL
+-------------------
+A trusted .mjs script exports:
+  export const plan = ({ project, settings, options, catalogs, assets }) => ({
+    destination: "output/new-thing",
+    files: [{path:"thing.txt", text:"content"}]
+  });
+
+assets contains the UTF-8 contents of named supporting_files.
+project contains stable id and current root, supplied by the host.
+A binary file uses base64 instead of text.
+The worker executes no shell command. stdout must contain only the result JSON.
+Use stderr for script diagnostics. Trusted planners SHOULD have no side effects.
+The OS does not enforce that purity; run unknown code in a real sandbox instead.
+
+Plug your real stamp implementation into this boundary or replace the example
+mutation executor with your existing writer and verifier. Keep the same validated request and
+missing-input result contract; do not duplicate the language parser per stamp.

@@ -1,0 +1,5 @@
+@layer components {
+  .code-preview { block-size: 100%; min-block-size: 0; min-inline-size: 0; }
+  .code-preview__heading { padding: var(--space-sm); font: var(--type-label); }
+  .code-preview__body { min-block-size: 0; min-inline-size: 0; }
+}

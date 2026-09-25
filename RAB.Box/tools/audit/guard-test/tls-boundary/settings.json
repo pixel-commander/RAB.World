@@ -1,0 +1,72 @@
+{
+  "id": 1790000001306,
+  "name": "tls-boundary",
+  "title": "Check Authorized TLS Boundary",
+  "description": "Performs one TLS handshake to an explicit authorized host and port, reporting protocol, certificate metadata, and certificate validation state without sending application payloads.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "host",
+      "title": "Host",
+      "description": "One authorized hostname or IP address. No ranges, lists, or wildcards.",
+      "required": true
+    },
+    {
+      "type": "number",
+      "name": "port",
+      "title": "Port",
+      "description": "One TLS port from 1 to 65535.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "server_name",
+      "title": "TLS Server Name",
+      "description": "Optional SNI/hostname used for the handshake. Defaults to host when host is a name.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "authorized_target",
+      "title": "Authorized Target",
+      "description": "Confirm this target is yours or you are permitted to test.",
+      "required": true
+    },
+    {
+      "type": "boolean",
+      "name": "expect_reachable",
+      "title": "Expected Reachability",
+      "description": "Optional assertion for whether a TLS connection should be reachable.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "expect_authorized",
+      "title": "Expected Certificate Authorization",
+      "description": "Optional assertion for whether Node should validate the peer certificate.",
+      "required": false
+    },
+    {
+      "type": "number",
+      "name": "timeout_ms",
+      "title": "Timeout (ms)",
+      "description": "Optional connection timeout from 250 to 15000 milliseconds.",
+      "required": false,
+      "default": 3000
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "check",
+    "target_type": "network",
+    "data_types": [
+      "network",
+      "tls",
+      "certificate",
+      "boundary"
+    ],
+    "output": "report",
+    "authority": "read",
+    "check": "tls-boundary"
+  }
+}

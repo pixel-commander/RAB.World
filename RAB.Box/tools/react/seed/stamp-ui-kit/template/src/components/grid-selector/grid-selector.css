@@ -1,0 +1,24 @@
+@layer components {
+  .grid-selector { display: flex; flex-direction: column; gap: var(--space-sm); min-block-size: 0; overflow: auto; }
+  .grid-selector__tile { flex: none; gap: var(--space-2xs); inline-size: 100%; block-size: 4.6875rem; padding: var(--space-2xs); text-align: start; }
+  .grid-selector__mini { min-inline-size: 0; min-block-size: 0; display: grid; grid-auto-flow: row; gap: var(--space-2xs); }
+  .grid-selector__cell { min-inline-size: 0; min-block-size: 0; }
+  .grid-selector__name { font: var(--type-label); color: inherit; pointer-events: none; }
+}
+
+@layer atoms {
+  .grid-selector__cell {
+    border-width: var(--border-width);
+    border-style: dotted;
+    border-color: var(--border-strong);
+  }
+  .grid-selector__cell[data-area] {
+    border-color: var(--accent-default);
+  }
+  .grid-selector__cell[data-area='main'] {
+    border-color: var(--success-default);
+  }
+  .grid-selector__cell:is([data-area='header'], [data-area='footer']) {
+    border-color: var(--accent-secondary);
+  }
+}

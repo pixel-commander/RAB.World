@@ -1,0 +1,61 @@
+{
+  "id": 1830000000021,
+  "name": "folder-index",
+  "title": "Run audit over folder IDs",
+  "description": "Runs a declared direct-folder audit over all or selected paths in a saved folder index with bounded results and supervised time limits.",
+  "settings": [
+    {
+      "name": "project_id",
+      "type": "number",
+      "title": "Project ID",
+      "required": false
+    },
+    {
+      "name": "index_id",
+      "type": "number",
+      "title": "Folder index ID",
+      "required": true
+    },
+    {
+      "name": "tool",
+      "type": "text",
+      "title": "Direct-folder tool",
+      "required": false,
+      "default": "audit/count/folder-entries"
+    },
+    {
+      "name": "folder_paths",
+      "type": "json",
+      "title": "Selected indexed folder paths",
+      "description": "Optional JSON array, e.g. [\"src/components\", \"src/pages\"]. Exact paths relative to this index root; use \".\" for root. Omit for all indexed folders. Empty arrays are rejected. Children are not implicitly selected.",
+      "required": false
+    },
+    {
+      "name": "options",
+      "type": "json",
+      "title": "Tool options",
+      "required": false,
+      "default": {}
+    },
+    {
+      "name": "timeout_ms",
+      "type": "number",
+      "title": "Per-folder time limit (ms)",
+      "required": false,
+      "default": 10000
+    },
+    {
+      "name": "max_duration_ms",
+      "type": "number",
+      "title": "Batch time limit (ms)",
+      "required": false,
+      "default": 300000
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "execute",
+    "target_type": "folder",
+    "authority": "read"
+  }
+}

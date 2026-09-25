@@ -1,0 +1,44 @@
+{
+  "id": 1790306336499,
+  "name": "world-manifest",
+  "title": "Add World Manifest",
+  "description": "Creates an empty manifest.json in an existing folder without project or beacon requirements.",
+  "settings": [
+    {
+      "name": "folder",
+      "type": "folder",
+      "title": "Folder",
+      "description": "Absolute folder that will receive manifest.json.",
+      "required": true
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "title": "Name",
+      "description": "Defaults to the folder name.",
+      "required": false
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "title": "Title",
+      "description": "Defaults to the manifest name.",
+      "required": false
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "title": "Description",
+      "description": "Defaults to empty text.",
+      "required": false,
+      "default": ""
+    }
+  ],
+  "meta": {
+    "domain": "world",
+    "operation": "create",
+    "target_type": "manifest",
+    "output": "manifest",
+    "authority": "write"
+  }
+}

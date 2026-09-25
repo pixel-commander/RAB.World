@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "composite",
+    "description": "Uses its project template for magic-box projects and delegates other project types to their owning creation stamps. The shared project writer creates or updates the ID-keyed high-level projects manifest after registration.",
+    "reviewed_at": "2026-09-20"
+  }
+}

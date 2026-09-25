@@ -1,0 +1,5 @@
+@layer components {
+ .stateless-form.form-main { color: var(--stateless-form-color, var(--container-main-color, var(--content-default))); background: var(--stateless-form-background, var(--container-main-background, var(--surface-main))); border-radius: var(--stateless-form-border-radius, var(--radius-container)); }
+ .stateless-form .form-group-label { color: var(--stateless-form-label-color, var(--content-muted)); }
+ .stateless-form .form-group-input { color: var(--stateless-form-control-color, var(--content-default)); }
+}

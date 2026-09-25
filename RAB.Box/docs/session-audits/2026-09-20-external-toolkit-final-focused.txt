@@ -1,0 +1,34 @@
+✔ linked tools use existing catalog, inherited executor, contracts, binding and runner without importing on discovery (211.7193ms)
+✔ project override selects linked implementation, composite inherits it, explicit IDs/paths retain meaning and receipts survive save (1892.1298ms)
+✔ local project overrides stay contained and working beside linked toolkits (66.5196ms)
+✔ duplicate IDs and full paths quarantine all contenders, including the house tool (102.982ms)
+✔ derived alias collision remains ambiguous across kits, with explicit identity available (81.1197ms)
+✔ disabled/missing/malformed links are explicit, cache refresh works, and unrelated fixtures never inherit links (64.3317ms)
+✔ link writes are idempotent and duplicate canonical roots are diagnosed without double scanning (62.6198ms)
+✔ contract and template root escapes never become runnable (59.8883ms)
+✔ catalog service includes a fresh linked toolkit without initializing project memory (57.0017ms)
+✔ project-only custom_toolkit_path never leaks across A, B, no project, and A again (138.7113ms)
+✔ duplicate toolkit identities quarantine every root regardless of link order (54.2283ms)
+✔ unlink follows the same canonical root as link, and disconnected roots can be disabled (49.8942ms)
+✔ rejecting the 65th link preserves the original config bytes (50.81ms)
+✔ Box chat, search and preview honor project override; generated project stores an external toolkit path (5517.0593ms)
+✔ a child refreshing the catalog sees a newly added seed during the same runner turn (117.0183ms)
+✔ malformed external input declarations cannot become executable catalog entries (59.0402ms)
+✔ project aliases also retain the shadowed identity of an automatically derived house address (64.427ms)
+✔ house PATHS is a flat direct address book (14.0345ms)
+✔ Tool House resolves a short PATHS key by permanent id (946.8717ms)
+✔ project PATHS can hijack one house address without replacing siblings (1717.0569ms)
+✔ owner defaults, metadata variants, and explicit leaf overrides drive previews without executing tools (132.933ms)
+✔ new tools get derived shortcuts, execute with saved references, and refresh after external moves/removals (652.3117ms)
+✔ ambiguous derived shortcuts and stale explicit identities never silently choose a tool (70.0533ms)
+✔ contract references stay bounded, reject cycles, and expose invalid contract diagnostics (46.6272ms)
+✔ service catalog refresh observes changed contracts without loading a project (35.936ms)
+✔ source report consumes declared classifications and fingerprints their owner (43.9233ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8851.2029

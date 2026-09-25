@@ -1,0 +1,27 @@
+{
+  "id": 1790000001101,
+  "name": "jwt-secrets",
+  "title": "Audit Hardcoded JWT Verification Secrets",
+  "description": "Flags inline literal secrets passed directly to JWT sign or verify calls without echoing secret material.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "security",
+    "data_types": [
+      "security",
+      "jwt"
+    ],
+    "output": "report",
+    "authority": "read",
+    "target": "jwt-secrets"
+  }
+}

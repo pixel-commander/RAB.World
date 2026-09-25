@@ -1,0 +1,592 @@
+{
+  "count": 45,
+  "breakdown": {
+    "cookies": 10,
+    "italian": 20,
+    "american_comfort": 15
+  },
+  "notes": [
+    "Starter corpus/index only.",
+    "Allergen tags are coarse starter metadata and must be re-derived from actual authored ingredients before safety use.",
+    "Recipes should be authored as deterministic data objects with ingredients, quantities, units, equipment, ordered steps, timing, and references."
+  ],
+  "recipes": [
+    {
+      "id": "chocolate-chip-cookies",
+      "title": "Chocolate Chip Cookies",
+      "category": "cookie",
+      "cuisine": "American",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk",
+        "egg"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "oatmeal-raisin-cookies",
+      "title": "Oatmeal Raisin Cookies",
+      "category": "cookie",
+      "cuisine": "American",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk",
+        "egg"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "peanut-butter-cookies",
+      "title": "Peanut Butter Cookies",
+      "category": "cookie",
+      "cuisine": "American",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "peanuts",
+        "wheat",
+        "egg"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "sugar-cookies",
+      "title": "Sugar Cookies",
+      "category": "cookie",
+      "cuisine": "American",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk",
+        "egg"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "snickerdoodles",
+      "title": "Snickerdoodles",
+      "category": "cookie",
+      "cuisine": "American",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk",
+        "egg"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "double-chocolate-cookies",
+      "title": "Double Chocolate Cookies",
+      "category": "cookie",
+      "cuisine": "American",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk",
+        "egg"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "white-chocolate-macadamia-cookies",
+      "title": "White Chocolate Macadamia Cookies",
+      "category": "cookie",
+      "cuisine": "American",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk",
+        "egg",
+        "tree nuts"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "ginger-molasses-cookies",
+      "title": "Ginger Molasses Cookies",
+      "category": "cookie",
+      "cuisine": "American",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk",
+        "egg"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "shortbread-cookies",
+      "title": "Shortbread Cookies",
+      "category": "cookie",
+      "cuisine": "American",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "monster-cookies",
+      "title": "Monster Cookies",
+      "category": "cookie",
+      "cuisine": "American",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "peanuts",
+        "milk",
+        "egg"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "chicken-parmesan",
+      "title": "Chicken Parmesan",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "chicken",
+      "known_major_allergen_tags": [
+        "milk",
+        "wheat",
+        "egg"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "chicken-piccata",
+      "title": "Chicken Piccata",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "chicken",
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "chicken-marsala",
+      "title": "Chicken Marsala",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "chicken",
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "bistecca-alla-fiorentina",
+      "title": "Bistecca alla Fiorentina",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "steak",
+      "known_major_allergen_tags": [],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "beef-braciole",
+      "title": "Beef Braciole",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "beef",
+      "known_major_allergen_tags": [
+        "milk",
+        "wheat"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "bolognese",
+      "title": "Ragù Bolognese",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "beef",
+      "known_major_allergen_tags": [
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "lasagna-bolognese",
+      "title": "Lasagna Bolognese",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "beef",
+      "known_major_allergen_tags": [
+        "milk",
+        "wheat",
+        "egg"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "italian-meatballs",
+      "title": "Italian Meatballs in Marinara",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "beef",
+      "known_major_allergen_tags": [
+        "milk",
+        "wheat",
+        "egg"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "pork-scaloppine",
+      "title": "Pork Scaloppine",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "pork",
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "porchetta-style-pork-roast",
+      "title": "Porchetta-Style Pork Roast",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "pork",
+      "known_major_allergen_tags": [],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "sausage-and-peppers",
+      "title": "Italian Sausage and Peppers",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "pork",
+      "known_major_allergen_tags": [],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "fish-piccata",
+      "title": "Fish Piccata",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "fish",
+      "known_major_allergen_tags": [
+        "fish",
+        "wheat",
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "cod-puttanesca",
+      "title": "Baked Cod Puttanesca",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "fish",
+      "known_major_allergen_tags": [
+        "fish"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "linguine-clams",
+      "title": "Linguine alle Vongole",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "shellfish",
+      "known_major_allergen_tags": [
+        "wheat",
+        "crustacean shellfish"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "eggplant-parmesan",
+      "title": "Eggplant Parmesan",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "milk",
+        "wheat",
+        "egg"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "cacio-e-pepe",
+      "title": "Cacio e Pepe",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "milk",
+        "wheat"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "spaghetti-carbonara",
+      "title": "Spaghetti Carbonara",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "pork",
+      "known_major_allergen_tags": [
+        "egg",
+        "milk",
+        "wheat"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "bucatini-amatriciana",
+      "title": "Bucatini all’Amatriciana",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": "pork",
+      "known_major_allergen_tags": [
+        "milk",
+        "wheat"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "mushroom-risotto",
+      "title": "Mushroom Risotto",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "minestrone",
+      "title": "Minestrone",
+      "category": "main",
+      "cuisine": "Italian",
+      "protein": null,
+      "known_major_allergen_tags": [],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "southern-fried-chicken",
+      "title": "Southern Fried Chicken",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": "chicken",
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "chicken-pot-pie",
+      "title": "Chicken Pot Pie",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": "chicken",
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "chicken-and-dumplings",
+      "title": "Chicken and Dumplings",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": "chicken",
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "classic-meatloaf",
+      "title": "Classic Meatloaf",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": "beef",
+      "known_major_allergen_tags": [
+        "egg",
+        "wheat",
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "pot-roast",
+      "title": "Pot Roast",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": "beef",
+      "known_major_allergen_tags": [],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "beef-stew",
+      "title": "Beef Stew",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": "beef",
+      "known_major_allergen_tags": [],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "salisbury-steak",
+      "title": "Salisbury Steak",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": "steak",
+      "known_major_allergen_tags": [
+        "wheat",
+        "egg",
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "pork-chops-gravy",
+      "title": "Pork Chops with Gravy",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": "pork",
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "pulled-pork",
+      "title": "Pulled Pork",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": "pork",
+      "known_major_allergen_tags": [],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "mac-and-cheese",
+      "title": "Baked Mac and Cheese",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "milk",
+        "wheat"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "beef-chili",
+      "title": "Beef Chili",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": "beef",
+      "known_major_allergen_tags": [],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "tuna-noodle-casserole",
+      "title": "Tuna Noodle Casserole",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": "fish",
+      "known_major_allergen_tags": [
+        "fish",
+        "milk",
+        "wheat"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "new-england-fish-chowder",
+      "title": "New England Fish Chowder",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": "fish",
+      "known_major_allergen_tags": [
+        "fish",
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "biscuits-and-sausage-gravy",
+      "title": "Biscuits and Sausage Gravy",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": "pork",
+      "known_major_allergen_tags": [
+        "wheat",
+        "milk"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    },
+    {
+      "id": "grilled-cheese-tomato-soup",
+      "title": "Grilled Cheese and Tomato Soup",
+      "category": "American comfort",
+      "cuisine": "American",
+      "protein": null,
+      "known_major_allergen_tags": [
+        "milk",
+        "wheat"
+      ],
+      "status": "starter-corpus-index",
+      "notes": "Author/verify actual recipe content separately; safety authority comes from reference registry."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+WHAT THIS PACKAGE DOES NOT CLAIM
+================================
+
+1. Not a general language model or complete English parser.
+   It accepts the grammar in CONTRACTS.txt. Unknown or ambiguous language
+   stops. Your cloud/local translator may propose canonical requests instead.
+
+2. Not your production PATHS format or stamp protocol.
+   The house metadata keys came from you. The path-binding envelope, language
+   annotations and file-plan protocol are proposed adapters. Actual production
+   files were not supplied. An integration pass is still required.
+
+3. Not a security sandbox for JavaScript.
+   settings.js and stamp scripts can run code under the host's OS identity.
+   JSON settings are the safe data-only default. Trust executable modules
+   explicitly. Use OS-level containment for untrusted code.
+
+4. Not general proof of correctness.
+   The demo verifies generated file hashes and required dependency presence.
+   A byte-correct artifact can still be logically wrong. Your real behavior,
+   accessibility, business-rule and authority checks belong after this adapter.
+
+5. No atomic transaction across multiple output directories.
+   All plans are checked before mutation writes. Failures during writes can leave
+   partial artifacts. Receipts preserve the partial changes. There is no silent
+   overwrite, destructive rollback, or retry pretending the first attempt passed.
+
+6. Cooperative local filesystem assumed.
+   Symlink/junction traversal is rejected at checks and output creation is
+   exclusive, but portable Node checks do not eliminate all adversarial
+   check/use races. Another hostile process with OS access is outside this demo's
+   boundary. Isolate the workspace/permissions for production use.
+
+7. Timestamp IDs retain the user's tripwire convention.
+   New request IDs use Date.now(). A collision in one instance is an explicit
+   ID_COLLISION. They are not globally unique across processes and do not prove
+   a duplicate logical transition. Host request persistence/coordination still
+   belongs to the existing Factory. Tests inject an advancing clock deliberately.
+
+8. Runtime state is durable only when the host saves the ticket/receipt.
+   prepare/resume/answer state is serializable and fresh workers can resume it.
+   CLI --ticket-out / --result-out write explicit user-selected files with wx.
+   In-process completed/running sets are not a distributed exactly-once ledger.
+   Create-only destination checks provide additional duplicate-write protection.
+
+9. One frame per reserved capability per request; max depth 8.
+   Cycles and repeated capability frames are rejected. Bigger workflows need
+   explicit frame IDs in the host, not guessed aliases or hidden recursion.
+
+10. JavaScript settings run afresh; support files must be declared.
+    Direct settings, script and supporting assets are fingerprinted. Imported
+    transitive dependencies are not automatically scanned. Custom code that
+    reads the clock/network/randomness can invalidate deterministic assumptions.
+
+11. No live cloud/LLM integration, background agent, or filesystem watcher.
+    Three entrances converge through the canonical request API. Your existing
+    models and world-view supply those integrations. PATHS.json is re-read on
+    explicit calls. No polling. New stamp folders need a PATHS binding from
+    your existing stamp-maker/indexer.
+
+12. React fixture is not the whole RAB house.
+    Its materialization was tested. Its npm dependency install/build and browser
+    rendering could not be exercised in this environment (network unavailable).
+    Generated versions are pinned to documented packages; see SOURCES.txt.
+    First install needs internet or a prepared local cache. No packages are
+    installed automatically during the Magic Box demo.
+
+13. Passing the supplied tests is finite evidence, not 100% correctness.
+    Add your house's held-out requests, failure cases and semantic verification.
+    Canonical JSON that is well typed can still misstate the human's intention.

@@ -1,0 +1,33 @@
+v0.1 -> v0.2
+============
+Original v0.1 is unchanged. Its 120-test suite was re-run while inspecting it.
+It was a fixed dry-run parser and does not implement the requested stamp runtime.
+
+v0.2 is a separate module with a different, explicit public API:
+  createMagicBox({projectRoot, ...})
+
+Added:
+  current-project PATHS.json resolution
+  current stamp settings, object or array options
+  scoped phrase/field bindings
+  required-seat questions from the selected stamp
+  saved request and return address
+  typed and textual follow-up replies
+  dependency creation and parent resume
+  canonical JSON entrance for cloud/local models
+  trusted stamp planner + bounded create-only mutation executor
+  observable receipts
+  actual two-project execution demo
+
+Not carried forward as executable features:
+  v0.1's broad seed vocabulary, pronoun rules, desire statements, WHAT queries
+  and general semantic classification experiments.
+
+Why: these are not prerequisites for the requested settings-guided command
+slice. Unsupported forms stop, or can be handled by your external model
+translator into the canonical request. No claim of feature-for-feature
+parser replacement is being made. Keep v0.1 for those separate experiments.
+
+Project-local code is a fixture. Integrate ONE real stamp first.
+Your existing stamp-maker remains the owner of generating real stamps and
+updating discovery. Do not build another stamp-maker to adopt this package.

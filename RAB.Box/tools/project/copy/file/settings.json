@@ -1,0 +1,40 @@
+{
+  "id": 1800000000044,
+  "name": "file",
+  "title": "Copy File",
+  "description": "Copies a project file into another project folder without overwriting an existing destination.",
+  "settings": [
+    {
+      "type": "file",
+      "name": "file",
+      "title": "File",
+      "description": "Optional file/path source.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "component",
+      "title": "Component",
+      "description": "Optional component name source.",
+      "required": false
+    },
+    {
+      "type": "folder",
+      "name": "destination",
+      "title": "Destination Folder",
+      "description": "Project-relative destination folder.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "project",
+    "operation": "copy",
+    "target_type": "file",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "edit-receipt",
+    "authority": "write"
+  }
+}

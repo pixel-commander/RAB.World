@@ -1,0 +1,70 @@
+MAGIC BOX — PROJECT-LOCAL STAMPS v0.2
+===================================
+
+THIS IS THE NEW PACKAGE. v0.1 IS UNCHANGED.
+
+1. Extract this ZIP.
+2. Use Node.js 22 or newer.
+3. Double-click RUN_DEMO.cmd on Windows.
+   Or, in a terminal here, run:
+
+       node demo.mjs
+
+No npm install. No API key. No cloud.
+
+The demo works in a NEW temporary workspace, not your real project.
+It creates a React starter, runs atom-stamp for a missing class,
+then resumes the original div request. It prints the workspace path
+and saves every stage and receipt there so you can inspect them.
+
+YOUR EXAMPLE
+------------
+stamp a new react project named "test-project" into the current project folder
+
+Resolved from text:
+  capability = react-project
+  name = test-project
+  location = current project root
+
+The stamp settings require type too, so it asks for type.
+The demo defines type=app. This definition is an example, not an
+assumption about your production type field.
+
+Project B asks for theme too. Same engine, different settings.
+
+TRY A REQUEST WITHOUT WRITING
+----------------------------
+node cli.mjs --project examples/project-a --text "make div with class x" --ask
+
+To permit actual execution, explicitly add --execute.
+Only do that for a project whose scripts you trust.
+
+OPTIONS
+-------
+Keep your options OBJECT. It works.
+Arrays also work with an explicit key per item.
+
+WHAT TO OPEN
+------------
+examples/project-a/PATHS.json
+examples/project-a/stamps/ReactProject/settings.json
+
+Settings preserve:
+  id, name, title, description, date_added, options
+
+JSON types are quoted: "text", "boolean".
+The sample explicitly ADDS location, because your sentence and stamp
+need it but your latest options example did not declare it.
+
+READ THIS LIMIT
+---------------
+This is a bounded, settings-guided language resolver, not a general LLM.
+Adding descriptions alone does not install new English understanding.
+Unknown input, ambiguity and conflicts stop; they are not silently dropped.
+
+The generated React starter needs npm install before its browser app runs.
+That dependency install/build was NOT run in the preparation environment.
+The harness, clarification flow, script execution and file receipts WERE tested.
+
+Use RUN_TESTS.cmd for the actual test suite.
+README.txt and docs/CONTRACTS.txt describe the integration seam.

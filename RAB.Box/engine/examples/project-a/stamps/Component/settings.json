@@ -1,0 +1,33 @@
+{
+  "id": 1789380000004,
+  "name": "component-stamp",
+  "title": "Create a component",
+  "description": "Creates a TSX component that uses a registered class.",
+  "date_added": 1789380000000,
+  "options": {
+    "name": {
+      "required": true,
+      "type": "text",
+      "role": "artifact-name",
+      "validate": "identifier",
+      "language": {
+        "prefixes": [
+          "named",
+          "called"
+        ]
+      }
+    },
+    "class": {
+      "required": true,
+      "type": "text",
+      "role": "class-name",
+      "validate": "css-class",
+      "language": {
+        "prefixes": [
+          "with class",
+          "class"
+        ]
+      }
+    }
+  }
+}

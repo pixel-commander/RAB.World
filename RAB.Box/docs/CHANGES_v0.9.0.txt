@@ -1,0 +1,75 @@
+RRAABBIITT MAGIC BOX v0.9.0 — CONVERGENCE REFACTOR
+===================================================
+Date: 2026-09-17
+
+GOAL
+----
+Make the physical source tree match the architecture already proven by v0.8.5
+without changing the core execution laws.
+
+REMOVED FROM LIVE ARCHITECTURE
+------------------------------
+- sensors/
+- hands/
+- bridge/sensors.mjs
+- Sensor execution/ranking branches in planners/session runtime
+- Sensor references in the language audit
+- Sensor/Hand terminology in live UI/runtime documentation
+- engine/src/hand.mjs name
+
+MOVED / RENAMED
+---------------
+- useful project intent interpreter:
+    hands/project-intent/hand.mjs
+  -> bridge/project-intent.mjs
+
+- engine mutation planning:
+    engine/src/hand.mjs
+  -> engine/src/mutation-plan.mjs
+
+PRESERVED AS NORMAL TOOLS
+-------------------------
+- useful legacy Stamp visibility checking is now:
+    PATHS: check-stamp-visibility
+    path:  audit/check/stamps/visibility
+
+AUDIT EXECUTION
+---------------
+Audit is now an operator/session intent that resolves ordinary READ Tools.
+It is not an invokable species.
+
+A loaded project is the normal audit folder unless the Turn supplies another
+lawful target. Audit results return through ordinary Tool shapes/traces.
+
+NO COMPATIBILITY TAXONOMY
+-------------------------
+There is no alias table mapping Sensor -> Tool or Hand -> Tool. Dead legacy
+species were removed; useful behavior was moved to its current architectural
+home.
+
+CORE LAWS NOT CHANGED
+---------------------
+- stable ID identity
+- path semantic position
+- flat PATHS / deep House
+- Stamp structural subtype law
+- seat precedence
+- runner-owned continuation
+- exact/typed language authority
+- same-Step Human Resolver behavior
+- verification/persistence laws
+- failure quarantine
+
+DEFERRED
+--------
+Large mechanical implementation deduplication is intentionally NOT part of this
+release. It can be analyzed/outsourced independently after the architecture is
+frozen.
+
+VERIFICATION
+------------
+House: 212 capabilities / 15 Stamps / 197 Tools / 0 unavailable
+Node: 363 / 363 PASS
+Language audit: PASS
+Main browser: 18 checks / 0 JS errors
+Turn Checker: 3 checks / 0 JS errors

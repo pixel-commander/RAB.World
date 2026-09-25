@@ -1,0 +1,33 @@
+UI TOOLKIT CONTRACT
+
+Use semantic tool names without stamp- prefixes.
+Paths beneath tools/ supply tags: project type, optional subject, action,
+optional qualifier, and the house type.
+
+Preserve the exact house keys container-atom, action-atom, effect-atom,
+and grid-atom across project types.
+add/new creates an artifact. add/sub/component creates a component beneath
+its parent's folder. insert/component places an existing component in markup.
+
+Root settings use id, name, title, description, settings, and meta.kind=toolkit.
+Each implemented public tool owns settings.json with the same house keys and
+an input array. Its name matches its leaf folder. Keep path and metadata meaning
+consistent. Reserve permanent numeric identities through the shared ID owner.
+Preserve identity when moving a tool.
+
+A tool owns leaf-name.mjs or inherits the nearest parent-name.mjs executor.
+run receives options, context, tool, root, toolsRoot, and helpers.
+Public child tools run through helpers.runTool. Private shared helpers have
+one implementation owner. Declare actual output in contract.json.
+
+Keep placeholder folders empty until their behavior is implemented.
+Template-producing tools own template/. Root README files describe contracts
+and workflows; do not maintain copied inventories or counts there.
+
+Components own structure; atoms own skin using shared tokens. The shared grid
+owner supplies canonical topologies and area names. Preserve valid false,
+zero, and empty-string inputs. Fill absent keys from the owner's defaults.
+
+Write generated source to the selected source destination. Box records belong
+under the executing user's home .rab. Reading a server share does not move
+execution to the server. Preserve existing files and report partial writes.

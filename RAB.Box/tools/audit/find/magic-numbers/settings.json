@@ -1,0 +1,30 @@
+{
+  "id": 1790000000971,
+  "name": "magic-numbers",
+  "title": "Find Magic Number Candidates",
+  "description": "Heuristically finds numeric literals of two or more digits outside simple constant declarations.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "number-literal",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "syntax",
+    "config": {
+      "type": "magic-numbers"
+    }
+  }
+}

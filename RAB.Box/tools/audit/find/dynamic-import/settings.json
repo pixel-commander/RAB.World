@@ -1,0 +1,30 @@
+{
+  "id": 1790000000962,
+  "name": "dynamic-import",
+  "title": "Find Dynamic Import/Require Candidates",
+  "description": "Flags require()/import() calls whose first argument is not an obvious string literal.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "dynamic-import",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "syntax",
+    "config": {
+      "type": "dynamic-import"
+    }
+  }
+}

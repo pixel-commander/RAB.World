@@ -1,0 +1,1055 @@
+{
+  "version": "0.9.3",
+  "stamps": {
+    "new-stamp": {
+      "id": 1790000000103,
+      "path": "base/stamp-new-stamp"
+    },
+    "new-tool": {
+      "id": 1790000000206,
+      "path": "base/stamp-new-tool"
+    },
+    "new-key-phrase": {
+      "id": 1790000000207,
+      "path": "base/stamp-new-key-phrase"
+    },
+    "new-project": {
+      "id": 1790000000205,
+      "path": "base/stamp-new-project"
+    },
+    "new-react-project": {
+      "id": 1790000000300,
+      "path": "react/add/new/project"
+    },
+    "new-html-project": {
+      "id": 1790000000301,
+      "path": "html/stamp-new-project"
+    },
+    "new-audit-project": {
+      "id": 1790000000302,
+      "path": "audit/stamp-new-project"
+    },
+    "add-atom": {
+      "id": 1790000000501,
+      "path": "css/stamp-new-atom"
+    },
+    "add-component": {
+      "id": 1790000000401,
+      "path": "react/add/new/component"
+    },
+    "add-sub-component": {
+      "id": 1790000000402,
+      "path": "react/add/sub/component"
+    },
+    "add-state-hook": {
+      "id": 1790000000830,
+      "path": "react/hooks/state-hooks/stamp-new"
+    },
+    "add-use-effect": {
+      "id": 1790000000831,
+      "path": "react/hooks/use-effect/stamp-new"
+    },
+    "add-grid": {
+      "id": 1790000000930,
+      "path": "html/add/grid/stamp-new"
+    },
+    "grid-css": {
+      "id": 1790000000931,
+      "path": "css/grid/stamp-install"
+    },
+    "new-form-validator": {
+      "id": 1790000001520,
+      "path": "base/form/stamp-validator"
+    },
+    "new-page": {
+      "id": 1830000000001,
+      "path": "react/add/new/page"
+    },
+    "new-dashboard": {
+      "id": 1830000000006,
+      "path": "react/add/new/dashboard"
+    },
+    "new-navigation": {
+      "id": 1789877167204,
+      "path": "react/add/new/navigation"
+    },
+    "add-container-atom": {
+      "id": 1790031603502,
+      "path": "react/css/add/new/container-atom"
+    },
+    "add-action-atom": {
+      "id": 1790031603507,
+      "path": "react/css/add/new/action-atom"
+    },
+    "add-effect-atom": {
+      "id": 1790031603525,
+      "path": "react/css/add/new/effect-atom"
+    },
+    "add-grid-atom": {
+      "id": 1790031603528,
+      "path": "react/css/add/new/grid-atom"
+    }
+  },
+  "tools": {
+    "check-tool": {
+      "id": 1790000000210,
+      "path": "base/check-tool"
+    },
+    "determine-script-type": {
+      "id": 1790000000801,
+      "path": "base/determine/script-type"
+    },
+    "find-project": {
+      "id": 1790000000202,
+      "path": "base/find-project"
+    },
+    "find-tool": {
+      "id": 1790000000102,
+      "path": "base/find-tool"
+    },
+    "list-projects": {
+      "id": 1790000000201,
+      "path": "base/list-projects"
+    },
+    "load-project": {
+      "id": 1790000000203,
+      "path": "base/load-project"
+    },
+    "re-phrase-check": {
+      "id": 1790000000101,
+      "path": "base/re-phrase-check"
+    },
+    "view-chat-history": {
+      "id": 1790000000204,
+      "path": "base/view-chat-history"
+    },
+    "count-file-types": {
+      "id": 1790000000712,
+      "path": "audit/count-file-types"
+    },
+    "find-comments": {
+      "id": 1790000000710,
+      "path": "audit/find-comments"
+    },
+    "find-files": {
+      "id": 1790000000701,
+      "path": "audit/find-files"
+    },
+    "find-imports": {
+      "id": 1790000000711,
+      "path": "audit/find-imports"
+    },
+    "count-state-hooks": {
+      "id": 1790000000810,
+      "path": "react/count/hooks/state-hooks"
+    },
+    "count-use-effect": {
+      "id": 1790000000811,
+      "path": "react/count/hooks/use-effect"
+    },
+    "find-state-hooks": {
+      "id": 1790000000820,
+      "path": "react/find/hooks/state-hooks"
+    },
+    "find-use-effect": {
+      "id": 1790000000821,
+      "path": "react/find/hooks/use-effect"
+    },
+    "find-hook": {
+      "id": 1790000000601,
+      "path": "react/find-hook"
+    },
+    "find-hooks": {
+      "id": 1790000000602,
+      "path": "react/find/hooks"
+    },
+    "count-hooks": {
+      "id": 1790000000812,
+      "path": "react/count/hooks"
+    },
+    "count-components": {
+      "id": 1790000000813,
+      "path": "react/count/components"
+    },
+    "count-files": {
+      "id": 1790000000713,
+      "path": "audit/count/files"
+    },
+    "find-file": {
+      "id": 1790000000910,
+      "path": "base/find/file"
+    },
+    "find-folder": {
+      "id": 1790000000911,
+      "path": "base/find/folder"
+    },
+    "add-project-path": {
+      "id": 1790000000920,
+      "path": "project/add/paths"
+    },
+    "remove-project-path": {
+      "id": 1790000000921,
+      "path": "project/remove/paths"
+    },
+    "import-css": {
+      "id": 1790000000932,
+      "path": "css/import/file"
+    },
+    "find-todos": {
+      "id": 1790000000933,
+      "path": "audit/find/todos"
+    },
+    "find-fixmes": {
+      "id": 1790000000934,
+      "path": "audit/find/fixmes"
+    },
+    "find-console-calls": {
+      "id": 1790000000935,
+      "path": "audit/find/console-calls"
+    },
+    "find-debugger-statements": {
+      "id": 1790000000936,
+      "path": "audit/find/debugger-statements"
+    },
+    "find-ts-ignore": {
+      "id": 1790000000937,
+      "path": "audit/find/ts-ignore"
+    },
+    "find-ts-nocheck": {
+      "id": 1790000000938,
+      "path": "audit/find/ts-nocheck"
+    },
+    "find-eslint-disable": {
+      "id": 1790000000939,
+      "path": "audit/find/eslint-disable"
+    },
+    "find-dangerously-set-inner-html": {
+      "id": 1790000000940,
+      "path": "audit/find/dangerously-set-inner-html"
+    },
+    "find-inline-styles": {
+      "id": 1790000000941,
+      "path": "audit/find/inline-styles"
+    },
+    "find-css-important": {
+      "id": 1790000000942,
+      "path": "audit/find/css-important"
+    },
+    "find-z-index": {
+      "id": 1790000000943,
+      "path": "audit/find/z-index"
+    },
+    "find-hardcoded-urls": {
+      "id": 1790000000944,
+      "path": "audit/find/hardcoded-urls"
+    },
+    "find-environment-usage": {
+      "id": 1790000000945,
+      "path": "audit/find/environment-usage"
+    },
+    "find-local-storage": {
+      "id": 1790000000946,
+      "path": "audit/find/local-storage"
+    },
+    "find-session-storage": {
+      "id": 1790000000947,
+      "path": "audit/find/session-storage"
+    },
+    "find-fetch-calls": {
+      "id": 1790000000948,
+      "path": "audit/find/fetch-calls"
+    },
+    "find-hardcoded-colors": {
+      "id": 1790000000949,
+      "path": "audit/find/hardcoded-colors"
+    },
+    "find-event-listeners": {
+      "id": 1790000000950,
+      "path": "audit/find/event-listeners"
+    },
+    "find-set-timeout": {
+      "id": 1790000000951,
+      "path": "audit/find/set-timeout"
+    },
+    "find-set-interval": {
+      "id": 1790000000952,
+      "path": "audit/find/set-interval"
+    },
+    "find-math-random": {
+      "id": 1790000000953,
+      "path": "audit/find/math-random"
+    },
+    "find-date-now": {
+      "id": 1790000000954,
+      "path": "audit/find/date-now"
+    },
+    "find-var-declarations": {
+      "id": 1790000000955,
+      "path": "audit/find/var-declarations"
+    },
+    "find-commented-code": {
+      "id": 1790000000956,
+      "path": "audit/find/commented-code"
+    },
+    "find-empty-catch": {
+      "id": 1790000000957,
+      "path": "audit/find/empty-catch"
+    },
+    "find-swallowed-errors": {
+      "id": 1790000000958,
+      "path": "audit/find/swallowed-errors"
+    },
+    "find-eval-usage": {
+      "id": 1790000000959,
+      "path": "audit/find/eval-usage"
+    },
+    "find-typescript-any": {
+      "id": 1790000000960,
+      "path": "audit/find/typescript-any"
+    },
+    "find-process-exit": {
+      "id": 1790000000961,
+      "path": "audit/find/process-exit"
+    },
+    "find-dynamic-import": {
+      "id": 1790000000962,
+      "path": "audit/find/dynamic-import"
+    },
+    "find-inner-html": {
+      "id": 1790000000963,
+      "path": "audit/find/inner-html"
+    },
+    "find-weak-crypto": {
+      "id": 1790000000964,
+      "path": "audit/find/weak-crypto"
+    },
+    "find-cors-wildcard": {
+      "id": 1790000000965,
+      "path": "audit/find/cors-wildcard"
+    },
+    "find-floating-promises": {
+      "id": 1790000000966,
+      "path": "audit/find/floating-promises"
+    },
+    "find-multiple-defaults": {
+      "id": 1790000000967,
+      "path": "audit/find/multiple-defaults"
+    },
+    "find-shadowed-globals": {
+      "id": 1790000000968,
+      "path": "audit/find/shadowed-globals"
+    },
+    "find-missing-returns": {
+      "id": 1790000000969,
+      "path": "audit/find/missing-returns"
+    },
+    "find-loose-equality": {
+      "id": 1790000000970,
+      "path": "audit/find/loose-equality"
+    },
+    "find-magic-numbers": {
+      "id": 1790000000971,
+      "path": "audit/find/magic-numbers"
+    },
+    "find-large-files": {
+      "id": 1790000000972,
+      "path": "audit/find/large-files"
+    },
+    "find-long-lines": {
+      "id": 1790000000973,
+      "path": "audit/find/long-lines"
+    },
+    "find-deep-nesting": {
+      "id": 1790000000974,
+      "path": "audit/find/deep-nesting"
+    },
+    "find-conditional-operator-density": {
+      "id": 1790000000975,
+      "path": "audit/find/conditional-operator-density"
+    },
+    "find-huge-functions": {
+      "id": 1790000000976,
+      "path": "audit/find/huge-functions"
+    },
+    "find-barrel-exports": {
+      "id": 1790000000977,
+      "path": "audit/find/barrel-exports"
+    },
+    "find-theme-tokens": {
+      "id": 1790000000978,
+      "path": "audit/find/theme-tokens"
+    },
+    "find-theme-variables": {
+      "id": 1790000000979,
+      "path": "audit/find/theme-variables"
+    },
+    "find-class-names": {
+      "id": 1790000000980,
+      "path": "audit/find/class-names"
+    },
+    "find-class-definitions": {
+      "id": 1790000000981,
+      "path": "audit/find/class-definitions"
+    },
+    "find-component-definitions": {
+      "id": 1790000000982,
+      "path": "audit/find/component-definitions"
+    },
+    "find-component-usage": {
+      "id": 1790000000983,
+      "path": "audit/find/component-usage"
+    },
+    "count-lines": {
+      "id": 1790000000984,
+      "path": "audit/count/lines"
+    },
+    "count-class-usage": {
+      "id": 1790000000985,
+      "path": "audit/count/class-usage"
+    },
+    "count-component-usage": {
+      "id": 1790000000986,
+      "path": "audit/count/component-usage"
+    },
+    "count-theme-token-usage": {
+      "id": 1790000000987,
+      "path": "audit/count/theme-token-usage"
+    },
+    "inspect-theme": {
+      "id": 1790000000988,
+      "path": "audit/inspect/theme"
+    },
+    "add-class": {
+      "id": 1790000000989,
+      "path": "react/add/class"
+    },
+    "change-class": {
+      "id": 1790000000990,
+      "path": "react/change/class"
+    },
+    "remove-class": {
+      "id": 1790000000991,
+      "path": "react/remove/class"
+    },
+    "add-element": {
+      "id": 1790000000992,
+      "path": "react/add/element"
+    },
+    "check-http-boundaries": {
+      "id": 1790000000993,
+      "path": "security/check/http-boundaries"
+    },
+    "check-project-override": {
+      "id": 1790000000994,
+      "path": "security/check/project-override"
+    },
+    "check-paths-registry": {
+      "id": 1790000000995,
+      "path": "security/check/paths-registry"
+    },
+    "check-control-plane-language": {
+      "id": 1790000000996,
+      "path": "security/check/control-plane-language"
+    },
+    "check-workbench-security": {
+      "id": 1790000000997,
+      "path": "security/check/workbench"
+    },
+    "move-tool": {
+      "id": 1790000000998,
+      "path": "base/move/tool"
+    },
+    "move-stamp": {
+      "id": 1790000000999,
+      "path": "base/move/stamp"
+    },
+    "add-attribute": {
+      "id": 1800000000000,
+      "path": "react/add/attribute"
+    },
+    "change-attribute": {
+      "id": 1800000000001,
+      "path": "react/change/attribute"
+    },
+    "remove-attribute": {
+      "id": 1800000000002,
+      "path": "react/remove/attribute"
+    },
+    "add-data-area": {
+      "id": 1800000000003,
+      "path": "react/add/data-area"
+    },
+    "change-data-area": {
+      "id": 1800000000004,
+      "path": "react/change/data-area"
+    },
+    "remove-data-area": {
+      "id": 1800000000005,
+      "path": "react/remove/data-area"
+    },
+    "remove-element": {
+      "id": 1800000000006,
+      "path": "react/remove/element"
+    },
+    "replace-element": {
+      "id": 1800000000007,
+      "path": "react/replace/element"
+    },
+    "wrap-element": {
+      "id": 1800000000008,
+      "path": "react/wrap/element"
+    },
+    "move-element": {
+      "id": 1800000000009,
+      "path": "react/move/element"
+    },
+    "find-file-write-sinks": {
+      "id": 1800000000010,
+      "path": "audit/find/file-write-sinks"
+    },
+    "find-user-filename-usage": {
+      "id": 1800000000011,
+      "path": "audit/find/user-filename-usage"
+    },
+    "find-formdata-file-handling": {
+      "id": 1800000000012,
+      "path": "audit/find/formdata-file-handling"
+    },
+    "find-executable-file-writes": {
+      "id": 1800000000013,
+      "path": "audit/find/executable-file-writes"
+    },
+    "find-svg-upload-handling": {
+      "id": 1800000000014,
+      "path": "audit/find/svg-upload-handling"
+    },
+    "find-public-upload-serving": {
+      "id": 1800000000015,
+      "path": "audit/find/public-upload-serving"
+    },
+    "find-generated-directory-usage": {
+      "id": 1800000000016,
+      "path": "audit/find/generated-directory-usage"
+    },
+    "find-generated-provenance-markers": {
+      "id": 1800000000017,
+      "path": "audit/find/generated-provenance-markers"
+    },
+    "find-path-input-joins": {
+      "id": 1800000000018,
+      "path": "audit/find/path-input-joins"
+    },
+    "find-fts5-match-queries": {
+      "id": 1800000000019,
+      "path": "audit/find/fts5-match-queries"
+    },
+    "find-fts5-raw-match-concatenation": {
+      "id": 1800000000020,
+      "path": "audit/find/fts5-raw-match-concatenation"
+    },
+    "find-sqlite-open": {
+      "id": 1800000000021,
+      "path": "audit/find/sqlite-open"
+    },
+    "find-sqlite-extension-loading": {
+      "id": 1800000000022,
+      "path": "audit/find/sqlite-extension-loading"
+    },
+    "find-mysql-query-calls": {
+      "id": 1800000000023,
+      "path": "audit/find/mysql-query-calls"
+    },
+    "find-sql-string-interpolation": {
+      "id": 1800000000024,
+      "path": "audit/find/sql-string-interpolation"
+    },
+    "find-child-process-exec": {
+      "id": 1800000000025,
+      "path": "audit/find/child-process-exec"
+    },
+    "find-child-process-spawn": {
+      "id": 1800000000026,
+      "path": "audit/find/child-process-spawn"
+    },
+    "find-shell-true": {
+      "id": 1800000000027,
+      "path": "audit/find/shell-true"
+    },
+    "find-command-string-composition": {
+      "id": 1800000000028,
+      "path": "audit/find/command-string-composition"
+    },
+    "find-wildcard-bindings": {
+      "id": 1800000000029,
+      "path": "audit/find/wildcard-bindings"
+    },
+    "find-lan-addresses": {
+      "id": 1800000000030,
+      "path": "audit/find/lan-addresses"
+    },
+    "find-docker-socket-mounts": {
+      "id": 1800000000031,
+      "path": "audit/find/docker-socket-mounts"
+    },
+    "find-privileged-containers": {
+      "id": 1800000000032,
+      "path": "audit/find/privileged-containers"
+    },
+    "find-host-network-mode": {
+      "id": 1800000000033,
+      "path": "audit/find/host-network-mode"
+    },
+    "find-root-container-user": {
+      "id": 1800000000034,
+      "path": "audit/find/root-container-user"
+    },
+    "find-database-port-exposure": {
+      "id": 1800000000035,
+      "path": "audit/find/database-port-exposure"
+    },
+    "find-cleartext-local-protocols": {
+      "id": 1800000000036,
+      "path": "audit/find/cleartext-local-protocols"
+    },
+    "find-admin-routes": {
+      "id": 1800000000037,
+      "path": "audit/find/admin-routes"
+    },
+    "inspect-generated-code": {
+      "id": 1800000000038,
+      "path": "audit/inspect/generated-code"
+    },
+    "inspect-security-surface": {
+      "id": 1800000000039,
+      "path": "audit/inspect/security-surface"
+    },
+    "check-control-plane-move": {
+      "id": 1800000000040,
+      "path": "security/check/control-plane-move"
+    },
+    "check-dom-write-boundaries": {
+      "id": 1800000000041,
+      "path": "security/check/dom-write-boundaries"
+    },
+    "check-local-network": {
+      "id": 1800000000042,
+      "path": "security/check/local-network"
+    },
+    "check-generated-files": {
+      "id": 1800000000043,
+      "path": "audit/check/generated-files"
+    },
+    "inspect-express-listen": {
+      "id": 1790000001001,
+      "path": "audit/network/express-listen"
+    },
+    "inspect-node-http": {
+      "id": 1790000001002,
+      "path": "audit/network/node-http"
+    },
+    "inspect-ws-servers": {
+      "id": 1790000001003,
+      "path": "audit/network/ws-servers"
+    },
+    "inspect-docker-ports": {
+      "id": 1790000001004,
+      "path": "audit/network/docker-ports"
+    },
+    "inspect-interface-bindings": {
+      "id": 1790000001005,
+      "path": "audit/network/interface-bindings"
+    },
+    "inspect-unencrypted-protocols": {
+      "id": 1790000001006,
+      "path": "audit/network/unencrypted-protocols"
+    },
+    "inspect-dev-cors-policies": {
+      "id": 1790000001007,
+      "path": "audit/network/dev-cors-policies"
+    },
+    "inspect-exposed-admin-routes": {
+      "id": 1790000001008,
+      "path": "audit/network/exposed-admin-routes"
+    },
+    "inspect-jwt-secrets": {
+      "id": 1790000001101,
+      "path": "audit/security/jwt-secrets"
+    },
+    "inspect-regex-dos": {
+      "id": 1790000001102,
+      "path": "audit/security/regex-dos"
+    },
+    "inspect-unsecure-tls": {
+      "id": 1790000001103,
+      "path": "audit/security/unsecure-tls"
+    },
+    "inspect-sql-injection": {
+      "id": 1790000001104,
+      "path": "audit/security/sql-injection"
+    },
+    "inspect-shell-spawns": {
+      "id": 1790000001105,
+      "path": "audit/security/shell-spawns"
+    },
+    "inspect-private-keys": {
+      "id": 1790000001106,
+      "path": "audit/security/private-keys"
+    },
+    "inspect-cookies-unsecure": {
+      "id": 1790000001107,
+      "path": "audit/security/cookies-unsecure"
+    },
+    "inspect-prototype-pollution": {
+      "id": 1790000001108,
+      "path": "audit/security/prototype-pollution"
+    },
+    "inspect-exposed-sourcemaps": {
+      "id": 1790000001201,
+      "path": "audit/hosting/exposed-sourcemaps"
+    },
+    "inspect-lockfile-integrity": {
+      "id": 1790000001202,
+      "path": "audit/hosting/lockfile-integrity"
+    },
+    "inspect-sensitive-manifests": {
+      "id": 1790000001203,
+      "path": "audit/hosting/sensitive-manifests"
+    },
+    "inspect-debug-endpoints": {
+      "id": 1790000001204,
+      "path": "audit/hosting/debug-endpoints"
+    },
+    "inspect-unminified-bundles": {
+      "id": 1790000001205,
+      "path": "audit/hosting/unminified-bundles"
+    },
+    "inspect-content-security-policy": {
+      "id": 1790000001206,
+      "path": "audit/hosting/content-security-policy"
+    },
+    "check-guard-all": {
+      "id": 1790000001300,
+      "path": "audit/guard-test/all"
+    },
+    "check-guard-network": {
+      "id": 1790000001301,
+      "path": "audit/guard-test/network"
+    },
+    "check-guard-security": {
+      "id": 1790000001302,
+      "path": "audit/guard-test/security"
+    },
+    "check-guard-hosting": {
+      "id": 1790000001303,
+      "path": "audit/guard-test/hosting"
+    },
+    "check-tcp-reachability": {
+      "id": 1790000001304,
+      "path": "audit/guard-test/tcp-reachability"
+    },
+    "check-http-boundary": {
+      "id": 1790000001305,
+      "path": "audit/guard-test/http-boundary"
+    },
+    "check-tls-boundary": {
+      "id": 1790000001306,
+      "path": "audit/guard-test/tls-boundary"
+    },
+    "check-brain-access": {
+      "id": 1790000001307,
+      "path": "audit/guard-test/brain-access"
+    },
+    "review-state-ownership": {
+      "id": 1790000001401,
+      "path": "audit/code-review/state-ownership"
+    },
+    "review-conventions": {
+      "id": 1790000001402,
+      "path": "audit/code-review/conventions"
+    },
+    "review-prop-renames": {
+      "id": 1790000001403,
+      "path": "audit/code-review/prop-renames"
+    },
+    "review-bag-guards": {
+      "id": 1790000001404,
+      "path": "audit/code-review/bag-guards"
+    },
+    "review-house-key": {
+      "id": 1790000001405,
+      "path": "audit/code-review/house-key"
+    },
+    "review-css-states": {
+      "id": 1790000001406,
+      "path": "audit/code-review/css-states"
+    },
+    "review-css-tokens": {
+      "id": 1790000001407,
+      "path": "audit/code-review/css-tokens"
+    },
+    "review-grid-continuity": {
+      "id": 1790000001408,
+      "path": "audit/code-review/grid-continuity"
+    },
+    "review-form-contract": {
+      "id": 1790000001511,
+      "path": "audit/code-review/form-contract"
+    },
+    "review-dependency-topology": {
+      "id": 1790000001512,
+      "path": "audit/code-review/dependency-topology"
+    },
+    "check-html-standards": {
+      "id": 1790000001501,
+      "path": "audit/standards/html"
+    },
+    "check-css-standards": {
+      "id": 1790000001502,
+      "path": "audit/standards/css"
+    },
+    "check-svg-standards": {
+      "id": 1790000001503,
+      "path": "audit/standards/svg"
+    },
+    "check-reference-standards": {
+      "id": 1790000001504,
+      "path": "audit/standards/references"
+    },
+    "patch-managed-block": {
+      "id": 1790000001510,
+      "path": "code/patch/managed-block"
+    },
+    "add-atom-style": {
+      "id": 1790000001411,
+      "path": "css/add/style/atom"
+    },
+    "add-class-style": {
+      "id": 1790000001412,
+      "path": "css/add/style/class"
+    },
+    "add-atom-state": {
+      "id": 1790000001413,
+      "path": "css/add/state/atom"
+    },
+    "add-class-state": {
+      "id": 1790000001414,
+      "path": "css/add/state/class"
+    },
+    "copy-file": {
+      "id": 1800000000044,
+      "path": "project/copy/file"
+    },
+    "copy-component": {
+      "id": 1800000000045,
+      "path": "project/copy/component"
+    },
+    "move-file": {
+      "id": 1800000000046,
+      "path": "project/move/file"
+    },
+    "move-component": {
+      "id": 1800000000047,
+      "path": "project/move/component"
+    },
+    "rename-file": {
+      "id": 1800000000048,
+      "path": "project/rename/file"
+    },
+    "rename-component": {
+      "id": 1800000000049,
+      "path": "project/rename/component"
+    },
+    "save-as-file": {
+      "id": 1800000000050,
+      "path": "project/save/file"
+    },
+    "save-as-component": {
+      "id": 1800000000051,
+      "path": "project/save/component"
+    },
+    "delete-file": {
+      "id": 1800000000052,
+      "path": "project/delete/file"
+    },
+    "delete-component": {
+      "id": 1800000000053,
+      "path": "project/delete/component"
+    },
+    "check-stamp-visibility": {
+      "id": 1800000000054,
+      "path": "audit/check/stamps/visibility"
+    },
+    "start-kitchen-project": {
+      "id": 1810000000001,
+      "path": "kitchen/project/start"
+    },
+    "set-kitchen-allergy-status": {
+      "id": 1810000000002,
+      "path": "kitchen/allergy/set-status"
+    },
+    "teach-kitchen-allergy": {
+      "id": 1810000000003,
+      "path": "kitchen/allergy/teach"
+    },
+    "remove-kitchen-allergy": {
+      "id": 1810000000004,
+      "path": "kitchen/allergy/remove"
+    },
+    "list-kitchen-allergies": {
+      "id": 1810000000005,
+      "path": "kitchen/allergy/list"
+    },
+    "check-kitchen-recipe-allergy": {
+      "id": 1810000000006,
+      "path": "kitchen/allergy/check-recipe"
+    },
+    "teach-kitchen-preference": {
+      "id": 1810000000007,
+      "path": "kitchen/preference/teach"
+    },
+    "add-kitchen-exclusion": {
+      "id": 1810000000008,
+      "path": "kitchen/constraint/add-exclusion"
+    },
+    "list-kitchen-constraints": {
+      "id": 1810000000009,
+      "path": "kitchen/constraint/list"
+    },
+    "add-kitchen-inventory": {
+      "id": 1810000000010,
+      "path": "kitchen/inventory/add"
+    },
+    "list-kitchen-inventory": {
+      "id": 1810000000011,
+      "path": "kitchen/inventory/list"
+    },
+    "list-kitchen-recipes": {
+      "id": 1810000000012,
+      "path": "kitchen/recipe/list"
+    },
+    "find-kitchen-recipe": {
+      "id": 1810000000013,
+      "path": "kitchen/recipe/find"
+    },
+    "filter-kitchen-recipes": {
+      "id": 1810000000014,
+      "path": "kitchen/recipe/filter"
+    },
+    "check-kitchen-recipe-inventory": {
+      "id": 1810000000015,
+      "path": "kitchen/recipe/check-inventory"
+    },
+    "check-kitchen-recipe-constraints": {
+      "id": 1810000000016,
+      "path": "kitchen/recipe/check-constraints"
+    },
+    "calculate-kitchen-residence-time": {
+      "id": 1810000000017,
+      "path": "kitchen/math/residence-time"
+    },
+    "calculate-kitchen-belt-speed": {
+      "id": 1810000000018,
+      "path": "kitchen/math/belt-speed"
+    },
+    "calculate-kitchen-process-length": {
+      "id": 1810000000019,
+      "path": "kitchen/math/process-length"
+    },
+    "solve-kitchen-one-seat": {
+      "id": 1810000000020,
+      "path": "kitchen/math/solve-one-seat"
+    },
+    "get-kitchen-safety-reference": {
+      "id": 1810000000021,
+      "path": "kitchen/safety/get-reference"
+    },
+    "get-kitchen-safety-target": {
+      "id": 1810000000022,
+      "path": "kitchen/safety/get-target"
+    },
+    "check-kitchen-measured-temperature": {
+      "id": 1810000000023,
+      "path": "kitchen/safety/check-measured-temperature"
+    },
+    "verify-kitchen-recipe-ready": {
+      "id": 1810000000024,
+      "path": "kitchen/verify/recipe-ready"
+    },
+    "build-kitchen-receipt": {
+      "id": 1810000000025,
+      "path": "kitchen/receipt/build"
+    },
+    "check-food-process-authority": {
+      "id": 1810000000100,
+      "path": "food-process/check/process-authority"
+    },
+    "check-food-process-critical-parameters": {
+      "id": 1810000000101,
+      "path": "food-process/check/critical-parameters"
+    },
+    "calculate-food-process-residence-time": {
+      "id": 1810000000102,
+      "path": "food-process/math/residence-time"
+    },
+    "calculate-food-process-belt-speed": {
+      "id": 1810000000103,
+      "path": "food-process/math/belt-speed"
+    },
+    "list-construction-seats": {
+      "id": 1820000000001,
+      "path": "code/scaffolding/list-seats"
+    },
+    "cleanup-scaffolding": {
+      "id": 1820000000002,
+      "path": "code/scaffolding/cleanup"
+    },
+    "apply-grid-layout": {
+      "id": 1830000000002,
+      "path": "react/apply/grid-layout"
+    },
+    "insert-component-into-area": {
+      "id": 1830000000003,
+      "path": "react/insert/component-into-area"
+    },
+    "set-scroll-y": {
+      "id": 1830000000004,
+      "path": "react/apply/scroll-y"
+    },
+    "add-scroll-wrapper": {
+      "id": 1830000000005,
+      "path": "react/add/scroll-wrapper"
+    },
+    "count-classes": {
+      "id": 1830000000007,
+      "path": "audit/count/classes"
+    },
+    "create-request": {
+      "id": 1830000000009,
+      "path": "base/create/request"
+    },
+    "list-requests": {
+      "id": 1830000000010,
+      "path": "base/list/requests"
+    },
+    "read-request": {
+      "id": 1830000000011,
+      "path": "base/read/request"
+    },
+    "count-folder-entries": {
+      "id": 1830000000012,
+      "path": "audit/count/folder-entries"
+    },
+    "index-folders": {
+      "id": 1830000000015,
+      "path": "audit/index/folders"
+    },
+    "run-folder-index": {
+      "id": 1830000000021,
+      "path": "audit/run/folder-index"
+    },
+    "code-review": {
+      "id": 1830000000728,
+      "path": "code-review"
+    }
+  }
+}

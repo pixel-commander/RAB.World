@@ -1,0 +1,22 @@
+@layer components {
+  .rab-design__view { min-inline-size: 0; }
+  .rab-design__view--fill { flex: 1; min-block-size: 0; }
+  .rab-design__view[hidden] { display: none; }
+  .rab-design {
+    min-inline-size: 0;
+    min-block-size: 0;
+    block-size: 100%;
+    overflow: hidden;
+  }
+  .rab-design__tabs { display: flex; flex-wrap: wrap; gap: 0; }
+  .rab-design__tab { padding: var(--space-sm) var(--space-lg); }
+  .rab-design__button { padding: var(--space-sm) var(--space-lg); }
+}
+@layer dashboards {
+  .dashboard .rab-design__actions {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+}

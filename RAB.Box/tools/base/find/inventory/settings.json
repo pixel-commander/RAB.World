@@ -1,0 +1,8 @@
+{
+  "id": 1830100001001,
+  "name": "inventory",
+  "title": "List project inventory",
+  "description": "List items from a saved project-path manifest. Also handles find and scan-for requests without scanning source files.",
+  "settings": [{"name":"type","type":"text","title":"Path type","required":true}],
+  "meta": {"domain":"base","operation":"find","target_type":"inventory","output":"list","authority":"read"}
+}

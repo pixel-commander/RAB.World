@@ -1,0 +1,32 @@
+{
+  "id": 1790000000948,
+  "name": "fetch-calls",
+  "title": "Find Fetch Calls",
+  "description": "Finds native/global fetch call sites.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "fetch-call",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bfetch\\s*\\(",
+      "kind": "fetch-call",
+      "scope": "code"
+    }
+  }
+}

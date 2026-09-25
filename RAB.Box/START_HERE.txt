@@ -1,0 +1,81 @@
+RRAABBIITT MAGIC BOX v0.9.3 — START HERE
+========================================
+
+PURPOSE
+-------
+v0.9.3 adds the missing construction composition layer above the verified v0.9.2
+nested-seat / construction-seat foundation.
+
+LAUNCH
+------
+Windows:
+  RUN_UI.cmd
+
+Any platform with Node >= 22:
+  node server.mjs --open
+
+Both launch methods use http://127.0.0.1:52814 and the current user's .rab
+folder for all Box-owned saved work (Windows: %USERPROFILE%\.rab).
+npm start uses the same launch path. Never save Box memory beside server.mjs.
+Settings, sessions, requests, results, logs and test output belong under that
+one home. Only actual project source edits belong in the selected project.
+Do not delete the user's .rab: it holds projects and execution history.
+If the port is busy, check the existing instance rather than starting a
+second server on a random port. Explicit --port remains available.
+
+VERIFY
+------
+  npm test
+  npm run language:audit
+
+Optional UI receipts:
+  python tests/browser_interaction.py
+  python tests/browser_turn_checker_v085.py
+
+CURRENT HOUSE
+-------------
+249 public capabilities
+  17 Stamps
+  232 Tools
+  0 unavailable
+
+CURRENT GREEN RECEIPT
+---------------------
+389 / 389 Node tests passing.
+Language audit PASS.
+Main browser: 18 checks, 0 JS errors.
+Turn Checker: 3 checks, 0 JS errors.
+
+RECOVERY REVIEW HARDENING
+-------------------------
+- exact import-source collision guard for component insertion
+- nested seat/area targeting for Apply Grid Layout
+- live legacy-species terminology cleanup
+- normal single-folder release packaging
+
+NEW CONSTRUCTION CAPABILITIES
+-----------------------------
+- New Page Stamp
+- New Dashboard Stamp
+- Apply Grid Layout Tool
+- Insert Component Into Area Tool
+- Set Scroll Y Tool
+- Add Scroll Wrapper Tool
+
+CONFLUENCE
+----------
+Page-first and component-first construction orders converge to the same final page.
+The Dashboard Stamp also converges with the equivalent primitive construction sequence.
+
+SCAFFOLDING
+-----------
+Build-time data-rab-seat markers remain machine addresses only.
+The Scaffolding Cleanup Pass strips them after construction and has no semantic authority.
+
+NEXT READING
+------------
+README.md
+docs/CHANGES_v0.9.3.txt
+docs/GLOSSARY.md
+docs/CONSTRUCTION_SEATS.md
+TEST_REPORT.txt

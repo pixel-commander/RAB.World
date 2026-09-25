@@ -1,0 +1,43 @@
+RRAABBIITT MAGIC BOX v0.5
+=========================
+
+START
+-----
+Windows: RUN_UI.cmd
+Node:    node server.mjs --open
+
+WHAT TO TRY
+-----------
+1. Plan:
+   I want to audit C:\project
+
+2. Then, without saying audit again:
+   find all the state hooks
+
+The Bag displayed in Parsed plan should keep domain=audit and root=C:\project.
+The second request should resolve count-state-hooks and show where every required Sensor option came from.
+
+Also try:
+   find all the orphaned files
+
+The supplied audit sample has no proven orphan Sensor. Magic Box should keep the request unresolved and show nearby candidates instead of guessing.
+
+Build-side example:
+   start a new project named "test"
+
+Magic Box should ask which kind of project because the request did not specify React.
+
+SAFETY
+------
+Plan request does not execute stamps or Sensors. Planner authority is 0.
+Legacy single-stamp resolve is still the existing v0.3 execution route and retains its explicit confirmation gate.
+
+FILES
+-----
+domains.json              front-door domain declarations
+bridge/planner.mjs        domain + whole-request planner
+bridge/sensors.mjs        audit Sensor discovery/scoring
+sensors/                   user-provided audit-factory sample, copied unchanged
+audit-results/             derived report destination for Sensor contracts
+
+See docs/CHANGES_v0.5.txt for the exact slice boundary.

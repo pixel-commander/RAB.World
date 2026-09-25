@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "The shared DOM engine implements move-element. It constructs markup or edits existing ranges; there is no local template file.",
+    "reviewed_at": "2026-09-20"
+  }
+}

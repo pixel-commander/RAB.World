@@ -1,0 +1,27 @@
+{
+  "id": 1790000001105,
+  "name": "shell-spawns",
+  "title": "Audit Operating System Shell Invocations",
+  "description": "Finds dynamic shell command construction and spawn calls that explicitly enable a shell.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "security",
+    "data_types": [
+      "security",
+      "process"
+    ],
+    "output": "report",
+    "authority": "read",
+    "target": "shell-spawns"
+  }
+}

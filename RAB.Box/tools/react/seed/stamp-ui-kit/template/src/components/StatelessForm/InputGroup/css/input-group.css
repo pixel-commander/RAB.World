@@ -1,0 +1,7 @@
+@layer components {
+ .input-group { display: flex; flex-direction: column; min-inline-size: 0; gap: var(--input-group-gap, var(--space-xs)); }
+ .input-group > .input-group-label { color: var(--input-group-label-color, var(--content-muted)); font: var(--input-group-label-font, var(--type-label)); }
+ .input-group-control { min-inline-size: 0; }
+ .input-group__input { box-sizing: border-box; inline-size: 100%; padding: var(--input-group-control-padding, var(--space-sm)); font: var(--input-group-control-font, var(--type-body)); color: var(--input-group-control-color, var(--container-inset-color, var(--content-default))); background: var(--input-group-control-background, var(--container-inset-background, var(--surface-inset))); }
+ .input-group-note { font-size: var(--input-group-message-font-size, 0.875rem); color: var(--input-group-message-color, var(--content-muted)); }
+}
