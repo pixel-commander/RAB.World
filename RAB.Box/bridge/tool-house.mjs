@@ -8,7 +8,7 @@ import { makeItemSettings } from './rab-node.mjs';
 import { createPathsRegistry } from './paths-registry.mjs';
 import { readToolkitLinks, readProjectToolkit, loadToolkit, pathIdentity, withinRoot } from './toolkit-links.mjs';
 import { renderTemplateTree, writeArtifactPlan } from '../tools/_artifact-plan.mjs';
-import { runProjectStamp, runReactComponentStamp } from '../tools/_stamp-engines.mjs';
+import { runProjectStamp, runWorldStamp, runReactComponentStamp } from '../tools/_stamp-engines.mjs';
 import { resolveProjectFolder } from '../tools/react/_project-paths.mjs';
 import { inspectUiKitTemplate } from '../tools/react/seed/stamp-ui-kit/stamp-ui-kit.mjs';
 import { makeTransition, normalizeAuthority } from './flow-runtime.mjs';
@@ -579,6 +579,7 @@ export const createToolHouse = ({ root, toolsRoot = path.join(root, 'tools'), us
         renderTemplateTree,
         writeArtifactPlan,
         runProjectStamp: (extra = {}) => runProjectStamp({...extra,options:bound.options,context:publicContext,tool}),
+        runWorldStamp: () => runWorldStamp({ options: bound.options, context: publicContext, tool }),
         runReactComponentStamp: (extra = {}) => runReactComponentStamp({...extra,options:bound.options,context:publicContext,helpers:scopedHelpers}),
         resolveProjectFolder: (extra = {}) => resolveProjectFolder({...extra,context:publicContext}),
         inspectUiKitTemplate,

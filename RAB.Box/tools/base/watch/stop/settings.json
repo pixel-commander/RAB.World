@@ -1,0 +1,17 @@
+{
+  "id": 1790275772862,
+  "name": "stop",
+  "title": "Stop watcher",
+  "description": "Stop monitoring all paths without deleting registrations or manifests.",
+  "path": "tools/base/watch/stop",
+  "type": "tool",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "domain": "base",
+    "operation": "update",
+    "target_type": "listener",
+    "authority": "write"
+  },
+  "indexed": true
+}

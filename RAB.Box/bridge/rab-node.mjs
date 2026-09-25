@@ -1,7 +1,7 @@
 import { assertNumericId } from './rab-id.mjs';
 
 export const NODE_VERSION = 'rab-node/v1';
-export const NODE_KINDS = Object.freeze(['app', 'project', 'session', 'request', 'group', 'step', 'turn', 'execution', 'receipt', 'failure']);
+export const NODE_KINDS = Object.freeze(['app', 'world', 'project', 'session', 'request', 'group', 'step', 'turn', 'execution', 'receipt', 'failure']);
 const kinds = new Set(NODE_KINDS);
 const requestTypes = new Set(['tool', 'feature', 'ui', 'stamp']);
 const unsafeKeys = new Set(['__proto__', 'prototype', 'constructor']);
@@ -70,6 +70,7 @@ export const assertNode = node => {
     if (!text(node.type)) fail('Project type is required; it is not the node role.');
     if (node.paths !== undefined && !plain(node.paths)) fail('Project paths must be an object.');
   }
+  if (node.meta.kind === 'world' && !Array.isArray(node.paths)) fail('World paths must be an array.');
   if (node.meta.kind === 'request' && !requestTypes.has(node.type)) fail('Request type must be tool, feature, ui or stamp.');
   return node;
 };

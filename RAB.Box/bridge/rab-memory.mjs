@@ -45,11 +45,12 @@ const canonicalPath = value => {
   }
 };
 
-const projectFolderName = name => {
+const recordFolderName = (name, kind = 'Project') => {
   if(typeof name!=='string'||!name.trim()||name.length>255||/[<>:"/\\|?*\x00-\x1f]/.test(name)||/[. ]$/.test(name)||/^(\.{1,2}|con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(name))
-    throw Object.assign(new Error('Project name must be one valid folder name.'),{code:'BAD_REQUEST',field:'name'});
+    throw Object.assign(new Error(`${kind} name must be one valid folder name.`),{code:'BAD_REQUEST',field:'name'});
   return name;
 };
+const projectFolderName = name => recordFolderName(name);
 
 export const userRabHome = () => path.join(os.homedir(),'.rab');
 export const defaultRabHome = () => process.env.RAB_HOME ? path.resolve(process.env.RAB_HOME) : userRabHome();
@@ -69,12 +70,12 @@ export const createRabMemory = ({ rabHome = defaultRabHome() } = {}) => {
       insist(!Object.keys(roots.roots??{}).length&&!Object.keys(roots.directories??{}).length,'BAD_ID_STATE','ID reservation state is missing from initialized storage.');
       const home=await jsonRead(path.join(rabHome,'settings.json')).catch(e=>{if(e.code==='ENOENT')return {};throw e;});
       insist(!home.app_id,'BAD_ID_STATE','ID reservation state is missing from initialized application storage.');
-      for(const collection of ['projects','apps','feature-requests']){
+      for(const collection of ['projects','worlds','apps','feature-requests']){
         const entries=await readdir(path.join(rabHome,collection),{withFileTypes:true}).catch(e=>{if(e.code==='ENOENT')return [];throw e;});
         insist(!entries.some(e=>e.isDirectory()&&/^\d+$/.test(e.name)),'BAD_ID_STATE','ID reservation state is missing while numeric records exist.');
-        if(collection==='projects')for(const entry of entries.filter(e=>e.isDirectory()&&!e.isSymbolicLink())){
+        if(['projects','worlds'].includes(collection))for(const entry of entries.filter(e=>e.isDirectory()&&!e.isSymbolicLink())){
           const node=await jsonRead(path.join(rabHome,collection,entry.name,'settings.json')).catch(error=>{if(error.code==='ENOENT')return null;throw error;});
-          insist(node?.version!=='rab-node/v1'||node?.meta?.kind!=='project','BAD_ID_STATE','ID reservation state is missing while saved projects exist.');
+          insist(node?.version!=='rab-node/v1'||!['project','world'].includes(node?.meta?.kind),'BAD_ID_STATE','ID reservation state is missing while saved projects or worlds exist.');
         }
       }
       state={version:'rab-ids/v2',reserved:[]};
@@ -96,6 +97,7 @@ export const createRabMemory = ({ rabHome = defaultRabHome() } = {}) => {
     return rabHome;
   });
   const newProjectPath = name => path.join(rabHome,'projects',projectFolderName(name));
+  const newWorldPath = name => path.join(rabHome,'worlds',recordFolderName(name,'World'));
   const ownedProjectKey = ({root}) => {
     const absolute=canonicalPath(root);
     return path.relative(canonicalPath(path.join(rabHome,'projects')),path.dirname(absolute))===''?path.basename(absolute):null;
@@ -649,5 +651,5 @@ export const createRabMemory = ({ rabHome = defaultRabHome() } = {}) => {
     return projectDir({id:node.id,root:node.meta.source_root});
   }});
   const serialized=Object.fromEntries(Object.entries({openProject,readProjectSettings,loadResources,saveResources,addResource,knownEntities,loadFacts,saveFacts,setFact,getFact,setProjectPath,getProjectPath,removeProjectPath,createSession,loadSession,saveSession,saveToolResult,saveToolExecution,loadToolExecution,resolveToolValue,listSessions,recordFailure,resolveFailure}).map(([name,fn])=>[name,projectOperation(fn)]));
-  return Object.freeze({ensureHome,ensureApp,allocateId,allocateIds,enrollId,registerProject,newProjectPath,initialBag,withSessionOperation,...serialized,...folderRecords,readProject,addProjectToManifest,findProjectsInManifest,inspectProject,createRequest,readRequest,listRequests,loadToolReport,validateAuditFolder,requireAuditFolder,listProjects,findSession,paths,workbenchRunsDirectory,projectKey,rabHome});
+  return Object.freeze({ensureHome,ensureApp,allocateId,allocateIds,enrollId,registerProject,newProjectPath,newWorldPath,initialBag,withSessionOperation,...serialized,...folderRecords,readProject,addProjectToManifest,findProjectsInManifest,inspectProject,createRequest,readRequest,listRequests,loadToolReport,validateAuditFolder,requireAuditFolder,listProjects,findSession,paths,workbenchRunsDirectory,projectKey,rabHome});
 };

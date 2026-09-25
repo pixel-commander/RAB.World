@@ -8,6 +8,25 @@ import { loadToolkit } from '../bridge/toolkit-links.mjs';
 import { prepareComponentInputs } from './react/_component-inputs.mjs';
 
 
+export const runWorldStamp = async ({ options, context = {}, tool }) => {
+  const memory = createRabMemory({ rabHome: context.rab_home });
+  const target = memory.newWorldPath(options.name);
+  const id = await memory.allocateId();
+  const rendered = await renderTemplateTree(path.join(tool.root, 'template'), { WORLD_ID: id, WORLD_NAME: options.name });
+  let settings;
+  const files = rendered.map(file => {
+    if (file.path !== 'settings.json') return file;
+    settings = makeNode({ ...JSON.parse(file.text), id, name: options.name,
+      title: options.title === undefined ? options.name : options.title,
+      description: options.description === undefined ? '' : options.description,
+      date_added: new Date().toISOString(), meta: { kind: 'world', source_root: target } });
+    return { ...file, text: JSON.stringify(settings, null, 2) + '\n' };
+  });
+  if (!settings) throw Object.assign(new Error('World template needs settings.json.'), { code: 'BAD_TEMPLATE' });
+  const verification = await writeArtifactPlan({ destination: target, allowedRoot: memory.rabHome, files });
+  return { status: 'created', world: { id, name: options.name, root: target }, settings, box_memory: target, verification };
+};
+
 export const runProjectStamp=async({options,context,tool,destination,projectId,templateValues={},additionalFiles=[]})=>{
   const memory=createRabMemory({rabHome:context.rab_home});
   memory.newProjectPath(options.name); // Shared folder-name validation, before any artifacts.
@@ -27,6 +46,14 @@ export const runProjectStamp=async({options,context,tool,destination,projectId,t
     else Object.assign(value,makeNode({...value,id,title:options.name,description:value.description??'Local project',custom_toolkit_path:customToolkitPath,settings:[],meta:{kind:'project',source_root:path.resolve(target)}}));
     return {...file,text:JSON.stringify(value,null,2)+'\n'};
   });
+  // Allocate live beacon identities; nested tool templates retain placeholders.
+  for (const file of files) {
+    if (!file.path.endsWith('/beacon.json') || file.path.split('/').includes('template')) continue;
+    const beacon = JSON.parse(file.text);
+    if (beacon.id === null || beacon.id === undefined) beacon.id = await memory.allocateId();
+    if (beacon.date_added === null || beacon.date_added === undefined) beacon.date_added = new Date().toISOString();
+    file.text = JSON.stringify(beacon, null, 2) + '\n';
+  }
   const combined=new Map(files.map(file=>[file.path,file]));
   for(const file of additionalFiles)combined.set(file.path,file);
   const verification=await memory.registerProject({id,name:options.name,root:path.resolve(target)},()=>writeArtifactPlan({destination:target,files:[...combined.values()]}));
@@ -39,7 +66,7 @@ export const runProjectStamp=async({options,context,tool,destination,projectId,t
   return {status:'created',project:{...meta,type:settings.type},settings,box_memory:opened.dir,project_manifest:projectManifest,verification};
 };
 
-export const runReactComponentStamp=async({options,context,helpers,templateUrl,parentOption,templateValues={}})=>{
+export const runReactComponentStamp=async({options,context,helpers,templateUrl,parentOption,templateValues={},createSettings})=>{
   if(!/^[A-Z][A-Za-z0-9_$]*$/.test(String(options.name??'')))throw Object.assign(new Error('Component name must be a valid capitalized React identifier.'),{code:'BAD_REQUEST'});
   const parent=await checkedAbsolutePath(options[parentOption]),dir=path.join(parent,options.name);
   try{await lstat(dir);throw Object.assign(new Error(`Target already exists: ${dir}`),{code:'EEXIST'});}catch(error){if(error.code!=='ENOENT')throw error;}
@@ -53,7 +80,7 @@ export const runReactComponentStamp=async({options,context,helpers,templateUrl,p
   const values={...templateValues,DEFAULT_CLASS:JSON.stringify(options.class_name??''),GRID_ATTRIBUTE:prepared.grid?` data-grid="${prepared.grid.name}"`:'',DEFAULT_CHILDREN:prepared.grid?`(\n    <>\n${areas.map(area=>`      <div data-area="${area}" data-rab-seat="area-${area}:a1"></div>`).join('\n')}\n    </>\n  )`:JSON.stringify(options.name)};
   for(const [key,value] of Object.entries(values))text=text.replaceAll(`__${key}__`,String(value));
   const ext=options.save_as_text?'.txt':'.tsx',file=path.join(dir,`${options.name}${ext}`);
-  const metadata=await helpers.createItemSettings({
+  const metadata=await (createSettings??helpers.createItemSettings)({
     name:options.name,
     title:options.title??options.name,
     description:options.description??`React component ${options.name}.`,
@@ -64,7 +91,7 @@ export const runReactComponentStamp=async({options,context,helpers,templateUrl,p
     ...(prepared.grid?{grid:prepared.grid.name,areas}:{}),
     parent_path:parentOption==='parent_path'?parent:null,
     ...(options.indexed===undefined?{}:{indexed:options.indexed})
-  });
+  },{folder:dir});
   let verification;
   try{
     for(const dependency of prepared.dependencies)dependencies.push(await helpers.runTool({key:dependency.key,options:dependency.options}));

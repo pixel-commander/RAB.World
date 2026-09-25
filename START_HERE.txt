@@ -71,8 +71,7 @@ Repository address:
 
 RAB.World owns the files in RAB.Box and RAB.Toolkits directly, not as
 submodules or embedded repositories. Commit and push from the parent.
-The local conversion must be committed and pushed before another machine
-can obtain the combined source. Existing nested clones on other machines
+The combined source is published in this repository. Existing nested clones on other machines
 need a careful migration preserving their uncommitted work and history.
 
 Personal material is excluded from the shared repository and cold boot.
@@ -96,8 +95,7 @@ From that parent directory, run:
 
   git clone https://github.com/pixel-commander/RAB.World.git RAB.World
 
-After the combined source is published, that single clone supplies all
-three source areas. Do not clone nested repositories into the children.
+That single clone supplies all three source areas. Do not clone nested repositories into the children.
 
 If a destination already contains files, inspect it first. Do not clone
 over it, replace its history, or discard local changes as a setup shortcut.

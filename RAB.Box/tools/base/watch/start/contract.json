@@ -1,0 +1,13 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "Controls the existing shared watcher in the running Box process; creates no independent service."
+  },
+  "result": {
+    "status": "started, stopped or partial",
+    "count": "number of paths reported",
+    "items": "path runtime states",
+    "unavailable": "start/restart failures, when present"
+  }
+}

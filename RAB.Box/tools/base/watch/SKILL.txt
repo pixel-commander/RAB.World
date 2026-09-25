@@ -1,0 +1,18 @@
+WATCHER CONTROL — MODEL INSTRUCTIONS
+
+Scope: the shared watcher inside the running local Box server. Commands affect
+all registered project paths in that instance. No project selection needed.
+
+Resolve this folder; invoke only the action requested:
+  START.cmd   Restore saved registrations; start monitoring and refresh indexes.
+  STOP.cmd    Stop monitoring; await pending writes; preserve saved records.
+  RESTART.cmd Stop, reload registrations, then start monitoring.
+
+Use the .cmd files, not a new watcher process. They contact Box automatically.
+Default address: http://127.0.0.1:52814; pass another verified local Box address
+as the sole argument when needed. Box must already run with these controls loaded.
+
+Check exit code AND returned status. Report partial/unavailable paths accurately.
+Do not claim success on connection failure. Do not delete registrations, reset
+storage, restart Box, or add paths merely to complete a watcher-control request.
+STOP lasts for this Box process; a later Box startup restores saved registrations.

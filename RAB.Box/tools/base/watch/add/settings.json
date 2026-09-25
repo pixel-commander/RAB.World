@@ -3,6 +3,9 @@
   "name": "add",
   "title": "Add paths to listener",
   "description": "Watch an array of configured project paths and update each manifest when settings or folders change.",
+  "path": "tools/base/watch/add",
+  "type": "tool",
+  "transmitting": true,
   "settings": [
     {
       "name": "paths",
