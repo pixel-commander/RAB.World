@@ -1,7 +1,14 @@
 {
+  "title": "container-neon-corner",
   "name": "container-neon-corner",
-  "kind": "container-atom",
-  "created": "2026-09-14",
-  "description": "Reusable neon chassis corner with primary and secondary ink variants.",
-  "modified": "2026-09-14"
+  "description": "Neon chassis corner container atom.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\container-neon-corner",
+  "type": "container-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304150011,
+  "indexed": true
 }

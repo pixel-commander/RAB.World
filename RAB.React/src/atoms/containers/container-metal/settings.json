@@ -1,7 +1,14 @@
 {
+  "title": "container-metal",
   "name": "container-metal",
-  "kind": "container-atom",
-  "created": "2026-09-14",
-  "description": "Flat lighter machined surface with a subtle gradient, strong border, and no depth shadow.",
-  "modified": "2026-09-14"
+  "description": "Flat machined surface container atom.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\container-metal",
+  "type": "container-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304149825,
+  "indexed": true
 }

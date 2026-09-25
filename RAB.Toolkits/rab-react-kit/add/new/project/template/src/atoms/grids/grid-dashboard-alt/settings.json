@@ -1,8 +1,14 @@
 {
+  "title": "grid-dashboard-alt",
   "name": "grid-dashboard-alt",
-  "kind": "grid-atom",
-  "created": "2026-09-03",
-  "type": "dashboard",
-  "description": "grid-dashboard without the tabs-nav band (that row left empty)",
-  "modified": "2026-09-03"
+  "description": "Alternate dashboard layout grid atom.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\grid-dashboard-alt",
+  "type": "grid-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304150729,
+  "indexed": true
 }

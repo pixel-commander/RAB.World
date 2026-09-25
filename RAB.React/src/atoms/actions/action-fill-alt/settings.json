@@ -1,7 +1,14 @@
 {
+  "title": "action-fill-alt",
   "name": "action-fill-alt",
-  "kind": "action-atom",
-  "created": "2026-09-15",
-  "description": "Secondary blue filled action with a subtle vertical gradient that reverses on hover.",
-  "modified": "2026-09-15"
+  "description": "Secondary blue filled action atom.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\action-fill-alt",
+  "type": "action-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304148511,
+  "indexed": true
 }

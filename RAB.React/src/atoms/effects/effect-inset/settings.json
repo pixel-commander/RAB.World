@@ -1,7 +1,14 @@
 {
+  "title": "effect-inset",
   "name": "effect-inset",
-  "kind": "effect-atom",
-  "created": "2026-09-14",
-  "description": "Reusable recessed depth treatment backed by the theme inset elevation token.",
-  "modified": "2026-09-14"
+  "description": "Recessed-depth effect atom.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\effect-inset",
+  "type": "effect-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304150375,
+  "indexed": true
 }

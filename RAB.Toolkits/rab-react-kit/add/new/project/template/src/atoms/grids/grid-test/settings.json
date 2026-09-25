@@ -1,8 +1,14 @@
 {
+  "title": "grid-test",
   "name": "grid-test",
-  "kind": "grid-atom",
-  "created": "2026-09-15",
-  "type": "misc",
-  "description": "container grid for component",
-  "modified": "2026-09-15"
+  "description": "Test layout grid atom.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\grid-test",
+  "type": "grid-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304150911,
+  "indexed": true
 }

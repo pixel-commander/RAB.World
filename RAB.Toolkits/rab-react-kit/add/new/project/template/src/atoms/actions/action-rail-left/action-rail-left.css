@@ -30,11 +30,6 @@
     outline-offset: var(--action-rail-left-focus-offset, var(--focus-offset));
   }
 
-  .action-rail-left:is([aria-current='page'], [aria-selected='true']) {
-    color: var(--action-rail-left-selected-color, var(--content-accent));
-    background: var(--action-rail-left-selected-background, var(--surface-selected));
-    border-color: var(--action-rail-left-selected-border-color, var(--accent-default));
-  }
 
   .action-rail-left:is(:disabled, [aria-disabled='true']) {
     color: var(--action-rail-left-disabled-color, var(--content-disabled));
