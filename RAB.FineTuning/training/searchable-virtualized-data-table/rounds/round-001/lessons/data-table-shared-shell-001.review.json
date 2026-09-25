@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "lesson-review",
+  "lesson_id": "data-table-shared-shell-001",
+  "status": "draft",
+  "skill_id": "shared-shell-grid",
+  "task_family_id": "searchable-virtualized-data-table-shell",
+  "dataset_split": "unassigned",
+  "scope": "This project, where the user specifies data-grid=\"shell\" as the owner of the wrapper layout.",
+  "boundary": "Do not invent or assume shell behavior in projects without the matching shared grid contract.",
+  "reinforces": [],
+  "source_turns": [
+    "turns/turn-008.json"
+  ],
+  "source_changes": [
+    "changes/change-003"
+  ],
+  "selected_blocks": [
+    {
+      "source_change": "changes/change-003",
+      "file": "src/DataTable.tsx",
+      "side": "before",
+      "sha256": "66799e7da88820a453f00768830becd2ef79dceee14d7efcdad1358c52253ad9",
+      "start_line": 95,
+      "end_line": 95
+    },
+    {
+      "source_change": "changes/change-003",
+      "file": "src/DataTable.tsx",
+      "side": "after",
+      "sha256": "35600a428f2c1ae2e60d623ceed03399bbfda725b5e9303bda367ec0ae6fa633",
+      "start_line": 95,
+      "end_line": 95
+    },
+    {
+      "source_change": "changes/change-003",
+      "file": "src/DataTable.css",
+      "side": "before",
+      "sha256": "35609ba90c04debdfa96e1aac647210955a65c26963e7589f7ac739f23fdd534",
+      "start_line": 1,
+      "end_line": 1
+    },
+    {
+      "source_change": "changes/change-003",
+      "file": "src/DataTable.css",
+      "side": "after",
+      "sha256": "932e41dddb03e1dcf609de414bf843aeb7b8d910237bb471c51ce8965a18af79",
+      "start_line": 1,
+      "end_line": 1
+    }
+  ],
+  "context_needed": "Shared grid stylesheet supplied and preserved. Browser/layout verification remains pending.",
+  "grading": {
+    "format_checks": [],
+    "behavior_checks": [],
+    "reviewer_rubric": []
+  },
+  "human_review": null
+}

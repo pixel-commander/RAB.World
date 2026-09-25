@@ -1,0 +1,5 @@
+{
+  "status": "not_tested",
+  "checks": [],
+  "note": "Hash verification proves capture integrity, not correctness of the code."
+}

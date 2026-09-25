@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "data-table-shared-shell-001",
+  "kind": "skills",
+  "status": "draft",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use the project shared shell grid instead of a component-owned shell layout. Preserve unrelated declarations and className. The existing direct children use data-area=\"header\", \"main\", and \"footer\".\n\nJSX:\n```tsx\n<section className={`data-table-wrapper ${className}`}>\n```\n\nComponent CSS:\n```css\n.data-table-wrapper { display: grid; height: 100%; min-height: 0; overflow: hidden; grid-template-rows: auto 1fr auto; gap: .75rem; color: #334155; font-family: ui-sans-serif, system-ui, sans-serif; }\n```\n\nShared grid.css excerpt:\n```css\n@layer grid {\n  [data-grid] { display: grid; }\n  [data-grid='shell'] {\n    grid-template-rows: auto minmax(0, 1fr) auto;\n    grid-template-areas: 'header' 'main' 'footer';\n  }\n}\n```"
+    },
+    {
+      "role": "assistant",
+      "content": "Select the shared shell and remove the duplicate local display and row declarations.\n\n```tsx\n<section data-grid=\"shell\" className={`data-table-wrapper ${className}`}>\n```\n\n```css\n.data-table-wrapper { height: 100%; min-height: 0; overflow: hidden; gap: .75rem; color: #334155; font-family: ui-sans-serif, system-ui, sans-serif; }\n```\n\nThe shared grid now owns display and row tracks. The component class and supplied className remain, along with unrelated wrapper declarations. Existing header/main/footer area markers remain compatible with the shared layout. Static checks confirm only the intended changes; rendered layout has not been tested."
+    }
+  ],
+  "reason": "Use the project shared shell grid as the layout owner instead of duplicating its definition in component CSS.",
+  "source_ids": [
+    "review:searchable-virtualized-data-table:round-001:turn-008",
+    "review:searchable-virtualized-data-table:round-001:change-003"
+  ],
+  "verification": "passed",
+  "approval": null
+}

@@ -1,0 +1,12 @@
+diff --git a/before/src/DataTable.tsx b/after/src/DataTable.tsx
+index b49200e..67bd4ab 100644
+--- a/before/src/DataTable.tsx
++++ b/after/src/DataTable.tsx
+@@ -2,6 +2,7 @@ import { Fragment, type DragEvent, type MouseEvent } from 'react';
+ import type { DataTableCell, DataTableProps, DataTableRow } from './DataTable.types';
+ import { useDataTable, valueText } from './hooks/useDataTable';
+ import './DataTable.css';
++import '../css/grid.css'
+ 
+ const EMPTY_KEYS: string[] = [];
+ const COLUMN_MIME = 'application/x-data-table-column';

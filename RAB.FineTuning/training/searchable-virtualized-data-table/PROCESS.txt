@@ -1,0 +1,65 @@
+REVIEW TO TRAINING PROCESS
+==========================
+Purpose: prepare task-oriented supervised fine-tuning (SFT) examples and measure
+whether each model improves. This file is process guidance, not an executable
+trainer or grader. PEFT/LoRA and full tuning are later press configuration choices.
+
+1. PRESERVE EVIDENCE
+Keep exact turns and code blocks. Use capture-change begin/finish around each edit.
+One coherent correction is the unit: a block by default; more context or several
+files when needed for code splitting or shared behavior. Full file versions are
+supporting evidence, not mandatory text in every model prompt. Never rewrite
+rejected attempts into accepted history or copy the source ZIP into each round.
+
+2. DISTILL A LESSON
+Each round includes lesson.template.json and lesson-review.template.json.
+Copy/fill these as <stable-lesson-id>.json and <stable-lesson-id>.review.json under
+that round's lessons/ folder. Templates are incomplete molds, never training inputs.
+Choose one central behavior. Supply the task, necessary rules and enough original
+code to solve it. The assistant target contains the accepted correction plus a
+concise, checkable explanation: finding -> applicable rule -> reason -> correction
+-> verification. Do not demand or label it as access to internal model reasoning.
+Never invent a test result. Support the target with exact turns, changes and hashes.
+
+The lesson uses the existing teaching-format-v1 fields: schema_version, id, kind,
+status, messages, reason, source_ids, verification, approval. Keep those keys intact.
+The richer review sidecar owns scope, boundary, reinforces, selected code blocks,
+family grouping and grading plans. source_ids means provenance, not reinforcement.
+Only human-approved lessons can enter a training export. Captured, tested, and
+approved are different states. This scaffold grants no approvals and exports none.
+An approved lesson's approval must bind reviewer/time to the exact content hash;
+changing content returns it to draft. Use the owning teaching approval implementation.
+
+3. DEFINE AN UNSEEN EVALUATION
+Use evaluations/evaluation.template.json to author held-out cases, stored only under
+evaluations/. Never include evaluation prompts, expected answers or their derivatives
+in training exports. Test the same skill with different code and a nearby boundary
+where the rule should not activate. Keep near duplicates and sibling variants from
+one task family in one split. A shared skill ID does not mean identical task family.
+Use validation cases while tuning; reserve a final test set for final comparisons.
+If a held-out case is used to teach a correction, retire it from the held-out pool
+and replace it with a genuinely unseen case. Record that change explicitly.
+
+4. GRADE WHAT MATTERS
+Separate format validity, observed behavior and reviewer judgment.
+Syntax checks prove syntax. Runtime tests need inputs, expected results and observable
+assertions. A compilation wrapper alone is not a complete behavioral test. Keyword
+or regex checks are diagnostic signals unless the requirement itself is exact text.
+Do not reject valid alternative implementations simply for differing from the target.
+Behavior-preserving refactors should pass the same observable checks before/after.
+Architecture/ownership judgments need an explicit rubric and supporting evidence;
+a string search does not independently establish good design. Optional model judges
+use a recorded model/rubric, are calibrated against human reviews, and remain fallible.
+Unknown, unavailable and not-run checks never count as passes. Run generated code
+only in an appropriately isolated evaluation environment; this mold executes none.
+
+5. RECORD EACH PRESS AND COMPARISON
+Use presses/press.template.json. Record exact base/checkpoint revision, dataset and
+export hashes, training method/settings, formatter/chat-template revision, masking,
+seed and evaluation suite revision. Keep model-specific wrappers/tokens outside the
+canonical lesson. Evaluation material is not part of the training prompt or export.
+Evaluate the same model before and after its press on the same held-out suite with
+controlled inference settings and repeat counts. Save raw outputs and per-case scores.
+Report absolute results, improvement and regressions separately; model-vs-model
+ranking alone cannot establish that a press helped. Do not silently reuse evaluation
+outputs as training. No press has run merely because these files exist.

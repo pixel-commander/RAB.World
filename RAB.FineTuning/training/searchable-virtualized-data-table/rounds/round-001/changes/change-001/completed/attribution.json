@@ -1,0 +1,10 @@
+{
+  "kind": "user-supplied-pre-review-revision",
+  "source_turns": [
+    "turns/turn-004.json",
+    "turns/turn-006.json"
+  ],
+  "change": "Added grid CSS import supplied by the user; aligned the working copy without modifying either source or original ZIP.",
+  "verification": "Working copy byte-for-byte equal to selected source; before/after hashes captured. Runtime/import resolution not tested.",
+  "training_approval": null
+}

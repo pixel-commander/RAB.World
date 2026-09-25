@@ -1,0 +1,23 @@
+diff --git a/before/src/DataTable.css b/after/src/DataTable.css
+index d41d314..85986d7 100644
+--- a/before/src/DataTable.css
++++ b/after/src/DataTable.css
+@@ -1,4 +1,4 @@
+-.data-table-wrapper { display: grid; height: 100%; min-height: 0; overflow: hidden; grid-template-rows: auto 1fr auto; gap: .75rem; color: #334155; font-family: ui-sans-serif, system-ui, sans-serif; }
++.data-table-wrapper { height: 100%; min-height: 0; overflow: hidden; gap: .75rem; color: #334155; font-family: ui-sans-serif, system-ui, sans-serif; }
+ .table-panel-header { display: grid; gap: .5rem; }
+ .table-main { min-height: 0; overflow: hidden; }
+ .table-toolbar, .table-legend { display: flex; align-items: center; gap: .5rem; }
+diff --git a/before/src/DataTable.tsx b/after/src/DataTable.tsx
+index 67bd4ab..46ffe5b 100644
+--- a/before/src/DataTable.tsx
++++ b/after/src/DataTable.tsx
+@@ -92,7 +92,7 @@ export const DataTable = <T extends DataTableRow>({
+   };
+ 
+   return (
+-    <section className={`data-table-wrapper ${className}`}>
++    <section data-grid="shell" className={`data-table-wrapper ${className}`}>
+       <div data-area="header" className="table-panel-header">
+         <div className="table-toolbar">
+           <label className="table-search-label" htmlFor="data-table-search">Search table</label>
