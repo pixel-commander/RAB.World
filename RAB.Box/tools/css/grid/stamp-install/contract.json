@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Copies template/grid.css to the selected CSS directory without overwriting an existing grid.css.",
+    "reviewed_at": "2026-09-20"
+  }
+}

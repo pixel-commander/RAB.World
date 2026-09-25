@@ -1,0 +1,38 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "composite",
+    "description": "Runs the existing class index through the shared runner, validates its actual result, and returns referenced evidence and a bounded class-impact conclusion."
+  },
+  "result": {
+    "version": "\"audit-evidence/v1\"",
+    "revision": "string",
+    "project": "object",
+    "subject": "string",
+    "scan_root": "absolute path",
+    "source": "object",
+    "coverage": "object",
+    "entities": [
+      "object"
+    ],
+    "relations": [
+      "object"
+    ],
+    "findings": [
+      "object"
+    ],
+    "investigations": [
+      "object"
+    ],
+    "conclusions": [
+      "object"
+    ],
+    "plans": [
+      "object"
+    ],
+    "action?": "string",
+    "previous_report?": "string",
+    "verification?": "object",
+    "handoff?": "object"
+  }
+}

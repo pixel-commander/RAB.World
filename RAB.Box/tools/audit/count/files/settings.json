@@ -1,0 +1,10 @@
+{
+  "id": 1790000000713,
+  "name": "files",
+  "title": "Count Files",
+  "description": "Counts files in the loaded project or supplied folder.",
+  "settings": [
+    {"type":"folder","name":"folder","title":"Folder","description":"Optional folder to scan. Uses the loaded project root when omitted.","required":false}
+  ],
+  "meta": {"domain":"audit","operation":"count","target_type":"file","data_types":["file","count"],"output":"count","authority":"read"}
+}

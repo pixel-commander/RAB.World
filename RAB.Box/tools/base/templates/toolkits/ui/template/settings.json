@@ -1,0 +1,11 @@
+{
+  "id": 0,
+  "name": "__TOOLKIT_NAME__",
+  "title": "__TOOLKIT_TITLE__",
+  "description": "__TOOLKIT_DESCRIPTION__",
+  "settings": [],
+  "meta": {
+    "kind": "toolkit",
+    "project_type": "__PROJECT_TYPE__"
+  }
+}

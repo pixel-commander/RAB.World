@@ -1,0 +1,6 @@
+@layer components {
+  .app-footer__meta {
+    font: var(--type-label);
+    color: var(--content-muted);
+  }
+}

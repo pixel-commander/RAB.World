@@ -1,0 +1,10 @@
+{
+  "version": "rraabbiitt-type-overrides/v0.6",
+  "entries": [
+    { "lemma": "load", "forms": ["load", "loads", "loaded", "loading"], "types": ["verb"], "senses": ["select"] },
+    { "lemma": "begin", "forms": ["begin", "begins", "began", "beginning"], "types": ["verb"], "senses": ["create", "begin"] },
+    { "lemma": "like", "forms": ["like"], "types": ["verb"], "senses": ["request"] }
+  ],
+  "phrases": [],
+  "note": "Operator-approved lexical candidates only. Unknown words stay unknown until added here or the base mapper is updated. This file does not grant execution authority."
+}

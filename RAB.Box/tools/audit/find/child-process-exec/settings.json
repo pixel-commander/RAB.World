@@ -1,0 +1,30 @@
+{
+  "id": 1800000000025,
+  "name": "child-process-exec",
+  "title": "Find Shell Exec Calls",
+  "description": "Finds Node child-process exec/execSync call sites.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "child-process-exec",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\b(?:exec|execSync)\\s*\\(",
+      "scope": "code",
+      "kind": "child-process-exec",
+      "heuristic": false,
+      "flags": "i"
+    }
+  }
+}

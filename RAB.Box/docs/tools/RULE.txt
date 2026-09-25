@@ -1,0 +1,11 @@
+SCOPE=tool authoring; inherit project AGENTS.md; reviewed=2026-09-21.
+DOCS: README=human explanation; RULE=model contract; no README inventories/counts.
+PUBLIC: settings.json={id,name,title,description,settings:[],meta:{}}; name==leaf; path/meta agree; stable unique positive observed timestamp ID via shared owner, never highest-ID seeding.
+KIND: scaffold=template-backed Tool with template/; runtime kind remains Stamp; no required stamp- prefix. Generator=no template/, ordinary Tool; no-template alone does not imply generator.
+EXEC: run({options,context,tool,root,toolsRoot,helpers}); leaf.mjs or nearest parent-name.mjs; public children via helpers.runTool, inspect child.result; no alternate runner.
+INPUT: declare/validate; enum for choices; preserve false/0/optional ''; validate paths/nested/cross-field semantics.
+GAPS: INPUT_REQUIRED before mutation; dynamic fields declared; safe_to_resume only repeat-safe; no rollback implied.
+OUTPUT: truthful authority; throw failures; preserve partial evidence and rich domain data; provided.seats for bindings; contract.json describes actual output, not runtime schema enforcement.
+STORAGE: root=Box; context.project.root=source; user-home/.rab=Box records/tests; resolve via memory owner; UNC access does not change execution host.
+VERIFY: fresh discovery+diagnostics, input/error/containment/overwrite/preview tests, child traces, UI/planner, actual output/build. Discovery!=readiness.
+CHANGE: no new compatibility fallbacks; migrations explicitly authorized; no code/service changes implied by docs.

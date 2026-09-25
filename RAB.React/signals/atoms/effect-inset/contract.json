@@ -1,0 +1,6 @@
+{
+  "version": "tool-contract/v1",
+  "source": {"kind":"unclassified","description":"Signal scaffold. Its owner must describe the actual behavior before treating it as implemented."},
+  "settings": [],
+  "result": {}
+}

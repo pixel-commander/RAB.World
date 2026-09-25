@@ -1,0 +1,39 @@
+{
+  "id": 1810000000002,
+  "name": "set-status",
+  "title": "Set Allergy Status",
+  "description": "Records explicit human allergy status for one project-scoped person. Existing allergy facts must be explicitly removed before declaring none.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "person",
+      "title": "Person",
+      "description": "person",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "status",
+      "title": "Status",
+      "description": "none or declared",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "allergies",
+      "title": "Allergies",
+      "description": "Comma-separated declared allergies.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "train",
+    "data_types": [
+      "allergy_status"
+    ],
+    "returns": [
+      "allergy_status"
+    ]
+  }
+}

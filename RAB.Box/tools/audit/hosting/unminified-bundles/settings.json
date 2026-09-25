@@ -1,0 +1,24 @@
+{
+  "id": 1790000001205,
+  "name": "unminified-bundles",
+  "title": "Audit Production Bundle Minification",
+  "description": "Reviews large deployment JavaScript and CSS bundles for likely missing minification as a performance concern, not a security boundary.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional project or deployment folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "hosting",
+    "data_types": ["hosting", "performance"],
+    "output": "report",
+    "authority": "read",
+    "check": "minification"
+  }
+}

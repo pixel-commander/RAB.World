@@ -1,0 +1,46 @@
+{
+  "id": 1790161768366,
+  "name": "code-reviews",
+  "title": "New Code Review Session",
+  "description": "Creates a new package-review session, links a separate read-only original source folder, and prepares numbered rounds without copying source files.",
+  "settings": [
+    {
+      "name": "folder",
+      "type": "path",
+      "title": "New session folder",
+      "description": "Absolute path to a new session folder; its leaf uses lowercase letters, digits and hyphens. Existing folders are refused.",
+      "required": true
+    },
+    {
+      "name": "original_source",
+      "type": "path",
+      "title": "Untouched original source",
+      "description": "Absolute path to your existing original source directory. Linked only, never copied or modified. Must be outside the session.",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "title": "Session title",
+      "description": "Optional display title; defaults to the session folder name.",
+      "required": false
+    },
+    {
+      "name": "source_access",
+      "type": "path",
+      "title": "Source access path on this machine",
+      "description": "Optional explicit access binding, such as a server share for a server-native drive path. Used only to validate access; never saved in session settings. Omit when the original source path is directly accessible.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "model-kit",
+    "operation": "create",
+    "target_type": "code-review-session",
+    "data_types": [
+      "code-review-session"
+    ],
+    "output": "folder",
+    "authority": "write"
+  }
+}

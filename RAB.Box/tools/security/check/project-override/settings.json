@@ -1,0 +1,16 @@
+{
+  "id": 1790000000994,
+  "name": "project-override",
+  "title": "Check Project Override Containment",
+  "description": "Builds an isolated project override symlink fixture and verifies that a project PATHS Tool cannot escape the loaded project through a symlink.",
+  "settings": [],
+  "meta": {
+    "domain": "security",
+    "operation": "check",
+    "output": "security-report",
+    "authority": "read",
+    "config": {
+      "check": "project-override"
+    }
+  }
+}

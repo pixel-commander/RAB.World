@@ -1,0 +1,30 @@
+{
+  "id": 1800000000037,
+  "name": "admin-routes",
+  "title": "Find Admin/Internal Routes",
+  "description": "Finds route/path literals that look like admin, debug, internal, status, or health surfaces.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "admin-routes",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "[\\\"\\']/(?:admin|debug|internal|status|healthz?)(?:[/\\\"\\'])",
+      "scope": "code",
+      "kind": "admin-route-candidate",
+      "heuristic": true,
+      "flags": "i"
+    }
+  }
+}

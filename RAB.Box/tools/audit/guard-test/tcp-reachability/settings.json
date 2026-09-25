@@ -1,0 +1,57 @@
+{
+  "id": 1790000001304,
+  "name": "tcp-reachability",
+  "title": "Check Authorized TCP Reachability",
+  "description": "Tests one explicitly supplied host and one explicitly supplied TCP port from the machine running Magic Box. It does not enumerate ports or scan ranges.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "host",
+      "title": "Host",
+      "description": "One authorized hostname or IP address. No ranges, lists, or wildcards.",
+      "required": true
+    },
+    {
+      "type": "number",
+      "name": "port",
+      "title": "Port",
+      "description": "One TCP port from 1 to 65535.",
+      "required": true
+    },
+    {
+      "type": "boolean",
+      "name": "authorized_target",
+      "title": "Authorized Target",
+      "description": "Confirm this target is yours or you are permitted to test.",
+      "required": true
+    },
+    {
+      "type": "boolean",
+      "name": "expect_reachable",
+      "title": "Expected Reachability",
+      "description": "Optional assertion. When supplied, the Tool fails if observed reachability does not match.",
+      "required": false
+    },
+    {
+      "type": "number",
+      "name": "timeout_ms",
+      "title": "Timeout (ms)",
+      "description": "Optional connection timeout from 250 to 15000 milliseconds.",
+      "required": false,
+      "default": 3000
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "check",
+    "target_type": "network",
+    "data_types": [
+      "network",
+      "tcp",
+      "reachability"
+    ],
+    "output": "report",
+    "authority": "read",
+    "check": "tcp-reachability"
+  }
+}

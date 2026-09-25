@@ -1,0 +1,1640 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RRAABBIITT · Magic Box</title>
+<style>
+:root{color-scheme:dark;--bg:#101410;--surface:#181e18;--raised:#202820;--line:#344034;--ink:#ecf1e7;--muted:#adb9a5;--accent:#cbef7f;--accent-ink:#172306;--warn:#f0c985;--bad:#ffaaa3;--radius:12px;--gap:20px;font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink)}button,input,textarea,select{font:inherit}button,input,textarea,select{border:1px solid var(--line);border-radius:8px}button{cursor:pointer;background:var(--raised);color:var(--ink);padding:9px 14px;text-align:start}button:hover:not(:disabled){border-color:var(--accent)}button:disabled{opacity:.45;cursor:not-allowed}input,textarea,select{background:var(--bg);color:var(--ink);padding:11px;inline-size:100%}textarea{resize:vertical;line-height:1.65;min-block-size:145px}a{color:var(--accent)}:focus-visible{outline:2px solid var(--accent);outline-offset:3px}[hidden]{display:none!important}h1,h2,h3,p{margin:0}h1{font-size:clamp(26px,3vw,38px);line-height:1.2;letter-spacing:-.04em}h2{font-size:18px;letter-spacing:-.02em}h3{font-size:15px}small,.muted{color:var(--muted)}code,pre,.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}code{font-size:.9em;overflow-wrap:anywhere}pre{margin:0;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}.grid{display:grid;gap:var(--gap)}.stack{display:grid;gap:12px}.tight{display:grid;gap:5px}.row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}.actions{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}.topbar{padding:20px 28px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}.brand{font-size:15px;letter-spacing:.13em;font-weight:800}.eyebrow{color:var(--accent);text-transform:uppercase;font-size:11px;letter-spacing:.14em;font-weight:700}.shell{display:grid;grid-template-columns:238px 1fr;gap:28px;padding:28px;max-inline-size:1480px;margin:auto}.sidebar{display:grid;gap:24px;align-self:start}.main{display:grid;gap:22px;align-self:start;inline-size:100%}.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:grid;gap:16px}.hero{display:grid;gap:10px}.pill{display:inline-block;padding:4px 9px;font-size:11px;border:1px solid var(--line);border-radius:999px;font-weight:650;letter-spacing:.04em}.pill[data-tone=ok]{color:var(--accent);border-color:#566d3b}.pill[data-tone=warn]{color:var(--warn);border-color:#705c38}.pill[data-tone=bad]{color:var(--bad);border-color:#724440}.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:750}.danger{color:var(--warn)}.nav{display:grid;gap:6px}.nav button{border-color:transparent;background:transparent}.nav button[aria-current=page]{background:var(--raised);border-color:var(--line);color:var(--accent)}.cap{display:grid;gap:3px;inline-size:100%;overflow-wrap:anywhere}.cap small{font-size:11px}.history{display:grid;gap:8px;overflow:auto;max-block-size:340px}.history button{display:grid;gap:4px;font-size:12px;overflow-wrap:anywhere}.history button[aria-current=true]{border-color:var(--accent)}.history p{font-size:12px}.columns{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.subtle{font-size:12px;color:var(--muted)}.callout{padding:13px 15px;border:1px solid var(--line);border-radius:8px;background:var(--bg);font-size:13px;overflow-wrap:anywhere}.callout[data-tone=bad]{border-color:#724440;color:var(--bad)}.callout[data-tone=warn]{border-color:#705c38;color:var(--warn)}.field{display:grid;gap:6px}.field label{font-size:13px;font-weight:650}.field small{font-size:12px}.fields{display:grid;gap:14px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.steps span{border-top:2px solid var(--line);padding-top:8px;font-size:11px;color:var(--muted)}.steps span[data-active=true]{border-color:var(--accent);color:var(--accent)}.examples{display:grid;grid-template-columns:1fr 1fr;gap:8px}.examples button{font-size:12px}.seat{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:7px 0;border-bottom:1px solid var(--line);font-size:13px;overflow-wrap:anywhere}.seat:last-child{border-bottom:0}.seat-value{color:var(--accent)}.seat-value[data-missing=true]{color:var(--warn)}.frame{display:grid;gap:9px;padding:15px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}.frame small{overflow-wrap:anywhere}.questions{display:grid;gap:14px}.question{display:grid;gap:10px;padding:15px;border:1px solid #705c38;border-radius:10px}.scroll{overflow:auto;max-block-size:390px;inline-size:100%;padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}.file-button{display:block;inline-size:100%;font:12px/1.5 ui-monospace,monospace;overflow-wrap:anywhere}.file-list{display:grid;gap:5px;max-block-size:240px;overflow:auto}.source-list{display:grid;gap:12px}.sense{padding:14px;border:1px solid var(--line);border-radius:8px;display:grid;gap:7px}.footer{padding:0 28px 28px;max-inline-size:1480px;margin:auto;color:var(--muted);font-size:12px}.status-line{font-size:12px;min-block-size:19px}.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.tabs button[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}details{border-top:1px solid var(--line);padding-top:12px}summary{cursor:pointer;font-size:13px;color:var(--muted);margin-bottom:8px}.notices{display:grid;gap:8px}.word-search{display:grid;grid-template-columns:1fr auto;gap:8px}.welcome{border:1px dashed var(--line);padding:30px 20px;text-align:center;border-radius:10px;display:grid;gap:10px}.execute-zone{display:grid;gap:10px;border:1px solid #566d3b;padding:15px;border-radius:10px}.execute-zone label{display:grid;grid-template-columns:22px 1fr;gap:8px;font-size:13px}.execute-zone input{inline-size:18px;block-size:18px}.hidden-label{position:absolute;clip-path:inset(50%);inline-size:1px;block-size:1px;overflow:hidden}
+@media(max-width:1080px){.columns{grid-template-columns:1fr}.shell{grid-template-columns:210px 1fr;gap:18px;padding:20px}.panel{padding:18px}}
+@media(max-width:650px){.topbar{padding:16px;grid-template-columns:1fr}.shell{grid-template-columns:1fr;padding:16px}.sidebar{gap:14px}.sidebar .history-group{display:none}.nav{grid-template-columns:1fr 1fr}.capabilities{display:grid;grid-template-columns:1fr 1fr;gap:8px}.sidebar-title{display:none}.columns,.examples{grid-template-columns:1fr}.top-actions{inline-size:100%}.footer{padding:0 16px 22px}.steps span{font-size:10px}}
+:root{--chat-width:1480px;--chat-offset:110px;--chat-bubble-width:84%;--chat-input-height:64px;--chat-input-max:160px}
+.workspace-tabs{display:grid;grid-template-columns:repeat(10,max-content) 1fr;align-items:center;gap:8px;padding:12px 28px;border-bottom:1px solid var(--line);overflow-x:auto}
+.workspace-project-picker{justify-self:end;display:grid;align-items:center;gap:8px}
+.workspace-project-picker select{min-inline-size:180px;max-inline-size:260px}
+.session-chooser{margin:12px 28px;padding:12px;display:grid;gap:12px;border:1px solid var(--line);border-radius:var(--radius)}
+.session-chooser>.row{display:grid;grid-template-columns:auto 1fr repeat(3,max-content)}.session-chooser form,.session-chooser #workspace-session-preview{display:grid;gap:12px;max-block-size:45vh;overflow:auto}
+@media(max-width:650px){.session-chooser{margin:8px 16px}.session-chooser>.row{grid-template-columns:1fr 1fr}.session-chooser>.row select{grid-column:1/-1}.workspace-project-picker{grid-column:1/-1;justify-self:stretch}.workspace-project-picker select{max-inline-size:none}}
+.investigations-view .sidebar{display:none}.investigations-view .shell{grid-template-columns:1fr}
+.projects-view .sidebar,.requests-view .sidebar{display:none}.projects-view .shell,.requests-view .shell{grid-template-columns:1fr}
+.investigations-view .mono,.investigations-view .status-line{overflow-wrap:anywhere}
+.investigation-split{grid-template-columns:1fr 3fr;align-items:start}.investigation-split>*{min-inline-size:0}
+.investigation-details{min-inline-size:0}.investigation-files{margin:0;padding-inline-start:20px;overflow-wrap:anywhere}
+@media(max-width:800px){.investigation-split{grid-template-columns:1fr}}
+.chat-view .topbar,.chat-view .sidebar,.chat-view .footer,.chat-view #activity,.chat-view #global-message,.rephrase-view .topbar,.rephrase-view .sidebar,.rephrase-view .footer,.rephrase-view #activity,.rephrase-view #global-message{display:none}
+.chat-view .shell,.rephrase-view .shell{grid-template-columns:1fr;max-inline-size:var(--chat-width);padding:var(--gap);gap:0}
+.turn-checker-view .sidebar{display:none}
+.turn-checker-view #clear-bag,.turn-checker-view #refresh{display:none}
+.turn-checker-view .shell{grid-template-columns:1fr}
+.chat-room{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);block-size:calc(100dvh - var(--chat-offset));overflow:hidden}
+.chat-room>*{min-inline-size:0;min-block-size:0}
+body.chat-view{display:grid;grid-template-rows:auto auto 1fr;block-size:100dvh;overflow:hidden}
+.chat-view>.workspace-tabs{grid-row:1;min-inline-size:0}
+.chat-view>.session-chooser{grid-row:2;min-block-size:0;max-block-size:40dvh;overflow:auto}
+.chat-view>.shell{grid-row:3;min-block-size:0;inline-size:100%;margin:0 auto;overflow:hidden}
+.chat-view .main{min-block-size:0;align-self:stretch;grid-template-rows:1fr;overflow:hidden}
+.chat-view .chat-room{block-size:100%;min-block-size:0}
+.chat-conversation{display:grid;grid-template-rows:auto 1fr auto;gap:var(--gap);overflow:hidden}
+#view-chat .chat-conversation{grid-template-areas:'header' 'main' 'footer'}
+#view-chat .chat-conversation>.chat-heading{grid-area:header}
+#chat-messages{grid-area:main;min-block-size:0;min-inline-size:0;overflow-y:auto;overflow-x:hidden}
+#chat-form{grid-area:footer;min-inline-size:0}
+.chat-plan{display:grid;grid-template-rows:auto 1fr;gap:var(--gap);overflow:hidden;border-inline-start:1px solid var(--line);padding-inline-start:var(--gap)}
+.chat-step-groups{display:grid;align-content:start;gap:var(--gap);overflow:auto;overscroll-behavior:contain;padding:4px}
+.chat-step-groups .frame[data-active=true]{border-color:var(--accent)}
+.chat-step-groups .callout{display:grid;gap:8px}
+.chat-step-groups details{font-size:12px}
+.chat-step-groups summary{margin:0}
+.chat-step-groups .seat{grid-template-columns:1fr 1fr}
+.chat-request{display:grid;gap:12px;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.chat-request[data-active=true]{border-color:var(--accent)}
+.chat-step-summary{overflow-wrap:anywhere;padding:0;border-top:0}
+.chat-step-summary>summary{cursor:pointer}
+.chat-step-title{display:block;margin-block-start:4px}
+.chat-step-summary[open]>summary{margin-block-end:12px}
+.chat-step-summary[data-outcome=completed] .chat-step-outcome{color:var(--accent)}
+.chat-step-summary[data-outcome=failed] .chat-step-outcome{color:var(--bad)}
+.chat-step-summary[data-outcome=stopped] .chat-step-outcome{color:var(--muted)}
+.run-preparation{display:grid;gap:var(--gap);min-inline-size:0}
+.run-preparation .actions{grid-auto-flow:row;grid-template-columns:1fr}
+.run-preparation :is(code,p,small){overflow-wrap:anywhere}
+.chat-heading{display:grid;grid-template-columns:1fr auto;align-items:center;gap:var(--gap)}
+.chat-heading h1{font-size:26px}
+.chat-tabs button[aria-selected=true]{border-color:var(--accent);color:var(--accent);background:var(--surface)}
+.chat-steps-panel{display:grid;grid-template-rows:auto auto auto 1fr;gap:var(--gap);min-block-size:0;overflow:hidden}
+.chat-project-panel{display:grid;align-content:start;gap:var(--gap);min-block-size:0;overflow:auto;overscroll-behavior:contain;padding:4px}
+.chat-project-panel>*{min-inline-size:0}
+.project-fields{margin:0}
+.project-fields dd{margin:0}
+.project-fields .seat{grid-template-columns:1fr 2fr}
+.chat-messages{display:grid;align-content:start;gap:var(--gap);overflow:auto;overscroll-behavior:contain;padding:4px}
+.chat-message{display:grid;gap:6px;justify-self:start;max-inline-size:var(--chat-bubble-width)}
+.chat-message[data-speaker=you]{justify-self:end}
+.chat-speaker{font-size:12px;color:var(--muted)}
+.chat-message[data-speaker=you] .chat-speaker{text-align:end}
+.chat-bubble{padding:13px 17px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);white-space:pre-wrap;overflow-wrap:anywhere}
+.chat-message[data-speaker=you] .chat-bubble{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.chat-composer{display:grid;gap:8px}
+.chat-input-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end;padding:12px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.chat-input-row textarea{min-block-size:var(--chat-input-height);max-block-size:var(--chat-input-max);resize:none;background:transparent;border:0;padding:8px}
+.chat-composer .subtle{text-align:center}
+@media(max-width:650px){:root{--chat-offset:98px;--chat-bubble-width:92%}.workspace-tabs{padding:8px 16px;grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:repeat(2,1fr)}.chat-view .shell,.rephrase-view .shell{padding:var(--gap)}.chat-input-row{gap:8px;padding:8px}}
+@media(max-width:800px){.chat-room{grid-template-columns:1fr;grid-template-rows:65% 35%;gap:0}.chat-conversation{padding-block-end:12px}.chat-plan{border-inline-start:0;border-block-start:1px solid var(--line);padding-inline-start:0;padding-block-start:12px;gap:8px}}
+@media(max-width:650px){.chat-view>.workspace-tabs{grid-template-columns:repeat(10,max-content) 180px;grid-auto-flow:column}.chat-view .workspace-project-picker{grid-column:auto}.chat-view>.session-chooser{max-block-size:35dvh}}
+:root{--toolbox-space:16px;--toolbox-control-gap:8px;--toolbox-list-gap:4px;--toolbox-control-radius:8px;--toolbox-label-size:12px}
+:where([data-grid],[data-area]){display:grid;min-inline-size:0;min-block-size:0}
+[data-grid='header-main']{grid-template-rows:auto 1fr;grid-template-areas:'header' 'main'}
+[data-grid='side-left']{grid-template-columns:auto 1fr;grid-template-rows:1fr;grid-template-areas:'side main'}
+[data-grid='header-main']>[data-area='header']{grid-area:header}
+:is([data-grid='header-main'],[data-grid='side-left'])>[data-area='main']{grid-area:main}
+[data-grid='side-left']>[data-area='side']{grid-area:side}
+[data-gap='content']{gap:var(--gap)}
+.scroll-y{min-block-size:0;overflow:auto;overscroll-behavior:contain}
+.toolbox-view{display:grid;grid-template-rows:auto 1fr;block-size:100dvh;overflow:hidden}
+.toolbox-view .topbar,.toolbox-view .sidebar,.toolbox-view .footer,.toolbox-view #activity{display:none}
+.toolbox-view .shell{grid-template-columns:1fr;gap:0;padding:var(--gap);max-inline-size:none;margin:0;inline-size:100%;min-inline-size:0;min-block-size:0;overflow:hidden}
+.toolbox-view .main{grid-template-rows:auto 1fr;gap:0;align-self:stretch;min-inline-size:0;min-block-size:0;overflow:hidden}
+.toolbox-view #global-message{grid-row:1}.toolbox-room{grid-row:2;overflow:hidden}
+.toolbox-header{gap:var(--toolbox-space);padding:var(--toolbox-space)}.toolbox-header h1{font-size:26px}
+.toolbox-search{display:grid;grid-template-columns:1fr auto;gap:var(--toolbox-control-gap)}.toolbox-search input{min-inline-size:0}
+.toolbox-split{overflow:hidden}.toolbox-side{align-content:start;padding:var(--toolbox-control-gap)}
+.toolbox-list{display:grid;align-content:start;gap:var(--toolbox-list-gap);min-inline-size:max-content;list-style:none;margin:0;padding:0}
+.toolbox-tool{display:block;inline-size:100%;padding:10px 12px;white-space:nowrap;text-align:start}
+.toolbox-details{display:block;padding:var(--toolbox-space)}.toolbox-detail-content{display:grid;align-content:start;gap:var(--gap)}
+.toolbox-tabs{margin-block:var(--toolbox-space)}.toolbox-tabs [aria-selected=true]{border-color:var(--accent);color:var(--accent)}
+.toolbox-detail-heading{display:grid;gap:var(--toolbox-control-gap)}.toolbox-detail-heading h2{font-size:24px}
+.toolbox-facts{display:grid;grid-template-columns:max-content 1fr;gap:var(--toolbox-control-gap) var(--toolbox-space);margin:0}
+.toolbox-facts dt{font-size:var(--toolbox-label-size)}.toolbox-facts dd{margin:0;min-inline-size:0;overflow-wrap:anywhere}
+.toolbox-inputs{display:grid;gap:var(--toolbox-space)}.toolbox-input{display:grid;gap:var(--toolbox-control-gap);padding:var(--toolbox-space)}
+.toolbox-empty{display:grid;align-content:center;justify-items:center;gap:var(--toolbox-control-gap);min-block-size:100%;text-align:center}
+.container-toolbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+.container-toolbox-inset{background:var(--bg);border:1px solid var(--line);border-radius:var(--toolbox-control-radius)}
+.control-toolbox{background:transparent;border-color:transparent}.control-toolbox[aria-pressed=true]{background:var(--raised);border-color:var(--accent);color:var(--accent)}
+@media(max-width:650px){.toolbox-view .shell{padding:var(--toolbox-control-gap)}.toolbox-side{max-inline-size:45vw}.toolbox-facts{grid-template-columns:1fr}.toolbox-facts dd{margin-block-end:var(--toolbox-control-gap)}}
+.setting-required{inline-size:18px;block-size:18px}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="tight"><div class="brand">RRAABBIITT <span class="muted">/</span> MAGIC BOX</div><small>A local workbench. One contract. Exact execution.</small></div><div class="actions top-actions"><span class="pill" id="connection" data-tone="warn">CONNECTING</span><button type="button" id="clear-bag">Clear Bag</button><button type="button" id="refresh">Refresh world</button></div></header>
+<nav class="nav workspace-tabs" aria-label="Workspace"><button type="button" data-view="chat">Chat</button><button type="button" data-view="projects">Projects</button><button type="button" data-view="requests">Requests</button><button type="button" data-view="toolbox">Toolbox</button><button type="button" data-view="investigations">Investigations</button><button type="button" data-view="workbench">Workbench</button><button type="button" data-view="language">Language lab</button><button type="button" data-view="rephrase">Re-phrase</button><button type="button" data-view="turn-checker">Turn checker</button><button type="button" data-view="health">Health</button><div class="workspace-project-picker"><label class="hidden-label" for="chat-project-select">Active project</label><select id="chat-project-select" disabled><option value="">Choose a project</option></select></div></nav>
+<section class="session-chooser" id="workspace-sessions" aria-label="Project sessions" hidden>
+  <div class="row"><label for="workspace-session-select">Sessions</label><select id="workspace-session-select" disabled><option value="">Choose a session</option></select><button type="button" id="workspace-session-continue" disabled>Continue</button><button type="button" id="workspace-session-view" disabled>View</button><button type="button" id="workspace-session-new" disabled>New session</button></div>
+  <p class="subtle" id="workspace-session-status" role="status">Choose a project, then a session.</p>
+  <form id="workspace-session-form" hidden><div class="field"><label for="workspace-session-name">Session name (required)</label><input id="workspace-session-name" required maxlength="160"></div><div class="field"><label for="workspace-session-title">Title (optional)</label><input id="workspace-session-title" maxlength="240"></div><div class="field"><label for="workspace-session-description">Description (optional)</label><textarea id="workspace-session-description" maxlength="4000"></textarea></div><div class="actions"><button type="submit">Create session</button><button type="button" id="workspace-session-cancel">Cancel</button></div></form>
+  <section id="workspace-session-preview" hidden><div class="row"><h2>Saved session · read only</h2><button type="button" id="workspace-session-close">Close preview</button></div><div id="workspace-session-history"></div><details><summary>Saved session details</summary><pre id="workspace-session-json"></pre></details></section>
+</section>
+<div class="shell">
+<aside class="sidebar">
+<section class="tight"><div class="eyebrow">Current world</div><h2 id="project-name">Mock project</h2><div class="subtle" id="project-path">HOST.json → PATHS.json</div></section>
+<section class="stack"><div class="row sidebar-title"><h3>Tool House stamps</h3><span id="cap-count" class="subtle">—</span></div><div id="capabilities" class="stack capabilities"></div><div id="unavailable" class="notices"></div></section>
+<section class="stack"><div class="row sidebar-title"><h3>Refactor tools</h3><span id="tool-count" class="subtle">—</span></div><div id="tools-list" class="stack capabilities"><p class="subtle">Loading tools…</p></div></section>
+<section class="stack history-group"><div class="row"><h3>Saved runs</h3><small>On disk</small></div><div id="history" class="history"><p>No runs yet.</p></div></section>
+<div class="callout"><strong>Project owns the rules.</strong><br>Paths, options, scripts, and scaffolds come from the selected project. Refresh to inspect edits; each operation revalidates.</div>
+</aside>
+<main class="main">
+<div id="global-message" class="callout" role="status" hidden></div>
+<section id="view-projects" class="grid" aria-labelledby="projects-title" hidden>
+  <div class="hero"><div class="eyebrow">Local workspace</div><h1 id="projects-title">Projects</h1><p class="muted">Preview saved projects without changing your work. Choose an action when you are ready.</p><p id="projects-current" class="callout" role="status">No session selected in this window.</p></div>
+  <div class="columns">
+    <section class="panel"><div class="row"><h2>Saved projects</h2><button type="button" id="projects-refresh">Refresh list</button></div><div class="field"><label for="projects-select">Project to preview</label><select id="projects-select"><option value="">Choose a project</option></select></div><div id="projects-unavailable" class="notices"></div><p id="projects-status" class="subtle" role="status">Loading saved projects…</p><div class="field"><label for="projects-session">Saved session</label><select id="projects-session" disabled><option value="">Latest session</option></select></div><div class="actions"><button type="button" id="projects-resume" disabled>Resume</button><button type="button" id="projects-new-action" disabled>New action</button><button type="button" id="projects-new-session" disabled>New session</button></div><p class="subtle">New action keeps session history. New session keeps project knowledge. Neither replays an uncertain run.</p></section>
+    <section class="panel"><h2>Read-only preview</h2><div id="projects-summary" class="stack"><p class="subtle">Select a saved project. Create projects through Chat.</p></div><p id="projects-source-status" class="callout" hidden></p><code id="projects-settings-path"></code><pre id="projects-settings" class="scroll">No project selected.</pre></section>
+  </div>
+</section>
+<section id="view-requests" class="grid" aria-labelledby="requests-title" hidden>
+  <div class="hero"><div class="eyebrow">Shared and project requests</div><h1 id="requests-title">Requests</h1><p class="muted">Save an idea for everyone or for the selected project. Requests stay in this computer’s configured .rab.</p></div>
+  <div class="columns">
+    <section class="panel"><h2>Record an idea</h2><form id="feature-request-form" class="fields"><div class="field"><label for="feature-request-scope">Save for · Required</label><select id="feature-request-scope" name="scope" required><option value="global">Global / shared</option><option value="project">Selected project</option></select><small id="feature-request-destination" role="status">Loading save location…</small></div><div class="field"><label for="feature-request-name">Name</label><input id="feature-request-name" name="name" required></div><div class="field"><label for="feature-request-title">Title</label><input id="feature-request-title" name="title" required></div><div class="field"><label for="feature-request-description">Description</label><textarea id="feature-request-description" name="description" required></textarea></div><div class="field"><label for="feature-request-type">Type</label><select id="feature-request-type" name="type" required><option value="tool">Tool</option><option value="feature">Feature</option><option value="ui">UI</option><option value="stamp">Stamp</option></select></div><div class="actions"><button id="feature-request-save" type="submit" class="primary">Save request</button><button id="feature-request-new" type="button">New request</button></div></form><p id="feature-request-status" class="subtle" role="status">Recording an idea does not execute it.</p></section>
+    <section class="panel"><div class="row"><h2>Saved requests</h2><button id="requests-refresh" type="button">Refresh</button></div><div id="requests-list" class="history"></div><pre id="request-detail" class="scroll">Choose a request to view it.</pre></section>
+  </div>
+</section>
+<section id="view-chat" class="chat-room" aria-labelledby="chat-title" hidden>
+<div class="chat-conversation">
+<div class="chat-heading"><div class="tight"><div class="row"><h1 id="chat-title">Chat</h1></div><p id="chat-project" class="subtle"></p></div><span class="pill" id="chat-connection">Connecting…</span></div>
+<div id="chat-messages" class="chat-messages" role="log" aria-label="Chat messages" aria-live="polite" aria-relevant="additions"></div>
+<form id="chat-form" class="chat-composer"><div class="chat-input-row"><label class="hidden-label" for="chat-input">Message the Box</label><textarea id="chat-input" rows="2" placeholder="Type a message…"></textarea><button id="chat-send" type="submit" class="primary" disabled>Send ↗</button></div><div class="subtle">Enter to send · Shift+Enter for a new line</div></form>
+</div>
+<aside class="chat-plan" aria-label="Project workspace">
+<div class="chat-heading"><div class="tabs chat-tabs" role="tablist" aria-label="Chat sidebar"><button type="button" role="tab" id="chat-steps-tab" data-chat-panel="steps" aria-selected="true" aria-controls="chat-steps-panel">Steps</button><button type="button" role="tab" id="chat-project-tab" data-chat-panel="project" aria-selected="false" aria-controls="chat-project-panel" tabindex="-1">Project</button></div><button type="button" id="chat-new-project" disabled>Start new project</button></div>
+<section id="chat-steps-panel" class="chat-steps-panel" role="tabpanel" aria-labelledby="chat-steps-tab"><span id="chat-step-count" class="subtle" role="status">0 groups · 0 steps</span><div class="chat-step-groups"><div id="chat-run-preparation" class="run-preparation" aria-label="Prepare the current action" hidden></div><div id="chat-step-history"><div id="chat-step-groups" class="stack"><p class="subtle">Your groups and steps will appear here as we go.</p></div></div></div></section>
+<section id="chat-project-panel" class="chat-project-panel" role="tabpanel" aria-labelledby="chat-project-tab" hidden><div id="chat-tool-candidates" class="callout"><strong>Live Tool Finder</strong><div class="subtle">Type to see the house narrow tools from the current domain.</div></div><div id="chat-health" class="callout"><strong>House health</strong><div class="subtle">Usage and losses will appear here.</div></div><div class="row"><h2>Live settings</h2><button type="button" id="chat-project-refresh" disabled>Refresh settings</button></div><p id="chat-project-status" class="subtle" role="status">Waiting for a project.</p><div id="chat-project-summary" class="callout"></div><section aria-label="Project paths"><h3>Paths</h3><p class="subtle">Folders are relative to this project. Types are comma-separated labels.</p><div id="chat-path-editor" class="stack"></div></section><div class="frame"><h3>settings.json</h3><code id="chat-settings-path" class="subtle"></code><pre id="chat-settings-json">{}</pre></div><details><summary>Current session</summary><pre id="chat-project-session">{}</pre></details></section>
+</aside>
+</section>
+<section id="view-toolbox" class="toolbox-room" data-grid="header-main" data-gap="content" aria-labelledby="toolbox-title" hidden>
+  <section data-area="header" data-rab-seat="area-header:toolbox" class="toolbox-header container-toolbox">
+    <h1 id="toolbox-title">Search the toolbox</h1>
+    <form id="toolbox-search-form" class="toolbox-search" role="search" aria-label="Search the toolbox">
+      <label for="toolbox-search" class="hidden-label">Search the toolbox</label><input id="toolbox-search" name="query" type="search" placeholder="Search names, descriptions, tags, or inputs…" autocomplete="off"><button type="submit" class="primary">Search</button>
+    </form>
+    <p id="toolbox-count" class="subtle" role="status">Loading tool catalog…</p>
+  </section>
+  <section data-area="main" data-rab-seat="area-main:toolbox" class="toolbox-split" data-grid="side-left" data-gap="content">
+    <section data-area="side" data-rab-seat="area-side:toolbox-list" class="toolbox-side scroll-y container-toolbox" aria-label="Tool list" tabindex="0"><ul id="toolbox-list" class="toolbox-list"></ul><p id="toolbox-empty" class="subtle" hidden>No tools match your search.</p></section>
+    <section data-area="main" data-rab-seat="area-main:toolbox-details" id="toolbox-details" class="toolbox-details scroll-y container-toolbox" role="region" aria-label="Tool details" tabindex="0"><div class="toolbox-empty"><h2>Select a tool for details</h2><p class="subtle">Browse the shared catalog. No project settings are applied.</p></div></section>
+  </section>
+</section>
+<section id="view-investigations" class="grid" aria-labelledby="investigation-title" hidden>
+  <header class="panel">
+    <div class="tight"><div class="eyebrow">Class impact · local evidence</div><h1 id="investigation-title">Investigations</h1><p id="investigation-project" class="muted">No audit project loaded.</p><p id="investigation-folder" class="mono subtle"></p></div>
+    <p id="investigation-context" class="callout">Create or load an audit project in Chat, then return here.</p>
+    <form id="investigation-run-form" class="word-search"><label class="hidden-label" for="investigation-class">Exact class name</label><input id="investigation-class" name="class_name" required autocomplete="off" placeholder="Exact class name, e.g. ui-action"><button id="investigation-run" type="submit" class="primary" disabled>Investigate class</button></form>
+    <p id="investigation-status" class="status-line" role="status" aria-live="polite"></p>
+  </header>
+  <div class="grid investigation-split">
+    <section class="panel" aria-labelledby="investigation-saved-title"><h2 id="investigation-saved-title">Saved investigations</h2><button id="investigation-refresh" type="button" disabled>Refresh saved list</button><div id="investigation-list" class="history"></div><div id="investigation-unavailable" class="notices"></div></section>
+    <div class="grid investigation-details">
+      <div id="investigation-empty" class="welcome"><strong>Select an investigation or run a class search.</strong><p class="subtle">Evidence and decisions stay in the selected audit project.</p></div>
+      <div id="investigation-detail" class="grid" hidden>
+        <section class="panel"><div class="tight"><h2 id="investigation-subject"></h2><p id="investigation-freshness" class="callout"></p><p id="investigation-revision" class="subtle mono"></p></div><div id="investigation-conclusions" class="stack"></div><div class="columns"><div class="stack"><h3>Observed definitions</h3><div id="investigation-definitions"></div></div><div class="stack"><h3>Potential consumers</h3><div id="investigation-consumers"></div></div></div></section>
+        <section class="panel"><h2>Coverage and gaps</h2><div id="investigation-gaps" class="stack"></div><details><summary>Coverage details</summary><pre id="investigation-coverage" class="scroll"></pre></details><details><summary>Raw evidence</summary><pre id="investigation-raw" class="scroll"></pre></details></section>
+        <section class="panel"><h2>Record a decision</h2><p class="subtle">Your declaration is recorded separately from observed evidence.</p><form id="investigation-declare-form" class="stack"><div class="field"><label for="investigation-decision">Decision</label><select id="investigation-decision" required><option value="">Choose a decision</option><option value="intentional">Intentional</option><option value="accidental">Accidental</option><option value="unknown">Unknown</option></select></div><div class="field"><label for="investigation-reason">Reason</label><textarea id="investigation-reason" required rows="3" maxlength="4000"></textarea></div><button id="investigation-declare" type="submit" disabled>Save decision</button></form></section>
+        <section class="panel"><h2>Prepare one state skin change</h2><p class="subtle">Update custom properties for this class’s paired :active and .is-active states in one observed CSS definition file.</p><form id="investigation-plan-form" class="stack"><div class="field"><label for="investigation-location">Definition CSS file</label><select id="investigation-location" required></select></div><div class="field"><label for="investigation-styles">CSS custom-property declarations</label><textarea id="investigation-styles" required rows="3" spellcheck="false" placeholder="--action-ink: var(--ink);"></textarea></div><button id="investigation-plan" type="submit" disabled>Prepare change plan</button></form><p id="investigation-plan-hint" class="subtle"></p>
+          <div id="investigation-approval-zone" class="execute-zone" hidden><h3>Review the exact prepared change</h3><p id="investigation-plan-target" class="mono"></p><pre id="investigation-proposed-styles" class="scroll"></pre><pre id="investigation-plan-json" class="scroll"></pre><details id="investigation-before-zone" hidden><summary>Recorded file before this change</summary><pre id="investigation-before" class="scroll"></pre></details><label><input id="investigation-confirm" type="checkbox"><span>I approve this exact plan and its write to the target file shown above.</span></label><button id="investigation-execute" type="button" class="primary" disabled>Apply approved change and verify</button><p class="subtle">An execution attempt is never retried automatically.</p></div>
+        </section>
+        <section id="investigation-verification-zone" class="panel" hidden><h2>Verification</h2><p id="investigation-verification-status" class="callout"></p><div id="investigation-checks" class="stack"></div><details><summary>Verification record</summary><pre id="investigation-verification" class="scroll"></pre></details></section>
+        <section class="panel"><h2>Local handoff</h2><p class="subtle">Prepare a payload containing the objective, evidence, gaps, rules, and acceptance criteria.</p><button id="investigation-handoff" type="button" disabled>Prepare local handoff</button><pre id="investigation-handoff-json" class="scroll" hidden></pre></section>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="view-rephrase" class="chat-room" aria-labelledby="rephrase-title" hidden>
+<div class="chat-conversation">
+<div class="chat-heading"><div class="tight"><h1 id="rephrase-title">Re-phrase</h1><p class="subtle">Runs only <code>base/re-phrase-check</code>. Same word/type logic; zero execution authority.</p></div><span class="pill" data-tone="ok">TOOL ONLY</span></div>
+<div id="rephrase-messages" class="chat-messages" role="log" aria-label="Re-phrase messages" aria-live="polite" aria-relevant="additions"></div>
+<form id="rephrase-form" class="chat-composer"><div class="chat-input-row"><label class="hidden-label" for="rephrase-input">Text to re-phrase</label><textarea id="rephrase-input" rows="2" spellcheck="false" placeholder='re-phrase "this didn&apos;t work"'></textarea><button id="rephrase-send" type="submit" class="primary" disabled>Re-phrase ↗</button></div><div class="subtle">Enter to run · Shift+Enter for a new line · strict known-language input</div></form>
+</div>
+<aside class="chat-plan" aria-labelledby="rephrase-logic-title"><div class="chat-heading"><h2 id="rephrase-logic-title">Language logic</h2><span id="rephrase-status" class="subtle">Waiting</span></div><div id="rephrase-logic" class="chat-step-groups"><div class="welcome"><strong>No phrase yet.</strong><p class="subtle">Known contractions, lexical types, semantic senses and the generated surface form will show here.</p></div></div></aside>
+</section>
+<section id="view-workbench" class="grid">
+<div class="hero"><div class="eyebrow">The operator seat · v0.8</div><h1>Tell the box what to do. Keep the context.</h1><p class="muted">One Enter press is a Turn. Steps can span turns; groups carry parent context until you branch.</p></div>
+<div class="steps" aria-label="Run stages"><span data-step="request">01 · Request</span><span data-step="bind">02 · Bind seats</span><span data-step="execute">03 · Execute</span><span data-step="receipt">04 · Receipt</span></div>
+<div class="columns">
+<div class="grid">
+<section class="panel"><div class="row"><h2>Turn</h2><div class="actions"><button type="button" id="new-session">New session</button><button type="button" id="new-run">New run</button></div></div><div class="tabs"><button type="button" id="text-mode" aria-pressed="true">Write a request</button><button type="button" id="form-mode" aria-pressed="false">Use stamp fields</button></div>
+<form id="request-form" class="stack"><label class="hidden-label" for="request-text">Magic Box request</label><textarea id="request-text" spellcheck="false" placeholder='add component TestOne then add component to it called Menu'></textarea><div class="row"><span class="subtle" id="draft-status">Enter sends one Turn · Shift+Enter makes a newline. Strict language: unknown words become visible gaps.</span><div class="actions"><button type="submit" class="primary" id="prepare">Send turn ↗</button></div></div></form>
+<form id="manual-form" class="stack" hidden><div class="field"><label for="stamp-select">Reserved capability</label><select id="stamp-select"></select></div><div id="manual-fields" class="fields"></div><button type="submit" class="primary">Validate inputs ↗</button><small>Leave a required field empty to let the resolver ask for it. Nothing executes yet.</small></form>
+<div class="examples"><button type="button" data-example='stamp a new react project named "test-project" into the current project folder'>React project →</button><button type="button" data-example='make a div with class x'>Div + missing atom →</button><button type="button" data-example='make a component named "DatePicker" with class "container-main"'>Known class →</button><button type="button" data-example='do not make a div with class x'>Refusal test →</button></div></section>
+<section class="panel"><div class="row"><h2>Tool runner</h2><span class="pill">settings.json → form</span></div><div class="field"><label for="tool-select">Tool</label><select id="tool-select"></select></div><form id="tool-form" class="fields"><div id="tool-fields" class="fields"></div><button type="submit" class="primary">Run Tool ↗</button></form><div id="tool-result" class="scroll"><pre>{}</pre></div></section>
+<section id="plan-panel" class="panel"><div class="row"><h2>Session · groups / steps / seats</h2><span class="pill" id="plan-status">NO SESSION</span></div><div id="bag-strip" class="callout"><strong>Bag</strong><div class="subtle">domain: — · project: — · current target: —</div></div><div id="plan-body" class="stack"><div class="welcome"><strong>No Turn yet.</strong><p class="subtle">v0.8 shows the parsed seats, inherited context, chosen capability, bound values and exact gaps. Fuzzy discovery has zero execution authority.</p></div></div><details><summary>Raw session / provenance</summary><div class="scroll"><pre id="plan-json">{}</pre></div></details></section>
+<section id="run-panel" class="panel"><div class="row"><h2>Current run</h2><span class="pill" id="run-status">NO REQUEST</span></div><div id="run-body" class="stack"><div class="welcome"><strong>Nothing is running.</strong><p class="subtle">Start with an example or your own supported command. The box will show what it resolved and what it still needs.</p></div></div></section>
+</div>
+<div class="grid">
+<section class="panel"><div class="row"><h2>Contract & seats</h2><span class="eyebrow">Live settings</span></div><div id="frames" class="stack"><p class="muted">The project declares the seats—not the textarea.</p></div><details><summary>Selected stamp · settings + binding</summary><div class="scroll"><pre id="contract-json">Select a stamp to inspect its contract.</pre></div></details></section>
+<section class="panel"><div class="row"><h2>Evidence</h2><button type="button" id="download-run" disabled>Save run JSON</button></div><div id="receipt-summary" class="subtle">Nothing is claimed as complete until execution returns a receipt.</div><div id="files" class="file-list"></div><div id="file-view" hidden class="stack"><div class="row"><code id="file-name"></code><button type="button" id="close-file">Close</button></div><div class="scroll"><pre id="file-text"></pre></div></div><details><summary>Raw result / provenance</summary><div class="scroll"><pre id="result-json">{}</pre></div></details><details><summary>Run history</summary><div class="scroll"><pre id="run-json">[]</pre></div></details></section>
+</div>
+</div>
+</section>
+<section id="view-language" class="grid" hidden>
+<div class="hero"><div class="eyebrow">Optional language resources</div><h1>More vocabulary. Same boundaries.</h1><p class="muted">Explore word senses and feature grammar without silently teaching the executor new commands.</p></div>
+<div class="callout" data-tone="warn">This is a resource bench, not a trained model. Search is exact-form lookup. Imported records never update PATHS.json, active aliases, or permissions. No CCL or automatic script generation is installed.</div>
+<div class="columns"><section class="panel"><h2>Word & sense lookup</h2><form id="word-form" class="word-search"><label for="word-query" class="hidden-label">Word or phrase</label><input id="word-query" value="build" maxlength="120" placeholder="Try build, make, or named" required><button class="primary" type="submit">Look up</button></form><div id="word-results" class="source-list"><p class="subtle">The included seed is original example data—not a downloaded NLTK corpus.</p></div><details><summary>Import a WordNet export for review</summary><div class="stack"><p class="subtle">Use language/tools/export_wordnet.py, then select its JSON file. This adds review data only.</p><label for="resource-file">JSON export</label><input id="resource-file" type="file" accept=".json,application/json"><button type="button" id="import-resource">Import reference data</button><div id="import-status" class="subtle"></div></div></details></section>
+<section class="panel"><h2>Resource shelf</h2><div id="resources" class="source-list"></div><details open><summary>Installed review data</summary><div id="installed" class="stack"></div></details></section></div>
+<section class="panel"><div class="row"><h2>Decoder override</h2><span class="pill">OPERATOR REVIEWED</span></div><p class="subtle">Add lexical candidates without hard-mapping words to seats. Grammar/order/context still decide the seat.</p><form id="type-form" class="fields"><div class="field"><label for="type-lemma">Word / lemma</label><input id="type-lemma" placeholder="widget" required></div><div class="field"><label for="type-forms">Forms · comma separated</label><input id="type-forms" placeholder="widget, widgets"></div><div class="field"><label for="type-types">Linguistic types</label><input id="type-types" placeholder="noun" required></div><div class="field"><label for="type-senses">Possible meanings · comma separated</label><input id="type-senses" placeholder="component"></div><button class="primary" type="submit">Save decoder override</button><div id="type-status" class="subtle"></div></form><details><summary>Current operator overrides</summary><div class="scroll"><pre id="type-json">{}</pre></div></details></section>
+<section class="panel"><div class="row"><h2>Feature grammar · actual NLTK format</h2><span class="pill">SEPARATE EXPERIMENT</span></div><p class="subtle">Shared variables must agree. “Make a component” parses; “make a atoms” does not. This example is not wired into production command resolution.</p><div class="scroll"><pre id="grammar-text"></pre></div><div class="callout"><code>python language/tools/probe_grammar.py</code><br><small>Requires optional Python + NLTK. No corpus download is needed for this original grammar. Setup and WordNet export instructions: language/README.txt.</small></div></section>
+</section>
+<section id="view-turn-checker" class="grid" hidden>
+<div class="hero"><div class="eyebrow">Input → output diagnostics</div><h1>Turn Checker</h1><p class="muted">Check input against the shared language and Tool catalog. Each check starts without a project, session Bag, project vocabulary, or project paths. Nothing executes or saves to a project.</p></div>
+<div class="columns">
+<section class="panel"><div class="row"><h2>Check a Turn</h2><span class="pill">DIAGNOSTIC ONLY</span></div><form id="turn-check-form" class="stack"><label class="hidden-label" for="turn-check-input">Turn text</label><textarea id="turn-check-input" spellcheck="false" placeholder='find fuck-off hooks'></textarea><button class="primary" type="submit">Check Turn ↗</button></form><div class="examples"><button type="button" data-turn-check-example="find hooks">find hooks</button><button type="button" data-turn-check-example="find state hooks">find state hooks</button><button type="button" data-turn-check-example="count components">count components</button><button type="button" data-turn-check-example='hack a new component named "do-it"'>unknown operation</button></div><div id="turn-check-summary" class="callout">No Turn checked yet.</div><div id="turn-check-pipeline" class="stack"></div></section>
+<section class="panel"><div class="row"><h2>Shape / Tool evidence</h2><span id="turn-check-status" class="pill">WAITING</span></div><div id="turn-check-shape" class="stack"><p class="subtle">Seats, typed unknowns, candidates and authority will appear here.</p></div><details><summary>Raw Turn Check</summary><div class="scroll"><pre id="turn-check-json">{}</pre></div></details></section>
+</div>
+</section>
+
+<section id="view-health" class="grid" hidden>
+<div class="hero"><div class="eyebrow">House telemetry · event driven</div><h1>Health</h1><p class="muted">Usage, recency, questions, losses, corrections and failures from the same Turn → Step → Task event ledger. Raw events are append-only; these views are disposable rollups.</p></div>
+<div class="columns">
+<section class="panel"><div class="row"><h2>House pulse</h2><button type="button" id="health-refresh">Refresh health</button></div><div id="health-summary" class="stack"><p class="subtle">No health snapshot loaded yet.</p></div></section>
+<section class="panel"><h2>Hot / cold / workhorses</h2><div id="health-entities" class="stack"></div></section>
+</div>
+<div class="columns">
+<section class="panel"><h2>Losses & questions</h2><div id="health-losses" class="stack"></div></section>
+<section class="panel"><h2>Known word usage</h2><div id="health-words" class="stack"></div></section>
+</div>
+<section class="panel"><div class="row"><h2>Recent cellbrain events</h2><span class="pill">RAW LEDGER</span></div><div id="health-events" class="stack"></div><details><summary>Raw health JSON</summary><div class="scroll"><pre id="health-json">{}</pre></div></details></section>
+</section>
+<div id="activity" class="status-line" role="status" aria-live="polite"></div>
+</main>
+</div>
+<footer class="footer">Local files, visible receipts. No cloud calls. One trusted operator; do not expose this server publicly. The original v0.2 engine is preserved in <code>engine/</code>.</footer>
+<script>
+const $ = selector => document.querySelector(selector);
+const el = (tag, text, className) => { const node = document.createElement(tag); if (text !== undefined) node.textContent = text; if (className) node.className = className; return node; };
+const json = value => JSON.stringify(value, null, 2);
+const state = { token: null, project: null, run: null, plan: null, session: null, health: null, busy: false, workspaceLoaded: false, mode: 'text', chatPanel: 'steps', contract: null, tools: [], selectedTool: null, toolbox: { selectedKey: null, unavailable: [], loaded: false }, rephrase: { messages: [], last: null }, turnCheck: { last: null }, bag: { domain: null, projectRoot: null, projectName: null, currentTarget: null, paths: {} } };
+const positiveId = value => {
+  if (typeof value === 'string' && !/^[1-9]\d*$/.test(value)) return null;
+  const number = typeof value === 'string' ? Number(value) : value;
+  return Number.isSafeInteger(number) && number > 0 ? number : null;
+};
+const windowSessionKey = 'rraabbiitt.window.session';
+let contextRevision = 0, workspacePending = null, projectReadSequence = 0;
+const contextSnapshot = () => ({ revision: contextRevision, session_id: state.session?.session_id ?? null });
+const isCurrentContext = snapshot => snapshot.revision === contextRevision && snapshot.session_id === (state.session?.session_id ?? null);
+const savedWindowSession = () => { try { return positiveId(sessionStorage.getItem(windowSessionKey)); } catch { return null; } };
+const rememberSession = id => { try { if (id === null) sessionStorage.removeItem(windowSessionKey); else sessionStorage.setItem(windowSessionKey, String(id)); } catch {} };
+const syncStorageHome = home => {
+  if (typeof home !== 'string' || !home) return;
+  try {
+    const key = 'rraabbiitt.window.storage-home';
+    if (sessionStorage.getItem(key) !== home) {
+      // A bare ID from a different store can identify unrelated work. Clear
+      // only this tab's cached selection; saved sessions remain on disk.
+      rememberSession(null);
+      sessionStorage.removeItem('rraabbiitt.window.project');
+    }
+    sessionStorage.setItem(key, home);
+  } catch {}
+};
+const acceptSession = session => {
+  const draft = session?.session_id === null && typeof session.draft_id === 'string' && session.draft_id.length > 0;
+  if (!draft && (typeof session?.session_id !== 'number' || !positiveId(session.session_id))) throw new Error('The server returned an invalid numeric session ID.');
+  const changed = state.session?.session_id !== session.session_id;
+  contextRevision++;
+  state.session = session; state.plan = null; rememberSession(session.session_id);
+  if (changed) { state.project = null; state.run = null; state.contract = null; state.health = null; $('#file-view').hidden = true; $('#tool-result pre').textContent = '{}'; }
+  return session;
+};
+const sessionMutation = async (path, payload = {}) => {
+  const snapshot = contextSnapshot(), session = state.session;
+  const result = await api(path, 'POST', { ...(session?.draft_id ? {draft_id:session.draft_id} : {session_id: session?.session_id, expected_revision: session?.revision}), ...payload });
+  if (!isCurrentContext(snapshot)) return null;
+  if (result.status === 'input-required' && result.required_inputs?.includes('name')) {
+    const projectId = session?.bag?.project?.id;
+    if (projectId && projectBrowser.preview?.project?.id !== projectId) { $('#projects-select').value=String(projectId); await previewProject(); }
+    showNewSessionForm(); return null;
+  }
+  if (result.status === 'project-selected') {
+    projectBrowser.selectedId=result.project.id; clearActiveSession();
+    try{sessionStorage.setItem('rraabbiitt.window.project',String(result.project.id));}catch{}
+    await loadProjects(); return null;
+  }
+  acceptSession(result); renderPlan(); return result;
+};
+const addChatMessage = (speaker, text) => {
+  const bubble = el('article', undefined, 'chat-message'); bubble.dataset.speaker = speaker;
+  bubble.append(el('span', speaker === 'you' ? 'You' : 'Box', 'chat-speaker'), el('div', text, 'chat-bubble'));
+  const messages = $('#chat-messages'); messages.append(bubble); messages.scrollTop = messages.scrollHeight;
+};
+const addRephraseMessage = (speaker, text) => {
+  const bubble = el('article', undefined, 'chat-message'); bubble.dataset.speaker = speaker;
+  bubble.append(el('span', speaker === 'you' ? 'You' : 'Tool', 'chat-speaker'), el('div', text, 'chat-bubble'));
+  const messages = $('#rephrase-messages'); messages.append(bubble); messages.scrollTop = messages.scrollHeight;
+};
+const saveRephraseHistory = () => { try { localStorage.setItem('rraabbiitt.rephrase.history', JSON.stringify(state.rephrase.messages.slice(-100))); } catch {} };
+const restoreRephraseHistory = () => {
+  try { state.rephrase.messages = JSON.parse(localStorage.getItem('rraabbiitt.rephrase.history') ?? '[]'); } catch { state.rephrase.messages = []; }
+  $('#rephrase-messages').replaceChildren();
+  if (!state.rephrase.messages.length) addRephraseMessage('tool', 'Give me a phrase. I will run only base/re-phrase-check and show the lexical/sense logic on the right.');
+  for (const message of state.rephrase.messages) addRephraseMessage(message.speaker, message.text);
+};
+const renderRephraseLogic = result => {
+  const body = $('#rephrase-logic'); body.replaceChildren(); state.rephrase.last = result ?? null;
+  if (!result) { body.append(el('div','No phrase yet.','welcome')); $('#rephrase-status').textContent='Waiting'; return; }
+  const tool = result.tool ?? {}, value = result.result ?? result;
+  $('#rephrase-status').textContent = value.status ?? 'done';
+  const head = el('div',undefined,'frame'); head.append(el('div',tool.key ?? 'base/re-phrase-check','eyebrow'),el('strong',value.primary ?? value.status ?? 'No output'));
+  if (value.input !== undefined) head.append(el('small',`input: ${value.input}`));
+  if (value.normalized && value.normalized !== value.input) head.append(el('small',`normalized: ${value.normalized}`));
+  if (value.rule) head.append(el('small',`rule: ${value.rule}`));
+  if (value.changes?.length) for (const change of value.changes) head.append(el('small',`${change.from} → ${change.to} · sense: ${change.sense}`));
+  body.append(head);
+  if (value.unknown?.length) { const gap=el('div',`Unknown language: ${value.unknown.join(', ')}`,'callout'); gap.dataset.tone='bad'; body.append(gap); }
+  if (value.compiler?.frames?.length) {
+    const compiler=el('div',undefined,'frame'); compiler.append(el('strong','Shared compiler · same Shape 2 as Turn Checker'));
+    const frame=value.compiler.frames[0];
+    for(const [key,seat] of Object.entries(frame.seats??{})){if(seat===null||seat===undefined)continue;const row=el('div',undefined,'seat');row.append(el('span',key),el('code',seatDisplay(seat),'seat-value'));compiler.append(row);}
+    for(const hole of frame.typedUnknowns??[]) compiler.append(el('small',`typed hole: ${hole.value} → ${hole.type} / ${hole.seat}`));
+    body.append(compiler);
+  }
+  if (value.analysis?.length) {
+    const card=el('div',undefined,'frame'); card.append(el('strong','Word / type / sense'));
+    for (const rec of value.analysis) {
+      const row=el('div',undefined,'seat'); row.append(el('span',rec.token),el('code',rec.kind==='punct'?'punct':rec.kind==='unknown'?'UNKNOWN':[...(rec.types??[]), ...(rec.chosen_sense?[`→ ${rec.chosen_sense}`]:[])].join(' · ') || 'known','seat-value')); card.append(row);
+    }
+    body.append(card);
+  }
+  const raw=el('details'), summary=el('summary','Raw tool result'); raw.append(summary); const box=el('div',undefined,'scroll'), pre=el('pre',json(result)); box.append(pre); raw.append(box); body.append(raw);
+};
+const syncRephraseSend = () => { const button=$('#rephrase-send'); if(button) button.disabled=state.busy||!state.token||!$('#rephrase-input').value.trim(); };
+const seatDisplay = value => value && typeof value === 'object' ? `${value.value ?? '?'} · ${value.type ?? 'typed'}${value.known === false ? ' · UNKNOWN' : ''}` : String(value ?? '—');
+const resetTurnCheck = (status='WAITING', summary='No Turn checked yet.') => {
+  state.turnCheck.last=null;
+  $('#turn-check-json').textContent='{}';
+  $('#turn-check-pipeline').replaceChildren();
+  $('#turn-check-shape').replaceChildren(el('p','Seats, typed unknowns, candidates and authority will appear here.','subtle'));
+  $('#turn-check-summary').textContent=summary;
+  $('#turn-check-status').textContent=status;
+  delete $('#turn-check-status').dataset.tone;
+};
+const renderTurnCheck = data => {
+  resetTurnCheck();
+  state.turnCheck.last=data; $('#turn-check-json').textContent=json(data);
+  const frames=data?.frames??[], first=frames[0]??null, pipeline=$('#turn-check-pipeline'), shape=$('#turn-check-shape'); pipeline.replaceChildren(); shape.replaceChildren();
+  if(!first){$('#turn-check-summary').textContent='No semantic frame was produced.';$('#turn-check-status').textContent='NO FRAME';return;}
+  const stages=[
+    ['Shape 0','raw input',true],
+    ['Shape 1','lexical candidates',(first.shape1?.unknown?.length??0)===0],
+    ['Shape 2','typed composition',(first.shape2?.typed_unknowns?.length??0)===0&&(first.shape2?.unknown_tokens?.length??0)===0],
+    ['Shape 3','canonical seats',true],
+    ['Shape 4','Tool candidates',(first.shape4?.candidates?.length??0)>0],
+    ['Shape 5','authority',first.shape5?.executable===true]
+  ];
+  for(const [name,label,ok] of stages){const card=el('div',undefined,'frame');card.append(el('div',name,'eyebrow'),el('strong',label),el('small',ok?'✓ clear':'✗ stopped / unresolved'));pipeline.append(card);}
+  const boundary=first.failure_boundary; $('#turn-check-summary').textContent=boundary?`Stopped at ${boundary.stage}: ${boundary.blocker_type??boundary.type}${boundary.value||boundary.token?` · ${boundary.value??boundary.token}`:''}`:'Input resolves against the shared language + Tool catalog. Diagnostic only; nothing executed.';
+  $('#turn-check-status').textContent=first.shape5?.executable?'CLEAR':'BLOCKED'; $('#turn-check-status').dataset.tone=first.shape5?.executable?'ok':'warn';
+  const seats=el('div',undefined,'frame');seats.append(el('strong','Canonical seats'));
+  for(const [key,value] of Object.entries(first.shape3?.seats??{})){if(value===null||value===undefined)continue;const row=el('div',undefined,'seat');row.append(el('span',key),el('code',seatDisplay(value),'seat-value'));seats.append(row);} shape.append(seats);
+  if(first.shape2?.typed_unknowns?.length){const holes=el('div',undefined,'frame');holes.append(el('strong','Typed unknown holes'));for(const hole of first.shape2.typed_unknowns)holes.append(el('small',`${hole.value} → ${hole.type} / seat ${hole.seat} · Turn-local only; no negative vocabulary is saved`));shape.append(holes);}
+  if(first.recovery){const recovery=el('div',undefined,'frame');recovery.append(el('strong',`Recovery · missing seat: ${first.recovery.missing_seat??'unresolved'}`));if(first.recovery.question?.prompt)recovery.append(el('small',first.recovery.question.prompt));if(first.recovery.question?.actions?.length)recovery.append(el('small',`Human actions: ${first.recovery.question.actions.join(' · ')}`));const known=Object.entries(first.recovery.known_seats??{});if(known.length)recovery.append(el('small',`Known seats: ${known.map(([k,v])=>`${k}=${seatDisplay(v)}`).join(' · ')}`));if(first.recovery.legal_fills?.length){recovery.append(el('small','Legal fills from the current Tool House:'));const choices=el('div',undefined,'examples');for(const fill of first.recovery.legal_fills){choices.append(el('code',fill,'pill'));}recovery.append(choices);}else recovery.append(el('small','No single lawful fill is implied. Rephrase the input and check again.'));shape.append(recovery);}
+  const candidates=el('div',undefined,'frame');candidates.append(el('strong','Candidate Tools · path/tag evidence first'));for(const item of first.shape4?.candidates??[]){const row=el('div',undefined,'seat');row.append(el('code',`${item.address??item.path}`),el('small',`score ${item.score} · path ${item.path_score} · shape ${item.shape_score}`));candidates.append(row);}if(!(first.shape4?.candidates?.length))candidates.append(el('small','No Tool candidate.'));shape.append(candidates);
+};
+const sessionReply = session => {
+  if (session.switch_message) return session.switch_message;
+  if (session.last_turn?.reply) return session.last_turn.reply;
+  const changed = (session.last_turn?.stepIds ?? []).map(id => session.steps.find(step => step.id === id)).filter(Boolean);
+  if(changed.some(step=>step.gaps?.conflicts?.some(gap=>gap.type==='unknown-inventory-type')))return 'Unknown type.';
+  const questions = [...new Set(changed.flatMap(step => [...(step.gaps?.configuration ?? []), ...(step.gaps?.requiredInputs ?? [])]).map(gap => gap.question).filter(Boolean))];
+  const language = changed.flatMap(step => step.gaps?.language ?? []);
+  if (language.length) {
+    const words = [...new Set(language.map(gap => gap.token).filter(Boolean))];
+    return words.length ? `The Box couldn't resolve ${words.map(word => `“${word}”`).join(', ')}. Could you rephrase that part? The unresolved step is on the right.` : 'The Box needs clarification on this request. The unresolved meaning is shown in the step on the right.';
+  }
+  if (questions.length) return questions[0];
+  if (changed.some(step => step.gaps?.capability?.length)) return 'The Box hasn’t matched that request to an available capability. I’ve shown the gap and any candidates in Steps. What would you like to clarify?';
+  if (session.ready_to_confirm) {
+    const steps = session.current_steps ?? [], step = steps[0];
+    const title = step?.capability?.title ?? step?.capability?.name ?? 'Your action';
+    const name = step?.options?.name?.value;
+    const action = steps.length === 1 ? `${title}${typeof name === 'string' && name ? ` “${name}”` : ''}` : `Your ${steps.length} actions`;
+    return `${action} ${steps.length === 1 ? 'is' : 'are'} ready. Review the fields on the right, then choose Confirm & run.`;
+  }
+  return 'The action has been updated. Fill in the remaining fields on the right or continue in Chat.';
+};
+const syncChatSend = () => {
+  $('#chat-send').disabled = state.busy || !state.token || !state.session || !$('#chat-input').value.trim();
+  $('#chat-new-project').disabled = state.busy || !state.token || state.session?.current_steps?.some(step => step.projectAction && step.status === 'input-required');
+  const connected = Boolean(state.token && state.session), badge = $('#chat-connection');
+  badge.textContent = state.busy ? 'Working…' : connected ? 'LOCAL · LIVE' : state.token ? 'CHOOSE SESSION' : 'Not connected';
+  badge.dataset.tone = connected ? 'ok' : 'warn';
+  $('#chat-messages').setAttribute('aria-busy', String(state.busy));
+};
+$('#chat-input').addEventListener('input', () => { syncChatSend(); scheduleLiveToolSearch(); });
+$('#chat-input').addEventListener('keydown', event => {
+  if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) { event.preventDefault(); $('#chat-form').requestSubmit(); }
+});
+const submitChatTurn = async (text, { clearInput = false } = {}) => {
+  if (!text || state.busy || !state.token || !state.session) return;
+  const input = $('#chat-input');
+  addChatMessage('you', text); if (clearInput) input.value = ''; syncChatSend();
+  await task('Resolving chat turn…', async () => { const session = await sendSessionTurn(text); if (session && state.session === session) addChatMessage('box', sessionReply(session)); });
+  input.focus();
+};
+$('#chat-form').addEventListener('submit', async event => {
+  event.preventDefault(); await submitChatTurn($('#chat-input').value.trim(), { clearInput: true });
+});
+addChatMessage('box', 'What would you like to work on? The Box’s groups and steps will build up alongside our conversation.');
+const restoreChatHistory = (omitLastReply = false) => {
+  $('#chat-messages').replaceChildren();
+  const turns = state.session?.turns ?? [];
+  if (!turns.length) addChatMessage('box', state.session ? 'What would you like to work on?' : 'Choose a project above, then continue or create a named session. To create a project, use Start new project.');
+  turns.forEach((turn, index) => { addChatMessage('you', turn.text); if (turn.reply && !(omitLastReply && index === turns.length - 1)) addChatMessage('box', turn.reply); });
+};
+const message = (text, tone = 'bad') => { const node = $('#global-message'); node.textContent = text; node.dataset.tone = tone; node.hidden = !text; if (text && document.body.classList.contains('chat-view')) addChatMessage('box', text); };
+const api = async (route, method = 'GET', body) => {
+  if(state.session?.session_id && /^\/api\/(runs|stamp)(?:[/?]|$)/.test(route)){const scoped=new URL(route,location.origin);scoped.searchParams.set('session_id',state.session.session_id);route=scoped.pathname+scoped.search;}
+
+  const response = await fetch(route, { method, headers: { 'X-Magic-Token': state.token ?? '', ...(body === undefined ? {} : { 'Content-Type': 'application/json' }) }, ...(body === undefined ? {} : { body: json(body) }) });
+  const data = await response.json();
+  if (!response.ok) throw Object.assign(new Error(`${data.code ?? response.status}: ${data.message ?? 'Request failed.'}`), { code: data.code, status: response.status });
+  return data;
+};
+const syncButtons = () => {
+  document.querySelectorAll('button').forEach(b => { b.disabled = state.busy; });
+  document.querySelectorAll('[data-chat-panel]').forEach(b => { b.disabled = false; });
+  $('#chat-project-refresh').disabled = state.busy || !state.token || !state.session;
+  syncChatSend();
+  syncRephraseSend();
+  $('#prepare').disabled = state.busy || !state.project;
+  $('#manual-form button[type=submit]').disabled = state.busy || !state.project;
+  $('#download-run').disabled = state.busy || !state.run;
+  const execute = $('#execute');
+  if (execute) execute.disabled = state.busy || !$('#execute-confirm')?.checked || state.run?.status !== 'ready' || !state.project;
+  const sessionExecute = $('#session-execute');
+  if (sessionExecute) sessionExecute.disabled = state.busy || !state.session?.ready_to_confirm;
+  const chatSessionExecute = $('#chat-session-execute');
+  if (chatSessionExecute) chatSessionExecute.disabled = state.busy || !state.session?.ready_to_confirm;
+  if (typeof preparationPanel !== 'undefined') preparationPanel?.setBusy(state.busy);
+  investigations.sync();
+  syncProjectControls();
+  syncRequestControls();
+};
+const task = async (label, fn) => {
+  if (state.busy) return;
+  const projectBefore=state.project;
+  state.busy = true; syncButtons(); $('#activity').textContent = label; message('');
+  try { await fn(); if(!$('#view-chat').hidden&&state.chatPanel==='project'&&state.token&&state.session?.session_id&&state.project===projectBefore)await refreshProjectSettings(); $('#activity').textContent = 'Ready.'; }
+  catch (error) { message(error.message); $('#activity').textContent = 'Request stopped. No automatic retry. Refresh the run to inspect its saved state.'; }
+  finally { state.busy = false; syncButtons(); }
+};
+const sendSessionTurn = async text => {
+  const previousId = state.session?.session_id;
+  const session = await sessionMutation('/api/turn', { text });
+  if (!session) return null;
+  try{await loadHealth();}catch{}
+  if (previousId !== session.session_id) { state.run = null; renderRun(); restoreChatHistory(true); await loadProject(); projectBrowser.selectedId = session.bag?.project?.id ?? null; await loadProjects(); }
+  return session;
+};
+const route = (view, run = state.run?.id) => {
+  const url = new URL(location.href); url.searchParams.set('view', view);
+  if (run) url.searchParams.set('run', run); else url.searchParams.delete('run');
+  history.replaceState(null, '', url); renderView();
+};
+const renderView = () => {
+  const requested = new URL(location.href).searchParams.get('view');
+  const views = ['chat', 'projects', 'requests', 'toolbox', 'investigations', 'workbench', 'language', 'rephrase', 'turn-checker', 'health'];
+  const view = views.includes(requested) ? requested : 'chat';
+  for (const name of views) $(`#view-${name}`).hidden = view !== name;
+  document.body.classList.toggle('chat-view', view === 'chat');
+  document.body.classList.toggle('toolbox-view', view === 'toolbox');
+  document.body.classList.toggle('investigations-view', view === 'investigations');
+  document.body.classList.toggle('projects-view', view === 'projects');
+  document.body.classList.toggle('requests-view', view === 'requests');
+  document.body.classList.toggle('rephrase-view', view === 'rephrase');
+  document.body.classList.toggle('turn-checker-view', view === 'turn-checker');
+  document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-current', b.dataset.view === view ? 'page' : 'false'));
+};
+const setMode = mode => {
+  state.mode = mode; $('#request-form').hidden = mode !== 'text'; $('#manual-form').hidden = mode !== 'form';
+  $('#text-mode').setAttribute('aria-pressed', mode === 'text'); $('#form-mode').setAttribute('aria-pressed', mode === 'form');
+};
+const fieldControl = (key, field, initial) => {
+  if(!field.enum&&Array.isArray(field.options))field={...field,enum:field.options.map(x=>typeof x==='object'?x.name:x)};
+  const box = el('div', undefined, 'field'), id = `field-${key}`;
+  const label = el('label', `${field.title ?? key}${field.required ? ' · required' : ' · optional'}`); label.htmlFor = id;
+  let input;
+  if (field.enum || field.type === 'boolean') {
+    input = el('select'); const empty = el('option', field.default === undefined ? 'Not supplied' : `Use default: ${String(field.default)}`); empty.value = ''; input.append(empty);
+    for (const value of field.enum ?? [true, false]) { const option = el('option', String(value)); option.value = json(value); input.append(option); }
+    if (initial !== undefined) input.value = json(initial);
+  } else { input = el(field.type === 'json' || field.type === 'settings' || field.type === 'textarea' ? 'textarea' : 'input'); input.type = field.type === 'number' ? 'number' : 'text'; if (field.type === 'number') input.step = 'any'; input.value = initial ?? ''; input.placeholder = field.default === undefined ? '' : `Default: ${field.default}`; }
+  input.id = id; input.name = key; input.dataset.kind = field.type; input.dataset.encoded = field.enum || field.type === 'boolean' ? 'true' : 'false';
+  box.append(label, input);
+  if (field.role || field.description) box.append(el('small', [field.role, field.description].filter(Boolean).join(' · ')));
+  return box;
+};
+// BEGIN INVESTIGATION UI — one owner for selection, draft approval, and request scope.
+const createInvestigationUI = ({ getState, request, runTask, $, el, json }) => {
+  const ui = name => $(`#investigation-${name}`);
+  const rows = value => Array.isArray(value) ? value : [];
+  const canonicalPath = value => String(value ?? '').replaceAll('\\', '/').replace(/\/$/, '');
+  let contextKey = '', epoch = 0, items = [], unavailable = [], selected = null, pending = false, listLoaded = false;
+  let planDraft = null;
+  const attempted = new Set();
+  const context = () => {
+    const state = getState(), session = state.session, project = session?.bag?.project, inspection = state.project;
+    const settings = inspection?.settings;
+    if (!session?.session_id || !project?.id || inspection?.project?.id !== project.id || inspection.settings_error || settings?.type !== 'audit' || !settings.paths?.folder) return null;
+    if (project.root && canonicalPath(project.root) !== canonicalPath(inspection.project_path)) return null;
+    return { session_id: session.session_id, id: project.id, name: settings.name ?? project.name ?? project.id, root: inspection.project_path, folder: settings.paths.folder };
+  };
+  const keyFor = ctx => ctx ? json([ctx.session_id, ctx.id, ctx.root, ctx.folder]) : '';
+  const notify = (text, tone = '') => { ui('status').textContent = text; ui('status').dataset.tone = tone; };
+  const selectedMatches = () => {
+    const ctx = context(), result = selected?.result;
+    return !!ctx && result?.version === 'audit-evidence/v1' && result.project?.id === ctx.id && canonicalPath(result.scan_root) === canonicalPath(ctx.folder);
+  };
+  const currentPlan = () => selected?.result?.plans?.[0] ?? null;
+  const hasDecision = () => { const last = rows(selected?.result?.findings).filter(row => row.kind === 'declared-intent').at(-1); return ['intentional', 'accidental'].includes(last?.decision) && last.scope?.revision === selected?.result?.revision; };
+  const draft = () => json([ui('location').value, ui('styles').value]);
+  const attemptKey = () => json([context()?.id, currentPlan()?.id]);
+  const canExecute = () => selectedMatches() && hasDecision() && currentPlan()?.status === 'prepared' && !!currentPlan()?.id && selected?.freshness?.status === 'current' && planDraft === draft() && !attempted.has(attemptKey());
+  const renderList = () => {
+    ui('list').replaceChildren();
+    if (!items.length) ui('list').append(el('p', context() ? listLoaded ? 'No saved investigations yet.' : 'Refresh the saved list to browse this project’s investigations.' : 'Load an audit project to browse its investigations.', 'subtle'));
+    for (const row of items) {
+      const button = el('button', undefined, 'tight'); button.type = 'button';
+      button.setAttribute('aria-current', String(row.file === selected?.file));
+      button.append(el('strong', row.subject ?? 'Investigation'), el('small', [row.action, row.saved_at].filter(Boolean).join(' · ')));
+      button.addEventListener('click', () => act('read', { file: row.file }));
+      button.disabled = pending || getState().busy || !context(); ui('list').append(button);
+    }
+    ui('unavailable').replaceChildren(...unavailable.map(row => el('p', `${row.file ?? 'Saved investigation'}: ${row.message ?? row.error?.message ?? row.reason ?? 'Unavailable'}`, 'callout')));
+  };
+  const clearSelection = () => {
+    selected = null; planDraft = null; ui('confirm').checked = false;
+    ui('detail').hidden = true; ui('empty').hidden = false;
+    for (const name of ['class', 'reason', 'styles', 'decision']) ui(name).value = '';
+    ui('location').replaceChildren(); ui('handoff-json').textContent = ''; ui('handoff-json').hidden = true;
+  };
+  const syncContext = () => {
+    const ctx = context(), next = keyFor(ctx);
+    if (next !== contextKey) { contextKey = next; epoch++; items = []; unavailable = []; listLoaded = false; clearSelection(); notify(''); renderList(); }
+    ui('project').textContent = ctx ? ctx.name : 'No matching audit project loaded.';
+    ui('folder').textContent = ctx ? `Audit folder: ${ctx.folder}` : '';
+    ui('context').hidden = !!ctx;
+    ui('context').textContent = 'Create or load an audit project in Chat, then return here. An audit project needs a saved folder in settings.json.';
+    return ctx;
+  };
+  const sync = () => {
+    const ctx = syncContext(), disabled = pending || getState().busy || !getState().token || !ctx;
+    const valid = selectedMatches(), fresh = selected?.freshness?.status === 'current';
+    for (const name of ['class', 'refresh']) ui(name).disabled = disabled;
+    ui('run').disabled = disabled || !ui('class').value.trim();
+    for (const name of ['decision', 'reason', 'location', 'styles', 'handoff']) ui(name).disabled = disabled || !valid;
+    ui('declare').disabled = disabled || !valid || !['intentional', 'accidental', 'unknown'].includes(ui('decision').value) || !ui('reason').value.trim();
+    ui('plan').disabled = disabled || !valid || !fresh || !hasDecision() || !ui('location').value || !ui('styles').value.trim();
+    ui('confirm').disabled = disabled || !canExecute();
+    ui('execute').disabled = disabled || !canExecute() || !ui('confirm').checked;
+    for (const button of ui('list').querySelectorAll('button')) button.disabled = disabled;
+    if (valid) ui('plan-hint').textContent = !fresh ? 'Re-run the class investigation before preparing or applying a change: source freshness is not current.' : !ui('location').value ? 'No observed CSS definition file is available for this change.' : !hasDecision() ? 'First record an intentional or accidental decision with a reason for this revision.' : attempted.has(attemptKey()) ? 'This plan was already attempted. Inspect its saved verification before preparing any further change.' : currentPlan() && planDraft !== draft() ? 'The draft has changed. Prepare and review a new plan.' : 'Use values that reference existing tokens, such as --action-ink: var(--ink). Preparing a plan does not write to the audited folder.';
+  };
+  const renderLocations = (target, kind, fallback) => {
+    const entries = rows(selected.result.entities).filter(row => row.kind === kind && row.location?.file);
+    const list = el('ul', undefined, 'investigation-files');
+    for (const entry of entries) { const loc = entry.location; list.append(el('li', `${loc.file}:${loc.line ?? '?'}:${loc.column ?? '?'}`, 'mono')); }
+    target.replaceChildren(entries.length ? list : el('p', fallback, 'subtle'));
+  };
+  const renderSelection = () => {
+    const result = selected.result, plan = currentPlan();
+    ui('empty').hidden = true; ui('detail').hidden = false; ui('class').value = result.subject ?? '';
+    ui('subject').textContent = result.subject ?? 'Investigation';
+    ui('revision').textContent = `Revision: ${result.revision ?? 'unknown'}`;
+    const freshness = selected.freshness?.status ?? 'unknown';
+    ui('freshness').textContent = `Source freshness: ${freshness}. Static matches show potential impact; runtime behavior remains unverified.${rows(selected.freshness?.changed).length ? ` Changed: ${rows(selected.freshness.changed).map(x => typeof x === 'string' ? x : json(x)).join(', ')}` : ''}`;
+    ui('freshness').dataset.tone = freshness === 'current' ? 'ok' : 'warn';
+    ui('conclusions').replaceChildren();
+    for (const conclusion of rows(result.conclusions)) {
+      const card = el('div', undefined, 'tight'); card.append(el('p', conclusion.summary ?? 'No summary'), el('small', `Confidence: ${conclusion.confidence?.level ?? 'unknown'} · ${rows(conclusion.confidence?.reasons).join(' ')}`)); ui('conclusions').append(card);
+    }
+    renderLocations(ui('definitions'), 'class-definition', 'No definition observed in the scanned scope.');
+    renderLocations(ui('consumers'), 'class-usage', 'No assignment observed. This does not establish that the class is unused.');
+    ui('gaps').replaceChildren(el('p', `Coverage: ${result.coverage?.completeness ?? 'unknown'}`, 'subtle'));
+    for (const limit of rows(result.coverage?.limits)) ui('gaps').append(el('p', limit, 'callout'));
+    for (const finding of rows(result.findings)) ui('gaps').append(el('p', finding.kind === 'declared-intent' ? `Human declaration: ${finding.decision}${finding.state?.freshness === 'stale' ? ' (from an earlier source revision)' : ''} — ${finding.reason}` : `${finding.kind}: ${finding.summary ?? ''}`, 'callout'));
+    ui('coverage').textContent = json(result.coverage ?? {}); ui('raw').textContent = json(result);
+    ui('decision').value = ''; ui('reason').value = ''; ui('location').replaceChildren();
+    const files = [...new Set(rows(result.entities).filter(row => row.kind === 'class-definition' && /\.css$/i.test(row.location?.file ?? '')).map(row => row.location.file))].sort();
+    if (!files.length) { const option = el('option', 'No observed CSS definition'); option.value = ''; ui('location').append(option); }
+    for (const file of files) { const option = el('option', file); option.value = file; ui('location').append(option); }
+    ui('location').value = files.includes(plan?.target?.file) ? plan.target.file : files[0] ?? '';
+    ui('styles').value = typeof plan?.tool?.options?.styles === 'string' ? plan.tool.options.styles : '';
+    planDraft = plan ? draft() : null; ui('confirm').checked = false;
+    ui('approval-zone').hidden = !plan;
+    ui('plan-target').textContent = plan ? `Target: ${plan.target?.file ?? 'unknown'} · source SHA-256: ${plan.target?.sha256 ?? 'unknown'}` : '';
+    ui('proposed-styles').textContent = plan?.tool?.options?.styles ?? '';
+    const { recovery, ...displayPlan } = plan ?? {};
+    ui('plan-json').textContent = plan ? json(displayPlan) : '';
+    ui('before-zone').hidden = typeof recovery?.before_text !== 'string'; ui('before').textContent = recovery?.before_text ?? '';
+    const verification = result.verification;
+    ui('verification-zone').hidden = !verification;
+    ui('verification-status').textContent = verification ? `Verification ${verification.status ?? 'unknown'}` : '';
+    ui('verification-status').dataset.tone = verification?.status === 'passed' ? 'ok' : 'bad';
+    ui('checks').replaceChildren(...rows(verification?.checks).map(check => el('p', `${check.passed ? 'PASS' : 'FAIL'} · ${check.name}${check.detail == null || check.detail === '' ? '' : `: ${typeof check.detail === 'string' ? check.detail : json(check.detail)}`}`, 'callout')));
+    for (const remaining of rows(verification?.remaining)) ui('checks').append(el('p', remaining, 'callout'));
+    ui('verification').textContent = verification ? json(verification) : '';
+    ui('handoff-json').hidden = !result.handoff; ui('handoff-json').textContent = result.handoff ? json(result.handoff) : '';
+    renderList(); sync();
+  };
+  const perform = async (action, payload = {}) => {
+    const ctx = syncContext();
+    if (!ctx || !getState().token) { sync(); return; }
+    if (pending) return;
+    if (!['list', 'run', 'read'].includes(action) && !selectedMatches()) return;
+    if (action === 'execute' && (!canExecute() || !ui('confirm').checked)) return;
+    const ownEpoch = epoch; pending = true;
+    if (action === 'execute') { attempted.add(attemptKey()); ui('confirm').checked = false; }
+    sync(); notify(action === 'execute' ? 'Applying the approved plan and verifying…' : 'Reading and saving investigation evidence…');
+    const stillCurrent = () => { syncContext(); return ownEpoch === epoch; };
+    try {
+      let data = await request('/api/investigations', 'POST', { action, session_id: ctx.session_id, ...payload });
+      if (!stillCurrent()) return;
+      if (action === 'list') { items = rows(data.items); unavailable = rows(data.unavailable); listLoaded = true; renderList(); notify('Saved investigations loaded.'); return; }
+      // Read back the saved record for the backend's current freshness assessment.
+      if (action !== 'read' && data.file) data = await request('/api/investigations', 'POST', { action: 'read', session_id: ctx.session_id, file: data.file });
+      if (!stillCurrent()) return;
+      if (!data.file || data.result?.version !== 'audit-evidence/v1' || data.result.project?.id !== ctx.id || canonicalPath(data.result.scan_root) !== canonicalPath(ctx.folder)) throw new Error('The returned evidence does not match this audit project and folder.');
+      selected = data; renderSelection();
+      const listing = await request('/api/investigations', 'POST', { action: 'list', session_id: ctx.session_id });
+      if (!stillCurrent()) return;
+      items = rows(listing.items); unavailable = rows(listing.unavailable); listLoaded = true; renderList();
+      notify(action === 'execute' ? `Execution recorded. Verification: ${data.result.verification?.status ?? 'unknown — inspect the saved record'}.` : 'Saved evidence loaded.');
+    } catch (error) {
+      if (stillCurrent()) { ui('confirm').checked = false; notify(`${error.message}${action === 'execute' ? ' Execution was attempted; its outcome may be uncertain. Refresh and reopen the saved record to inspect verification. This plan will not be retried here.' : ''}`, 'bad'); }
+    } finally { pending = false; sync(); }
+  };
+  const act = (action, payload) => runTask('Updating investigation…', () => perform(action, payload));
+  ui('run-form').addEventListener('submit', event => { event.preventDefault(); const class_name = ui('class').value.trim(); if (class_name) return act('run', { class_name }); });
+  ui('refresh').addEventListener('click', () => act('list'));
+  ui('declare-form').addEventListener('submit', event => { event.preventDefault(); if (!ui('declare').disabled) return act('declare', { file: selected.file, decision: ui('decision').value, reason: ui('reason').value.trim() }); });
+  ui('plan-form').addEventListener('submit', event => { event.preventDefault(); if (!ui('plan').disabled) return act('plan', { file: selected.file, location: ui('location').value, styles: ui('styles').value }); });
+  ui('execute').addEventListener('click', () => { if (!ui('execute').disabled) return act('execute', { file: selected.file, plan_id: currentPlan().id, confirm: true }); });
+  ui('handoff').addEventListener('click', () => { if (!ui('handoff').disabled) return act('handoff', { file: selected.file }); });
+  for (const name of ['class', 'decision', 'reason', 'location', 'styles', 'confirm']) for (const event of ['input', 'change']) ui(name).addEventListener(event, () => { if (['location', 'styles'].includes(name)) ui('confirm').checked = false; sync(); });
+  return { sync, load: () => perform('list') };
+};
+// END INVESTIGATION UI
+const investigations = createInvestigationUI({ getState: () => state, request: api, runTask: task, $, el, json });
+const projectBrowser = { preview: null, sequence: 0, listSequence: 0, pending: false, selectedId: null, viewSequence: 0, creatingProject: false };
+const requestBrowser = { sequence: 0, detailSequence: 0, submission: null };
+const sessionDisplayName = session => {
+  const legacyName = !session.name || session.name === `session-${session.id}`;
+  return legacyName ? (session.title && session.title !== 'New session' && session.title !== `Session ${session.id}` ? session.title : 'Unnamed session') : session.name;
+};
+const sessionOptionLabel = session => {
+  const name = sessionDisplayName(session);
+  const turns = Number.isSafeInteger(session.turns) && session.turns >= 0 ? session.turns : 0;
+  return `${name} · ${turns} turn${turns === 1 ? '' : 's'}`;
+};
+const syncProjectControls = () => {
+  const project = projectBrowser.preview;
+  const unavailable = state.busy || projectBrowser.pending || !project || Boolean(project.source_error);
+  for (const id of ['projects-resume', 'projects-new-action', 'projects-new-session']) $(`#${id}`).disabled = unavailable;
+  $('#projects-session').disabled = state.busy || projectBrowser.pending || !project?.sessions?.length;
+  $('#projects-select').disabled = state.busy;
+  $('#chat-project-select').disabled = state.busy || !state.token;
+  $('#chat-project-select').value = String(projectBrowser.selectedId ?? state.session?.bag?.project?.id ?? '');
+  $('#workspace-session-select').disabled = state.busy || projectBrowser.pending || !project?.sessions?.length;
+  for (const id of ['workspace-session-continue','workspace-session-view']) $(`#${id}`).disabled = state.busy || projectBrowser.pending || !positiveId($('#workspace-session-select').value);
+  $('#workspace-session-new').disabled = unavailable;
+  $('#projects-resume').disabled = unavailable || !project?.sessions?.length;
+  $('#projects-new-action').disabled = unavailable || !project?.sessions?.length;
+  const current = state.session;
+  $('#projects-current').textContent = current ? `${current.bag?.project?.name ?? 'Project'} · session ${current.session_id} · action ${current.current_group?.id ?? 'none'}` : 'No session selected in this window.';
+};
+const previewProject = async () => {
+  const id = positiveId($('#projects-select').value), sequence = ++projectBrowser.sequence;
+  projectBrowser.preview = null; projectBrowser.pending = Boolean(id);
+  $('#projects-summary').replaceChildren(); $('#projects-settings').textContent = 'No project selected.';
+  $('#projects-settings-path').textContent = ''; $('#projects-source-status').hidden = true;
+  $('#projects-session').replaceChildren(el('option', 'Latest session')); $('#projects-session').firstChild.value = '';
+  $('#workspace-session-select').replaceChildren(el('option', 'Choose a session')); $('#workspace-session-select').firstChild.value = '';
+  $('#workspace-sessions').hidden = !id;
+  $('#workspace-session-preview').hidden = true; ++projectBrowser.viewSequence;
+  syncProjectControls();
+  if (!id) { $('#projects-status').textContent = 'Select a project to preview.'; return; }
+  $('#projects-status').textContent = 'Reading project; current work is unchanged…';
+  try {
+    const data = await api(`/api/projects/${id}`);
+    if (sequence !== projectBrowser.sequence) return;
+    if (data.project?.id !== id) throw new Error('Project preview identity mismatch.');
+    projectBrowser.preview = data;
+    const p = data.project;
+    $('#projects-summary').append(el('h3', p.title ?? p.name), el('p', `ID ${p.id} · ${p.type ?? 'Unspecified type'}`, 'subtle'), el('code', p.root ?? p.meta?.root ?? data.settings_path));
+    $('#projects-settings-path').textContent = data.settings_path ?? '';
+    $('#projects-settings').textContent = json(p);
+    $('#projects-source-status').hidden = !data.source_error;
+    $('#projects-source-status').textContent = data.source_error ? `Source unavailable: ${data.source_error}. The saved descriptor is historical, not live settings.` : '';
+    for (const session of data.sessions ?? []) {
+      const label = sessionOptionLabel(session);
+      const option = el('option', label); option.value = String(session.id); $('#projects-session').append(option);
+      const navOption = el('option', label); navOption.value = String(session.id); $('#workspace-session-select').append(navOption);
+    }
+    const activeId = state.session?.bag?.project?.id === id ? state.session.session_id : null;
+    if (activeId && (data.sessions ?? []).some(session => session.id === activeId)) { $('#projects-session').value = String(activeId); $('#workspace-session-select').value = String(activeId); }
+    $('#workspace-session-status').textContent = activeId ? `Active session: ${sessionDisplayName((data.sessions ?? []).find(session => String(session.id) === String(activeId)) ?? { ...state.session, id: activeId })}. Choose another to continue or view.` : data.sessions?.length ? 'Select a session to continue or view. No tools will run automatically.' : 'No saved sessions. Start a named session to work on this project.';
+    $('#projects-status').textContent = `${data.sessions?.length ?? 0} saved sessions. Preview only; work is unchanged.`;
+  } catch (error) { if (sequence === projectBrowser.sequence) $('#projects-status').textContent = error.message; }
+  finally { if (sequence === projectBrowser.sequence) { projectBrowser.pending = false; syncProjectControls(); } }
+};
+const loadProjects = async () => {
+  const sequence = ++projectBrowser.listSequence;
+  const data = await api('/api/projects');
+  if (sequence !== projectBrowser.listSequence) return;
+  const select = $('#projects-select'), prior = select.value;
+  select.replaceChildren(el('option', 'Choose a project')); select.firstChild.value = '';
+  for (const p of data.items ?? []) { const option = el('option', `${p.title ?? p.name} · ${p.type ?? 'project'} · ${p.id} · ${p.root ?? ''}`); option.value = String(p.id); select.append(option); }
+  const chatSelect = $('#chat-project-select');
+  chatSelect.replaceChildren(el('option', 'Choose a project')); chatSelect.firstChild.value = '';
+  for (const p of data.items ?? []) { const option = el('option', p.title ?? p.name ?? String(p.id)); option.value = String(p.id); chatSelect.append(option); }
+  chatSelect.value = String(projectBrowser.selectedId ?? state.session?.bag?.project?.id ?? '');
+  $('#projects-unavailable').replaceChildren(...(data.unavailable ?? []).map(p => el('div', `${p.key ?? p.id ?? 'Unavailable'}: ${p.message ?? p.error ?? 'Cannot read saved project'}`, 'callout')));
+  const preferred = String(projectBrowser.selectedId ?? (prior || state.session?.bag?.project?.id || ''));
+  select.value = [...select.options].some(option => option.value === preferred) ? preferred : '';
+  await previewProject();
+  if (!data.items?.length) $('#projects-status').textContent = 'No saved projects. Start one through Chat.';
+};
+const activatePreviewProject = async (mode, metadata = {}) => {
+  const preview = projectBrowser.preview;
+  if (!preview || projectBrowser.pending || preview.source_error) return;
+  const selected = positiveId($('#projects-session').value);
+  const session = (preview.sessions ?? []).find(item => item.id === selected) ?? (preview.sessions ?? [])[0];
+  const snapshot = contextSnapshot();
+  if (mode !== 'new-session' && !session) throw new Error('Choose a saved session or create a named session.');
+  const result = await api('/api/projects/activate', 'POST', { project_id: preview.project.id, mode, ...(mode === 'new-session' ? metadata : { session_id: session?.id, expected_revision: session?.revision }) });
+  if (!isCurrentContext(snapshot)) return;
+  acceptSession(result); projectBrowser.selectedId = preview.project.id; state.workspaceLoaded = false; $('#workspace-session-form').hidden = true; renderPlan(); renderRun(); restoreChatHistory(); syncProjectControls();
+  $('#projects-select').value = String(preview.project.id);
+  $('#projects-status').textContent = `Active in this window: ${result.bag?.project?.name ?? preview.project.name} · session ${result.session_id}.`;
+  await loadWorkspace(); await previewProject();
+};
+const activateChatProject = async id => {
+  if (!id) { syncProjectControls(); return; }
+  const previous = $('#projects-select').value;
+  try {
+    $('#projects-select').value = String(id);
+    await previewProject();
+    if (projectBrowser.preview?.project?.id !== id || projectBrowser.preview.source_error) throw new Error('Project unavailable. Your current session has not been changed.');
+    const result = await api('/api/projects/activate', 'POST', {project_id:id,mode:'select'});
+    if (projectBrowser.preview?.project?.id !== id) return;
+    projectBrowser.selectedId = id;
+    try { sessionStorage.setItem('rraabbiitt.window.project', String(id)); } catch {}
+    clearActiveSession();
+    $('#workspace-session-form').hidden = true;
+    $('#workspace-session-status').textContent = `${result.project?.name ?? projectBrowser.preview.project.name}: choose a session to continue or view, or create a named session.`;
+  } catch (error) {
+    $('#projects-select').value = String(projectBrowser.selectedId ?? state.session?.bag?.project?.id ?? previous);
+    throw error;
+  } finally { syncProjectControls(); }
+};
+const clearActiveSession = () => {
+  contextRevision++; rememberSession(null); state.session = null; state.project = null; state.run = null; state.plan = null; state.contract = null; state.health = null; state.workspaceLoaded = false;
+  $('#file-view').hidden = true; $('#tool-result pre').textContent = '{}';
+  renderPlan(); renderRun(); restoreChatHistory(); syncButtons();
+};
+const viewSavedSession = async () => {
+  const id = positiveId($('#workspace-session-select').value), projectId = projectBrowser.preview?.project?.id, sequence = ++projectBrowser.viewSequence;
+  if (!id || !(projectBrowser.preview.sessions ?? []).some(session => session.id === id)) return;
+  const session = await api(`/api/sessions/${id}`);
+  if (sequence !== projectBrowser.viewSequence || projectBrowser.preview?.project?.id !== projectId) return;
+  if (session.session_id !== id) throw new Error('Saved session identity mismatch.');
+  const body = $('#workspace-session-history'); body.replaceChildren();
+  for (const turn of session.turns ?? []) { body.append(el('p', `You: ${turn.text ?? ''}`)); if (turn.reply) body.append(el('p', `Box: ${turn.reply}`)); }
+  for (const step of session.steps ?? []) body.append(el('p', `${step.frame?.text ?? step.capability?.name ?? `Step ${step.id}`} · ${chatStepOutcome(step.status).text}`));
+  if (!session.turns?.length && !session.steps?.length) body.append(el('p','This session has no saved turns or steps.','subtle'));
+  $('#workspace-session-json').textContent = json(session); $('#workspace-session-preview').hidden = false;
+};
+const showNewSessionForm = () => {
+  if (!projectBrowser.preview?.project || projectBrowser.preview.source_error) throw new Error('Select an available project first.');
+  $('#workspace-sessions').hidden = false; $('#workspace-session-preview').hidden = true; $('#workspace-session-form').hidden = false;
+  $('#workspace-session-name').focus();
+};
+const createNamedSession = async () => {
+  const name = $('#workspace-session-name').value.trim();
+  if (!name) throw new Error('Enter a session name.');
+  await activatePreviewProject('new-session',{name,title:$('#workspace-session-title').value.trim() || name,description:$('#workspace-session-description').value.trim()});
+  $('#workspace-session-form').reset();
+};
+const syncRequestControls = () => {
+  const scope=requestBrowser.submission?.scope??$('#feature-request-scope').value;
+  const projectId=requestBrowser.submission?.project_id??positiveId($('#chat-project-select').value);
+  $('#feature-request-save').disabled = state.busy || !state.token || scope==='project'&&!projectId;
+  $('#feature-request-new').disabled = state.busy;
+  $('#feature-request-save').textContent = requestBrowser.submission ? 'Retry saved submission' : 'Save request';
+  for (const input of $('#feature-request-form').querySelectorAll('input,textarea,select')) input.disabled = state.busy || Boolean(requestBrowser.submission);
+};
+const rememberSubmission = () => { try { if (requestBrowser.submission) sessionStorage.setItem('rraabbiitt.request.pending', json(requestBrowser.submission)); else sessionStorage.removeItem('rraabbiitt.request.pending'); } catch {} };
+const requestTarget = () => {
+  const scope=requestBrowser.submission?.scope??$('#feature-request-scope').value??'global';
+  if(scope==='global')return {scope};
+  const project_id=requestBrowser.submission?.project_id??positiveId($('#chat-project-select').value);
+  if(!project_id)throw new Error('Choose a project above to save or view its requests.');
+  return {scope,project_id};
+};
+const requestQuery = target => new URLSearchParams(target).toString();
+const showRequest = async (id,target=requestTarget()) => {
+  const sequence = ++requestBrowser.detailSequence;
+  const data = await api(`/api/requests/${id}?${requestQuery(target)}`);
+  if (sequence === requestBrowser.detailSequence&&json(target)===json(requestTarget())) $('#request-detail').textContent = json(data);
+};
+const loadRequests = async () => {
+  const sequence = ++requestBrowser.sequence;
+  let target;
+  try{target=requestTarget();}catch(error){$('#feature-request-destination').textContent=error.message;$('#requests-list').replaceChildren();$('#request-detail').textContent='Choose a project above.';syncRequestControls();return;}
+  const data = await api(`/api/requests?${requestQuery(target)}`);
+  if (sequence !== requestBrowser.sequence||json(target)!==json(requestTarget())) return;
+  $('#feature-request-destination').textContent=`${data.project_name??'Global / shared'} · Saves in ${data.directory}`;
+  const list = $('#requests-list'); list.replaceChildren();
+  for (const entry of data.items ?? []) {
+    const button = el('button', `${entry.title ?? entry.name} · ${entry.type} · ${entry.id}`); button.type = 'button';
+    button.addEventListener('click', () => task('Reading request…', () => showRequest(entry.id,target))); list.append(button);
+  }
+  if (!data.items?.length) list.append(el('p', 'No requests recorded yet.', 'subtle'));
+  for (const field of data.fields ?? []) {
+    const control = $(`#feature-request-${field.name}`);
+    if (control && ['name','title','description','type'].includes(field.name) && typeof field.required === 'boolean') control.required = field.required;
+  }
+};
+const saveFeatureRequest = async () => {
+  if (!requestBrowser.submission) {
+    const values = Object.fromEntries(['name','title','description','type'].map(name => [name, $(`#feature-request-${name}`).value]));
+    requestBrowser.submission = { ...values, ...requestTarget(), submission_key: crypto.randomUUID() }; rememberSubmission();
+  }
+  syncRequestControls();
+  $('#feature-request-status').textContent = 'Saving request…';
+  try {
+    const result = await api('/api/requests', 'POST', requestBrowser.submission);
+    if (typeof result.id !== 'number' || !positiveId(result.id)) throw new Error('Invalid saved request identity. Retry to retrieve the accepted submission.');
+    const savedScope=requestBrowser.submission.scope??'global';
+    requestBrowser.submission = null; rememberSubmission(); $('#feature-request-form').reset();$('#feature-request-scope').value=savedScope;
+    ++requestBrowser.detailSequence; $('#request-detail').textContent = json(result);
+    $('#feature-request-status').textContent = `Saved “${result.title??result.name}” in ${result.settings_path}. Recording does not execute it.`;
+    await loadRequests();
+  } catch (error) { $('#feature-request-status').textContent = `${error.message} ${requestBrowser.submission ? 'Submission retained; retry uses the same key and values. New request starts a separate submission.' : 'Request saved; refresh the list to check it.'}`; throw error; }
+  finally { syncRequestControls(); }
+};
+const loadContract = async name => {
+  const snapshot = contextSnapshot(), contract = await api(`/api/stamp?name=${encodeURIComponent(name)}`);
+  if (!isCurrentContext(snapshot)) return;
+  state.contract = contract;
+  $('#contract-json').textContent = json(state.contract);
+  $('#stamp-select').value = name;
+  const fields = $('#manual-fields'); fields.replaceChildren();
+  for (const [key, field] of Object.entries(state.contract.settings.options)) fields.append(fieldControl(key, field));
+};
+const refreshProjectSettings = async () => {
+  const snapshot = contextSnapshot(), sequence = ++projectReadSequence;
+  try{const project=await api(`/api/project${snapshot.session_id ? `?session_id=${encodeURIComponent(snapshot.session_id)}` : ''}`);if(!isCurrentContext(snapshot)||sequence!==projectReadSequence)return null;state.project=project;renderChatProject();investigations.sync();return project;}
+  catch(error){if(!isCurrentContext(snapshot)||sequence!==projectReadSequence)return null;state.project=null;renderChatProject();investigations.sync();$('#chat-project-status').textContent=`Could not read current settings: ${error.message}`;throw error;}
+};
+const loadProject = async () => {
+  let project;
+  try { project = await refreshProjectSettings(); }
+  catch (error) { state.project = null; $('#connection').textContent = 'PROJECT UNAVAILABLE'; $('#connection').dataset.tone = 'bad'; $('#capabilities').replaceChildren(); $('#cap-count').textContent = '0'; throw error; }
+  if (!project) return;
+  state.project = project;
+  $('#connection').textContent = 'LOCAL · CONNECTED'; $('#connection').dataset.tone = 'ok';
+  $('#project-name').textContent = project.project.title ?? project.project.name;
+  $('#project-path').textContent = `${project.project_path}/PATHS.json`;
+  $('#cap-count').textContent = project.capabilities.length;
+  const caps = $('#capabilities'), select = $('#stamp-select'), previous = select.value; caps.replaceChildren(); select.replaceChildren();
+  for (const cap of project.capabilities) {
+    const option = el('option', cap.name); option.value = cap.name; select.append(option);
+    const button = el('button', undefined, 'cap'); button.type = 'button'; button.append(el('strong', cap.name), el('small', `${Object.keys(cap.options).length} seats · ${cap.title}`));
+    button.addEventListener('click', () => task('Reading current stamp settings…', async () => { await loadContract(cap.name); setMode('form'); route('workbench'); })); caps.append(button);
+  }
+  $('#unavailable').replaceChildren(...project.unavailable.map(x => el('div', `${x.name}: ${x.message}`, 'callout')));
+  const name = project.capabilities.some(x => x.name === previous) ? previous : project.capabilities[0]?.name;
+  if (name) await loadContract(name); else $('#manual-fields').replaceChildren(el('p','No available stamps. Inspect the Tool House catalog and project PATHS.json.'));
+};
+const loadHistory = async () => {
+  const data = await api('/api/runs'), box = $('#history'); box.replaceChildren();
+  if (!data.items.length) box.append(el('p', 'No prepared runs yet.', 'subtle'));
+  for (const row of data.items) {
+    const b = el('button'); b.type = 'button'; b.setAttribute('aria-current', String(row.id) === String(state.run?.id));
+    const input = typeof row.original === 'string' ? row.original : json(row.original);
+    b.append(el('strong', input.length > 90 ? input.slice(0, 87) + '…' : input), el('small', `${row.id} · ${row.status}`));
+    b.addEventListener('click', () => task('Loading saved run…', async () => { state.run = await api(`/api/runs/${row.id}`); route('workbench'); renderRun(); await loadHistory(); })); box.append(b);
+  }
+  data.unavailable.forEach(x => box.append(el('p', `${x.id}: ${x.message}`, 'subtle')));
+};
+const updateRun = async run => { state.run = run; route('workbench'); renderRun(); await loadHistory(); };
+const act = (action, data = {}) => task(action === 'execute' ? 'Running trusted stamp scripts and verifying files…' : 'Resolving the current contract…', async () => {
+  await updateRun(await api(`/api/runs/${state.run.id}/${action}`, 'POST', { revision: state.run.revision, ...data }));
+});
+const renderRun = () => {
+  const run = state.run, body = $('#run-body'), frames = $('#frames'); body.replaceChildren(); frames.replaceChildren(); $('#files').replaceChildren(); $('#file-view').hidden = true;
+  $('#result-json').textContent = json(run?.result ?? {}); $('#run-json').textContent = json(run?.history ?? []);
+  $('#run-status').textContent = (run?.status ?? 'no request').toUpperCase();
+  $('#run-status').dataset.tone = ['ready','completed'].includes(run?.status) ? 'ok' : run?.status === 'input-required' ? 'warn' : run ? 'bad' : '';
+  const stage = run?.status === 'completed' ? 'receipt' : run?.status === 'ready' || run?.status === 'running' ? 'execute' : run ? 'bind' : 'request';
+  document.querySelectorAll('[data-step]').forEach(n => { n.dataset.active = n.dataset.step === stage; });
+  if (!run) { body.append(el('p','No request is running. Prepare a request to begin.','muted')); frames.append(el('p','Select a stamp or resolve a request to see its seats.','muted')); $('#receipt-summary').textContent = 'No execution receipt yet.'; return; }
+  body.append(el('code',`Run ${run.id} · revision ${run.revision}`));
+  body.append(el('p', typeof run.original === 'string' ? run.original : json(run.original), 'callout'));
+  if (run.warning) body.append(el('p', run.warning, 'callout'));
+  if (run.last_error) body.append(el('p', `${run.last_error.status}: ${run.last_error.message}`, 'callout'));
+  if (run.result.message) body.append(el('p', `${run.result.code ?? run.result.status}: ${run.result.message}`, 'callout'));
+  const questions = run.status === 'input-required' ? run.result.questions ?? run.ticket?.questions ?? [] : [];
+  for (const q of questions) {
+    const form = el('form', undefined, 'question'); form.dataset.question = `${q.stamp}.${q.key}`;
+    form.append(el('div', `${q.stamp} → ${q.key}`, 'eyebrow'), el('p', q.question));
+    form.append(fieldControl(`answer-${q.stamp}-${q.key}`, { ...q, enum: q.choices }));
+    if (q.returnTo) form.append(el('small', `Returns to ${q.returnTo.stamp}.${q.returnTo.key} in request ${q.returnTo.request_id}`));
+    const submit = el('button', 'Bind answer →', 'primary'); submit.type = 'submit'; form.append(submit);
+    form.addEventListener('submit', event => {
+      event.preventDefault(); const input = form.querySelector('input,select,textarea');
+      if (input.value === '') { input.focus(); return; }
+      const value = input.dataset.encoded === 'true' ? JSON.parse(input.value) : ['json','settings'].includes(q.type) ? JSON.parse(input.value) : q.type === 'number' ? Number(input.value) : input.value;
+      act('answer', { stamp: q.stamp, key: q.key, value });
+    });
+    const natural = el('details'), summary = el('summary', 'Or answer this seat in words'); natural.append(summary);
+    const input = el('input'); input.placeholder = 'A value or a supported field phrase'; input.setAttribute('aria-label', `Text answer for ${q.stamp}.${q.key}`);
+    const b = el('button','Resolve text answer'); b.type = 'button'; b.addEventListener('click', () => act('answer-text', { stamp:q.stamp, key:q.key, text:input.value }));
+    natural.append(input,b); form.append(natural); body.append(form);
+  }
+  if (run.status === 'ready') {
+    const zone = el('div', undefined, 'execute-zone'); zone.append(el('strong','Inputs ready. Nothing has run yet.'));
+    const label = el('label'), check = el('input'); check.type = 'checkbox'; check.id = 'execute-confirm'; check.addEventListener('change',syncButtons);
+    label.append(check,el('span','I authorize the selected Tool House capability to run with these inputs.'));
+    const execute = el('button','Execute & verify →','primary'); execute.id='execute'; execute.type='button'; execute.disabled=true; execute.addEventListener('click',()=>act('execute',{confirm:true}));
+    zone.append(label,execute); body.append(zone);
+  }
+  if (run.ticket && !['completed','execution-failed','execution-interrupted','running'].includes(run.status)) {
+    const b = el('button','Recheck current world'); b.type='button'; b.addEventListener('click',()=>act('resume')); body.append(b);
+  }
+  if (run.status === 'query-result') body.append(el('p','This is a capability query, not execution permission.','subtle'));
+  for (const frame of run.result.frames ?? []) {
+    const card = el('div',undefined,'frame'); card.append(el('strong',frame.capability),el('small',frame.returnTo ? `Dependency → ${frame.returnTo.stamp}.${frame.returnTo.key}` : 'Original request'));
+    for (const seat of frame.seats) {
+      const row = el('div',undefined,'seat'), value = el('code', seat.satisfied ? String(frame.options[seat.key]) : seat.required ? 'waiting for input' : 'not supplied','seat-value'); value.dataset.missing = !seat.satisfied;
+      row.append(el('span',`${seat.key}${seat.required ? ' *' : ''}`),value); card.append(row);
+    }
+    card.append(el('small',`${frame.settings} · ${frame.script}`)); frames.append(card);
+  }
+  if (!frames.children.length) frames.append(el('p',run.status === 'completed' ? 'The executed values are recorded in the receipt below.' : 'No complete contract could be resolved for this request.','subtle'));
+  const receipt = run.result.receipt, steps = receipt?.steps ?? run.result.completed_steps ?? [], files = steps.flatMap(s=>s.files??[]);
+  $('#receipt-summary').textContent = receipt ? `${steps.length} verified steps · ${files.length} files · ${receipt.cloud_calls ?? 0} cloud calls. Verification covers the recorded files, not a browser build.` : run.result.partial ? 'Partial execution: inspect the raw result and files before any new attempt.' : 'No completed execution receipt yet.';
+  if (receipt) for (const file of files) {
+    const b = el('button',file.path,'file-button'); b.type='button'; b.addEventListener('click',()=>task('Reading verified output…',async()=>{ const data=await api(`/api/runs/${run.id}/file?path=${encodeURIComponent(file.path)}`); $('#file-name').textContent=data.path + (data.matches_receipt ? ' · matches receipt' : ' · CHANGED SINCE RECEIPT'); $('#file-text').textContent=data.text; $('#file-view').hidden=false; })); $('#files').append(b);
+  }
+};
+
+const appendStepBindings = (bindings, step) => {
+  const seats=step.frame?.seats??{};
+  for(const [key,value] of Object.entries(seats)){
+    if(value===null||value===undefined)continue;
+    const row=el('div',undefined,'seat');row.append(el('span',key),el('code',Array.isArray(value)?value.join(', '):value===''?'""':String(value),'seat-value'));bindings.append(row);
+  }
+  for(const [key,rec] of Object.entries(step.options??{})){
+    const row=el('div',undefined,'seat');const v=rec.value===null||rec.value===undefined?rec.status:rec.value===''?'""':String(rec.value);const out=el('code',v,'seat-value');out.dataset.missing=rec.status==='unknown';row.append(el('span',`${key}${rec.required?' *':''}`),out);bindings.append(row);bindings.append(el('small',`${key}: ${rec.source??'unresolved'} · ${rec.status}`));
+  }
+};
+const appendSessionGroups = (body, session, compact = false) => {
+  for(const group of session.groups){
+    const card=el('div',undefined,'frame');
+    card.dataset.active=group.id===session.current_group?.id;
+    card.append(el('div',`Group ${group.id} · ${group.status} · ${group.reason}`,'eyebrow'));
+    for(const stepId of group.stepIds){
+      const step=session.steps.find(x=>x.id===stepId); if(!step)continue;
+      const stepBox=el('div',undefined,'callout');
+      const cap=step.capability?.name??step.capability?.key??'NO CAPABILITY';
+      stepBox.append(el('strong',`${step.id} · ${step.status} · ${cap}`),el('small',step.frame?.text??''));
+      if(step.parentResource)stepBox.append(el('small',`parent: ${step.parentResource.name} · ${step.parentResource.path}`));
+      if(step.plannedResult)stepBox.append(el('small',`planned result: ${step.plannedResult.name} · ${step.plannedResult.path}`));
+      const bindings=compact?el('details'):stepBox;
+      if(compact)bindings.append(el('summary','Seats & bound values'));
+      appendStepBindings(bindings,step);
+      for(const [kind,gaps] of Object.entries(step.gaps??{}))for(const gap of gaps??[]){
+        const text=gap.question??gap.message??`${gap.type??kind}: ${gap.token??gap.field??gap.text??''}`;
+        const g=el('div',`${kind}: ${text}`,'callout');g.dataset.tone=kind==='language'||kind==='conflicts'?'bad':'warn';stepBox.append(g);
+        if(gap.candidates?.length)for(const c of gap.candidates.slice(0,6))stepBox.append(el('small',`candidate: ${c.name} · score ${c.score} · ratio ${c.ratio}`));
+      }
+      if(compact&&bindings.children.length>1)stepBox.append(bindings);
+      card.append(stepBox);
+    }
+    body.append(card);
+  }
+};
+const chatStepOutcome = status => {
+  if(status==='completed')return {key:'completed',text:'✓ Completed'};
+  if(['execution-failed','failed'].includes(status))return {key:'failed',text:'✕ Errored'};
+  if(status==='cancelled')return {key:'stopped',text:'■ Canceled'};
+  if(['superseded','stopped','abandoned'].includes(status))return {key:'stopped',text:'■ Stopped'};
+  if(['execution-interrupted','interrupted'].includes(status))return {key:'interrupted',text:'! Interrupted — review needed'};
+  if(status==='running')return {key:'running',text:'◌ Running'};
+  if(['ready','ready-to-confirm'].includes(status))return {key:'ready',text:'○ Ready'};
+  return {key:'pending',text:'○ Pending'};
+};
+const appendChatRequests = (body, session) => {
+  const groups=session.groups??[],steps=session.steps??[];
+  const terminal=new Set(['completed','execution-failed','failed','cancelled','superseded','stopped','abandoned','execution-interrupted','interrupted']);
+  const entries=groups.map(group=>{
+    const members=(group.stepIds??[]).map(id=>steps.find(step=>step.id===id)).filter(Boolean);
+    const statuses=members.map(step=>step.status);
+    const interrupted=statuses.find(status=>['execution-interrupted','interrupted'].includes(status));
+    const failed=statuses.find(status=>['execution-failed','failed'].includes(status));
+    const stopped=statuses.find(status=>['cancelled','superseded','stopped','abandoned'].includes(status));
+    const closed=terminal.has(group.status)||Boolean(interrupted||failed)||(members.length>0&&statuses.every(status=>terminal.has(status)));
+    const outcome=interrupted??failed??stopped??(terminal.has(group.status)?group.status:closed?'completed':group.status);
+    return {group,steps:members,closed,outcome};
+  });
+  for(const history of [false,true]){
+    const matches=entries.filter(entry=>entry.closed===history);
+    if(!matches.length)continue;
+    body.append(el('h3',history?'Request history':'Current work'));
+    for(const entry of matches){
+      const card=el(history?'details':'section',undefined,'chat-request');card.dataset.active=!history;
+      if(history){
+        const outcome=chatStepOutcome(entry.outcome),summary=el('summary');
+        const numbers=entry.steps.map(step=>steps.findIndex(item=>item.id===step.id)+1);
+        const label=numbers.length===1?`Step ${numbers[0]}`:numbers.length?`Steps ${numbers.join(', ')}`:'Request';
+        summary.append(el('small',`${label}: ${outcome.text}`,'chat-step-outcome'),el('span',entry.steps[0]?.frame?.text??entry.steps[0]?.capability?.title??'Previous request','chat-step-title'));
+        card.dataset.outcome=outcome.key;card.append(summary);
+      }
+      entry.steps.forEach(step=>{
+        const outcome=chatStepOutcome(step.status),row=el(history?'section':'details',undefined,'chat-step-summary');row.dataset.outcome=outcome.key;
+        const summary=el(history?'div':'summary');
+        const number=steps.findIndex(item=>item.id===step.id)+1;
+        summary.append(el('small',`Step ${number}: ${outcome.text}`,'chat-step-outcome'),el('span',step.frame?.text??step.capability?.title??step.capability?.name??'Unresolved step','chat-step-title'));
+        row.append(summary,el('strong','Seats & bound values'));
+        appendStepBindings(row,step);
+        if(step.parentResource)row.append(el('small',`parent: ${step.parentResource.name} · ${step.parentResource.path}`));
+        if(step.plannedResult)row.append(el('small',`planned result: ${step.plannedResult.name} · ${step.plannedResult.path}`));
+        for(const [kind,gaps] of Object.entries(step.gaps??{}))for(const gap of gaps??[])row.append(el('p',gap.question??gap.message??`${kind}: ${gap.field??gap.token??''}`,'subtle'));
+        if(step.executionError?.message)row.append(el('small',step.executionError.message,'subtle'));
+        for(const receipt of step.receipt?.steps??[])if(receipt.result_file)row.append(el('small','Saved report'),el('code',receipt.result_file));
+        card.append(row);
+      });
+      body.append(card);
+    }
+  }
+};
+const selectChatPanel = name => {
+  state.chatPanel=name==='project'?'project':'steps';
+  document.querySelectorAll('[data-chat-panel]').forEach(button=>{const active=button.dataset.chatPanel===state.chatPanel;button.setAttribute('aria-selected',String(active));button.tabIndex=active?0:-1;$(`#chat-${button.dataset.chatPanel}-panel`).hidden=!active;});
+  try{localStorage.setItem('rraabbiitt.chat.panel',state.chatPanel);}catch{}
+};
+const renderProjectPaths = (settings, enabled) => {
+  const body=$('#chat-path-editor'),snapshot=contextSnapshot();
+  const signature=JSON.stringify([snapshot.session_id,settings?.paths,enabled]);
+  if(body.dataset.signature===signature)return;
+  body.dataset.signature=signature;body.replaceChildren();
+  if(!enabled){body.append(el('p','Load a project session to edit its paths.','subtle'));return;}
+  const paths=settings.paths??{};
+  const addForm=(key,entry,isNew=false)=>{
+    const form=el('form',undefined,'callout'),fields=el('fieldset',undefined,'stack');
+    fields.append(el('legend',isNew?'Add path':key));
+    const input=(label,value,multiline=false)=>{
+      const wrapper=el('label',label),control=el(multiline?'textarea':'input');
+      if(!multiline)control.type='text';control.value=value;wrapper.append(control);fields.append(wrapper);return control;
+    };
+    const keyInput=input('Key',key);keyInput.required=true;keyInput.readOnly=!isNew;keyInput.pattern='[A-Za-z][A-Za-z0-9_-]{0,63}';
+    const folder=input('Folder',typeof entry==='string'?entry:entry?.path??'');folder.required=true;
+    const description=input('Description',entry?.description??'',true);description.maxLength=4000;
+    const types=input('Types',Array.isArray(entry?.types)?entry.types.join(', '):'');
+    const save=el('button',isNew?'Add path':'Save path');save.type='submit';fields.append(save);form.append(fields);body.append(form);
+    form.addEventListener('submit',event=>{
+      event.preventDefault();if(state.busy||!isCurrentContext(snapshot))return;
+      const name=keyInput.value.trim();
+      if(isNew&&Object.hasOwn(paths,name)){message('That path key already exists. Edit its row instead.','bad');return;}
+      const payload={session_id:snapshot.session_id,key:name,value:folder.value.trim(),description:description.value,types:types.value.split(',').map(value=>value.trim()).filter(Boolean),expected:entry??null};
+      fields.disabled=true;
+      task('Saving project path…',async()=>{
+        try{await api('/api/project/path','POST',payload);if(isCurrentContext(snapshot)){body.dataset.signature='';await refreshProjectSettings();}}
+        finally{fields.disabled=false;}
+      });
+    });
+  };
+  for(const [key,entry] of Object.entries(paths))addForm(key,entry);
+  addForm('',null,true);
+};
+const renderChatProject = () => {
+  const session=state.session,bag=session?.bag??{},current=bag.project;
+  const inspection=state.project?.project?.id===current?.id?state.project:null;
+  const settings=inspection?.settings,summary=$('#chat-project-summary');summary.replaceChildren();
+  if(session?.draft_id){
+    const step=[...(session.current_steps??[]),...(session.steps??[])].find(item=>item.projectAction==='create');
+    const value=key=>step?.options?.[key]?.value??null,type=value('type'),name=value('name'),folder=value('folder');
+    const source=type==='audit'?folder:folder&&name?`${folder.replace(/[\\/]$/,'')}\\${name}`:null;
+    renderProjectPaths(null,false);$('#chat-settings-path').textContent='';$('#chat-settings-json').textContent='No settings are saved for this draft.';$('#chat-project-session').textContent=json(session);$('#chat-project-refresh').disabled=true;$('#chat-project-status').textContent='Unsaved project setup. Confirm creation to write files.';
+    const fields=el('dl',undefined,'project-fields');for(const[label,entry]of [['Name',name],['Type',type],['Project folder after confirmation',source],['Local memory after confirmation',name?`.rab\\projects\\${name}`:null]]){const row=el('div',undefined,'seat');row.append(el('dt',label),el('dd',entry??'—','mono'));fields.append(row);}summary.append(fields);return;
+  }
+  renderProjectPaths(settings,Boolean(current&&settings&&!inspection?.settings_error&&session?.session_id));
+  $('#chat-settings-path').textContent=inspection?.settings_path??'';
+  $('#chat-settings-json').textContent=settings?json(settings):'No current settings loaded.';
+  $('#chat-project-session').textContent=json(session?{session_id:session.session_id,domain:bag.domain,project:current,audit:bag.audit,currentTarget:bag.currentTarget,paths:bag.paths}:{});
+  $('#chat-project-status').textContent=inspection?.settings_error?`Could not read settings.json: ${inspection.settings_error}`:inspection?`Read from disk at ${new Date(inspection.settings_read_at).toLocaleTimeString()}. Updates after Box actions.`:current?'Reading current project settings…':'Waiting for a project.';
+  if(!current){summary.append(el('p','Create or load a project to see its settings.','subtle'));return;}
+  const fields=el('dl',undefined,'project-fields');
+  const rows=[['Name',settings?.name??current.name],['Project ID',settings?.id??settings?.project_id??current.id],['Type',settings?.type??'Not set'],['Project folder',inspection?.project_path??current.root],['Default audit folder',settings?.paths?.folder??'Not set'],['Results (project-relative)',settings?.paths?.results??settings?.paths?.audit_results??'Not set'],['Local memory',inspection?.rab?.project??session.rab?.project]];
+  for(const[label,value]of rows){const row=el('div',undefined,'seat');row.append(el('dt',label),el('dd',value===null||value===undefined?'—':typeof value==='string'?value:json(value),'mono'));fields.append(row);}
+  summary.append(fields);
+};
+let preparationPanel = null;
+const syncRunPreparation = () => preparationPanel?.update(state.session?.preparation, { busy: state.busy });
+const assertPreparationContext = () => {
+  const snapshot = preparationPanel?.snapshot(), current = state.session?.preparation;
+  if (!snapshot || snapshot?.session_id !== state.session?.session_id || snapshot?.revision !== state.session?.revision || snapshot?.group_id !== current?.group_id) throw new Error('This action changed. Review its current inputs before submitting.');
+  if (state.busy) throw new Error('Another action is still being processed.');
+};
+const preparationTask = async (label, callback) => {
+  assertPreparationContext();
+  let failure;
+  await task(label, async () => { try { await callback(); } catch (error) { failure = error; throw error; } });
+  if (failure) throw failure;
+};
+import('/magic-box/run-preparation.mjs').then(({ createRunPreparation, isRecord }) => {
+  preparationPanel = createRunPreparation($('#chat-run-preparation'), {
+    handleSubmit: async (data, type) => {
+      if (type !== 'session-inputs' || !isRecord(data) || !Array.isArray(data?.answers)) throw new Error('Expected declared input answers.');
+      await preparationTask('Saving input answers…', async () => {
+        const session = await sessionMutation('/api/session/answer', { answers: data.answers });
+        if (session) addChatMessage('box', session.ready_to_confirm ? 'Your answers are saved. Review the prepared action and confirm Run when ready.' : 'Your answers are saved. The remaining requirements are on the right.');
+      });
+    },
+    handleCancel: async (data, type) => {
+      if (type !== 'session-inputs' || (data !== undefined && !isRecord(data))) throw new Error('Invalid cancellation request.');
+      assertPreparationContext(); await submitChatTurn('nevermind');
+    },
+    handleClick: async (data, type) => {
+      if (type !== 'session-execute' || !isRecord(data) || data?.confirm !== true) throw new Error('Execution needs explicit confirmation.');
+      await preparationTask('Executing the prepared action…', async () => {
+        const snapshot=contextSnapshot();
+        try {
+          const session=await sessionMutation('/api/session/execute', { confirm: true });
+          if(session){
+            if(session.current_steps?.some(step=>step.capability?.house?.key==='base/find/inventory'))addChatMessage('box',sessionReply(session));
+            await loadProject();
+          }
+        }
+        catch(error){
+          // A failed run may already have saved its outcome. Refresh that record
+          // without retrying execution or changing another window's selection.
+          if(isCurrentContext(snapshot)){
+            try { const saved=await api(`/api/sessions/${snapshot.session_id}`); if(isCurrentContext(snapshot)){acceptSession(saved);renderPlan();} } catch {}
+          }
+          throw error;
+        }
+      });
+    },
+  });
+  syncRunPreparation();
+}).catch(error => { const body = $('#chat-run-preparation'); body.hidden = false; body.textContent = `Input panel unavailable: ${error.message}. Continue in Chat.`; });
+const renderChatSteps = () => {
+  const body=$('#chat-step-groups'),session=state.session,groups=session?.groups??[],steps=session?.steps??[];
+  body.replaceChildren();
+  const project=session?.bag?.project;
+  $('#chat-project').textContent=project?`${project.name} · ${project.root}`:'';
+  $('#chat-step-count').textContent=`${groups.length} request${groups.length===1?'':'s'} · ${steps.length} step${steps.length===1?'':'s'}`;
+  syncRunPreparation();
+  if(!groups.length)body.append(el('p','Your requests and steps will appear here as we go.','subtle'));
+  else appendChatRequests(body,session);
+  if(session?.current_group?.status==='open'&&!['completed','cancelled','failed','interrupted','superseded','abandoned','execution-failed','execution-interrupted'].includes(session?.preparation?.status)){
+    const zone=el('div',undefined,'execute-zone');
+    const label=el('label'),toggle=el('input');toggle.type='checkbox';toggle.id='chat-yolo';toggle.checked=session.yolo===true;toggle.addEventListener('change',()=>task('Updating YOLO…',()=>sessionMutation('/api/session/yolo',{enabled:toggle.checked})));
+    label.append(toggle,el('span','YOLO · fire automatically only after every current Step has zero gaps.'));zone.append(label);
+    if(!session?.preparation){const execute=el('button','Confirm & execute current group →','primary');execute.id='chat-session-execute';execute.type='button';execute.disabled=!session.ready_to_confirm;execute.addEventListener('click',()=>task('Executing fully resolved Steps through the house…',async()=>{if(await sessionMutation('/api/session/execute',{confirm:true}))await loadProject();}));zone.append(execute);}body.append(zone);
+  }
+};
+const renderPlan = () => {
+  investigations.sync();
+  renderChatSteps();
+  renderChatProject();
+  syncProjectControls();
+  const body=$('#plan-body'); body.replaceChildren();
+  const session=state.session;
+  $('#plan-json').textContent=json(session ?? state.plan ?? {});
+  if (!session) {
+    const plan=state.plan;
+    if (!plan) { $('#plan-status').textContent='NO SESSION'; $('#plan-status').dataset.tone='warn'; body.append(el('p','No Turn yet.','subtle')); return; }
+    $('#plan-status').textContent='LEGACY PREVIEW'; $('#plan-status').dataset.tone='warn';
+    body.append(el('div','Legacy v0.5 planner preview. It is preserved for comparison; v0.8 session/Step state is not active here.','callout'));
+    body.append(el('pre',json(plan),'scroll'));
+    return;
+  }
+  const currentSteps=session.current_steps??[];
+  const gapCount=currentSteps.reduce((n,step)=>n+Object.values(step.gaps??{}).reduce((m,x)=>m+(x?.length??0),0),0);
+  $('#plan-status').textContent=session.ready_to_confirm?'READY':gapCount?`${gapCount} GAP${gapCount===1?'':'S'}`:'ACTIVE';
+  $('#plan-status').dataset.tone=session.ready_to_confirm?'ok':gapCount?'warn':'';
+  const bag=session.bag??{},project=bag.project??{},audit=bag.audit??{},target=bag.currentTarget;
+  $('#bag-strip').replaceChildren(
+    el('strong',`Bag · ${session.session_id}`),
+    el('div',`domain: ${bag.domain??'—'} · project: ${project.name??'—'} · root: ${project.root??'—'} · current: ${target?.name??'—'}`,'subtle'),
+    el('div',`address: ${(bag.addressStack??[]).map(x=>x.name).join(' → ')||'—'}${audit.workingRoot?` · audit workspace: ${audit.workingRoot}`:''}`,'subtle')
+  );
+  const summary=el('div',undefined,'callout');
+  summary.append(el('strong',`${session.groups.length} group${session.groups.length===1?'':'s'} · ${session.steps.length} step${session.steps.length===1?'':'s'} · ${session.turns.length} turn${session.turns.length===1?'':'s'}`),el('p',`Current group: ${session.current_group?.id??'—'} · YOLO: ${session.yolo?'ON':'OFF'} · authority: ${session.authority}`,'subtle'));
+  body.append(summary);
+  appendSessionGroups(body,session);
+  if(session.current_group){
+    const zone=el('div',undefined,'execute-zone');
+    const label=el('label'),toggle=el('input');toggle.type='checkbox';toggle.checked=session.yolo===true;toggle.addEventListener('change',()=>task('Updating YOLO…',()=>sessionMutation('/api/session/yolo',{enabled:toggle.checked})));
+    label.append(toggle,el('span','YOLO · automatically execute only after every current Step has zero gaps. Missing meaning still blocks.')); zone.append(label);
+    const execute=el('button','Confirm & execute current group →','primary');execute.id='session-execute';execute.type='button';execute.disabled=!session.ready_to_confirm;execute.addEventListener('click',()=>task('Executing fully resolved Steps through the existing house…',async()=>{if(await sessionMutation('/api/session/execute',{confirm:true}))await loadProject();}));zone.append(execute);body.append(zone);
+  }
+};
+
+const renderHealth = () => {
+  const health=state.health;
+  const summary=$('#health-summary'),entities=$('#health-entities'),losses=$('#health-losses'),words=$('#health-words'),events=$('#health-events'),chat=$('#chat-health');
+  for(const node of [summary,entities,losses,words,events])node?.replaceChildren();
+  if(!health){summary?.append(el('p','No health snapshot loaded yet.','subtle'));return;}
+  $('#health-json').textContent=json(health);
+  summary.append(el('strong',`${health.events} events · ${health.totals.tool_uses} capability events`),el('div',`${health.totals.losses} losses · ${health.totals.questions} questions · ${health.totals.failures} failures · ${health.totals.non_completed??0} non-completed`,'subtle'));
+  const hot=(health.entities??[]).filter(x=>['hot','core','workhorse','noisy'].includes(x.temperature)).slice(0,16);
+  if(!hot.length)entities.append(el('p','Not enough usage yet to classify the House.','subtle'));
+  for(const row of hot){const card=el('div',undefined,'seat');card.append(el('span',`${row.subject?.address??row.subject?.name??row.key} · ${row.temperature}`),el('code',`${row.total} uses · 7d ${row.uses_7d} · fail ${(row.failure_rate*100).toFixed(1)}%`));entities.append(card);}
+  const lossRows=[...(health.losses??[]).map(x=>({label:`LOSS · ${x.kind}`,total:x.total,extra:`resolved ${x.resolved??0}`})),...(health.questions??[]).map(x=>({label:`QUESTION · ${x.kind}`,total:x.total,extra:`resolved ${x.resolved??0}`})),...(health.terminal_states??[]).filter(x=>x.state!=='completed').map(x=>({label:`TERMINAL · ${x.state}`,total:x.total,extra:Object.entries(x.reasons??{}).slice(0,2).map(([k,v])=>`${k} ${v}`).join(' · ')}))].sort((a,b)=>b.total-a.total).slice(0,24);
+  if(!lossRows.length)losses.append(el('p','No recorded losses or questions yet.','subtle'));
+  for(const row of lossRows){const card=el('div',undefined,'seat');card.append(el('span',row.label),el('code',`${row.total} · ${row.extra}`));losses.append(card);}
+  const wordRows=(health.words??[]).slice(0,24);if(!wordRows.length)words.append(el('p','Known-word usage will appear after language evidence is recorded.','subtle'));
+  for(const row of wordRows){const card=el('div',undefined,'seat');card.append(el('span',row.form),el('code',`${row.total} uses · last ${row.last_used??'—'}`));words.append(card);}
+  for(const event of (health.recent??[]).slice(0,50)){const card=el('div',undefined,'callout');const who=event.subject?.address??event.subject?.form??event.subject?.name??event.seat??'';card.append(el('strong',`${event.type}${event.kind?` · ${event.kind}`:''}${who?` · ${who}`:''}`),el('small',`${event.at} · ${event.session_id??'no-session'} / ${event.turn_id??'—'} / ${event.step_id??'—'} / ${event.task_id??'—'}`));events.append(card);}
+  const top=(health.entities??[])[0];chat.replaceChildren(el('strong','House health'),el('div',`${health.totals.losses} losses · ${health.totals.questions} questions · ${health.totals.failures} failures · ${health.totals.non_completed??0} non-completed`,'subtle'),el('div',top?`hot: ${top.subject?.address??top.subject?.name??top.key} · ${top.total} uses`:'usage warming up','subtle'));
+};
+const loadHealth = async () => {
+  const snapshot=contextSnapshot();
+  const q=state.session?.session_id?`?session_id=${encodeURIComponent(state.session.session_id)}`:'';
+  const data=await api(`/api/health${q}`);if(!isCurrentContext(snapshot))return null;state.health=data;renderHealth();return state.health;
+};
+
+const inferLiveToolSearch = text => {
+  const value=String(text??'').trim().toLowerCase();
+  const domain=/\b(?:audit|scan|inspect)\b/.test(value)?'audit':/\b(?:react|component|hook|jsx|tsx|useeffect|usestate|use-effect|use-state|state-hooks|effect-hooks)\b/.test(value)?'react':state.session?.bag?.domain??undefined;
+  const making=/\b(?:create|make|new|start|build|stamp)\b/.test(value);
+  const looking=/\b(?:audit|find|list|show|view|scan|inspect|check|count|get|report)\b/.test(value);
+  const prefix=(value.match(/\b(stamp|find|count|determine|list|load|view|check|add|remove|update|delete)\b/)??[])[1];
+  return {domain,include_stamps:!(looking&&!making),function_prefix:prefix};
+};
+let liveToolTimer=null,liveToolSeq=0;
+const scheduleLiveToolSearch=()=>{
+  clearTimeout(liveToolTimer);const text=$('#chat-input').value.trim(),box=$('#chat-tool-candidates');
+  if(!text){box.replaceChildren(el('strong','Live Tool Finder'),el('div','Type to see the house narrow tools from the current domain.','subtle'));return;}
+  const seq=++liveToolSeq;liveToolTimer=setTimeout(async()=>{try{const hint=inferLiveToolSearch(text);const data=await api('/api/tools/find','POST',{query:text,domain:hint.domain,include_stamps:hint.include_stamps,function_prefix:hint.function_prefix,session_id:state.session?.session_id});if(seq!==liveToolSeq)return;box.replaceChildren(el('strong',`Live Tool Finder · ${data.domain??'all'} · ${data.include_stamps?'tools + stamps':'look/read only'}`));for(const tool of (data.items??[]).slice(0,5))box.append(el('div',`${tool.key} · ${tool.score} (${tool.path_score??0} path · ${tool.shape_score??0} shape)`,'subtle'));if(!data.items?.length)box.append(el('div','No matching Tool yet.','subtle'));}catch(error){if(seq===liveToolSeq)box.replaceChildren(el('strong','Live Tool Finder'),el('div',error.message,'subtle'));}},140);
+};
+const settingsFieldBuilder=(field,index,box,label,id)=>{
+  const hidden=el('textarea');hidden.id=id;hidden.name=field.name;hidden.hidden=true;hidden.dataset.json='true';hidden.dataset.kind='settings';hidden.value='[]';
+  const rows=el('div',undefined,'stack'),add=el('button','+ Add input field');add.type='button';
+  const types=['text','textarea','boolean','number','options','path','folder','json','settings'];
+  const sync=()=>{
+    const value=[...rows.querySelectorAll('[data-setting-row]')].map(row=>{
+      const get=key=>row.querySelector(`[data-setting-key="${key}"]`);
+      const base={type:get('type').value,name:get('name').value.trim(),title:get('title').value.trim(),description:get('description').value.trim(),required:get('required').checked};
+      const extraText=get('extra').value.trim();
+      if(extraText){try{Object.assign(base,JSON.parse(extraText));get('extra').setCustomValidity('');}catch{get('extra').setCustomValidity('Extra field options must be valid JSON.');}}
+      return base;
+    }).filter(item=>item.name);
+    hidden.value=JSON.stringify(value);
+  };
+  const addRow=(seed={})=>{
+    const row=el('div',undefined,'frame');row.dataset.settingRow='true';
+    const head=el('div',undefined,'row'),title=el('strong',seed.name||'New input'),remove=el('button','Remove');remove.type='button';head.append(title,remove);
+    const type=el('select');type.dataset.settingKey='type';for(const name of types){const option=el('option',name);option.value=name;if(name===(seed.type||'text'))option.selected=true;type.append(option);}
+    const name=el('input');name.dataset.settingKey='name';name.placeholder='name';name.value=seed.name||'';
+    const fieldTitle=el('input');fieldTitle.dataset.settingKey='title';fieldTitle.placeholder='Title';fieldTitle.value=seed.title||'';
+    const description=el('input');description.dataset.settingKey='description';description.placeholder='Description';description.value=seed.description||'';
+    const required=el('input');required.type='checkbox';required.className='setting-required';required.dataset.settingKey='required';required.checked=seed.required===true;
+    const requiredLabel=el('label');requiredLabel.append(required,el('span',' Required'));
+    const extra=el('textarea');extra.dataset.settingKey='extra';extra.rows=3;extra.placeholder='Optional extra JSON, e.g. {"default":12,"min":1} or {"options":[...]}';
+    const extras=Object.fromEntries(Object.entries(seed).filter(([key])=>!['type','name','title','description','required'].includes(key)));if(Object.keys(extras).length)extra.value=JSON.stringify(extras);
+    row.append(head,el('small','Type'),type,el('small','Name'),name,el('small','Title'),fieldTitle,el('small','Description'),description,requiredLabel,el('small','Type-specific options'),extra);
+    for(const control of row.querySelectorAll('input,select,textarea'))control.addEventListener('input',()=>{title.textContent=name.value||'New input';sync();});
+    remove.addEventListener('click',()=>{row.remove();sync();});rows.append(row);sync();
+  };
+  add.addEventListener('click',()=>addRow());
+  box.append(label,rows,add,hidden);if(field.description)box.append(el('small',field.description));return box;
+};
+const toolFieldControl=(field,index,prefix='tool')=>{
+  const box=el('div',undefined,'field'),id=`${prefix}-field-${index}-${field.name}`,label=el('label',`${field.title??field.name}${field.required?' · required':' · optional'}`);label.htmlFor=id;let input;
+  if(field.type==='settings')return settingsFieldBuilder(field,index,box,label,id);
+  if(field.type==='options'){
+    input=el('select');if(!field.required){const empty=el('option','Not supplied');empty.value='';input.append(empty);}for(const item of field.options??[]){const option=el('option',item.title??item.name);option.value=item.name;input.append(option);}
+  }else if(field.type==='boolean'){
+    input=el('select');for(const value of field.default===undefined?['',true,false]:['',field.default,!field.default]){const option=el('option',value===''?'Not supplied':String(value));option.value=value===''?'':JSON.stringify(value);input.append(option);}input.dataset.encoded='true';
+  }else if(['textarea','json'].includes(field.type)){input=el('textarea');input.rows=field.type==='textarea'?4:7;input.placeholder=field.type==='json'?'{}':'';input.dataset.json=field.type==='json'?'true':'false';}
+  else {input=el('input');input.type=field.type==='number'?'number':'text';if(field.default!==undefined)input.placeholder=`Default: ${field.default}`;}
+  input.id=id;input.name=field.name;input.dataset.kind=field.type;box.append(label,input);if(field.description)box.append(el('small',field.description));return box;
+};
+const renderToolRunner=tool=>{
+  state.selectedTool=tool??null;const fields=$('#tool-fields');fields.replaceChildren();$('#tool-result pre').textContent='{}';if(!tool)return;
+  $('#tool-select').value=tool.key;for(const [index,field] of (tool.settings??[]).entries())fields.append(toolFieldControl(field,index));
+};
+const toolboxEntries = () => [...state.tools, ...state.toolbox.unavailable.map(item=>({...item,unavailable:true}))];
+const toolboxFacts = entries => {
+  const facts=el('dl',undefined,'toolbox-facts');
+  for(const [name,value] of entries)facts.append(el('dt',name,'muted'),el('dd',value===undefined||value===null?'Not declared':typeof value==='object'?json(value):String(value)));
+  return facts;
+};
+const toolboxJson = (title,value) => {
+  const details=el('details');details.append(el('summary',title),el('pre',json(value)));return details;
+};
+const auditOutputGuide = ((persistence = {}) => {
+  const describe = tool => {
+    const shape = tool?.contract?.result;
+    if (shape === undefined || shape === null) return null;
+    const creation = tool?.domain === 'audit' && tool?.meta?.operation === 'create' && tool?.meta?.target_type === 'project';
+    return { shape, creation, owner:tool.contract.owners?.result ?? null,
+      notes:creation ? ['Creates project files; this write stamp does not produce an audit-result report.'] : ['Shown inside the saved report’s result field. Arrays show one item’s shape; they can contain zero or many items.', 'A ? marks a field that only appears for some findings or outcomes. ChildResult means the result shape of the named child tool.'],
+      settings:tool.contract.settings ?? null };
+  };
+  const format = (shape, depth=0) => {
+    if (typeof shape === 'string') return shape;
+    if (shape?.$nullable) return `${format(shape.$nullable,depth)} | null`;
+    if (Array.isArray(shape)) return `[${format(shape[0],depth)}]`;
+    const entries=Object.entries(shape ?? {}), short=`{ ${entries.map(([key,value])=>`${key}: ${format(value,depth+1)}`).join(', ')} }`;
+    if (!short.includes('\n') && short.length + depth*2 <= 100) return short;
+    const indent='  '.repeat(depth);
+    return `{\n${entries.map(([key,value])=>`${indent}  ${key}: ${format(value,depth+1)}`).join(',\n')}\n${indent}}`;
+  };
+  const guide = { describe, format, savedReport:persistence.savedReport ?? null, tracking:persistence.tracking ?? null };
+  guide.setPersistence = value => { guide.savedReport = value?.savedReport ?? null; guide.tracking = value?.tracking ?? null; };
+  return guide;
+})();
+const renderToolboxOutputShape = tool => {
+  const section=el('section',undefined,'stack');section.append(el('h3','Saved output shape'));
+  const guide=auditOutputGuide.describe(tool);
+  if(!guide){section.append(el('p','Output shape not documented for this tool yet. This does not mean it returns nothing.','subtle'));return section;}
+  section.append(el('p','Field names and types only — this is a shape preview, not saved audit data.','subtle'));
+  const payload=el('div',undefined,'toolbox-input container-toolbox-inset');payload.append(el('h3',guide.creation?'Returned result':'Result shape'),el('pre',auditOutputGuide.format(guide.shape)));section.append(payload);
+  for(const note of guide.notes)section.append(el('p',note,'subtle'));
+  const expandable=(title,shape)=>{const details=el('details');details.append(el('summary',title),el('pre',auditOutputGuide.format(shape)));return details;};
+  if(guide.creation){
+    section.append(el('p','Saves under <RAB_HOME>/projects/<project-name>/; the default RAB_HOME is ~/.rab.','subtle'),expandable('Saved settings.json shape',guide.settings));
+  }else{
+    section.append(toolboxFacts([['Result file','<project>/audit-results/<session-id>/<report>.json'],['Tracking file','<project>/runs/<session-id>/<execution-id>.json']]));
+    section.append(el('p','<project> is the selected .rab project. paths.results can change the results subfolder. A missing session uses tool-runs. These are path patterns; no project settings are loaded here.','subtle'));
+    section.append(expandable('Saved report wrapper · successful run',auditOutputGuide.savedReport),expandable('Separate tracking record · tool-execution/v1',auditOutputGuide.tracking));
+    section.append(el('p','The shared runner saves top-level read results for audit projects. Composites share one report; tracking points into it. Direct module calls do not automatically save. Failed runs can have a null result and partial child results.','subtle'));
+    section.append(el('p','Tracking contains references, timing, and byte counts. Large options and errors are bounded; an interrupted run can have null end_date and duration_ms.','subtle'));
+  }
+  return section;
+};
+const selectToolboxTab = name => {
+  for(const tab of ['fields','details']){
+    const selected=tab===name,button=$(`#toolbox-tab-${tab}`);
+    button.setAttribute('aria-selected',String(selected));button.tabIndex=selected?0:-1;
+    $(`#toolbox-panel-${tab}`).hidden=!selected;
+  }
+};
+const readToolInputs = fields => {
+  const options={};
+  for(const input of fields.querySelectorAll('input,select,textarea')){
+    if(!input.name||input.value==='')continue;
+    options[input.name]=input.dataset.encoded==='true'||input.dataset.json==='true'?JSON.parse(input.value):input.dataset.kind==='number'?Number(input.value):input.value;
+  }
+  return options;
+};
+const runToolboxTool = async tool => {
+  const output=$('#toolbox-result'),status=$('#toolbox-run-status');
+  output.textContent='';status.textContent='Checking inputs…';
+  try{
+    const options=readToolInputs($('#toolbox-fields'));
+    if(!state.session){
+      const saved=savedWindowSession();
+      if(saved)acceptSession(await api(`/api/sessions/${saved}`));
+    }
+    if(!state.session)throw new Error('Select a project and session on Projects, then return here to run this tool.');
+    const snapshot=contextSnapshot();
+    status.textContent=`Running in ${state.session.bag?.project?.name??'selected project'} · session ${state.session.session_id}…`;
+    const result=await api('/api/tools/run','POST',{tool:tool.key,options,session_id:state.session.session_id,context:{domain:state.session.bag?.domain??null}});
+    if(!isCurrentContext(snapshot)||state.toolbox.selectedKey!==tool.key)return;
+    output.textContent=json(result);status.textContent='Completed. Result and execution receipt below.';
+  }catch(error){status.textContent=error.message;output.textContent=json({error:error.code??'RUN_FAILED',message:error.message});throw error;}
+};
+const renderToolboxFields = (tool,panel) => {
+  if(tool.unavailable){panel.append(el('p','This tool is unavailable. See Details for the reason.','callout'));return;}
+  const form=el('form',undefined,'fields');form.id='toolbox-run-form';
+  const fields=el('div',undefined,'fields');fields.id='toolbox-fields';
+  for(const [index,field] of (tool.settings??[]).entries())fields.append(toolFieldControl(field,index,'toolbox'));
+  if(!tool.settings?.length)fields.append(el('p','No inputs required.','subtle'));
+  const button=el('button','Run tool','primary');button.type='submit';button.disabled=state.busy;
+  const status=el('p','Uses the selected project/session. Defaults and missing inputs are resolved by the shared runner.','subtle');status.id='toolbox-run-status';status.setAttribute('role','status');
+  const output=el('pre','{}');output.id='toolbox-result';output.setAttribute('aria-label','Tool execution result');
+  form.append(fields,button);form.addEventListener('submit',event=>{event.preventDefault();task(`Running ${tool.key}…`,()=>runToolboxTool(tool));});
+  panel.append(status,el('p',`Authority: ${tool.authorityClass??tool.meta?.authority??'see Details'}. Run tool executes this tool; write tools can create or change files.`,'subtle'),form,el('h3','Output'),output);
+};
+const renderToolboxDetails = tool => {
+  const host=$('#toolbox-details');host.replaceChildren();host.scrollTop=0;
+  if(!tool){const empty=el('div',undefined,'toolbox-empty');empty.append(el('h2','Select a tool for details'),el('p','Browse the shared catalog. No project settings are applied.','subtle'));host.append(empty);return;}
+  const content=el('div',undefined,'toolbox-detail-content'),heading=el('header',undefined,'toolbox-detail-heading');
+  heading.append(el('p',tool.key,'eyebrow'),el('h2',tool.title??tool.key),el('p',tool.description??tool.message??''));host.append(heading);
+  const tabs=el('div',undefined,'actions toolbox-tabs');tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','Selected tool');
+  const fieldsPanel=el('section',undefined,'toolbox-detail-content');
+  for(const name of ['fields','details']){
+    const button=el('button',name==='fields'?'Fields':'Details');button.type='button';button.id=`toolbox-tab-${name}`;button.setAttribute('role','tab');button.setAttribute('aria-controls',`toolbox-panel-${name}`);
+    button.addEventListener('click',()=>selectToolboxTab(name));
+    button.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const next=event.key==='Home'?'fields':event.key==='End'?'details':name==='fields'?'details':'fields';selectToolboxTab(next);$(`#toolbox-tab-${next}`).focus();});
+    tabs.append(button);const panel=name==='fields'?fieldsPanel:content;panel.id=`toolbox-panel-${name}`;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',button.id);
+  }
+  host.append(tabs,fieldsPanel,content);renderToolboxFields(tool,fieldsPanel);selectToolboxTab('fields');
+  if(tool?.unavailable){content.append(el('p','This tool is unavailable.','callout'),toolboxFacts([['Code',tool.code],['Reason',tool.message]]),toolboxJson('Catalog record',tool));return;}
+  if(tool?.domain==='audit')content.append(renderToolboxOutputShape(tool));
+  content.append(toolboxFacts([['Name',tool.name],['Tool ID',tool.id],['Kind',tool.kind],['Domain',tool.domain],['Authority',tool.authorityClass],['Tags',(tool.tags??[]).join(' / ')]]));
+  const inputs=el('section',undefined,'toolbox-inputs');inputs.append(el('h3',`Inputs (${(tool.settings??[]).length})`));
+  if(!tool?.settings?.length)inputs.append(el('p','No inputs declared.','subtle'));
+  for(const field of tool.settings??[]){
+    const card=el('article',undefined,'toolbox-input container-toolbox-inset');
+    card.append(el('h3',field.title??field.name),el('p',field.description??'', 'subtle'),toolboxFacts([['Key',field.name],['Type',field.type],['Required',field.required===true?'Yes':'No'],['Default',Object.hasOwn(field,'default')?field.default:'No default declared']]));
+    card.append(toolboxJson('Full input definition',field));inputs.append(card);
+  }
+  content.append(inputs);
+  const contract=el('section',undefined,'stack');contract.append(el('h3','Contract'),toolboxFacts([['Consumes',tool.contract?.consumes],['Returns',tool.contract?.returns?.length?tool.contract.returns:'Not declared — this does not mean the result is empty'],['Implementation',tool.contract?.source?.kind??'Unclassified'],['Implementation notes',tool.contract?.source?.description??'No implementation classification declared'],['Output contract owner',tool.contract?.owners?.result??'Not declared']]));content.append(contract);
+  const metadata=el('section',undefined,'stack');metadata.append(el('h3','Metadata'),el('pre',json(tool.meta??{})),toolboxJson('Inherited semantics',tool.inherited??{}));content.append(metadata);
+  const locations=el('section',undefined,'stack');locations.append(el('h3','Tool files'),toolboxFacts([['Catalog path',tool.path],['Tool folder',tool.root],['Settings file',tool.settingsFile],['Script',tool.script],['Script file',tool.scriptFile],['Script owner',tool.scriptOwner],['Inherited executor',tool.inheritedExecutor],['Template folder',tool.template??'No template']]));content.append(locations,toolboxJson('Complete catalog record',tool));
+};
+const renderToolboxList = () => {
+  const terms=$('#toolbox-search').value.trim().toLowerCase().split(/\s+/).filter(Boolean),entries=toolboxEntries();
+  const matches=entries.filter(tool=>{
+    const searchable=json([tool.key,tool.name,tool.title,tool.description,tool.tags,tool.domain,tool.kind,tool.settings,tool.meta,tool.message]).toLowerCase();
+    return terms.every(term=>searchable.includes(term));
+  });
+  const list=$('#toolbox-list');list.replaceChildren();
+  for(const tool of matches){
+    const item=el('li'),button=el('button',tool.key+(tool?.unavailable?' · unavailable':''),'toolbox-tool control-toolbox');button.type='button';button.dataset.toolKey=tool.key;
+    button.setAttribute('aria-pressed',String(state.toolbox.selectedKey===tool.key));button.setAttribute('aria-controls','toolbox-details');
+    button.addEventListener('click',()=>{state.toolbox.selectedKey=tool.key;list.querySelectorAll('button').forEach(row=>row.setAttribute('aria-pressed',String(row?.dataset?.toolKey===tool?.key)));renderToolboxDetails(tool);});
+    item.append(button);list.append(item);
+  }
+  $('#toolbox-empty').hidden=matches.length>0||!state.toolbox.loaded;
+  $('#toolbox-count').textContent=state.toolbox.loaded?`${matches.length} of ${entries.length} tools${state.toolbox.unavailable.length?` · ${state.toolbox.unavailable.length} unavailable`:''} · shared catalog`:'Loading tool catalog…';
+  if(state.toolbox?.selectedKey&&!matches.some(tool=>tool?.key===state.toolbox?.selectedKey)){state.toolbox.selectedKey=null;renderToolboxDetails(null);}
+};
+const loadToolCatalog = async () => {
+  const data=await api('/api/tools'+(state.session?.session_id?'?session_id='+state.session.session_id:''));state.tools=data.items??[];state.toolbox.unavailable=data.unavailable??[];state.toolbox.loaded=true;auditOutputGuide.setPersistence(data.persistence);
+  renderToolboxList();renderToolboxDetails(toolboxEntries().find(tool=>tool?.key===state.toolbox?.selectedKey));return data;
+};
+$('#toolbox-search').addEventListener('input',renderToolboxList);
+$('#toolbox-search-form').addEventListener('submit',event=>{event.preventDefault();renderToolboxList();});
+const loadTools = async () => {
+  const data = await loadToolCatalog(), box = $('#tools-list'), select=$('#tool-select'); box.replaceChildren();select.replaceChildren();
+  $('#tool-count').textContent = String(state.tools.length);
+  for (const tool of state.tools) {
+    const option=el('option',tool.key);option.value=tool.key;select.append(option);
+    const card = el('button',undefined,'cap');card.type='button'; card.append(el('strong',tool.key),el('small',`${tool.kind} · tags: ${(tool.tags??[]).join(' / ')}`),el('small',tool.description));card.addEventListener('click',()=>{route('workbench');renderToolRunner(tool);}); box.append(card);
+  }
+  for (const item of data.unavailable ?? []) box.append(el('div',`${item.key}: ${item.message}`,'callout'));
+  if (!state.tools.length) box.append(el('p','No tools found.','subtle'));
+  const selected=state.tools.find(t=>t.key===state.selectedTool?.key)??state.tools[0]??null;renderToolRunner(selected);
+};
+const loadLanguage = async () => {
+  const data=await api('/api/language'), resources=$('#resources'), installed=$('#installed'); resources.replaceChildren(); installed.replaceChildren();
+  for(const r of data.resources){const card=el('div',undefined,'sense'); const a=el('a',r.title); if(/^https:\/\//.test(r.url)){a.href=r.url;a.target='_blank';a.rel='noreferrer';} card.append(el('div',r.kind,'eyebrow'),a,el('p',r.description,'subtle'),el('small',r.license_note));resources.append(card);}
+  for(const r of data.installed) installed.append(el('p',`${r.source.name} · ${r.entries} entries · ${r.file}`,'subtle'));
+  if(!data.installed.length) installed.append(el('p','No review resources installed.','subtle'));
+  data.unavailable.forEach(x=>installed.append(el('p',`${x.file}: ${x.message}`,'callout')));
+  const grammar=await api('/api/language/grammar'); $('#grammar-text').textContent=grammar.text; const types=await api('/api/language/types'); $('#type-json').textContent=json(types);
+};
+const searchWords = async () => {
+  const data=await api(`/api/language/search?q=${encodeURIComponent($('#word-query').value)}`), out=$('#word-results'); out.replaceChildren();
+  out.append(el('p',`${data.total} matching senses · exact-form lookup · no execution authority`,'subtle'));
+  for(const entry of data.matches){const card=el('div',undefined,'sense');card.append(el('strong',`${entry.word} · ${entry.part_of_speech}`),el('code',entry.sense),el('p',entry.definition),el('small',entry.forms.join(' · ')),el('small',`Source: ${entry.source.name}`));for(const example of entry.examples)card.append(el('p',example,'subtle'));out.append(card);}
+  if(data.unavailable.length) out.append(el('p','Some resources could not be loaded; inspect the resource shelf.','callout'));
+};
+$('#tool-select').addEventListener('change',()=>renderToolRunner(state.tools.find(tool=>tool.key===$('#tool-select').value)));
+const runSelectedTool = async () => {
+  const tool=state.selectedTool;if(!tool)return;
+  const options={};
+  for(const input of $('#tool-fields').querySelectorAll('input,select,textarea')){
+    if(!input.name||input.value==='')continue;
+    let value=input.value;
+    if(input.dataset.encoded==='true'||input.dataset.json==='true')value=JSON.parse(input.value);
+    else if(input.dataset.kind==='number')value=Number(input.value);
+    options[input.name]=value;
+  }
+  const result=await api('/api/tools/run','POST',{tool:tool.key,options,session_id:state.session?.session_id,context:{domain:state.session?.bag?.domain??null}});
+  // Refreshing the tool form clears its old result. Retain this completed
+  // receipt after refresh, including when refreshing the catalog fails.
+  try{await loadTools();}finally{$('#tool-result pre').textContent=json(result);}
+  try{await loadHealth();}catch{}
+};
+$('#tool-form').addEventListener('submit',event=>{event.preventDefault();if(state.selectedTool)task('Running '+state.selectedTool.key+'…',runSelectedTool);});
+$('#rephrase-input').addEventListener('input',syncRephraseSend);
+$('#rephrase-input').addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing){event.preventDefault();$('#rephrase-form').requestSubmit();}});
+$('#rephrase-form').addEventListener('submit',event=>{event.preventDefault();const input=$('#rephrase-input'),text=input.value.trim();if(!text||state.busy||!state.token)return;state.rephrase.messages.push({speaker:'you',text});addRephraseMessage('you',text);input.value='';saveRephraseHistory();syncRephraseSend();task('Running base/re-phrase-check…',async()=>{const result=await api('/api/tools/run','POST',{tool:'base/re-phrase-check',options:{text},context:{domain:'base'}});renderRephraseLogic(result);const value=result.result;if(value.status==='language-gap')addRephraseMessage('tool',`I could not deterministically re-phrase it. Unknown: ${value.unknown.join(', ')}.`);else addRephraseMessage('tool',value.primary??'No alternate surface form was found.');state.rephrase.messages.push({speaker:'tool',text:value.status==='language-gap'?`I could not deterministically re-phrase it. Unknown: ${value.unknown.join(', ')}.`:(value.primary??'No alternate surface form was found.')});saveRephraseHistory();});});
+document.querySelectorAll('[data-turn-check-example]').forEach(button=>button.addEventListener('click',()=>{$('#turn-check-input').value=button.dataset.turnCheckExample;$('#turn-check-form').requestSubmit();}));
+$('#turn-check-form').addEventListener('submit',event=>{
+  event.preventDefault();
+  task('Checking Turn through the shared compiler…',async()=>{
+    resetTurnCheck('CHECKING','Checking this Turn…');
+    try{
+      const text=$('#turn-check-input').value.trim();
+      if(!text)throw new Error('Type a Turn first.');
+      const data=await api('/api/turn-check','POST',{text});
+      renderTurnCheck(data);
+    }catch(error){
+      resetTurnCheck('ERROR',error.message);
+      $('#turn-check-status').dataset.tone='bad';
+      throw error;
+    }
+  });
+});
+
+$('#request-form').addEventListener('submit',event=>{event.preventDefault();task('Compiling this Turn into Steps and seats…',async()=>{const text=$('#request-text').value.trim();if(!text)throw new Error('Type a Turn first.');await sendSessionTurn(text);$('#request-text').value='';try{localStorage.removeItem('rraabbiitt.request');}catch{};});});
+$('#manual-form').addEventListener('submit',event=>{event.preventDefault();task('Validating stamp inputs…',async()=>{const options={};for(const input of $('#manual-fields').querySelectorAll('input,select,textarea')){if(input.value!=='')options[input.name]=input.dataset.encoded==='true'?JSON.parse(input.value):['json','settings'].includes(input.dataset.kind)?JSON.parse(input.value):input.dataset.kind==='number'?Number(input.value):input.value;}await updateRun(await api('/api/runs','POST',{request:{mode:'command',capability:$('#stamp-select').value,options}}));});});
+$('#request-text').addEventListener('input',()=>{try{localStorage.setItem('rraabbiitt.request', $('#request-text').value);$('#draft-status').textContent='Draft saved in this browser.';}catch{$('#draft-status').textContent='Browser storage unavailable. Copy important drafts before leaving.';}});
+$('#request-text').addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();$('#request-form').requestSubmit();}});
+$('#text-mode').addEventListener('click',()=>setMode('text'));$('#form-mode').addEventListener('click',()=>setMode('form'));
+$('#stamp-select').addEventListener('change',()=>task('Reading current settings…',()=>loadContract($('#stamp-select').value)));
+document.querySelectorAll('[data-example]').forEach(b=>b.addEventListener('click',()=>{setMode('text');$('#request-text').value=b.dataset.example;$('#request-text').dispatchEvent(new Event('input'));$('#request-text').focus();}));
+const openWorkspaceView = async view => {
+  if(view==='turn-checker')return;
+  if(view==='toolbox')return loadToolCatalog();
+  if(view==='projects')return loadProjects();
+  if(view==='requests')return loadRequests();
+  if(view==='chat')await loadProjects();
+  await loadWorkspace();
+  if(view==='investigations'){await refreshProjectSettings();await investigations.load();}
+  if(view==='language'){await loadLanguage();await searchWords();}
+  if(view==='health')await loadHealth();
+};
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{if(state.busy)return;route(b.dataset.view);task('Opening workspace…',()=>openWorkspaceView(b.dataset.view));}));
+$('#projects-select').addEventListener('change',event=>task('Selecting project…',()=>activateChatProject(positiveId(event.target.value))));
+$('#chat-project-select').addEventListener('change',event=>{const id=positiveId(event.target.value);if(state.busy){syncProjectControls();return;}task('Reading selected project sessions…',async()=>{await activateChatProject(id);if(!$('#view-requests').hidden){++requestBrowser.detailSequence;$('#request-detail').textContent='Choose a request to view it.';await loadRequests();}});});
+$('#projects-refresh').addEventListener('click',()=>task('Reading saved projects…',loadProjects));
+for(const mode of ['resume','new-action'])$(`#projects-${mode}`).addEventListener('click',()=>task('Changing this window’s work context…',()=>activatePreviewProject(mode)));
+$('#projects-new-session').addEventListener('click',()=>task('Name your new session…',showNewSessionForm));
+$('#workspace-session-select').addEventListener('change',event=>{ $('#projects-session').value=event.target.value; $('#workspace-session-preview').hidden=true; ++projectBrowser.viewSequence; syncProjectControls(); });
+$('#projects-session').addEventListener('change',event=>{ $('#workspace-session-select').value=event.target.value; syncProjectControls(); });
+$('#workspace-session-continue').addEventListener('click',()=>task('Continuing saved session…',()=>activatePreviewProject('resume')));
+$('#workspace-session-view').addEventListener('click',()=>task('Viewing saved session…',viewSavedSession));
+$('#workspace-session-new').addEventListener('click',()=>task('Name your new session…',showNewSessionForm));
+$('#workspace-session-form').addEventListener('submit',event=>{event.preventDefault();task('Creating named session…',createNamedSession);});
+$('#workspace-session-cancel').addEventListener('click',()=>{$('#workspace-session-form').hidden=true;});
+$('#workspace-session-close').addEventListener('click',()=>{$('#workspace-session-preview').hidden=true;++projectBrowser.viewSequence;});
+$('#requests-refresh').addEventListener('click',()=>task('Reading saved requests…',loadRequests));
+$('#feature-request-scope').addEventListener('change',()=>{++requestBrowser.detailSequence;$('#request-detail').textContent='Choose a request to view it.';syncRequestControls();task('Reading scoped requests…',loadRequests);});
+$('#feature-request-form').addEventListener('submit',event=>{event.preventDefault();task('Saving request…',saveFeatureRequest);});
+$('#feature-request-new').addEventListener('click',()=>{requestBrowser.submission=null;rememberSubmission();$('#feature-request-form').reset();++requestBrowser.detailSequence;$('#request-detail').textContent='Choose a request to view it.';$('#feature-request-status').textContent='New request. Any earlier uncertain submission may already be saved; check the list before submitting it again.';syncRequestControls();task('Reading saved requests…',loadRequests);});
+$('#health-refresh').addEventListener('click',()=>task('Refreshing House telemetry…',loadHealth));
+$('#new-run').addEventListener('click',()=>{state.run=null;route('workbench',null);renderRun();syncButtons();$('#request-text').focus();});
+const showNewProjectForm = () => {
+  selectChatPanel('project');
+  const body=$('#chat-project-summary');body.replaceChildren();
+  const form=el('form',undefined,'fields'),heading=el('h2','Start new project'),note=el('p','Nothing is saved until you confirm creation.','subtle');
+  const field=(label,control)=>{const wrapper=el('label',label,'field');wrapper.append(control);return wrapper;};
+  const type=el('select');for(const [value,label] of [['magic-box','Magic Box'],['react','React'],['html','HTML'],['audit','Audit']]){const option=el('option',label);option.value=value;type.append(option);}
+  const name=el('input');name.required=true;name.maxLength=160;name.placeholder='Project name';
+  const folder=el('input');folder.required=true;folder.placeholder='Root path; the project installs here\\name';
+  const addUi=el('input');addUi.type='checkbox';const uiField=field('React only: add a UI kit',addUi);const syncUi=()=>{uiField.hidden=type.value!=='react';};type.addEventListener('change',syncUi);syncUi();
+  const maps={paths:[],toolkits:[]};
+  const mapSection=(key,title,description)=>{const section=el('section',undefined,'stack'),rows=el('div',undefined,'stack'),add=el('button',`+ Add ${key==='paths'?'path':'toolkit'}`);add.type='button';const render=()=>{rows.replaceChildren();for(const item of maps[key]){const row=el('div',undefined,'row'),name=el('input'),path=el('input');name.placeholder='name';path.placeholder='path';name.value=item.name;path.value=item.path;name.addEventListener('input',()=>item.name=name.value);path.addEventListener('input',()=>item.path=path.value);row.append(name,path);rows.append(row);}};add.addEventListener('click',()=>{maps[key].push({name:'',path:''});render();});section.append(el('h3',title),el('p',description,'subtle'),rows,add);return section;};
+  const review=el('button','Review project','primary');review.type='submit';form.append(heading,note,field('Project type',type),field('Project name',name),field('Root path',folder),uiField,mapSection('toolkits','Toolkits','External toolkit paths.'),mapSection('paths','Paths','Project-relative paths.'),review);body.append(form);
+  form.addEventListener('submit',async event=>{event.preventDefault();if(!form.reportValidity())return;await task('Preparing project setup…',async()=>{const draft=await api('/api/session/new','POST',{draft:true});acceptSession(draft);renderPlan();restoreChatHistory();for(const text of ['Start a new project',type.value,name.value.trim(),folder.value.trim(),...(type.value==='react'?[addUi.checked?'yes':'no']:[])]){addChatMessage('you',text);const result=await sessionMutation('/api/turn',{text});if(result)addChatMessage('box',sessionReply(result));}body.replaceChildren(el('p','Review the project details in Chat, then confirm creation there.','subtle'));});});
+};
+$('#chat-new-project').addEventListener('click',showNewProjectForm);
+document.querySelectorAll('[data-chat-panel]').forEach(button=>{
+  button.addEventListener('click',()=>{selectChatPanel(button.dataset.chatPanel);if(state.chatPanel==='project'&&state.token&&state.session)task('Reading current project settings…',refreshProjectSettings);});
+  button.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const name=event.key==='Home'?'steps':event.key==='End'?'project':button.dataset.chatPanel==='steps'?'project':'steps';const next=$(`#chat-${name}-tab`);next.focus();next.click();});
+});
+$('#chat-project-refresh').addEventListener('click',()=>task('Refreshing project settings from disk…',refreshProjectSettings));
+window.addEventListener('focus',()=>{if(state.chatPanel==='project'&&!$('#view-chat').hidden&&state.token&&state.session&&!state.busy)task('Refreshing project settings from disk…',refreshProjectSettings);});
+const startFreshSession = async () => {
+  showNewSessionForm();
+};
+$('#new-session').addEventListener('click',()=>task('Starting a clean .rab session…',startFreshSession));
+$('#clear-bag').textContent='New session';
+$('#clear-bag').addEventListener('click',()=>task('Starting a new session…',startFreshSession));
+$('#refresh').addEventListener('click',()=>task('Reloading current workspace…',async()=>{if(!$('#view-projects').hidden)return loadProjects();if(!$('#view-requests').hidden)return loadRequests();if(!state.session?.session_id)return loadProjects();const snapshot=contextSnapshot();const session=await api(`/api/sessions/${state.session.session_id}`);if(!isCurrentContext(snapshot))return;acceptSession(session);await loadProject();renderPlan();renderRun();await loadHistory();await loadTools();if(!$('#view-investigations').hidden)await investigations.load();if(!$('#view-language').hidden)await loadLanguage();if(!$('#view-health').hidden)await loadHealth();}));
+$('#close-file').addEventListener('click',()=>{$('#file-view').hidden=true;});
+$('#download-run').addEventListener('click',()=>{const a=el('a');a.href=URL.createObjectURL(new Blob([json(state.run)+'\n'],{type:'application/json'}));a.download=`magic-box-run-${state.run.id}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);});
+$('#word-form').addEventListener('submit',event=>{event.preventDefault();task('Searching review data…',searchWords);});
+$('#import-resource').addEventListener('click',()=>task('Validating review-only import…',async()=>{const file=$('#resource-file').files[0];if(!file)throw new Error('Choose a JSON export first.');if(file.size>4*1024*1024)throw new Error('Export exceeds 4 MiB.');const result=await api('/api/language/import','POST',JSON.parse(await file.text()));$('#import-status').textContent=`${result.status}: ${result.entries} entries. Active grammar and permissions are unchanged.`;await loadLanguage();}));
+$('#type-form').addEventListener('submit',event=>{event.preventDefault();task('Saving operator-reviewed decoder override…',async()=>{const csv=id=>$(id).value.split(',').map(x=>x.trim()).filter(Boolean);const result=await api('/api/language/types','POST',{kind:'entry',lemma:$('#type-lemma').value.trim().toLowerCase(),forms:csv('#type-forms'),types:csv('#type-types'),senses:csv('#type-senses')});$('#type-status').textContent='Saved and reloaded live. It adds lexical candidates only; it does not grant execution authority.';$('#type-json').textContent=json(result);});});
+window.addEventListener('popstate',()=>{renderView();const view=new URL(location.href).searchParams.get('view')??'chat';task('Opening workspace…',()=>openWorkspaceView(view));});
+const loadWorkspace = async () => {
+  if(state.workspaceLoaded)return;
+  if(workspacePending)return workspacePending;
+  workspacePending=(async()=>{
+    let snapshot=contextSnapshot();
+    const savedId=!state.session?savedWindowSession():null;
+    if(savedId){try{const session=await api(`/api/sessions/${savedId}`);if(!isCurrentContext(snapshot))return;acceptSession(session);}catch(error){if(!isCurrentContext(snapshot))return;if(error.status!==404&&error.code!=='ENOENT'&&error.code!=='BAD_REQUEST')throw error;rememberSession(null);message(`Saved session unavailable: ${error.message}`,'warn');}}
+    if(!state.session){renderPlan();renderRun();restoreChatHistory();await loadProjects();state.workspaceLoaded=true;return;}
+    if(state.session.draft_id){renderPlan();restoreChatHistory();return;}
+    snapshot=contextSnapshot();await loadProject();if(!isCurrentContext(snapshot))return;
+    const id=new URL(location.href).searchParams.get('run');if(id){const run=await api(`/api/runs/${encodeURIComponent(id)}`);if(!isCurrentContext(snapshot))return;state.run=run;}
+    renderPlan();renderRun();restoreChatHistory();restoreRephraseHistory();renderRephraseLogic(null);await loadHistory();await loadTools();await loadProjects();try{await loadHealth();}catch{}
+    if(isCurrentContext(snapshot))state.workspaceLoaded=true;
+  })();
+  try{return await workspacePending;}finally{workspacePending=null;}
+};
+const boot = async () => {
+  try{selectChatPanel(localStorage.getItem('rraabbiitt.chat.panel')??'steps');}catch{selectChatPanel('steps');}
+  renderView();renderPlan();try{$('#request-text').value=localStorage.getItem('rraabbiitt.request')??'';}catch{}
+  if(location.protocol==='file:'){message('Start the local server with RUN_UI.cmd or node server.mjs. This HTML is the interface; it does not bypass the server to run local scripts.','warn');$('#connection').textContent='SERVER NEEDED';syncButtons();return;}
+  try{const pending=JSON.parse(sessionStorage.getItem('rraabbiitt.request.pending')??'null');if(pending&&typeof pending.submission_key==='string'&&['name','title','description','type'].every(key=>typeof pending[key]==='string')&&[undefined,'global','project'].includes(pending.scope)&&(pending.scope!=='project'||positiveId(pending.project_id))){requestBrowser.submission={...pending,scope:pending.scope??'global'};for(const key of ['name','title','description','type','scope'])$(`#feature-request-${key}`).value=requestBrowser.submission[key];$('#feature-request-status').textContent='An unconfirmed submission is retained with its original destination. Retry retrieves the same accepted request.';}}catch{}
+  await task('Connecting to local workbench…',async()=>{
+    const handshake=await api('/api/session');state.token=handshake.token;syncStorageHome(handshake.storage_home);$('#connection').textContent='LOCAL · CONNECTED';$('#connection').dataset.tone='ok';
+    try{projectBrowser.selectedId=positiveId(sessionStorage.getItem('rraabbiitt.window.project'));}catch{}
+    await loadProjects();
+    if(!$('#view-turn-checker').hidden)return;
+    if(!$('#view-toolbox').hidden){await loadToolCatalog();return;}
+    if(!$('#view-requests').hidden){await loadRequests();return;}
+    if(!$('#view-projects').hidden){const id=savedWindowSession();if(id){try{acceptSession(await api(`/api/sessions/${id}`));renderPlan();}catch(error){message(`Saved session unavailable: ${error.message}`,'warn');}}await loadProjects();return;}
+    if(!$('#view-chat').hidden)await loadProjects();
+    await loadWorkspace();if(!$('#view-investigations').hidden)await investigations.load();if(!$('#view-language').hidden){await loadLanguage();await searchWords();}if(!$('#view-health').hidden)await loadHealth();
+  });
+};
+boot();
+</script>
+</body>
+</html>

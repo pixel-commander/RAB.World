@@ -1,0 +1,30 @@
+{
+  "id": 1800000000030,
+  "name": "lan-addresses",
+  "title": "Find Private LAN Addresses",
+  "description": "Finds RFC1918 IPv4 literals used in source/config so local network dependencies are visible.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "lan-addresses",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\b(?:10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|192\\.168\\.\\d{1,3}\\.\\d{1,3}|172\\.(?:1[6-9]|2\\d|3[01])\\.\\d{1,3}\\.\\d{1,3})\\b",
+      "scope": "all",
+      "kind": "private-lan-address",
+      "heuristic": false,
+      "flags": "i"
+    }
+  }
+}

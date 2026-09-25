@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "hybrid",
+    "description": "Fills tmpl.css with caller declarations or a generated background declaration using a registered token; writes and verifies the atom through writeArtifactPlan.",
+    "reviewed_at": "2026-09-20"
+  }
+}

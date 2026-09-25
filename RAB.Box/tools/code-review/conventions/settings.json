@@ -1,0 +1,37 @@
+{
+  "id": 1790036620503,
+  "name": "conventions",
+  "title": "Review Code Conventions",
+  "description": "Checks submitted JavaScript or TypeScript for exact plural collection to singular map callback names using the existing conventions auditor.",
+  "settings": [
+    {
+      "name": "file",
+      "type": "path",
+      "title": "Intended file",
+      "description": "Project-relative filename of the proposed source.",
+      "required": true
+    },
+    {
+      "name": "code",
+      "type": "textarea",
+      "title": "Proposed code",
+      "description": "Exact code to review without executing or writing it to the project.",
+      "required": true
+    },
+    {
+      "name": "css",
+      "type": "textarea",
+      "title": "Supporting CSS (optional)",
+      "description": "Shared review input; this convention does not read CSS.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "operation": "inspect",
+    "target_type": "code-review",
+    "authority": "read",
+    "output": "report",
+    "group": "conventions",
+    "domain": "code-review"
+  }
+}

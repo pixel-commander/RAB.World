@@ -1,0 +1,31 @@
+@layer components {
+  .stat-card {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .stat-card__label {
+    font: var(--type-label);
+    color: var(--content-muted);
+  }
+
+  .stat-card__value {
+    font: var(--type-heading);
+    font-size: 1.75rem;
+    color: var(--content-strong);
+  }
+
+  .stat-card__delta {
+    font: var(--type-label);
+  }
+
+  .stat-card__delta--up {
+    color: var(--content-accent);
+  }
+
+  .stat-card__delta--down {
+    color: var(--content-danger);
+  }
+}

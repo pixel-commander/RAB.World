@@ -1,0 +1,15 @@
+{
+  "version": "tool-contract/v1",
+  "result": {
+    "status": "\"completed\"",
+    "folder": "absolute path",
+    "scope": "\"direct-folder\"",
+    "counts": {
+      "files": "number",
+      "directories": "number",
+      "links": "number",
+      "other": "number",
+      "entries": "number"
+    }
+  }
+}

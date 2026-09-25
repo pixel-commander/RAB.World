@@ -1,0 +1,14 @@
+@layer components {
+ .stateless-form { display: flex; flex-direction: column; min-inline-size: 0; gap: var(--stateless-form-gap, var(--space-lg)); padding: var(--stateless-form-padding, var(--space-lg)); }
+ .stateless-form-message { display: none; color: var(--stateless-form-message-color, var(--danger-default)); }
+ .stateless-form.has-errors > .stateless-form-message { display: block; }
+ .stateless-form-fields, .stateless-form-tab-fields, .stateless-form-children { display: flex; flex-direction: column; gap: var(--stateless-form-fields-gap, var(--space-sm)); }
+ .stateless-form-tabs { display: flex; flex-direction: column; gap: var(--stateless-form-tabs-gap, var(--space-sm)); }
+ .stateless-form-tabs-nav { display: flex; flex-wrap: wrap; gap: var(--stateless-form-tabs-nav-gap, var(--space-xs)); padding: var(--stateless-form-tabs-nav-padding, var(--space-xs)); }
+ .stateless-form-tab-name { padding: var(--stateless-form-tab-padding, var(--space-xs) var(--space-md)); cursor: pointer; }
+ .stateless-form-tab-name.active { outline: var(--stateless-form-tab-active-outline, var(--border-width) solid var(--accent-default)); }
+ .stateless-form-tab.hidden, .stateless-form-tab[hidden] { display: none; }
+ .stateless-form-buttons { display: flex; justify-content: flex-end; gap: var(--stateless-form-buttons-gap, var(--space-sm)); }
+ .stateless-form-buttons > :is(button,input) { padding: var(--stateless-form-button-padding, var(--space-sm) var(--space-lg)); cursor: pointer; }
+ .stateless-form-spacer { min-block-size: var(--stateless-form-spacer-height, var(--space-lg)); }
+}

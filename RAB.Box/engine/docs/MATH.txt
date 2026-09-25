@@ -1,0 +1,57 @@
+THE EQUATION, WHERE IT ACTUALLY BELONGS
+======================================
+
+E = λP.λQ.∀x∈D (P(x) → Q(x))
+
+P and Q are predicates: Seat -> Boolean.
+D is the complete domain of fields declared by the currently selected stamp.
+
+Here:
+  P(seat) = required
+  Q(seat) = has a supported, type-valid binding
+
+JavaScript:
+  const every = P => Q => domain =>
+    domain.every(x => !P(x) || Q(x));
+
+Partial application:
+  every(isRequired)
+    -> a function still waiting for the satisfaction predicate
+
+  every(isRequired)(isSatisfied)
+    -> a function still waiting for the concrete domain
+
+  every(isRequired)(isSatisfied)(declaredSeats)
+    -> true or false
+
+This does NOT parse the text, choose a capability, discover a path, or grant
+authority. It is the required-seat completeness check in schema.mjs.
+Optional supplied fields, catalogs, preconditions and permissions are separate.
+An empty domain returns true. The schema must be loaded and validated first;
+a deliberately zero-option stamp is valid, a failed schema lookup is not.
+
+BINDING IS THE EARLIER OPERATION
+-------------------------------
+{ name: "test-project" }
+combined with
+{ location: "." }
+becomes
+{ name: "test-project", location: "." }
+
+Two occurrences of name="test-project" are compatible.
+name="test-project" combined with name="other" is a conflict.
+
+This package uses a flat compatible-binding merge, not a general graph
+unification or theorem-proving engine. NLTK Chapter 9 provides the richer
+feature-structure/unification machinery when a real need for it appears.
+
+NLTK also separates a symbol's semantic role from surface position. Here,
+a field's explicitly supported constructions supply that link. Adding prose
+to a description does not automatically infer a new semantic binding.
+
+One completed unit to retain:
+  CURRENT CONTRACT + SUPPORTED INPUT + WORLD EVIDENCE
+      -> filled seats or a precise request for missing input
+
+Not:
+  more lambda notation -> automatically understood English

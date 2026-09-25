@@ -1,0 +1,17 @@
+{
+  "id": 1810000000011,
+  "name": "list",
+  "title": "List Kitchen Inventory",
+  "description": "Lists available project ingredients.",
+  "settings": [],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "read",
+    "data_types": [
+      "inventory"
+    ],
+    "returns": [
+      "inventory"
+    ]
+  }
+}

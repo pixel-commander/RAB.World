@@ -1,0 +1,86 @@
+{
+  "id": 1790031603525,
+  "name": "effect-atom",
+  "title": "New Effect Atom",
+  "description": "Creates a named CSS effect token alias from an existing float or inset preset, preserving its elevation-token dependency and atom metadata.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Atom Name",
+      "description": "Lowercase kebab-case name for the CSS custom property, without leading --.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "title",
+      "title": "Title",
+      "description": "Optional display title for the generated effect atom; defaults to its name.",
+      "required": false
+    },
+    {
+      "type": "textarea",
+      "name": "description",
+      "title": "Description",
+      "description": "Optional description for the generated effect atom.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "indexed",
+      "title": "Include in Index",
+      "description": "Whether the generated item should appear in its project manifest.",
+      "required": false,
+      "default": true
+    },
+    {
+      "type": "folder",
+      "name": "location",
+      "title": "Atoms Folder",
+      "description": "Parent folder that will contain the new named atom folder.",
+      "required": true
+    },
+    {
+      "type": "options",
+      "name": "preset",
+      "title": "Source Preset",
+      "description": "Existing template used to create the named atom.",
+      "required": false,
+      "default": "effect-float",
+      "enum": [
+        "effect-float",
+        "effect-inset"
+      ],
+      "options": [
+        {
+          "name": "effect-float",
+          "description": "effect-float"
+        },
+        {
+          "name": "effect-inset",
+          "description": "effect-inset"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "subject": "css",
+    "operation": "create",
+    "target_type": "atom",
+    "atom_kind": "effect-atom",
+    "data_types": [
+      "css",
+      "atom",
+      "effect-atom"
+    ],
+    "output": "atom",
+    "authority": "write",
+    "returns": [
+      "atom_name",
+      "file",
+      "path",
+      "folder"
+    ]
+  }
+}

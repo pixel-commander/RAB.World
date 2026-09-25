@@ -1,0 +1,10 @@
+{
+  "version": "tool-contract/v1",
+  "source": {"kind":"internal","description":"Base listener owns multiple saved project paths. Arrays select per-path conditions; each result uses the same manifest shape at the path resolved by the existing .rab memory owner."},
+  "select":"name",
+  "variants": {
+    "add":{"result":{"status":"string","watch?":{"id":"number","type":"string","status":"string","root":"string|null","last_update":"string|null","count":"number|null","manifest":"string|null","error":"object|null"},"count?":"number","items?":"array","unavailable?":"array","message?":"string"}},
+    "remove":{"result":{"status":"string","type":"string","removed":"boolean"}},
+    "list":{"result":{"status":"string","count":"number","items":[{"id":"number","type":"string","status":"string","recursive":"boolean","include":["string"],"exclude":["string"],"debounce_ms":"number","reconcile_ms":"number"}]}}
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "id": 1830000000008,
+  "name": "class-impact",
+  "title": "Investigate Class Impact",
+  "description": "Inspect where one exact class token is defined and assigned, preserving source evidence, dynamic gaps and possible change impact.",
+  "settings": [
+    {
+      "name": "folder",
+      "type": "folder",
+      "title": "Audit folder",
+      "required": false
+    },
+    {
+      "name": "class_name",
+      "type": "text",
+      "title": "Class token",
+      "required": true
+    },
+    {
+      "name": "action",
+      "type": "options",
+      "title": "Investigation action",
+      "required": false,
+      "default": "inspect",
+      "enum": [
+        "inspect",
+        "declare",
+        "plan",
+        "handoff",
+        "verify"
+      ],
+      "options": [
+        {
+          "name": "inspect"
+        },
+        {
+          "name": "declare"
+        },
+        {
+          "name": "plan"
+        },
+        {
+          "name": "handoff"
+        },
+        {
+          "name": "verify"
+        }
+      ]
+    },
+    {
+      "name": "previous_report",
+      "type": "file",
+      "title": "Saved investigation report",
+      "required": false
+    },
+    {
+      "name": "decision",
+      "type": "options",
+      "title": "Declared intent",
+      "required": false,
+      "enum": [
+        "intentional",
+        "accidental",
+        "unknown"
+      ],
+      "options": [
+        {
+          "name": "intentional"
+        },
+        {
+          "name": "accidental"
+        },
+        {
+          "name": "unknown"
+        }
+      ]
+    },
+    {
+      "name": "reason",
+      "type": "textarea",
+      "title": "Reason and scope",
+      "required": false
+    },
+    {
+      "name": "location",
+      "type": "file",
+      "title": "Relative definition CSS file",
+      "required": false
+    },
+    {
+      "name": "styles",
+      "type": "textarea",
+      "title": "Custom-property token declarations",
+      "required": false
+    },
+    {
+      "name": "plan_id",
+      "type": "text",
+      "title": "Prepared plan ID",
+      "required": false
+    },
+    {
+      "name": "writer_execution_id",
+      "type": "number",
+      "title": "Completed writer execution",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "class-impact",
+    "authority": "read",
+    "output": "report",
+    "data_types": [
+      "class",
+      "file",
+      "evidence",
+      "investigation"
+    ]
+  }
+}

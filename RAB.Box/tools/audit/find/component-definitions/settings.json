@@ -1,0 +1,30 @@
+{
+  "id": 1790000000982,
+  "name": "component-definitions",
+  "title": "Find Component Definitions",
+  "description": "Finds common PascalCase React component declaration forms with file/line evidence.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "component",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "theme",
+    "config": {
+      "type": "component-definitions"
+    }
+  }
+}

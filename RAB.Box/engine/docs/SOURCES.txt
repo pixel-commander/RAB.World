@@ -1,0 +1,48 @@
+SOURCES AND ATTRIBUTION
+======================
+Implementation, adapter formats, tests and fixtures were created for this
+request. They are not copied out of a production RRAABBIITT repository.
+
+User-supplied basis:
+  Three entrances, shared canonical request.
+  Reserved stamp names and project-local runtime lookup.
+  House keys id/name/title/description/date_added/options.
+  PATHS.json; fields declared by stamp settings.
+  Clarify only unresolved inputs, preserve parent/return address.
+  Original React-project and DatePicker/class requests.
+  Existing stamp that stamps stamps; not replaced here.
+
+NLTK Book, Chapter 9: Building Feature Based Grammars
+https://www.nltk.org/book/ch09.html
+Consulted 2026-09-14. Feature structures, semantic roles, binding, unification,
+and why parameterized feature constraints avoid grammar duplication.
+Inspiration/background only; NLTK is NOT a package dependency.
+
+Node.js official child_process and fs APIs
+https://nodejs.org/api/child_process.html
+https://nodejs.org/api/fs.html
+Consulted for child-process argument arrays, structured I/O, timeouts,
+create-only file operations and filesystem behavior.
+
+React: Build a React app from Scratch
+https://react.dev/learn/build-a-react-app-from-scratch
+Vite: Getting Started
+https://vite.dev/guide/
+Background for the replaceable generated starter only.
+
+Pinned fixture package metadata checked 2026-09-14:
+React / React DOM 19.3.0
+https://react.dev/blog/2026/09/09/react-19-3
+https://registry.npmjs.org/react/latest
+https://www.npmjs.com/package/react-dom?activeTab=versions
+Vite 8.2.2 (pinned documented version, not a claim to be the newest)
+https://www.npmjs.com/package/vite
+TypeScript 7.0.2
+https://registry.npmjs.org/typescript/latest
+@types/react and @types/react-dom 19.3.0
+https://www.npmjs.com/package/%40types/react
+https://www.npmjs.com/package/%40types/react-dom
+
+Package metadata verification is NOT a successful npm install/build.
+Network access from the execution container failed. The React browser build
+was not tested. The Node harness, stamp writes, resumes and receipts were.

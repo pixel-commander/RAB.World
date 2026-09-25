@@ -1,0 +1,10 @@
+{
+  "id": "__PROJECT_ID__",
+  "name": "__PROJECT_NAME__",
+  "type": "react",
+  "paths": {
+    "components": "src/components",
+    "pages": "src/pages",
+    "atoms": "src/atoms"
+  }
+}

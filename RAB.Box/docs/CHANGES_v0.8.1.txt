@@ -1,0 +1,15 @@
+RRAABBIITT MAGIC BOX v0.8.1 — SHAPE-1 GATE
+==========================================
+
+- Added explicit Shape-1 API to seat parser: lexical candidates + phrase candidates.
+- Shape-1 phrase matches may cover otherwise unknown standalone tokens.
+- Phrase senses can contribute to Shape-2 operation resolution (e.g. "spin up").
+- Added type-specific sense narrowing so noun/adjective/verb ambiguity stays separated longer.
+- Added grammar-position contrast for ambiguous `clear`:
+  - "the path is clear" -> adjective predicate `unobstructed`
+  - "clear the form" -> verb senses remain `empty|reset`, therefore unresolved until narrowed further.
+- Curated 33 modern lexical entries and 13 reusable phrases from a Gemini proposal into live Shape 1.
+- Added proposed/reviewed/rejected vocabulary directories and a Shape-1 review tool.
+- Added language/GEMINI_NEXT_ROUND.txt and language/SHAPE_PIPELINE.txt.
+- Added six Shape-1 / Shape-2 contrast tests.
+- No new model authority. No fuzzy execution authority.

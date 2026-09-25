@@ -1,0 +1,17 @@
+{
+  "id": 1800000000041,
+  "name": "dom-write-boundaries",
+  "title": "Check DOM Write Boundaries",
+  "description": "Builds an isolated project symlink fixture and verifies DOM mutation Tools cannot edit a file that resolves outside the loaded project.",
+  "settings": [],
+  "meta": {
+    "domain": "security",
+    "operation": "check",
+    "target_type": "dom-write-boundaries",
+    "output": "security-report",
+    "authority": "read",
+    "config": {
+      "check": "dom-write-boundaries"
+    }
+  }
+}

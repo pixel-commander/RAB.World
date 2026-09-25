@@ -1,0 +1,29 @@
+{
+  "id": 1790000000988,
+  "name": "theme",
+  "title": "Inspect Theme Usage",
+  "description": "Builds a cross-reference report of theme tokens, CSS variables, class names, CSS class definitions, component definitions, component usage, and aggregate counts by chaining existing audit Tools.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "theme",
+    "data_types": [
+      "theme-token",
+      "class-name",
+      "component",
+      "file",
+      "count"
+    ],
+    "output": "report",
+    "authority": "read"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": null,
+  "title": "",
+  "name": "",
+  "description": "",
+  "path": "",
+  "type": "",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "imports": [
+    {}
+  ]
+}

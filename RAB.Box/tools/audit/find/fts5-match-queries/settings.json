@@ -1,0 +1,30 @@
+{
+  "id": 1800000000019,
+  "name": "fts5-match-queries",
+  "title": "Find FTS5 MATCH Queries",
+  "description": "Finds SQL/text occurrences of the FTS MATCH operator for FTS5 input-boundary review.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "fts5-match-queries",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bMATCH\\b",
+      "scope": "all",
+      "kind": "fts5-match",
+      "heuristic": false,
+      "flags": "i"
+    }
+  }
+}

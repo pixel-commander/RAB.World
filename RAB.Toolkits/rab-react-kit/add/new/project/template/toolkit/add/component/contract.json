@@ -1,0 +1,36 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "hybrid",
+    "description": "Preflights manifest-backed class atoms and canonical grid inputs, runs fully bound child atom tools through the shared runner, renders final component bytes, and verifies planned files.",
+    "reviewed_at": "2026-09-22"
+  },
+  "result": {
+    "status": "created",
+    "type": "component",
+    "name": "component name",
+    "path": "absolute source file",
+    "file": "absolute source file",
+    "folder": "absolute component folder",
+    "parent_path": "absolute containing folder",
+    "verification": "shared artifact-writer receipt",
+    "dependencies": "optional child tool receipts when missing atom dependencies were created",
+    "id": "positive numeric ID from the shared owner",
+    "title": "generated React component title",
+    "description": "generated React component description",
+    "settings": "Generated signal settings from template/settings.json; supplied values override defaults.",
+    "grid": "optional canonical layout name",
+    "areas": "optional canonical area names",
+    "construction_seats": "optional area seats for component population",
+    "provided": {
+      "seats": {
+        "name": "component name",
+        "component_name": "component name",
+        "target": "absolute component file",
+        "file": "absolute component file",
+        "path": "absolute component file",
+        "folder": "absolute component folder"
+      }
+    }
+  }
+}

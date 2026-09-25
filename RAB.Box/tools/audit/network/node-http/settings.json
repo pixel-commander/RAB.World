@@ -1,0 +1,28 @@
+{
+  "id": 1790000001002,
+  "name": "node-http",
+  "title": "Audit Native HTTP Server Listeners",
+  "description": "Tracks native Node.js HTTP/HTTPS server instances that bind listening sockets.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "network",
+    "data_types": [
+      "network",
+      "port",
+      "http"
+    ],
+    "output": "report",
+    "authority": "read",
+    "signature": "node-http"
+  }
+}

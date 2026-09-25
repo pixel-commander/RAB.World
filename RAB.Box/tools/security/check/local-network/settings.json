@@ -1,0 +1,17 @@
+{
+  "id": 1800000000042,
+  "name": "local-network",
+  "title": "Check Local Network Binding",
+  "description": "Starts an isolated ephemeral workbench and verifies the server is bound only to IPv4 loopback rather than a wildcard/LAN interface.",
+  "settings": [],
+  "meta": {
+    "domain": "security",
+    "operation": "check",
+    "target_type": "local-network",
+    "output": "security-report",
+    "authority": "read",
+    "config": {
+      "check": "local-network"
+    }
+  }
+}

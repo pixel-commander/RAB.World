@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "Builds the managed boundary markers and inserts caller-supplied content. The body is not synthesized by the tool.",
+    "reviewed_at": "2026-09-20"
+  }
+}

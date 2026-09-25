@@ -1,0 +1,10 @@
+{
+  "id": 1790000000813,
+  "name": "components",
+  "title": "Count Components",
+  "description": "Counts React component declarations in the loaded project or supplied folder.",
+  "settings": [
+    {"type":"folder","name":"folder","title":"Folder","description":"Optional folder to scan. Uses the loaded project root when omitted.","required":false}
+  ],
+  "meta": {"domain":"react","operation":"count","target_type":"component","data_types":["component","file","count"],"output":"count","authority":"read"}
+}

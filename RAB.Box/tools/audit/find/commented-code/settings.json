@@ -1,0 +1,33 @@
+{
+  "id": 1790000000956,
+  "name": "commented-code",
+  "title": "Find Commented-Out Code Candidates",
+  "description": "Heuristically finds source-looking statements behind // comments.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "commented-code",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "//\\s*(?:const|let|var|function|if|for|while|return|import|export)\\b",
+      "kind": "commented-code-candidate",
+      "scope": "code",
+      "heuristic": true
+    }
+  }
+}

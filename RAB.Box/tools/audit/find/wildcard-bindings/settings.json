@@ -1,0 +1,30 @@
+{
+  "id": 1800000000029,
+  "name": "wildcard-bindings",
+  "title": "Find Wildcard Network Bindings",
+  "description": "Finds wildcard listen/bind addresses such as 0.0.0.0 or :: in source/config.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "wildcard-bindings",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "(?:0\\.0\\.0\\.0|[\\\"\\']::[\\\"\\'])",
+      "scope": "all",
+      "kind": "wildcard-binding",
+      "heuristic": false,
+      "flags": "i"
+    }
+  }
+}

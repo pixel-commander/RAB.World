@@ -1,0 +1,47 @@
+{
+  "id": 1790277767758,
+  "name": "container-class",
+  "title": "Add container class",
+  "description": "Scaffolds container-[name].css from its template.",
+  "settings": [
+    {
+      "name": "name",
+      "type": "text",
+      "title": "Name",
+      "description": "Lowercase kebab-case suffix without the container- prefix.",
+      "required": true
+    },
+    {
+      "name": "location",
+      "type": "folder",
+      "title": "Save Folder",
+      "description": "Absolute output folder.",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "title": "Title",
+      "required": false
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "title": "Description",
+      "required": false
+    },
+    {
+      "name": "transmitting",
+      "type": "boolean",
+      "title": "Transmitting",
+      "description": "Omit to use the signal template default.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "create",
+    "target_type": "container-class",
+    "authority": "write"
+  }
+}

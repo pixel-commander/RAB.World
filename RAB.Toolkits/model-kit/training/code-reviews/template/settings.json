@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "settings": [],
+  "indexed": false,
+  "kind": "code-review-session",
+  "name": "__SESSION_NAME__",
+  "title": "__SESSION_TITLE__",
+  "description": "One package review recorded one round at a time for future training presses.",
+  "meta": {
+    "kind": "code-review-session"
+  },
+  "original_source": {
+    "path": "__ORIGINAL_SOURCE__",
+    "access": "read-only",
+    "storage": "external-reference"
+  },
+  "rounds": {
+    "path": "rounds",
+    "folder_pattern": "round-NNN",
+    "first_number": 1,
+    "number_padding": 3,
+    "stamp": "model-kit/training/code-reviews/new-training-round"
+  },
+  "working_copy": null,
+  "capture": {
+    "stamp": "model-kit/training/code-reviews/capture-change",
+    "evidence": "evidence",
+    "unit": "one-coherent-correction"
+  }
+}

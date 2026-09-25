@@ -1,0 +1,52 @@
+@layer atoms {
+  .action-ghost {
+    color: var(--action-ghost-color, var(--content-muted));
+    background: var(--action-ghost-background, var(--surface-inset));
+    border-width: var(--action-ghost-border-width, var(--border-width));
+    border-style: var(--action-ghost-border-style, var(--border-style));
+    border-color: var(--action-ghost-border-color, var(--border-subtle));
+    border-radius: var(--action-ghost-radius, var(--radius-control));
+    box-shadow: var(--action-ghost-shadow, var(--elevation-inset));
+    font: var(--action-ghost-font, var(--type-body));
+    cursor: var(--action-ghost-cursor, pointer);
+    transition:
+      color var(--motion-fast),
+      background-color var(--motion-fast),
+      border-color var(--motion-fast),
+      box-shadow var(--motion-fast);
+  }
+
+  .action-ghost:hover {
+    color: var(--action-ghost-hover-color, var(--content-muted));
+    background: var(--action-ghost-hover-background, var(--surface-transparent));
+    border-width: var(--action-ghost-hover-border-width, var(--border-width));
+    border-style: var(--action-ghost-hover-border-style, var(--border-style));
+    border-color: var(--action-ghost-hover-border-color, transparent);
+    border-radius: var(--action-ghost-hover-radius, var(--radius-control));
+    box-shadow: var(--action-ghost-hover-shadow, none);
+    font: var(--action-ghost-hover-font, var(--type-label));
+    cursor: var(--action-ghost-hover-cursor, pointer);
+    transition:
+      color var(--motion-fast),
+      background-color var(--motion-fast),
+      border-color var(--motion-fast),
+      box-shadow var(--motion-fast);
+  }
+
+  .action-ghost:active {
+    background: var(--action-ghost-active-background, var(--surface-active));
+  }
+
+  .action-ghost:focus-visible {
+    outline: var(--action-ghost-focus-outline, var(--focus-ring));
+    outline-offset: var(--action-ghost-focus-offset, var(--focus-offset));
+  }
+
+
+  .action-ghost:is(:disabled, [aria-disabled='true']) {
+    color: var(--action-ghost-disabled-color, var(--content-disabled));
+    background: var(--action-ghost-disabled-background, var(--surface-disabled));
+    cursor: not-allowed;
+    opacity: var(--action-ghost-disabled-opacity, var(--disabled-opacity));
+  }
+}

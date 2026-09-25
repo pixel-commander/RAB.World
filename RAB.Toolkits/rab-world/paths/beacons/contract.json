@@ -1,0 +1,23 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Fills template/beacon.json from declared form inputs, allocates identity through the shared owner, and writes through the shared artifact writer without replacing existing files."
+  },
+  "result": {
+    "status": "created",
+    "beacon": {
+      "name": "string",
+      "id": "positive numeric identity",
+      "title": "string",
+      "description": "string",
+      "date_added": "UTC ISO 8601 creation timestamp",
+      "path": "world-relative folder when selected; absolute folder otherwise",
+      "types": "array of declared content types",
+      "beacon": "on or off",
+      "reach": "array containing world and/or project; defaults to both"
+    },
+    "file": "absolute beacon.json path",
+    "verification": "shared artifact-writer receipt"
+  }
+}

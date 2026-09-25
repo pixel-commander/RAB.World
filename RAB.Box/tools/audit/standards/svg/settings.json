@@ -1,0 +1,27 @@
+{
+  "id": 1790000001503,
+  "name": "svg",
+  "title": "Audit SVG Conformance",
+  "description": "Checks standalone SVG structure, tag balance, duplicate IDs/attributes, and broken local SVG references.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to review. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "standards",
+    "data_types": [
+      "standards",
+      "svg"
+    ],
+    "output": "report",
+    "authority": "read",
+    "standard": "svg"
+  }
+}

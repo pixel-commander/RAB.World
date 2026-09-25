@@ -1,0 +1,15 @@
+{
+  "id": 1790033965848,
+  "name": "list",
+  "title": "List listener paths",
+  "description": "List registered project paths, listener conditions, last update and current errors.",
+  "settings": [],
+  "meta": {
+    "domain": "base",
+    "operation": "list",
+    "target_type": "listener",
+    "authority": "read"
+  },
+  "indexed": true
+}
+

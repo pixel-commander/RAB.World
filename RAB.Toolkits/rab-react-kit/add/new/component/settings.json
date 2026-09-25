@@ -1,0 +1,94 @@
+{
+  "id": 1790000000401,
+  "name": "component",
+  "title": "New Component",
+  "description": "Creates a structural React component with an optional canonical grid and class atoms resolved before any files are written.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Component Name",
+      "description": "Component name.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "title",
+      "title": "Title",
+      "description": "Optional display title for the generated React component; defaults to its name.",
+      "required": false
+    },
+    {
+      "type": "textarea",
+      "name": "description",
+      "title": "Description",
+      "description": "Optional description for the generated React component.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "indexed",
+      "title": "Include in Index",
+      "description": "Whether the generated item should appear in its project manifest.",
+      "required": false,
+      "default": true
+    },
+    {
+      "type": "folder",
+      "name": "location",
+      "title": "Location",
+      "description": "Folder that will contain the component folder.",
+      "required": true
+    },
+    {
+      "type": "boolean",
+      "name": "save_as_text",
+      "title": "Save As Text",
+      "description": "Save the generated component as .txt for testing.",
+      "required": false,
+      "default": false
+    },
+    {
+      "type": "text",
+      "name": "grid",
+      "title": "Grid",
+      "description": "Optional canonical grid layout from the shared grid catalog. Use none or an empty value to skip.",
+      "required": false,
+      "ask": true
+    },
+    {
+      "type": "text",
+      "name": "class_name",
+      "title": "Container Class",
+      "description": "Optional space-separated class atoms; absent classes are resolved before creation. Choose an empty value to skip.",
+      "required": false,
+      "ask": true
+    },
+    {
+      "type": "boolean",
+      "name": "ensure_atoms",
+      "title": "Resolve Atom Dependencies",
+      "description": "Resolve supplied class atoms through the manifest or configured path before creating the component.",
+      "required": false,
+      "default": true
+    },
+    {
+      "type": "json",
+      "name": "atom_decisions",
+      "title": "Atom Decisions",
+      "description": "Per-class choices: create, kind and child tool options. All choices are resolved before any child tool writes.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "create",
+    "target_type": "component",
+    "data_types": [
+      "component",
+      "tsx"
+    ],
+    "output": "component",
+    "authority": "write"
+  }
+}

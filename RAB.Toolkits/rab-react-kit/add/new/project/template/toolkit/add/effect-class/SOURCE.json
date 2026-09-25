@@ -1,0 +1,10 @@
+{
+  "sources": [
+    {
+      "path": "//Desktop-t72isdi/f/RAB.Box/tools/react/seed/stamp-ui-kit/template/src/atoms/effects",
+      "role": "template source"
+    }
+  ],
+  "adaptation": "Copies the existing effect token presets into the tool template. Creation renames the effect token and filename; it does not generate a class selector.",
+  "originals": "Source files remain unchanged."
+}

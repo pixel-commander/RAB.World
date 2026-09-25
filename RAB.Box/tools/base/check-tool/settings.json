@@ -1,0 +1,10 @@
+{
+  "id": 1790000000210,
+  "name": "check-tool",
+  "title": "Check Tool",
+  "description": "Checks a registered Tool's structural visibility and how its own description resolves back through find-tool.",
+  "settings": [
+    {"type":"text","name":"key","title":"Tool Key","description":"Tool key in domain/name form, such as react/add/new/component.","required":true}
+  ],
+  "meta": {"domain":"base","operation":"check","target_type":"tool","data_types":["tool","settings"],"output":"report","authority":"read"}
+}

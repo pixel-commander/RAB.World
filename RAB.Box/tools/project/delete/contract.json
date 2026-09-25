@@ -1,0 +1,20 @@
+{
+  "version": "tool-contract/v1",
+  "select": "name",
+  "variants": {
+    "component": {
+      "source": {
+        "kind": "file-operation",
+        "description": "Deletes the existing component artifact.",
+        "reviewed_at": "2026-09-20"
+      }
+    },
+    "file": {
+      "source": {
+        "kind": "file-operation",
+        "description": "Copies, moves, renames, saves a copy, or deletes existing file content; does not generate source text.",
+        "reviewed_at": "2026-09-20"
+      }
+    }
+  }
+}

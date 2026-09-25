@@ -1,0 +1,42 @@
+{
+  "version": "rraabbiitt-semantic-relations/v0.7",
+  "purpose": "Small compositional relations used by re-phrase-check. These operate on lexical senses, not whole-sentence replacements.",
+  "contractions": {
+    "didn't": "did not",
+    "doesn't": "does not",
+    "don't": "do not",
+    "can't": "can not",
+    "cannot": "can not",
+    "won't": "will not",
+    "isn't": "is not",
+    "aren't": "are not",
+    "wasn't": "was not",
+    "weren't": "were not",
+    "hasn't": "has not",
+    "haven't": "have not",
+    "hadn't": "had not"
+  },
+  "opposites": {
+    "succeed": "fail",
+    "fail": "succeed",
+    "active": "inactive",
+    "inactive": "active",
+    "valid": "invalid",
+    "invalid": "valid"
+  },
+  "preferred_surfaces": {
+    "create": ["create", "make", "build"],
+    "find": ["find", "locate", "show", "get"],
+    "all": ["all", "every", "each"],
+    "orphaned": ["orphaned", "unreferenced", "unused"],
+    "inspect": ["inspect", "check", "scan"],
+    "attach": ["attach", "apply", "use"],
+    "fail": ["fail"],
+    "succeed": ["work", "succeed"]
+  },
+  "inflections": {
+    "fail": { "base": "fail", "present3": "fails", "past": "failed", "gerund": "failing" },
+    "succeed": { "base": "succeed", "present3": "succeeds", "past": "succeeded", "gerund": "succeeding" },
+    "work": { "base": "work", "present3": "works", "past": "worked", "gerund": "working" }
+  }
+}

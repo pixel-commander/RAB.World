@@ -1,0 +1,14 @@
+{
+  "title": "container-machine-trim",
+  "name": "container-machine-trim",
+  "description": "Container atom declaration; source CSS and atom settings are not present yet.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\container-machine-trim",
+  "type": "container-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304149641,
+  "indexed": true
+}

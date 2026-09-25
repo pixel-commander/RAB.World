@@ -1,0 +1,30 @@
+{
+  "id": 1800000000026,
+  "name": "child-process-spawn",
+  "title": "Find Process Spawn Calls",
+  "description": "Finds spawn/spawnSync/execFile call sites for argument-boundary review.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "child-process-spawn",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\b(?:spawn|spawnSync|execFile|execFileSync)\\s*\\(",
+      "scope": "code",
+      "kind": "child-process-spawn",
+      "heuristic": false,
+      "flags": "i"
+    }
+  }
+}

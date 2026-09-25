@@ -1,0 +1,24 @@
+{
+  "id": 1790000001201,
+  "name": "exposed-sourcemaps",
+  "title": "Audit Client Production Source Maps",
+  "description": "Reports source-map artifacts present in deployment outputs and records whether original source text is embedded.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional project or deployment folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "hosting",
+    "data_types": ["hosting", "sourcemap"],
+    "output": "report",
+    "authority": "read",
+    "check": "sourcemaps"
+  }
+}

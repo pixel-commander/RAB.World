@@ -1,0 +1,18 @@
+{
+  "version": "tool-contract/v1",
+  "result": {
+    "status": "string",
+    "scan": "string",
+    "root": "string",
+    "totals": {
+      "total_files": "number",
+      "total_types": "number"
+    },
+    "rows": [
+      {
+        "label": "string",
+        "count": "number"
+      }
+    ]
+  }
+}

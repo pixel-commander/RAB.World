@@ -1,0 +1,23 @@
+{
+  "id": 1790033965514,
+  "name": "remove",
+  "title": "Remove path from listener",
+  "description": "Stop listening to a project path while preserving its source and saved manifest.",
+  "settings": [
+    {
+      "name": "type",
+      "type": "text",
+      "title": "Project path key",
+      "required": true,
+      "description": "A named path in saved project settings, such as components, pages or atoms."
+    }
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "delete",
+    "target_type": "listener",
+    "authority": "write"
+  },
+  "indexed": true
+}
+

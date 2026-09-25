@@ -1,0 +1,27 @@
+{
+  "id": 1790000001103,
+  "name": "unsecure-tls",
+  "title": "Audit Broken Security Protocol Constraints",
+  "description": "Flags explicit TLS verification disablement and obsolete minimum protocol constraints.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "security",
+    "data_types": [
+      "security",
+      "tls"
+    ],
+    "output": "report",
+    "authority": "read",
+    "target": "unsecure-tls"
+  }
+}

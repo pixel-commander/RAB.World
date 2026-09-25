@@ -1,0 +1,43 @@
+✔ all five review tools are discoverable with declared Toolbox forms and output contracts (1072.051ms)
+✔ the actual guard tool distinguishes unguarded access, partial guards and complete fallback (12885.4806ms)
+✔ guard grouping also reuses prop-renames and preserves its evidence (3115.2537ms)
+✔ grid checks reuse supplied CSS and allow an ordinary flex leaf (3659.1898ms)
+✔ atoms reuse token and is-active state checks; structural CSS and token definitions pass (7601.0671ms)
+✔ parent runs groups through the runner and distinguishes skipped groups from passes (6486.0758ms)
+✔ selected checks are exact, validated and never expand silently (9557.1583ms)
+✔ unsupported or unscanned input cannot produce a passing review (7047.3221ms)
+✔ input paths and size are constrained without changing the project (7228.2566ms)
+✔ source is inspected as text and never evaluated (3058.9741ms)
+✔ write requires explicit confirmation and refuses findings and zero applicable checks (14327.5199ms)
+✔ writer checks exact new bytes, verifies output and never overwrites (14059.6351ms)
+✔ previous pass never authorizes changed input, and caller cannot submit a forged pass flag (14622.9031ms)
+✔ writer refuses symlink/junction parents outside the selected project (6841.2328ms)
+✖ audit project can review scratch code and keeps the audited folder untouched (2497.3237ms)
+✔ checker errors, incomplete results and modified staged source never become passes (370.2036ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 15
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 114620.5734
+
+✖ failing tests:
+
+test at tests\code-review-input.test.mjs:143:1
+✖ audit project can review scratch code and keeps the audited folder untouched (2497.3237ms)
+  Error: Invalid audit folder: The audit input must be outside .rab storage.
+      at runTool (file:///C:/Users/pixelcommander/Desktop/RRAABBIITT_v0.9.3/bridge/tool-house.mjs:558:42)
+      at async reviewGroup (file:///C:/Users/pixelcommander/Desktop/RRAABBIITT_v0.9.3/tools/code-review/_review.mjs:67:17)
+      at async runTool (file:///C:/Users/pixelcommander/Desktop/RRAABBIITT_v0.9.3/bridge/tool-house.mjs:584:22)
+      at async Module.run (file:///C:/Users/pixelcommander/Desktop/RRAABBIITT_v0.9.3/tools/code-review/code-review.mjs?v=1789946435439.38:8:17)
+      at async Object.runTool (file:///C:/Users/pixelcommander/Desktop/RRAABBIITT_v0.9.3/bridge/tool-house.mjs:584:22)
+      at async TestContext.<anonymous> (file:///C:/Users/pixelcommander/Desktop/RRAABBIITT_v0.9.3/tests/code-review-input.test.mjs:145:13)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    code: 'AUDIT_PATH_REQUIRED',
+    field: 'folder',
+    execution: { version: 'tool-execution/v2', execution_id: 1789946695313, parent_execution_id: null, session_id: 1789946695490, project_key: '1789946695300', tool: { id: 1830000000728, address: 'code-review', source: 'house', toolkit: null, implementation_source: 'house', source_file: 'C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\PATHS.json', shadowed: null }, options: { file: 'labels.ts', code: 'const labels = data?.map(item => item?.label ?? "");\n', checks: [Array] }, start_date: '2026-09-20T23:24:55.322Z', end_date: '2026-09-20T23:24:57.524Z', duration_ms: 2215.415200000003, status: 'blocked', result_ref: null, result_bytes: null, error: { code: 'AUDIT_PATH_REQUIRED', message: 'Invalid audit folder: The audit input must be outside .rab storage.' } },
+    tracking_file: 'C:\\Users\\pixelcommander\\AppData\\Local\\Temp\\rab-review-input-izFVJe\\home\\projects\\1789946695300\\runs\\1789946695490\\1789946695313.json'
+  }

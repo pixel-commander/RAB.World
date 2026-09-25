@@ -1,0 +1,65 @@
+{
+  "id": 1810000000020,
+  "name": "solve-one-seat",
+  "title": "Solve One Kitchen Math Seat",
+  "description": "Solves exactly one missing seat among length, belt speed, and residence time. Two or more missing independent seats stay underdetermined.",
+  "settings": [
+    {
+      "type": "number",
+      "name": "length",
+      "title": "Length",
+      "description": "length",
+      "required": false
+    },
+    {
+      "type": "number",
+      "name": "belt_speed",
+      "title": "Belt Speed",
+      "description": "belt speed",
+      "required": false
+    },
+    {
+      "type": "number",
+      "name": "residence_time",
+      "title": "Residence Time",
+      "description": "residence time",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "length_unit",
+      "title": "Length Unit",
+      "description": "length unit",
+      "required": false,
+      "default": "ft"
+    },
+    {
+      "type": "text",
+      "name": "speed_unit",
+      "title": "Speed Unit",
+      "description": "speed unit",
+      "required": false,
+      "default": "ft/min"
+    },
+    {
+      "type": "text",
+      "name": "time_unit",
+      "title": "Time Unit",
+      "description": "time unit",
+      "required": false,
+      "default": "min"
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "pure",
+    "data_types": [
+      "solved",
+      "value"
+    ],
+    "returns": [
+      "solved",
+      "value"
+    ]
+  }
+}

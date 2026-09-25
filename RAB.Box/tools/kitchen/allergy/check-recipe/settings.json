@@ -1,0 +1,34 @@
+{
+  "id": 1810000000006,
+  "name": "check-recipe",
+  "title": "Check Recipe Allergy",
+  "description": "Checks a starter recipe candidate against human-declared allergies. Unknown or unauthored ingredient relationships remain unresolved and never become safe claims.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "recipe",
+      "title": "Recipe",
+      "description": "recipe",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "people",
+      "title": "People",
+      "description": "people",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "read",
+    "data_types": [
+      "conflicts",
+      "status"
+    ],
+    "returns": [
+      "conflicts",
+      "status"
+    ]
+  }
+}

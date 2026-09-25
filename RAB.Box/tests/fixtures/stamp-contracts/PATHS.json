@@ -1,0 +1,238 @@
+{
+  "project": {
+    "id": "mock-project",
+    "name": "Mock project",
+    "title": "Local build yard",
+    "description": "Editable sibling project for the Magic Box operator UI."
+  },
+  "stamps": {
+    "react-project": {
+      "settings": "stamps/ReactProject/settings.json",
+      "script": "stamps/ReactProject/stamp.mjs",
+      "language": {
+        "verbs": [
+          "stamp",
+          "make",
+          "create",
+          "build",
+          "start"
+        ],
+        "names": [
+          "react project",
+          "react app"
+        ]
+      },
+      "write_roots": [
+        "."
+      ],
+      "supporting_files": {
+        "template": "stamps/ReactProject/template.json"
+      }
+    },
+    "atom-stamp": {
+      "settings": "stamps/Atom/settings.json",
+      "script": "stamps/Atom/stamp.mjs",
+      "language": {
+        "verbs": [
+          "stamp",
+          "make",
+          "create",
+          "build",
+          "start"
+        ],
+        "names": [
+          "atom"
+        ]
+      },
+      "write_roots": [
+        "atoms"
+      ]
+    },
+    "div-stamp": {
+      "settings": "stamps/Div/settings.json",
+      "script": "stamps/Div/stamp.mjs",
+      "language": {
+        "verbs": [
+          "stamp",
+          "make",
+          "create",
+          "build",
+          "start"
+        ],
+        "names": [
+          "div"
+        ]
+      },
+      "write_roots": [
+        "output"
+      ],
+      "dependencies": [
+        {
+          "field": "class",
+          "catalog": "classes",
+          "capability": "atom-stamp",
+          "bindings": {
+            "name": "class"
+          }
+        }
+      ]
+    },
+    "component-stamp": {
+      "settings": "stamps/Component/settings.json",
+      "script": "stamps/Component/stamp.mjs",
+      "language": {
+        "verbs": [
+          "stamp",
+          "make",
+          "create",
+          "build",
+          "start"
+        ],
+        "names": [
+          "component"
+        ]
+      },
+      "write_roots": [
+        "components"
+      ],
+      "dependencies": [
+        {
+          "field": "class",
+          "catalog": "classes",
+          "capability": "atom-stamp",
+          "bindings": {
+            "name": "class"
+          }
+        }
+      ]
+    },
+    "new-component": {
+      "settings": "stamps/NewComponent/settings.json",
+      "script": "stamps/NewComponent/stamp.mjs",
+      "language": {
+        "verbs": [
+          "make",
+          "create",
+          "add",
+          "build",
+          "start"
+        ],
+        "names": [
+          "top level component",
+          "new-component"
+        ]
+      },
+      "write_roots": [
+        "components"
+      ]
+    },
+    "sub-component": {
+      "settings": "stamps/SubComponent/settings.json",
+      "script": "stamps/SubComponent/stamp.mjs",
+      "language": {
+        "verbs": [
+          "make",
+          "create",
+          "add",
+          "nest"
+        ],
+        "names": [
+          "nested component",
+          "sub-component"
+        ]
+      },
+      "write_roots": [
+        "components"
+      ]
+    },
+    "new-page": {
+      "settings": "stamps/NewPage/settings.json",
+      "script": "stamps/NewPage/stamp.mjs",
+      "language": {
+        "verbs": [
+          "make",
+          "create",
+          "add",
+          "build"
+        ],
+        "names": [
+          "new page",
+          "new-page"
+        ]
+      },
+      "write_roots": [
+        "pages"
+      ]
+    },
+    "component-note": {
+      "settings": "stamps/ComponentNote/settings.json",
+      "script": "stamps/ComponentNote/stamp.mjs",
+      "language": {
+        "verbs": [
+          "make",
+          "create",
+          "add",
+          "write"
+        ],
+        "names": [
+          "component note",
+          "text note",
+          "note"
+        ]
+      },
+      "write_roots": [
+        "components"
+      ]
+    },
+    "stamp-maker": {
+      "settings": "stamps/StampMaker/settings.json",
+      "script": "stamps/StampMaker/stamp.mjs",
+      "language": {
+        "verbs": [
+          "make",
+          "create",
+          "build"
+        ],
+        "names": [
+          "stamp skeleton",
+          "stamp-maker"
+        ]
+      },
+      "write_roots": [
+        "generated-stamps"
+      ]
+    },
+    "sub-div": {
+      "settings": "stamps/SubDiv/settings.json",
+      "script": "stamps/SubDiv/stamp.mjs",
+      "language": {
+        "verbs": [
+          "make",
+          "create",
+          "add",
+          "nest"
+        ],
+        "names": [
+          "nested div",
+          "child div",
+          "sub-div"
+        ]
+      },
+      "write_roots": [
+        "components"
+      ]
+    }
+  },
+  "tools": {},
+  "catalogs": {
+    "classes": {
+      "kind": "folders",
+      "path": "atoms",
+      "marker": "atom.css"
+    },
+    "tokens": {
+      "kind": "json",
+      "path": "tokens.json"
+    }
+  }
+}

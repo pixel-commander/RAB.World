@@ -1,0 +1,34 @@
+{
+  "version": "tool-contract/v1",
+  "select": "name",
+  "variants": {
+    "attribute": {
+      "source": {
+        "kind": "internal",
+        "description": "Computes a add edit on an existing JSX/HTML attribute; the shared DOM engine writes the modified file.",
+        "reviewed_at": "2026-09-20"
+      }
+    },
+    "class": {
+      "source": {
+        "kind": "internal",
+        "description": "Computes a add edit on an existing JSX/HTML class; the shared DOM engine writes the modified file.",
+        "reviewed_at": "2026-09-20"
+      }
+    },
+    "data-area": {
+      "source": {
+        "kind": "internal",
+        "description": "Computes a add edit on an existing JSX/HTML data-area; the shared DOM engine writes the modified file.",
+        "reviewed_at": "2026-09-20"
+      }
+    },
+    "element": {
+      "source": {
+        "kind": "internal",
+        "description": "The shared DOM engine implements add-element. It constructs markup or edits existing ranges; there is no local template file.",
+        "reviewed_at": "2026-09-20"
+      }
+    }
+  }
+}

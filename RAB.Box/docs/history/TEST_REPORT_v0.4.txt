@@ -1,0 +1,37 @@
+RRAABBIITT MAGIC BOX v0.4 TEST REPORT
+====================================
+Date: 2026-09-14
+Environment: Linux container, Node 22-compatible runtime
+
+Automated Node suite:
+  npm test
+  170 passed
+  0 failed
+
+Includes four new planner tests:
+- compound request -> inspectable tasks + capability gaps
+- missing required stamp input remains visible
+- destructive/attachment semantics remain gaps without proven capabilities
+- negation never receives execution authority
+
+Browser interaction harness:
+  python tests/browser_interaction.py
+  10 checks passed
+  0 JavaScript errors
+
+The browser harness verified:
+- project and capability list loads
+- whole-request plan renders in the UI
+- legacy pending run reloads
+- legacy React request clarification/execution/receipt path still works
+- missing-class dependency return still works
+- language resource view still works
+- review-only language import still works
+- manual settings-generated form still works
+- 390px viewport has no horizontal overflow
+- no JavaScript errors in the harness
+
+Caveat:
+The existing browser harness uses a virtual browser URL and bridges to the real local HTTP
+API because direct browser navigation is blocked in this managed environment. Windows
+RUN_UI.cmd was not executed here.

@@ -1,0 +1,7 @@
+ACTION ATOM
+Apply the class to an interactive element. Components own markup, behavior,
+layout, keyboard handling, and semantic state. This atom supplies skin.
+Use shared project tokens for color, borders, shadows, and focus.
+:active and .is-active share the active skin. The component derives is-active
+and its matching ARIA state from the same value. Preserve visible focus.
+aria-disabled changes appearance only; the component prevents activation.

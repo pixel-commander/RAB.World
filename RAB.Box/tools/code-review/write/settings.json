@@ -1,0 +1,44 @@
+{
+  "id": 1830000000736,
+  "name": "write",
+  "title": "Review and Write New File",
+  "description": "Reruns every available code review and creates a new file in the selected project only if all applicable checks pass. Requires explicit confirmation; existing files are never overwritten.",
+  "settings": [
+    {
+      "name": "file",
+      "type": "path",
+      "title": "Intended file",
+      "description": "Project-relative filename, such as src/components/Card/Card.tsx or src/atoms/action.css. Review does not change this file.",
+      "required": true
+    },
+    {
+      "name": "code",
+      "type": "textarea",
+      "title": "Proposed code",
+      "description": "Paste the exact code to check. Static checks only; this code is never executed. Maximum 256 KiB combined with supporting CSS.",
+      "required": true
+    },
+    {
+      "name": "css",
+      "type": "textarea",
+      "title": "Supporting CSS (optional)",
+      "description": "CSS for resolving class-based grid/flex layout in JSX. Only the grids check reads this; it is not written to the project.",
+      "required": false
+    },
+    {
+      "name": "confirm",
+      "type": "boolean",
+      "title": "Confirm new file write",
+      "description": "True permits creation after the checks pass. False or omitted refuses writing.",
+      "required": false,
+      "default": false
+    }
+  ],
+  "meta": {
+    "operation": "create",
+    "target_type": "reviewed-code",
+    "authority": "write",
+    "output": "file",
+    "domain": "code-review"
+  }
+}

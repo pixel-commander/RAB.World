@@ -1,0 +1,9 @@
+{
+  "version": "tool-contract/v1",
+  "result": {
+    "status": "string",
+    "files": [
+      "absolute path"
+    ]
+  }
+}

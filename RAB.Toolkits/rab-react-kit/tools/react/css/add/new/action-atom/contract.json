@@ -1,0 +1,40 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "hybrid",
+    "description": "Creates a tag-neutral CSS skin for interactive elements, including navigation links and controls, with hover, active, persistent is-active, focus and disabled states plus a React link demo. Uses the inherited new.mjs adapter with Box rendering and artifact-writing helpers."
+  },
+  "result": {
+    "status": "created",
+    "type": "atom",
+    "kind": "action-atom",
+    "name": "supplied atom name",
+    "preset": null,
+    "folder": "absolute atom folder",
+    "file": "absolute CSS file",
+    "path": "absolute CSS file",
+    "settings": {
+      "name": "supplied atom name",
+      "kind": "action-atom",
+      "description": "supplied or preset description",
+      "created": "creation date YYYY-MM-DD",
+      "modified": "creation date YYYY-MM-DD",
+      "id": "positive numeric ID from the shared owner",
+      "title": "generated atom title",
+      "settings": [],
+      "meta": {
+        "kind": "atom"
+      },
+      "indexed": "boolean, default true"
+    },
+    "verification": "shared artifact-writer receipt with created file paths, byte counts and hashes",
+    "provided": {
+      "seats": {
+        "atom_name": "supplied atom name",
+        "file": "absolute CSS file",
+        "path": "absolute CSS file",
+        "folder": "absolute atom folder"
+      }
+    }
+  }
+}

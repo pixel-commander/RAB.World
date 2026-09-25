@@ -1,0 +1,31 @@
+{
+  "id": 1820000000001,
+  "name": "list-seats",
+  "title": "List Construction Seats",
+  "description": "Lists RRAABBIITT construction-seat markers in one artifact without modifying the file.",
+  "settings": [
+    {
+      "type": "file",
+      "name": "file",
+      "title": "File",
+      "description": "Artifact file. May be absolute or project-relative.",
+      "required": false
+    },
+    {
+      "type": "path",
+      "name": "path",
+      "title": "Path",
+      "description": "Project-relative artifact path alias.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "code",
+    "operation": "inspect",
+    "target_type": "construction-scaffolding",
+    "data_types": ["file", "path", "construction-seat"],
+    "output": "construction-seat-report",
+    "authority": "read",
+    "returns": ["construction_seats"]
+  }
+}

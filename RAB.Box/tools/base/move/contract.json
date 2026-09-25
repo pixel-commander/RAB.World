@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "file-operation",
+    "description": "Moves an existing capability and updates PATHS; preserves the leaf name and existing code.",
+    "reviewed_at": "2026-09-20"
+  }
+}

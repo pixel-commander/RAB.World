@@ -1,0 +1,27 @@
+{
+  "id": 1790000000985,
+  "name": "class-usage",
+  "title": "Count Class Usage",
+  "description": "Aggregates literal className/class usage counts by class name.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "count",
+    "target_type": "class-name",
+    "data_types": [
+      "file",
+      "count"
+    ],
+    "output": "count",
+    "authority": "read",
+    "aggregate_from": "find-class-names"
+  }
+}

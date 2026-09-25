@@ -1,0 +1,7 @@
+@layer components {
+  .layout-designer-page {
+    min-inline-size: 0;
+    min-block-size: 0;
+    block-size: 100%;
+  }
+}

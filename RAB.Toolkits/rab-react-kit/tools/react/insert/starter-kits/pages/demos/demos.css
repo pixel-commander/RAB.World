@@ -1,0 +1,38 @@
+@layer components {
+  .demos-page {
+    flex: 1;
+    min-block-size: 0;
+  }
+
+  /* auto tracks defeat cell scroll (see cells/scroll RULES) */
+  .demos-page[data-grid='side-left'] {
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .demos-page > [data-area='side'] {
+    inline-size: var(--rail-left-size, 15rem);
+    background: var(--surface-inset);
+  }
+
+  .demos-page h2 {
+    font: var(--type-heading);
+    color: var(--content-strong);
+  }
+
+  .demos__nav {
+    display: grid;
+    gap: var(--space-2xs);
+    align-content: start;
+  }
+
+  /* skin rides the action-nav atom stacked in the markup */
+  .demos__nav a {
+    padding: var(--space-xs) var(--space-sm);
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  .demos-page > [data-area]:not([data-rows]):not([data-grid]) { grid-template-rows: minmax(0, 1fr); }
+  .demos-page > [data-area] > .inner:not([data-rows]):not([data-grid]) { display: flex; flex-direction: column; gap: var(--space-lg); min-inline-size: 0; min-block-size: 0; }
+}

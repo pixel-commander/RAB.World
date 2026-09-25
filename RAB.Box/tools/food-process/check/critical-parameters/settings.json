@@ -1,0 +1,34 @@
+{
+  "id": 1810000000101,
+  "name": "critical-parameters",
+  "title": "Check Critical Process Parameters",
+  "description": "Checks a declared required parameter set against provided industrial process parameters and leaves missing parameters unresolved.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "required_parameters",
+      "title": "Required Parameters",
+      "description": "Comma-separated required process parameters.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "provided_parameters",
+      "title": "Provided Parameters",
+      "description": "Comma-separated provided process parameters.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "food-process",
+    "authority": "pure",
+    "data_types": [
+      "missing",
+      "verified"
+    ],
+    "returns": [
+      "missing",
+      "verified"
+    ]
+  }
+}

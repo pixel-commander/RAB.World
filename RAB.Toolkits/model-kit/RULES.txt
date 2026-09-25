@@ -1,0 +1,759 @@
+RULE CARDS: MODEL HANDS + UI REVIEW
+
+PURPOSE
+One situation per card. Select relevant cards for a task; do not load this entire
+file into every small-model request. Keep RULE, USE-WHEN, and examples together.
+RULE is the constraint; DO is the form to reproduce. DO-NOT shows the tempting
+wrong move. Example snippets are fragments unless a complete function is shown.
+CHECK describes intended coverage, not an already implemented checker:
+  TOOL  = deterministic assertions about observable facts in a resolved scope.
+  MODEL = judgment assigned exclusively to self code review.
+  BOTH  = two separate stages: tool facts, then self code review of those facts.
+No judgment belongs inside an automated check. Unknown evidence is not a pass.
+The self code review workflow lives in code-review/RULES.txt beside this file.
+Use existing audit tools (including classname audits) as the facts' owners;
+this rule source does not require one script to implement every check.
+
+FINDING DISPOSITION
+A detected condition is not automatically a hard failure. The rule determines
+its route; judgment and approval remain outside the deterministic checker.
+  PASS: The stated deterministic condition was checked and satisfied.
+  HARD-FAIL: An unambiguous non-waivable check failed, such as invalid syntax or
+    a missing required field. Correct it and rerun; do not wave it through.
+  APPROVAL-REQUIRED: A condition was detected that needs an explained decision.
+    Keep it unresolved until the reviewing LLM approves within the existing rules
+    or requires a correction. Escalate exceptional/high-impact cases to the human.
+  UNKNOWN / UNAVAILABLE: Evidence or a checker is missing. Report that limitation;
+    do not turn it into a pass, a proven violation, or an invented approval.
+
+An approval records who reviewed, the specific finding, the evidence/reason, and
+the applicable exception. Approval concerns this occurrence, not a blanket rule
+waiver. A material change to that occurrence requires review again.
+The LLM may approve within the user's existing exception/authority. Changing a
+binding rule or approving an exceptional departure requires the human's decision.
+Use the existing .rab review/run owner for these records, not another registry.
+
+These cards remain one editable source file. They are not newly stamped neurons,
+do not allocate neuron IDs, and do not change either source ganglion or its index.
+If promoted later, use the canonical neuron stamper rather than hand-writing its
+SKILL/RULES pair. Keep code examples whole when selecting/indexing cards.
+
+SOURCE MAP
+CURRENT = explicit requirements in the current user conversation.
+UI = \\Desktop-t72isdi\f\rraabbiitt.com\RULES.txt
+TOOLKIT = \\Desktop-t72isdi\f\RAB.Toolkits\react\RULES.txt
+NEURONS = \\Desktop-t72isdi\f\ganglion\neurons
+WORDING = \\Desktop-t72isdi\f\ganglion\rule-wording
+GRID = \\Desktop-t72isdi\r\ganglion\grid
+CONDITIONS = \\Desktop-t72isdi\r\ganglion\js\conditions
+Rule-format reference: NEURONS/adding, NEURONS/reviewing/rules,
+NEURONS/reviewing/skills, and WORDING SKILL.txt/RULES.txt.
+Export the source map with selected cards when provenance is needed.
+
+SCOPE / DIFFERENCES TO PRESERVE
+The concepts apply across project types; React examples do not make them global
+React file requirements. Read the selected project's current contract first.
+Do not silently reconcile these observed source differences:
+  * CURRENT uses events-header/events-body; UI P5 and GRID C3 use events__header.
+    Use the current example for this new convention; retain an existing project's
+    declared dialect unless its migration is part of the task.
+  * CURRENT child bags use events_props; GRID N1 generally prefers camelCase.
+    GRID N2 prefers inline JSX props unless a bag is reused. The current explicit
+    child-bag convention overrides those preferences only for the named child bags.
+  * CURRENT Box discovery uses settings.json; UI demo discovery uses settings.ts.
+    These are different consumers, not interchangeable registration files.
+  * UI C1 names --space-md for pad; GRID/cells/padding names --space-lg.
+    Resolve the project's .pad owner; do not hardcode either as house-wide truth.
+  * CONDITIONS requires ?. on every condition access; GRID P6 rejects unnecessary
+    ?. on required values. Proposed scope: untrusted/optional receivers versus
+    narrowed, required values. This is a resolution proposed here, not identical
+    source wording; report a project conflict if its exact rules still disagree.
+  * GRID/populating always wraps content in .inner; UI C5 excludes that wrapper
+    for track-filling, area-owning components. Scope the exception by child kind.
+  * GRID cells prohibit all inline styles; CURRENT permits dynamic positioning
+    and dynamic colors. Apply the explicit current exception to this new contract.
+  * UI R5 discusses width/height; CURRENT did not grant arbitrary dynamic sizing
+    an inline exception. Check positioning geometry against the actual contract.
+  * CURRENT clarified the structural detector: grid marker -> unmarked wrapper(s)
+    -> grid marker. data-grid, data-rows, or data-cols is a marker on any element.
+    This detector does not infer display:flex from an unmarked element. Historical
+    examples with an unmarked data-area wrapper around a nested grid still match
+    the detector; do not silently exempt them based on the older flex wording.
+  * The R: ganglion index has hash-based document/chunk IDs. They are existing
+    index internals, not the numeric source-item IDs required by CURRENT/UI H7.
+
+Do not treat legacy violations or source conflicts as permission to invent a third
+pattern. Retain provenance and report unresolved conflicts before applying a rule.
+
+----------------------------------------------------------------------
+NAME: inventory-review-first
+USE-WHEN: reviewing references to atoms, components, pages, or another indexed type
+RULE: CALL the shared list/find tool before choosing or inventing an indexed item; read names, descriptions, IDs, and paths.
+DO: list/find components -> inspect relevant descriptions -> select an existing item.
+DO-NOT: Guess that SiteNav is absent because its source folder has not been opened.
+CHECK: BOTH; verify lookup occurred, then assess whether the selected item fits.
+SOURCE: CURRENT
+
+----------------------------------------------------------------------
+NAME: inventory-missing-path
+USE-WHEN: list/find has no saved project path for its requested item type
+RULE: RESOLVE the missing saved path from verified context or ask; save through the project path tool before registering the listener.
+DO: Missing components path -> obtain src/components -> save paths.components -> register.
+DO-NOT: Guess a folder or create a second registry to avoid the missing path.
+CHECK: TOOL; resolved path, project scope, saved setting, listener registration.
+SOURCE: CURRENT
+
+----------------------------------------------------------------------
+NAME: inventory-manifest-read
+USE-WHEN: retrieving a configured item collection
+RULE: ENSURE the shared listener registration is active; read its manifest instead of globbing source folders on every lookup.
+DO: Configured components -> existing listener -> saved components manifest -> matching items.
+DO-NOT: Recursively enumerate src/components for each review question.
+CHECK: TOOL; lookup reads manifest, bounded listener setup/recovery is separate.
+SOURCE: CURRENT
+
+----------------------------------------------------------------------
+NAME: inventory-unavailable-is-not-empty
+USE-WHEN: a list/find operation cannot read a valid manifest
+RULE: REPORT missing, invalid, or unavailable manifests separately from zero matches; resolve the catalog before declaring an item absent.
+DO: Invalid atoms manifest -> report catalog problem -> repair through its owner.
+DO-NOT: Invalid atoms manifest -> claim container-main does not exist -> recreate it.
+CHECK: TOOL; distinct result states and no creation from an unknown lookup.
+SOURCE: CURRENT
+
+----------------------------------------------------------------------
+NAME: reuse-before-scaffold
+USE-WHEN: deciding whether a component, page, or atom must be created
+RULE: REUSE a suitable catalog item; scaffold a justified missing item through its existing runner after resolving required inputs.
+DO: Inspect container-main's description and contract before proposing another container skin.
+DO-NOT: Create container-main-v2 merely because the existing implementation is unfamiliar.
+CHECK: BOTH; lookup evidence, required inputs, reuse/creation rationale.
+SOURCE: CURRENT; UI ST1
+
+----------------------------------------------------------------------
+NAME: new-style-owner
+USE-WHEN: adding styling not already supplied by an existing atom
+RULE: ASSIGN new styling an explicit shared, component, page, or local owner; reject unnecessary duplication of existing skin.
+DO: Shared skin -> canonical atom; Events-only structure -> Events/css/events.css.
+DO-NOT: Hide duplicate container skin in an unrelated stylesheet.
+CHECK: BOTH; resolve definitions, compare purpose, review ownership.
+SOURCE: CURRENT; UI S1-S4
+
+----------------------------------------------------------------------
+NAME: atom-skin-only
+USE-WHEN: creating or editing a container/action skin atom
+RULE: KEEP skin atoms to color, background, border, radius, shadow, and states; move padding, sizing, and layout into their structural owner.
+DO: .container-main { background: var(--container-main-background, var(--surface-main)); }
+DO-NOT: .container-main { display: grid; padding: 16px; }
+CHECK: BOTH; classify declarations, verify canonical token names from project.
+SOURCE: UI S1; CURRENT OOCSS
+
+----------------------------------------------------------------------
+NAME: component-structure-only
+USE-WHEN: writing component or page CSS
+RULE: KEEP component CSS structural; compose existing atom classes for skin instead of restating their color, background, border, or states.
+DO: .events-body { padding: var(--space-md); } with container-main on the root.
+DO-NOT: .events { background: red; } overriding an existing container-main background.
+CHECK: BOTH; compare declarations with resolved atom definitions.
+SOURCE: UI S2-S3; CURRENT
+
+----------------------------------------------------------------------
+NAME: local-component-css
+USE-WHEN: a component needs justified custom local structure styles
+RULE: SAVE component-local styles in ComponentName/css/component-name.css; use component-prefixed classes and the project's established CSS-loading mechanism.
+DO:
+  Events/Events.tsx
+  Events/css/events.css
+  <div className="container-main events">
+    <div className="events-header">{title}</div>
+    <div className="events-body">{children}</div>
+  </div>
+DO-NOT: Put events-header styles in an unrelated shared atom or an inline style object.
+CHECK: TOOL; folder/file casing, class definitions, CSS load reference.
+SOURCE: CURRENT; UI P1
+
+----------------------------------------------------------------------
+NAME: class-definition-required
+USE-WHEN: adding a class reference to markup
+RULE: RESOLVE every added class to an indexed atom or the correct local CSS; remove classes made unused by the change.
+DO: container-main -> atom catalog; events-header -> Events/css/events.css.
+DO-NOT: Emit container-maim without a definition or leave unused events-header-v2.
+CHECK: BOTH; literal references automated, dynamic class construction needs review.
+SOURCE: CURRENT; UI P6; GRID C4
+
+----------------------------------------------------------------------
+NAME: grid-unmarked-grid
+USE-WHEN: checking nested grid markers in a rendered element tree
+RULE: FLAG an unmarked wrapper between grid-marked elements; data-grid, data-rows, or data-cols marks a grid regardless of tag name.
+DO:
+  <section data-grid="shell">
+    <section data-area="main" data-grid="header-main">...</section>
+  </section>
+DO-NOT:
+  <section data-grid="shell">
+    <div data-area="main">
+      <section data-cols="2">...</section>
+    </div>
+  </section>
+CHECK: TOOL; walk ancestor paths. Flag one or more unmarked wrappers between marked
+  elements. data-area alone is not a grid marker. A non-grid leaf without a grid
+  descendant does not match; sibling grids do not form an ancestor sandwich.
+  Follow resolved child-component roots; fragments add no DOM wrapper. Report the
+  outer marker, intervening wrapper(s), inner marker, and their source locations.
+  Marker presence is the structural fact; unmarked does not mean proven flex.
+  This check does not automatically add attributes or remove wrappers.
+SOURCE: CURRENT clarified marker-based structural check
+
+----------------------------------------------------------------------
+NAME: unresolved-layout-review
+USE-WHEN: an unresolved component or attribute spread hides the element tree
+RULE: REPORT unknown structure when grid markers or child roots cannot be resolved; self-review the missing evidence instead of guessing a pass.
+DO: <UnknownWidget {...unknownProps} /> -> unresolved root/markers -> unknown.
+DO-NOT: Treat an unresolved component as an empty leaf or infer flex from its name.
+CHECK: TOOL; report exactly which node or spread was unresolved.
+SELF-REVIEW: Inspect its real contract/output; decide the justified repair after facts resolve.
+SOURCE: CURRENT
+
+----------------------------------------------------------------------
+NAME: dynamic-inline-exceptions
+USE-WHEN: adding or reviewing a style attribute or DOM style assignment
+RULE: ALLOW inline styles only for dynamic positioning or dynamic colors; move static styling and other properties to their CSS owner.
+DO: style={{ left: pointerX, top: pointerY, color: chosenColor }}
+DO-NOT: style={{ display: 'flex', padding: 16, color: 'red' }}
+CHECK: TOOL; report inline-style location, properties, expressions, and resolvable existing style definitions. Do not decide purpose from variable syntax.
+DISPOSITION: APPROVAL-REQUIRED
+REVIEW-PROMPT: Is this overriding existing styling, or supplying a dynamic value? If dynamic, is it positioning or color? Why is inline ownership necessary?
+SELF-REVIEW: Trace the values and existing CSS. Approve a justified dynamic
+  positioning/color use; otherwise require a correction. A variable containing
+  constants remains static. Record the reason; escalate a requested rule exception
+  beyond the current allowance to the human instead of granting it silently.
+SOURCE: CURRENT
+
+----------------------------------------------------------------------
+NAME: canonical-grid-attributes
+USE-WHEN: selecting a page or section layout
+RULE: USE registered data-grid topologies or supported data-cols/data-rows; avoid Grid components and layout classes duplicating the shared grid vocabulary.
+DO: <section data-grid="header-main"><div data-area="main"></div></section>
+DO-NOT: Introduce .events-two-column-layout for tracks already expressed by data-cols.
+CHECK: TOOL; vocabulary resolution through the current shared grid owner.
+SOURCE: UI G1/G6; GRID G2/G7
+
+----------------------------------------------------------------------
+NAME: registered-grid-areas
+USE-WHEN: emitting or populating a data-area element
+RULE: MATCH data-area to the selected registered topology; keep its required main area and omit unsupported or unsupplied optional areas.
+DO: header-main -> data-area="header" and data-area="main" when supplied.
+DO-NOT: Emit data-area="sidebar" for header-main without a supporting topology.
+CHECK: TOOL; compare emitted areas with the canonical topology contract.
+SOURCE: GRID G3-G5; GRID/layouts
+
+----------------------------------------------------------------------
+NAME: responsive-grid-order
+USE-WHEN: changing layout across viewport sizes
+RULE: REARRANGE registered areas with grid-template-areas in the grid owner; preserve DOM order across screen sizes.
+DO: Media query changes the registered topology's area arrangement.
+DO-NOT: Move DOM children at each breakpoint solely to imitate that arrangement.
+CHECK: BOTH; inspect grid rules and responsive DOM mechanics.
+SOURCE: UI G2; GRID/layouts
+
+----------------------------------------------------------------------
+NAME: grid-tracks-single-owner
+USE-WHEN: adding grid-template declarations
+RULE: KEEP vocabulary-expressible grid tracks in the shared grid owner; replace component/page grid-template declarations with registered attributes.
+DO: <section data-cols="2" data-rows="1">...</section>
+DO-NOT: .events { grid-template-columns: 1fr 1fr; } when data-cols="2" supplies it.
+CHECK: BOTH; declaration location and supported vocabulary.
+SOURCE: UI G6; GRID G7
+
+----------------------------------------------------------------------
+NAME: scrolling-track-guard
+USE-WHEN: a grid area owns scrolling content
+RULE: GUARD scrolling tracks with minmax(0,1fr), including column-only topology rows; keep shell overflow from expanding body.
+DO: Shared grid owner declares grid-template-rows: minmax(0,1fr); shell clips overflow.
+DO-NOT: Leave an implicit auto row that grows with the list instead of scrolling.
+CHECK: BOTH; resolved track/overflow declarations plus usable-output verification.
+SOURCE: UI G3-G4; GRID/cells/scroll
+
+----------------------------------------------------------------------
+NAME: cell-wrapper-scope
+USE-WHEN: placing content inside a data-area
+RULE: STACK cell variants on one .inner wrapper for ordinary content; mount track-filling area-owning components directly without that wrapper.
+DO:
+  <div data-area="main"><div className="inner pad scroll">{content}</div></div>
+  // For an area-owning page grid instead, EventsPage forwards data-area to its
+  // grid-marked root; no separate unmarked DOM wrapper is introduced:
+  <section data-grid="shell"><EventsPage data-area="main" /></section>
+DO-NOT: Wrap EventsPage's track-filling grid in .inner with display:flex.
+CHECK: BOTH; child responsibility distinguishes ordinary content from area-owning layout.
+SOURCE: GRID/populating; UI C1/C5
+
+----------------------------------------------------------------------
+NAME: cell-padding-owner
+USE-WHEN: adding or removing padding around grid-cell content
+RULE: APPLY padding through the inner cell's pad variant and project token; remove pad for flush content, never pad data-area directly.
+DO: <div data-area="main"><div className="inner pad">{content}</div></div>
+DO-NOT: [data-area="main"] { padding: 16px; }
+CHECK: TOOL; resolve the project's .pad token instead of assuming --space-md or --space-lg.
+SOURCE: UI C2; GRID/cells/padding
+
+----------------------------------------------------------------------
+NAME: scroll-owned-cell
+USE-WHEN: deciding which grid element should scroll
+RULE: SCROLL the cell owning overflow; keep header/footer fixed and allow a content rail to scroll when its list requires it.
+DO: Main list -> inner scroll cell; rail queue -> its own scroll cell.
+DO-NOT: Set header overflow:auto or let the entire body grow to fit a queue.
+CHECK: BOTH; overflow location plus content responsibility.
+SOURCE: UI C3; GRID/cells/scroll
+
+----------------------------------------------------------------------
+NAME: page-topology-boundary
+USE-WHEN: mounting a page layout inside the application shell
+RULE: NEST a page topology only in the shell main cell; preserve guarded tracks instead of introducing topologies inside ordinary leaf cells.
+DO: shell/main -> directly mounted page topology -> ordinary content cells.
+DO-NOT: Add another page topology beneath a padded leaf content wrapper.
+CHECK: BOTH; shell/page roles and resolved DOM ancestry.
+SOURCE: UI G5/C4/C5
+
+----------------------------------------------------------------------
+NAME: single-main-landmark
+USE-WHEN: emitting a reusable layout's main data area
+RULE: KEEP one main landmark per page; use div data-area="main" inside reusable layouts that do not own that landmark.
+DO: <div data-area="main">{children}</div>
+DO-NOT: Render a new <main> in every nested layout component.
+CHECK: BOTH; composition-wide landmark count and owning page role.
+SOURCE: GRID/layouts
+
+----------------------------------------------------------------------
+NAME: atom-custom-property-override
+USE-WHEN: one instance needs a variation of existing atom skin
+RULE: OVERRIDE an atom through its canonical custom property; do not fight its property with a competing selector or layer.
+DO: .calendar__day { --container-inset-border: none; } when that atom exposes this property.
+DO-NOT: .calendar__day.container-inset { border: none !important; }
+CHECK: BOTH; property existence and correct owning layer.
+SOURCE: UI S4
+
+----------------------------------------------------------------------
+NAME: atom-token-fallback
+USE-WHEN: defining an atom-owned CSS property
+RULE: READ atom skin through its canonical custom property with an existing shared-token fallback; never invent token names without catalog evidence.
+DO: background: var(--container-main-background, var(--surface-main)); when both names are registered.
+DO-NOT: background: #123456; or reference an unregistered --surface-magical token.
+CHECK: TOOL; resolve custom properties and token definitions.
+SOURCE: UI S5/T1
+
+----------------------------------------------------------------------
+NAME: atom-state-owner
+USE-WHEN: adding hover, active, focus-visible, disabled, or selection skin
+RULE: KEEP interaction skin in atoms; add aria-current/aria-selected styling only when explicitly requested, never as an invented stamp default.
+DO: Requested hover skin -> owning action atom's state rule.
+DO-NOT: .events button:hover overrides action-main's skin from component CSS.
+CHECK: BOTH; selector/property ownership and selection-style authorization.
+SOURCE: UI S6
+
+----------------------------------------------------------------------
+NAME: atom-family-name
+USE-WHEN: passing an atom name to a scaffold
+RULE: SUPPLY the complete container-, action-, effect-, or grid- family name; stamps validate it instead of guessing prefixes from DOM tags.
+DO: name: "container-main"
+DO-NOT: name: "main" -> silently generate "div-container-main".
+CHECK: TOOL; exact family prefix and scaffold input validation.
+SOURCE: UI S7; TOOLKIT
+
+----------------------------------------------------------------------
+NAME: border-longhands
+USE-WHEN: defining or changing border skin
+RULE: USE border-width, border-style, and border-color separately; keep base/variant skin in its owning layer so later shorthand cannot reset colors.
+DO: border-width: var(--border-width); border-style: solid; border-color: var(--border-color);
+DO-NOT: border: 1px solid; in a later layer overriding a variant's border-color.
+CHECK: TOOL; border shorthand and owning-layer inspection.
+SOURCE: UI S8
+
+----------------------------------------------------------------------
+NAME: css-layer-order
+USE-WHEN: placing CSS in a cascade layer
+RULE: PRESERVE reset, tokens, grid, atoms, components, dashboards, themes, overrides order; put each declaration in its owning layer.
+DO: Atom skin in atoms; component/page structure in components; shell layout in dashboards.
+DO-NOT: Move component skin overrides to a later layer merely to defeat an atom.
+CHECK: TOOL; layer order and stylesheet ownership.
+SOURCE: UI T2
+
+----------------------------------------------------------------------
+NAME: theme-token-only
+USE-WHEN: implementing a theme or static color change
+RULE: REDEFINE existing tokens in themes; keep static hardcoded colors out of component CSS and inline markup.
+DO: Theme sets --surface-main; container-main consumes that token.
+DO-NOT: .dark .events { background: #111; } bypassing the atom/token chain.
+CHECK: TOOL; static color declarations and token ownership.
+SOURCE: UI T1/T3; CURRENT
+
+----------------------------------------------------------------------
+NAME: items-item-contract
+USE-WHEN: designing a reusable component's collection input or nested collection
+RULE: ACCEPT collections as items; call each entry item, or destructure its fields; repeat items at nested levels instead of changing shapes.
+DO: Events = ({ items }) => items?.map((item) => item?.name);
+DO-NOT: Make every reusable level require a new rows/events/components collection key.
+CHECK: BOTH; public input shape and domain-to-common boundary mapping.
+SOURCE: CURRENT
+
+----------------------------------------------------------------------
+NAME: optional-array-loop
+USE-WHEN: rendering an optional array whose entries are valid objects
+RULE: GUARD an optional items array before mapping; destructure entries only when their object shape is guaranteed by the contract.
+DO: items?.map(({ id, name }, i) => <div key={id ?? i}>{name}</div>)
+DO-NOT: items.map(item => <div key={item.id}>{item.name}</div>) when items can be absent.
+CHECK: BOTH; input type/narrowing, array absence, stable-key suitability.
+SOURCE: CURRENT; UI I1
+
+----------------------------------------------------------------------
+NAME: nullable-item-loop
+USE-WHEN: rendering an array that may contain absent entries
+RULE: GUARD nullable item access inside the loop; preserve valid false, zero, and empty strings with nullish rather than truthy fallback.
+DO: items?.map((item, i) => <div key={item?.id ?? i}>{item?.name ?? 'n/a/'}</div>)
+DO-NOT: Destructure a nullable item, or replace a valid empty name using name || 'n/a/'.
+CHECK: BOTH; nullable entry contract and fallback semantics.
+SOURCE: CURRENT; TOOLKIT bag contract
+
+----------------------------------------------------------------------
+NAME: stable-loop-key
+USE-WHEN: choosing React keys for rendered collection entries
+RULE: USE stable item IDs when present; review index fallback for genuinely missing IDs, especially when items can reorder or disappear.
+DO: key={item.id}; optional missing-ID fallback uses item?.id ?? i after suitability review.
+DO-NOT: key={item.id || i} replacing ID 0, or invent a random key on every render.
+CHECK: BOTH; identity availability and collection mutation behavior.
+SOURCE: CURRENT; TOOLKIT value preservation
+
+----------------------------------------------------------------------
+NAME: manifest-items-adapter
+USE-WHEN: rendering saved manifest records as a list
+RULE: ADAPT the manifest's ID-keyed items object to an array at the consumer boundary; preserve the stored recursive items shape.
+DO: const items = Object.values(manifest.items ?? {});
+DO-NOT: manifest.items.map(...) or rewrite the manifest with a components array.
+CHECK: TOOL; known manifest schema and adapter boundary.
+SOURCE: CURRENT
+
+----------------------------------------------------------------------
+NAME: named-child-bags
+USE-WHEN: one parent composes multiple domain components
+RULE: MAP domain data into separate child bags named events_props or contacts_props; each child receives the same common items contract.
+DO:
+  const events_props = { items: props?.events };
+  const contacts_props = { items: props?.contacts };
+  return <div><Contacts {...contacts_props} /><Events {...events_props} /></div>;
+DO-NOT: Pass events to one child's collection API and contactsList to another's equivalent API.
+CHECK: BOTH; bag ownership and consistent input meaning.
+SOURCE: CURRENT; explicitly scoped exception to GRID N1 camelCase
+
+----------------------------------------------------------------------
+NAME: defaults-preserve-input
+USE-WHEN: resolving defaults before passing a props bag to children
+RULE: FILL only absent contract keys; preserve supplied false, zero, and empty strings instead of overwriting them with truthy defaults.
+DO: const enabled = props.enabled ?? true; when null/undefined mean absent in that contract.
+DO-NOT: const enabled = props.enabled || true; when false is a valid choice.
+CHECK: BOTH; absence definition and fallback behavior.
+SOURCE: CURRENT; TOOLKIT
+
+----------------------------------------------------------------------
+NAME: condition-access-guard
+USE-WHEN: accessing properties of an optional or untrusted receiver in a condition
+RULE: GUARD the property access itself; do not rely solely on neighboring clause order to protect an optional receiver.
+DO: if (!root || !selection?.rangeCount) return null;
+DO-NOT: if (!selection.rangeCount || !selection) return null;
+CHECK: BOTH; receiver nullability and control-flow narrowing. Required validated values need no invented optionality.
+SOURCE: CONDITIONS; scoped against GRID P6; UI I1
+
+----------------------------------------------------------------------
+NAME: receiver-validation
+USE-WHEN: accepting untrusted data at a component or tool boundary
+RULE: VALIDATE the actual input type before use; optional chaining handles absence, not invalid non-array collections or non-function handlers.
+DO: Narrow unknown items with Array.isArray(items) before choosing to map or report invalid input.
+DO-NOT: Assume items?.map(...) safely handles an arbitrary object or string.
+CHECK: BOTH; boundary validation and response to invalid data.
+SOURCE: UI I1/H6
+
+----------------------------------------------------------------------
+NAME: inherited-handler-authority
+USE-WHEN: resolving a house handler for a component or hook
+RULE: KEEP a valid inherited handler; use the local default only when absent, then pack the resolved canonical key last.
+DO:
+  const handleClick = typeof props?.handleClick === 'function' ? props.handleClick : localHandleClick;
+  const child_props = { ...props, handleClick };
+  return <Child {...child_props} />;
+DO-NOT: Overwrite props.handleClick or wrap it solely to forward identical arguments.
+CHECK: BOTH; function narrowing, reference preservation, spread order.
+SOURCE: UI A1/I1
+
+----------------------------------------------------------------------
+NAME: handler-source-argument
+USE-WHEN: a parent needs to distinguish which child invoked a shared handler
+RULE: PASS source identity as handleAnything(data?, type?)'s optional second argument; preserve the canonical handler key across children.
+DO: handleClick(data, 'legend');
+DO-NOT: Rename the downstream handler to handleLegendClick just to identify its caller.
+CHECK: BOTH; source routing need and canonical signature.
+SOURCE: UI H5/A1
+
+----------------------------------------------------------------------
+NAME: dom-handler-socket
+USE-WHEN: connecting a house handler to native DOM markup
+RULE: KEEP onClick/onDrag as DOM socket names; pass handleClick/handleDrag through child bags, qualifying only the parent's local wires.
+DO: <button onClick={handleClick} />; child_props = { handleClick: handleEventsClick };
+DO-NOT: Replace a child's canonical handleClick input with eventsOnClick.
+CHECK: TOOL; known handler contract and DOM/child boundary.
+SOURCE: UI R7
+
+----------------------------------------------------------------------
+NAME: component-anatomy
+USE-WHEN: creating a React component under the house anatomy contract
+RULE: MATCH PascalCase folder, component, and TSX/types names; keep mechanics, hooks, CSS, and demos in their owned subfolders only when needed.
+DO: Events/Events.tsx; Events/css/events.css; Events/hooks/useEvents.ts when it owns a state system.
+DO-NOT: Create empty optional folders or Events/Events-v2.tsx as a competing implementation.
+CHECK: TOOL; names, file roles, optional-file necessity flagged for review.
+SOURCE: UI P1/P5; CURRENT
+
+----------------------------------------------------------------------
+NAME: render-mechanics-separation
+USE-WHEN: implementing React markup and event behavior
+RULE: RENDER the bag in TSX; put mechanics in local js modules bound by the owner hook instead of HTML strings or innerHTML.
+DO: Events.tsx renders values/handlers returned by its owner hook.
+DO-NOT: Build component markup with element.innerHTML or bury mechanics in JSX handlers.
+CHECK: BOTH; syntax evidence and responsibility boundaries.
+SOURCE: UI P2/R6; enhancer exception is explicit in its own project contract
+
+----------------------------------------------------------------------
+NAME: state-system-owner
+USE-WHEN: a React component owns more than one state
+RULE: MOVE the state system into hooks/useName.ts returning one packed bag; do not pass raw setters into JSX.
+DO: const props = useEvents(input); then render its ready values and handlers.
+DO-NOT: Scatter multiple useState owners across render markup and child raw-setter props.
+CHECK: BOTH; state inventory and one actual owner, not merely relocated rerenders.
+SOURCE: UI R1/R6
+
+----------------------------------------------------------------------
+NAME: root-dom-address
+USE-WHEN: locating owned DOM elements for component behavior
+RULE: RESOLVE stable data-id targets beneath one root DOM ref; reserve classes for styling instead of positional or styling-selector behavior addresses.
+DO: root.querySelector('[data-id="events-body"]'); after validating root ownership.
+DO-NOT: document.querySelector('.events-body') or root.children[2] as a behavior address.
+CHECK: BOTH; root scope and stable address semantics.
+SOURCE: UI R2/R3
+
+----------------------------------------------------------------------
+NAME: presentation-dom-state
+USE-WHEN: implementing visibility without semantic data changes
+RULE: KEEP presentation-only elements mounted; toggle native DOM state or classes instead of introducing React state solely for visible/hidden status.
+DO: ownedPanel.hidden = true;
+DO-NOT: Add a useState hook whose only purpose is removing/recreating that panel.
+CHECK: BOTH; determine whether state is merely presentation or actual application data.
+SOURCE: UI R4
+
+----------------------------------------------------------------------
+NAME: geometry-owner
+USE-WHEN: applying measured positioning to an owned element
+RULE: KEEP stable layout in CSS; apply permitted dynamic positioning to the addressed DOM owner instead of making React state a layout engine.
+DO: Write measured left/top on the owned element; retain static layout in component CSS.
+DO-NOT: Trigger React state updates for every pointer coordinate merely to reposition a panel.
+CHECK: BOTH; property exception, ownership, update boundaries.
+SOURCE: UI R5; CURRENT dynamic positioning exception
+
+----------------------------------------------------------------------
+NAME: render-update-boundary
+USE-WHEN: rerenders retrigger effects, timestamps, requests, or children
+RULE: FIX the update boundary before adding compensating refs; inspect changing render-local function/object identities and their downstream effects.
+DO: Trace which state change rebuilds the request bag before changing its owner.
+DO-NOT: Accumulate refs to disguise a feedback loop without resolving its source.
+CHECK: MODEL; use relevant runtime evidence rather than assuming performance from syntax.
+SOURCE: UI R8/R2
+
+----------------------------------------------------------------------
+NAME: known-dom-props
+USE-WHEN: forwarding a component bag onto its native root
+RULE: REMOVE custom fields before forwarding known DOM props; preserve caller attributes and compose className without rendering undefined as text.
+DO:
+  const { items, className, ...domProps } = props; // Contract: items is the only custom field.
+  return <div {...domProps} className={['events', className].filter(Boolean).join(' ')} />;
+DO-NOT: <div {...props} className={`${props.className} events`} /> when props contains custom fields.
+CHECK: BOTH; actual props type, complete custom-field removal, class composition.
+SOURCE: GRID P3/P4/C1/C2
+
+----------------------------------------------------------------------
+NAME: box-item-registration
+USE-WHEN: creating a Box-discoverable tool or indexed source item
+RULE: WRITE its canonical settings.json with numeric id, name, title, description, settings, and meta; honor indexed:false during inventory scanning.
+DO: Events/settings.json describes Events; an excluded item explicitly sets indexed:false.
+DO-NOT: Replace discovery metadata with an unrelated demo settings.ts file.
+CHECK: TOOL; shared descriptor validator and collection opt-out behavior.
+SOURCE: CURRENT; TOOLKIT
+
+----------------------------------------------------------------------
+NAME: demo-registration-scope
+USE-WHEN: adding a demo in a project using demoRegistry.ts
+RULE: LET the existing registry discover demo/Demo.tsx and settings.ts; keep demos static instead of hand-registering them or adding fetch/store behavior.
+DO: Land the project's existing demo shape through its stamp.
+DO-NOT: Treat settings.json as a replacement for that project's demo settings.ts consumer.
+CHECK: TOOL; project-specific registry contract and demo dependencies.
+SOURCE: UI P3/P4
+
+----------------------------------------------------------------------
+NAME: source-item-id
+USE-WHEN: allocating or preserving an item identity
+RULE: USE the shared owner for plain epoch-millisecond numeric IDs; preserve existing identities and report duplicates instead of hiding them with hashes.
+DO: Existing item retains its numeric id after moving or rescanning.
+DO-NOT: Replace an item's ID with a content hash or append a random collision suffix.
+CHECK: TOOL; numeric shape, identity preservation, duplicate alarm.
+SOURCE: CURRENT; UI H7; TOOLKIT
+
+----------------------------------------------------------------------
+NAME: saved-record-owner
+USE-WHEN: writing project settings, listener state, manifests, or run/review results
+RULE: SAVE runtime records through the existing .rab owner; keep source tools/templates at registered source locations instead of creating another data root.
+DO: Selected project's manifests/components/manifest.json beneath its canonical .rab project directory.
+DO-NOT: Copy the house registry onto the laptop or save run history into tool source folders.
+CHECK: TOOL; canonical storage resolver and output destinations.
+SOURCE: CURRENT; TOOLKIT
+
+----------------------------------------------------------------------
+NAME: house-key-vocabulary
+USE-WHEN: introducing or importing shared component keys
+RULE: REUSE narrow type groups from the project's HouseKeys owner; keep feature-specific keys local until reuse is proven, without aggregate UiProps exports.
+DO: import type of the established narrow handler/data group from the canonical keyring.
+DO-NOT: Create another HouseKeys interface importing components, stores, or feature modules.
+CHECK: BOTH; dependency graph, duplicate meanings, promotion justification.
+SOURCE: UI H1-H4/H6
+
+----------------------------------------------------------------------
+NAME: action-values-form
+USE-WHEN: controls collect values for a later action
+RULE: USE the existing form family with named controls; collect FormData on submission instead of substituting a standalone click handler.
+DO: <form onSubmit={handleSubmit}><input name="title" /><button type="submit">Save</button></form>
+DO-NOT: A nameless input beside a lone button that manually imitates submission.
+CHECK: BOTH; collection purpose, control names, proper form submit adapter.
+SOURCE: UI F1-F3
+
+----------------------------------------------------------------------
+NAME: uncontrolled-form-values
+USE-WHEN: implementing a form under the StatelessForm contract
+RULE: KEEP controls uncontrolled and read FormData once at submit; update status/validation through native DOM state instead of React state around the form.
+DO: name="title" defaultValue={initialTitle}; collect once in the form's submit mechanism.
+DO-NOT: useState for each keystroke or status rerenders that can erase entered text.
+CHECK: BOTH; state ownership, form family, interaction verification.
+SOURCE: UI F4
+
+----------------------------------------------------------------------
+NAME: canonical-stamp-owner
+USE-WHEN: a requested artifact already has a scaffold or its shape needs fixing
+RULE: RUN the canonical stamp; fix an incorrect shape at that stamp's owner instead of hand-authoring a competing generator or post-generation workaround.
+DO: Change the owning component template, generate an example, inspect final output.
+DO-NOT: Copy the scaffold into a private model hand and maintain both versions.
+CHECK: BOTH; owner resolution, generated example, contract agreement.
+SOURCE: UI ST1/ST2; CURRENT; TOOLKIT
+
+----------------------------------------------------------------------
+NAME: readable-stamp-templates
+USE-WHEN: implementing a template-producing tool
+RULE: KEEP readable templates beside the maker in template/; substitute explicit markers rather than inventing CSS selectors, states, or behavior inside generator strings.
+DO: template/events.css contains the CSS shape copied by the registered maker.
+DO-NOT: Construct unrelated new CSS behavior in an opaque concatenated generator string.
+CHECK: BOTH; template ownership and emitted-behavior comparison.
+SOURCE: UI ST3; TOOLKIT
+
+----------------------------------------------------------------------
+NAME: shared-tool-runner
+USE-WHEN: a model hand composes public tools or adds a missing capability
+RULE: CALL public children through helpers.runTool; keep shared behavior in one owner instead of creating a competing runner or copied catalog.
+DO: Review hand composes existing list/find, scaffold, and check tools.
+DO-NOT: Model hand privately reimplements inventory scanning and atom creation.
+CHECK: TOOL; public invocation path and duplicate implementation review.
+SOURCE: CURRENT; TOOLKIT
+
+----------------------------------------------------------------------
+NAME: automated-then-model-review
+USE-WHEN: generated or edited code is ready for review
+RULE: RUN applicable automated checks, then inspect intent, reuse, ownership, and composition against rules; fix findings before verifying the finished output.
+DO: Syntax/reference/layout results -> model reviews necessity and ownership -> fixes -> affected checks.
+DO-NOT: Treat a green command exit as proof the design obeys every rule.
+CHECK: BOTH; actual check outputs plus explicit model findings.
+SOURCE: CURRENT
+
+----------------------------------------------------------------------
+NAME: honest-check-result
+USE-WHEN: reporting automated review results
+RULE: REPORT pass, hard-fail, approval-required, unknown, or unavailable with evidence; never silently approve a flagged occurrence or count missing evidence as success.
+DO: Events.tsx:12, dynamic-inline-exceptions, inline color expression -> approval-required with its purpose question.
+DO-NOT: Mark every finding hard-fail or mark inline styles passed before reviewing their purpose.
+CHECK: TOOL; required result state and evidence fields.
+SOURCE: CURRENT
+
+----------------------------------------------------------------------
+NAME: keeper-visual-review
+USE-WHEN: a UI change is usable under the keeper-review workflow
+RULE: HAND the page to the keeper for live visual checks; browser-drive only when asked, then fix reported issues and run automated checks.
+DO: Provide the usable page and verification results; act on keeper-reported defects.
+DO-NOT: Claim visual verification from an unperformed browser check.
+CHECK: MODEL; observed workflow and honest verification scope.
+SOURCE: UI W1
+
+----------------------------------------------------------------------
+NAME: owned-migration
+USE-WHEN: existing code conflicts with current rules
+RULE: TREAT violations as migration work, not precedent; complete the authorized owner change without introducing a competing pattern or unrelated cleanup.
+DO: Move the selected component's CSS and references together within its authorized scope.
+DO-NOT: Keep both old and new owners indefinitely or mass-rename unrelated components.
+CHECK: BOTH; scope, single owner, complete references.
+SOURCE: UI M1/P7
+
+----------------------------------------------------------------------
+NAME: vanilla-enhancer-lifetime
+USE-WHEN: attaching a project-supported vanilla DOM enhancer to React
+RULE: GIVE the enhancer explicit elements/options, owned DOM/listeners, and cleanup; keep React callers to attach/detach rather than duplicating its mechanics.
+DO: Project enhancer in src/js/name/name.js returns its explicit cleanup/result contract.
+DO-NOT: Install listeners without teardown or share ambiguous ownership with React effects.
+CHECK: BOTH; cleanup paths and distinct ownership. Enhancer-owned DOM is the explicit P2 exception.
+SOURCE: UI V1
+
+----------------------------------------------------------------------
+NAME: standalone-embed-scope
+USE-WHEN: embedding an independent interactive piece
+RULE: USE iframes only for standalone interactive pieces; retain normal component anatomy elsewhere and prevent background embeds from capturing input or focus.
+DO: Standalone interactive/ embed with intentional interaction boundaries.
+DO-NOT: Replace an ordinary app component with an iframe or let background controls steal focus.
+CHECK: BOTH; embed purpose and input behavior.
+SOURCE: UI IE1
+
+----------------------------------------------------------------------
+NAME: rule-one-situation
+USE-WHEN: writing or selecting a rule for a small-model payload
+RULE: KEEP one situation per rule, capped at 25 words; lead with a CAPS action, concrete anchor, and the correct destination.
+DO: NEVER pad [data-area] directly; APPLY the registered pad class to its ordinary inner cell.
+DO-NOT: Write a paragraph combining padding, handlers, naming, state, and unrelated exceptions.
+CHECK: BOTH; count words mechanically, inspect one-situation scope and actionable destination.
+SOURCE: NEURONS/reviewing/rules; WORDING
+
+----------------------------------------------------------------------
+NAME: example-whole-payload
+USE-WHEN: constructing a small-model rule packet or index entry
+RULE: KEEP USE-WHEN, RULE, and its complete example together; select by situation instead of cutting code at a character limit.
+DO: Load local-component-css with its full markup and ownership example for an Events style edit.
+DO-NOT: Split CODE<< from its closing >> or send every rule for a single CSS filename check.
+CHECK: TOOL; complete card boundaries, matching trigger, no orphaned example fragments.
+SOURCE: NEURONS/reviewing/skills; observed GRID/cells/padding index split
+
+----------------------------------------------------------------------
+NAME: explicit-return-component
+USE-WHEN: defining a component in the house's explicit-return React idiom
+RULE: USE a block-body arrow with explicit return for the component; preserve the actual contract when choosing guards inside its JSX.
+DO:
+  const Events = ({ items }) => {
+    return <div>{items?.map((item) => <span key={item.id}>{item.name}</span>)}</div>;
+  };
+  // Contract for this example: items is optional; every present item has a stable id.
+DO-NOT: Treat a short loop fragment as the entire stamped component anatomy.
+CHECK: TOOL; component syntax and declared input contract.
+SOURCE: GRID N2; TOOLKIT canonical component form
+
+----------------------------------------------------------------------
+NAME: react-slot-contract
+USE-WHEN: declaring React slot inputs for a topology-owning component
+RULE: TYPE slots as ReactNode; expose only supported topology areas and omit native children when the component owns its children.
+DO: Import type ReactNode; Pick the registered area's keys for that topology's slots.
+DO-NOT: Type every slot JSX.Element or accept arbitrary unsupported area keys.
+CHECK: TOOL; actual types, canonical area set, native-prop contract.
+SOURCE: GRID P1-P3

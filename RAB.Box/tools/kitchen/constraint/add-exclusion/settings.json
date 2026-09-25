@@ -1,0 +1,25 @@
+{
+  "id": 1810000000008,
+  "name": "add-exclusion",
+  "title": "Add Ingredient Exclusion",
+  "description": "Adds a human hard ingredient exclusion for this Kitchen project.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "item",
+      "title": "Item",
+      "description": "item",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "train",
+    "data_types": [
+      "constraint"
+    ],
+    "returns": [
+      "constraint"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": 1790000000945,
+  "name": "environment-usage",
+  "title": "Find Environment Variable Usage",
+  "description": "Finds process.env references in code.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "environment-variable",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bprocess\\.env(?:\\.[A-Za-z_][A-Za-z0-9_]*|\\[[^\\]]+\\])",
+      "kind": "environment-usage",
+      "scope": "code"
+    }
+  }
+}

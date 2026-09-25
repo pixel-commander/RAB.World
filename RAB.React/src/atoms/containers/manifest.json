@@ -1,0 +1,51 @@
+{
+  "version": "manifest/v1",
+  "id": 1790304759066,
+  "name": "containers",
+  "title": "containers",
+  "description": "Container atoms",
+  "date_added": "2026-09-25T02:52:39.070Z",
+  "items": [
+    {
+      "id": null,
+      "name": "container-cell",
+      "title": "container-cell",
+      "description": "Neutral cell surface with inset and floating depth modifiers backed by reusable effect atoms.",
+      "kind": "container-atom",
+      "path": "container-cell"
+    },
+    {
+      "id": null,
+      "name": "container-machine",
+      "title": "container-machine",
+      "description": "Machined dark chassis surface adapted from the factory-control-center site chrome.",
+      "kind": "container-atom",
+      "path": "container-machine"
+    },
+    {
+      "id": null,
+      "name": "container-machine-trim",
+      "title": "container-machine-trim",
+      "description": "Machined trim container atom. CSS source is pending.",
+      "kind": "container-atom",
+      "path": "container-machine-trim"
+    },
+    {
+      "id": null,
+      "name": "container-metal",
+      "title": "container-metal",
+      "description": "Flat lighter machined surface with a subtle gradient, strong border, and no depth shadow.",
+      "kind": "container-atom",
+      "path": "container-metal"
+    },
+    {
+      "id": null,
+      "name": "container-neon-corner",
+      "title": "container-neon-corner",
+      "description": "Reusable neon chassis corner with primary and secondary ink variants.",
+      "kind": "container-atom",
+      "path": "container-neon-corner"
+    }
+  ],
+  "indexed": true
+}

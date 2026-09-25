@@ -1,0 +1,56 @@
+RRAABBIITT Magic Box v0.9.1 — Kitchen/Baking Domain Integration
+Date: 2026-09-17
+
+BASE
+----
+Built from the recovered and verified v0.9.0 tree.
+This is a post-refactor domain integration, not a redesign of the core.
+
+INTEGRATED
+----------
+- Kitchen/Baking source handoff preserved under docs/domains/kitchen/source-pack/.
+- Real tools/kitchen/ Tool family added using ordinary House contracts.
+- Real tools/food-process/ Tool family added for initial industrial extension.
+- Baking/Cooking is represented as an active Tool set, not a second reducer/runtime.
+- Existing project FACTS memory is reused for people, allergies, exclusions, preferences, and inventory.
+- Allergy status is a required startup safety seat.
+- Human-declared allergies are project/person scoped hard constraints with provenance.
+- Allergy removal is explicit and forces status review; it does not silently create a "no allergy" fact.
+- Unknown/unauthored ingredient and allergen relationships stay unresolved.
+- Starter recipe metadata can conservatively reject a known allergen conflict but cannot prove safety.
+- One-empty-seat conveyor math is deterministic; multiple missing variables remain underdetermined.
+- Food Process wrappers compose through Runner child Tool calls, keeping continuation/trace visible.
+- Consumer home-cooking references remain scope-limited and are not promoted to industrial validation.
+- Process authority requires both scientific/technical support and practical in-plant data; process changes require revalidation.
+
+REFRACTOR CLEANUP
+----------------
+Current domains.json no longer carries Sensor as a live conceptual species:
+- audit.kind is toolset
+- audit.tool_root is tools/audit
+- current description says deterministic Tools
+Historical verification receipts remain historical artifacts only.
+
+INTENTIONALLY NOT CLAIMED COMPLETE
+----------------------------------
+The starter recipe index is still only an index. Phase 2 authored recipe objects are not present in the supplied pack, so the runtime refuses to invent:
+- recipe ingredient quantities;
+- equipment requirements;
+- timing details;
+- derived ingredient-level allergen declarations;
+- cross-contact evidence;
+- executable cookie/dinner recipe plans.
+Those capabilities correctly return UNRESOLVED until authored data exists.
+
+CORE LAWS PRESERVED
+-------------------
+ID is identity.
+Path is semantic position.
+Tool is the invokable species; Stamp remains a Tool subtype.
+Runner owns continuation and child traces.
+Unknown is not invented.
+Executed != verified.
+Calculated != verified.
+Human is a resolver.
+Failures do not become truth.
+No polling runtime was added.

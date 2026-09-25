@@ -1,0 +1,30 @@
+{
+  "id": 1800000000013,
+  "name": "executable-file-writes",
+  "title": "Find Executable File Writes",
+  "description": "Finds candidate write calls whose same-line destination names JavaScript or TypeScript executable source extensions.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "executable-file-writes",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "(?:writeFile|writeFileSync|appendFile|appendFileSync)[^\\n]*(?:\\.tsx?|\\.jsx?|\\.mjs|\\.cjs)",
+      "scope": "code",
+      "kind": "executable-file-write-candidate",
+      "heuristic": true,
+      "flags": "i"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": 1810000000025,
+  "name": "build",
+  "title": "Build Kitchen Receipt",
+  "description": "Builds an explicit BEFORE / OPERATION / RETURNED / AFTER / VERDICT transition receipt for Kitchen work.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "before",
+      "title": "Before",
+      "description": "before",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "operation",
+      "title": "Operation",
+      "description": "operation",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "returned",
+      "title": "Returned",
+      "description": "returned",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "after",
+      "title": "After",
+      "description": "after",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "verdict",
+      "title": "Verdict",
+      "description": "verdict",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "pure",
+    "data_types": [
+      "receipt"
+    ],
+    "returns": [
+      "receipt"
+    ]
+  }
+}

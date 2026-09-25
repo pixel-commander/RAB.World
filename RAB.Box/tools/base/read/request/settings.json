@@ -1,0 +1,22 @@
+{
+  "id": 1830000000011,
+  "name": "request",
+  "title": "Read request",
+  "description": "Read a saved request by numeric ID within global/shared or project scope.",
+  "settings": [
+    {"name":"scope","type":"options","title":"Scope","required":true,"default":"global","options":[{"name":"global","description":"Global / shared"},{"name":"project","description":"Project"}]},
+    {"name":"project_id","type":"number","title":"Project ID","required":false,"description":"For Project scope only; defaults to the selected project."},
+    {
+      "name": "id",
+      "type": "number",
+      "title": "Request ID",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "read",
+    "target_type": "request",
+    "authority": "read"
+  }
+}

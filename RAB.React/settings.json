@@ -1,0 +1,19 @@
+{
+  "id": 1790303708838,
+  "name": "RAB.React",
+  "type": "react",
+  "paths": {
+    "components": "src/components",
+    "pages": "src/pages",
+    "atoms": "src/atoms"
+  },
+  "title": "RAB.React",
+  "description": "Local project",
+  "custom_toolkit_path": "L:\\RAB.World\\RAB.Toolkits\\rab-react-kit",
+  "settings": [],
+  "meta": {
+    "kind": "project",
+    "source_root": "L:\\RAB.World\\RAB.React"
+  },
+  "version": "rab-node/v1"
+}

@@ -1,0 +1,56 @@
+{
+  "id": 1810000000023,
+  "name": "check-measured-temperature",
+  "title": "Check Measured Temperature",
+  "description": "Checks a supplied measurement against the applicable packaged home-cooking temperature/rest reference and returns a scoped verification receipt.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "food",
+      "title": "Food",
+      "description": "food",
+      "required": true
+    },
+    {
+      "type": "number",
+      "name": "temperature_f",
+      "title": "Temperature F",
+      "description": "temperature f",
+      "required": true
+    },
+    {
+      "type": "number",
+      "name": "rest_minutes",
+      "title": "Rest Minutes",
+      "description": "rest minutes",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "scope",
+      "title": "Scope",
+      "description": "scope",
+      "required": false,
+      "default": "consumer-home-cooking-us"
+    },
+    {
+      "type": "text",
+      "name": "measurement_source",
+      "title": "Measurement Source",
+      "description": "measurement source",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "read",
+    "data_types": [
+      "verified",
+      "target"
+    ],
+    "returns": [
+      "verified",
+      "target"
+    ]
+  }
+}

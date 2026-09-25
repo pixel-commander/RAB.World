@@ -1,0 +1,22 @@
+{
+  "id": 1800000000039,
+  "name": "security-surface",
+  "title": "Inspect Local Security Surface",
+  "description": "Chains database, FTS5, background-process, container, bind-address, LAN, and admin-route audits into one deterministic local security surface report.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to inspect. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "security-surface",
+    "output": "report",
+    "authority": "read"
+  }
+}

@@ -1,0 +1,8 @@
+INHERIT=../RULE.txt; KIND=scaffold; runtime=Stamp.
+CREATE=base/stamp-new-stamp; inputs={type,name,title,description,settings?,meta?}; flat tools/<type>/stamp-*; no nested path input.
+SHAPE=settings.json+run executor+template/; semantic leaf names need no stamp- prefix; add contract.json/tests; identity preserved on move.
+IMPLEMENT: replace mold/executor placeholders; runner does not render automatically; validate substitutions/imports/names/paths; no secrets/dependencies/machine paths in mold; honor target rules.
+WRITE: preflight; artifact-plan where appropriate; explicit allowed-root/overwrite policy; partial-write evidence; public children via helpers.runTool.
+CONTRACT: source.kind=template/hybrid/composite as observed; accurate result.
+ACCEPT: discovery+input/path/existing-target tests+actual generated-content inspection/build+form/runner checks.
+KNOWN GAPS: creator direct Date.now, no shared reservation; created may have visible=false; no generated contract/tests; placeholder not implementation. Fix only in authorized code scope.

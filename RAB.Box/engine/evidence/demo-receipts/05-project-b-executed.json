@@ -1,0 +1,182 @@
+{
+  "status": "completed",
+  "authority": 1,
+  "receipt": {
+    "id": 1789384251392,
+    "project_id": "demo-2",
+    "capability": "react-project",
+    "original": "stamp a new react project named \"test-project\" into the current project folder",
+    "contract": "8ad1b7504f24c3b95fc90065fdc1e4a209cacbaf7aa2ca5f585f17d7c637a801",
+    "finished_at": "2026-09-14T11:10:51.457Z",
+    "evidence": {
+      "react-project.name": [
+        {
+          "source": "explicit-text",
+          "raw": "named \"test-project\"",
+          "start": 26,
+          "end": 46,
+          "role": "artifact-name"
+        }
+      ],
+      "react-project.location": [
+        {
+          "source": "declared-reference",
+          "raw": "into the current project folder",
+          "start": 47,
+          "end": 78,
+          "role": "destination"
+        }
+      ],
+      "react-project.type": [
+        {
+          "source": "clarification",
+          "request_id": 1789384251392,
+          "stamp": "react-project"
+        }
+      ],
+      "react-project.theme": [
+        {
+          "source": "clarification",
+          "request_id": 1789384251392,
+          "stamp": "react-project"
+        }
+      ],
+      "react-project.add_database": [
+        {
+          "source": "declared-default",
+          "value": false
+        }
+      ]
+    },
+    "steps": [
+      {
+        "capability": "react-project",
+        "options": {
+          "name": "test-project",
+          "location": ".",
+          "type": "app",
+          "theme": "dark",
+          "add_database": false
+        },
+        "returnTo": null,
+        "status": "verified",
+        "verification": "created-files-match-approved-plan-sha256",
+        "destination": "test-project",
+        "files": [
+          {
+            "path": "test-project/package.json",
+            "bytes": 493,
+            "sha256": "80776d0bc252fee4544a6c8c3c77416d89cb5bac2bd1ad3032368b2596381e75"
+          },
+          {
+            "path": "test-project/index.html",
+            "bytes": 257,
+            "sha256": "720eeef6729b656850dcb633bfc94df8294066b99364e3156490099fd59b61c1"
+          },
+          {
+            "path": "test-project/tsconfig.json",
+            "bytes": 345,
+            "sha256": "3a1661630a66b9981eed55a46a558fc34a2b5c9baf1feaeb258d9331cc8efe61"
+          },
+          {
+            "path": "test-project/vite.config.ts",
+            "bytes": 71,
+            "sha256": "589d12a84e3033d879caef763755746f5201e6d212da5fa21ad165a377f4cc99"
+          },
+          {
+            "path": "test-project/src/main.tsx",
+            "bytes": 220,
+            "sha256": "bd3bfe69f9a71598f09865df453ccc5431ca4a158c99014e8d301f63a709e1cd"
+          },
+          {
+            "path": "test-project/src/base.css",
+            "bytes": 524,
+            "sha256": "5535b8177b2bd066fa35036470f2359dee6cb726c6e742c203da82ced3883227"
+          },
+          {
+            "path": "test-project/src/tokens.css",
+            "bytes": 297,
+            "sha256": "8efe60879ec63ff8b5f631529366f21030b2dc9b3c8c85cc1b913d79ad8bd3a7"
+          },
+          {
+            "path": "test-project/src/grid.css",
+            "bytes": 176,
+            "sha256": "4beaaae4d34ef38300141e65500bc3e763837185bbd2d8b5a78089f52f2ef5c9"
+          },
+          {
+            "path": "test-project/src/atoms/container-main.css",
+            "bytes": 148,
+            "sha256": "8d4c349cafe004e3c9f61e1cb006b0b629e268a71aa9f9d564a5db8253790b52"
+          },
+          {
+            "path": "test-project/src/atoms/action-main.css",
+            "bytes": 356,
+            "sha256": "3aa14826737e9124e7206644a219c486c49896f76b8a670d303ba9f33c015389"
+          },
+          {
+            "path": "test-project/src/components/Button/Button.types.ts",
+            "bytes": 207,
+            "sha256": "62974de6315def2a0a1b565ccaccdc5919365c2d32e1e68811d19e82357ff479"
+          },
+          {
+            "path": "test-project/src/components/Button/Button.tsx",
+            "bytes": 329,
+            "sha256": "b41713b80a301690814f468944900a95a205025c61c5f9405c411b610c4f9567"
+          },
+          {
+            "path": "test-project/src/components/Button/css/button.css",
+            "bytes": 103,
+            "sha256": "5bee02048f5d38d4d988cd41bfb43ec7be4ca3968aeacb4873da0b8a928cf13f"
+          },
+          {
+            "path": "test-project/src/components/Button/demo/Demo.tsx",
+            "bytes": 124,
+            "sha256": "d6f7eedb09810b503ff1daf9b12613545a0b3c88d9b52747266f13b880420afe"
+          },
+          {
+            "path": "test-project/src/components/Button/settings.ts",
+            "bytes": 171,
+            "sha256": "18bdb349012e561471dbcdba792c9b7aae980594a47315ad96cfbd63ee6abafd"
+          },
+          {
+            "path": "test-project/src/components/Button/README.txt",
+            "bytes": 129,
+            "sha256": "992d1c428270e43636e48109b5ee20c50a36c835b7bf2f52ef3f96a484a6ee26"
+          },
+          {
+            "path": "test-project/src/demoRegistry.ts",
+            "bytes": 599,
+            "sha256": "9ccb603338c8cebc91716972bfa1246a032fdb2fb669f2a82fddc5d8e72bccf6"
+          },
+          {
+            "path": "test-project/src/dashboards/StyleGuide.tsx",
+            "bytes": 315,
+            "sha256": "1a26ad36a5a560b759f1599390ee1299cf095aebf541440cafb7e43977f32409"
+          },
+          {
+            "path": "test-project/README.txt",
+            "bytes": 682,
+            "sha256": "1303dbd7a11ac7a3e204cb2c566578eebf3b725a0e429c1e4854cf699d6aa9f5"
+          },
+          {
+            "path": "test-project/.gitignore",
+            "bytes": 20,
+            "sha256": "790e3169bc19b046fe55ba1da6d13b976c28363c8c00462a2195fe5faf260910"
+          },
+          {
+            "path": "test-project/THEME.txt",
+            "bytes": 36,
+            "sha256": "5ba83d27f6bed0d2aec9e8cd4d5f3cf24efe32b721b1bea644b574ca3c1c504e"
+          },
+          {
+            "path": "test-project/src/themes.css",
+            "bytes": 86,
+            "sha256": "bffbeaadaa8a77d89a6e074daa6fb37f2bc29a51c27b7d8f1997a8fe508a7fed"
+          }
+        ]
+      }
+    ],
+    "verification": "file materialization verified; see each stamp’s scope in README",
+    "cloud_calls": 0
+  }
+}

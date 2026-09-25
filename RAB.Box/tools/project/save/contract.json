@@ -1,0 +1,20 @@
+{
+  "version": "tool-contract/v1",
+  "select": "name",
+  "variants": {
+    "component": {
+      "source": {
+        "kind": "internal",
+        "description": "Copies or moves an existing component. When its effective name changes, the shared artifact engine rewrites matching identifiers and filenames; without a name change it is a file operation.",
+        "reviewed_at": "2026-09-20"
+      }
+    },
+    "file": {
+      "source": {
+        "kind": "file-operation",
+        "description": "Copies, moves, renames, saves a copy, or deletes existing file content; does not generate source text.",
+        "reviewed_at": "2026-09-20"
+      }
+    }
+  }
+}

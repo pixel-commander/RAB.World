@@ -1,0 +1,21 @@
+{
+  "id": 1830000000012,
+  "name": "folder-entries",
+  "title": "Count direct folder entries",
+  "description": "Counts only immediate files, folders and links, without recursing into descendants.",
+  "settings": [
+    {
+      "name": "folder",
+      "type": "folder",
+      "title": "Folder",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "count",
+    "target_type": "folder",
+    "authority": "read",
+    "input_scope": "direct-folder"
+  }
+}

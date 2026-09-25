@@ -1,0 +1,27 @@
+{
+  "id": 1830000000007,
+  "name": "classes",
+  "title": "Count and Map Classes",
+  "description": "Counts classes in a folder and maps each name to CSS definitions and class-prefixed assignments with file and line locations.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Folder to search recursively. Defaults to the loaded audit project saved input folder.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "count",
+    "target_type": "class",
+    "data_types": [
+      "class-name",
+      "file",
+      "count"
+    ],
+    "output": "count",
+    "authority": "read"
+  }
+}

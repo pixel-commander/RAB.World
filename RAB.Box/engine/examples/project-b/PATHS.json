@@ -1,0 +1,120 @@
+{
+  "project": {
+    "id": "demo-2",
+    "name": "Example project 2"
+  },
+  "stamps": {
+    "react-project": {
+      "settings": "local-tools/ReactProject/settings.json",
+      "script": "local-tools/ReactProject/stamp.mjs",
+      "language": {
+        "verbs": [
+          "stamp",
+          "make",
+          "create",
+          "build",
+          "start"
+        ],
+        "names": [
+          "react project",
+          "react app"
+        ]
+      },
+      "write_roots": [
+        "."
+      ],
+      "supporting_files": {
+        "template": "local-tools/ReactProject/template.json"
+      }
+    },
+    "atom-stamp": {
+      "settings": "local-tools/Atom/settings.json",
+      "script": "local-tools/Atom/stamp.mjs",
+      "language": {
+        "verbs": [
+          "stamp",
+          "make",
+          "create",
+          "build",
+          "start"
+        ],
+        "names": [
+          "atom"
+        ]
+      },
+      "write_roots": [
+        "atoms"
+      ]
+    },
+    "div-stamp": {
+      "settings": "local-tools/Div/settings.json",
+      "script": "local-tools/Div/stamp.mjs",
+      "language": {
+        "verbs": [
+          "stamp",
+          "make",
+          "create",
+          "build",
+          "start"
+        ],
+        "names": [
+          "div"
+        ]
+      },
+      "write_roots": [
+        "output"
+      ],
+      "dependencies": [
+        {
+          "field": "class",
+          "catalog": "classes",
+          "capability": "atom-stamp",
+          "bindings": {
+            "name": "class"
+          }
+        }
+      ]
+    },
+    "component-stamp": {
+      "settings": "local-tools/Component/settings.json",
+      "script": "local-tools/Component/stamp.mjs",
+      "language": {
+        "verbs": [
+          "stamp",
+          "make",
+          "create",
+          "build",
+          "start"
+        ],
+        "names": [
+          "component"
+        ]
+      },
+      "write_roots": [
+        "components"
+      ],
+      "dependencies": [
+        {
+          "field": "class",
+          "catalog": "classes",
+          "capability": "atom-stamp",
+          "bindings": {
+            "name": "class"
+          }
+        }
+      ]
+    }
+  },
+  "tools": {},
+  "catalogs": {
+    "classes": {
+      "kind": "folders",
+      "path": "atoms",
+      "marker": "atom.css"
+    },
+    "tokens": {
+      "kind": "json",
+      "path": "tokens.json"
+    }
+  }
+}

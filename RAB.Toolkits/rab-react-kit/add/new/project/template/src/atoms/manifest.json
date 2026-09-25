@@ -1,0 +1,53 @@
+{
+  "atoms": [
+    {
+      "name": "action-rail-left",
+      "kind": "action-atom",
+      "created": "2026-09-10",
+      "description": "Left accent rail, 3px at the default border token; lighter background that brightens on hover.",
+      "modified": "2026-09-10",
+      "shelf": "actions",
+      "css": "atoms/actions/action-rail-left/action-rail-left.css"
+    },
+    {
+      "name": "grid-dashboard",
+      "kind": "grid-atom",
+      "created": "2026-09-03",
+      "type": "dashboard",
+      "description": "6-col dashboard shell: main-nav band, side-nav | left | tabs-nav | main | right, footer",
+      "modified": "2026-09-03",
+      "shelf": "grids",
+      "css": "atoms/grids/grid-dashboard/grid-dashboard.css"
+    },
+    {
+      "name": "grid-dashboard-alt",
+      "kind": "grid-atom",
+      "created": "2026-09-03",
+      "type": "dashboard",
+      "description": "grid-dashboard without the tabs-nav band (that row left empty)",
+      "modified": "2026-09-03",
+      "shelf": "grids",
+      "css": "atoms/grids/grid-dashboard-alt/grid-dashboard-alt.css"
+    },
+    {
+      "name": "grid-test",
+      "kind": "grid-atom",
+      "created": "2026-09-15",
+      "type": "misc",
+      "description": "container grid for component",
+      "modified": "2026-09-15",
+      "shelf": "grids",
+      "css": "atoms/grids/grid-test/grid-test.css"
+    },
+    {
+      "name": "grid-test-1",
+      "kind": "grid-atom",
+      "created": "2026-09-10",
+      "type": "misc",
+      "description": "asdfasdf",
+      "modified": "2026-09-10",
+      "shelf": "grids",
+      "css": "atoms/grids/grid-test-1/grid-test-1.css"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": 1790000001008,
+  "name": "exposed-admin-routes",
+  "title": "Audit Management Route Protection",
+  "description": "Catalogs administrative, debug, dashboard, status, health, metrics, and internal route definitions and reports whether authorization middleware evidence is present in the route call.",
+  "settings": [{"type":"folder","name":"folder","title":"Folder","description":"Optional folder to scan. Uses the loaded project root when omitted.","required":false}],
+  "meta": {"domain":"audit","operation":"inspect","target_type":"network","data_types":["network","route","authorization"],"output":"report","authority":"read","signature":"exposed-admin-routes"}
+}

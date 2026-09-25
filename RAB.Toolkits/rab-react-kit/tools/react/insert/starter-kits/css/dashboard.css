@@ -1,0 +1,15 @@
+@layer dashboards {
+  .dashboard {
+    --rail-left-size: 15rem;
+    block-size: 100%;
+    min-inline-size: 0;
+    min-block-size: 0;
+    background: var(--dashboard-background, var(--surface-app));
+    overflow: hidden;
+  }
+  .dashboard > .inner {
+    block-size: 100%;
+    min-inline-size: 0;
+    min-block-size: 0;
+  }
+}

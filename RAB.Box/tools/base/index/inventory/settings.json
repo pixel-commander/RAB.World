@@ -1,0 +1,43 @@
+{
+  "id": 1830100001002,
+  "name": "inventory",
+  "title": "Index project inventory",
+  "description": "Refresh one saved project manifest from shared item settings, preserving each source ID and excluding indexed:false items.",
+  "settings": [
+    {
+      "name": "type",
+      "type": "text",
+      "title": "Path type",
+      "required": true
+    },
+    {
+      "name": "recursive",
+      "type": "boolean",
+      "title": "Include nested items",
+      "required": false,
+      "default": true
+    },
+    {
+      "name": "include",
+      "type": "json",
+      "title": "Include folder patterns",
+      "required": false,
+      "default": [
+        "**"
+      ]
+    },
+    {
+      "name": "exclude",
+      "type": "json",
+      "title": "Exclude folder patterns",
+      "required": false,
+      "default": []
+    }
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "index",
+    "target_type": "inventory",
+    "authority": "write"
+  }
+}

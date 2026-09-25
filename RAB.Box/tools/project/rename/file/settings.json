@@ -1,0 +1,40 @@
+{
+  "id": 1800000000048,
+  "name": "file",
+  "title": "Rename File",
+  "description": "Renames a project file in place without overwriting an existing path.",
+  "settings": [
+    {
+      "type": "file",
+      "name": "file",
+      "title": "File",
+      "description": "Optional file/path source.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "component",
+      "title": "Component",
+      "description": "Optional component name source.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "new_name",
+      "title": "New Name",
+      "description": "New file stem or component name.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "project",
+    "operation": "rename",
+    "target_type": "file",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "edit-receipt",
+    "authority": "write"
+  }
+}

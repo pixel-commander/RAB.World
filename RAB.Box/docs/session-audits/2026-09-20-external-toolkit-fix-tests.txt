@@ -1,0 +1,35 @@
+✔ linked tools use existing catalog, inherited executor, contracts, binding and runner without importing on discovery (204.5304ms)
+✔ project override selects linked implementation, composite inherits it, explicit IDs/paths retain meaning and receipts survive save (1819.0154ms)
+✔ local project overrides stay contained and working beside linked toolkits (68.1684ms)
+✔ duplicate IDs and full paths quarantine all contenders, including the house tool (67.9943ms)
+✔ derived alias collision remains ambiguous across kits, with explicit identity available (85.6715ms)
+✔ disabled/missing/malformed links are explicit, cache refresh works, and unrelated fixtures never inherit links (69.1093ms)
+✔ link writes are idempotent and duplicate canonical roots are diagnosed without double scanning (63.4314ms)
+✔ contract and template root escapes never become runnable (62.0243ms)
+✔ catalog service includes a fresh linked toolkit without initializing project memory (56.6273ms)
+✔ project-only custom_toolkit_path never leaks across A, B, no project, and A again (140.1083ms)
+✔ duplicate toolkit identities quarantine every root regardless of link order (49.5644ms)
+✔ unlink follows the same canonical root as link, and disconnected roots can be disabled (51.5828ms)
+✔ rejecting the 65th link preserves the original config bytes (45.5034ms)
+✔ Box chat, search and preview honor project override; generated project stores an external toolkit path (5994.3778ms)
+✔ a child refreshing the catalog sees a newly added seed during the same runner turn (94.3973ms)
+✔ Tool House structural law: template means stamp-* and settings outer shape is universal (873.2508ms)
+✔ audit look/read discovery is a hard domain boundary and skips stamps when requested (789.9298ms)
+✔ reworded component creation melts to the same top Tool candidates (984.761ms)
+✔ find-hook and find-hooks honor the singular/plural house law (944.4619ms)
+✔ base stamp-new-project delegates known values to the selected type stamp (1366.3655ms)
+✔ stamp-new-tool creates a non-stamp Tool and stamp-new-key-phrase feeds the same parser (9809.4911ms)
+✔ normalized audit Tools run through the same Tool House contract (2643.3626ms)
+✔ check-tool verifies structural visibility and description relation (790.6625ms)
+✔ every installed audit capability has a shape; embed stays in sync and parses (10.8159ms)
+✔ passive scanner and composite shapes agree with real fixture outputs (5375.8773ms)
+ℹ Compared 130 passive audit capabilities, including composites, with fixture results.
+✔ saved report and separate tracking preview agree with the existing writer (3089.0648ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 18412.9242

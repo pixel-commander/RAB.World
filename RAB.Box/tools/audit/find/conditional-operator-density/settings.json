@@ -1,0 +1,31 @@
+{
+  "id": 1790000000975,
+  "name": "conditional-operator-density",
+  "title": "Find Dense Conditional Lines",
+  "description": "Heuristically flags lines containing at least three &&, ||, or ternary operators.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "conditional-density",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "metric",
+    "config": {
+      "metric": "conditional-density",
+      "threshold": 3
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": 1789380000015,
+  "name": "sub-div",
+  "title": "Create a nested div artifact",
+  "description": "create a new div inside an existing component or div and return the nested div",
+  "date_added": 1789380000000,
+  "data_types": ["div", "parent-path", "css-class", "project-relative-path"],
+  "options": {
+    "name": {"required": false, "type": "text", "role": "artifact-name", "validate": "project-name", "default": "div"},
+    "parent_path": {"required": true, "type": "text", "role": "parent-path", "validate": "relative-directory", "question": "What parent component or div path should contain this div?"},
+    "class": {"required": false, "type": "text", "role": "class-name", "validate": "css-class", "question": "Optional class or atom name."},
+    "save_as_text": {"required": false, "type": "boolean", "default": false, "role": "test-output-mode", "description": "Write .txt instead of .tsx for nesting tests."}
+  }
+}

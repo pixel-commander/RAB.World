@@ -1,0 +1,103 @@
+{
+  "id": 1790000000206,
+  "name": "stamp-new-tool",
+  "title": "New Tool",
+  "description": "Creates a non-Stamp Tool at a flat or nested semantic House path. Can inherit a nearest-parent executor and register a flat PATHS address.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "path",
+      "title": "Semantic Path",
+      "description": "Optional tools-root relative semantic path such as audit/find/todos. When supplied it determines domain and leaf name.",
+      "required": false
+    },
+    {
+      "type": "options",
+      "name": "type",
+      "title": "Type",
+      "description": "Domain folder for legacy flat creation when path is omitted.",
+      "required": false,
+      "options": [
+        {
+          "name": "base",
+          "description": "Core house capabilities"
+        },
+        {
+          "name": "react",
+          "description": "React capabilities"
+        },
+        {
+          "name": "html",
+          "description": "HTML capabilities"
+        },
+        {
+          "name": "css",
+          "description": "CSS capabilities"
+        },
+        {
+          "name": "audit",
+          "description": "Audit capabilities"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Name",
+      "description": "Leaf Tool name for legacy flat creation when path is omitted.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "address",
+      "title": "House Address",
+      "description": "Optional flat PATHS key. Defaults from the semantic path, for example audit/find/todos -> find-todos.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "inherit_executor",
+      "title": "Inherit Executor",
+      "description": "When true, create only the semantic leaf settings and require a nearest-parent executor instead of creating a leaf executor.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "title",
+      "title": "Title",
+      "description": "Human readable Tool title.",
+      "required": true
+    },
+    {
+      "type": "textarea",
+      "name": "description",
+      "title": "Description",
+      "description": "What the Tool does.",
+      "required": true
+    },
+    {
+      "type": "settings",
+      "name": "settings",
+      "title": "Run Settings",
+      "description": "Inputs for running the generated Tool.",
+      "required": false
+    },
+    {
+      "type": "json",
+      "name": "meta",
+      "title": "Meta",
+      "description": "Optional house metadata.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "create",
+    "target_type": "tool",
+    "data_types": [
+      "tool"
+    ],
+    "output": "tool",
+    "authority": "write"
+  }
+}

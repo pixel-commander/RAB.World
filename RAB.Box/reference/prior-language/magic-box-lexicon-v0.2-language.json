@@ -1,0 +1,13 @@
+{
+  "verbs": ["stamp", "make", "create", "build", "scaffold", "start"],
+  "roles": {
+    "name": ["named", "called", "name"],
+    "location": ["into", "in", "at", "location"],
+    "class": ["with class", "class"],
+    "token": ["using token", "with token", "token"],
+    "layer": ["in layer", "layer"]
+  },
+  "current_location": ["the current project folder", "current project folder", "the current folder", "current folder", "here"],
+  "boolean_true": ["true", "yes"],
+  "boolean_false": ["false", "no"]
+}

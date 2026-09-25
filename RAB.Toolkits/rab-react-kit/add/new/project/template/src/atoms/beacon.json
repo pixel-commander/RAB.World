@@ -1,0 +1,15 @@
+{
+  "name": "atoms",
+  "id": null,
+  "title": "React atoms",
+  "description": "React atoms in this project.",
+  "date_added": null,
+  "path": "src/atoms",
+  "types": [],
+  "beacon": "on",
+  "reach": [
+    "world",
+    "project"
+  ],
+  "type": "react"
+}

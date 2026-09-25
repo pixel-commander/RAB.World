@@ -1,0 +1,31 @@
+{
+  "id": 1790000000933,
+  "name": "todos",
+  "title": "Find TODO Markers",
+  "description": "Finds TODO markers in supported source and style files.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "todo",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bTODO\\b",
+      "kind": "todo"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "id": 1790000000202,
+  "name": "find-project",
+  "title": "Find Project",
+  "description": "Finds an indexed project by numeric ID, name, title, or description in the high-level projects manifest.",
+  "settings": [{"type":"text","name":"name","title":"Project Search","description":"Project ID, name, title, or description to find in the projects manifest.","required":true}],
+  "meta": {"domain":"base","operation":"find","target_type":"project","data_types":["project","path"],"output":"project","authority":"read"}
+}

@@ -1,0 +1,47 @@
+{
+  "version": "tool-contract/v1",
+  "result": {
+    "status": "\"created\"",
+    "project": {
+      "id": "string",
+      "name": "string",
+      "root": "absolute path",
+      "type": "\"audit\""
+    },
+    "settings": {
+      "id": "string",
+      "name": "string",
+      "type": "\"audit\"",
+      "paths": {
+        "folder": "absolute path",
+        "results": "relative path"
+      }
+    },
+    "box_memory": "absolute path",
+    "verification": {
+      "status": "string",
+      "verification": "string",
+      "destination": "absolute path",
+      "files": [
+        {
+          "path": "absolute path",
+          "bytes": "number",
+          "sha256": "string"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "id": "string",
+    "name": "string",
+    "type": "\"audit\"",
+    "paths": {
+      "folder": "absolute path",
+      "results": "relative path"
+    }
+  },
+  "source": {
+    "kind": "hybrid",
+    "description": "Renders the project template with the selected audit folder through runProjectStamp, verifies written files, and initializes project memory."
+  }
+}

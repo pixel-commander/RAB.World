@@ -1,0 +1,25 @@
+{
+  "id": 1810000000021,
+  "name": "get-reference",
+  "title": "Get Kitchen Safety Reference",
+  "description": "Returns the packaged authority/provenance record for consumer, allergen, retail, or industrial reference metadata.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "id",
+      "title": "Id",
+      "description": "id",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "read",
+    "data_types": [
+      "reference"
+    ],
+    "returns": [
+      "reference"
+    ]
+  }
+}

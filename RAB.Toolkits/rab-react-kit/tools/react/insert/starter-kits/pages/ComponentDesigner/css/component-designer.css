@@ -1,0 +1,53 @@
+@layer components {
+  .component-designer-page {
+    min-inline-size: 0;
+    min-block-size: 0;
+    block-size: 100%;
+  }
+  .component-designer-page > [data-area='left'] { inline-size: 15rem; }
+  .component-designer-page > [data-area='right'] { inline-size: 20rem; }
+  @media (max-width: 768px) {
+    .component-designer-page > [data-area='left'],
+    .component-designer-page > [data-area='right'] { inline-size: auto; }
+  }
+}
+
+@layer components {
+  .component-designer-page__tabs { display: flex; min-inline-size: 0; }
+  .component-designer-page__tab { flex: 1; padding: var(--space-xs); font: var(--type-label); }
+  .component-designer-page__library { min-block-size: 0; }
+  .component-designer-page__components { display: flex; flex-direction: column; gap: var(--space-sm); }
+  .component-designer-page__components[hidden] { display: none; }
+  .component-designer-page__component { display: flex; flex-direction: column; gap: var(--space-2xs); inline-size: 100%; padding: var(--space-sm); text-align: start; }
+  .component-designer-page__name { font: var(--type-code); overflow-wrap: anywhere; }
+  .component-designer-page__title { font: var(--type-label); overflow-wrap: anywhere; }
+}
+
+@layer components {
+  .component-designer-page__workspace { block-size: 100%; position: relative; overflow: hidden; min-block-size: 0; touch-action: none; }
+  .component-designer-page__hint { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
+  .component-designer-page__hint[hidden], .component-designer-page__draw-grid[hidden] { display: none; }
+  .component-designer-page__draw-grid { position: absolute; display: flex; flex-direction: column; min-inline-size: 0; min-block-size: 0; }
+  .component-designer-page__move { flex: none; padding: var(--space-xs); text-align: start; cursor: move; touch-action: none; }
+  .component-designer-page__grid { flex: 1; min-block-size: 0; min-inline-size: 0; gap: var(--space-2xs); }
+  .component-designer-page__drop-area { min-inline-size: 0; min-block-size: 0; overflow: auto; font: var(--type-label); }
+  .component-designer-page__area-label { font: var(--type-code); }
+  .component-designer-page__resize { position: absolute; touch-action: none; }
+  .component-designer-page__resize:hover { background-color: var(--accent-default); }
+  .component-designer-page__resize--t, .component-designer-page__resize--b { left: 8px; right: 8px; height: 5px; cursor: ns-resize; }
+  .component-designer-page__resize--t { top: 0; } .component-designer-page__resize--b { bottom: 0; }
+  .component-designer-page__resize--l, .component-designer-page__resize--r { top: 8px; bottom: 8px; width: 5px; cursor: ew-resize; }
+  .component-designer-page__resize--l { left: 0; } .component-designer-page__resize--r { right: 0; }
+  .component-designer-page__resize--tl, .component-designer-page__resize--tr, .component-designer-page__resize--bl, .component-designer-page__resize--br { width: 8px; height: 8px; }
+  .component-designer-page__resize--tl { top: 0; left: 0; cursor: nwse-resize; }
+  .component-designer-page__resize--tr { top: 0; right: 0; cursor: nesw-resize; }
+  .component-designer-page__resize--bl { bottom: 0; left: 0; cursor: nesw-resize; }
+  .component-designer-page__resize--br { bottom: 0; right: 0; cursor: nwse-resize; }
+}
+
+@layer components {
+  .component-designer-page__editor,
+  .component-designer-page__preview,
+  .component-designer-page__code { min-block-size: 0; min-inline-size: 0; overflow: hidden; }
+  .component-designer-page__editor > [hidden] { display: none; }
+}

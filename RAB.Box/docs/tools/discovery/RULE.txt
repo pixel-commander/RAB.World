@@ -1,0 +1,6 @@
+INHERIT=../RULE.txt; SCOPE=tool discovery documentation; checked=2026-09-21.
+FLOW=linked tools tree -> settings.json + executor validation -> catalog -> request matching -> shared runner.
+OWNERS=bridge/tool-house.mjs; bridge/toolkit-links.mjs; bridge/paths-registry.mjs; bridge/service.mjs.
+DISCOVERY!=phrase recognition!=execution correctness; discovery does not import/run executors.
+DETAILS=locations/RULE.txt; shape/RULE.txt; refresh/RULE.txt; matching/RULE.txt.
+DOCS=no tool inventory/counts, duplicate registry, runtime changes, or compatibility work implied.

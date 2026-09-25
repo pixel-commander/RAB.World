@@ -1,0 +1,38 @@
+{
+  "id": 1820000000002,
+  "name": "cleanup",
+  "title": "Scaffolding Cleanup Pass",
+  "description": "Removes only RRAABBIITT construction-seat attributes and marker comments from one already-built artifact. It does not resolve seats, infer values, or modify application content.",
+  "settings": [
+    {
+      "type": "file",
+      "name": "file",
+      "title": "File",
+      "description": "Artifact file. May be absolute or project-relative.",
+      "required": false
+    },
+    {
+      "type": "path",
+      "name": "path",
+      "title": "Path",
+      "description": "Project-relative artifact path alias.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "dry_run",
+      "title": "Preview Only",
+      "description": "Report exactly which construction markers would be removed without writing the file.",
+      "required": false,
+      "default": false
+    }
+  ],
+  "meta": {
+    "domain": "code",
+    "operation": "cleanup",
+    "target_type": "construction-scaffolding",
+    "data_types": ["file", "path", "construction-seat"],
+    "output": "cleanup-receipt",
+    "authority": "write"
+  }
+}

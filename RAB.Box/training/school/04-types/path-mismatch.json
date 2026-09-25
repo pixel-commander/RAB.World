@@ -1,0 +1,1 @@
+{"id":"types.path.001","concept":"types","kind":"type-check","given":{"type":"path","value":false},"expected":{"ok":false,"code":"TYPE_MISMATCH"}}

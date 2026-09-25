@@ -1,0 +1,30 @@
+{
+  "id": 1800000000032,
+  "name": "privileged-containers",
+  "title": "Find Privileged Containers",
+  "description": "Finds container configuration enabling privileged mode.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "privileged-containers",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bprivileged\\s*:\\s*true\\b",
+      "scope": "config",
+      "kind": "privileged-container",
+      "heuristic": false,
+      "flags": "i"
+    }
+  }
+}

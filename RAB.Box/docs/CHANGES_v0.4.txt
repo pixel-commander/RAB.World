@@ -1,0 +1,60 @@
+RRAABBIITT MAGIC BOX v0.4 — FIRST WHOLE-REQUEST PLANNER SLICE
+================================================================
+
+This is an additive workbench slice. The v0.3 execution engine and Hands remain in place.
+
+ADDED
+-----
+- Whole-request planning endpoint: POST /api/plan.
+- bridge/planner.mjs: deterministic request-frame planner.
+- Inspectable tasks with stable per-plan task IDs.
+- Each task exposes:
+  - operation
+  - target
+  - source text
+  - selected runtime stamp when proven
+  - parsed values/resource/relation
+  - stamp option bindings
+  - value status (resolved / derived / unknown / unbound)
+  - value source
+  - dependencies
+  - unresolved candidate suggestions
+- Gap categories:
+  - semantic
+  - configuration
+  - requiredInputs
+  - capabilities
+- Read-only FactoryFinder root manifest snapshot as a candidate catalog.
+- Workbench Parsed plan panel and raw plan JSON.
+- Legacy single-stamp resolver remains available as a separate button.
+
+IMPORTANT BOUNDARY
+------------------
+Planning has authority: 0. It does not execute stamps.
+Candidate suggestions are not execution authority.
+Operations such as attach/detach/replace/rename remain unresolved unless PATHS supplies
+an executable capability whose effect is proven. Similar names do not grant permission.
+
+CURRENT EXAMPLE
+---------------
+A compound request such as:
+
+  start a new react project named "test"
+  and give it a home page that says "coming soon".
+  then make the homepage be wrapped in "container-main" container atom.
+
+produces three inspectable frames/tasks. The current mock PATHS can prove the React
+project stamp. It cannot prove a page-creation or atom-attachment capability, so those
+remain capability gaps and nearby FactoryFinder candidates are shown for operator review.
+
+NOT YET IMPLEMENTED
+-------------------
+- Operator selection of a suggested capability and durable teaching of that relationship.
+- Project-local PATHS self-setup prompts and persistence.
+- Multi-task execution from a completed plan.
+- Run-level YOLO mode.
+- Resuming the same plan after operator repairs a semantic/capability/configuration gap.
+- Effect metadata sufficient to mechanically prove add/remove/replace/rename semantics.
+
+The next slice should connect operator repair/teaching to this plan representation, not
+replace the existing Factory, runtime, or Hands.

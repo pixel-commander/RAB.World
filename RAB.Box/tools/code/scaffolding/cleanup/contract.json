@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "Removes construction-seat attributes/comments from existing code; generates no new application logic.",
+    "reviewed_at": "2026-09-20"
+  }
+}

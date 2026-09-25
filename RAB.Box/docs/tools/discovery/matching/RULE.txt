@@ -1,0 +1,5 @@
+INHERIT=../RULE.txt; SCOPE=request matching after discovery.
+MATCH=path segments + name/title/description + settings/meta + existing language frames; path semantics matter; conflicting hard seats can reject.
+ADDRESS=permanent ID or full tools-relative path; explicit PATHS aliases/overrides; unambiguous derived aliases supplement them.
+BOUNDARY=available catalog entry does not guarantee phrase recognition; metadata description is not automatic vocabulary training.
+EXTEND=ordinary tools need no bridge/UI hardcoded-name branch; wording issues belong to current language/planner owners.

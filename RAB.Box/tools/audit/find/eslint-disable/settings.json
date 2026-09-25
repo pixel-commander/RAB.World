@@ -1,0 +1,32 @@
+{
+  "id": 1790000000939,
+  "name": "eslint-disable",
+  "title": "Find ESLint Disable Directives",
+  "description": "Finds eslint-disable, eslint-disable-line, and eslint-disable-next-line directives.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "eslint-disable",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "eslint-disable(?:-next-line|-line)?\\b",
+      "kind": "eslint-disable",
+      "scope": "code"
+    }
+  }
+}

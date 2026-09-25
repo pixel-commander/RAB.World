@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "hybrid",
+    "description": "Reads tmpl.html and the parent grids.json catalog. Builds the section elements and construction-seat comments internally, then inserts them into the wrapper.",
+    "reviewed_at": "2026-09-20"
+  }
+}

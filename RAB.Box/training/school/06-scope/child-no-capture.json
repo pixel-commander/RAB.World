@@ -1,0 +1,1 @@
+{"id":"scope.child.001","concept":"scope","kind":"substitute-returned","given":{"parent":{"name":"Parent","component_path":null},"returned":{"name":"Child","file":"src/Child.tsx"},"bindings":{"file":"component_path"},"child_owner":"task-2"},"expected":{"name":"Parent","component_path":"src/Child.tsx"}}

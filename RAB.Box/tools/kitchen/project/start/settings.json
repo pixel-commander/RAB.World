@@ -1,0 +1,27 @@
+{
+  "id": 1810000000001,
+  "name": "start",
+  "title": "Start Kitchen Project",
+  "description": "Starts or resumes Kitchen/Baking project context, asks who is cooking for, and requires explicit allergy status before safety claims.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "people",
+      "title": "People",
+      "description": "Comma-separated people being cooked for.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "train",
+    "data_types": [
+      "people",
+      "allergy_status"
+    ],
+    "returns": [
+      "people",
+      "allergy_status"
+    ]
+  }
+}

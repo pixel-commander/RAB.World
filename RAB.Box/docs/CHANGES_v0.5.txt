@@ -1,0 +1,52 @@
+RRAABBIITT MAGIC BOX v0.5 — DOMAIN + BAG + AUDIT SENSOR PLANNER
+===============================================================
+
+This slice widens the v0.4 inspectable planner without replacing the existing engine or Hands.
+
+ADDED
+-----
+- Front-door domain resolution. Current domains: audit and build.
+- Browser-persistent Bag carrying domain, projectRoot, projectName, currentTarget and paths.
+- Audit domain lock: once audit is resolved, follow-up phrases such as "find all the state hooks" are interpreted against audit Sensors without repeating the word audit.
+- Project/root extraction from an audit request such as: I want to audit C:\project.
+- Generic "start a new project" no longer guesses React; it emits a project-kind gap.
+- Copied user-provided audit-factory scripts into sensors/ unchanged as the first Sensor library.
+- Automatic discovery of Sensor settings.js files.
+- Broad Sensor candidate scoring using names, descriptions and folder metadata.
+- Proven Sensor plans expose exact options and sources. folder-to-scan can come from the Bag; output-folder derives from the workbench audit-results root.
+- Unknown audit capabilities stay visible as capability gaps and show nearby Sensor candidates. Example: orphaned files has no proven Sensor in the supplied sample.
+- Clear Bag control in the workbench.
+- Planner output now shows the active domain and Bag.
+
+UNCHANGED AUTHORITY
+-------------------
+- planner authority remains 0.
+- audit Sensors are NOT automatically executed by the multi-task planner in this slice.
+- existing v0.3 execution/receipt engine remains intact behind Legacy single-stamp resolve.
+- no fuzzy candidate result grants execution authority.
+
+KNOWN SAMPLE ISSUE
+------------------
+The supplied audit-factory contains at least two settings.js files that both advertise the name count-imports. v0.5 preserves path-based Sensor identity rather than silently merging them. The sample scripts should be refined before executable Sensor selection is enabled.
+
+PROVEN EXAMPLES
+---------------
+I want to audit C:\project
+  -> Bag.domain = audit
+  -> Bag.projectRoot = C:\project
+
+then:
+find all the state hooks
+  -> sensor = count-state-hooks
+  -> folder-to-scan = Bag.projectRoot
+  -> output-folder = workbench audit-results
+
+find all the orphaned files
+  -> unresolved capability
+  -> nearby Sensors shown
+  -> no guess / no execution
+
+start a new project named "test"
+  -> build domain
+  -> project-kind semantic gap
+  -> asks what kind instead of assuming React

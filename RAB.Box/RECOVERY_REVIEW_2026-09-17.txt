@@ -1,0 +1,37 @@
+RRAABBIITT v0.9.3 — RECOVERY REVIEW
+Date: 2026-09-17
+
+STATUS: GREEN / VERIFIED
+
+SCOPE
+- code review of recovered v0.9.3 candidate head
+- no redesign
+- no stable-ID changes
+- no Runner semantic changes
+
+FIXES
+1. react/insert/component-into-area
+   - exact expected import source is checked
+   - same-name binding from another source returns IMPORT_COLLISION
+   - target file remains byte-identical on collision
+
+2. react/apply/grid-layout
+   - accepts seat_id or area for nested targets
+   - reuses react/add/attribute and react/add/element child Tools
+   - target sibling isolation regression-tested
+   - nested area seat IDs are target-scoped deterministically
+
+3. Live taxonomy wording
+   - current engine CLI/docs/test labels no longer present the removed writer species as live architecture
+   - historical changelogs remain untouched as history
+
+4. Packaging
+   - release ZIP contains one top-level RRAABBIITT_v0.9.3/ folder
+   - Windows launchers remain present at project root inside that folder
+
+VERIFICATION
+- Node: 389 / 389 PASS
+- language audit: PASS
+- browser main: 18 / 18, 0 JavaScript errors
+- Turn Checker: 3 / 3, 0 JavaScript errors
+- live Sensor/Hand taxonomy scan: no live hits outside historical changelogs

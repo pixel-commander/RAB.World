@@ -1,0 +1,56 @@
+{
+  "id": 1810000000103,
+  "name": "belt-speed",
+  "title": "Food Process Belt Speed",
+  "description": "Calculates conveyor belt speed through a visible child Tool invocation of the shared Kitchen deterministic math capability.",
+  "settings": [
+    {
+      "type": "number",
+      "name": "length",
+      "title": "Length",
+      "description": "length",
+      "required": true
+    },
+    {
+      "type": "number",
+      "name": "residence_time",
+      "title": "Residence Time",
+      "description": "residence time",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "length_unit",
+      "title": "Length Unit",
+      "description": "length unit",
+      "required": false,
+      "default": "ft"
+    },
+    {
+      "type": "text",
+      "name": "time_unit",
+      "title": "Time Unit",
+      "description": "time unit",
+      "required": false,
+      "default": "min"
+    },
+    {
+      "type": "text",
+      "name": "output_speed_unit",
+      "title": "Output Speed Unit",
+      "description": "output speed unit",
+      "required": false,
+      "default": "ft/min"
+    }
+  ],
+  "meta": {
+    "domain": "food-process",
+    "authority": "pure",
+    "data_types": [
+      "belt_speed"
+    ],
+    "returns": [
+      "belt_speed"
+    ]
+  }
+}

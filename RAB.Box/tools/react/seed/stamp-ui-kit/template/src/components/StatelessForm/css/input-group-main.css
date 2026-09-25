@@ -1,0 +1,64 @@
+@layer components {
+/* Component overrides are optional: set --stateless-input-group-* on :root or a closer scope. Unset overrides use the fallbacks below. */
+
+.stateless-input-group {
+  display: grid;
+  gap: var(--stateless-input-group-control-gap, var(--space-xs));
+  padding: var(--stateless-input-group-control-padding, var(--space-sm));
+}
+
+.stateless-input-group .input-group-label {
+  color: var(--stateless-input-group-label-color, var(--content-muted));
+  font-size: var(--stateless-input-group-label-font-size, 0.875rem);
+  font-weight: var(--stateless-input-group-label-font-weight, 500);
+}
+
+.stateless-input-group .red-star {
+  color: var(--stateless-input-group-required-color, var(--danger-default));
+  font-weight: var(--stateless-input-group-required-font-weight, bold);
+}
+
+.stateless-input-group input,
+.stateless-input-group textarea,
+.stateless-input-group select {
+  padding: var(--stateless-input-group-control-padding, var(--space-xs) var(--space-sm));
+  background: var(--stateless-input-group-control-background, var(--surface-inset));
+  color: var(--stateless-input-group-control-color, var(--content-default));
+  border: var(--stateless-input-group-control-border, var(--border-width) var(--border-style) var(--border-default));
+  border-radius: var(--stateless-input-group-control-border-radius, var(--radius-control));
+  font-family: var(--stateless-input-group-control-font-family, inherit);
+  font-size: var(--stateless-input-group-control-font-size, 1rem);
+}
+
+.stateless-input-group input:focus,
+.stateless-input-group textarea:focus,
+.stateless-input-group select:focus {
+  outline: none;
+  border-color: var(--stateless-input-group-control-focus-border-color, var(--border-focus));
+}
+
+.stateless-input-group textarea {
+  resize: vertical;
+}
+
+.stateless-input-group .input-group-message {
+  color: var(--stateless-input-group-message-color, var(--content-muted));
+  font-size: var(--stateless-input-group-message-font-size, 0.75rem);
+}
+
+.stateless-input-group.has-error input,
+.stateless-input-group.has-error textarea,
+.stateless-input-group.has-error select,
+.stateless-input-group.is-required input,
+.stateless-input-group.is-required textarea,
+.stateless-input-group.is-required select {
+  border-color: var(--stateless-input-group-message-error-border-color, var(--border-danger));
+}
+
+.stateless-input-group.has-error .input-group-message {
+  color: var(--stateless-input-group-message-error-color, var(--danger-default));
+}
+
+.stateless-input-group { display:flex; flex-direction:column; }
+.stateless-input-group input:not([type="checkbox"]):not([type="radio"]), .stateless-input-group textarea, .stateless-input-group select { inline-size:100%; box-sizing:border-box; }
+}

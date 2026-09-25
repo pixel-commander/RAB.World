@@ -1,0 +1,5 @@
+{
+  "version": "tool-contract/v1",
+  "source": {"kind":"template","description":"Creates an empty project-inventory/v3 manifest using template/manifest.json and the shared identity and artifact helpers. Does not scan or replace files."},
+  "result": {"status":"created","manifest":"generated manifest record","file":"absolute manifest.json path","verification":"shared artifact-writer receipt"}
+}

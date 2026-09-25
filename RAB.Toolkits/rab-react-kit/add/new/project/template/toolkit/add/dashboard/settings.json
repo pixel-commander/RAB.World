@@ -1,0 +1,85 @@
+{
+  "id": 1830000000006,
+  "name": "dashboard",
+  "title": "New Dashboard",
+  "description": "Creates a React dashboard by composing New Page, Apply Grid Layout, New Navigation, and Insert Component Into Area. Defaults to a header-main grid with SiteNav in header.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Dashboard Page Name",
+      "description": "Dashboard page component name.",
+      "required": true
+    },
+    {
+      "type": "folder",
+      "name": "page_location",
+      "title": "Pages Location",
+      "description": "Optional pages folder; defaults from project settings.",
+      "required": false
+    },
+    {
+      "type": "folder",
+      "name": "component_location",
+      "title": "Components Location",
+      "description": "Optional components folder; defaults from project settings.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "layout",
+      "title": "Grid Layout",
+      "description": "Dashboard grid layout.",
+      "required": false,
+      "default": "header-main"
+    },
+    {
+      "type": "text",
+      "name": "nav_name",
+      "title": "Navigation Component",
+      "description": "Navigation component created/reused for the dashboard.",
+      "required": false,
+      "default": "SiteNav"
+    },
+    {
+      "type": "text",
+      "name": "nav_area",
+      "title": "Navigation Area",
+      "description": "Grid area that receives the navigation component.",
+      "required": false,
+      "default": "header"
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "title": "Title",
+      "required": false
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "title": "Description",
+      "required": false
+    },
+    {
+      "name": "transmitting",
+      "type": "boolean",
+      "title": "Transmitting",
+      "description": "Omit to use the signal template default.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "create",
+    "target_type": "dashboard",
+    "data_types": [
+      "dashboard",
+      "page",
+      "grid",
+      "component"
+    ],
+    "output": "dashboard",
+    "authority": "write"
+  }
+}

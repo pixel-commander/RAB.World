@@ -1,0 +1,97 @@
+{
+  "id": 1790000001305,
+  "name": "http-boundary",
+  "title": "Check Authorized HTTP Boundary",
+  "description": "Checks one explicit HTTP(S) endpoint from the machine running Magic Box. It records unauthenticated behavior and can optionally retry using a credential loaded only from an environment variable.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "url",
+      "title": "URL",
+      "description": "One explicit authorized http:// or https:// endpoint. Redirects are reported but not followed.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "method",
+      "title": "HTTP Method",
+      "description": "Safe read-only probe method: HEAD or GET. Defaults to HEAD; use GET when the target does not implement HEAD.",
+      "required": false,
+      "default": "HEAD"
+    },
+    {
+      "type": "boolean",
+      "name": "authorized_target",
+      "title": "Authorized Target",
+      "description": "Confirm this target is yours or you are permitted to test.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "auth_env",
+      "title": "Credential Environment Variable",
+      "description": "Optional environment-variable name containing the credential. Never put the credential itself here.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "auth_header",
+      "title": "Auth Header",
+      "description": "Optional HTTP header name. Defaults to Authorization.",
+      "required": false,
+      "default": "Authorization"
+    },
+    {
+      "type": "text",
+      "name": "auth_scheme",
+      "title": "Auth Scheme",
+      "description": "Optional prefix such as Bearer. Defaults to Bearer.",
+      "required": false,
+      "default": "Bearer"
+    },
+    {
+      "type": "boolean",
+      "name": "auth_raw",
+      "title": "Raw Credential Header",
+      "description": "When true, sends the environment credential as the complete header value with no Bearer or other scheme prefix.",
+      "required": false,
+      "default": false
+    },
+    {
+      "type": "text",
+      "name": "expect_unauthenticated",
+      "title": "Expected Unauthenticated Result",
+      "description": "Optional expected classification: allowed, denied, redirected, not-found, other, or unreachable.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "expect_authenticated",
+      "title": "Expected Authenticated Result",
+      "description": "Optional expected classification when auth_env is available.",
+      "required": false
+    },
+    {
+      "type": "number",
+      "name": "timeout_ms",
+      "title": "Timeout (ms)",
+      "description": "Optional request timeout from 250 to 15000 milliseconds.",
+      "required": false,
+      "default": 3000
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "check",
+    "target_type": "network",
+    "data_types": [
+      "network",
+      "http",
+      "authentication",
+      "boundary"
+    ],
+    "output": "report",
+    "authority": "read",
+    "check": "http-boundary"
+  }
+}

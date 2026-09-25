@@ -1,0 +1,56 @@
+{
+  "id": 1810000000018,
+  "name": "belt-speed",
+  "title": "Calculate Belt Speed",
+  "description": "Calculates deterministic conveyor belt speed v=L/t from one missing mathematical seat. It does not invent a thermal process schedule.",
+  "settings": [
+    {
+      "type": "number",
+      "name": "length",
+      "title": "Length",
+      "description": "length",
+      "required": true
+    },
+    {
+      "type": "number",
+      "name": "residence_time",
+      "title": "Residence Time",
+      "description": "residence time",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "length_unit",
+      "title": "Length Unit",
+      "description": "length unit",
+      "required": false,
+      "default": "ft"
+    },
+    {
+      "type": "text",
+      "name": "time_unit",
+      "title": "Time Unit",
+      "description": "time unit",
+      "required": false,
+      "default": "min"
+    },
+    {
+      "type": "text",
+      "name": "output_speed_unit",
+      "title": "Output Speed Unit",
+      "description": "output speed unit",
+      "required": false,
+      "default": "ft/min"
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "pure",
+    "data_types": [
+      "belt_speed"
+    ],
+    "returns": [
+      "belt_speed"
+    ]
+  }
+}

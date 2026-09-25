@@ -1,0 +1,32 @@
+{
+  "id": 1790000000955,
+  "name": "var-declarations",
+  "title": "Find var Declarations",
+  "description": "Finds legacy var declarations in code.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "var-declaration",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bvar\\s+[A-Za-z_$]",
+      "kind": "var-declaration",
+      "scope": "code"
+    }
+  }
+}

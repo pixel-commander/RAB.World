@@ -1,0 +1,23 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Materializes the local UI toolkit template, reserves its toolkit identity through the shared memory owner, and preserves empty tool folders beneath tools/<type>. Tool implementations and toolkit link registration are separate work."
+  },
+  "result": {
+    "status": "created",
+    "id": "positive numeric toolkit identity",
+    "name": "toolkit name",
+    "type": "project type",
+    "folder": "absolute toolkit root",
+    "files": [{ "path": "absolute path", "bytes": "number", "sha256": "string" }],
+    "directories": ["toolkit-relative directory path"],
+    "provided": {
+      "seats": {
+        "folder": "absolute toolkit root",
+        "name": "toolkit name",
+        "type": "project type"
+      }
+    }
+  }
+}

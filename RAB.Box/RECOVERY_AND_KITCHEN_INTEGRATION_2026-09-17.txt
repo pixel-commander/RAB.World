@@ -1,0 +1,12 @@
+RRAABBIITT v0.9.1 KITCHEN INTEGRATION RECEIPT
+
+Base: recovered verified v0.9.0
+Incoming: rraabbiitt-kitchen-baking-pack-2026-09-17
+Method: clean-base rebuild; no dependency on the interrupted partial merge.
+
+Checkpoint strategy:
+- v0.9.0 recovered ZIP remains untouched.
+- pre-integration partial state was checkpointed separately before rebuilding.
+- v0.9.1 is built from the clean v0.9.0 tree plus the supplied Kitchen pack.
+
+Final test and manifest receipts are generated after integration.

@@ -1,0 +1,40 @@
+{
+  "id": 1800000000049,
+  "name": "component",
+  "title": "Rename Component",
+  "description": "Renames a component artifact in place and rewrites the component identifier inside the renamed artifact.",
+  "settings": [
+    {
+      "type": "file",
+      "name": "file",
+      "title": "File",
+      "description": "Optional file/path source.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "component",
+      "title": "Component",
+      "description": "Optional component name source.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "new_name",
+      "title": "New Name",
+      "description": "New file stem or component name.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "project",
+    "operation": "rename",
+    "target_type": "component",
+    "data_types": [
+      "component",
+      "path"
+    ],
+    "output": "edit-receipt",
+    "authority": "write"
+  }
+}

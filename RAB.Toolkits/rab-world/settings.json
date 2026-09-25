@@ -1,0 +1,11 @@
+{
+  "id": 1790303211556,
+  "name": "world",
+  "title": "World Toolkit",
+  "description": "Tools for creating world records, manifests, signals, and folder beacons.",
+  "settings": [],
+  "meta": {
+    "kind": "toolkit",
+    "domain": "world"
+  }
+}

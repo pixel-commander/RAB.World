@@ -1,0 +1,51 @@
+@layer components {
+  .resizable {
+    min-inline-size: 0;
+    min-block-size: 0;
+  }
+
+  .resizable__handle {
+    position: absolute;
+    z-index: 2;
+    background: var(--resizable-handle-background, var(--surface-transparent));
+    transition: background var(--motion-fast);
+  }
+
+  .resizable__handle:hover,
+  .resizable__handle:active {
+    background: var(--resizable-handle-hover-background, var(--accent-soft));
+  }
+
+  .resizable__handle--t,
+  .resizable__handle--b {
+    inset-inline: var(--space-sm);
+    block-size: var(--space-xs);
+    cursor: ns-resize;
+  }
+
+  .resizable__handle--l,
+  .resizable__handle--r {
+    inset-block: var(--space-sm);
+    inline-size: var(--space-xs);
+    cursor: ew-resize;
+  }
+
+  .resizable__handle--t { inset-block-start: 0; }
+  .resizable__handle--b { inset-block-end: 0; }
+  .resizable__handle--l { inset-inline-start: 0; }
+  .resizable__handle--r { inset-inline-end: 0; }
+
+  .resizable__handle--tl,
+  .resizable__handle--tr,
+  .resizable__handle--bl,
+  .resizable__handle--br {
+    inline-size: var(--space-md);
+    block-size: var(--space-md);
+    border-radius: var(--radius-round);
+  }
+
+  .resizable__handle--tl { inset-block-start: 0; inset-inline-start: 0; cursor: nwse-resize; }
+  .resizable__handle--br { inset-block-end: 0; inset-inline-end: 0; cursor: nwse-resize; }
+  .resizable__handle--tr { inset-block-start: 0; inset-inline-end: 0; cursor: nesw-resize; }
+  .resizable__handle--bl { inset-block-end: 0; inset-inline-start: 0; cursor: nesw-resize; }
+}

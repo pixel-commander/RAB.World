@@ -1,0 +1,30 @@
+{
+  "id": 1790000000969,
+  "name": "missing-returns",
+  "title": "Find Missing Return Callback Candidates",
+  "description": "Heuristically flags block-bodied map/filter/reduce callbacks with no return token.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "callback",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "syntax",
+    "config": {
+      "type": "missing-returns"
+    }
+  }
+}

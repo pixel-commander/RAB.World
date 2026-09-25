@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "Parses declarations, constructs selectors and rule blocks, and merges them into the selected stylesheet.",
+    "reviewed_at": "2026-09-20"
+  }
+}

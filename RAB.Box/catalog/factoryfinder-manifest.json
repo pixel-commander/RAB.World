@@ -1,0 +1,330 @@
+{
+  "stamps": [
+    {
+      "name": "atom-button",
+      "description": "one button atom skin: atom.css + demo",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [],
+      "folder": "__atom-button",
+      "script": "make-atom-button.mjs"
+    },
+    {
+      "name": "atom-container",
+      "description": "one container atom skin: atom.css + demo",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [],
+      "folder": "__atom-container",
+      "script": "make-atom-container.mjs"
+    },
+    {
+      "name": "atom-row",
+      "description": "one row atom skin: atom.css + demo",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [],
+      "folder": "__atom-row",
+      "script": "make-atom-row.mjs"
+    },
+    {
+      "name": "component",
+      "description": "one component: element shape + hooks/useComponent.ts (import commented)",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [],
+      "folder": "__component",
+      "script": "make-component.mjs"
+    },
+    {
+      "name": "dashboard",
+      "description": "one dashboard: holy-grail grid board with header/left/main/right/footer",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [],
+      "folder": "__dashboard",
+      "script": "make-dashboard.mjs"
+    },
+    {
+      "name": "element",
+      "description": "one element: Element.tsx + types + layout css + demo",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [
+        {
+          "key": "container_class",
+          "required": false,
+          "type": "string",
+          "description": "atom class the element wears"
+        },
+        {
+          "key": "container_layer",
+          "required": false,
+          "type": "string",
+          "description": "data-layer: inset | float"
+        },
+        {
+          "key": "container_effect",
+          "required": false,
+          "type": "string",
+          "description": "data-effect"
+        }
+      ],
+      "folder": "__element",
+      "script": "make-element.mjs"
+    },
+    {
+      "name": "ganglion",
+      "description": "self-indexing neuron collection: lands __ganglion with an attached __pulse that indexes RRAABB.txt, SKILL.txt and RULES.txt",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [
+        {
+          "key": "pulse",
+          "required": false,
+          "type": "string",
+          "description": "on|off; default on. off creates the initial index without a background watcher."
+        }
+      ],
+      "folder": "__ganglion",
+      "script": "make-ganglion.mjs"
+    },
+    {
+      "name": "house-db",
+      "description": "db + api door: sqlite base_db with the house keys, server.py dispatcher, tables/events/files apis; lands into a site root, base.db created on first run",
+      "save_location": "",
+      "demo_settings": [],
+      "folder": "__house-db",
+      "script": "make-house-db.mjs",
+      "indexed": true
+    },
+    {
+      "name": "llm-seat",
+      "description": "a full seat-control suite: bounded model seats (Worlds, Hands, Tools), panel :5200, stamps, lab, 148 proofs. pure copy, no tokens; fresh data/ grows on first run",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [],
+      "folder": "__llm-seat",
+      "script": "make-llm-seat.mjs"
+    },
+    {
+      "name": "page",
+      "description": "empty: no template yet",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [],
+      "folder": "__page",
+      "script": "make-page.mjs"
+    },
+    {
+      "name": "portable-react-project",
+      "description": "no-install react + typescript project: cdn imports, in-browser babel, __shared shell + hello world index.html",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [],
+      "folder": "__portable-react-project",
+      "script": "make-portable-react-project.mjs"
+    },
+    {
+      "name": "rraabbiitt-ganglion",
+      "description": "personal neuron ganglion; never shared outside this network: lands rraabbiitt-ganglion\\GANGLION.txt",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [
+        {
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "the ganglion type, written into the landed GANGLION.txt"
+        }
+      ],
+      "folder": "__rraabbiitt-ganglion",
+      "script": "make-rraabbiitt-ganglion.mjs"
+    },
+    {
+      "name": "rraabbiitt-neuron",
+      "description": "personal house-format neuron: lands RRAABB.txt (the read) + MEMORY.txt (the weight) + REFERENCES.txt (provenance); skill is part of the self, never a separate organ; never shared outside this network",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [
+        {
+          "key": "folder",
+          "required": true,
+          "type": "string",
+          "description": "the neuron folder name (kebab); save-location should BE this folder"
+        },
+        {
+          "key": "parent",
+          "required": true,
+          "type": "string",
+          "description": "parent folder name in the brain"
+        },
+        {
+          "key": "hint",
+          "required": true,
+          "type": "string",
+          "description": "one line: what this neuron is, for the banner"
+        },
+        {
+          "key": "description",
+          "required": true,
+          "type": "string",
+          "description": "one line for recall relevance"
+        },
+        {
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "metadata type: brain | reference | us | law"
+        },
+        {
+          "key": "tags",
+          "required": true,
+          "type": "string",
+          "description": "comma-separated tags"
+        },
+        {
+          "key": "roots",
+          "required": true,
+          "type": "string",
+          "description": "THE ROOTS: where this ties into us -- the identity thread, why it is ours"
+        },
+        {
+          "key": "links",
+          "required": true,
+          "type": "string",
+          "description": "connected neuron names, [[name]] style, or none yet"
+        },
+        {
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "where this came from: session, date, his words"
+        }
+      ],
+      "folder": "__rraabbiitt-neuron",
+      "script": "make-rraabbiitt-neuron.mjs"
+    },
+    {
+      "name": "rraabbiitt-react-project",
+      "description": "Lean React + TypeScript + Vite single-page app (SPA) starter kit: useURL page/section routing and URL variables; SiteChrome shell and SiteNav Home navigation; full-bleed centered Home placeholder; CSS tokens, dark theme, grid layouts and layers; container-main/inset/float/grid-cell/grid-area and action-main/muted/nav atoms; HouseKeys vocabulary, folder seats, launch script and house rules. No API, stores or feature component library.",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [
+        {
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Lowercase kebab project folder and package name"
+        }
+      ],
+      "folder": "__rraabbiitt-react-project",
+      "script": "make-rraabbiitt-react-project.mjs"
+    },
+    {
+      "name": "skill-ganglion",
+      "description": "neuron folder for stamped skills, memories and rules, connected externally to the brain: lands ganglion\\GANGLION.txt",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [
+        {
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "the ganglion type, written into the landed GANGLION.txt"
+        }
+      ],
+      "folder": "__skill-ganglion",
+      "script": "make-skill-ganglion.mjs"
+    },
+    {
+      "name": "skill-neuron",
+      "description": "rules + skill bundle: lands RULES.txt and SKILL.txt",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [
+        {
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "what this neuron is called, used to name skill and rules"
+        },
+        {
+          "key": "hint",
+          "required": true,
+          "type": "string",
+          "description": "breadcrumb token: WHEN to reach for it"
+        },
+        {
+          "key": "description",
+          "required": true,
+          "type": "string",
+          "description": "local summary: WHAT the rules and skill cover"
+        },
+        {
+          "key": "tags",
+          "required": true,
+          "type": "list",
+          "description": "comma tags — the auto-link join key"
+        },
+        {
+          "key": "path",
+          "required": true,
+          "type": "path",
+          "description": "mnemonic domain path (web/css/grid/holy-grail); no - except in the leaf"
+        },
+        {
+          "key": "use-when",
+          "required": true,
+          "type": "string",
+          "description": "one line: the situation that calls for this skill"
+        },
+        {
+          "key": "skill",
+          "required": true,
+          "type": "string",
+          "description": "the skill body text (the CODE section)"
+        },
+        {
+          "key": "stamps",
+          "required": false,
+          "type": "list",
+          "description": "ids of the stamps this skill drives"
+        },
+        {
+          "key": "rules",
+          "required": false,
+          "type": "list",
+          "description": "rule strings looped into [loop:rule], in order"
+        }
+      ],
+      "folder": "__skill-neuron",
+      "script": "make-neuron.mjs"
+    },
+    {
+      "name": "theme",
+      "description": "empty: no template yet",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [],
+      "folder": "__theme",
+      "script": "make-theme.mjs"
+    },
+    {
+      "name": "ui",
+      "description": "ui scaffold: PATHS.txt + atoms/components/css/elements/js",
+      "save_location": "",
+      "indexed": true,
+      "demo_settings": [
+        {
+          "key": "target-root",
+          "required": false,
+          "type": "folder",
+          "description": "ROOT written into PATHS.txt; defaults to save-location"
+        }
+      ],
+      "folder": "__ui",
+      "script": "make-new-ui.mjs"
+    }
+  ]
+}

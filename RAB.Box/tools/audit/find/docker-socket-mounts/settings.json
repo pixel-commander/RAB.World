@@ -1,0 +1,30 @@
+{
+  "id": 1800000000031,
+  "name": "docker-socket-mounts",
+  "title": "Find Docker Socket Mounts",
+  "description": "Finds Docker daemon socket references/mounts that can grant host-level container control.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "docker-socket-mounts",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "/var/run/docker\\.sock|\\\\\\\\\\.\\\\pipe\\\\docker_engine",
+      "scope": "all",
+      "kind": "docker-socket",
+      "heuristic": false,
+      "flags": "i"
+    }
+  }
+}

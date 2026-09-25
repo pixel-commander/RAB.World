@@ -1,0 +1,22 @@
+{
+  "version": "tool-contract/v1",
+  "result": {
+    "status": "string",
+    "scan": "string",
+    "root": "string",
+    "totals": {
+      "files_scanned": "number",
+      "matches": "number"
+    },
+    "rows": [
+      {
+        "file": "string",
+        "line": "number",
+        "column": "number",
+        "text": "string",
+        "kind": "string"
+      }
+    ],
+    "heuristic": "boolean"
+  }
+}

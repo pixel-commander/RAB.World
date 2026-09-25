@@ -1,0 +1,72 @@
+{
+  "id": 1830000000001,
+  "name": "page",
+  "title": "New Page",
+  "description": "Creates a React page with an addressable root construction seat for applying a grid layout and inserting components.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Page Name",
+      "description": "React page component name.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "title",
+      "title": "Title",
+      "description": "Optional display title for the generated React page; defaults to its name.",
+      "required": false
+    },
+    {
+      "type": "textarea",
+      "name": "description",
+      "title": "Description",
+      "description": "Optional description for the generated React page.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "indexed",
+      "title": "Include in Index",
+      "description": "Whether the generated item should appear in its project manifest.",
+      "required": false,
+      "default": true
+    },
+    {
+      "type": "folder",
+      "name": "location",
+      "title": "Pages Location",
+      "description": "Optional pages folder. Defaults to the loaded project's configured pages path or src/pages.",
+      "required": false
+    },
+    {
+      "type": "textarea",
+      "name": "content",
+      "title": "Initial Content",
+      "description": "Default text; supplied children take precedence.",
+      "required": false,
+      "default": ""
+    },
+    {
+      "type": "boolean",
+      "name": "save_as_text",
+      "title": "Save As Text",
+      "description": "Text output for tests.",
+      "required": false,
+      "default": false
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "create",
+    "target_type": "page",
+    "data_types": [
+      "page",
+      "tsx",
+      "construction-seat"
+    ],
+    "output": "page",
+    "authority": "write"
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "version": "tool-contract/v1",
+  "select": "meta.target_type",
+  "variants": {
+    "class-name": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "folder": "string",
+        "count": "number",
+        "unique": "number",
+        "counts": [
+          {
+            "name": "string",
+            "count": "number"
+          }
+        ],
+        "source": "string"
+      }
+    },
+    "class": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "folder": "string",
+        "count": "number",
+        "unique": "number",
+        "counts": [
+          {
+            "name": "string",
+            "count": "number",
+            "definitions": "number",
+            "usages": "number",
+            "files": [
+              "string"
+            ],
+            "locations": [
+              {
+                "file": "string",
+                "line": "number",
+                "column": "number",
+                "kind": "string"
+              }
+            ]
+          }
+        ],
+        "totals": {
+          "definitions": "number",
+          "usages": "number",
+          "dynamic_assignments": "number"
+        },
+        "unresolved": [
+          {
+            "file": "string",
+            "line": "number",
+            "column": "number",
+            "text": "string",
+            "attribute": "string",
+            "kind": "string",
+            "expression": "string",
+            "heuristic": "boolean"
+          }
+        ],
+        "scope": {
+          "definitions": {
+            "files": "string | string[]",
+            "excluded_directories": [
+              "string"
+            ],
+            "excluded": [
+              {
+                "file": "string",
+                "reason": "string"
+              }
+            ],
+            "unsupported_resolution": [
+              "string"
+            ]
+          },
+          "assignments": {
+            "files": "string | string[]",
+            "excluded_directories": [
+              "string"
+            ],
+            "excluded": [
+              {
+                "file": "string",
+                "reason": "string"
+              }
+            ],
+            "unsupported_resolution": [
+              "string"
+            ]
+          }
+        },
+        "skipped": [
+          {
+            "file": "string",
+            "reason": "string",
+            "code?": "string"
+          }
+        ],
+        "sources": [
+          "string"
+        ],
+        "source_snapshot": {
+          "version": "string",
+          "algorithm": "string",
+          "files": [
+            {
+              "file": "string",
+              "sha256": "string"
+            }
+          ],
+          "consistent": "boolean",
+          "meaning": "string"
+        }
+      }
+    },
+    "component-usage": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "folder": "string",
+        "count": "number",
+        "unique": "number",
+        "counts": [
+          {
+            "name": "string",
+            "count": "number"
+          }
+        ],
+        "source": "string"
+      }
+    },
+    "file": {
+      "result": {
+        "status": "string",
+        "count": "number",
+        "folder": "string"
+      }
+    },
+    "line": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "folder": "string",
+        "count": "number",
+        "files_scanned": "number",
+        "rows": [
+          {
+            "file": "string",
+            "count": "number"
+          }
+        ]
+      }
+    },
+    "theme-token": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "folder": "string",
+        "count": "number",
+        "unique": "number",
+        "counts": [
+          {
+            "name": "string",
+            "count": "number"
+          }
+        ],
+        "source": "string"
+      }
+    }
+  }
+}

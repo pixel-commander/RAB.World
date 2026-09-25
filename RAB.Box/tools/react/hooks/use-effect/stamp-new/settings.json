@@ -1,0 +1,35 @@
+{
+  "id": 1790000000831,
+  "name": "stamp-new",
+  "title": "useEffect Stamp",
+  "description": "Creates a reusable React effect hook backed by the native useEffect API with explicit body and dependency seats for later Stamps.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Hook Name",
+      "description": "Generated custom hook name, such as useWindowTitle.",
+      "required": true
+    },
+    {
+      "type": "folder",
+      "name": "location",
+      "title": "Location",
+      "description": "Folder that will receive the generated hook file.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "create",
+    "target_type": "hook",
+    "predicate": "effect",
+    "native_symbol": "useEffect",
+    "data_types": [
+      "hook",
+      "tsx"
+    ],
+    "output": "file",
+    "authority": "write"
+  }
+}

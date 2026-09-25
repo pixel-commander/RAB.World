@@ -1,0 +1,41 @@
+{
+  "id": 1790000001413,
+  "name": "atom",
+  "title": "Add CSS State to Atom",
+  "description": "Adds or updates pseudo-states and the is-active class state on an existing Atom. Pair active and is-active for a shared action-atom skin.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "atom_name",
+      "title": "Atom Name",
+      "description": "Existing Atom/class name to update.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "state",
+      "title": "State",
+      "description": "hover, active, is-active, focus, focus-visible, focus-within, disabled, checked, or visited. Use active, is-active to share one rule. Colon/dot prefixes are accepted.",
+      "required": true
+    },
+    {
+      "type": "textarea",
+      "name": "styles",
+      "title": "Styles",
+      "description": "CSS declarations or a JSON property/value object.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "css",
+    "operation": "create",
+    "target_type": "atom",
+    "data_types": [
+      "css",
+      "atom",
+      "state"
+    ],
+    "output": "css-update",
+    "authority": "write"
+  }
+}

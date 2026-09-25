@@ -1,0 +1,30 @@
+{
+  "id": 1800000000011,
+  "name": "user-filename-usage",
+  "title": "Find User Filename Usage",
+  "description": "Finds common request/upload filename properties that may require sanitization before filesystem use.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "user-filename-usage",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\b(?:file|upload|image)\\.name\\b|\\boriginalname\\b",
+      "scope": "code",
+      "kind": "user-filename-candidate",
+      "heuristic": true,
+      "flags": "i"
+    }
+  }
+}

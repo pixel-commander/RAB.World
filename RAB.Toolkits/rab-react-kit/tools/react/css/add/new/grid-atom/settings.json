@@ -1,0 +1,96 @@
+{
+  "id": 1790031603528,
+  "name": "grid-atom",
+  "title": "New Grid Atom",
+  "description": "Creates a named CSS grid definition from an existing grid preset using data-grid and data-area selectors, retaining its area names and track topology.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Atom Name",
+      "description": "Lowercase kebab-case data-grid name.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "title",
+      "title": "Title",
+      "description": "Optional display title for the generated grid atom; defaults to its name.",
+      "required": false
+    },
+    {
+      "type": "textarea",
+      "name": "description",
+      "title": "Description",
+      "description": "Optional description for the generated grid atom.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "indexed",
+      "title": "Include in Index",
+      "description": "Whether the generated item should appear in its project manifest.",
+      "required": false,
+      "default": true
+    },
+    {
+      "type": "folder",
+      "name": "location",
+      "title": "Atoms Folder",
+      "description": "Parent folder that will contain the new named atom folder.",
+      "required": true
+    },
+    {
+      "type": "options",
+      "name": "preset",
+      "title": "Source Preset",
+      "description": "Existing template used to create the named atom.",
+      "required": false,
+      "default": "grid-dashboard",
+      "enum": [
+        "grid-dashboard",
+        "grid-dashboard-alt",
+        "grid-test",
+        "grid-test-1"
+      ],
+      "options": [
+        {
+          "name": "grid-dashboard",
+          "description": "grid-dashboard"
+        },
+        {
+          "name": "grid-dashboard-alt",
+          "description": "grid-dashboard-alt"
+        },
+        {
+          "name": "grid-test",
+          "description": "grid-test"
+        },
+        {
+          "name": "grid-test-1",
+          "description": "grid-test-1"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "subject": "css",
+    "operation": "create",
+    "target_type": "atom",
+    "atom_kind": "grid-atom",
+    "data_types": [
+      "css",
+      "atom",
+      "grid-atom"
+    ],
+    "output": "atom",
+    "authority": "write",
+    "returns": [
+      "atom_name",
+      "file",
+      "path",
+      "folder"
+    ]
+  }
+}

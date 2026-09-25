@@ -1,0 +1,110 @@
+@layer components {
+  .layout-page {
+    flex: 1;
+    min-block-size: 0;
+  }
+
+  /* auto tracks defeat cell scroll (see cells/scroll RULES) */
+  .layout-page[data-grid='side-left'] {
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .layout-page > [data-area='side'] {
+    inline-size: var(--rail-left-size, 15rem);
+    background: var(--surface-inset);
+  }
+
+  /* the board fills the main cell edge to edge */
+  .layout-page > [data-area='main'] > .inner {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .layout__brand {
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  /* skin rides the action-nav atom stacked in the markup */
+  .layout__list {
+    display: grid;
+    gap: var(--space-2xs);
+    align-content: start;
+    margin-block-start: var(--space-lg);
+  }
+
+  .layout__list [draggable] {
+    padding: var(--space-xs) var(--space-sm);
+    cursor: grab;
+    user-select: none;
+  }
+
+  .layout__list [draggable]:active {
+    cursor: grabbing;
+  }
+
+  .layout__view {
+    margin-block-start: var(--space-lg);
+    padding: var(--space-xs) var(--space-md);
+  }
+
+  /* view mode: the board alone, full screen, no designer chrome */
+  .layout-preview {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    background: var(--surface-app);
+  }
+
+  .layout-preview__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: var(--space-xs) var(--space-md);
+    border-block-end: var(--border-width) var(--border-style) var(--border-subtle);
+  }
+
+  .layout-preview__title {
+    font: var(--type-label);
+    color: var(--content-muted);
+  }
+
+  .layout-preview__close {
+    padding: var(--space-xs) var(--space-md);
+  }
+
+  /* the drawn board rendered as the page it would be */
+  .layout-preview__stage {
+    display: grid;
+    grid-template-columns: repeat(var(--layout-preview-cols, 4), minmax(0, 1fr));
+    grid-template-rows: repeat(var(--layout-preview-rows, 8), minmax(0, 1fr));
+    gap: var(--space-md);
+    padding: var(--space-lg);
+  }
+
+  .layout-preview__box {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    min-inline-size: 0;
+    min-block-size: 0;
+    overflow: auto;
+  }
+
+  .layout__brand span {
+    color: var(--content-muted);
+    font: var(--type-code);
+  }
+
+  .layout__name {
+    font: var(--type-heading);
+    color: var(--content-strong);
+  }
+}
+
+@layer components {
+  .layout-page > [data-area]:not([data-rows]):not([data-grid]) { grid-template-rows: minmax(0, 1fr); }
+  .layout-page > [data-area] > .inner:not([data-rows]):not([data-grid]) { display: flex; flex-direction: column; gap: var(--space-lg); min-inline-size: 0; min-block-size: 0; }
+}

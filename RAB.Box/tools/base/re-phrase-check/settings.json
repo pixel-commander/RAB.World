@@ -1,0 +1,23 @@
+{
+  "id": 1790000000101,
+  "name": "re-phrase-check",
+  "title": "Re-phrase Check",
+  "description": "Rephrases known language by compiling words into lexical roles and semantic senses, then generating a different surface form without execution authority.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "text",
+      "title": "Text",
+      "description": "Sentence or phrase to re-phrase. You may also enter: re-phrase \"text here\".",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "rephrase",
+    "target_type": "text",
+    "data_types": ["text", "language"],
+    "output": "text",
+    "authority": "read"
+  }
+}

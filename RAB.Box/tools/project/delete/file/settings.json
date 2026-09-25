@@ -1,0 +1,40 @@
+{
+  "id": 1800000000052,
+  "name": "file",
+  "title": "Delete File",
+  "description": "Deletes one project file after explicit confirmation.",
+  "settings": [
+    {
+      "type": "file",
+      "name": "file",
+      "title": "File",
+      "description": "Optional file/path source.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "component",
+      "title": "Component",
+      "description": "Optional component name source.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "confirm",
+      "title": "Confirm Delete",
+      "description": "Must be true to perform destructive deletion.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "project",
+    "operation": "delete",
+    "target_type": "file",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "edit-receipt",
+    "authority": "write"
+  }
+}

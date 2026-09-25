@@ -1,0 +1,10 @@
+{
+  "sources": [
+    {
+      "path": "//Desktop-t72isdi/f/automation-factory/stamp-factory/__atom-container",
+      "role": "template source"
+    }
+  ],
+  "adaptation": "Adapts the factory CSS and demo placeholders to Box templates. Uses JSON atom metadata and the current component/skin rules.",
+  "originals": "Source files remain unchanged."
+}

@@ -1,0 +1,44 @@
+RRAABBIITT -- CURRENT PACKAGE CHECKPOINT
+======================================
+
+Completed artifact: magic-box-lexicon-v0.2.zip
+Old artifact: magic-box-lexicon-v0.1.zip (unchanged)
+
+The user supplied house keys:
+    id, name, title, description, date_added, options
+
+options is a keyed object. Required/optional fields belong to the stamp.
+Reserved react-project / atom-stamp resolve via the active project's PATHS.json.
+The same reserved name can have different paths and inputs in another project.
+Runtime reads current metadata rather than training permanent project facts.
+
+Current exact example:
+    stamp a new react project named "test-project" into the current project folder
+
+Result in fixture A:
+    capability = react-project
+    name = test-project
+    location = current (project-relative lookup)
+    type = missing -> targeted question, not an inference
+
+The demo type choices are explicitly javascript/typescript, not a discovered
+meaning of the user's generic "type" field. Location was explicitly added to the
+demo schema because the requested operation requires a destination.
+
+A second flow implements the earlier example:
+    make a div with class x
+
+Existing class -> direct element creation.
+Confirmed absent class -> registered atom-stamp -> needs token -> ask ->
+verify created atom -> resume original div. No appearance invented from name x.
+
+Scripted reference Hands create real files only in the demo's copied temporary
+project. Real house Hands are NOT wired yet; loadHand/authorize are adapters.
+There is no new stamp-maker. The user's existing one can emit this schema.
+
+124 tests pass on Node 22.16.0. Full scope/limits in VERIFICATION.txt.
+Run node demo.mjs. No npm install is required for the engine/demo/tests.
+
+Next real integration: point the adapter at a deliberately selected project,
+map its PATHS/metadata shape, and attach the existing authorization and Hand
+protocol. Do not replace the Factory or expand into a universal English parser.

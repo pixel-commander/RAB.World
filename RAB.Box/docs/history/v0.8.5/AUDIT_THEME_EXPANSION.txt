@@ -1,0 +1,273 @@
+RRAABBIITT MAGIC BOX v0.8.5 — AUDIT + THEME EXPANSION
+
+PUBLIC HOUSE RECEIPT
+====================
+96 public capabilities
+14 Stamps
+82 non-Stamp Tools
+0 unavailable
+
+NEW AUDIT TOOLS
+===============
+56 new audit Tools were created through the nested-capable new-tool Stamp.
+
+find-todos
+  path: audit/find/todos
+  Finds TODO markers in supported source and style files.
+
+find-fixmes
+  path: audit/find/fixmes
+  Finds FIXME markers in supported source and style files.
+
+find-console-calls
+  path: audit/find/console-calls
+  Finds console.log/error/warn/info/debug/trace calls.
+
+find-debugger-statements
+  path: audit/find/debugger-statements
+  Finds debugger statements in code files.
+
+find-ts-ignore
+  path: audit/find/ts-ignore
+  Finds @ts-ignore directives.
+
+find-ts-nocheck
+  path: audit/find/ts-nocheck
+  Finds @ts-nocheck directives.
+
+find-eslint-disable
+  path: audit/find/eslint-disable
+  Finds eslint-disable, eslint-disable-line, and eslint-disable-next-line directives.
+
+find-dangerously-set-inner-html
+  path: audit/find/dangerously-set-inner-html
+  Finds React dangerouslySetInnerHTML usages without claiming exploitability.
+
+find-inline-styles [HEURISTIC/CANDIDATE]
+  path: audit/find/inline-styles
+  Finds obvious literal inline style object props in JSX/TSX.
+
+find-css-important
+  path: audit/find/css-important
+  Finds !important declarations in style files.
+
+find-z-index
+  path: audit/find/z-index
+  Finds z-index declarations in style files.
+
+find-hardcoded-urls
+  path: audit/find/hardcoded-urls
+  Finds literal HTTP/HTTPS URLs in supported files.
+
+find-environment-usage
+  path: audit/find/environment-usage
+  Finds process.env references in code.
+
+find-local-storage
+  path: audit/find/local-storage
+  Finds localStorage API references.
+
+find-session-storage
+  path: audit/find/session-storage
+  Finds sessionStorage API references.
+
+find-fetch-calls
+  path: audit/find/fetch-calls
+  Finds native/global fetch call sites.
+
+find-hardcoded-colors
+  path: audit/find/hardcoded-colors
+  Finds hex, rgb(), rgba(), hsl(), and hsla() color literals.
+
+find-event-listeners
+  path: audit/find/event-listeners
+  Finds addEventListener call sites.
+
+find-set-timeout
+  path: audit/find/set-timeout
+  Finds setTimeout call sites.
+
+find-set-interval
+  path: audit/find/set-interval
+  Finds setInterval call sites.
+
+find-math-random
+  path: audit/find/math-random
+  Finds Math.random call sites without assuming the caller required cryptographic randomness.
+
+find-date-now
+  path: audit/find/date-now
+  Finds Date.now call sites.
+
+find-var-declarations
+  path: audit/find/var-declarations
+  Finds legacy var declarations in code.
+
+find-commented-code [HEURISTIC/CANDIDATE]
+  path: audit/find/commented-code
+  Heuristically finds source-looking statements behind // comments.
+
+find-empty-catch
+  path: audit/find/empty-catch
+  Finds syntactically empty catch blocks.
+
+find-swallowed-errors [HEURISTIC/CANDIDATE]
+  path: audit/find/swallowed-errors
+  Flags catch bindings that are not referenced inside the captured block. This is a heuristic candidate scan.
+
+find-eval-usage
+  path: audit/find/eval-usage
+  Finds eval call sites.
+
+find-typescript-any
+  path: audit/find/typescript-any
+  Finds common explicit any type escapes.
+
+find-process-exit
+  path: audit/find/process-exit
+  Finds process.exit call sites.
+
+find-dynamic-import
+  path: audit/find/dynamic-import
+  Flags require()/import() calls whose first argument is not an obvious string literal.
+
+find-inner-html
+  path: audit/find/inner-html
+  Finds direct innerHTML/outerHTML assignments.
+
+find-weak-crypto
+  path: audit/find/weak-crypto
+  Finds explicit md5/sha1 createHash and legacy createCipher usages.
+
+find-cors-wildcard
+  path: audit/find/cors-wildcard
+  Finds obvious Access-Control-Allow-Origin wildcard forms.
+
+find-floating-promises [HEURISTIC/CANDIDATE]
+  path: audit/find/floating-promises
+  Heuristically flags obvious fetch calls with no await/return/void/then/catch on the same line.
+
+find-multiple-defaults
+  path: audit/find/multiple-defaults
+  Finds files containing more than one export default occurrence.
+
+find-shadowed-globals
+  path: audit/find/shadowed-globals
+  Finds local declarations using common platform-global names.
+
+find-missing-returns [HEURISTIC/CANDIDATE]
+  path: audit/find/missing-returns
+  Heuristically flags block-bodied map/filter/reduce callbacks with no return token.
+
+find-loose-equality
+  path: audit/find/loose-equality
+  Finds == and != operators while excluding === and !==.
+
+find-magic-numbers [HEURISTIC/CANDIDATE]
+  path: audit/find/magic-numbers
+  Heuristically finds numeric literals of two or more digits outside simple constant declarations.
+
+find-large-files
+  path: audit/find/large-files
+  Finds code files above the configured line threshold.
+
+find-long-lines
+  path: audit/find/long-lines
+  Finds code lines above the configured character threshold.
+
+find-deep-nesting [HEURISTIC/CANDIDATE]
+  path: audit/find/deep-nesting
+  Heuristically finds control-flow lines indented at least four 4-space levels.
+
+find-conditional-operator-density [HEURISTIC/CANDIDATE]
+  path: audit/find/conditional-operator-density
+  Heuristically flags lines containing at least three &&, ||, or ternary operators.
+
+find-huge-functions [HEURISTIC/CANDIDATE]
+  path: audit/find/huge-functions
+  Heuristically finds brace-balanced function/arrow blocks longer than 100 lines.
+
+find-barrel-exports
+  path: audit/find/barrel-exports
+  Finds index.* files that re-export symbols from other modules.
+
+find-theme-tokens
+  path: audit/find/theme-tokens
+  Finds CSS custom-property declarations/usages plus theme.* and tokens.* property references with file/line evidence.
+
+find-theme-variables
+  path: audit/find/theme-variables
+  Finds CSS custom-property declarations and var(--token) usages with file/line evidence.
+
+find-class-names
+  path: audit/find/class-names
+  Finds literal className/class usages in TS/TSX/JS/JSX/MJS/CJS/HTML and marks dynamic className expressions.
+
+find-class-definitions [HEURISTIC/CANDIDATE]
+  path: audit/find/class-definitions
+  Finds CSS-family class selector candidates with file/line evidence.
+
+find-component-definitions
+  path: audit/find/component-definitions
+  Finds common PascalCase React component declaration forms with file/line evidence.
+
+find-component-usage
+  path: audit/find/component-usage
+  Finds PascalCase JSX component instantiations and aggregates usage counts.
+
+count-lines
+  path: audit/count/lines
+  Counts lines across supported code files and returns per-file counts.
+
+count-class-usage
+  path: audit/count/class-usage
+  Aggregates literal className/class usage counts by class name.
+
+count-component-usage
+  path: audit/count/component-usage
+  Aggregates JSX component usage counts by component name.
+
+count-theme-token-usage
+  path: audit/count/theme-token-usage
+  Aggregates theme token/custom-property occurrences by token name.
+
+inspect-theme
+  path: audit/inspect/theme
+  Builds a cross-reference report of theme tokens, CSS variables, class names, CSS class definitions, component definitions, component usage, and aggregate counts by chaining existing audit Tools.
+
+THEME INSPECTOR
+===============
+inspect-theme composes existing Tools rather than rescanning independently. It chains:
+  find-theme-tokens
+  find-theme-variables
+  find-class-names
+  find-class-definitions
+  find-component-definitions
+  find-component-usage
+  count-components
+  count-class-usage
+  count-component-usage
+  count-theme-token-usage
+
+It returns file/line evidence plus aggregate counts for tokens, classes, component declarations and component usage.
+
+ENGINE LAW
+==========
+Public paths are semantic (audit/find/*, audit/count/*, audit/inspect/*).
+Mechanical implementation lives behind a few shared private engines:
+  tools/audit/_engines/line-pattern.mjs
+  tools/audit/_engines/syntax.mjs
+  tools/audit/_engines/metric.mjs
+  tools/audit/_engines/structure.mjs
+  tools/audit/_engines/theme.mjs
+
+TEST RECEIPT
+============
+npm test: 278/278 PASS
+language audit: PASS
+theme regression fixture verifies token/class/component cross-reference and no theme.css filename false positive.
+
+NOTES
+=====
+Some static scans are deliberately labeled candidates/heuristics rather than truths (for example floating promises, swallowed errors, deep nesting, magic numbers, and missing returns).
+The package does not add an AST dependency. Public Tool addresses can keep their identity if a heuristic engine is later upgraded to AST-backed parsing.

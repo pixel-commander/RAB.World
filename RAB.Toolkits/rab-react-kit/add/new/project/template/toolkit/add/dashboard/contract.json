@@ -1,0 +1,33 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "composite",
+    "description": "template/dashboard.json only specifies layout, nav component, and nav area. Page and nav code come from child stamps; grid application and insertion come from child editing tools.",
+    "reviewed_at": "2026-09-20"
+  },
+  "result": {
+    "status": "created",
+    "type": "dashboard",
+    "name": "dashboard page name",
+    "page": {
+      "name": "page name",
+      "file": "absolute source file"
+    },
+    "layout": "grid application result layout",
+    "nav": {
+      "name": "navigation component name",
+      "area": "grid area name",
+      "created": "boolean"
+    },
+    "construction_seats": "grid application construction seats",
+    "provided": {
+      "seats": {
+        "file": "absolute page file",
+        "page": "page name",
+        "dashboard": "dashboard name",
+        "nav_component": "navigation component name"
+      }
+    },
+    "settings": "Generated signal settings from template/settings.json; supplied values override defaults."
+  }
+}

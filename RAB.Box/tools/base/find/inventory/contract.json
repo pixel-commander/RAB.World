@@ -1,0 +1,7 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "Reads the saved manifest for the requested project path. It does not scan or change project source files."
+  }
+}

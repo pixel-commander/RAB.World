@@ -1,0 +1,78 @@
+{
+  "id": 1790000000300,
+  "name": "project",
+  "title": "New React Project",
+  "description": "Creates a React project from the project scaffold with a minimal or style-guide starter, optional database example and optional UI kit.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Project Name",
+      "description": "Project name.",
+      "required": true
+    },
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Parent Folder",
+      "description": "Folder that will contain the project.",
+      "required": true
+    },
+    {
+      "type": "options",
+      "name": "starter",
+      "title": "Starter",
+      "description": "Minimal app or token/atom/Button/StyleGuide examples.",
+      "required": false,
+      "default": "minimal",
+      "enum": [
+        "minimal",
+        "style-guide"
+      ],
+      "options": [
+        {
+          "name": "minimal",
+          "description": "Minimal app"
+        },
+        {
+          "name": "style-guide",
+          "description": "Style guide examples"
+        }
+      ]
+    },
+    {
+      "type": "boolean",
+      "name": "add_database",
+      "title": "Include SQLite Demo",
+      "description": "Local seed database and inspection script only; does not deploy an API.",
+      "required": false,
+      "default": false
+    },
+    {
+      "type": "boolean",
+      "name": "add_ui_kit",
+      "title": "Add UI Kit",
+      "description": "Run the React UI-kit seed, then finalize temporary UI-kit markers.",
+      "required": false,
+      "default": false
+    },
+    {
+      "type": "folder",
+      "name": "custom_toolkit_path",
+      "title": "Custom Toolkit Path",
+      "description": "Optional absolute toolkit folder. Defaults to this tool's toolkit; an empty string leaves the new project without a custom toolkit.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "create",
+    "target_type": "project",
+    "data_types": [
+      "project",
+      "path"
+    ],
+    "output": "project",
+    "authority": "write"
+  }
+}

@@ -1,0 +1,890 @@
+
+> magic-box-stamps-demo@0.2.0 test
+> node --test tests/schema.test.mjs tests/language.test.mjs tests/runtime.test.mjs tests/cli.test.mjs
+
+TAP version 13
+# Subtest: CLI saves a pending ticket and resumes it in a new process with a bare reply
+ok 1 - CLI saves a pending ticket and resumes it in a new process with a bare reply
+  ---
+  duration_ms: 220.652288
+  type: 'test'
+  ...
+# Subtest: CLI canonical file uses the same validation
+ok 2 - CLI canonical file uses the same validation
+  ---
+  duration_ms: 79.651315
+  type: 'test'
+  ...
+# Subtest: CLI inspect exposes current house keys and fields
+ok 3 - CLI inspect exposes current house keys and fields
+  ---
+  duration_ms: 79.669703
+  type: 'test'
+  ...
+# Subtest: CLI help is available without a project
+ok 4 - CLI help is available without a project
+  ---
+  duration_ms: 39.669407
+  type: 'test'
+  ...
+# Subtest: CLI rejects multiple input sources instead of picking one
+ok 5 - CLI rejects multiple input sources instead of picking one
+  ---
+  duration_ms: 54.192242
+  type: 'test'
+  ...
+# Subtest: CLI resume without an answer restores the pending state
+ok 6 - CLI resume without an answer restores the pending state
+  ---
+  duration_ms: 109.868011
+  type: 'test'
+  ...
+# Subtest: generic composition: stamp, modifier permutation 1
+ok 7 - generic composition: stamp, modifier permutation 1
+  ---
+  duration_ms: 15.944499
+  type: 'test'
+  ...
+# Subtest: generic composition: stamp, modifier permutation 2
+ok 8 - generic composition: stamp, modifier permutation 2
+  ---
+  duration_ms: 5.906705
+  type: 'test'
+  ...
+# Subtest: generic composition: stamp, modifier permutation 3
+ok 9 - generic composition: stamp, modifier permutation 3
+  ---
+  duration_ms: 5.97604
+  type: 'test'
+  ...
+# Subtest: generic composition: stamp, modifier permutation 4
+ok 10 - generic composition: stamp, modifier permutation 4
+  ---
+  duration_ms: 3.32948
+  type: 'test'
+  ...
+# Subtest: generic composition: stamp, modifier permutation 5
+ok 11 - generic composition: stamp, modifier permutation 5
+  ---
+  duration_ms: 5.504669
+  type: 'test'
+  ...
+# Subtest: generic composition: stamp, modifier permutation 6
+ok 12 - generic composition: stamp, modifier permutation 6
+  ---
+  duration_ms: 3.386305
+  type: 'test'
+  ...
+# Subtest: generic composition: make, modifier permutation 1
+ok 13 - generic composition: make, modifier permutation 1
+  ---
+  duration_ms: 9.661145
+  type: 'test'
+  ...
+# Subtest: generic composition: make, modifier permutation 2
+ok 14 - generic composition: make, modifier permutation 2
+  ---
+  duration_ms: 3.302369
+  type: 'test'
+  ...
+# Subtest: generic composition: make, modifier permutation 3
+ok 15 - generic composition: make, modifier permutation 3
+  ---
+  duration_ms: 3.680999
+  type: 'test'
+  ...
+# Subtest: generic composition: make, modifier permutation 4
+ok 16 - generic composition: make, modifier permutation 4
+  ---
+  duration_ms: 2.347369
+  type: 'test'
+  ...
+# Subtest: generic composition: make, modifier permutation 5
+ok 17 - generic composition: make, modifier permutation 5
+  ---
+  duration_ms: 4.827809
+  type: 'test'
+  ...
+# Subtest: generic composition: make, modifier permutation 6
+ok 18 - generic composition: make, modifier permutation 6
+  ---
+  duration_ms: 2.119526
+  type: 'test'
+  ...
+# Subtest: generic composition: create, modifier permutation 1
+ok 19 - generic composition: create, modifier permutation 1
+  ---
+  duration_ms: 1.891041
+  type: 'test'
+  ...
+# Subtest: generic composition: create, modifier permutation 2
+ok 20 - generic composition: create, modifier permutation 2
+  ---
+  duration_ms: 5.312819
+  type: 'test'
+  ...
+# Subtest: generic composition: create, modifier permutation 3
+ok 21 - generic composition: create, modifier permutation 3
+  ---
+  duration_ms: 1.953245
+  type: 'test'
+  ...
+# Subtest: generic composition: create, modifier permutation 4
+ok 22 - generic composition: create, modifier permutation 4
+  ---
+  duration_ms: 2.08947
+  type: 'test'
+  ...
+# Subtest: generic composition: create, modifier permutation 5
+ok 23 - generic composition: create, modifier permutation 5
+  ---
+  duration_ms: 2.664376
+  type: 'test'
+  ...
+# Subtest: generic composition: create, modifier permutation 6
+ok 24 - generic composition: create, modifier permutation 6
+  ---
+  duration_ms: 2.482163
+  type: 'test'
+  ...
+# Subtest: generic composition: build, modifier permutation 1
+ok 25 - generic composition: build, modifier permutation 1
+  ---
+  duration_ms: 4.407805
+  type: 'test'
+  ...
+# Subtest: generic composition: build, modifier permutation 2
+ok 26 - generic composition: build, modifier permutation 2
+  ---
+  duration_ms: 2.233047
+  type: 'test'
+  ...
+# Subtest: generic composition: build, modifier permutation 3
+ok 27 - generic composition: build, modifier permutation 3
+  ---
+  duration_ms: 3.253194
+  type: 'test'
+  ...
+# Subtest: generic composition: build, modifier permutation 4
+ok 28 - generic composition: build, modifier permutation 4
+  ---
+  duration_ms: 2.871249
+  type: 'test'
+  ...
+# Subtest: generic composition: build, modifier permutation 5
+ok 29 - generic composition: build, modifier permutation 5
+  ---
+  duration_ms: 2.318836
+  type: 'test'
+  ...
+# Subtest: generic composition: build, modifier permutation 6
+ok 30 - generic composition: build, modifier permutation 6
+  ---
+  duration_ms: 1.984382
+  type: 'test'
+  ...
+# Subtest: generic composition: start, modifier permutation 1
+ok 31 - generic composition: start, modifier permutation 1
+  ---
+  duration_ms: 3.120024
+  type: 'test'
+  ...
+# Subtest: generic composition: start, modifier permutation 2
+ok 32 - generic composition: start, modifier permutation 2
+  ---
+  duration_ms: 2.650706
+  type: 'test'
+  ...
+# Subtest: generic composition: start, modifier permutation 3
+ok 33 - generic composition: start, modifier permutation 3
+  ---
+  duration_ms: 2.117813
+  type: 'test'
+  ...
+# Subtest: generic composition: start, modifier permutation 4
+ok 34 - generic composition: start, modifier permutation 4
+  ---
+  duration_ms: 2.648253
+  type: 'test'
+  ...
+# Subtest: generic composition: start, modifier permutation 5
+ok 35 - generic composition: start, modifier permutation 5
+  ---
+  duration_ms: 3.239714
+  type: 'test'
+  ...
+# Subtest: generic composition: start, modifier permutation 6
+ok 36 - generic composition: start, modifier permutation 6
+  ---
+  duration_ms: 2.8987
+  type: 'test'
+  ...
+# Subtest: the exact user request only asks for unspecified type
+ok 37 - the exact user request only asks for unspecified type
+  ---
+  duration_ms: 3.135046
+  type: 'test'
+  ...
+# Subtest: name and stamp name occupy distinct seats
+ok 38 - name and stamp name occupy distinct seats
+  ---
+  duration_ms: 3.340616
+  type: 'test'
+  ...
+# Subtest: DatePicker case survives
+ok 39 - DatePicker case survives
+  ---
+  duration_ms: 3.807951
+  type: 'test'
+  ...
+# Subtest: named/called synonyms are declared in field settings
+ok 40 - named/called synonyms are declared in field settings
+  ---
+  duration_ms: 2.12947
+  type: 'test'
+  ...
+# Subtest: explicit assignment syntax fills the same seats
+ok 41 - explicit assignment syntax fills the same seats
+  ---
+  duration_ms: 2.982847
+  type: 'test'
+  ...
+# Subtest: with database and without database preserve polarity
+ok 42 - with database and without database preserve polarity
+  ---
+  duration_ms: 8.884054
+  type: 'test'
+  ...
+# Subtest: same repeated value is compatible, different repeated values conflict
+ok 43 - same repeated value is compatible, different repeated values conflict
+  ---
+  duration_ms: 6.758299
+  type: 'test'
+  ...
+# Subtest: contradictory database phrases conflict
+ok 44 - contradictory database phrases conflict
+  ---
+  duration_ms: 2.415011
+  type: 'test'
+  ...
+# Subtest: query is not an executable command
+ok 45 - query is not an executable command
+  ---
+  duration_ms: 2.07605
+  type: 'test'
+  ...
+# Subtest: new field in settings can be supplied without parser edits
+ok 46 - new field in settings can be supplied without parser edits
+  ---
+  duration_ms: 21.826636
+  type: 'test'
+  ...
+# Subtest: ambiguous field aliases stop instead of taking the first field
+ok 47 - ambiguous field aliases stop instead of taking the first field
+  ---
+  duration_ms: 14.97677
+  type: 'test'
+  ...
+# Subtest: ambiguous capability aliases do not pick registry order
+ok 48 - ambiguous capability aliases do not pick registry order
+  ---
+  duration_ms: 21.052971
+  type: 'test'
+  ...
+# Subtest: unconsumed/unsupported input cannot execute: stamp a new react project named "test-project" into the current project folder type app not
+ok 49 - unconsumed/unsupported input cannot execute: stamp a new react project named "test-project" into the current project folder type app not
+  ---
+  duration_ms: 2.405227
+  type: 'test'
+  ...
+# Subtest: unconsumed/unsupported input cannot execute: stamp a new react project named "test-project" into the current project folder type app unless approved
+ok 50 - unconsumed/unsupported input cannot execute: stamp a new react project named "test-project" into the current project folder type app unless approved
+  ---
+  duration_ms: 2.22151
+  type: 'test'
+  ...
+# Subtest: unconsumed/unsupported input cannot execute: do not make a react project named test-project
+ok 51 - unconsumed/unsupported input cannot execute: do not make a react project named test-project
+  ---
+  duration_ms: 4.870934
+  type: 'test'
+  ...
+# Subtest: unconsumed/unsupported input cannot execute: I need a react project named test-project
+ok 52 - unconsumed/unsupported input cannot execute: I need a react project named test-project
+  ---
+  duration_ms: 1.149102
+  type: 'test'
+  ...
+# Subtest: unconsumed/unsupported input cannot execute: make a div with class x then delete everything
+ok 53 - unconsumed/unsupported input cannot execute: make a div with class x then delete everything
+  ---
+  duration_ms: 4.677242
+  type: 'test'
+  ...
+# Subtest: unconsumed/unsupported input cannot execute: stamp a new react project named "test-project" into the current project folder type app with a postgres cluster
+ok 54 - unconsumed/unsupported input cannot execute: stamp a new react project named "test-project" into the current project folder type app with a postgres cluster
+  ---
+  duration_ms: 2.039906
+  type: 'test'
+  ...
+# Subtest: unconsumed/unsupported input cannot execute: stamp a new react project named "test-project" into the current project folder type app?
+ok 55 - unconsumed/unsupported input cannot execute: stamp a new react project named "test-project" into the current project folder type app?
+  ---
+  duration_ms: 0.688107
+  type: 'test'
+  ...
+# Subtest: unconsumed/unsupported input cannot execute: stamp a new react project named "test-project" into the current project folder type app and
+ok 56 - unconsumed/unsupported input cannot execute: stamp a new react project named "test-project" into the current project folder type app and
+  ---
+  duration_ms: 2.255931
+  type: 'test'
+  ...
+# Subtest: unconsumed/unsupported input cannot execute: make a react project named "test-project
+ok 57 - unconsumed/unsupported input cannot execute: make a react project named "test-project
+  ---
+  duration_ms: 0.790081
+  type: 'test'
+  ...
+# Subtest: unconsumed/unsupported input cannot execute: make a react project named test-project; rm -rf stuff
+ok 58 - unconsumed/unsupported input cannot execute: make a react project named test-project; rm -rf stuff
+  ---
+  duration_ms: 0.74261
+  type: 'test'
+  ...
+# Subtest: unconsumed/unsupported input cannot execute: make a react project blah blah named test-project
+ok 59 - unconsumed/unsupported input cannot execute: make a react project blah blah named test-project
+  ---
+  duration_ms: 2.177483
+  type: 'test'
+  ...
+# Subtest: unconsumed/unsupported input cannot execute: stamp nonexistent named test-project
+ok 60 - unconsumed/unsupported input cannot execute: stamp nonexistent named test-project
+  ---
+  duration_ms: 1.244757
+  type: 'test'
+  ...
+# Subtest: same reserved stamp, different paths and required seats in two projects
+ok 61 - same reserved stamp, different paths and required seats in two projects
+  ---
+  duration_ms: 78.678298
+  type: 'test'
+  ...
+# Subtest: fresh instance resumes saved ticket, fills only the pending field
+ok 62 - fresh instance resumes saved ticket, fills only the pending field
+  ---
+  duration_ms: 31.696631
+  type: 'test'
+  ...
+# Subtest: answer for wrong request is rejected
+ok 63 - answer for wrong request is rejected
+  ---
+  duration_ms: 21.413333
+  type: 'test'
+  ...
+# Subtest: answer cannot overwrite an already supplied seat
+ok 64 - answer cannot overwrite an already supplied seat
+  ---
+  duration_ms: 24.471334
+  type: 'test'
+  ...
+# Subtest: answer cannot grant permissions or invent fields
+ok 65 - answer cannot grant permissions or invent fields
+  ---
+  duration_ms: 21.816376
+  type: 'test'
+  ...
+# Subtest: ticket from a different project is rejected
+ok 66 - ticket from a different project is rejected
+  ---
+  duration_ms: 41.954433
+  type: 'test'
+  ...
+# Subtest: canonical input reaches the same options as language
+ok 67 - canonical input reaches the same options as language
+  ---
+  duration_ms: 20.049167
+  type: 'test'
+  ...
+# Subtest: canonical ingress rejects extra authority fields
+ok 68 - canonical ingress rejects extra authority fields
+  ---
+  duration_ms: 15.495512
+  type: 'test'
+  ...
+# Subtest: canonical Boolean strings do not coerce to true
+ok 69 - canonical Boolean strings do not coerce to true
+  ---
+  duration_ms: 17.206511
+  type: 'test'
+  ...
+# Subtest: existing class bypasses atom creation
+ok 70 - existing class bypasses atom creation
+  ---
+  duration_ms: 18.043207
+  type: 'test'
+  ...
+# Subtest: existing class works even if the unused atom script was removed
+ok 71 - existing class works even if the unused atom script was removed
+  ---
+  duration_ms: 29.600587
+  type: 'test'
+  ...
+# Subtest: missing class cannot use a deleted atom script
+ok 72 - missing class cannot use a deleted atom script
+  ---
+  duration_ms: 13.23929
+  type: 'test'
+  ...
+# Subtest: missing class retains the original parent and asks for appearance, not name
+ok 73 - missing class retains the original parent and asks for appearance, not name
+  ---
+  duration_ms: 13.078588
+  type: 'test'
+  ...
+# Subtest: dependency fills its inputs from the original request
+ok 74 - dependency fills its inputs from the original request
+  ---
+  duration_ms: 17.800546
+  type: 'test'
+  ...
+# Subtest: project B dependency asks for its extra fields
+ok 75 - project B dependency asks for its extra fields
+  ---
+  duration_ms: 16.772858
+  type: 'test'
+  ...
+# Subtest: unused dependency input is not silently discarded
+ok 76 - unused dependency input is not silently discarded
+  ---
+  duration_ms: 14.425859
+  type: 'test'
+  ...
+# Subtest: lookup failure is not missing class
+ok 77 - lookup failure is not missing class
+  ---
+  duration_ms: 11.334058
+  type: 'test'
+  ...
+# Subtest: incomplete catalog entry is a lookup failure, not absence
+ok 78 - incomplete catalog entry is a lookup failure, not absence
+  ---
+  duration_ms: 14.985663
+  type: 'test'
+  ...
+# Subtest: unknown appearance token is rejected
+ok 79 - unknown appearance token is rejected
+  ---
+  duration_ms: 15.835995
+  type: 'test'
+  ...
+# Subtest: incomplete token index never establishes absence
+ok 80 - incomplete token index never establishes absence
+  ---
+  duration_ms: 16.386329
+  type: 'test'
+  ...
+# Subtest: changed settings invalidate a pending ticket
+ok 81 - changed settings invalidate a pending ticket
+  ---
+  duration_ms: 25.268811
+  type: 'test'
+  ...
+# Subtest: changed supporting template invalidates pending ticket
+ok 82 - changed supporting template invalidates pending ticket
+  ---
+  duration_ms: 16.81504
+  type: 'test'
+  ...
+# Subtest: moving a stamp and updating PATHS changes resolution without parser changes
+ok 83 - moving a stamp and updating PATHS changes resolution without parser changes
+  ---
+  duration_ms: 22.029919
+  type: 'test'
+  ...
+# Subtest: removing a stamp folder removes it from the live inspection list
+ok 84 - removing a stamp folder removes it from the live inspection list
+  ---
+  duration_ms: 16.953199
+  type: 'test'
+  ...
+# Subtest: reserved name cannot drift inside settings
+ok 85 - reserved name cannot drift inside settings
+  ---
+  duration_ms: 17.410939
+  type: 'test'
+  ...
+# Subtest: a description does not automatically create language synonyms
+ok 86 - a description does not automatically create language synonyms
+  ---
+  duration_ms: 14.072436
+  type: 'test'
+  ...
+# Subtest: host write authorization is required even for complete valid inputs
+ok 87 - host write authorization is required even for complete valid inputs
+  ---
+  duration_ms: 16.651835
+  type: 'test'
+  ...
+# Subtest: missing inputs do not cause partial writes
+ok 88 - missing inputs do not cause partial writes
+  ---
+  duration_ms: 23.42767
+  type: 'test'
+  ...
+# Subtest: fully resolved query never writes
+ok 89 - fully resolved query never writes
+  ---
+  duration_ms: 24.187757
+  type: 'test'
+  ...
+# Subtest: execute creates React starter and verifies all planned file hashes
+ok 90 - execute creates React starter and verifies all planned file hashes
+  ---
+  duration_ms: 70.278364
+  type: 'test'
+  ...
+# Subtest: optional database creates actual SQLite bytes
+ok 91 - optional database creates actual SQLite bytes
+  ---
+  duration_ms: 63.834989
+  type: 'test'
+  ...
+# Subtest: missing-class dependency executes first, verifies, then parent resumes
+ok 92 - missing-class dependency executes first, verifies, then parent resumes
+  ---
+  duration_ms: 85.211397
+  type: 'test'
+  ...
+# Subtest: Project B requirements are satisfied through targeted clarification
+ok 93 - Project B requirements are satisfied through targeted clarification
+  ---
+  duration_ms: 80.342857
+  type: 'test'
+  ...
+# Subtest: existing destination is not overwritten
+ok 94 - existing destination is not overwritten
+  ---
+  duration_ms: 41.458344
+  type: 'test'
+  ...
+# Subtest: parent destination failure does not leave a newly created child
+ok 95 - parent destination failure does not leave a newly created child
+  ---
+  duration_ms: 73.421242
+  type: 'test'
+  ...
+# Subtest: execution denial by host covers dependencies too
+ok 96 - execution denial by host covers dependencies too
+  ---
+  duration_ms: 14.957301
+  type: 'test'
+  ...
+# Subtest: same ticket cannot be executed twice in one instance
+ok 97 - same ticket cannot be executed twice in one instance
+  ---
+  duration_ms: 71.186163
+  type: 'test'
+  ...
+# Subtest: concurrent duplicate execute does not clear another invocation lock
+ok 98 - concurrent duplicate execute does not clear another invocation lock
+  ---
+  duration_ms: 69.22752
+  type: 'test'
+  ...
+# Subtest: same millisecond ID is an explicit alarm, not silently salted
+ok 99 - same millisecond ID is an explicit alarm, not silently salted
+  ---
+  duration_ms: 12.214224
+  type: 'test'
+  ...
+# Subtest: JavaScript settings require explicit host trust
+ok 100 - JavaScript settings require explicit host trust
+  ---
+  duration_ms: 43.609497
+  type: 'test'
+  ...
+# Subtest: JavaScript settings are freshly evaluated, not cached in the main process
+ok 101 - JavaScript settings are freshly evaluated, not cached in the main process
+  ---
+  duration_ms: 67.013261
+  type: 'test'
+  ...
+# Subtest: dependency cycles stop
+ok 102 - dependency cycles stop
+  ---
+  duration_ms: 16.586246
+  type: 'test'
+  ...
+# Subtest: path traversal request is refused
+ok 103 - path traversal request is refused
+  ---
+  duration_ms: 14.147189
+  type: 'test'
+  ...
+# Subtest: symlink destination is refused
+ok 104 - symlink destination is refused
+  ---
+  duration_ms: 12.305592
+  type: 'test'
+  ...
+# Subtest: malformed plan is refused before mutation writes
+ok 105 - malformed plan is refused before mutation writes
+  ---
+  duration_ms: 42.191779
+  type: 'test'
+  ...
+# Subtest: stamp stdout must be a single structured plan
+ok 106 - stamp stdout must be a single structured plan
+  ---
+  duration_ms: 40.400088
+  type: 'test'
+  ...
+# Subtest: changed token catalog is rechecked before execution
+ok 107 - changed token catalog is rechecked before execution
+  ---
+  duration_ms: 16.180795
+  type: 'test'
+  ...
+# Subtest: one pending seat accepts a bare textual reply without repeating the request
+ok 108 - one pending seat accepts a bare textual reply without repeating the request
+  ---
+  duration_ms: 13.39168
+  type: 'test'
+  ...
+# Subtest: multi-field text reply binds the declared fields in either order
+ok 109 - multi-field text reply binds the declared fields in either order
+  ---
+  duration_ms: 13.394904
+  type: 'test'
+  ...
+# Subtest: bare reply is ambiguous when several seats are pending
+ok 110 - bare reply is ambiguous when several seats are pending
+  ---
+  duration_ms: 16.591835
+  type: 'test'
+  ...
+# Subtest: UI supplied return address disambiguates a bare reply
+ok 111 - UI supplied return address disambiguates a bare reply
+  ---
+  duration_ms: 13.003364
+  type: 'test'
+  ...
+# Subtest: text reply never discards extra words
+ok 112 - text reply never discards extra words
+  ---
+  duration_ms: 13.526864
+  type: 'test'
+  ...
+# Subtest: adding a brand-new stamp uses the same house schema and parser
+ok 113 - adding a brand-new stamp uses the same house schema and parser
+  ---
+  duration_ms: 45.567659
+  type: 'test'
+  ...
+# Subtest: optional undefined in an in-process canonical request is rejected, not dropped
+ok 114 - optional undefined in an in-process canonical request is rejected, not dropped
+  ---
+  duration_ms: 15.274619
+  type: 'test'
+  ...
+# Subtest: malformed pending input is revalidated on resume
+ok 115 - malformed pending input is revalidated on resume
+  ---
+  duration_ms: 16.904366
+  type: 'test'
+  ...
+# Subtest: options object and keyed array normalize to identical contracts
+ok 116 - options object and keyed array normalize to identical contracts
+  ---
+  duration_ms: 1.67812
+  type: 'test'
+  ...
+# Subtest: missing required field remains in the declared domain
+ok 117 - missing required field remains in the declared domain
+  ---
+  duration_ms: 0.300213
+  type: 'test'
+  ...
+# Subtest: explicit false is preserved rather than treated as missing
+ok 118 - explicit false is preserved rather than treated as missing
+  ---
+  duration_ms: 0.181313
+  type: 'test'
+  ...
+# Subtest: optional means absent is allowed, not malformed input is allowed
+ok 119 - optional means absent is allowed, not malformed input is allowed
+  ---
+  duration_ms: 0.138789
+  type: 'test'
+  ...
+# Subtest: extra supplied fields are rejected
+ok 120 - extra supplied fields are rejected
+  ---
+  duration_ms: 0.202355
+  type: 'test'
+  ...
+# Subtest: empty-domain universal is true; it is not a complete-schema proof
+ok 121 - empty-domain universal is true; it is not a complete-schema proof
+  ---
+  duration_ms: 0.084497
+  type: 'test'
+  ...
+# Subtest: unification retains matching evidence, rejects conflicting values
+ok 122 - unification retains matching evidence, rejects conflicting values
+  ---
+  duration_ms: 0.441936
+  type: 'test'
+  ...
+# Subtest: reject invalid schema: no options
+ok 123 - reject invalid schema: no options
+  ---
+  duration_ms: 0.107212
+  type: 'test'
+  ...
+# Subtest: reject invalid schema: missing type
+ok 124 - reject invalid schema: missing type
+  ---
+  duration_ms: 0.261324
+  type: 'test'
+  ...
+# Subtest: reject invalid schema: type typo
+ok 125 - reject invalid schema: type typo
+  ---
+  duration_ms: 0.270057
+  type: 'test'
+  ...
+# Subtest: reject invalid schema: implicit required
+ok 126 - reject invalid schema: implicit required
+  ---
+  duration_ms: 0.121694
+  type: 'test'
+  ...
+# Subtest: reject invalid schema: duplicate array key
+ok 127 - reject invalid schema: duplicate array key
+  ---
+  duration_ms: 0.075133
+  type: 'test'
+  ...
+# Subtest: reject invalid schema: bad default
+ok 128 - reject invalid schema: bad default
+  ---
+  duration_ms: 0.062714
+  type: 'test'
+  ...
+# Subtest: reject invalid schema: empty enum
+ok 129 - reject invalid schema: empty enum
+  ---
+  duration_ms: 0.050967
+  type: 'test'
+  ...
+# Subtest: reject invalid schema: unknown validator
+ok 130 - reject invalid schema: unknown validator
+  ---
+  duration_ms: 0.050547
+  type: 'test'
+  ...
+# Subtest: reject invalid schema: unknown prototype key
+ok 131 - reject invalid schema: unknown prototype key
+  ---
+  duration_ms: 0.085278
+  type: 'test'
+  ...
+# Subtest: reject unsafe path "../out"
+ok 132 - reject unsafe path "../out"
+  ---
+  duration_ms: 0.184528
+  type: 'test'
+  ...
+# Subtest: reject unsafe path "a/../../b"
+ok 133 - reject unsafe path "a/../../b"
+  ---
+  duration_ms: 0.089115
+  type: 'test'
+  ...
+# Subtest: reject unsafe path "/tmp/x"
+ok 134 - reject unsafe path "/tmp/x"
+  ---
+  duration_ms: 0.081383
+  type: 'test'
+  ...
+# Subtest: reject unsafe path "C:\\\\temp"
+ok 135 - reject unsafe path "C:\\\\temp"
+  ---
+  duration_ms: 0.070135
+  type: 'test'
+  ...
+# Subtest: reject unsafe path "\\\\\\\\server\\\\share"
+ok 136 - reject unsafe path "\\\\\\\\server\\\\share"
+  ---
+  duration_ms: 0.045939
+  type: 'test'
+  ...
+# Subtest: reject unsafe path "a\\u0000b"
+ok 137 - reject unsafe path "a\\u0000b"
+  ---
+  duration_ms: 0.044998
+  type: 'test'
+  ...
+# Subtest: reject unsafe path "file:stream"
+ok 138 - reject unsafe path "file:stream"
+  ---
+  duration_ms: 0.035344
+  type: 'test'
+  ...
+# Subtest: reject unsafe path "nul"
+ok 139 - reject unsafe path "nul"
+  ---
+  duration_ms: 0.199931
+  type: 'test'
+  ...
+# Subtest: reject unsafe path "A/CON.txt"
+ok 140 - reject unsafe path "A/CON.txt"
+  ---
+  duration_ms: 0.116626
+  type: 'test'
+  ...
+# Subtest: reject unsafe path "x."
+ok 141 - reject unsafe path "x."
+  ---
+  duration_ms: 0.056936
+  type: 'test'
+  ...
+# Subtest: reject unsafe path "x "
+ok 142 - reject unsafe path "x "
+  ---
+  duration_ms: 0.045389
+  type: 'test'
+  ...
+# Subtest: reject unsafe path "x?y"
+ok 143 - reject unsafe path "x?y"
+  ---
+  duration_ms: 0.091999
+  type: 'test'
+  ...
+# Subtest: normalize allowed relative path .
+ok 144 - normalize allowed relative path .
+  ---
+  duration_ms: 0.075534
+  type: 'test'
+  ...
+# Subtest: normalize allowed relative path ./apps
+ok 145 - normalize allowed relative path ./apps
+  ---
+  duration_ms: 0.096135
+  type: 'test'
+  ...
+# Subtest: normalize allowed relative path apps\\project
+ok 146 - normalize allowed relative path apps\\project
+  ---
+  duration_ms: 0.093501
+  type: 'test'
+  ...
+1..146
+# tests 146
+# suites 0
+# pass 146
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1674.691774

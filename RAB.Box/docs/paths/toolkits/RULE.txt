@@ -1,0 +1,7 @@
+SCOPE=toolkit path configuration; inherit project AGENTS.md; current owner=bridge/toolkit-links.mjs.
+ROOT: settings.json={id,name,title,description,settings:[],meta:{kind:"toolkit"}}; positive permanent numeric ID; lowercase kebab name; nonempty title/description; real contained non-symlink tools/.
+GLOBAL CURRENT: installation TOOLKITS.json={version:"toolkit-links/v1",toolkits:[{path:absoluteToolkitRoot,enabled?:boolean}]}; no extra link fields; use updateToolkitLink owner, not duplicate writer.
+PROJECT CURRENT: source-root settings.json.custom_toolkit_path=absoluteToolkitRoot|null|""|absent; not a saved inventory or user-memory folder.
+PATH: toolkit root, not tools child; accessible to executing host; no server/local drive substitution; no overlapping tool source roots; preserve IDs on relocation.
+VERIFY: fresh discovery + unavailable diagnostics + actual selected tool behavior; registered != available != executable correctness.
+STORAGE: source config != Box records; latter user-home/.rab. Document mismatch, never invent fallback/copy/migration. No README catalog/counts.

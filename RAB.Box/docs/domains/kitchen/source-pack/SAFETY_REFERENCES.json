@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-09-17",
+  "notes": [
+    "Consumer guidance, retail model code, and industrial validated-process support have different scopes.",
+    "Industrial process schedules must be tied to applicable scientific/technical support and in-plant validation."
+  ],
+  "consumer_home_cooking": [
+    {
+      "id": "usda-fsis-meat-poultry-safe-temp",
+      "authority": "USDA Food Safety and Inspection Service",
+      "authority_type": "consumer-guidance",
+      "scope": "U.S. home cooking; meat and poultry",
+      "facts": {
+        "whole_cut_beef_pork_lamb_veal_f": 145,
+        "whole_cut_rest_minutes": 3,
+        "ground_beef_pork_lamb_veal_f": 160,
+        "poultry_f": 165
+      },
+      "url": "https://ask.fsis.usda.gov/article/What-is-a-safe-internal-temperature-for-cooking-meat-and-poultry"
+    },
+    {
+      "id": "usda-fsis-doneness-vs-safety",
+      "authority": "USDA Food Safety and Inspection Service",
+      "authority_type": "consumer-guidance",
+      "scope": "U.S. home cooking",
+      "rule": "Doneness preferences are subjective; thermometer measurement is relied upon for safety.",
+      "url": "https://ask.fsis.usda.gov/article/If-food-has-reached-a-safe-temperature-is-it-done"
+    }
+  ],
+  "allergens": [
+    {
+      "id": "fda-major-food-allergens",
+      "authority": "U.S. Food and Drug Administration",
+      "authority_type": "federal-food-labeling",
+      "scope": "U.S. major allergen labeling",
+      "major_allergens": [
+        "milk",
+        "egg",
+        "fish",
+        "crustacean shellfish",
+        "tree nuts",
+        "peanuts",
+        "wheat",
+        "soybeans",
+        "sesame"
+      ],
+      "note": "Human-declared allergies beyond the major nine remain hard constraints.",
+      "url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies"
+    }
+  ],
+  "retail_foodservice": [
+    {
+      "id": "fda-food-code-2022",
+      "authority": "U.S. Food and Drug Administration",
+      "authority_type": "model-code",
+      "scope": "Retail and food service; offered for adoption by jurisdictions",
+      "url": "https://www.fda.gov/food/fda-food-code/food-code-2022"
+    },
+    {
+      "id": "fda-food-code-2024-supplement",
+      "authority": "U.S. Food and Drug Administration",
+      "authority_type": "model-code-supplement",
+      "scope": "Supplement to 2022 Food Code",
+      "url": "https://www.fda.gov/food/hfp-constituent-updates/fda-releases-supplement-2022-food-code"
+    }
+  ],
+  "industrial_meat_poultry": [
+    {
+      "id": "fsis-haccp-validation",
+      "authority": "USDA Food Safety and Inspection Service",
+      "authority_type": "regulatory-validation-guidance",
+      "scope": "Official meat/poultry establishments; HACCP validation under 9 CFR 417.4",
+      "principles": [
+        "scientific/technical support",
+        "practical in-plant data"
+      ],
+      "url": "https://www.fsis.usda.gov/inspection/compliance-guidance/haccp/haccp-validation"
+    },
+    {
+      "id": "fsis-critical-operational-parameters",
+      "authority": "USDA Food Safety and Inspection Service",
+      "authority_type": "inspection/regulatory guidance",
+      "parameters": [
+        "pH",
+        "concentration",
+        "time",
+        "temperature",
+        "humidity",
+        "dwell time",
+        "water activity",
+        "pressure",
+        "equipment settings"
+      ],
+      "url": "https://www.fsis.usda.gov/policy/fsis-directives/5000.6"
+    },
+    {
+      "id": "fsis-revised-appendix-a-2021",
+      "authority": "USDA Food Safety and Inspection Service",
+      "authority_type": "compliance-guideline",
+      "scope": "Cooking guidance for certain meat and poultry products; see exclusions and critical parameters",
+      "url": "https://www.fsis.usda.gov/guidelines/2021-0014"
+    },
+    {
+      "id": "fsis-appendix-a-b-implementation",
+      "authority": "USDA Food Safety and Inspection Service",
+      "authority_type": "inspection-notice",
+      "scope": "Implementation/verification of 2021 Revised Appendix A/B or alternative support",
+      "url": "https://www.fsis.usda.gov/policy/fsis-notice/66-22"
+    }
+  ]
+}

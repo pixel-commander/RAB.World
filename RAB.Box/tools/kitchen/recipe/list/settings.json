@@ -1,0 +1,46 @@
+{
+  "id": 1810000000012,
+  "name": "list",
+  "title": "List Recipes",
+  "description": "Lists the starter Kitchen recipe index by query, category, cuisine, or protein. The index is a corpus seed, not safety authority.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "query",
+      "title": "Query",
+      "description": "query",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "category",
+      "title": "Category",
+      "description": "category",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "cuisine",
+      "title": "Cuisine",
+      "description": "cuisine",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "protein",
+      "title": "Protein",
+      "description": "protein",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "read",
+    "data_types": [
+      "recipes"
+    ],
+    "returns": [
+      "recipes"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": 1800000000022,
+  "name": "sqlite-extension-loading",
+  "title": "Find SQLite Extension Loading",
+  "description": "Finds SQLite extension-loading calls.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "sqlite-extension-loading",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bloadExtension\\s*\\(",
+      "scope": "code",
+      "kind": "sqlite-extension-load",
+      "heuristic": false,
+      "flags": "i"
+    }
+  }
+}

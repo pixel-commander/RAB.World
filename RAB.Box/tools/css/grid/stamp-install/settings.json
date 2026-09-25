@@ -1,0 +1,18 @@
+{
+  "id": 1790000000931,
+  "name": "stamp-install",
+  "title": "Install Grid CSS",
+  "description": "Installs the canonical RRAABBIITT grid.css into a resolved CSS folder without overwriting an existing file.",
+  "settings": [
+    {"type":"text","name":"name","title":"CSS Folder Name","description":"Folder name used by the child resolver when css_path is missing.","required":false,"default":"css"},
+    {"type":"folder","name":"css_path","title":"CSS Path","description":"CSS folder. If missing, the runner tries the registered find-folder Tool.","required":true,"try":"find-folder"}
+  ],
+  "meta": {
+    "domain": "css",
+    "operation": "create",
+    "target_type": "grid",
+    "data_types": ["grid","css"],
+    "output": "css-file",
+    "authority": "write"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": 1790277131328,
+  "name": "manifest",
+  "title": "Add Manifest",
+  "description": "Creates an empty manifest from the existing project inventory shape.",
+  "settings": [
+    {"name":"name","type":"text","title":"Collection Name","required":true},
+    {"name":"path","type":"path","title":"Save Folder","description":"Relative to the selected root, or absolute without a selection. Writes manifest.json inside this folder.","required":true},
+    {"name":"source_path","type":"path","title":"Indexed Folder","description":"Source folder recorded in meta.path, relative to the project root.","required":true},
+    {"name":"project_id","type":"number","title":"Project ID","description":"Required without a selected project. Uses the selected project ID when omitted.","required":false},
+    {"name":"title","type":"text","title":"Title","description":"Defaults to collection name.","required":false},
+    {"name":"description","type":"textarea","title":"Description","required":false,"default":""}
+  ],
+  "meta":{"domain":"world","operation":"create","target_type":"manifest","output":"manifest","authority":"write"}
+}

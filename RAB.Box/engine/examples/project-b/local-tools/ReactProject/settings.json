@@ -1,0 +1,93 @@
+{
+  "id": 1789380000001,
+  "name": "react-project",
+  "title": "Starting point for a React project",
+  "description": "Creates a new folder at the chosen location with tokens, atoms, a component, and a demo page. This fixture defines type=app.",
+  "date_added": 1789380000000,
+  "options": [
+    {
+      "key": "name",
+      "required": true,
+      "type": "text",
+      "role": "artifact-name",
+      "validate": "project-name",
+      "language": {
+        "prefixes": [
+          "named",
+          "called",
+          "name"
+        ]
+      }
+    },
+    {
+      "key": "location",
+      "required": true,
+      "type": "text",
+      "role": "destination",
+      "validate": "relative-directory",
+      "language": {
+        "prefixes": [
+          "into",
+          "in",
+          "under",
+          "at",
+          "location"
+        ],
+        "references": {
+          "the current project folder": ".",
+          "current project folder": ".",
+          "the current project": ".",
+          "current project": ".",
+          "here": "."
+        }
+      }
+    },
+    {
+      "key": "type",
+      "required": true,
+      "type": "text",
+      "role": "project-type",
+      "enum": [
+        "app"
+      ],
+      "question": "What is the project type? This demo implements app; the word react does not silently fill this field.",
+      "language": {
+        "prefixes": [
+          "of type",
+          "type"
+        ]
+      }
+    },
+    {
+      "key": "add_database",
+      "required": false,
+      "type": "boolean",
+      "default": false,
+      "role": "database-inclusion",
+      "description": "Include a local SQLite seed database and an inspection script. No server/API is deployed.",
+      "language": {
+        "true": [
+          "with a database",
+          "with database",
+          "add a database",
+          "include a database"
+        ],
+        "false": [
+          "without a database",
+          "without database",
+          "no database"
+        ]
+      }
+    },
+    {
+      "key": "theme",
+      "required": true,
+      "type": "text",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "question": "Which theme does this project require: light or dark?"
+    }
+  ]
+}

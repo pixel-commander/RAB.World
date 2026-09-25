@@ -1,0 +1,32 @@
+{
+  "id": 1810000000007,
+  "name": "teach",
+  "title": "Teach Food Preference",
+  "description": "Records a human food dislike as a project-scoped preference, explicitly separate from allergy safety authority.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "person",
+      "title": "Person",
+      "description": "person",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "item",
+      "title": "Item",
+      "description": "item",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "train",
+    "data_types": [
+      "preference"
+    ],
+    "returns": [
+      "preference"
+    ]
+  }
+}

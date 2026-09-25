@@ -1,0 +1,32 @@
+{
+  "id": 1790000000942,
+  "name": "css-important",
+  "title": "Find CSS !important",
+  "description": "Finds !important declarations in style files.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "css-important",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "!important\\b",
+      "kind": "css-important",
+      "scope": "style"
+    }
+  }
+}

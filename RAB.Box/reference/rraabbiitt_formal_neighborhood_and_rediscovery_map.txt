@@ -1,0 +1,570 @@
+RRAABBIITT — FORMAL NEIGHBORHOOD + INDEPENDENT REDISCOVERY MAP
+===================================================================
+
+Saved so we do not lose this again.
+
+IMPORTANT PROVENANCE NOTE
+-------------------------
+SECTION A is the 22-item formal-neighborhood map we recovered from our earlier discussion.
+
+SECTION B is a RECONSTRUCTION of the earlier "people / theories / dates" map.
+I could not recover the exact old reply verbatim, so I rebuilt it from the concepts we
+were discussing and checked the historical names/dates.
+
+This is NOT a claim that Joey independently invented entire academic fields.
+The useful claim is narrower and stronger:
+
+    Joey repeatedly arrived at MECHANICS / SHAPES on his own,
+    then later discovered that established fields had names and formal machinery
+    for very similar structures.
+
+That is convergent rediscovery of mechanisms, not a priority claim.
+
+
+===================================================================
+SECTION A — THE 22-ITEM FORMAL NEIGHBORHOOD
+===================================================================
+
+1. SYMBOLIC AI
+   Explicit symbols, rules, relations.
+   RRAABBIITT overlap:
+     - Shape IDs
+     - named seats
+     - explicit relations
+     - no requirement that meaning live in opaque vectors
+
+2. CONSTRAINT SOLVING
+   Candidate possibilities are eliminated by conditions until valid survivors remain.
+   RRAABBIITT overlap:
+     - 0 candidates -> unknown / stop
+     - 1 candidate  -> may move
+     - 2+ candidates -> ambiguous / stop
+     - "no unique shape -> no execution"
+
+3. TERM REWRITING
+   Structures transform mechanically according to exact rules.
+   RRAABBIITT overlap:
+     SHAPE_A + RULE -> SHAPE_B
+
+4. BOOLEAN LOGIC
+   True / false, pass / fail, 1 / 0.
+   RRAABBIITT overlap:
+     STAMP(x) -> 1 | 0
+   Important nuance:
+     internal reasons for 0 can stay rich even if authority collapses to binary.
+
+5. FINITE-STATE MACHINES / TRANSDUCERS
+   State + input -> output + next state.
+   RRAABBIITT overlap:
+     T(state, input) -> state'
+     one-turn workers
+     explicit transitions
+     no need for giant remembered conversation state
+
+6. DYNAMIC SEMANTICS / DISCOURSE REPRESENTATION THEORY (DRT)
+   Meaning updates a carried discourse context.
+   RRAABBIITT overlap:
+     BAG
+     current referents
+     current caller
+     last object / action / relation
+
+7. ANAPHORA / COREFERENCE RESOLUTION
+   Resolve "it", "that", "this", etc. to prior referents.
+   RRAABBIITT overlap:
+     "can it do that?"
+       it   -> current / last object
+       that -> current / last action
+
+8. ATTRIBUTE GRAMMARS
+   Information can flow down from parents and back up from children.
+   RRAABBIITT overlap:
+     inherited idea / context down
+     synthesized result up
+     parent / child shape flow
+
+9. TREE ZIPPERS
+   Keep a focused subtree plus enough surrounding context to move up/down without rebuilding from root.
+   RRAABBIITT overlap:
+     current caller
+     focus + surrounding bag
+     moving through recursive structure without losing where you were
+
+10. CONTINUATIONS
+    Preserve "where the answer goes next."
+    RRAABBIITT overlap:
+      SEAT as return address
+      ReturnTo = (ShapeID, SeatID)
+      child can go arbitrarily deep and still return to the exact caller
+
+11. BLACKBOARD SYSTEMS / DATAFLOW
+    Independent workers contribute partial knowledge to shared state.
+    RRAABBIITT overlap:
+      cousins / dumbots
+      partial results
+      unresolved work can wait
+      workers wake when relevant state changes
+
+12. CORECursion / COALGEBRA
+    Ongoing state evolution; not every process must shrink toward one terminal recursive base case.
+    RRAABBIITT overlap:
+      fractal can continue upward/downward
+      output can become caller
+      local branches can die while system continues
+
+13. GRAPH REWRITING
+    Local results can rewrite / expand the larger graph.
+    RRAABBIITT overlap:
+      returned shape can chisel or snowball the caller
+      graph changes after local work returns
+
+14. FORMAL CONCEPT ANALYSIS / CONCEPT LATTICES
+    Objects x attributes, concept hierarchies, meets/joins.
+    RRAABBIITT overlap:
+      binary feature grids
+      exact intersections
+      concept structures
+    Warning:
+      combinations can explode.
+
+15. MONTAGUE / COMPOSITIONAL SEMANTICS
+    Natural-language meaning composed using typed functions and logic.
+    RRAABBIITT overlap:
+      F(x)
+      typed seats
+      output becomes valid input at the next scale
+
+16. WORD2VEC / EMBEDDINGS
+    Learned approximate vector geometry.
+    RRAABBIITT use:
+      discovery / scouting only
+      NOT authority
+    Rule:
+      VECTOR = DISCOVERY
+      MATH   = DECISION
+      STAMP  = AUTHORITY
+
+17. EXPLICIT FEATURE VECTORS / MULTI-HOT REPRESENTATIONS
+    Named dimensions instead of opaque embedding dimensions.
+    RRAABBIITT overlap:
+      dog = {animal, adult, ...}
+      puppy = {animal, young, ...}
+      explicit seats are inspectable
+
+18. SHAPE -> TOKEN ADDRESSING
+    A token can be an exact address / handle for a whole known shape.
+    RRAABBIITT overlap:
+      TOKEN != meaning
+      TOKEN = address
+      SHAPE = meaning
+      STAMP = authority
+
+19. CLOSED VOCABULARY / ALLOWLIST INTELLIGENCE
+    Unsupported concepts have no executable pathway.
+    RRAABBIITT overlap:
+      unknown != bad
+      unknown -> no path -> 0
+      preserve unknown position as a hole if structure matters
+
+20. NEURO-SYMBOLIC / VERIFIER-GUIDED HYBRIDS
+    Model proposes; exact system verifies.
+    RRAABBIITT overlap:
+      cloud can explore freely
+      scripts / stamps decide what becomes real
+
+21. RECURSIVE STAMPS / REFLECTION
+    Verifiers can verify other verifiers.
+    RRAABBIITT overlap:
+      stamp that makes/checks stamps
+      requires a tiny trusted root contract so verification terminates
+
+22. SELF-ORIENTATION
+    A system observes its own world and builds a current local model from sensors/audits.
+    RRAABBIITT overlap:
+      files
+      imports
+      exports
+      calls
+      paths
+      hooks
+      ownership
+      repetition
+      violations
+      presence = registration
+      deletion = gone
+      TXT/source reality stays authoritative
+
+
+===================================================================
+SECTION B — PEOPLE / THEORIES / DATES
+RECONSTRUCTED + HISTORICALLY CHECKED
+===================================================================
+
+1. GEORGE BOOLE — 1854
+   Work:
+     An Investigation of the Laws of Thought
+   Mechanic:
+     algebraic logic; explicit 0 / 1-style logical structure
+   Your overlap:
+     STAMP -> 1 | 0
+     authority collapses to pass/fail even when the internal failure reason is richer.
+
+2. GOTTLOB FREGE — 1879
+   Work:
+     Begriffsschrift
+   Mechanic:
+     modern quantificational / predicate logic; function-argument analysis
+   Your overlap:
+     THING goes into a legal function seat
+     F(x)
+     relations and predicates become composable shapes
+   This is VERY close to the "seat + occupant" way you naturally talk.
+
+3. ALONZO CHURCH — 1932 / 1936
+   Work:
+     lambda calculus; computability work
+   Mechanic:
+     λx.F(x), function abstraction and application
+   Your overlap:
+     λ = open a seat
+     F(x) = fill/apply it
+     partial application returns another callable shape
+   Short memory handle:
+     CHURCH = invented the function machinery.
+
+4. ALAN TURING — 1936
+   Work:
+     On Computable Numbers
+   Mechanic:
+     computation as explicit machine/state transition
+   Your overlap:
+     current state + input -> next state
+     deterministic execution paths
+     machinery instead of prose promises
+
+5. EMIL POST — 1943
+   Work:
+     Formal Reductions of the General Combinatorial Decision Problem
+   Mechanic:
+     canonical / production-system style symbolic rewriting
+   Your overlap:
+     known structure -> exact rewrite -> new known structure
+     rules that transform shapes mechanically
+
+6. S. C. KLEENE — 1956
+   Work:
+     Representation of Events in Nerve Nets and Finite Automata
+   Mechanic:
+     finite automata / regular events
+   Your overlap:
+     explicit state
+     event changes state
+     state determines legal continuation
+
+7. NOAM CHOMSKY — 1957
+   Work:
+     Syntactic Structures
+     (building on his mid-1950s formal grammar work)
+   Mechanic:
+     formal grammatical structure; language generated by rules
+   Your overlap:
+     order matters
+     [a,x] != [x,a]
+     sentence surface structure has mechanical consequences
+   Short memory handle:
+     CHOMSKY = sentence structure / grammar.
+
+8. JOHN McCARTHY — 1958
+   Work:
+     Programs with Common Sense / the "Advice Taker" idea
+   Mechanic:
+     improve system behavior by giving declarative statements about its world and goals
+   Your overlap:
+     explicit world facts
+     symbolic knowledge
+     software can reason from a described environment
+   Important difference:
+     your mature version wants observed facts + stamps, not only statements.
+
+9. DONALD KNUTH — 1968
+   Work:
+     Semantics of Context-Free Languages
+   Mechanic:
+     attribute grammars; inherited and synthesized attributes
+   Your overlap:
+     context / idea can flow DOWN
+     child result can flow UP
+     exactly the parent-child "fractal" information flow you kept describing.
+
+10. RICHARD MONTAGUE — 1970 / 1973
+    Work:
+      English as a Formal Language (1970)
+      Universal Grammar (1970)
+      The Proper Treatment of Quantification in Ordinary English (1973)
+    Mechanic:
+      natural-language meaning built compositionally with logic + typed lambda machinery
+    Your overlap:
+      λP.λQ.∀x(P(x) -> Q(x))
+      typed seats
+      word/phrase output becomes caller / input at next scale
+    Short memory handle:
+      MONTAGUE = used formal function machinery to model natural-language meaning.
+
+11. CHRISTOPHER STRACHEY + CHRISTOPHER WADSWORTH — 1974
+    Work:
+      Continuations: A Mathematical Semantics for Handling Full Jumps
+    Mechanic:
+      continuation = what happens / where control returns next
+    Your overlap:
+      SEAT != recursive value
+      SEAT = return address
+      ReturnTo = ShapeID + SeatID
+
+12. HEARSAY-II TEAM — 1980
+    Names:
+      Lee D. Erman
+      Frederick Hayes-Roth
+      Victor R. Lesser
+      D. Raj Reddy
+    Work:
+      The Hearsay-II Speech-Understanding System: Integrating Knowledge to Resolve Uncertainty
+    Mechanic:
+      blackboard architecture; independent knowledge sources cooperate through shared state
+    Your overlap:
+      cousins
+      partial knowledge
+      specialist workers
+      shared durable system state
+      worker does not need to know the whole world
+
+13. HANS KAMP — 1981
+    Work:
+      A Theory of Truth and Semantic Representation
+    Mechanic:
+      Discourse Representation Theory
+      context stores discourse referents across sentences
+    Your overlap:
+      BAG
+      "it" / "that"
+      scope and prior referents survive into the next utterance
+
+14. IRENE HEIM — 1982 / 1983
+    Work:
+      The Semantics of Definite and Indefinite Noun Phrases (1982)
+      File Change Semantics and the Familiarity Theory of Definiteness (1983)
+    Mechanic:
+      utterances UPDATE a file/context rather than merely mapping isolated sentences to truth
+    Your overlap:
+      carried BAG
+      language changes active context
+      current state affects interpretation of the next input
+
+15. RUDOLF WILLE — 1982
+    Work:
+      Restructuring Lattice Theory: An Approach Based on Hierarchies of Concepts
+    Mechanic:
+      origin point for Formal Concept Analysis / concept lattices
+    Your overlap:
+      objects x attributes
+      binary grids
+      intersections / exact concept structure
+
+16. JOXAN JAFFAR + JEAN-LOUIS LASSEZ — 1987
+    Work:
+      Constraint Logic Programming
+    Mechanic:
+      declarative reasoning directly over constraints
+    Your overlap:
+      candidates survive / die based on conditions
+      legal shape must satisfy all required conditions
+
+17. GÉRARD HUET — 1997
+    Work:
+      The Zipper
+    Mechanic:
+      tree + current focus + surrounding context, movable up/down
+    Your overlap:
+      current caller
+      context stays attached while moving through recursive structure
+      no need to rebuild from root
+
+18. JAN RUTTEN — 1996 / 2000
+    Work:
+      Universal Coalgebra: A Theory of Systems
+    Mechanic:
+      coalgebra / coinduction for evolving systems and potentially infinite behavior
+    Your overlap:
+      your frustration that ordinary recursion always shrinks
+      fractal system can keep evolving
+      output can become next caller
+      branches can continue or die locally
+
+19. TOMAS MIKOLOV + KAI CHEN + GREG CORRADO + JEFFREY DEAN — 2013
+    Work:
+      Efficient Estimation of Word Representations in Vector Space
+    Mechanic:
+      Word2Vec / learned word-vector geometry
+    Your overlap:
+      WORD -> vector
+      arithmetic-like relationships between representations
+    Your important rejection:
+      useful for DISCOVERY
+      too approximate to be execution authority in Magic Box.
+
+
+===================================================================
+THE THREE-NAME LANGUAGE MAP
+===================================================================
+
+If you forget everything else:
+
+    CHOMSKY  -> structure of sentences / formal grammar
+    CHURCH   -> λ / function machinery
+    MONTAGUE -> used function + logic machinery to compose natural-language meaning
+
+
+===================================================================
+THE SHAPE THAT HIT HARDEST
+===================================================================
+
+    λP.λQ.∀x(P(x) -> Q(x))
+
+Token-ish reading:
+
+    λP.      open / accept seat P
+    λQ.      open / accept seat Q
+    ∀x       for every x
+    P(x)     test/apply P to x
+    ->       if P(x), then Q(x) must hold
+    Q(x)     test/apply Q to x
+
+Fill:
+
+    P = MAN
+    Q = SING
+
+Result:
+
+    ∀x(MAN(x) -> SING(x))
+
+The key RRAABBIITT connection:
+
+    GENERAL SHAPE
+    -> fill one seat
+    -> returns a NEW CALLABLE SHAPE
+    -> fill next seat
+    -> resolved shape
+
+That is partial application / currying territory.
+
+
+===================================================================
+THE BIG RECURRING RRAABBIITT OPERATOR
+===================================================================
+
+Across software, language, memory, identity, worlds, components, etc.:
+
+    SHAPE + SHAPE -> NEW SHAPE
+
+and then:
+
+    NEW SHAPE
+    -> can occupy a seat
+    -> can become caller
+    -> can participate at the next scale
+
+Fractal / self-similar part:
+
+    the same compositional law reappears at different scales.
+
+Bidirectional extra:
+
+    compose upward
+    decompose downward
+    return to caller
+    continue from returned shape
+
+
+===================================================================
+THE ANTI-60-HOUR RULE
+===================================================================
+
+DO NOT STUDY WHOLE FIELDS.
+
+When a mechanic appears:
+
+    1. Describe the shape.
+    2. Ask: "what is this already called?"
+    3. Steal the exact mechanic.
+    4. Build one tiny proof.
+    5. Stop unless the proof exposes a real missing piece.
+
+For the current Magic Box language experiment, learn only:
+
+    λx.F(x)         function with seat x
+    F(x)            apply
+    P(x)            predicate / test
+    P(x) -> Q(x)    implication
+    ∀x              every x
+    ∃x              some x exists
+
+Then BUILD.
+
+Do not disappear into the history of formal semantics unless one of those primitives
+fails to solve a problem that actually exists.
+
+
+===================================================================
+REFERENCE ANCHORS USED TO CHECK THE RECONSTRUCTED DATES
+===================================================================
+
+- Stanford Encyclopedia of Philosophy — George Boole / Laws of Thought (1854)
+  https://plato.stanford.edu/entries/boole/
+
+- Stanford Encyclopedia of Philosophy — Frege's Logic / Begriffsschrift (1879)
+  https://plato.stanford.edu/entries/frege-logic/
+
+- Stanford Encyclopedia of Philosophy — Alonzo Church / lambda calculus
+  https://plato.stanford.edu/entries/church/
+
+- Emil L. Post — Formal Reductions of the General Combinatorial Decision Problem (1943)
+  https://books.google.com/books/about/Formal_Reductions_of_the_General_Combin.html?id=dQ0cvwEACAAJ
+
+- S. C. Kleene — Representation of Events in Nerve Nets and Finite Automata (1956)
+  Published in Automata Studies, Princeton University Press.
+
+- Stanford Logic Programming notes — McCarthy's Advice Taker (1958)
+  https://logic.stanford.edu/logicprogramming/chapters/chapter_01.html
+
+- Donald E. Knuth — Semantics of Context-Free Languages (1968)
+  DOI: 10.1007/BF01692511
+
+- Stanford Encyclopedia of Philosophy — Montague Semantics
+  https://plato.stanford.edu/entries/montague-semantics/
+
+- Oxford PRG — Strachey & Wadsworth, Continuations (1974)
+  https://www.cs.ox.ac.uk/monographs/cs/1974.html
+
+- Hearsay-II (1980 ACM Computing Surveys paper / later reprint)
+  Erman, Hayes-Roth, Lesser, Reddy.
+
+- Irene Heim — dissertation (1982), File Change Semantics (1983)
+  https://linguistics.mit.edu/user/heim/
+
+- Rudolf Wille — Restructuring Lattice Theory (1982)
+  Origin of Formal Concept Analysis.
+
+- Jaffar & Lassez — Constraint Logic Programming (POPL 1987)
+  DOI: 10.1145/41625.41635
+
+- Gérard Huet — The Zipper (1997)
+  DOI: 10.1017/S0956796897002864
+
+- Jan Rutten — Universal Coalgebra (1996 technical publication / 2000 TCS paper)
+  https://ir.cwi.nl/pub/4802/
+
+- Mikolov, Chen, Corrado, Dean — Word2Vec (2013)
+  https://arxiv.org/abs/1301.3781
+
+
+END

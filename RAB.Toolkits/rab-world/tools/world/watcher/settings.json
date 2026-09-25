@@ -1,0 +1,11 @@
+{
+  "id": 1790307445791,
+  "name": "world-watcher",
+  "title": "World Watcher",
+  "description": "Saves a watcher file that watches only registered beacons; no watcher starts automatically.",
+  "settings": [
+    {"name":"path","type":"folder","title":"Path","description":"Absolute folder where world-watcher.json will be saved.","required":true},
+    {"name":"worlds_path","type":"folder","title":"Worlds Path","description":"Absolute folder that contains world folders with settings.json.","required":true}
+  ],
+  "meta": {"domain":"world","operation":"watch","target_type":"beacons","output":"watch-plan","authority":"write"}
+}

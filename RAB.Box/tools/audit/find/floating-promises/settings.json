@@ -1,0 +1,30 @@
+{
+  "id": 1790000000966,
+  "name": "floating-promises",
+  "title": "Find Floating Promise Candidates",
+  "description": "Heuristically flags obvious fetch calls with no await/return/void/then/catch on the same line.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "promise-call",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "syntax",
+    "config": {
+      "type": "floating-promises"
+    }
+  }
+}

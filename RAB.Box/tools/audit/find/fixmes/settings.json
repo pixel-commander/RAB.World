@@ -1,0 +1,31 @@
+{
+  "id": 1790000000934,
+  "name": "fixmes",
+  "title": "Find FIXME Markers",
+  "description": "Finds FIXME markers in supported source and style files.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "fixme",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bFIXME\\b",
+      "kind": "fixme"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": 1810000000005,
+  "name": "list",
+  "title": "List Allergies",
+  "description": "Lists project-scoped human allergy declarations and allergy-status seats.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "person",
+      "title": "Person",
+      "description": "person",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "read",
+    "data_types": [
+      "allergies",
+      "allergy_status"
+    ],
+    "returns": [
+      "allergies",
+      "allergy_status"
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "id": 1790000001307,
+  "name": "brain-access",
+  "title": "Check Authorized Brain Remote Access",
+  "description": "Checks one explicitly supplied Brain endpoint from the machine running Magic Box. It tests unauthenticated access first and can retry with a credential loaded from an environment variable, without returning Brain content.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "url",
+      "title": "Brain URL",
+      "description": "One explicit authorized Brain HTTP(S) endpoint. This Tool does not guess or enumerate Brain paths.",
+      "required": true
+    },
+    {
+      "type": "boolean",
+      "name": "authorized_target",
+      "title": "Authorized Target",
+      "description": "Confirm this target is yours or you are permitted to test.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "auth_env",
+      "title": "Credential Environment Variable",
+      "description": "Optional environment-variable name containing the credential. Never put the credential itself here.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "auth_header",
+      "title": "Auth Header",
+      "description": "Optional HTTP header name. Defaults to Authorization.",
+      "required": false,
+      "default": "Authorization"
+    },
+    {
+      "type": "text",
+      "name": "auth_scheme",
+      "title": "Auth Scheme",
+      "description": "Optional prefix such as Bearer. Defaults to Bearer.",
+      "required": false,
+      "default": "Bearer"
+    },
+    {
+      "type": "boolean",
+      "name": "auth_raw",
+      "title": "Raw Credential Header",
+      "description": "When true, sends the environment credential as the complete header value with no Bearer or other scheme prefix.",
+      "required": false,
+      "default": false
+    },
+    {
+      "type": "text",
+      "name": "marker",
+      "title": "Known Marker",
+      "description": "Optional non-secret marker expected in the authorized Brain response. The response body is never returned.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "expect_boundary",
+      "title": "Expected Brain Boundary",
+      "description": "Optional expected boundary classification, such as protected-and-accessible or exposed-without-auth.",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "name": "expect_marker",
+      "title": "Expected Marker Result",
+      "description": "Optional assertion for whether the authenticated Brain response should contain the supplied marker.",
+      "required": false
+    },
+    {
+      "type": "number",
+      "name": "timeout_ms",
+      "title": "Timeout (ms)",
+      "description": "Optional request timeout from 250 to 15000 milliseconds.",
+      "required": false,
+      "default": 3000
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "check",
+    "target_type": "brain",
+    "data_types": [
+      "brain",
+      "network",
+      "authentication",
+      "boundary"
+    ],
+    "output": "report",
+    "authority": "read",
+    "check": "brain-access"
+  }
+}

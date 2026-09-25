@@ -1,0 +1,5 @@
+{
+  "version":"tool-contract/v1",
+  "source":{"kind":"template","description":"Creates settings.json, contract.json and README.txt using its template and shared identity/artifact helpers. Existing files are never replaced."},
+  "result":{"status":"created","signal":"generated item settings including automatic id and boolean transmitting","folder":"absolute output folder","file":"absolute settings.json path","verification":"shared artifact-writer receipt"}
+}

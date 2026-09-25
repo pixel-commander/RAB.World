@@ -1,0 +1,27 @@
+{
+  "id": 1790000001108,
+  "name": "prototype-pollution",
+  "title": "Audit Unsafe Object Merging Protocols",
+  "description": "Finds recursive dynamic object assignment patterns without an obvious prototype-key guard.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "security",
+    "data_types": [
+      "security",
+      "object"
+    ],
+    "output": "report",
+    "authority": "read",
+    "target": "prototype-pollution"
+  }
+}

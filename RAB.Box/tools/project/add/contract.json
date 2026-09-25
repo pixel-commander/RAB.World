@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "file-operation",
+    "description": "Updates a named path in saved project settings through the memory owner, then registers it with the shared project listener.",
+    "reviewed_at": "2026-09-21"
+  }
+}

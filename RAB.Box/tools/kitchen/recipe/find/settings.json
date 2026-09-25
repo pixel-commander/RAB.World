@@ -1,0 +1,25 @@
+{
+  "id": 1810000000013,
+  "name": "find",
+  "title": "Find Recipe",
+  "description": "Finds recipe candidates in the starter Kitchen recipe index without inventing unauthored recipe content.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "query",
+      "title": "Query",
+      "description": "query",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "read",
+    "data_types": [
+      "recipes"
+    ],
+    "returns": [
+      "recipes"
+    ]
+  }
+}

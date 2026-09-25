@@ -1,0 +1,10 @@
+{
+  "id": "__WORLD_ID__",
+  "name": "__WORLD_NAME__",
+  "title": "__WORLD_NAME__",
+  "description": "",
+  "date_added": null,
+  "settings": [],
+  "paths": [],
+  "meta": {"kind":"world"}
+}

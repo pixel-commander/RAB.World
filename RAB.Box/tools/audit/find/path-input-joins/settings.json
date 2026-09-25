@@ -1,0 +1,30 @@
+{
+  "id": 1800000000018,
+  "name": "path-input-joins",
+  "title": "Find Input-Derived Path Joins",
+  "description": "Finds path.join/path.resolve calls that reference common request/upload-controlled values on the same line.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "path-input-joins",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "path\\.(?:join|resolve)\\s*\\([^\\n]*(?:file\\.name|originalname|req\\.|body\\.|params\\.|query\\.)",
+      "scope": "code",
+      "kind": "input-path-join-candidate",
+      "heuristic": true,
+      "flags": "i"
+    }
+  }
+}

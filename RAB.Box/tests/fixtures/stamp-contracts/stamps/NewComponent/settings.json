@@ -1,0 +1,41 @@
+{
+  "id": 1789380000010,
+  "name": "new-component",
+  "title": "Create a top-level component",
+  "description": "create a new component in the current project and return the component",
+  "date_added": 1789380000000,
+  "data_types": ["component", "component-name", "project-relative-path"],
+  "options": {
+    "name": {
+      "required": true,
+      "type": "text",
+      "role": "artifact-name",
+      "validate": "identifier",
+      "question": "What is the component name?",
+      "language": {"prefixes": ["named", "called", "name"]}
+    },
+    "location": {
+      "required": true,
+      "type": "text",
+      "role": "destination",
+      "validate": "relative-directory",
+      "question": "What is the components path for this project?",
+      "language": {"prefixes": ["in", "under", "at", "location"]}
+    },
+    "class": {
+      "required": false,
+      "type": "text",
+      "role": "class-name",
+      "validate": "css-class",
+      "language": {"prefixes": ["with class", "class"]}
+    },
+    "save_as_text": {
+      "required": false,
+      "type": "boolean",
+      "default": false,
+      "role": "test-output-mode",
+      "description": "Write the generated component as .txt instead of .tsx for parser/nesting tests.",
+      "language": {"true": ["save as text", "as text", "text file"], "false": ["save as tsx", "as tsx"]}
+    }
+  }
+}

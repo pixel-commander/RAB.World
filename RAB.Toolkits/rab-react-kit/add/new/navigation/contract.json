@@ -1,0 +1,47 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Uses the component writer with tmpl.tsx, serializing validated navigation rows and label into its placeholders. The component structure is in the template.",
+    "reviewed_at": "2026-09-20"
+  },
+  "result": {
+    "status": "created",
+    "type": "navigation",
+    "name": "component name",
+    "path": "absolute source file",
+    "file": "absolute source file",
+    "folder": "absolute component folder",
+    "parent_path": "absolute containing folder",
+    "verification": "shared artifact-writer receipt",
+    "dependencies": "optional child tool receipts when missing atom dependencies were created",
+    "rows": [
+      {
+        "id": "unique string or number",
+        "name": "visible item label",
+        "path": "validated destination"
+      }
+    ],
+    "provided": {
+      "seats": {
+        "component": "navigation component name",
+        "file": "absolute source file"
+      }
+    },
+    "id": "positive numeric ID from the shared owner",
+    "title": "generated React navigation component title",
+    "description": "generated React navigation component description",
+    "settings": {
+      "id": "same ID as result.id",
+      "name": "generated item name",
+      "title": "generated title",
+      "description": "generated description",
+      "settings": [],
+      "meta": {
+        "kind": "component"
+      },
+      "indexed": "boolean, default true",
+      "type": "component"
+    }
+  }
+}

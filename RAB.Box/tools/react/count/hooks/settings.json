@@ -1,0 +1,10 @@
+{
+  "id": 1790000000812,
+  "name": "hooks",
+  "title": "Count Hooks",
+  "description": "Counts all React hook calls in the loaded project or supplied folder.",
+  "settings": [
+    {"type":"folder","name":"folder","title":"Folder","description":"Optional folder to scan. Uses the loaded project root when omitted.","required":false}
+  ],
+  "meta": {"domain":"react","operation":"count","target_type":"hook","data_types":["hook","file","count"],"output":"count","authority":"read"}
+}

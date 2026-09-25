@@ -1,0 +1,25 @@
+{
+  "id": 1810000000010,
+  "name": "add",
+  "title": "Add Kitchen Inventory",
+  "description": "Adds human-declared available ingredients to Kitchen project inventory.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "items",
+      "title": "Items",
+      "description": "Comma-separated ingredients.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "write",
+    "data_types": [
+      "inventory"
+    ],
+    "returns": [
+      "inventory"
+    ]
+  }
+}

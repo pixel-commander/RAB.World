@@ -1,0 +1,31 @@
+{
+  "id": 1790000000949,
+  "name": "hardcoded-colors",
+  "title": "Find Hardcoded Colors",
+  "description": "Finds hex, rgb(), rgba(), hsl(), and hsla() color literals.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "color-literal",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})\\b|\\b(?:rgb|rgba|hsl|hsla)\\([^)]*\\)",
+      "kind": "hardcoded-color"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Creates one session folder from template, with a read-only external original-source reference and empty rounds structure. Never copies source files."
+  },
+  "result": {
+    "status": "created",
+    "id": "positive numeric identity",
+    "folder": "absolute output directory",
+    "settings": "generated settings",
+    "files": "paths, byte sizes and SHA-256 hashes",
+    "verification": "artifact-plan byte verification",
+    "provided": "downstream folder/settings_file seats"
+  }
+}

@@ -1,0 +1,52 @@
+✔ Audit Stamp uses the project name and keeps numeric identity, sessions, tracking and results together (4001.5731ms)
+✔ valid project names preserve their spelling without normalization or numeric suffixes (3111.8254ms)
+✔ concurrent duplicate names create one project and reject the other without overwriting (2389.8276ms)
+✔ legacy named directories are ignored without continuing, migrating or rewriting them (512.0445ms)
+✔ unsafe project names fail before creating a project directory (3534.562ms)
+✔ base listing returns only names and a missing load returns the same choices, including an empty home (3864.0884ms)
+✔ public folder tools persist small references, direct counts and bounded HTTP pages (12816.3996ms)
+✔ development projects save memory by name and reopen by numeric ID in a fresh owner (2997.9549ms)
+✔ concurrent development stamps cannot write two source projects for the same memory name (1102.0125ms)
+✔ registered numeric project directories and their sessions remain readable without moving (1052.7019ms)
+✔ existing named contents and junctions are refused before source artifacts are written (1310.0897ms)
+✔ named projects cannot reuse an identity or restart allocation after reservation state is lost (918.3378ms)
+✔ selected session scopes Workbench contracts, execution, receipts and paths (11238.5728ms)
+✔ HTML is self-contained; no remote script or stylesheet (3683.5328ms)
+✔ project inspection lists current Tool House stamps, not project legacy declarations (4563.2513ms)
+✔ missing native stamp is unavailable; no old fallback (4263.9235ms)
+✔ project PATHS.json is mandatory (3595.9213ms)
+✔ prepare asks only for missing seats and persists the request (4741.0593ms)
+✔ answer retains ID; shared runner writes verified receipt; repeated execution rejected (5302.1865ms)
+✔ old canonical stamp names do not invoke an implicit legacy fallback (4044.3871ms)
+✔ manual false remains false through shared binding (4039.4064ms)
+✔ invalid answer remains recoverable without losing previous bindings (4069.3122ms)
+✔ stale tab revision cannot answer or execute (4097.0341ms)
+✔ contract edit forces stale-contract; no execution (4230.0725ms)
+✔ manual contract uses native IDs and settings (4987.2934ms)
+✔ interrupted running record stays non-executable (4301.7306ms)
+✔ safety: cross-origin, host mismatch, missing token and shell routes blocked (3379.0429ms)
+✔ symlinked output paths and unsafe run IDs rejected (5234.5972ms)
+✔ unsupported wording and negation do not execute (3278.5998ms)
+✔ resource shelf, exact sense search and original grammar available offline (3189.2008ms)
+✔ review import preserves provenance and never changes active grammar (3302.8919ms)
+✔ malformed language export is rejected, broken local resource reported (3371.4922ms)
+✔ saved run history remains readable after relocation without registering another project (8303.8092ms)
+✔ new Tool API lists the real tools folder and re-phrase runs only its Tool (5202.5046ms)
+✔ owner defaults, metadata variants, and explicit leaf overrides drive previews without executing tools (104.7434ms)
+✔ new tools get derived shortcuts, execute with saved references, and refresh after external moves/removals (661.971ms)
+✔ ambiguous derived shortcuts and stale explicit identities never silently choose a tool (95.2563ms)
+✔ contract references stay bounded, reject cycles, and expose invalid contract diagnostics (46.4356ms)
+✔ service catalog refresh observes changed contracts without loading a project (34.0503ms)
+✔ source report consumes declared classifications and fingerprints their owner (40.0155ms)
+✔ every installed audit capability has a shape; embed stays in sync and parses (12.393ms)
+✔ passive scanner and composite shapes agree with real fixture outputs (4121.9906ms)
+ℹ Compared 130 passive audit capabilities, including composites, with fixture results.
+✔ saved report and separate tracking preview agree with the existing writer (2174.0103ms)
+ℹ tests 43
+ℹ suites 0
+ℹ pass 43
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 102668.129

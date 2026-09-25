@@ -1,0 +1,78 @@
+@layer components {
+  .app-header__model {
+    min-inline-size: 0;
+    max-inline-size: 9rem;
+    padding: var(--space-xs) var(--space-sm);
+    font: var(--type-label);
+  }
+
+  .app-header__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font: var(--type-heading);
+    color: var(--content-strong);
+    white-space: nowrap;
+  }
+
+  .app-header__wordmark {
+    display: inline-flex;
+  }
+
+  .app-header__brand-letter--muted {
+    color: var(--content-muted);
+  }
+
+  .app-header__mark {
+    inline-size: var(--space-xl);
+    block-size: var(--space-xl);
+    border-radius: var(--radius-control);
+    background: var(--accent-default);
+    color: var(--surface-app);
+    display: grid;
+    place-items: center;
+    font: var(--type-label);
+  }
+
+  .app-header__nav {
+    display: flex;
+    gap: var(--space-2xs);
+    min-inline-size: 0;
+    padding: var(--space-2xs);
+    overflow-x: auto;
+  }
+
+  .app-header__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+    min-inline-size: 0;
+    margin-inline-start: auto;
+  }
+
+  .app-header__user {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--content-muted);
+    font: var(--type-label);
+  }
+
+  .app-header__avatar {
+    inline-size: var(--space-2xl);
+    block-size: var(--space-2xl);
+    border-radius: var(--radius-round);
+    background: var(--surface-active);
+    color: var(--content-strong);
+    display: grid;
+    place-items: center;
+    font: var(--type-label);
+  }
+
+  @media (max-width: 64rem) {
+    .app-header__user-name {
+      display: none;
+    }
+  }
+}

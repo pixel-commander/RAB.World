@@ -1,0 +1,12 @@
+{
+  "id": 1800000000043,
+  "name": "generated-files",
+  "title": "Check Generated Files",
+  "description": "Checks an operator-selected generated output directory for allowed file extensions and an optional provenance marker without imposing a fixed generated-folder convention.",
+  "settings": [
+    {"type":"folder","name":"generated_root","title":"Generated Root","description":"Generated output directory, absolute or relative to the loaded project/folder.","required":true},
+    {"type":"text","name":"allowed_extensions","title":"Allowed Extensions","description":"Comma-separated allowed extensions.","required":false,"default":".tsx,.jsx,.ts,.js,.css"},
+    {"type":"text","name":"provenance_marker","title":"Provenance Marker","description":"Optional text marker required in each generated file.","required":false}
+  ],
+  "meta":{"domain":"audit","operation":"check","target_type":"generated-files","output":"compliance-report","authority":"read"}
+}

@@ -1,0 +1,8 @@
+{
+  "name": "grid-dashboard-alt",
+  "kind": "grid-atom",
+  "created": "2026-09-03",
+  "type": "dashboard",
+  "description": "grid-dashboard without the tabs-nav band (that row left empty)",
+  "modified": "2026-09-03"
+}

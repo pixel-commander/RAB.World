@@ -1,0 +1,71 @@
+{
+  "id": 1830000000009,
+  "name": "request",
+  "title": "Create request",
+  "description": "Save a global/shared request or a request for a saved project inside its configured .rab home.",
+  "settings": [
+    {
+      "name": "scope", "type": "options", "title": "Scope", "required": true, "default": "global",
+      "options": [{"name":"global","description":"Global / shared"},{"name":"project","description":"Project"}]
+    },
+    {
+      "name": "project_id", "type": "number", "title": "Project ID", "required": false,
+      "description": "For Project scope only. Uses the selected project when omitted; its saved .rab directory owns the request."
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "title": "Name",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "title": "Title",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "title": "Description",
+      "required": false,
+      "default": ""
+    },
+    {
+      "name": "type",
+      "type": "options",
+      "title": "Type",
+      "required": true,
+      "options": [
+        {
+          "name": "tool",
+          "description": "tool"
+        },
+        {
+          "name": "feature",
+          "description": "feature"
+        },
+        {
+          "name": "ui",
+          "description": "ui"
+        },
+        {
+          "name": "stamp",
+          "description": "stamp"
+        }
+      ]
+    },
+    {
+      "name": "submission_key",
+      "type": "text",
+      "title": "Submission key",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "create",
+    "target_type": "request",
+    "authority": "write"
+  }
+}

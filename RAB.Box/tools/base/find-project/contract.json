@@ -1,0 +1,28 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "Looks up numeric IDs directly in the Box-owned projects manifest, or searches manifest entries by name, title and description. Opens only matching saved project descriptors for current project details."
+  },
+  "result": {
+    "status": "found or not-found",
+    "query": "supplied project search text",
+    "matches": [
+      {
+        "id": "positive numeric project ID",
+        "key": "ID as text",
+        "name": "saved project name",
+        "title": "saved project title",
+        "description": "saved project description",
+        "type": "project type",
+        "root": "absolute source root"
+      }
+    ],
+    "unavailable": [
+      {
+        "key": "manifest ID",
+        "message": "why its saved descriptor could not be read"
+      }
+    ]
+  }
+}

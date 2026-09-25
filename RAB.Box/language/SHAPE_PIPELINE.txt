@@ -1,0 +1,63 @@
+RRAABBIITT LANGUAGE PIPELINE
+============================
+
+SHAPE 0 — RAW INPUT
+Preserve the exact original text.
+
+SHAPE 1 — LEXICAL POSSIBILITIES
+language/type-mapper.json answers only:
+  "What could this word or phrase be?"
+
+It returns candidate lemma/forms/types/senses and reusable phrase candidates.
+It does NOT choose final meaning, semantic seats, Tools or execution.
+Legitimate ambiguity is preserved.
+
+Example:
+  add -> verb -> create | attach | insert | include | increment
+
+SHAPE 2 — GRAMMAR / NARROWING
+Uses order, grammatical position, phrase structure, Bag/context, known entities,
+already-filled seats and hard contradictions to eliminate impossible Shape-1 meanings.
+
+Example:
+  add component               -> create remains plausible
+  add container-main to Header -> attach remains plausible
+  add 5 to count               -> increment remains plausible
+
+SHAPE 3 — CANONICAL MAGIC BOX SEATS
+Normalized request shape, e.g.:
+  domain
+  operation
+  target
+  target_type
+  quantifier
+  predicate
+  relation
+  name
+  value
+  reference
+  scope
+  output
+
+SHAPE 4 — TOOL CANDIDATES
+find-tool searches actual tools/**/settings.json after hard domain/function pruning.
+Tool descriptions compile through the same language pipeline.
+
+SHAPE 5 — TOOL MATCH / RANK
+Hard contradictions reject candidates. Compatible seat matches feed ranking.
+Ranking chooses only among candidates that survive deterministic constraints.
+
+SHAPE 6 — TOOL SETTINGS
+Required Tool settings are filled from current Turn, open Step, parent/context chain,
+Bag, project/.rab memory, prior receipts and legal defaults before asking the operator.
+
+Then: visible plan -> confirm or YOLO -> execute -> receipt -> update Bag/context.
+
+GEMINI / CHEAP-MODEL ROLE
+-------------------------
+Cheap models may propose Shape-1 vocabulary only. Proposed material is quarantined,
+reviewed and promoted; it never becomes semantic or execution authority by itself.
+
+Core law:
+  SHAPE 1 PRESERVES POSSIBILITIES.
+  SHAPE 2 RESOLVES THEM.

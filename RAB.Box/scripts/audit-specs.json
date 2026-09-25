@@ -1,0 +1,1719 @@
+[
+  {
+    "path": "audit/find/todos",
+    "address": "find-todos",
+    "title": "Find TODO Markers",
+    "description": "Finds TODO markers in supported source and style files.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "todo",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bTODO\\b",
+        "kind": "todo"
+      }
+    }
+  },
+  {
+    "path": "audit/find/fixmes",
+    "address": "find-fixmes",
+    "title": "Find FIXME Markers",
+    "description": "Finds FIXME markers in supported source and style files.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "fixme",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bFIXME\\b",
+        "kind": "fixme"
+      }
+    }
+  },
+  {
+    "path": "audit/find/console-calls",
+    "address": "find-console-calls",
+    "title": "Find Console Calls",
+    "description": "Finds console.log/error/warn/info/debug/trace calls.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "console-call",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bconsole\\.(?:log|error|warn|info|debug|trace)\\b",
+        "kind": "console-call",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/debugger-statements",
+    "address": "find-debugger-statements",
+    "title": "Find Debugger Statements",
+    "description": "Finds debugger statements in code files.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "debugger-statement",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bdebugger\\b",
+        "kind": "debugger",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/ts-ignore",
+    "address": "find-ts-ignore",
+    "title": "Find TS Ignore Directives",
+    "description": "Finds @ts-ignore directives.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "ts-ignore",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "@ts-ignore\\b",
+        "kind": "ts-ignore",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/ts-nocheck",
+    "address": "find-ts-nocheck",
+    "title": "Find TS Nocheck Directives",
+    "description": "Finds @ts-nocheck directives.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "ts-nocheck",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "@ts-nocheck\\b",
+        "kind": "ts-nocheck",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/eslint-disable",
+    "address": "find-eslint-disable",
+    "title": "Find ESLint Disable Directives",
+    "description": "Finds eslint-disable, eslint-disable-line, and eslint-disable-next-line directives.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "eslint-disable",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "eslint-disable(?:-next-line|-line)?\\b",
+        "kind": "eslint-disable",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/dangerously-set-inner-html",
+    "address": "find-dangerously-set-inner-html",
+    "title": "Find dangerouslySetInnerHTML",
+    "description": "Finds React dangerouslySetInnerHTML usages without claiming exploitability.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "dangerous-html-usage",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bdangerouslySetInnerHTML\\b",
+        "kind": "dangerously-set-inner-html",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/inline-styles",
+    "address": "find-inline-styles",
+    "title": "Find Inline React Styles",
+    "description": "Finds obvious literal inline style object props in JSX/TSX.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "inline-style",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bstyle\\s*=\\s*\\{\\{",
+        "kind": "inline-style",
+        "scope": "code",
+        "heuristic": true
+      }
+    }
+  },
+  {
+    "path": "audit/find/css-important",
+    "address": "find-css-important",
+    "title": "Find CSS !important",
+    "description": "Finds !important declarations in style files.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "css-important",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "!important\\b",
+        "kind": "css-important",
+        "scope": "style"
+      }
+    }
+  },
+  {
+    "path": "audit/find/z-index",
+    "address": "find-z-index",
+    "title": "Find z-index Declarations",
+    "description": "Finds z-index declarations in style files.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "z-index",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bz-index\\s*:",
+        "kind": "z-index",
+        "scope": "style"
+      }
+    }
+  },
+  {
+    "path": "audit/find/hardcoded-urls",
+    "address": "find-hardcoded-urls",
+    "title": "Find Hardcoded URLs",
+    "description": "Finds literal HTTP/HTTPS URLs in supported files.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "url",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "https?:\\/\\/[^\\s\"\\'`<>]+",
+        "kind": "hardcoded-url"
+      }
+    }
+  },
+  {
+    "path": "audit/find/environment-usage",
+    "address": "find-environment-usage",
+    "title": "Find Environment Variable Usage",
+    "description": "Finds process.env references in code.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "environment-variable",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bprocess\\.env(?:\\.[A-Za-z_][A-Za-z0-9_]*|\\[[^\\]]+\\])",
+        "kind": "environment-usage",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/local-storage",
+    "address": "find-local-storage",
+    "title": "Find localStorage Usage",
+    "description": "Finds localStorage API references.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "local-storage",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\blocalStorage\\b",
+        "kind": "local-storage",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/session-storage",
+    "address": "find-session-storage",
+    "title": "Find sessionStorage Usage",
+    "description": "Finds sessionStorage API references.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "session-storage",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bsessionStorage\\b",
+        "kind": "session-storage",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/fetch-calls",
+    "address": "find-fetch-calls",
+    "title": "Find Fetch Calls",
+    "description": "Finds native/global fetch call sites.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "fetch-call",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bfetch\\s*\\(",
+        "kind": "fetch-call",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/hardcoded-colors",
+    "address": "find-hardcoded-colors",
+    "title": "Find Hardcoded Colors",
+    "description": "Finds hex, rgb(), rgba(), hsl(), and hsla() color literals.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "color-literal",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})\\b|\\b(?:rgb|rgba|hsl|hsla)\\([^)]*\\)",
+        "kind": "hardcoded-color"
+      }
+    }
+  },
+  {
+    "path": "audit/find/event-listeners",
+    "address": "find-event-listeners",
+    "title": "Find Event Listener Registrations",
+    "description": "Finds addEventListener call sites.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "event-listener",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\baddEventListener\\s*\\(",
+        "kind": "event-listener",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/set-timeout",
+    "address": "find-set-timeout",
+    "title": "Find setTimeout Calls",
+    "description": "Finds setTimeout call sites.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "timer",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bsetTimeout\\s*\\(",
+        "kind": "set-timeout",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/set-interval",
+    "address": "find-set-interval",
+    "title": "Find setInterval Calls",
+    "description": "Finds setInterval call sites.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "interval",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bsetInterval\\s*\\(",
+        "kind": "set-interval",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/math-random",
+    "address": "find-math-random",
+    "title": "Find Math.random Usage",
+    "description": "Finds Math.random call sites without assuming the caller required cryptographic randomness.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "random-call",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bMath\\.random\\s*\\(",
+        "kind": "math-random",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/date-now",
+    "address": "find-date-now",
+    "title": "Find Date.now Usage",
+    "description": "Finds Date.now call sites.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "time-read",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bDate\\.now\\s*\\(",
+        "kind": "date-now",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/var-declarations",
+    "address": "find-var-declarations",
+    "title": "Find var Declarations",
+    "description": "Finds legacy var declarations in code.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "var-declaration",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "\\bvar\\s+[A-Za-z_$]",
+        "kind": "var-declaration",
+        "scope": "code"
+      }
+    }
+  },
+  {
+    "path": "audit/find/commented-code",
+    "address": "find-commented-code",
+    "title": "Find Commented-Out Code Candidates",
+    "description": "Heuristically finds source-looking statements behind // comments.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "commented-code",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "line",
+      "config": {
+        "pattern": "//\\s*(?:const|let|var|function|if|for|while|return|import|export)\\b",
+        "kind": "commented-code-candidate",
+        "scope": "code",
+        "heuristic": true
+      }
+    }
+  },
+  {
+    "path": "audit/find/empty-catch",
+    "address": "find-empty-catch",
+    "title": "Find Empty Catch Blocks",
+    "description": "Finds syntactically empty catch blocks.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "catch-block",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "empty-catch"
+      }
+    }
+  },
+  {
+    "path": "audit/find/swallowed-errors",
+    "address": "find-swallowed-errors",
+    "title": "Find Swallowed Error Candidates",
+    "description": "Flags catch bindings that are not referenced inside the captured block. This is a heuristic candidate scan.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "catch-block",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "swallowed-errors"
+      }
+    }
+  },
+  {
+    "path": "audit/find/eval-usage",
+    "address": "find-eval-usage",
+    "title": "Find eval Usage",
+    "description": "Finds eval call sites.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "eval-call",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "eval"
+      }
+    }
+  },
+  {
+    "path": "audit/find/typescript-any",
+    "address": "find-typescript-any",
+    "title": "Find TypeScript any Usage",
+    "description": "Finds common explicit any type escapes.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "typescript-any",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "ts-any"
+      }
+    }
+  },
+  {
+    "path": "audit/find/process-exit",
+    "address": "find-process-exit",
+    "title": "Find process.exit Calls",
+    "description": "Finds process.exit call sites.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "process-exit",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "process-exit"
+      }
+    }
+  },
+  {
+    "path": "audit/find/dynamic-import",
+    "address": "find-dynamic-import",
+    "title": "Find Dynamic Import/Require Candidates",
+    "description": "Flags require()/import() calls whose first argument is not an obvious string literal.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "dynamic-import",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "dynamic-import"
+      }
+    }
+  },
+  {
+    "path": "audit/find/inner-html",
+    "address": "find-inner-html",
+    "title": "Find innerHTML Assignments",
+    "description": "Finds direct innerHTML/outerHTML assignments.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "html-assignment",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "inner-html"
+      }
+    }
+  },
+  {
+    "path": "audit/find/weak-crypto",
+    "address": "find-weak-crypto",
+    "title": "Find Weak Crypto Candidates",
+    "description": "Finds explicit md5/sha1 createHash and legacy createCipher usages.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "crypto-call",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "weak-crypto"
+      }
+    }
+  },
+  {
+    "path": "audit/find/cors-wildcard",
+    "address": "find-cors-wildcard",
+    "title": "Find CORS Wildcard Candidates",
+    "description": "Finds obvious Access-Control-Allow-Origin wildcard forms.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "cors-policy",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "cors-wildcard"
+      }
+    }
+  },
+  {
+    "path": "audit/find/floating-promises",
+    "address": "find-floating-promises",
+    "title": "Find Floating Promise Candidates",
+    "description": "Heuristically flags obvious fetch calls with no await/return/void/then/catch on the same line.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "promise-call",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "floating-promises"
+      }
+    }
+  },
+  {
+    "path": "audit/find/multiple-defaults",
+    "address": "find-multiple-defaults",
+    "title": "Find Multiple Default Exports",
+    "description": "Finds files containing more than one export default occurrence.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "default-export",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "multiple-defaults"
+      }
+    }
+  },
+  {
+    "path": "audit/find/shadowed-globals",
+    "address": "find-shadowed-globals",
+    "title": "Find Shadowed Global Candidates",
+    "description": "Finds local declarations using common platform-global names.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "global-shadow",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "shadowed-globals"
+      }
+    }
+  },
+  {
+    "path": "audit/find/missing-returns",
+    "address": "find-missing-returns",
+    "title": "Find Missing Return Callback Candidates",
+    "description": "Heuristically flags block-bodied map/filter/reduce callbacks with no return token.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "callback",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "missing-returns"
+      }
+    }
+  },
+  {
+    "path": "audit/find/loose-equality",
+    "address": "find-loose-equality",
+    "title": "Find Loose Equality Operators",
+    "description": "Finds == and != operators while excluding === and !==.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "equality-operator",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "loose-equality"
+      }
+    }
+  },
+  {
+    "path": "audit/find/magic-numbers",
+    "address": "find-magic-numbers",
+    "title": "Find Magic Number Candidates",
+    "description": "Heuristically finds numeric literals of two or more digits outside simple constant declarations.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "number-literal",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "syntax",
+      "config": {
+        "type": "magic-numbers"
+      }
+    }
+  },
+  {
+    "path": "audit/find/large-files",
+    "address": "find-large-files",
+    "title": "Find Large Files",
+    "description": "Finds code files above the configured line threshold.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "large-file",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "metric",
+      "config": {
+        "metric": "large-files",
+        "threshold": 500
+      }
+    }
+  },
+  {
+    "path": "audit/find/long-lines",
+    "address": "find-long-lines",
+    "title": "Find Long Lines",
+    "description": "Finds code lines above the configured character threshold.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "long-line",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "metric",
+      "config": {
+        "metric": "long-lines",
+        "threshold": 120
+      }
+    }
+  },
+  {
+    "path": "audit/find/deep-nesting",
+    "address": "find-deep-nesting",
+    "title": "Find Deep Nesting Candidates",
+    "description": "Heuristically finds control-flow lines indented at least four 4-space levels.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "deep-nesting",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "metric",
+      "config": {
+        "metric": "deep-nesting",
+        "threshold": 16
+      }
+    }
+  },
+  {
+    "path": "audit/find/conditional-operator-density",
+    "address": "find-conditional-operator-density",
+    "title": "Find Dense Conditional Lines",
+    "description": "Heuristically flags lines containing at least three &&, ||, or ternary operators.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "conditional-density",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "metric",
+      "config": {
+        "metric": "conditional-density",
+        "threshold": 3
+      }
+    }
+  },
+  {
+    "path": "audit/find/huge-functions",
+    "address": "find-huge-functions",
+    "title": "Find Huge Function Candidates",
+    "description": "Heuristically finds brace-balanced function/arrow blocks longer than 100 lines.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "function",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "metric",
+      "config": {
+        "metric": "huge-functions",
+        "threshold": 100
+      }
+    }
+  },
+  {
+    "path": "audit/find/barrel-exports",
+    "address": "find-barrel-exports",
+    "title": "Find Barrel Export Files",
+    "description": "Finds index.* files that re-export symbols from other modules.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "barrel-export",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "structure",
+      "config": {
+        "rule": "barrel-export"
+      }
+    }
+  },
+  {
+    "path": "audit/find/theme-tokens",
+    "address": "find-theme-tokens",
+    "title": "Find Theme Tokens",
+    "description": "Finds CSS custom-property declarations/usages plus theme.* and tokens.* property references with file/line evidence.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "theme-token",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "theme",
+      "config": {
+        "type": "theme-tokens"
+      }
+    }
+  },
+  {
+    "path": "audit/find/theme-variables",
+    "address": "find-theme-variables",
+    "title": "Find Theme Variables",
+    "description": "Finds CSS custom-property declarations and var(--token) usages with file/line evidence.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "theme-variable",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "theme",
+      "config": {
+        "type": "theme-variables"
+      }
+    }
+  },
+  {
+    "path": "audit/find/class-names",
+    "address": "find-class-names",
+    "title": "Find className/Class Usage",
+    "description": "Finds literal className/class usages in TS/TSX/JS/JSX/MJS/CJS/HTML and marks dynamic className expressions.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "class-name",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "theme",
+      "config": {
+        "type": "class-names"
+      }
+    }
+  },
+  {
+    "path": "audit/find/class-definitions",
+    "address": "find-class-definitions",
+    "title": "Find CSS Class Definitions",
+    "description": "Finds CSS-family class selector candidates with file/line evidence.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "class-definition",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "theme",
+      "config": {
+        "type": "class-definitions"
+      }
+    }
+  },
+  {
+    "path": "audit/find/component-definitions",
+    "address": "find-component-definitions",
+    "title": "Find Component Definitions",
+    "description": "Finds common PascalCase React component declaration forms with file/line evidence.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "component",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "theme",
+      "config": {
+        "type": "component-definitions"
+      }
+    }
+  },
+  {
+    "path": "audit/find/component-usage",
+    "address": "find-component-usage",
+    "title": "Find Component Usage",
+    "description": "Finds PascalCase JSX component instantiations and aggregates usage counts.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "find",
+      "target_type": "component-usage",
+      "data_types": [
+        "file",
+        "path"
+      ],
+      "output": "report",
+      "authority": "read",
+      "engine": "theme",
+      "config": {
+        "type": "component-usage"
+      }
+    }
+  },
+  {
+    "path": "audit/count/lines",
+    "address": "count-lines",
+    "title": "Count Source Lines",
+    "description": "Counts lines across supported code files and returns per-file counts.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "count",
+      "target_type": "line",
+      "data_types": [
+        "file",
+        "count"
+      ],
+      "output": "count",
+      "authority": "read"
+    }
+  },
+  {
+    "path": "audit/count/class-usage",
+    "address": "count-class-usage",
+    "title": "Count Class Usage",
+    "description": "Aggregates literal className/class usage counts by class name.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "count",
+      "target_type": "class-name",
+      "data_types": [
+        "file",
+        "count"
+      ],
+      "output": "count",
+      "authority": "read",
+      "aggregate_from": "find-class-names"
+    }
+  },
+  {
+    "path": "audit/count/component-usage",
+    "address": "count-component-usage",
+    "title": "Count Component Usage",
+    "description": "Aggregates JSX component usage counts by component name.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "count",
+      "target_type": "component-usage",
+      "data_types": [
+        "file",
+        "count"
+      ],
+      "output": "count",
+      "authority": "read",
+      "aggregate_from": "find-component-usage"
+    }
+  },
+  {
+    "path": "audit/count/theme-token-usage",
+    "address": "count-theme-token-usage",
+    "title": "Count Theme Token Usage",
+    "description": "Aggregates theme token/custom-property occurrences by token name.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "count",
+      "target_type": "theme-token",
+      "data_types": [
+        "file",
+        "count"
+      ],
+      "output": "count",
+      "authority": "read",
+      "aggregate_from": "find-theme-tokens"
+    }
+  },
+  {
+    "path": "audit/inspect/theme",
+    "address": "inspect-theme",
+    "title": "Inspect Theme Usage",
+    "description": "Builds a cross-reference report of theme tokens, CSS variables, class names, CSS class definitions, component definitions, component usage, and aggregate counts by chaining existing audit Tools.",
+    "settings": [
+      {
+        "type": "folder",
+        "name": "folder",
+        "title": "Folder",
+        "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "inspect",
+      "target_type": "theme",
+      "data_types": [
+        "theme-token",
+        "class-name",
+        "component",
+        "file",
+        "count"
+      ],
+      "output": "report",
+      "authority": "read"
+    }
+  }
+]

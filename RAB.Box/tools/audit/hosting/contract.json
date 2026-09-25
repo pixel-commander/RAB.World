@@ -1,0 +1,157 @@
+{
+  "version": "tool-contract/v1",
+  "select": "meta.check",
+  "variants": {
+    "csp-headers": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number | null",
+            "kind": "string",
+            "text": "string",
+            "check": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "mechanism?": "string",
+            "classification": "string"
+          }
+        ]
+      }
+    },
+    "debug-code": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number | null",
+            "kind": "string",
+            "text": "string",
+            "check": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "indicator": "string",
+            "classification": "string"
+          }
+        ]
+      }
+    },
+    "sourcemaps": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number | null",
+            "kind": "string",
+            "text": "string",
+            "check": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "asset": "string",
+            "sources_count": "number | null",
+            "embedded_sources": "boolean",
+            "classification": "string"
+          }
+        ]
+      }
+    },
+    "lockfile": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number | null",
+            "kind": "string",
+            "text": "string",
+            "check": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "package?": "string",
+            "declared?": "string",
+            "locked?": "string | null",
+            "manager?": "string"
+          }
+        ],
+        "verification": "string"
+      }
+    },
+    "manifests": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number | null",
+            "kind": "string",
+            "text": "string",
+            "check": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "classification": "string"
+          }
+        ]
+      }
+    },
+    "minification": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number | null",
+            "kind": "string",
+            "text": "string",
+            "check": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "classification": "string",
+            "bytes": "number",
+            "lines": "number",
+            "average_line_length": "number",
+            "whitespace_ratio": "number"
+          }
+        ]
+      }
+    }
+  }
+}

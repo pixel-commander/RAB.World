@@ -1,0 +1,26 @@
+MOVING TO YOUR SERVER
+====================
+
+Copy the entire package root, not just the HTML file. Paths in HOST.json and the
+mock project's PATHS.json are relative to their owner roots. Start server.mjs from
+any working directory; it anchors itself beside its own source.
+
+Edit HOST.json.project to point at a different sibling project inside this bundle.
+That project MUST contain PATHS.json using this adapter's contract. Restart after
+changing bootstrap UI/library locations. Each action reads project discovery anew.
+Do not pass arbitrary browser-supplied absolute filesystem paths to the server.
+
+This version binds only 127.0.0.1 and accepts the exact Host/Origin it prints.
+For a remote development host, one option is an SSH tunnel:
+ssh -L 4318:127.0.0.1:4318 your-user@your-server
+Run node server.mjs on the remote host, then browse http://127.0.0.1:4318 locally.
+Choose matching ports if changing the default. SSH access itself is your existing
+server administration responsibility. No deployment was performed for you.
+
+Do NOT just change the bind address to 0.0.0.0 and expose it publicly. There is no
+login, multi-user authorization, TLS termination, audit administrator, or isolation
+for hostile project scripts. Those require a separate deployment design.
+
+Stopping a server during an execution may leave partial files. The run will show
+interrupted or failed. Nothing is automatically retried or removed. Inspect before
+preparing a new operation. File verification is narrower than build correctness.

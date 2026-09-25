@@ -1,0 +1,1703 @@
+{
+  "version": "stamp-source-audit/v1",
+  "audited_at": "2026-09-20T14:50:23.338Z",
+  "root": "C:/Users/pixelcommander/Desktop/RRAABBIITT_v0.9.3",
+  "scope": "Shared catalog, configured default mock-project legacy stamps, and packaged engine examples. kitchen excluded. No stamp execution, no .rab browsing, no app changes.",
+  "counts": {
+    "catalog_entries": 226,
+    "write_capabilities": 57,
+    "template_backed": 18,
+    "internal_code_writers": 29,
+    "other_writers": 10,
+    "legacy_template_backed": 1,
+    "legacy_internal": 9,
+    "example_instances": 8
+  },
+  "template_backed": [
+    {
+      "key": "audit/stamp-new-project",
+      "id": 1790000000302,
+      "catalog_kind": "stamp",
+      "script": "tools/audit/stamp-new-project/stamp-new-project.mjs",
+      "script_line": 7,
+      "inputs": [
+        "name",
+        "folder"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/audit/stamp-new-project/template",
+      "mode": "Project template tree",
+      "note": "Copies settings, PATHS, and README files through runProjectStamp, substitutes project/input values, and initializes project memory. Creates audit storage scaffolding rather than application source.",
+      "templates": [
+        {
+          "path": "PATHS.json",
+          "bytes": 222,
+          "placeholders": [
+            "__PROJECT_ID__",
+            "__PROJECT_NAME__"
+          ]
+        },
+        {
+          "path": "README.txt",
+          "bytes": 286,
+          "placeholders": [
+            "__PROJECT_NAME__",
+            "__AUDIT_FOLDER__"
+          ]
+        },
+        {
+          "path": "audit-results/README.txt",
+          "bytes": 203,
+          "placeholders": []
+        },
+        {
+          "path": "settings.json",
+          "bytes": 161,
+          "placeholders": [
+            "__PROJECT_ID__",
+            "__PROJECT_NAME__",
+            "__AUDIT_FOLDER__"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "base/form/stamp-validator",
+      "id": 1790000001520,
+      "catalog_kind": "stamp",
+      "script": "tools/base/form/stamp-validator/stamp-validator.mjs",
+      "script_line": 16,
+      "inputs": [
+        "name",
+        "location",
+        "fields"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/base/form/stamp-validator/template",
+      "mode": "Hybrid: wrapper + compiler",
+      "note": "Reads template/tmpl.mjs. compile() builds field extraction, coercion, and validation statements and inserts them into the wrapper. Outputs <name>.mjs.",
+      "templates": [
+        {
+          "path": "tmpl.mjs",
+          "bytes": 149,
+          "placeholders": [
+            "__FUNCTION_NAME__",
+            "__FIELD_BLOCK__",
+            "__RETURN_FIELDS__"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "base/stamp-new-key-phrase",
+      "id": 1790000000207,
+      "catalog_kind": "stamp",
+      "script": "tools/base/stamp-new-key-phrase/stamp-new-key-phrase.mjs",
+      "script_line": 5,
+      "inputs": [
+        "phrase",
+        "types",
+        "senses"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/base/stamp-new-key-phrase/template",
+      "mode": "JSON template",
+      "note": "Loads phrase.json and fills a language record. Writes JSON data rather than application code.",
+      "templates": [
+        {
+          "path": "phrase.json",
+          "bytes": 59,
+          "placeholders": []
+        }
+      ]
+    },
+    {
+      "key": "base/stamp-new-project",
+      "id": 1790000000205,
+      "catalog_kind": "stamp",
+      "script": "tools/base/stamp-new-project/stamp-new-project.mjs",
+      "script_line": 3,
+      "inputs": [
+        "type",
+        "name",
+        "folder"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/base/stamp-new-project/template",
+      "mode": "Conditional template / delegator",
+      "note": "Uses its own project tree for type=magic-box; other types delegate to <type>/stamp-new-project. The local template does not represent every branch.",
+      "templates": [
+        {
+          "path": "PATHS.json",
+          "bytes": 219,
+          "placeholders": [
+            "__PROJECT_ID__",
+            "__PROJECT_NAME__"
+          ]
+        },
+        {
+          "path": "README.txt",
+          "bytes": 271,
+          "placeholders": [
+            "__PROJECT_NAME__"
+          ]
+        },
+        {
+          "path": "audit-results/README.txt",
+          "bytes": 75,
+          "placeholders": []
+        },
+        {
+          "path": "output/README.txt",
+          "bytes": 69,
+          "placeholders": []
+        },
+        {
+          "path": "settings.json",
+          "bytes": 161,
+          "placeholders": [
+            "__PROJECT_ID__",
+            "__PROJECT_NAME__"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "base/stamp-new-stamp",
+      "id": 1790000000103,
+      "catalog_kind": "stamp",
+      "script": "tools/base/stamp-new-stamp/stamp-new-stamp.mjs",
+      "script_line": 7,
+      "inputs": [
+        "type",
+        "name",
+        "title",
+        "description",
+        "settings",
+        "meta"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/base/stamp-new-stamp/template",
+      "mode": "Stamp scaffold mold",
+      "note": "Copies a tool skeleton and nested template/ folder, expands tmpl.mjs, and fills settings.json. The generated executor initially returns template-not-implemented.",
+      "templates": [
+        {
+          "path": "settings.json",
+          "bytes": 146,
+          "placeholders": [
+            "__STAMP_NAME__",
+            "__STAMP_TITLE__",
+            "__STAMP_DESCRIPTION__"
+          ]
+        },
+        {
+          "path": "template/README.txt",
+          "bytes": 106,
+          "placeholders": []
+        },
+        {
+          "path": "tmpl.mjs",
+          "bytes": 166,
+          "placeholders": [
+            "__STAMP_NAME__"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "base/stamp-new-tool",
+      "id": 1790000000206,
+      "catalog_kind": "stamp",
+      "script": "tools/base/stamp-new-tool/stamp-new-tool.mjs",
+      "script_line": 15,
+      "inputs": [
+        "path",
+        "type",
+        "name",
+        "address",
+        "inherit_executor",
+        "title",
+        "description",
+        "settings",
+        "meta"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/base/stamp-new-tool/template",
+      "mode": "Tool scaffold mold",
+      "note": "Copies a tool skeleton and fills settings.json; expands tmpl.mjs unless inherit_executor=true removes it and uses a parent executor. The new local executor is initially a placeholder.",
+      "templates": [
+        {
+          "path": "settings.json",
+          "bytes": 118,
+          "placeholders": [
+            "__TOOL_NAME__",
+            "__TOOL_TITLE__",
+            "__TOOL_DESCRIPTION__"
+          ]
+        },
+        {
+          "path": "tmpl.mjs",
+          "bytes": 119,
+          "placeholders": [
+            "__TOOL_NAME__"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "css/grid/stamp-install",
+      "id": 1790000000931,
+      "catalog_kind": "stamp",
+      "script": "tools/css/grid/stamp-install/stamp-install.mjs",
+      "script_line": 4,
+      "inputs": [
+        "name",
+        "css_path"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/css/grid/stamp-install/template",
+      "mode": "Static source file",
+      "note": "Copies template/grid.css to the selected CSS directory without overwriting an existing grid.css.",
+      "templates": [
+        {
+          "path": "grid.css",
+          "bytes": 4983,
+          "placeholders": []
+        }
+      ]
+    },
+    {
+      "key": "css/stamp-new-atom",
+      "id": 1790000000501,
+      "catalog_kind": "stamp",
+      "script": "tools/css/stamp-new-atom/stamp-new-atom.mjs",
+      "script_line": 3,
+      "inputs": [
+        "name",
+        "location",
+        "styles"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/css/stamp-new-atom/template",
+      "mode": "CSS template",
+      "note": "Fills tmpl.css with an atom name and caller-supplied declarations; writes <name>.css.",
+      "templates": [
+        {
+          "path": "tmpl.css",
+          "bytes": 35,
+          "placeholders": [
+            "__ATOM_NAME__",
+            "__ATOM_STYLES__"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "html/add/grid/stamp-new",
+      "id": 1790000000930,
+      "catalog_kind": "stamp",
+      "script": "tools/html/add/grid/stamp-new/stamp-new.mjs",
+      "script_line": 10,
+      "inputs": [
+        "name",
+        "location",
+        "layout",
+        "gap"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/html/add/grid/stamp-new/template",
+      "mode": "Hybrid: wrapper + generated markup",
+      "note": "Reads tmpl.html and the parent grids.json catalog. Builds the section elements and construction-seat comments internally, then inserts them into the wrapper.",
+      "templates": [
+        {
+          "path": "tmpl.html",
+          "bytes": 80,
+          "placeholders": [
+            "__GRID_LAYOUT__",
+            "__GRID_GAP__",
+            "__GRID_AREAS__"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "html/stamp-new-project",
+      "id": 1790000000301,
+      "catalog_kind": "stamp",
+      "script": "tools/html/stamp-new-project/stamp-new-project.mjs",
+      "script_line": 2,
+      "inputs": [
+        "name",
+        "folder"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/html/stamp-new-project/template",
+      "mode": "Project template tree",
+      "note": "Copies the HTML project tree and fills project tokens through runProjectStamp.",
+      "templates": [
+        {
+          "path": "PATHS.json",
+          "bytes": 221,
+          "placeholders": [
+            "__PROJECT_ID__",
+            "__PROJECT_NAME__"
+          ]
+        },
+        {
+          "path": "css/README.txt",
+          "bytes": 18,
+          "placeholders": []
+        },
+        {
+          "path": "index.html",
+          "bytes": 138,
+          "placeholders": [
+            "__PROJECT_NAME__"
+          ]
+        },
+        {
+          "path": "js/README.txt",
+          "bytes": 19,
+          "placeholders": []
+        },
+        {
+          "path": "settings.json",
+          "bytes": 154,
+          "placeholders": [
+            "__PROJECT_ID__",
+            "__PROJECT_NAME__"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "react/hooks/state-hooks/stamp-new",
+      "id": 1790000000830,
+      "catalog_kind": "stamp",
+      "script": "tools/react/hooks/state-hooks/stamp-new/stamp-new.mjs",
+      "script_line": 3,
+      "inputs": [
+        "name",
+        "location",
+        "initial_value"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/react/hooks/state-hooks/stamp-new/template",
+      "mode": "TSX template",
+      "note": "Fills hook-name and initial-value tokens in tmpl.tsx through runReactHookStamp.",
+      "templates": [
+        {
+          "path": "tmpl.tsx",
+          "bytes": 191,
+          "placeholders": [
+            "__HOOK_NAME__",
+            "__INITIAL_VALUE__"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "react/hooks/use-effect/stamp-new",
+      "id": 1790000000831,
+      "catalog_kind": "stamp",
+      "script": "tools/react/hooks/use-effect/stamp-new/stamp-new.mjs",
+      "script_line": 3,
+      "inputs": [
+        "name",
+        "location"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/react/hooks/use-effect/stamp-new/template",
+      "mode": "TSX template",
+      "note": "Fills the hook-name token in tmpl.tsx through runReactHookStamp; the effect and dependency seats remain for later work.",
+      "templates": [
+        {
+          "path": "tmpl.tsx",
+          "bytes": 168,
+          "placeholders": [
+            "__HOOK_NAME__"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "react/stamp-new-component",
+      "id": 1790000000401,
+      "catalog_kind": "stamp",
+      "script": "tools/react/stamp-new-component/stamp-new-component.mjs",
+      "script_line": 3,
+      "inputs": [
+        "name",
+        "location",
+        "save_as_text",
+        "class_name"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/react/stamp-new-component/template",
+      "mode": "TSX template",
+      "note": "Fills the component name and default class in tmpl.tsx through runReactComponentStamp; .tsx or .txt output.",
+      "templates": [
+        {
+          "path": "tmpl.tsx",
+          "bytes": 397,
+          "placeholders": [
+            "__COMPONENT_NAME__",
+            "__DEFAULT_CLASS__"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "react/stamp-new-dashboard",
+      "id": 1830000000006,
+      "catalog_kind": "stamp",
+      "script": "tools/react/stamp-new-dashboard/stamp-new-dashboard.mjs",
+      "script_line": 4,
+      "inputs": [
+        "name",
+        "page_location",
+        "component_location",
+        "layout",
+        "nav_name",
+        "nav_area"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/react/stamp-new-dashboard/template",
+      "mode": "Recipe / composite",
+      "note": "template/dashboard.json only specifies layout, nav component, and nav area. Page and nav code come from child stamps; grid application and insertion come from child editing tools.",
+      "templates": [
+        {
+          "path": "dashboard.json",
+          "bytes": 84,
+          "placeholders": []
+        }
+      ]
+    },
+    {
+      "key": "react/stamp-new-nav",
+      "id": 1789877167204,
+      "catalog_kind": "stamp",
+      "script": "tools/react/stamp-new-nav/stamp-new-nav.mjs",
+      "script_line": 3,
+      "inputs": [
+        "name",
+        "location",
+        "links",
+        "label"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/react/stamp-new-nav/template",
+      "mode": "TSX template + input data",
+      "note": "Uses the component writer with tmpl.tsx, serializing validated link data and label into its placeholders. The component structure is in the template.",
+      "templates": [
+        {
+          "path": "README.txt",
+          "bytes": 106,
+          "placeholders": []
+        },
+        {
+          "path": "tmpl.tsx",
+          "bytes": 906,
+          "placeholders": [
+            "__COMPONENT_NAME__",
+            "__NAV_LINKS__",
+            "__NAV_LABEL__",
+            "__NAV_CLASS__"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "react/stamp-new-page",
+      "id": 1830000000001,
+      "catalog_kind": "stamp",
+      "script": "tools/react/stamp-new-page/stamp-new-page.mjs",
+      "script_line": 9,
+      "inputs": [
+        "name",
+        "location"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/react/stamp-new-page/template",
+      "mode": "TSX template",
+      "note": "Fills page name and slug in tmpl.tsx, including an addressable page-root construction seat.",
+      "templates": [
+        {
+          "path": "tmpl.tsx",
+          "bytes": 390,
+          "placeholders": [
+            "__PAGE_NAME__",
+            "__PAGE_SLUG__"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "react/stamp-new-project",
+      "id": 1790000000300,
+      "catalog_kind": "stamp",
+      "script": "tools/react/stamp-new-project/stamp-new-project.mjs",
+      "script_line": 2,
+      "inputs": [
+        "name",
+        "folder"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/react/stamp-new-project/template",
+      "mode": "Project template tree",
+      "note": "Copies the complete React/Vite/TypeScript source and configuration tree; fills project tokens and initializes project memory.",
+      "templates": [
+        {
+          "path": ".gitignore",
+          "bytes": 34,
+          "placeholders": []
+        },
+        {
+          "path": "PATHS.json",
+          "bytes": 222,
+          "placeholders": [
+            "__PROJECT_ID__",
+            "__PROJECT_NAME__"
+          ]
+        },
+        {
+          "path": "README.md",
+          "bytes": 724,
+          "placeholders": [
+            "__PROJECT_NAME__"
+          ]
+        },
+        {
+          "path": "RULES.txt",
+          "bytes": 1155,
+          "placeholders": []
+        },
+        {
+          "path": "index.html",
+          "bytes": 272,
+          "placeholders": [
+            "__PROJECT_NAME__"
+          ]
+        },
+        {
+          "path": "package.json",
+          "bytes": 422,
+          "placeholders": [
+            "__NPM_NAME__"
+          ]
+        },
+        {
+          "path": "settings.json",
+          "bytes": 183,
+          "placeholders": [
+            "__PROJECT_ID__",
+            "__PROJECT_NAME__"
+          ]
+        },
+        {
+          "path": "src/App.tsx",
+          "bytes": 152,
+          "placeholders": [
+            "__PROJECT_NAME__"
+          ]
+        },
+        {
+          "path": "src/atoms/README.txt",
+          "bytes": 21,
+          "placeholders": []
+        },
+        {
+          "path": "src/components/README.txt",
+          "bytes": 28,
+          "placeholders": []
+        },
+        {
+          "path": "src/main.tsx",
+          "bytes": 277,
+          "placeholders": []
+        },
+        {
+          "path": "src/pages/README.txt",
+          "bytes": 23,
+          "placeholders": []
+        },
+        {
+          "path": "src/vite-env.d.ts",
+          "bytes": 38,
+          "placeholders": []
+        },
+        {
+          "path": "tsconfig.json",
+          "bytes": 348,
+          "placeholders": []
+        },
+        {
+          "path": "vite.config.mjs",
+          "bytes": 195,
+          "placeholders": []
+        }
+      ]
+    },
+    {
+      "key": "react/stamp-sub-component",
+      "id": 1790000000402,
+      "catalog_kind": "stamp",
+      "script": "tools/react/stamp-sub-component/stamp-sub-component.mjs",
+      "script_line": 3,
+      "inputs": [
+        "name",
+        "parent_path",
+        "save_as_text"
+      ],
+      "dry_run_declared": false,
+      "template_root": "tools/react/stamp-sub-component/template",
+      "mode": "TSX template",
+      "note": "Fills tmpl.tsx through runReactComponentStamp under a supplied parent path; .tsx or .txt output.",
+      "templates": [
+        {
+          "path": "tmpl.tsx",
+          "bytes": 107,
+          "placeholders": [
+            "__COMPONENT_NAME__"
+          ]
+        }
+      ]
+    }
+  ],
+  "internal_code_writers": [
+    {
+      "key": "code/patch/managed-block",
+      "id": 1790000001510,
+      "catalog_kind": "tool",
+      "script": "tools/code/patch/patch.mjs",
+      "script_line": 5,
+      "inputs": [
+        "file",
+        "boundary_tag",
+        "content",
+        "create_if_missing"
+      ],
+      "dry_run_declared": false,
+      "mode": "Caller-content patcher",
+      "note": "Builds the managed boundary markers and inserts caller-supplied content. The body is not synthesized by the tool.",
+      "owner": "tools/code/patch/patch.mjs"
+    },
+    {
+      "key": "code/scaffolding/cleanup",
+      "id": 1820000000002,
+      "catalog_kind": "tool",
+      "script": "tools/code/scaffolding/cleanup/cleanup.mjs",
+      "script_line": 3,
+      "inputs": [
+        "file",
+        "path",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Source cleanup",
+      "note": "Removes construction-seat attributes/comments from existing code; generates no new application logic.",
+      "owner": "tools/code/scaffolding/_scaffolding.mjs"
+    },
+    {
+      "key": "css/add/state/atom",
+      "id": 1790000001413,
+      "catalog_kind": "tool",
+      "script": "tools/css/add/add.mjs",
+      "script_line": 47,
+      "inputs": [
+        "atom_name",
+        "state",
+        "styles"
+      ],
+      "dry_run_declared": false,
+      "mode": "CSS generator / editor",
+      "note": "Parses declarations, constructs selectors and rule blocks, and merges them into the selected stylesheet.",
+      "owner": "tools/css/add/add.mjs"
+    },
+    {
+      "key": "css/add/state/class",
+      "id": 1790000001414,
+      "catalog_kind": "tool",
+      "script": "tools/css/add/add.mjs",
+      "script_line": 47,
+      "inputs": [
+        "location",
+        "class_name",
+        "state",
+        "styles"
+      ],
+      "dry_run_declared": false,
+      "mode": "CSS generator / editor",
+      "note": "Parses declarations, constructs selectors and rule blocks, and merges them into the selected stylesheet.",
+      "owner": "tools/css/add/add.mjs"
+    },
+    {
+      "key": "css/add/style/atom",
+      "id": 1790000001411,
+      "catalog_kind": "tool",
+      "script": "tools/css/add/add.mjs",
+      "script_line": 47,
+      "inputs": [
+        "atom_name",
+        "styles"
+      ],
+      "dry_run_declared": false,
+      "mode": "CSS generator / editor",
+      "note": "Parses declarations, constructs selectors and rule blocks, and merges them into the selected stylesheet.",
+      "owner": "tools/css/add/add.mjs"
+    },
+    {
+      "key": "css/add/style/class",
+      "id": 1790000001412,
+      "catalog_kind": "tool",
+      "script": "tools/css/add/add.mjs",
+      "script_line": 47,
+      "inputs": [
+        "location",
+        "class_name",
+        "styles"
+      ],
+      "dry_run_declared": false,
+      "mode": "CSS generator / editor",
+      "note": "Parses declarations, constructs selectors and rule blocks, and merges them into the selected stylesheet.",
+      "owner": "tools/css/add/add.mjs"
+    },
+    {
+      "key": "css/import/file",
+      "id": 1790000000932,
+      "catalog_kind": "tool",
+      "script": "tools/css/import/import.mjs",
+      "script_line": 5,
+      "inputs": [
+        "file",
+        "entry"
+      ],
+      "dry_run_declared": false,
+      "mode": "CSS import generator",
+      "note": "Constructs a relative @import statement and prepends it if missing.",
+      "owner": "tools/css/import/import.mjs"
+    },
+    {
+      "key": "project/copy/component",
+      "id": 1800000000045,
+      "catalog_kind": "tool",
+      "script": "tools/project/copy/copy.mjs",
+      "script_line": 2,
+      "inputs": [
+        "file",
+        "component",
+        "destination",
+        "new_name"
+      ],
+      "dry_run_declared": false,
+      "mode": "Conditional source rewrite",
+      "note": "Copies or moves an existing component. When its effective name changes, the shared artifact engine rewrites matching identifiers and filenames; without a name change it is a file operation.",
+      "owner": "tools/project/_artifact-edit.mjs"
+    },
+    {
+      "key": "project/move/component",
+      "id": 1800000000047,
+      "catalog_kind": "tool",
+      "script": "tools/project/move/move.mjs",
+      "script_line": 2,
+      "inputs": [
+        "file",
+        "component",
+        "destination",
+        "new_name"
+      ],
+      "dry_run_declared": false,
+      "mode": "Conditional source rewrite",
+      "note": "Copies or moves an existing component. When its effective name changes, the shared artifact engine rewrites matching identifiers and filenames; without a name change it is a file operation.",
+      "owner": "tools/project/_artifact-edit.mjs"
+    },
+    {
+      "key": "project/rename/component",
+      "id": 1800000000049,
+      "catalog_kind": "tool",
+      "script": "tools/project/rename/rename.mjs",
+      "script_line": 2,
+      "inputs": [
+        "file",
+        "component",
+        "new_name"
+      ],
+      "dry_run_declared": false,
+      "mode": "Conditional source rewrite",
+      "note": "Copies or moves an existing component. When its effective name changes, the shared artifact engine rewrites matching identifiers and filenames; without a name change it is a file operation.",
+      "owner": "tools/project/_artifact-edit.mjs"
+    },
+    {
+      "key": "project/save/component",
+      "id": 1800000000051,
+      "catalog_kind": "tool",
+      "script": "tools/project/save/save.mjs",
+      "script_line": 2,
+      "inputs": [
+        "file",
+        "component",
+        "destination",
+        "new_name"
+      ],
+      "dry_run_declared": false,
+      "mode": "Conditional source rewrite",
+      "note": "Copies or moves an existing component. When its effective name changes, the shared artifact engine rewrites matching identifiers and filenames; without a name change it is a file operation.",
+      "owner": "tools/project/_artifact-edit.mjs"
+    },
+    {
+      "key": "react/add/attribute",
+      "id": 1800000000000,
+      "catalog_kind": "tool",
+      "script": "tools/react/add/add.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "attribute_name",
+        "attribute_value",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Source editor",
+      "note": "Computes a add edit on an existing JSX/HTML attribute; the shared DOM engine writes the modified file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/add/class",
+      "id": 1790000000989,
+      "catalog_kind": "tool",
+      "script": "tools/react/add/add.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "class_name",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Source editor",
+      "note": "Computes a add edit on an existing JSX/HTML class; the shared DOM engine writes the modified file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/add/data-area",
+      "id": 1800000000003,
+      "catalog_kind": "tool",
+      "script": "tools/react/add/add.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "new_data_area",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Source editor",
+      "note": "Computes a add edit on an existing JSX/HTML data-area; the shared DOM engine writes the modified file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/add/element",
+      "id": 1790000000992,
+      "catalog_kind": "tool",
+      "script": "tools/react/add/add.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "tag",
+        "class_name",
+        "new_data_area",
+        "new_seat_id",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Markup generator / editor",
+      "note": "The shared DOM engine implements add-element. It constructs markup or edits existing ranges; there is no local template file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/add/scroll-wrapper",
+      "id": 1830000000005,
+      "catalog_kind": "tool",
+      "script": "tools/react/add/scroll-wrapper/scroll-wrapper.mjs",
+      "script_line": 1,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "area",
+        "element",
+        "new_seat_id"
+      ],
+      "dry_run_declared": false,
+      "mode": "Delegating editor",
+      "note": "Calls react/wrap/element to construct a div with scroll-y around the selected target.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/apply/grid-layout",
+      "id": 1830000000002,
+      "catalog_kind": "tool",
+      "script": "tools/react/apply/grid-layout/grid-layout.mjs",
+      "script_line": 12,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "area",
+        "layout",
+        "gap"
+      ],
+      "dry_run_declared": false,
+      "mode": "Catalog-driven composite editor",
+      "note": "Reads html/add/grid/grids.json, then delegates attribute and section creation to DOM editors. Has no template folder, but does depend on external layout data.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/apply/scroll-y",
+      "id": 1830000000004,
+      "catalog_kind": "tool",
+      "script": "tools/react/apply/scroll-y/scroll-y.mjs",
+      "script_line": 1,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "area",
+        "element"
+      ],
+      "dry_run_declared": false,
+      "mode": "Delegating editor",
+      "note": "Calls react/add/class with scroll-y. It edits the class assignment; it does not emit the utility stylesheet.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/change/attribute",
+      "id": 1800000000001,
+      "catalog_kind": "tool",
+      "script": "tools/react/change/change.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "attribute_name",
+        "attribute_value",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Source editor",
+      "note": "Computes a change edit on an existing JSX/HTML attribute; the shared DOM engine writes the modified file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/change/class",
+      "id": 1790000000990,
+      "catalog_kind": "tool",
+      "script": "tools/react/change/change.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "from_class",
+        "to_class",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Source editor",
+      "note": "Computes a change edit on an existing JSX/HTML class; the shared DOM engine writes the modified file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/change/data-area",
+      "id": 1800000000004,
+      "catalog_kind": "tool",
+      "script": "tools/react/change/change.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "new_data_area",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Source editor",
+      "note": "Computes a change edit on an existing JSX/HTML data-area; the shared DOM engine writes the modified file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/insert/component-into-area",
+      "id": 1830000000003,
+      "catalog_kind": "tool",
+      "script": "tools/react/insert/component-into-area/component-into-area.mjs",
+      "script_line": 52,
+      "inputs": [
+        "component",
+        "into_component",
+        "file",
+        "path",
+        "seat_id",
+        "area"
+      ],
+      "dry_run_declared": false,
+      "mode": "Import generator + delegated JSX edit",
+      "note": "Builds and writes a relative import line, then calls react/add/element to insert component use.",
+      "owner": "tools/react/insert/component-into-area/component-into-area.mjs"
+    },
+    {
+      "key": "react/move/element",
+      "id": 1800000000009,
+      "catalog_kind": "tool",
+      "script": "tools/react/move/move.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "to_seat_id",
+        "to_data_area",
+        "to_element",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Markup generator / editor",
+      "note": "The shared DOM engine implements move-element. It constructs markup or edits existing ranges; there is no local template file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/remove/attribute",
+      "id": 1800000000002,
+      "catalog_kind": "tool",
+      "script": "tools/react/remove/remove.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "attribute_name",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Source editor",
+      "note": "Computes a remove edit on an existing JSX/HTML attribute; the shared DOM engine writes the modified file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/remove/class",
+      "id": 1790000000991,
+      "catalog_kind": "tool",
+      "script": "tools/react/remove/remove.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "class_name",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Source editor",
+      "note": "Computes a remove edit on an existing JSX/HTML class; the shared DOM engine writes the modified file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/remove/data-area",
+      "id": 1800000000005,
+      "catalog_kind": "tool",
+      "script": "tools/react/remove/remove.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Source editor",
+      "note": "Computes a remove edit on an existing JSX/HTML data-area; the shared DOM engine writes the modified file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/remove/element",
+      "id": 1800000000006,
+      "catalog_kind": "tool",
+      "script": "tools/react/remove/remove.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Markup generator / editor",
+      "note": "The shared DOM engine implements remove-element. It constructs markup or edits existing ranges; there is no local template file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/replace/element",
+      "id": 1800000000007,
+      "catalog_kind": "tool",
+      "script": "tools/react/replace/replace.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "replacement_tag",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Markup generator / editor",
+      "note": "The shared DOM engine implements replace-element. It constructs markup or edits existing ranges; there is no local template file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    },
+    {
+      "key": "react/wrap/element",
+      "id": 1800000000008,
+      "catalog_kind": "tool",
+      "script": "tools/react/wrap/wrap.mjs",
+      "script_line": 2,
+      "inputs": [
+        "component",
+        "file",
+        "path",
+        "seat_id",
+        "data_area",
+        "element",
+        "quantifier",
+        "wrapper_tag",
+        "class_name",
+        "new_data_area",
+        "new_seat_id",
+        "dry_run"
+      ],
+      "dry_run_declared": true,
+      "mode": "Markup generator / editor",
+      "note": "The shared DOM engine implements wrap-element. It constructs markup or edits existing ranges; there is no local template file.",
+      "owner": "tools/react/_dom-edit.mjs"
+    }
+  ],
+  "other_writers": [
+    {
+      "key": "base/move/stamp",
+      "id": 1790000000999,
+      "catalog_kind": "tool",
+      "script": "tools/base/move/move.mjs",
+      "script_line": 35,
+      "inputs": [
+        "address",
+        "scope",
+        "destination",
+        "confirm"
+      ],
+      "dry_run_declared": false,
+      "note": "Moves an existing capability and updates PATHS; preserves the leaf name and existing code."
+    },
+    {
+      "key": "base/move/tool",
+      "id": 1790000000998,
+      "catalog_kind": "tool",
+      "script": "tools/base/move/move.mjs",
+      "script_line": 35,
+      "inputs": [
+        "address",
+        "scope",
+        "destination",
+        "confirm"
+      ],
+      "dry_run_declared": false,
+      "note": "Moves an existing capability and updates PATHS; preserves the leaf name and existing code."
+    },
+    {
+      "key": "project/add/paths",
+      "id": 1790000000920,
+      "catalog_kind": "tool",
+      "script": "tools/project/add/add.mjs",
+      "script_line": 3,
+      "inputs": [
+        "name",
+        "path"
+      ],
+      "dry_run_declared": false,
+      "note": "Writes a named project-path record in memory."
+    },
+    {
+      "key": "project/copy/file",
+      "id": 1800000000044,
+      "catalog_kind": "tool",
+      "script": "tools/project/copy/copy.mjs",
+      "script_line": 2,
+      "inputs": [
+        "file",
+        "component",
+        "destination"
+      ],
+      "dry_run_declared": false,
+      "note": "Copies, moves, renames, saves a copy, or deletes existing file content; does not generate source text."
+    },
+    {
+      "key": "project/delete/component",
+      "id": 1800000000053,
+      "catalog_kind": "tool",
+      "script": "tools/project/delete/delete.mjs",
+      "script_line": 2,
+      "inputs": [
+        "file",
+        "component",
+        "confirm"
+      ],
+      "dry_run_declared": false,
+      "note": "Deletes the existing component artifact."
+    },
+    {
+      "key": "project/delete/file",
+      "id": 1800000000052,
+      "catalog_kind": "tool",
+      "script": "tools/project/delete/delete.mjs",
+      "script_line": 2,
+      "inputs": [
+        "file",
+        "component",
+        "confirm"
+      ],
+      "dry_run_declared": false,
+      "note": "Copies, moves, renames, saves a copy, or deletes existing file content; does not generate source text."
+    },
+    {
+      "key": "project/move/file",
+      "id": 1800000000046,
+      "catalog_kind": "tool",
+      "script": "tools/project/move/move.mjs",
+      "script_line": 2,
+      "inputs": [
+        "file",
+        "component",
+        "destination"
+      ],
+      "dry_run_declared": false,
+      "note": "Copies, moves, renames, saves a copy, or deletes existing file content; does not generate source text."
+    },
+    {
+      "key": "project/remove/paths",
+      "id": 1790000000921,
+      "catalog_kind": "tool",
+      "script": "tools/project/remove/remove.mjs",
+      "script_line": 3,
+      "inputs": [
+        "name"
+      ],
+      "dry_run_declared": false,
+      "note": "Removes a named project-path record."
+    },
+    {
+      "key": "project/rename/file",
+      "id": 1800000000048,
+      "catalog_kind": "tool",
+      "script": "tools/project/rename/rename.mjs",
+      "script_line": 2,
+      "inputs": [
+        "file",
+        "component",
+        "new_name"
+      ],
+      "dry_run_declared": false,
+      "note": "Copies, moves, renames, saves a copy, or deletes existing file content; does not generate source text."
+    },
+    {
+      "key": "project/save/file",
+      "id": 1800000000050,
+      "catalog_kind": "tool",
+      "script": "tools/project/save/save.mjs",
+      "script_line": 2,
+      "inputs": [
+        "file",
+        "component",
+        "destination",
+        "new_name"
+      ],
+      "dry_run_declared": false,
+      "note": "Copies, moves, renames, saves a copy, or deletes existing file content; does not generate source text."
+    }
+  ],
+  "legacy": [
+    {
+      "key": "react-project",
+      "script": "mock-project/stamps/ReactProject/stamp.mjs",
+      "script_line": 3,
+      "classification": "template-backed",
+      "note": "External template.json holds files as {path,text} records; the plan substitutes the name and optionally adds database files.",
+      "supporting": [
+        {
+          "name": "template",
+          "path": "mock-project/stamps/ReactProject/template.json"
+        }
+      ]
+    },
+    {
+      "key": "atom-stamp",
+      "script": "mock-project/stamps/Atom/stamp.mjs",
+      "script_line": 1,
+      "classification": "internal",
+      "note": "Builds CSS, JSON settings, and README text as inline strings.",
+      "supporting": []
+    },
+    {
+      "key": "div-stamp",
+      "script": "mock-project/stamps/Div/stamp.mjs",
+      "script_line": 1,
+      "classification": "internal",
+      "note": "Builds an HTML document and README text as inline strings.",
+      "supporting": []
+    },
+    {
+      "key": "component-stamp",
+      "script": "mock-project/stamps/Component/stamp.mjs",
+      "script_line": 1,
+      "classification": "internal",
+      "note": "Builds a TSX component and README text as inline strings.",
+      "supporting": []
+    },
+    {
+      "key": "new-component",
+      "script": "mock-project/stamps/NewComponent/stamp.mjs",
+      "script_line": 3,
+      "classification": "internal",
+      "note": "Builds TSX (or text), settings JSON, and README content internally.",
+      "supporting": []
+    },
+    {
+      "key": "sub-component",
+      "script": "mock-project/stamps/SubComponent/stamp.mjs",
+      "script_line": 3,
+      "classification": "internal",
+      "note": "Builds nested TSX (or text), settings JSON, and README content internally.",
+      "supporting": []
+    },
+    {
+      "key": "new-page",
+      "script": "mock-project/stamps/NewPage/stamp.mjs",
+      "script_line": 3,
+      "classification": "internal",
+      "note": "Builds TSX (or text) and settings JSON internally.",
+      "supporting": []
+    },
+    {
+      "key": "component-note",
+      "script": "mock-project/stamps/ComponentNote/stamp.mjs",
+      "script_line": 3,
+      "classification": "internal",
+      "note": "Wraps caller-supplied content in a planned text file; it is a note writer, not an application-code generator.",
+      "supporting": []
+    },
+    {
+      "key": "stamp-maker",
+      "script": "mock-project/stamps/StampMaker/stamp.mjs",
+      "script_line": 3,
+      "classification": "internal",
+      "note": "Builds settings, registration, and an inline stamp.mjs skeleton; generated stamp code still contains a TODO.",
+      "supporting": []
+    },
+    {
+      "key": "sub-div",
+      "script": "mock-project/stamps/SubDiv/stamp.mjs",
+      "script_line": 3,
+      "classification": "internal",
+      "note": "Builds a TSX div (or text representation) and settings JSON internally.",
+      "supporting": []
+    }
+  ],
+  "examples": [
+    {
+      "script": "engine/examples/project-a/stamps/Atom/stamp.mjs",
+      "classification": "internal",
+      "note": "Example variant; excluded from shared catalog and default-project counts."
+    },
+    {
+      "script": "engine/examples/project-a/stamps/Component/stamp.mjs",
+      "classification": "internal",
+      "note": "Example variant; excluded from shared catalog and default-project counts."
+    },
+    {
+      "script": "engine/examples/project-a/stamps/Div/stamp.mjs",
+      "classification": "internal",
+      "note": "Example variant; excluded from shared catalog and default-project counts."
+    },
+    {
+      "script": "engine/examples/project-a/stamps/ReactProject/stamp.mjs",
+      "classification": "template-backed",
+      "note": "Example variant; excluded from shared catalog and default-project counts."
+    },
+    {
+      "script": "engine/examples/project-b/local-tools/Atom/stamp.mjs",
+      "classification": "internal",
+      "note": "Example variant; excluded from shared catalog and default-project counts."
+    },
+    {
+      "script": "engine/examples/project-b/local-tools/Component/stamp.mjs",
+      "classification": "internal",
+      "note": "Example variant; excluded from shared catalog and default-project counts."
+    },
+    {
+      "script": "engine/examples/project-b/local-tools/Div/stamp.mjs",
+      "classification": "internal",
+      "note": "Example variant; excluded from shared catalog and default-project counts."
+    },
+    {
+      "script": "engine/examples/project-b/local-tools/ReactProject/stamp.mjs",
+      "classification": "template-backed",
+      "note": "Template JSON plus internally generated theme CSS."
+    }
+  ],
+  "unavailable": [],
+  "source_sha256": {
+    "tools/audit/stamp-new-project/stamp-new-project.mjs": "8539b777e3104a3573e98ae09e489ce4230954132a3cacab454c7c59735cc834",
+    "tools/audit/stamp-new-project/settings.json": "73b8e734441c06c548c11390de190aa14d6ff3262fc12d5c11fe77a60519a38d",
+    "tools/audit/stamp-new-project/template/PATHS.json": "c1efe91b089d7178b4e42ea7fef41bdc4c6bc237c170cd27bd8283ac148a041c",
+    "tools/audit/stamp-new-project/template/README.txt": "5547ea642f5c3bfc1e0d8e6668c0d8405ab29b8b2c29778512f6d89a7365a361",
+    "tools/audit/stamp-new-project/template/audit-results/README.txt": "42a8bb15bdae5300b6c5d7be7a95961590d270b9ef8130cce3ff42959758c2c7",
+    "tools/audit/stamp-new-project/template/settings.json": "7dd5268aa19824c85891b1f0e5da97ccf13e3fddf94022996f6b4f9a3f97ea92",
+    "tools/base/form/stamp-validator/stamp-validator.mjs": "5bb0af47c791a32af4718ae59990c7fa9c71a91b081937a4ca822ae53a561700",
+    "tools/base/form/stamp-validator/settings.json": "c6f66fe7486e0595bf42ab7ba6ce29194696ca3d2e8396c6a1073a5e964c99e7",
+    "tools/base/form/stamp-validator/template/tmpl.mjs": "bd60d7763959c608075d5b14badf688be111b373207bcd421ba2b0f43eefd1f2",
+    "tools/base/move/move.mjs": "b9f4993ff76fb8719fca2996d6c4b6cd5e4d208cc61e1f1b23aa7d98ac81ffe6",
+    "tools/base/move/stamp/settings.json": "2ab3162847b07c04b0c6351520beb9d259f58253650cbe8a1c91bdf549bf5bb4",
+    "tools/base/move/tool/settings.json": "afa693c02c67bf93cfeeeb42611d371dabd40b07ff3629655763ce3c28d2a39d",
+    "tools/base/stamp-new-key-phrase/stamp-new-key-phrase.mjs": "ee58980913476d20b8c2cceadc8755182d5610cac1f2c8bf92354cb7f38ebd85",
+    "tools/base/stamp-new-key-phrase/settings.json": "317e17377967c20c0052f6f097b1de6bb1633de5a428b036aba62fc1d69e3e31",
+    "tools/base/stamp-new-key-phrase/template/phrase.json": "e048fa12a550ea850018f38c529f124da8059f43b7c3203672196d5d08a31021",
+    "tools/base/stamp-new-project/stamp-new-project.mjs": "dee58a5f147d9a7424fbc21c33cb2a4178f0d671dca6a74caac423c3a49827a3",
+    "tools/base/stamp-new-project/settings.json": "f09a8a0dc6c1c4e5864ed4ca28fecfe62abe949bca55adb52363d35946f24e5b",
+    "tools/base/stamp-new-project/template/PATHS.json": "d2377142833e1cbfbda78ea5b796d94d967cd5f1af10088883e0ea7b57b8fe87",
+    "tools/base/stamp-new-project/template/README.txt": "f988d598c65b71ed0fd8660673b0f293ce9781598063cb7c12cee68a161b123e",
+    "tools/base/stamp-new-project/template/audit-results/README.txt": "4e8840a4cbc06f52469332ca6e24d80d2593c9c11c2dbd6ff30811214b0fcc75",
+    "tools/base/stamp-new-project/template/output/README.txt": "4477b2f39014cdccb929a6ac132e7f0cea278f17682a449da9da5dd861b24d94",
+    "tools/base/stamp-new-project/template/settings.json": "63ca90a16ad9c139a9ed02ef7b0aec77a25cfcba2a85c231cafd09f9d8a8eedb",
+    "tools/base/stamp-new-stamp/stamp-new-stamp.mjs": "d89e30d9ac370f68a81e499669e23ea2890e2ea00f757e510caab62287ccf0bf",
+    "tools/base/stamp-new-stamp/settings.json": "49abe2eb6fed81047992f92196185d1d8357a255328dbc3f74058569d91ab736",
+    "tools/base/stamp-new-stamp/template/settings.json": "c600615b99334e6e2e8ed713292e57dc1da3a07a70b933a0847ecb64995f7dc4",
+    "tools/base/stamp-new-stamp/template/template/README.txt": "c89b4ce0f023b14dc11a327c26460547bcd7bf6157bf3a4590cae313664d768c",
+    "tools/base/stamp-new-stamp/template/tmpl.mjs": "e5c410481c1a9b77b2b4718ebe17f164ca9974b83c200c484db8a2c434c002f5",
+    "tools/base/stamp-new-tool/stamp-new-tool.mjs": "f3e748ad043193e9fb85ce0682e6b38501b20e3d15fdc87904e8f58329a5b128",
+    "tools/base/stamp-new-tool/settings.json": "86052c89a783475a923028301247f285b7b4b3d42e7c4a8a7bac6fb3fdcaed48",
+    "tools/base/stamp-new-tool/template/settings.json": "74f724e2702b00136855e38ed598513e5460de1a8a63de1467a2d7dfba5fcfcb",
+    "tools/base/stamp-new-tool/template/tmpl.mjs": "46c5e7037746b16b77873e34813362a67c885774fb1bd05f99bfa956291f711c",
+    "tools/code/patch/patch.mjs": "f06b9c99073bc69e8bd9196d91d734ecbc027927d6c9fe0935fdc70443055bf4",
+    "tools/code/patch/managed-block/settings.json": "4bb7ae55b5674986f8a9cf72a7cbbcd0833e4ba25cced4a235547b47dbb2e509",
+    "tools/code/scaffolding/cleanup/cleanup.mjs": "7d23d4e1d85dedec020749e51653a690736ce86ee8dcff03b6e2acf71670de65",
+    "tools/code/scaffolding/cleanup/settings.json": "f504a1c7e43d4815e22d3ddc2bb75909e6cf1e6e0e1e6ff9c3682187b83de803",
+    "tools/code/scaffolding/_scaffolding.mjs": "c95b5998f28059a5863c9f3409184b50f8fef4a770b1b418e44a62d52c558c15",
+    "tools/css/add/add.mjs": "43b8a24bdf40ec0ff258e68da8518d83afd65fe5cc5d80e039731648310719b1",
+    "tools/css/add/state/atom/settings.json": "149b7006db9b383e1e368e9a76e2234b66e702dfa9c88c8deaec65412d48c2aa",
+    "tools/css/add/state/class/settings.json": "d89580b083e23ebd3a6a3714bf87b6edeb05868b90ec3c149132b8604925334e",
+    "tools/css/add/style/atom/settings.json": "f75bd36f495aebf8155e3ebec40104c9c08c8a18cfc38b1817ccd1cb20c5b21d",
+    "tools/css/add/style/class/settings.json": "e5724a26abd77207066a154fd2fa696719889736dc1bb05411df6e2bf81a818c",
+    "tools/css/grid/stamp-install/stamp-install.mjs": "7ced77cc486351094f6cd76f9b9ec4ec2abc250fdde55ed5bc61f3edb7b7c620",
+    "tools/css/grid/stamp-install/settings.json": "dd0038825a45edb1ac24928b04a818e1bef6a1111d583044cf44f150413fda69",
+    "tools/css/grid/stamp-install/template/grid.css": "ba83254895144f7c1948d59e9e5732b728c964ba7e4e4e995b64f4179db94508",
+    "tools/css/import/import.mjs": "a1885f840c68c568eaff7a57d09bedb44e2afd9483fe53064ce56e70dfcabf6b",
+    "tools/css/import/file/settings.json": "46172e018f18292ad33fd5cbc581de65d96cb921aeea5e8fdc3d0af30d4513be",
+    "tools/css/stamp-new-atom/stamp-new-atom.mjs": "46d6821da1f892238fdac3301926d86e98262eb53d449785f243858e4a9662dc",
+    "tools/css/stamp-new-atom/settings.json": "0595fe7d7a3ba36f7dceb9a63800e933963282df3790149f25c733a5878ad025",
+    "tools/css/stamp-new-atom/template/tmpl.css": "4d53c95fb0c362d344d4896ae74a22899eff9feb15b2a4e5a73bee306d389d03",
+    "tools/html/add/grid/stamp-new/stamp-new.mjs": "2ab64ce78b5b379871add4f5c04b19ee4b80c5f2d513413e231a45a219a0df23",
+    "tools/html/add/grid/stamp-new/settings.json": "93db853b297636c30f67abe92b2faf4640083d737e99d33092d22ac08caaea7e",
+    "tools/html/add/grid/stamp-new/template/tmpl.html": "4a127b238d12e67b4c5858c9483863c5d146de35083b4352780a9710d8d94394",
+    "tools/html/stamp-new-project/stamp-new-project.mjs": "42135a45f1145d02254c357f0d259481c5f753459e7eba26bbfa0ddabeea71cb",
+    "tools/html/stamp-new-project/settings.json": "d1098dfda06bc181258597e4146ea646e3c9c91a52b56a017d143610815c975d",
+    "tools/html/stamp-new-project/template/PATHS.json": "ceb7e8313a467330336841e6f018e5f2eb6dfec4345cc57c0c4fc1aeee89959f",
+    "tools/html/stamp-new-project/template/css/README.txt": "170390658696b738d33c2550412b2dbd340f8b5cf798f064ab4bd42681e0743e",
+    "tools/html/stamp-new-project/template/index.html": "0a21b1f6b8a8fb2d182941f96616b43549a820cd027ef4473a270d4ed8396198",
+    "tools/html/stamp-new-project/template/js/README.txt": "403e6c0a5651db904a8d61376b4eea4d64a89803d0b1186a2f56bd07edc22dbc",
+    "tools/html/stamp-new-project/template/settings.json": "14d900a37ee286a03910d0211ad08454711833b381bd93633fba52a4b8bddf7f",
+    "tools/project/add/add.mjs": "08ec173d4a714efd0271c3bd67030b8cc1851d3441547488d2e74976e3432d1a",
+    "tools/project/add/paths/settings.json": "46f256081cff7d5edb39435ee2cb29df7e7f1120e30ac46bf1a18441a5493622",
+    "tools/project/copy/copy.mjs": "f61bc894f8308ad8d996422e0495abd097efd0f88f30fe403914399efe6e74af",
+    "tools/project/copy/component/settings.json": "9896959dc190b74a3efdc99b101b50befab9a739662d8de8338c1be5c308a502",
+    "tools/project/_artifact-edit.mjs": "7dc6dbec9911d6150ee931baabc175291f620e7e111a767eb71d23ee104932ae",
+    "tools/project/copy/file/settings.json": "9c65e1e530a0ba70e434158d59ec1d7d5cefed0f136b8afe63195dc9e44761bc",
+    "tools/project/delete/delete.mjs": "3bea12e4c85706794627b47a4c4d76c16bd2fd5595235e2baec7d0c4bab2b0fd",
+    "tools/project/delete/component/settings.json": "69efdc4ce1626a70297e2f96822d8f9da714324cfac3db2817b26843af075a64",
+    "tools/project/delete/file/settings.json": "a9da4fe5c4e73187901400601a7147a3d7a780a40741698fdfa1bbaed1805fce",
+    "tools/project/move/move.mjs": "742c2a6e6c8b84cef96b5c75085e206249e5159c58650f1763c08a99e92e9693",
+    "tools/project/move/component/settings.json": "db7c4911a485a28f1c7934fa1b77662384fad53540eb441c6dc73acceda32fea",
+    "tools/project/move/file/settings.json": "cc27cd8e256474d79b43386997bebb28efd701879d27cc3bb94a54b5645d751d",
+    "tools/project/remove/remove.mjs": "5137233bafe33dc6d552113b354b1cfcacb1ec1a23fcc15cd302383a5e8e95bd",
+    "tools/project/remove/paths/settings.json": "4ef604e0e5b924eb82fbb1e6fe8dd2ba563b6b1879c96f845cf28aa4fa1516a4",
+    "tools/project/rename/rename.mjs": "cb61f6399f14431c0114853b7c292123750e018cf4f27b958dc5d6a193862095",
+    "tools/project/rename/component/settings.json": "4b0c05ee2123c20e3f6627f043c3ecba19eba486feb4f6efa4f58528538d34ad",
+    "tools/project/rename/file/settings.json": "dcecf96bc9232a5f5eeabff755b1d690abb7344c74eaef22832396a3ecdd8fc2",
+    "tools/project/save/save.mjs": "ea46dd6e91a51863ed0ba820eac9ca41bf5ac2a8b6d19ac5c10d1c3a597a343e",
+    "tools/project/save/component/settings.json": "31990ad659ab82836effa1c843380f36ad54b697bb0d2a0d10b3c999d07cde8b",
+    "tools/project/save/file/settings.json": "3c9de27e2a9727bfda80004b6109630c8ad5b73c3fa5b4a939057ec8db31eb8e",
+    "tools/react/add/add.mjs": "8adea2bd8071b0c585357aa9e12055b9078e225f46577c93bb262549547986fb",
+    "tools/react/add/attribute/settings.json": "2aced5856046c828245ca2476e6929d333b4f29ddf564011705f21826c01eb67",
+    "tools/react/_dom-edit.mjs": "8d6c330b8d8e87efea9891ca70626e5e8fefd300dfe1d786e6404baa58924ebd",
+    "tools/react/add/class/settings.json": "973ea65dbf01eb324cd924b128088263ca396f5ae7622bf0e6029e16843e17b9",
+    "tools/react/add/data-area/settings.json": "2f6df5f5a9c724b8dcc8ec582524c619c7b8af1481e58288e308f3a68a6352ee",
+    "tools/react/add/element/settings.json": "5cb2387d1da0446876c2be506918f4fb46f75484badb11677ac7bef59f72486d",
+    "tools/react/add/scroll-wrapper/scroll-wrapper.mjs": "f32752abdf722bdcef2dd1008e05fa4428f7aea1830964a665170d2a64562160",
+    "tools/react/add/scroll-wrapper/settings.json": "0bb2c34b6f9c62862680ef155950e477060d42c48ca918621fddf5819f8fe945",
+    "tools/react/apply/grid-layout/grid-layout.mjs": "5db6fb436af3b596d42be1b3ffc4e599380e39b84f384c2ef7dca6bb511e0ae8",
+    "tools/react/apply/grid-layout/settings.json": "c40ecf9193e73b81eacbddf266406568c034f9f1a4d9bb7559812822b60fb275",
+    "tools/react/apply/scroll-y/scroll-y.mjs": "107f14c4357913a67b17e23193db615208de0c2e2e1b4302ab5fd8f4e14b3142",
+    "tools/react/apply/scroll-y/settings.json": "551b16f995c9aff70977502825e51ed06cc62a2e54b7225833f5e23a05fefa93",
+    "tools/react/change/change.mjs": "3d792b85e5f06fd2d411bc347a877922c92320a180cae89859965c53fa3093e4",
+    "tools/react/change/attribute/settings.json": "add4b2eef63b8d88f475cf025d4cc2b373b054d3a8bfbe8bf4e9a8481225e484",
+    "tools/react/change/class/settings.json": "7a51d75a9dd0021da7e1e631f7db3ccd2b9a2372119932db30535574bd60251f",
+    "tools/react/change/data-area/settings.json": "081f4058eb3657130a803ed91845c81112f7e1d70b77e8465051114487f4f1ca",
+    "tools/react/hooks/state-hooks/stamp-new/stamp-new.mjs": "3a2f83e19085e30b9c5181f3f9a286341107bf148f98523171390f763607a7f8",
+    "tools/react/hooks/state-hooks/stamp-new/settings.json": "10651255e34c063ef57ef19dcc629ad56f9775cb70560bb125454d9dbd1a86ed",
+    "tools/react/hooks/state-hooks/stamp-new/template/tmpl.tsx": "3d40e0b3f586660b65dd98f0a36df125dfe982772717cfa125f4ea46f4a2d6e7",
+    "tools/react/hooks/use-effect/stamp-new/stamp-new.mjs": "048e037c0bf48d11db3b06cb418a5a725c0cce29c4431d2e03163302a05422a4",
+    "tools/react/hooks/use-effect/stamp-new/settings.json": "2a9afee3a08b00944f189127379568bb94ea0d8c1823524767d30c98806b07fb",
+    "tools/react/hooks/use-effect/stamp-new/template/tmpl.tsx": "f14d562ec8c971bd9f9a1be74547813ea64e8e33a0a1ef3111e5bff46c872a23",
+    "tools/react/insert/component-into-area/component-into-area.mjs": "77df879a7e019367b577c7b37995267f499e51316c82d320a663aa0c85bbd487",
+    "tools/react/insert/component-into-area/settings.json": "a2f7ff4d6819a333e48e547ce04970f78cc7b2e12965619b8f177cd6c0f0e16a",
+    "tools/react/move/move.mjs": "53e891f6747fbace7672dcd7fe4220ad81e44ae28b9bfb1129d723836642b556",
+    "tools/react/move/element/settings.json": "0bb6a107b16fadb2e284b82113d115e73cea13d1a8e8bb9960c397a279272517",
+    "tools/react/remove/remove.mjs": "87366fcde1a82576b16cdb74954795724c7c7a93b65467846cc0a864aec4a377",
+    "tools/react/remove/attribute/settings.json": "9bd9cfa3d20923ecd347fe54174b4d74427355a7d6c2e0318662d501b925f5aa",
+    "tools/react/remove/class/settings.json": "df339d19b78d052cd4d85f548ff2351189494342a2230fbad64081bb0b87bf00",
+    "tools/react/remove/data-area/settings.json": "963f20d1e72369595078572b88b752061a700397d39dbf3fdfd665257ed9bc35",
+    "tools/react/remove/element/settings.json": "d284103a251d2263c13411eb09f19eef800258c2c8036051ace09c4e07acef5f",
+    "tools/react/replace/replace.mjs": "ba333577b7c728a8bc39653e2ed24db6acf2f561aa400c253aef3497c6914f70",
+    "tools/react/replace/element/settings.json": "d1539ef333237040152ca32c07c2edd88624aa81a4f9d677f7b134d36139d4c9",
+    "tools/react/stamp-new-component/stamp-new-component.mjs": "018e29950da01137318c0a7a3f6fba8dfef9615bc8629966d9a394b02873ef2e",
+    "tools/react/stamp-new-component/settings.json": "dbfb332c072b52c04989df848efe96bb5561663911b6e121b78348dc4bbb2893",
+    "tools/react/stamp-new-component/template/tmpl.tsx": "d4c40b38a0583d43cf19f45af22cd3de3299be7fff2d8279bc6f805d97c25037",
+    "tools/react/stamp-new-dashboard/stamp-new-dashboard.mjs": "3adec1f41a84f037f3180ea718e629411470d6fcf81b7cebe6434a72aacc4fa9",
+    "tools/react/stamp-new-dashboard/settings.json": "55219b71d6c435866cc0f10371800cf5b8771a58e88978e84cf1920418eb0601",
+    "tools/react/stamp-new-dashboard/template/dashboard.json": "74148d840e52b6c3d1a1933fa5981b23b3f5c7f19bc8ef8e5546e026305c6dd0",
+    "tools/react/stamp-new-nav/stamp-new-nav.mjs": "7012e76f2d0775697f021f80cdeeff090628f1f5cd76888c20bb3938ac845d4c",
+    "tools/react/stamp-new-nav/settings.json": "cc47907e2291cb3250d3c7eb3b780e11c301725c8444aaf0508b3f20f631bb7b",
+    "tools/react/stamp-new-nav/template/README.txt": "c89b4ce0f023b14dc11a327c26460547bcd7bf6157bf3a4590cae313664d768c",
+    "tools/react/stamp-new-nav/template/tmpl.tsx": "c84b93b10b12299aae28d95a064adb34318344f136063fae96f6362bfaa96a65",
+    "tools/react/stamp-new-page/stamp-new-page.mjs": "0c5a6373f4f3e11bf96648a5307b8c69dea49dc606e8e12af055dd9f952645ce",
+    "tools/react/stamp-new-page/settings.json": "9da6f909025b8e0ccc57f69446f7e19b92d2a2b3128d83792bcfa11701c8fd05",
+    "tools/react/stamp-new-page/template/tmpl.tsx": "d1206ed7f350b353c2453db72fc4d71fb6bc591bd21843d5c2fde1f8feb1e7cb",
+    "tools/react/stamp-new-project/stamp-new-project.mjs": "42135a45f1145d02254c357f0d259481c5f753459e7eba26bbfa0ddabeea71cb",
+    "tools/react/stamp-new-project/settings.json": "22348b4a8d7f997c1e2b561d70edfc018ef3a1a93626644d31fecf06dd7aa80a",
+    "tools/react/stamp-new-project/template/.gitignore": "e0ab3351730b0d3ebb5620838cc09d64e0881344b14715effb8fc3431acd1b98",
+    "tools/react/stamp-new-project/template/PATHS.json": "a2b7a6416a9e74c9bb86dceaf7ad6d814a2c211cb5c04e45505a1aaa470356ab",
+    "tools/react/stamp-new-project/template/README.md": "2988b95c4508c444bfd953fbc6e8784b0d20373193f1dee2ea472b3604e3a7b5",
+    "tools/react/stamp-new-project/template/RULES.txt": "970d75b4235288540e49846864e6a7e55b668dff5f2e13c8d9f6a6a50ecc12b4",
+    "tools/react/stamp-new-project/template/index.html": "d776217e30e2ef74b85cd7a5d7d3c00c05b9ae4a3852af5d5898fd76f7e8e846",
+    "tools/react/stamp-new-project/template/package.json": "68e8260f7ba21c748d35a638e65e06343419f5940f6d5b38fb9489eb63265537",
+    "tools/react/stamp-new-project/template/settings.json": "88c83a569f4d6927f5486913c2020917b9b3bfc53c571271b8a5d3fc7d08f617",
+    "tools/react/stamp-new-project/template/src/App.tsx": "27d5189af44079b471ed386ab590632af0f72b0bf0e170a644f0c5e2311a48a4",
+    "tools/react/stamp-new-project/template/src/atoms/README.txt": "a67d11ccdeca121cca279947cf886f143b01b091af0471f2438f0645bd9fc78d",
+    "tools/react/stamp-new-project/template/src/components/README.txt": "f00e45e72a061c6be0828514225ed2b346c44732a1fa33671b5ff2f08a715ba2",
+    "tools/react/stamp-new-project/template/src/main.tsx": "f67b490eaaa78823ffb4ddadb3f784ea09ce505be1148b263d5d07cd245cdbeb",
+    "tools/react/stamp-new-project/template/src/pages/README.txt": "e19a6247037c3129ea049344083720d58d05289d3e13fba5c21fdc2a316a4d10",
+    "tools/react/stamp-new-project/template/src/vite-env.d.ts": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+    "tools/react/stamp-new-project/template/tsconfig.json": "d196896d7c6bd96bdba7af5e97c74df2a88912f32a5e40e951e423974c00ab44",
+    "tools/react/stamp-new-project/template/vite.config.mjs": "d980bdc4f42e2f30f6b9a537554c5ab2b9ad84d6b652ddc9d52b243b14a3ce3e",
+    "tools/react/stamp-sub-component/stamp-sub-component.mjs": "6972efba0f7aebb5b1eda995b368133df9532979720aa067efc8765a43a7f3c7",
+    "tools/react/stamp-sub-component/settings.json": "586129cacc89b3ab117d8866d15ce86d0bc863490fa33de4d9f774f9bd56ec8c",
+    "tools/react/stamp-sub-component/template/tmpl.tsx": "197f55cdcb79e399b13593fdd8a8a1b4f4f1f046310ae629c6f2f27404c82797",
+    "tools/react/wrap/wrap.mjs": "46924b373f3873a39ae22054ae3a04c7dde528000d5ac222b28d597292b1a84c",
+    "tools/react/wrap/element/settings.json": "ac29d25b5ccc33ab2172529e8dc08a6bd59fcea79c216efde37ec8b102596365",
+    "tools/_stamp-engines.mjs": "f287a7141ebe95d961f06c5e4f9e125dee16252b3def51d546f2c5b0eef3cf1c",
+    "tools/html/add/grid/grids.json": "8ec14d8018a1d16796a30e76afb45c43709fdda058aafe7829373a19ffac0caa",
+    "tools/css/_states.mjs": "6aa8b70f60a426ea1cd48593f8ec094218d2ac730425aa824f42c3c5d3cca774",
+    "tools/css/_stylesheet.mjs": "ac6cc32ad575380dece54641117bfb9a09683961ba25f473b5d89ce9575e8a7e",
+    "bridge/tool-house.mjs": "596a6c88036446ec4396f7bba2f70e836e0359267b8bd687da047581adbd7174",
+    "engine/src/mutation-plan.mjs": "520f6cc0e39bc53ed4a8f819c2deb0ec51eb8ce1c7c6afe8bc8e174edb0cb5ab",
+    "HOST.json": "64a2c3578e78df4c67c0705283d47e24f876fd8986df71be49ccb4ec117dc810",
+    "mock-project/PATHS.json": "7794182371249df1000e1bd9fc8757fccf0c3abdeb49fe2d7351090ceaf3dba9",
+    "mock-project/stamps/ReactProject/stamp.mjs": "2436821a5480125cdd7bc103f61b65d34e1aa7d9ee5d349e9eb734b7368a5f8b",
+    "mock-project/stamps/ReactProject/settings.json": "ab3ba1b0fd60985d335217be9f07e596f1ef5a1dd06867b378b11b0e117c0fbf",
+    "mock-project/stamps/ReactProject/template.json": "634a22d94f959fd1fdd1bc301ce72884fae2c35732d32f9bbddcf2d699a0892e",
+    "mock-project/stamps/Atom/stamp.mjs": "c9ede8ba715334bbcde60b9630f8e34d076e3cd150006b9c3ef189c217e4eb2a",
+    "mock-project/stamps/Atom/settings.json": "45a3d7e21931835222b62171fff82235d9b295baa9e49b500c64193b07f5152f",
+    "mock-project/stamps/Div/stamp.mjs": "b5b7e7bc575a7a9f54efc85e476209aff5813022506c1c6cc03a983731c89e5a",
+    "mock-project/stamps/Div/settings.json": "af954408a8c0684f1ed582096a156e918a948398baeaac7ce1f8e46a3ef94911",
+    "mock-project/stamps/Component/stamp.mjs": "b8443c2ca6145c3b6fe0530109c5557cf5ae3cec923a2a1981083d61b646d4b2",
+    "mock-project/stamps/Component/settings.json": "a59f99c5d4d5b8bd6ff8ac0ac08d0dedcc64bd27d53d69d9ef1f6ac420949a40",
+    "mock-project/stamps/NewComponent/stamp.mjs": "746b809086ffee255b4f32d9f7b1b387118278c1fc86fddcef862684a902b219",
+    "mock-project/stamps/NewComponent/settings.json": "4c6bb2a48e14b3b307e3758ff5d9393562e15efb825d7d736e857769f6a29a13",
+    "mock-project/stamps/SubComponent/stamp.mjs": "448bf60a537c75820eb3fead308a81bdf0ddb15bfde4192cc5537c6bf50f18e9",
+    "mock-project/stamps/SubComponent/settings.json": "33ca149b377de2dd8be6177ac65b982cc2c009c90567f947d6128af198451314",
+    "mock-project/stamps/NewPage/stamp.mjs": "5f75d11d51242a53e710fd6844a7e11151bea88d4bf49eb7e5a00ea7a9f908c5",
+    "mock-project/stamps/NewPage/settings.json": "53fc373e4aa059ac9f7685a3ce3505c68017cc113a76c8e0e435ab13863e2e02",
+    "mock-project/stamps/ComponentNote/stamp.mjs": "c7a2fb44b79998b839c679c50d01b1a810e070387002e88023b57c9d7d0d40d4",
+    "mock-project/stamps/ComponentNote/settings.json": "e833f7cc3bfaefaaf91b6573cc09d94a7d1e657f558a7e020e94ccaee5040307",
+    "mock-project/stamps/StampMaker/stamp.mjs": "9307f0a120deedb7528d8bcd8b86a872172a4e41e68eaea05f36846e24c29164",
+    "mock-project/stamps/StampMaker/settings.json": "cac3bdb0fcfdf4b8b49f7d0376f3a1f6a862fac945539368e6f4c25397ce286f",
+    "mock-project/stamps/SubDiv/stamp.mjs": "cafe34decd8f743246c84cb16c6111e21cd7fefb97475c8a177ec54f26e6a6dc",
+    "mock-project/stamps/SubDiv/settings.json": "a43aa84c044ce4d5df9e89118443cdc8b7120c6213d74891622877e2e68d0d47",
+    "engine/examples/project-a/stamps/Atom/stamp.mjs": "c9ede8ba715334bbcde60b9630f8e34d076e3cd150006b9c3ef189c217e4eb2a",
+    "engine/examples/project-a/stamps/Component/stamp.mjs": "b8443c2ca6145c3b6fe0530109c5557cf5ae3cec923a2a1981083d61b646d4b2",
+    "engine/examples/project-a/stamps/Div/stamp.mjs": "b5b7e7bc575a7a9f54efc85e476209aff5813022506c1c6cc03a983731c89e5a",
+    "engine/examples/project-a/stamps/ReactProject/stamp.mjs": "2436821a5480125cdd7bc103f61b65d34e1aa7d9ee5d349e9eb734b7368a5f8b",
+    "engine/examples/project-a/stamps/ReactProject/template.json": "634a22d94f959fd1fdd1bc301ce72884fae2c35732d32f9bbddcf2d699a0892e",
+    "engine/examples/project-b/local-tools/Atom/stamp.mjs": "c9ede8ba715334bbcde60b9630f8e34d076e3cd150006b9c3ef189c217e4eb2a",
+    "engine/examples/project-b/local-tools/Component/stamp.mjs": "b8443c2ca6145c3b6fe0530109c5557cf5ae3cec923a2a1981083d61b646d4b2",
+    "engine/examples/project-b/local-tools/Div/stamp.mjs": "b5b7e7bc575a7a9f54efc85e476209aff5813022506c1c6cc03a983731c89e5a",
+    "engine/examples/project-b/local-tools/ReactProject/stamp.mjs": "3144beb0f1b5cd2a10bdeb9166e462479162fb2427ea6d87ac2bc9d5d7b798c0",
+    "engine/examples/project-b/local-tools/ReactProject/template.json": "30663f97ded83a2a4c68680bb3cdde614600b53c8a130028f396cce3b3dddfae"
+  }
+}

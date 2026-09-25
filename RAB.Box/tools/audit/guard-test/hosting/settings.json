@@ -1,0 +1,20 @@
+{
+  "id": 1790000001303,
+  "name": "hosting",
+  "title": "Cross-Examine Hosting Guards",
+  "description": "Runs isolated known-bad and known-good synthetic fixtures through every defensive hosting audit Tool and reports whether each guard behaves as expected.",
+  "settings": [],
+  "meta": {
+    "domain": "audit",
+    "operation": "check",
+    "target_type": "guard",
+    "data_types": [
+      "hosting",
+      "guard",
+      "regression"
+    ],
+    "output": "report",
+    "authority": "read",
+    "check": "hosting"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": 1810000000014,
+  "name": "filter",
+  "title": "Filter Recipes",
+  "description": "Filters starter recipe candidates conservatively using project allergy constraints while leaving unauthored ingredient, equipment, time, and cross-contact checks unresolved.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "category",
+      "title": "Category",
+      "description": "category",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "cuisine",
+      "title": "Cuisine",
+      "description": "cuisine",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "protein",
+      "title": "Protein",
+      "description": "protein",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "read",
+    "data_types": [
+      "recipes",
+      "conflicts"
+    ],
+    "returns": [
+      "recipes",
+      "conflicts"
+    ]
+  }
+}

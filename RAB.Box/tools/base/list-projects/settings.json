@@ -1,0 +1,8 @@
+{
+  "id": 1790000000201,
+  "name": "list-projects",
+  "title": "List Projects",
+  "description": "Lists only the names of saved projects found under .rab/projects.",
+  "settings": [],
+  "meta": {"domain":"base","operation":"list","target_type":"project","data_types":["project"],"output":"list","authority":"read"}
+}

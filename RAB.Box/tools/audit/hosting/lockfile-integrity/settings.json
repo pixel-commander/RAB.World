@@ -1,0 +1,24 @@
+{
+  "id": 1790000001202,
+  "name": "lockfile-integrity",
+  "title": "Audit Package Lockfile Consistency",
+  "description": "Checks for a lockfile and statically compares declared dependency specs with supported lockfile root metadata when that can be proven.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional project or deployment folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "hosting",
+    "data_types": ["hosting", "supply-chain"],
+    "output": "report",
+    "authority": "read",
+    "check": "lockfile"
+  }
+}

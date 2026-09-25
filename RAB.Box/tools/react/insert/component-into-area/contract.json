@@ -1,0 +1,8 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "composite",
+    "description": "Builds and writes a relative import line, then calls react/add/element to insert component use.",
+    "reviewed_at": "2026-09-20"
+  }
+}

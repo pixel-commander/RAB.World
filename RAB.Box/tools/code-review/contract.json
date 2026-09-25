@@ -1,0 +1,21 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "composite",
+    "description": "Stages proposed source in numeric .rab scratch storage, calls existing audit/code-review tools through the runner and normalizes findings without executing the source."
+  },
+  "result": {
+    "version": "string",
+    "status": "passed | failed | skipped",
+    "passed": "boolean",
+    "file": "string",
+    "code_sha256": "string",
+    "css_sha256": "string | null",
+    "scope": "string",
+    "checks": [{"tool":"string","group":"string","status":"passed | failed | skipped","execution_id":"number | null","duration_ms":"number","findings":"number","reason?":"string"}],
+    "findings": ["ExistingAuditFinding with checker, group and severity"],
+    "totals": {"checks_run":"number","checks_skipped":"number","findings":"number"},
+    "children": [{"tool":"string","execution_id":"number","duration_ms":"number","status":"passed | failed | skipped","passed":"boolean","report":"string"}],
+    "evidence": {"id":"number","directory":"string","report":"string","source?":"string"}
+  }
+}

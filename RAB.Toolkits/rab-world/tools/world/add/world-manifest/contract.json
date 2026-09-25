@@ -1,0 +1,13 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Reads direct child folders with settings.json and creates a manifest/v1 record of those items. It does not require, read, or alter a beacon; it does not register a project or start a watcher."
+  },
+  "result": {
+    "status": "created",
+    "manifest": "folder contents manifest",
+    "file": "absolute manifest.json path",
+    "verification": "shared artifact-writer receipt"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "version": "tool-execution/v2",
+  "shape": {
+    "version": "\"tool-execution/v2\"",
+    "execution_id": "number",
+    "parent_execution_id": "number | null",
+    "session_id": "number | null",
+    "project_key": "string | null",
+    "tool": {
+      "id": "number | null",
+      "address": "string",
+      "toolkit?": {
+        "$nullable": {
+          "id": "number",
+          "name": "string",
+          "root": "absolute path"
+        }
+      },
+      "implementation_source?": "string",
+      "source_file?": "absolute path",
+      "source?": "string",
+      "shadowed?": "value | null"
+    },
+    "options": {
+      "[input name]": "value"
+    },
+    "start_date": "ISO date",
+    "end_date": "ISO date | null",
+    "duration_ms": "number | null",
+    "status": "string",
+    "result_ref": {
+      "$nullable": {
+        "version": "\"tool-result-ref/v1\"",
+        "file": "absolute path",
+        "pointer": "JSON pointer"
+      }
+    },
+    "result_bytes": "number | null",
+    "error": {
+      "$nullable": {
+        "code": "string",
+        "message": "string"
+      }
+    }
+  }
+}

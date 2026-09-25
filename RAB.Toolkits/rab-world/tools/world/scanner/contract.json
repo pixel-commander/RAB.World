@@ -1,0 +1,6 @@
+{
+  "version": "tool-contract/v1",
+  "input": {"path":"absolute folder","worlds_path":"absolute folder"},
+  "behavior": ["discovers regular beacon.json files below path", "routes only by a positive numeric beacon.world", "refreshes a beacon folder manifest from direct child settings.json records", "upserts full beacon records into the routed world's beacons/manifest.json", "reports trace and skip records"],
+  "safety": ["does not follow symbolic links", "does not start a watcher or server", "does not delete source files", "does not overwrite a malformed existing manifest"]
+}

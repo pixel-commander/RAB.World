@@ -1,0 +1,16 @@
+{
+  "id": 1790000001300,
+  "name": "all",
+  "title": "Cross-Examine All Defensive Guards",
+  "description": "Runs isolated known-bad and known-good synthetic fixtures through every network, security, and hosting defensive audit Tool and passes only when each guard catches its bad fixture and accepts its good fixture.",
+  "settings": [],
+  "meta": {
+    "domain": "audit",
+    "operation": "check",
+    "target_type": "guard",
+    "data_types": ["guard", "regression", "network", "security", "hosting"],
+    "output": "report",
+    "authority": "read",
+    "check": "all"
+  }
+}

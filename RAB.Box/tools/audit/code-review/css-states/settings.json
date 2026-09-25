@@ -1,0 +1,27 @@
+{
+  "id": 1790000001406,
+  "name": "css-states",
+  "title": "Audit CSS State Blocks",
+  "description": "Finds duplicate pseudo-state and is-active selectors, including grouped selectors, and repeated declarations within the same CSS scope.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to review. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "code-review",
+    "data_types": [
+      "code-review",
+      "css-states"
+    ],
+    "output": "report",
+    "authority": "read",
+    "rule": "css-states"
+  }
+}

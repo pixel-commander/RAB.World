@@ -1,0 +1,30 @@
+{
+  "id": 1800000000021,
+  "name": "sqlite-open",
+  "title": "Find SQLite Opens",
+  "description": "Finds common SQLite database-open constructors.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "sqlite-open",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "(?:new\\s+)?(?:sqlite3\\.)?Database\\s*\\(|betterSqlite3\\s*\\(",
+      "scope": "code",
+      "kind": "sqlite-open",
+      "heuristic": false,
+      "flags": "i"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"id":"shapes.canonical.001","concept":"shapes","kind":"shape-equals","given":{"actual":{"operation":"add","target_type":"component","name":"TestKit"}},"expected":{"operation":"add","target_type":"component","name":"TestKit"}}

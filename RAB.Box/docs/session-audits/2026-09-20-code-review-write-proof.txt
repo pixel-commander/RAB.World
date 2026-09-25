@@ -1,0 +1,18 @@
+{
+  "proof": "C:\\Users\\pixelcommander\\.rab\\temp\\test\\1830000001072\\proof.json",
+  "artifact": "C:\\Users\\pixelcommander\\.rab\\temp\\test\\1830000001072\\project\\src\\labels.ts",
+  "attempts": [
+    {
+      "name": "unguarded",
+      "status": "blocked",
+      "wrote": false,
+      "findings": 3
+    },
+    {
+      "name": "guarded",
+      "status": "written",
+      "wrote": true,
+      "findings": 0
+    }
+  ]
+}

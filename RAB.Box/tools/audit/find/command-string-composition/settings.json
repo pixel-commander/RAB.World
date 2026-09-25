@@ -1,0 +1,30 @@
+{
+  "id": 1800000000028,
+  "name": "command-string-composition",
+  "title": "Find Command String Composition",
+  "description": "Finds candidate exec calls whose command text is assembled with interpolation or concatenation.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "command-string-composition",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\b(?:exec|execSync)\\s*\\([^\\n]*(?:\\$\\{|\\+)",
+      "scope": "code",
+      "kind": "command-composition-candidate",
+      "heuristic": true,
+      "flags": "i"
+    }
+  }
+}

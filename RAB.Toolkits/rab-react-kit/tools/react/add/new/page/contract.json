@@ -1,0 +1,47 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "hybrid",
+    "description": "Renders the page template with content and construction seats, generates settings, and writes verified page artifacts.",
+    "reviewed_at": "2026-09-20"
+  },
+  "result": {
+    "status": "created",
+    "type": "page",
+    "name": "page name",
+    "file": "absolute source file",
+    "path": "absolute source file",
+    "folder": "absolute page folder",
+    "verification": "shared artifact-writer receipt",
+    "construction_seats": [
+      {
+        "id": "page-<slug>:p1",
+        "role": "page-root",
+        "owner": "page name"
+      }
+    ],
+    "provided": {
+      "seats": {
+        "file": "absolute source file",
+        "path": "absolute source file",
+        "page": "page name",
+        "page_root_seat": "page-<slug>:p1"
+      }
+    },
+    "id": "positive numeric ID from the shared owner",
+    "title": "generated React page title",
+    "description": "generated React page description",
+    "settings": {
+      "id": "same ID as result.id",
+      "name": "generated item name",
+      "title": "generated title",
+      "description": "generated description",
+      "settings": [],
+      "meta": {
+        "kind": "page"
+      },
+      "indexed": "boolean, default true",
+      "type": "page"
+    }
+  }
+}

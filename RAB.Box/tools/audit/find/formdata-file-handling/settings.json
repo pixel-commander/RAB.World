@@ -1,0 +1,30 @@
+{
+  "id": 1800000000012,
+  "name": "formdata-file-handling",
+  "title": "Find FormData File Handling",
+  "description": "Finds FormData construction and file/image/upload field access in application code.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "formdata-file-handling",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bFormData\\s*\\(|\\.(?:get|getAll)\\s*\\(\\s*[\\\"\\'][^\\\"\\']*(?:file|image|upload)[^\\\"\\']*[\\\"\\']",
+      "scope": "code",
+      "kind": "formdata-file-handling",
+      "heuristic": true,
+      "flags": "i"
+    }
+  }
+}

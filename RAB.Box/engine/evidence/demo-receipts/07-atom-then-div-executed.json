@@ -1,0 +1,112 @@
+{
+  "status": "completed",
+  "authority": 1,
+  "receipt": {
+    "id": 1789384251458,
+    "project_id": "demo-1",
+    "capability": "div-stamp",
+    "original": "make a div with class x",
+    "contract": "95bca508af116134d7e3fe31e63aaf46d1e123255815e24b70f36038288f6a25",
+    "finished_at": "2026-09-14T11:10:51.554Z",
+    "evidence": {
+      "div-stamp.class": [
+        {
+          "source": "explicit-text",
+          "raw": "with class x",
+          "start": 11,
+          "end": 23,
+          "role": "class-name"
+        }
+      ],
+      "atom-stamp.token": [
+        {
+          "source": "clarification",
+          "request_id": 1789384251458,
+          "stamp": "atom-stamp"
+        }
+      ],
+      "div-stamp.name": [
+        {
+          "source": "declared-default",
+          "value": "demo-div"
+        }
+      ],
+      "atom-stamp.name": [
+        {
+          "source": "parent-binding",
+          "returnTo": {
+            "request_id": 1789384251458,
+            "stamp": "div-stamp",
+            "key": "class"
+          }
+        }
+      ],
+      "atom-stamp.layer": [
+        {
+          "source": "declared-default",
+          "value": "atoms"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "capability": "atom-stamp",
+        "options": {
+          "token": "--surface-main",
+          "name": "x",
+          "layer": "atoms"
+        },
+        "returnTo": {
+          "request_id": 1789384251458,
+          "stamp": "div-stamp",
+          "key": "class"
+        },
+        "status": "verified",
+        "verification": "created-files-match-approved-plan-sha256",
+        "destination": "atoms/x",
+        "files": [
+          {
+            "path": "atoms/x/atom.css",
+            "bytes": 86,
+            "sha256": "023cdd24f74aa2b7b98166d3ba6c039afe79fa0b711e2202451da8952ed408c3"
+          },
+          {
+            "path": "atoms/x/settings.json",
+            "bytes": 67,
+            "sha256": "b382520b66f57befcb41a64129a9e5c201983bc5cf9971d608f9249d17d51b03"
+          },
+          {
+            "path": "atoms/x/README.txt",
+            "bytes": 41,
+            "sha256": "5299a16f9d1d9ac22a22950f268e39538abf14c6446e498b99ea61a73f40ae3b"
+          }
+        ]
+      },
+      {
+        "capability": "div-stamp",
+        "options": {
+          "class": "x",
+          "name": "demo-div"
+        },
+        "returnTo": null,
+        "status": "verified",
+        "verification": "created-files-match-approved-plan-sha256",
+        "destination": "output/demo-div",
+        "files": [
+          {
+            "path": "output/demo-div/index.html",
+            "bytes": 185,
+            "sha256": "8fb8ba7dabf03da46f30661b4f588cc52141bde5abb18619556ca30a13dc9880"
+          },
+          {
+            "path": "output/demo-div/README.txt",
+            "bytes": 81,
+            "sha256": "c2c6cf868717aff2d1abd29a4c82b5bc0a441d68f56a72a6e1dae7793ad3ac7c"
+          }
+        ]
+      }
+    ],
+    "verification": "file materialization verified; see each stamp’s scope in README",
+    "cloud_calls": 0
+  }
+}

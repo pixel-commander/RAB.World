@@ -1,0 +1,10 @@
+@layer components {
+  .interactive-page {
+    flex: 1;
+    inline-size: 100%;
+    block-size: 100%;
+    min-inline-size: 0;
+    min-block-size: 0;
+    border: none;
+  }
+}

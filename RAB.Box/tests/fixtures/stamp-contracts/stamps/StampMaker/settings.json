@@ -1,0 +1,14 @@
+{
+  "id": 1789380000014,
+  "name": "stamp-maker",
+  "title": "Make a stamp skeleton",
+  "description": "create a new stamp in the current project and return the stamp",
+  "date_added": 1789380000000,
+  "data_types": ["stamp", "capability-description", "data-types"],
+  "options": {
+    "name": {"required": true, "type": "text", "role": "artifact-name", "validate": "project-name", "question": "What is the new stamp name?"},
+    "description": {"required": true, "type": "text", "role": "capability-description", "question": "Describe exactly what the stamp does."},
+    "data_types": {"required": false, "type": "text", "role": "data-types", "question": "Optional comma-separated data types."},
+    "location": {"required": true, "type": "text", "role": "destination", "validate": "relative-directory", "question": "Where should generated stamp skeletons be stored?"}
+  }
+}

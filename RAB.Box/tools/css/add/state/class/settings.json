@@ -1,0 +1,48 @@
+{
+  "id": 1790000001414,
+  "name": "class",
+  "title": "Add CSS State to Class",
+  "description": "Adds or updates pseudo-states and the is-active class state at an explicit CSS location. Pair active and is-active for a shared action-atom skin.",
+  "settings": [
+    {
+      "type": "file",
+      "name": "location",
+      "title": "CSS Location",
+      "description": "CSS file path, or a folder containing one unique stylesheet with the class.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "class_name",
+      "title": "Class Name",
+      "description": "CSS class name or selector.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "state",
+      "title": "State",
+      "description": "hover, active, is-active, focus, focus-visible, focus-within, disabled, checked, or visited. Use active, is-active to share one rule. Colon/dot prefixes are accepted.",
+      "required": true
+    },
+    {
+      "type": "textarea",
+      "name": "styles",
+      "title": "Styles",
+      "description": "CSS declarations or a JSON property/value object.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "css",
+    "operation": "create",
+    "target_type": "class",
+    "data_types": [
+      "css",
+      "class",
+      "state"
+    ],
+    "output": "css-update",
+    "authority": "write"
+  }
+}

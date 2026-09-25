@@ -1,0 +1,22 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "hybrid",
+    "description": "Renders the React project template and selected assets/starter.json file records, optionally includes database files, initializes project memory, optionally runs the UI-kit seed, and always runs the UI-kit final pass.",
+    "reviewed_at": "2026-09-20"
+  },
+  "result": {
+    "status": "created",
+    "project": {
+      "id": "new positive numeric project identity allocated by the shared owner",
+      "name": "project name",
+      "root": "absolute source root",
+      "type": "react"
+    },
+    "settings": "generated project settings",
+    "box_memory": "user-home .rab project record folder",
+    "verification": "shared artifact-writer receipt",
+    "ui_kit": "optional seed result or null",
+    "finalization": "UI-kit final pass result"
+  }
+}

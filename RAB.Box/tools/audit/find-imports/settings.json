@@ -1,0 +1,10 @@
+{
+  "id": 1790000000711,
+  "name": "find-imports",
+  "title": "Find Imports",
+  "description": "Finds imports in source files under an audit folder and builds a reverse source index.",
+  "settings": [
+    {"type":"folder","name":"folder","title":"Folder","description":"Folder to scan.","required":true}
+  ],
+  "meta": {"domain":"audit","operation":"find","target_type":"import","quantifier":"all","data_types":["import","file","path"],"output":"report","authority":"read"}
+}

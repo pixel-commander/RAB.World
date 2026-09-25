@@ -1,0 +1,31 @@
+{
+  "id": 1790000000944,
+  "name": "hardcoded-urls",
+  "title": "Find Hardcoded URLs",
+  "description": "Finds literal HTTP/HTTPS URLs in supported files.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "url",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "https?:\\/\\/[^\\s\"\\'`<>]+",
+      "kind": "hardcoded-url"
+    }
+  }
+}

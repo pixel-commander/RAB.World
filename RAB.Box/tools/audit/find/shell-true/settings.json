@@ -1,0 +1,30 @@
+{
+  "id": 1800000000027,
+  "name": "shell-true",
+  "title": "Find Shell-Enabled Spawns",
+  "description": "Finds process-launch options enabling shell interpretation.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "shell-true",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bshell\\s*:\\s*true\\b",
+      "scope": "code",
+      "kind": "shell-enabled-process",
+      "heuristic": false,
+      "flags": "i"
+    }
+  }
+}

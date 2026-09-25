@@ -1,0 +1,56 @@
+{
+  "id": 1810000000019,
+  "name": "process-length",
+  "title": "Calculate Process Length",
+  "description": "Calculates deterministic process length L=v*t.",
+  "settings": [
+    {
+      "type": "number",
+      "name": "belt_speed",
+      "title": "Belt Speed",
+      "description": "belt speed",
+      "required": true
+    },
+    {
+      "type": "number",
+      "name": "residence_time",
+      "title": "Residence Time",
+      "description": "residence time",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "speed_unit",
+      "title": "Speed Unit",
+      "description": "speed unit",
+      "required": false,
+      "default": "ft/min"
+    },
+    {
+      "type": "text",
+      "name": "time_unit",
+      "title": "Time Unit",
+      "description": "time unit",
+      "required": false,
+      "default": "min"
+    },
+    {
+      "type": "text",
+      "name": "output_length_unit",
+      "title": "Output Length Unit",
+      "description": "output length unit",
+      "required": false,
+      "default": "ft"
+    }
+  ],
+  "meta": {
+    "domain": "kitchen",
+    "authority": "pure",
+    "data_types": [
+      "process_length"
+    ],
+    "returns": [
+      "process_length"
+    ]
+  }
+}

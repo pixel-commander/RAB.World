@@ -1,0 +1,6 @@
+const Next = (props: Bag) => {
+  const handleClick = () => props?.handleClick?.({ id: 'selected' }, 'choose');
+  return <button className="fixture" onClick={handleClick}>
+    {props?.title || 'Choose'}
+  </button>;
+};

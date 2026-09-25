@@ -1,0 +1,10 @@
+% start S
+S[MODE=command, KIND=?k, COUNT=?n] -> CREATE NP[KIND=?k, NUM=?n]
+NP[KIND=?k, NUM=?n] -> DET[NUM=?n] NOUN[KIND=?k, NUM=?n]
+CREATE -> 'make' | 'create' | 'build'
+DET[NUM=sg] -> 'a' | 'one'
+DET[NUM=pl] -> 'two'
+NOUN[KIND=component, NUM=sg] -> 'component'
+NOUN[KIND=component, NUM=pl] -> 'components'
+NOUN[KIND=atom, NUM=sg] -> 'atom'
+NOUN[KIND=atom, NUM=pl] -> 'atoms'

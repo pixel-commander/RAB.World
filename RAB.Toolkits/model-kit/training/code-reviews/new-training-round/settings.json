@@ -1,0 +1,39 @@
+{
+  "id": 1790162067354,
+  "name": "new-training-round",
+  "title": "New Training Round",
+  "description": "Adds the next numbered training round to an existing code-review session, preserving earlier rounds and the separate original source.",
+  "settings": [
+    {
+      "name": "session",
+      "type": "path",
+      "title": "Session folder",
+      "description": "Absolute path to a session created by the parent code-reviews stamp.",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "title": "Round title",
+      "description": "Optional title; defaults to the numbered round name.",
+      "required": false
+    },
+    {
+      "name": "focus",
+      "type": "textarea",
+      "title": "Round focus",
+      "description": "What this round will review. May remain empty until agreed.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "model-kit",
+    "operation": "create",
+    "target_type": "training-round",
+    "data_types": [
+      "training-round"
+    ],
+    "output": "folder",
+    "authority": "write"
+  }
+}

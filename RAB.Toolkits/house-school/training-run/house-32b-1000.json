@@ -1,0 +1,27 @@
+{
+  "model_family": "Qwen3-32B",
+  "dataset": "C:/Users/gauge/.rab/temp/test/1790225264065",
+  "output": "C:/Users/gauge/.rab/temp/test/1790225264065/lora",
+  "approved": "C:/Users/gauge/.rab/temp/test/1790225264065/approved",
+  "source_sha256": "8f66be3d66e9ec023562b3199da00b6c63b5b61802efc8bb42da8f17ca8ab3b4",
+  "parent": "C:/Users/gauge/Documents/Codex/2026-09-23/r-boot-seqs-txt/outputs/lora-v2-round2/candidate-adapter",
+  "parent_sha256": "173ff3f22c76a0de64334f7f2f88871621988966fa0822f61ff1033c9c2aa39f",
+  "base": "C:/Users/gauge/.cache/huggingface/hub/models--unsloth--qwen3-32b-bnb-4bit/snapshots/7f721e74a6a8cc9ee352f7e49303a2c1705f9083",
+  "max_sequence": 4096,
+  "max_new_tokens": 2048,
+  "learning_rate": 0.00002,
+  "seed": 20260924,
+  "epochs": 1,
+  "authorization": {
+    "by": "Gauge",
+    "training_authorized": true,
+    "instructions": [
+      "then can you put together... a 1000 test LoRA press and activate the training when it's done",
+      "do like... 40% correct code",
+      "no the 32b",
+      "stay on the 32 for now",
+      "ok go"
+    ],
+    "scope": "This 1000-example 400-clean/600-repair batch, continue the 32B round-2 parent into a new adapter; no model promotion."
+  }
+}

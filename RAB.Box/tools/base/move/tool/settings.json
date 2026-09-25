@@ -1,0 +1,55 @@
+{
+  "id": 1790000000998,
+  "name": "tool",
+  "title": "Move Tool Path",
+  "description": "Moves an existing Tool to a new semantic location while preserving its stable ID, atomically updating the selected PATHS registry, rescanning the House, and rolling back if verification fails.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "address",
+      "title": "Tool Address",
+      "description": "Flat PATHS address of the Tool to move.",
+      "required": true
+    },
+    {
+      "type": "options",
+      "name": "scope",
+      "title": "Scope",
+      "description": "Move the House capability or a project-local override.",
+      "required": true,
+      "options": [
+        {
+          "name": "house",
+          "description": "House PATHS/tool root"
+        },
+        {
+          "name": "project",
+          "description": "Loaded project PATHS/project root"
+        }
+      ],
+      "question": "Move the House capability or a project-local override?"
+    },
+    {
+      "type": "path",
+      "name": "destination",
+      "title": "Destination",
+      "description": "New semantic path relative to tools/ for House scope or project root for project scope. Leaf name must remain unchanged.",
+      "required": true
+    },
+    {
+      "type": "boolean",
+      "name": "confirm",
+      "title": "Confirm",
+      "description": "Explicit operator confirmation for this control-plane mutation.",
+      "required": true,
+      "question": "Confirm this control-plane path move?"
+    }
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "move",
+    "target_type": "tool",
+    "output": "control-plane-receipt",
+    "authority": "write"
+  }
+}

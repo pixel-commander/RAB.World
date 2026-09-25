@@ -1,0 +1,32 @@
+{
+  "id": 1790000000947,
+  "name": "session-storage",
+  "title": "Find sessionStorage Usage",
+  "description": "Finds sessionStorage API references.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "session-storage",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bsessionStorage\\b",
+      "kind": "session-storage",
+      "scope": "code"
+    }
+  }
+}

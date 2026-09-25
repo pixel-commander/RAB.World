@@ -1,0 +1,36 @@
+RRAABBIITT v0.9.3 WORKING — CONSTRUCTION COMPOSITION
+Date: 2026-09-17
+
+Adds the required construction capability layer above the v0.9.2 verified Runner/scaffolding foundation.
+
+NEW STAMPS
+- react/stamp-new-page — addressable React page root
+- react/stamp-new-dashboard — compound dashboard generator composed through Runner child Tools
+
+NEW TOOLS
+- react/apply/grid-layout — applies a known grid topology and addressable areas
+- react/insert/component-into-area — inserts a component into a named/exact area and adds a relative import
+- react/apply/scroll-y — applies canonical vertical-scroll behavior
+- react/add/scroll-wrapper — adds an addressable scroll-y wrapper
+
+COMPOSITION LAW
+Dashboard = Page + Grid + navigation component + explicit area insertion.
+The compound Stamp uses existing/new child capabilities through helpers.runTool(); it does not duplicate their engines.
+
+ORDER / CONFLUENCE TARGET
+Page-first and component-first construction orders must converge on the same semantic page structure.
+
+SCROLL
+The canonical grid CSS now includes .scroll-y { min-block-size: 0; overflow-y: auto; }.
+
+SCAFFOLDING
+New pages/grids preserve data-rab-seat markers until the existing Scaffolding Cleanup Pass strips them.
+
+
+RECOVERY REVIEW HARDENING
+-------------------------
+- component insertion import detection now validates the expected module source; conflicting same-name bindings fail closed with IMPORT_COLLISION
+- Apply Grid Layout accepts seat_id / area for nested construction targets
+- nested grid area seat IDs are deterministically scoped to the target
+- live legacy-writer wording removed from current CLI/docs/tests
+- regression receipt raised to 389 / 389 Node tests

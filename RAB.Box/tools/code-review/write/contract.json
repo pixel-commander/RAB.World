@@ -1,0 +1,14 @@
+{
+  "version": "tool-contract/v1",
+  "source": {"kind":"composite","description":"Reruns the installed code reviewer, then calls the shared no-overwrite artifact writer on the exact checked bytes. This opt-in writer does not intercept other writing tools."},
+  "result": {
+    "status":"blocked | written",
+    "wrote":"boolean",
+    "file":"string",
+    "review_execution_id":"number",
+    "review_report":"string",
+    "review":"code-review/v1 result",
+    "destination?":"string",
+    "verification?":{"status":"string","verification":"string","destination":"string","files":[{"path":"string","bytes":"number","sha256":"string"}]}
+  }
+}

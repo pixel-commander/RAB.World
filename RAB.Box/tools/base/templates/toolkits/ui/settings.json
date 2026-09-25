@@ -1,0 +1,51 @@
+{
+  "id": 1790029418976,
+  "name": "ui",
+  "title": "New UI Toolkit",
+  "description": "Creates an empty UI toolkit folder structure for a React, Angular, HTML, or other project type. Includes toolkit settings, usage rules, project and component scaffold folders, and CSS container-atom, action-atom, effect-atom, and grid-atom folders.",
+  "settings": [
+    {
+      "name": "folder",
+      "type": "folder",
+      "title": "Toolkit Folder",
+      "description": "Absolute destination folder. A new folder or an existing empty folder is accepted.",
+      "required": true
+    },
+    {
+      "name": "type",
+      "type": "text",
+      "title": "Project Type",
+      "description": "Lowercase project type used beneath tools/, such as react, angular, or html.",
+      "required": true
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "title": "Toolkit Name",
+      "description": "Optional lowercase toolkit name. Defaults to the destination folder name.",
+      "required": false
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "title": "Toolkit Title",
+      "description": "Optional display title. Defaults to the project type followed by UI Toolkit.",
+      "required": false
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "title": "Toolkit Description",
+      "description": "Optional description for the new toolkit.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "create",
+    "target_type": "toolkit",
+    "data_types": ["toolkit", "ui", "folder", "template"],
+    "output": "toolkit",
+    "authority": "write"
+  }
+}

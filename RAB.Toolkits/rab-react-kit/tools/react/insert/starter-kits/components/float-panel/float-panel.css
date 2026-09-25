@@ -1,0 +1,14 @@
+@layer components {
+  .float-panel { position: fixed; z-index: 20; inset-block-end: var(--space-xl); inset-inline-end: var(--space-xl); display: grid; grid-template-rows: auto minmax(0, 1fr); inline-size: min(26rem, 90vw); block-size: var(--float-panel-size, 24rem); overflow: hidden; }
+  .float-panel[hidden] { display: none; }
+  .float-panel--collapsed { block-size: max-content; }
+  .float-panel__header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); padding: var(--space-xs) var(--space-sm) var(--space-xs) var(--space-md); border-block-end: var(--border-width) var(--border-style) var(--border-subtle); cursor: move; user-select: none; }
+  .float-panel--collapsed .float-panel__header { border-block-end: none; }
+  .float-panel__title { font: var(--type-label); color: var(--content-strong); }
+  .float-panel__toggle { padding: 0 var(--space-sm); border: none; background: var(--surface-transparent); color: var(--content-muted); font: var(--type-label); cursor: pointer; transition: color var(--motion-fast); }
+  .float-panel__toggle:hover { color: var(--content-strong); }
+  .float-panel__body { display: grid; grid-template-rows: minmax(0, 1fr); min-block-size: 0; }
+  .float-panel__body[hidden] { display: none; }
+  .float-panel--docked { position: static; inline-size: auto; block-size: max-content; }
+  .float-panel--docked .float-panel__body { padding: var(--space-md); }
+}

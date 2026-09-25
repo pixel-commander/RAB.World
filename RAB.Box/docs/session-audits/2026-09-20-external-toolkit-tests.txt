@@ -1,0 +1,30 @@
+✔ linked tools use existing catalog, inherited executor, contracts, binding and runner without importing on discovery (226.2822ms)
+✔ project override selects linked implementation, composite inherits it, explicit IDs/paths retain meaning and receipts survive save (2104.6035ms)
+✔ local project overrides stay contained and working beside linked toolkits (70.6177ms)
+✔ duplicate IDs and full paths quarantine all contenders, including the house tool (70.7104ms)
+✔ derived alias collision remains ambiguous across kits, with explicit identity available (80.8545ms)
+✔ disabled/missing/malformed links are explicit, cache refresh works, and unrelated fixtures never inherit links (64.038ms)
+✔ link writes are idempotent and duplicate canonical roots are diagnosed without double scanning (68.0416ms)
+✔ contract and template root escapes never become runnable (62.4102ms)
+✔ catalog service includes a fresh linked toolkit without initializing project memory (56.8082ms)
+✔ project-only custom_toolkit_path never leaks across A, B, no project, and A again (150.0691ms)
+✔ duplicate toolkit identities quarantine every root regardless of link order (57.2907ms)
+✔ unlink follows the same canonical root as link, and disconnected roots can be disabled (52.1821ms)
+✔ rejecting the 65th link preserves the original config bytes (45.3248ms)
+✔ house PATHS is a flat direct address book (29.2835ms)
+✔ Tool House resolves a short PATHS key by permanent id (1019.4938ms)
+✔ project PATHS can hijack one house address without replacing siblings (1945.5892ms)
+✔ owner defaults, metadata variants, and explicit leaf overrides drive previews without executing tools (133.3566ms)
+✔ new tools get derived shortcuts, execute with saved references, and refresh after external moves/removals (700.1994ms)
+✔ ambiguous derived shortcuts and stale explicit identities never silently choose a tool (79.8693ms)
+✔ contract references stay bounded, reject cycles, and expose invalid contract diagnostics (52.069ms)
+✔ service catalog refresh observes changed contracts without loading a project (35.402ms)
+✔ source report consumes declared classifications and fingerprints their owner (57.4089ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3406.9174

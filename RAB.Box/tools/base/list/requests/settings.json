@@ -1,0 +1,16 @@
+{
+  "id": 1830000000010,
+  "name": "requests",
+  "title": "List requests",
+  "description": "List global/shared requests or the selected saved project's requests.",
+  "settings": [
+    {"name":"scope","type":"options","title":"Scope","required":true,"default":"global","options":[{"name":"global","description":"Global / shared"},{"name":"project","description":"Project"}]},
+    {"name":"project_id","type":"number","title":"Project ID","required":false,"description":"For Project scope only; defaults to the selected project."}
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "list",
+    "target_type": "request",
+    "authority": "read"
+  }
+}

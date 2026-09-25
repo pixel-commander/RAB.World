@@ -1,0 +1,10 @@
+{
+  "id": 1790000000710,
+  "name": "find-comments",
+  "title": "Find Comments",
+  "description": "Finds source-code comments in files under an audit folder and returns their locations.",
+  "settings": [
+    {"type":"folder","name":"folder","title":"Folder","description":"Folder to scan.","required":true}
+  ],
+  "meta": {"domain":"audit","operation":"find","target_type":"comment","quantifier":"all","data_types":["comment","file","path"],"output":"list","authority":"read"}
+}

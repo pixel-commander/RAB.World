@@ -1,0 +1,29 @@
+v0.3 — SINGLE HTML OPERATOR + SIBLING MOCK WORLD
+================================================
+
+Added:
+magic-box/index.html            one-file browser UI
+server.mjs                      loopback HTTP adapter
+bridge/service.mjs              persisted runs/revisions + engine calls
+bridge/language.mjs             review-only data imports/search
+mock-project/                   editable copy of example Project A
+HOST.json                       project/UI/library/run bootstrap locations
+language/                       optional NLTK feature grammar and exporter
+runs/                           empty initial runtime store
+new server/API tests, browser DOM interaction checks, grammar checks
+
+Preserved unchanged:
+engine/ = previous magic-box-stamps-v0.2 source, tests, demos and documentation
+reference/ = previously bundled word map and theories/names/dates material
+
+The browser calls the real engine. No simulated success; the explicit Execute
+button writes the example plans and exposes their receipts. The React reference
+project is not your production scaffold. Directives remain project-local.
+
+Not added:
+CCL/embedding model, cloud adapter, general language parser, automatic code/stamp
+creation, public hosting authentication, real production house integrations.
+
+NLTK is not secretly inserted into your deterministic runtime. The original .fcfg
+example demonstrates features and unification separately; WordNet exports remain
+review data until an operator changes an executable grammar/alias contract.

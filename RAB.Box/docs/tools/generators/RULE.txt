@@ -1,0 +1,7 @@
+INHERIT=../RULE.txt; KIND=generator; ordinary Tool; no template/ or stamp-* leaf.
+CREATE=base/stamp-new-tool; prefer {path,title,description,settings?,meta?,address?,inherit_executor?}.
+SHAPE=settings.json+leaf.mjs or nearest parent executor; add contract.json/tests; creator mold != generated template.
+IMPLEMENT: replace placeholder run; validate target/input semantics before mutation; structure-aware edits when needed; public children via helpers.runTool; inherited executor must actually support leaf.
+CONTRACT: source.kind=internal/composite/etc as observed; preserve domain evidence; provided.seats for downstream; throw failures; test no-write dry_run.
+ACCEPT: fresh discovery/diagnostics+input/default/false/zero/empty/path/overwrite/error checks+actual source/build+form/Chat binding.
+KNOWN GAPS: no generated contract/tests; placeholder behavior; optional PATHS alias writes; highest-only catalog enrollment. Fix only within authorized code scope.

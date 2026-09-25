@@ -1,0 +1,48 @@
+{
+  "id": 1790000001510,
+  "name": "managed-block",
+  "title": "Patch Managed Code Block",
+  "description": "Updates only a named RRAABBIITT-owned marker region, preserves all surrounding manual code, and performs no write when content is unchanged.",
+  "settings": [
+    {
+      "type": "file",
+      "name": "file",
+      "title": "File",
+      "description": "Existing source file to patch.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "boundary_tag",
+      "title": "Boundary Tag",
+      "description": "Stable RRAABBIITT ownership tag.",
+      "required": true
+    },
+    {
+      "type": "textarea",
+      "name": "content",
+      "title": "Managed Content",
+      "description": "Desired content inside the owned boundary.",
+      "required": true
+    },
+    {
+      "type": "boolean",
+      "name": "create_if_missing",
+      "title": "Create if Missing",
+      "description": "Create one managed region when no boundary exists.",
+      "required": false,
+      "default": true
+    }
+  ],
+  "meta": {
+    "domain": "code",
+    "operation": "update",
+    "target_type": "managed-block",
+    "data_types": [
+      "code",
+      "managed-block"
+    ],
+    "output": "file",
+    "authority": "write"
+  }
+}

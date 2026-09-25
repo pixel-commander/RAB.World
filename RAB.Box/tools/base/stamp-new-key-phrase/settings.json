@@ -1,0 +1,12 @@
+{
+  "id": 1790000000207,
+  "name": "stamp-new-key-phrase",
+  "title": "New Key Phrase",
+  "description": "Creates a reviewed key-phrase record for the language decoder without directly granting execution authority.",
+  "settings": [
+    {"type":"text","name":"phrase","title":"Phrase","description":"The phrase to teach.","required":true},
+    {"type":"text","name":"types","title":"Types","description":"Comma-separated lexical/phrase type candidates.","required":true},
+    {"type":"text","name":"senses","title":"Senses","description":"Comma-separated semantic sense candidates.","required":true}
+  ],
+  "meta": {"domain":"base","operation":"create","target_type":"key-phrase","data_types":["language","phrase"],"output":"key-phrase","authority":"write"}
+}

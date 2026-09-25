@@ -1,0 +1,47 @@
+{
+  "id": 1790277767775,
+  "name": "effect-class",
+  "title": "Add effect class",
+  "description": "Scaffolds effect-[name].css from its template.",
+  "settings": [
+    {
+      "name": "name",
+      "type": "text",
+      "title": "Name",
+      "description": "Lowercase kebab-case suffix without the effect- prefix.",
+      "required": true
+    },
+    {
+      "name": "location",
+      "type": "folder",
+      "title": "Save Folder",
+      "description": "Absolute output folder.",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "title": "Title",
+      "required": false
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "title": "Description",
+      "required": false
+    },
+    {
+      "name": "transmitting",
+      "type": "boolean",
+      "title": "Transmitting",
+      "description": "Omit to use the signal template default.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "create",
+    "target_type": "effect-class",
+    "authority": "write"
+  }
+}

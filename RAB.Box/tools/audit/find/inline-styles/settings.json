@@ -1,0 +1,33 @@
+{
+  "id": 1790000000941,
+  "name": "inline-styles",
+  "title": "Find Inline React Styles",
+  "description": "Finds obvious literal inline style object props in JSX/TSX.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "inline-style",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bstyle\\s*=\\s*\\{\\{",
+      "kind": "inline-style",
+      "scope": "code",
+      "heuristic": true
+    }
+  }
+}

@@ -1,0 +1,36 @@
+MAGIC BOX v0.2 — actual offline execution in a temporary demo workspace
+/tmp/rraabbiitt-demo-g9ibfF
+
+01-project-a-pending: input-required
+  react-project: {"name":"test-project","location":".","add_database":false}
+  needs react-project.type
+
+02-project-a-resolved: ready
+  react-project: {"name":"test-project","location":".","type":"app","add_database":false}
+
+03-project-a-executed: completed
+  verified react-project: 20 files → test-project
+
+04-project-b-extra-requirements: input-required
+  react-project: {"name":"test-project","location":".","add_database":false}
+  needs react-project.type
+  needs react-project.theme
+
+05-project-b-executed: completed
+  verified react-project: 22 files → test-project
+
+06-div-waits-for-atom: input-required
+  atom-stamp: {"name":"x","layer":"atoms"}
+  div-stamp: {"class":"x","name":"demo-div"}
+  needs atom-stamp.token → return to div-stamp.class
+
+07-atom-then-div-executed: completed
+  verified atom-stamp: 3 files → atoms/x
+  verified div-stamp: 2 files → output/demo-div
+
+08-existing-class-no-new-atom: completed
+  verified component-stamp: 2 files → components/DatePicker
+
+Full request/answer/receipt records: /tmp/rraabbiitt-demo-g9ibfF/receipts
+No cloud calls. No package install. No writes to your existing project.
+Generated React npm dependencies are not installed by this demo.

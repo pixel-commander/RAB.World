@@ -1,0 +1,205 @@
+{
+  "version": "tool-contract/v1",
+  "select": "meta.target",
+  "variants": {
+    "cookies-unsecure": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "target": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "options?": "string",
+            "unverified?": [
+              "string"
+            ],
+            "httpOnly?": "boolean",
+            "secure?": "boolean",
+            "missing?": [
+              "string"
+            ]
+          }
+        ]
+      }
+    },
+    "jwt-secrets": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "target": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "secret_source": "string",
+            "redacted": "boolean"
+          }
+        ]
+      }
+    },
+    "private-keys": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "target": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "redacted": "boolean",
+            "key_material": "string"
+          }
+        ]
+      }
+    },
+    "prototype-pollution": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "target": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "dynamic_key": "string",
+            "guard_detected": "boolean"
+          }
+        ]
+      }
+    },
+    "regex-dos": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "target": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "pattern": "string"
+          }
+        ]
+      }
+    },
+    "shell-spawns": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "target": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "sink?": "string",
+            "shell": "boolean",
+            "dynamic?": "boolean"
+          }
+        ]
+      }
+    },
+    "sql-injection": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "target": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "sink": "string",
+            "dynamic": "string"
+          }
+        ]
+      }
+    },
+    "unsecure-tls": {
+      "result": {
+        "status": "string",
+        "scan": "string",
+        "root": "string",
+        "totals": {
+          "files_scanned": "number",
+          "matches": "number"
+        },
+        "rows": [
+          {
+            "file": "string",
+            "line": "number",
+            "kind": "string",
+            "text": "string",
+            "target": "string",
+            "confidence": "string",
+            "source_scope": "string",
+            "setting": "string",
+            "value": "string | boolean"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": 1790000001203,
+  "name": "sensitive-manifests",
+  "title": "Audit Hosting Environment Manifests",
+  "description": "Finds sensitive or infrastructure-oriented manifests inside deployment payloads while distinguishing true credential artifacts from review-only server configuration.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional project or deployment folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "hosting",
+    "data_types": ["hosting", "manifest"],
+    "output": "report",
+    "authority": "read",
+    "check": "manifests"
+  }
+}

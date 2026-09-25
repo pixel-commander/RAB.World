@@ -1,0 +1,17 @@
+{
+  "name": "containers",
+  "id": 1790304758882,
+  "title": "containers",
+  "description": "Container atoms",
+  "date_added": "2026-09-25T02:52:38.886Z",
+  "path": "L:\\RAB.World\\RAB.React\\src\\atoms\\containers",
+  "world": 1790283925818,
+  "types": [
+    "ui"
+  ],
+  "beacon": "on",
+  "reach": [
+    "world",
+    "project"
+  ]
+}

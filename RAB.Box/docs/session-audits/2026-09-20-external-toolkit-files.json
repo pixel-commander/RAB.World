@@ -1,0 +1,415 @@
+{
+  "at": "2026-09-20T22:43:15.006Z",
+  "box_files": [
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\bridge\\toolkit-links.mjs",
+      "sha256": "ccaaaaf1455a4a0c1094b845f0951e8ec390330360e1ab8801a360bc55afee2c"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\bridge\\tool-house.mjs",
+      "sha256": "1d2ceb68ade3acf743501b75a57559288f7d78a5031ea3621f55cf351ccf87b2"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\bridge\\paths-registry.mjs",
+      "sha256": "5156ad8ee621268d6347c82815dd7c6b2c208925843a177bf39f96ec7c2d3cab"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\bridge\\project-conversation.mjs",
+      "sha256": "1a5277365b33ac021d8b6458f13f01dbb8e55bd47996035c924bbb40b71b8ca2"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\bridge\\session-planner.mjs",
+      "sha256": "044fe8f1b92ebb180b4a66006517665717dea4d90a10ee73bc4448a322cce253"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\bridge\\service.mjs",
+      "sha256": "8c96f51b9c89643108b7a13e06a3980d40d26deac495a73d5720333ef98922f3"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\bridge\\tool-workbench.mjs",
+      "sha256": "6629ce24a1a79308a3b1362ecf0da473eaf1f064410af69c8d76d2424a73da72"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\bridge\\rab-memory.contract.json",
+      "sha256": "f72f33210b3813e71456449a84bb2056ae33f1b2ac5f2e34e047ebfe52140881"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\bridge\\tool-tracking.contract.json",
+      "sha256": "8ba699b4c9163e0df6f45221a00802001e92ea82e4fabb6ae2b8e7b4553b011a"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\_stamp-engines.mjs",
+      "sha256": "2b8dfa09e3eb5fa8c05acb2f30fa217e8270a3f9bdf6d13bea44da0b62391584"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\_artifact-plan.mjs",
+      "sha256": "d76b9b9cac5285b22b1c202d55f3234b1adc32ca4ba4de693c17fe20151b4d4d"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\base\\stamp-new-project\\stamp-new-project.mjs",
+      "sha256": "7bc6925abff0cd1b06a3fbdaf25a2dab7bb77c48338de6314209584b6b3ec02d"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\base\\stamp-new-project\\settings.json",
+      "sha256": "26665f57265be5c95af5e8033fa4db36c556008b8bf0f1f4f49e5fad1227c4db"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\react\\stamp-new-project\\settings.json",
+      "sha256": "e2194c6cb896967ce4f4c1c37a5299f03433da93a1f636f1a1c81a20ab3a10eb"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\html\\stamp-new-project\\settings.json",
+      "sha256": "397a58edaddb2004ed6e4654fc0822225fd863f5b2ac2be26fdab6a4eb1f7c4c"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tools\\audit\\stamp-new-project\\settings.json",
+      "sha256": "09458831501a71ce0127c4d220903ebd95e77403e691e2566cb5d124c536d961"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\server.mjs",
+      "sha256": "b16085a0212c4c07ea7db9cd21e79f8361b571804b2d978401d369460dcbc006"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\magic-box\\index.html",
+      "sha256": "507bc31f03542f7f0c7e1425600d3933889fde5b34e81ad22f42b751c44b46ca"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\scripts\\toolkits.mjs",
+      "sha256": "42b2fb8ffa48d023f12a6bc5c3a18424a60050545410311ba3ca0c83f23c5661"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\scripts\\import-react-toolkit.mjs",
+      "sha256": "c6404f7b6659c2f4341fd9027335dde0cb5dd304ae385ffabc715592f9abd035"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\scripts\\prove-react-toolkit.mjs",
+      "sha256": "93f1daaac95fb0432eeee00be6cf06ebe6fe9aa02c90ca4500486d8bc9bee597"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tests\\external-toolkits.test.mjs",
+      "sha256": "64b7e6e4e6e1ae553eefa97893f6cebd7c2f59038cc24ac6b225dfb6d426e607"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\tests\\tool-house-v08.test.mjs",
+      "sha256": "83931cf947296d24bea438cb409588d4394878b33aab717837538bc674f1040a"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\TOOLKITS.json",
+      "sha256": "41b7a2ba42144354ad38765ba95228e31a382c8f9c75e16c08a0fccfada09562"
+    },
+    {
+      "file": "C:\\Users\\pixelcommander\\Desktop\\RRAABBIITT_v0.9.3\\docs\\help\\tool-kits\\external-toolkits\\README.txt",
+      "sha256": "107e66da7028407a62abbc896c12ee3a229857d7c5cecae2057aceeab9413030"
+    }
+  ],
+  "toolkit_files": [
+    {
+      "file": "C:\\magic-box-tools\\README.txt",
+      "sha256": "74149884c2c3bc3423be58e24e22feaa895449b05cee43292bec0245a828ade3"
+    },
+    {
+      "file": "C:\\magic-box-tools\\RULES.txt",
+      "sha256": "d4362243e190af72ff300b582f31753532355ad675264bd3b4c8bbfe7a995ec6"
+    },
+    {
+      "file": "C:\\magic-box-tools\\settings.json",
+      "sha256": "a28815dbb728ef3d23a3520575fa3eb5f190e0e72812515c4a23edd32fb81422"
+    },
+    {
+      "file": "C:\\magic-box-tools\\SOURCE_IMPORT.json",
+      "sha256": "06ad693aff190da70e38d23db786310344938dc40f28642434c9897af5f78760"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\atoms\\seed\\stamp-baseline\\contract.json",
+      "sha256": "d04a085b81766ae6e1cda8c21ee9e37b21e5693319e2c4b38c644a3190d222dc"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\atoms\\seed\\stamp-baseline\\README.txt",
+      "sha256": "3f8d317858fc81e4edca5d626f9fb8c6babd922caa33c834a368e2ac127b2f10"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\atoms\\seed\\stamp-baseline\\settings.json",
+      "sha256": "d60a143b40e7dc0b9d4d8aec955c41ea80266f74623433dbc014dfc6e0e1d3d9"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\atoms\\seed\\stamp-baseline\\stamp-baseline.mjs",
+      "sha256": "69fd5c47881b71a589e5c7442d5cb0df217545b35c4c575a6c286362a783690c"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\atoms\\seed\\stamp-baseline\\template\\src\\atoms\\actions\\.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\atoms\\seed\\stamp-baseline\\template\\src\\atoms\\containers\\.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\atoms\\seed\\stamp-baseline\\template\\src\\atoms\\effects\\.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\atoms\\seed\\stamp-baseline\\template\\src\\atoms\\grids\\.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\atoms\\seed\\stamp-baseline\\template\\src\\atoms\\README.txt",
+      "sha256": "8d1877c63ff2878bf2aac7fdbaee5b0e79c251b0eb1919c43e776d9c14977e4d"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\atoms\\seed\\stamp-baseline\\template\\src\\css\\actions.css",
+      "sha256": "843870a155309087f31118b69c101a4e356b5c180c68da12581942e779519cc8"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\atoms\\seed\\stamp-baseline\\template\\src\\css\\containers.css",
+      "sha256": "dcb225fb796fe103c8e97621262fcb2cffb9df37b9427331262c1c1f8449cdbc"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\atoms\\seed\\stamp-baseline\\template\\src\\themes\\dark\\colors.css",
+      "sha256": "5961afa9b3adf2259baf14ab586f0c10193d1969f0c8aa1970402fc4405ac40c"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\list\\seeds\\contract.json",
+      "sha256": "01edcdc539de961457042e324673c39f364240fe78b43b9700495c43ca7d0d3b"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\list\\seeds\\README.txt",
+      "sha256": "b6827f9e98e41ab8cfb8fc1baa3b02b7c9e2d8052b801d021a76b908cd6420fd"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\list\\seeds\\seeds.mjs",
+      "sha256": "2e6d74a682ef5fee6d888f67e9e4e86d2d1fc21524e23cf46e9a8b8a11fcc869"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\list\\seeds\\settings.json",
+      "sha256": "c01dfb5cc87b4a261212bce52d1a0d241226ff232cd35c7bcee50c4c0ee8a7e6"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\selected\\contract.json",
+      "sha256": "4dbfc1fd7b1cf774452474f4966eb54c3ae61461c453e1aca01fdd6adfb16fd7"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\selected\\README.txt",
+      "sha256": "38e21bc967196f9b03eaf5e541ecabe565d8b03cd7af1b221efe682275ed9eb2"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\selected\\selected.mjs",
+      "sha256": "cd6f3277079d8842905d8e4fc003e62d447b750363e9a7638e2f0b24f3d826aa"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\selected\\settings.json",
+      "sha256": "0a89cf5a764adb34d55ac23e2d9b5b18257b98d49142579f8c905e68ff1fdaff"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\stamp-site-chrome\\contract.json",
+      "sha256": "d04a085b81766ae6e1cda8c21ee9e37b21e5693319e2c4b38c644a3190d222dc"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\stamp-site-chrome\\README.txt",
+      "sha256": "a6a71c827e575b9a21471ea012007d5788598f6e80bad07e9a65f4bedbc7a0b6"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\stamp-site-chrome\\settings.json",
+      "sha256": "2ab8cf6d041dff31b34e2f33df5d66a3d1a85d6a0a533f2d9937129a781c4812"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\stamp-site-chrome\\stamp-site-chrome.mjs",
+      "sha256": "69fd5c47881b71a589e5c7442d5cb0df217545b35c4c575a6c286362a783690c"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\stamp-site-chrome\\template\\src\\components\\site-chrome\\css\\site-chrome.css",
+      "sha256": "5c087aed3663df228810345f885b177c3ea8963174a54aae8a6327b7d858e926"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\stamp-site-chrome\\template\\src\\components\\site-chrome\\settings.ts",
+      "sha256": "8a379ab37521deaa78542e3c993f478277801a2edb57b9dde5004eececda8f70"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\stamp-site-chrome\\template\\src\\components\\site-chrome\\site-nav\\css\\site-nav.css",
+      "sha256": "82c267085b2959302e2ea1316e79a7330dd8703b220703fd7467197bf3a4d201"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\stamp-site-chrome\\template\\src\\components\\site-chrome\\site-nav\\settings.ts",
+      "sha256": "830a2ba6ce6a2985f0ddd328eec6627e7d3560e15638c69632f892a6e99c4132"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\stamp-site-chrome\\template\\src\\components\\site-chrome\\site-nav\\SiteNav.tsx",
+      "sha256": "1b8d12797f264024e012c10ce7cdfb6487776c9e50a24069010a91684f1c6b3e"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\stamp-site-chrome\\template\\src\\components\\site-chrome\\SiteChrome.tsx",
+      "sha256": "b03ef0c8a1266f77dbd7d67c61443562fe215b1f99e82d812016d65d363a0c24"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\stamp-site-chrome\\template\\src\\components\\site-chrome\\SiteChrome.types.ts",
+      "sha256": "861c656ad94b62df0789b5d10ed1f7338734895242219d1dae32c6dd649225e7"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\components\\seed\\stamp-site-chrome\\template\\src\\css\\dashboard.css",
+      "sha256": "7c0e7f7869ddf7813afb152a16021e4fc187e4ae8aa8fa2e9ea3bb585f3cf056"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\grid\\seed\\stamp-baseline\\contract.json",
+      "sha256": "d04a085b81766ae6e1cda8c21ee9e37b21e5693319e2c4b38c644a3190d222dc"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\grid\\seed\\stamp-baseline\\README.txt",
+      "sha256": "5378c4df313751a89571b74edd396ccd03af46c4ff66973511fd1c778d5f4c68"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\grid\\seed\\stamp-baseline\\settings.json",
+      "sha256": "41254ea04388ce96fd5216ff68df2fbe1124807c65cade3c4d0171744e036613"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\grid\\seed\\stamp-baseline\\stamp-baseline.mjs",
+      "sha256": "69fd5c47881b71a589e5c7442d5cb0df217545b35c4c575a6c286362a783690c"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\grid\\seed\\stamp-baseline\\template\\src\\themes\\layout\\grid.css",
+      "sha256": "f0b0b262e7f7e756518eb2f2ad39bd1af5312f4b58dd273aef6a4907045a1f37"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\grid\\seed\\stamp-baseline\\template\\src\\themes\\layout\\layout.css",
+      "sha256": "9591bdec7168a732e24c34f81bd48662fc8126f4f595add75bb1c39300778130"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\hooks\\seed\\stamp-use-url\\contract.json",
+      "sha256": "d04a085b81766ae6e1cda8c21ee9e37b21e5693319e2c4b38c644a3190d222dc"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\hooks\\seed\\stamp-use-url\\README.txt",
+      "sha256": "11addcbb9a3e795558e01271cdaecbbc4300f5c5fc7ab66659ecb509be5f8e47"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\hooks\\seed\\stamp-use-url\\settings.json",
+      "sha256": "f83e775cfd9013ceb110e6913f09404437cfd8728849d8c760b4acca305c4ac9"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\hooks\\seed\\stamp-use-url\\stamp-use-url.mjs",
+      "sha256": "69fd5c47881b71a589e5c7442d5cb0df217545b35c4c575a6c286362a783690c"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\hooks\\seed\\stamp-use-url\\template\\src\\hooks\\useURL\\README.txt",
+      "sha256": "ac74e502c71a300eca244ca50c90d9de8255eb915be4c9f262b53c68bf7d558b"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\hooks\\seed\\stamp-use-url\\template\\src\\hooks\\useURL\\useURL.ts",
+      "sha256": "96bc1ad445726e4c06cdc2d3ff3f27643247b37faa83b30805f64c81c09b8930"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\contract.json",
+      "sha256": "9bd42576557ca547ac4a3fd7a82d7c386cbbbf58f0625c6f6c183579cad4ee41"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\README.txt",
+      "sha256": "061230a2d175661b0221104c85cf91db2c4a795f021ef91c22ac3fe925a6c258"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\settings.json",
+      "sha256": "6a5d31efaebc04247c80dfeb1b8b015ff5bfbdf60ff9e01bf15d8e9eee868d00"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\stamp-rraabbiitt.mjs",
+      "sha256": "783be50decea79e0b0da9fa1c3f11814050064c4c776f7dfdd8d867cd639c2ff"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\.gitignore",
+      "sha256": "b9c08b5944c3b2d88311fed90bb2b69441cf39e8cf2d158212e7ffc7de0c3523"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\index.html",
+      "sha256": "ee1c846d3656d5bcfd066c93496a54dcc0dca340b61def28d3a011a5b3e1a764"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\launch.cmd",
+      "sha256": "814c0b62f4e47ee124b8804478dcb089e901a795908746b8b73b7276fc706d7e"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\package-lock.json",
+      "sha256": "afce8b62c6583fd5c0fe37f6eb73d81087c872eb835150ec84f1cbc01423cfe4"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\package.json",
+      "sha256": "1419ae0af6868eb266dc950dc25ab9e5e21e1066090874d43f8ec4a36a5cefa0"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\PATHS.json",
+      "sha256": "08849e5912d5925850e0b9ea0eee7efb356af5d041f3a5c8677917dc86b86241"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\public\\.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\README.txt",
+      "sha256": "1ad72e04f11915271c4356070dc5623765b6bd31855a1c3e912e6c82daf108f7"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\RULES.txt",
+      "sha256": "be84e8042ba7e60fa4eb1987f84f3f20353ac22088ba0096074add8d9768aedd"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\settings.json",
+      "sha256": "88c83a569f4d6927f5486913c2020917b9b3bfc53c571271b8a5d3fc7d08f617"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\SKILL.txt",
+      "sha256": "2fb756940c24855d28c48a02dbce6e7163e5a1356349fa2c416f15c9d8cc3b45"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\src\\App.tsx",
+      "sha256": "336c25f36556d2028d7d77ad7cac25746d4c63b2dbf551b499294be4e7819573"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\src\\automation\\manifest.json",
+      "sha256": "8ee427a1f4392b86bd0187f743b7b9afda361ee31e7916532a5c011e82b0a273"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\src\\automation\\README.txt",
+      "sha256": "ce8121b4a64d8018bae2b656da24a86eaf1dda05260a502436f47f8605f6ae96"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\src\\css\\global.css",
+      "sha256": "df58c88d0775ec666230050d062689af6cddf49432cae2f2df0adba438928a37"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\src\\demoRegistry.ts",
+      "sha256": "ad70ccf18af1ff922afa8ed782f9edc6700ffd7946a68bee3d82853b206e894e"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\src\\HouseKeys.types.ts",
+      "sha256": "0782303a648a163e786706ee84e56d510317c0bc6848adae07d5fa70fe8db613"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\src\\main.tsx",
+      "sha256": "20c52c202086a9529ed631f87b5d2b7b4c805c97a7c2238c221b171bae2c6594"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\src\\pages\\home\\css\\home.css",
+      "sha256": "937e920ad45e6a3579db7decb54a34f13bc2422a895b88a14710f6d438541120"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\src\\pages\\home\\Home.tsx",
+      "sha256": "a9ad6e05c02c45f9da146c9174dc708c3868cb719554c33d73ed6a7df6cf6707"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\tsconfig.json",
+      "sha256": "179c908681521c8a0b0d817b02dc25e52c92e3074d039251494853339b48b17b"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\projects\\stamp-rraabbiitt\\template\\vite.config.js",
+      "sha256": "ee71f9dfb32d4d903a40925077ff4850b005004e0916ef5ecc8a3a69fd0fcbd0"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\_component-seeds.mjs",
+      "sha256": "34c8e5df8e62ba8bb4bc8b535f5ccb1d6724502ab52afa6d52435caebb7d4560"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\_seed.contract.json",
+      "sha256": "4aed9b74af7ba973a7abe94320de47bac62a5fd5d5d7d833a0bddb27ed7c2d7a"
+    },
+    {
+      "file": "C:\\magic-box-tools\\tools\\react\\_seed.mjs",
+      "sha256": "7b7cf3292b10c86c392b4d6bf53817c6a3033581c712cf43f21edbbf90635571"
+    }
+  ]
+}

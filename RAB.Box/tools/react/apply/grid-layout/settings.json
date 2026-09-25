@@ -1,0 +1,73 @@
+{
+  "id": 1830000000002,
+  "name": "grid-layout",
+  "title": "Apply Grid Layout",
+  "description": "Applies a known grid topology to a React page/component root or exact nested construction target and creates addressable data-area construction seats using existing DOM edit Tools.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "component",
+      "title": "Page or Component",
+      "description": "Optional React page/component name to receive the grid.",
+      "required": false
+    },
+    {
+      "type": "file",
+      "name": "file",
+      "title": "File",
+      "description": "Optional source file to receive the grid.",
+      "required": false
+    },
+    {
+      "type": "path",
+      "name": "path",
+      "title": "Path",
+      "description": "Optional project-relative source file path.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "seat_id",
+      "title": "Construction Seat ID",
+      "description": "Optional exact data-rab-seat target for a nested grid.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "area",
+      "title": "Target Data Area",
+      "description": "Optional data-area target for a nested grid when an exact seat is not supplied.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "layout",
+      "title": "Grid Layout",
+      "description": "Known layout name from the shared grid catalog.",
+      "required": false,
+      "default": "header-main"
+    },
+    {
+      "type": "text",
+      "name": "gap",
+      "title": "Grid Gap",
+      "description": "Grid gap token.",
+      "required": false,
+      "default": "content"
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "apply",
+    "target_type": "grid",
+    "data_types": [
+      "page",
+      "component",
+      "grid",
+      "data-area",
+      "construction-seat"
+    ],
+    "output": "edit-receipt",
+    "authority": "write"
+  }
+}

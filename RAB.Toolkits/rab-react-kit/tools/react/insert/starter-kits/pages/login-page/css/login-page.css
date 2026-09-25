@@ -1,0 +1,19 @@
+@layer components {
+  .login-page {
+    flex: 1;
+    min-block-size: 0;
+    min-inline-size: 0;
+  }
+  .login-page__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: safe center;
+    align-items: center;
+    min-block-size: 0;
+    min-inline-size: 0;
+  }
+  .login-page__body > .login-box {
+    position: relative;
+    z-index: 20;
+  }
+}

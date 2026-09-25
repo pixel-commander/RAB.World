@@ -1,0 +1,17 @@
+{
+  "name": "effects",
+  "id": 1790304759246,
+  "title": "effects",
+  "description": "Effect atoms",
+  "date_added": "2026-09-25T02:52:39.249Z",
+  "path": "L:\\RAB.World\\RAB.React\\src\\atoms\\effects",
+  "world": 1790283925818,
+  "types": [
+    "ui"
+  ],
+  "beacon": "on",
+  "reach": [
+    "world",
+    "project"
+  ]
+}

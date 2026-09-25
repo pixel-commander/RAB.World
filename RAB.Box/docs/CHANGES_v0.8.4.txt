@@ -1,0 +1,12 @@
+RRAABBIITT Magic Box v0.8.4 — Flat PATHS / Project Hijack
+
+- Added root PATHS.json as a tiny flat address book with two direct maps: stamps and tools.
+- Deep filesystem paths remain canonical semantic structure; tags are still inherited from path segments.
+- PATHS keys are stable house addresses such as add-atom, find-hooks, and count-use-effect.
+- Permanent Tool/Stamp IDs remain identity. PATHS resolution prefers ID, so moving a Tool does not destroy its address/history.
+- Added bridge/paths-registry.mjs to pack house defaults with project-local direct overrides.
+- A loaded project's PATHS.json can override one address with {id,path}; the House fallback remains available as shadowed provenance.
+- Project overrides execute through Tool House and keep source/shadowed provenance in receipts.
+- Project PATHS templates now include both stamps and tools maps.
+- Legacy project stamp manifests remain readable; old detailed stamp entries are not silently treated as new direct overrides.
+- Added tests for flat address lookup, permanent-ID resolution, and project-specific add-atom hijacking.

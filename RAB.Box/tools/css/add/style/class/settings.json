@@ -1,0 +1,41 @@
+{
+  "id": 1790000001412,
+  "name": "class",
+  "title": "Add CSS to Class",
+  "description": "Adds or updates declarations on a CSS class at an explicit stylesheet location or uniquely resolved folder location.",
+  "settings": [
+    {
+      "type": "file",
+      "name": "location",
+      "title": "CSS Location",
+      "description": "CSS file path, or a folder containing one unique stylesheet with the class.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "class_name",
+      "title": "Class Name",
+      "description": "CSS class name or selector.",
+      "required": true
+    },
+    {
+      "type": "textarea",
+      "name": "styles",
+      "title": "Styles",
+      "description": "CSS declarations or a JSON property/value object.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "css",
+    "operation": "create",
+    "target_type": "class",
+    "data_types": [
+      "css",
+      "class",
+      "style"
+    ],
+    "output": "css-update",
+    "authority": "write"
+  }
+}

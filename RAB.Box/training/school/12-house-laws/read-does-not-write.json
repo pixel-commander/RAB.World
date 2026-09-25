@@ -1,0 +1,1 @@
+{"id":"house-law.read-write.001","concept":"house-laws","kind":"house-law","given":{"condition":"read-only","required":"read-only"},"expected":{"pass":true}}

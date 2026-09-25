@@ -1,0 +1,32 @@
+{
+  "id": 1790000000935,
+  "name": "console-calls",
+  "title": "Find Console Calls",
+  "description": "Finds console.log/error/warn/info/debug/trace calls.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "console-call",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "\\bconsole\\.(?:log|error|warn|info|debug|trace)\\b",
+      "kind": "console-call",
+      "scope": "code"
+    }
+  }
+}

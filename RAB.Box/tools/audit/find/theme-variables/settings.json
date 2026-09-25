@@ -1,0 +1,30 @@
+{
+  "id": 1790000000979,
+  "name": "theme-variables",
+  "title": "Find Theme Variables",
+  "description": "Finds CSS custom-property declarations and var(--token) usages with file/line evidence.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "theme-variable",
+    "data_types": [
+      "file",
+      "path"
+    ],
+    "output": "report",
+    "authority": "read",
+    "engine": "theme",
+    "config": {
+      "type": "theme-variables"
+    }
+  }
+}

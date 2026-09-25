@@ -1,0 +1,37 @@
+@layer components {
+  .login-box [hidden] { display: none; }
+  .login-box {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    inline-size: min(22rem, 100%);
+  }
+
+  .login-box__head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
+
+  .login-box__title {
+    font: var(--type-heading);
+    color: var(--content-strong);
+  }
+
+  .login-box__note {
+    color: var(--content-muted);
+  }
+
+  /* the other doors: create account, google — under the form */
+  .login-box__alt {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    padding-block-start: var(--space-md);
+    border-block-start: var(--border-width) var(--border-style) var(--border-subtle);
+  }
+
+  .login-box__alt button {
+    padding: var(--space-xs) var(--space-md);
+  }
+}

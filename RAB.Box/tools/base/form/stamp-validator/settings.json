@@ -1,0 +1,41 @@
+{
+  "id": 1790000001520,
+  "name": "stamp-validator",
+  "title": "Stamp FormData Validator",
+  "description": "Creates a deterministic zero-dependency FormData extraction/validation module from an explicit field contract.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Name",
+      "description": "Generated validator function and file name.",
+      "required": true
+    },
+    {
+      "type": "folder",
+      "name": "location",
+      "title": "Location",
+      "description": "Output folder.",
+      "required": true
+    },
+    {
+      "type": "textarea",
+      "name": "fields",
+      "title": "Fields",
+      "description": "JSON array of {name,type,required,values?} contracts.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "base",
+    "operation": "create",
+    "target_type": "form-validator",
+    "data_types": [
+      "form",
+      "formdata",
+      "validator"
+    ],
+    "output": "form-validator",
+    "authority": "write"
+  }
+}

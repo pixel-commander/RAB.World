@@ -1,0 +1,27 @@
+{
+  "id": 1790000001408,
+  "name": "grid-continuity",
+  "title": "Audit Grid Continuity",
+  "description": "Finds Grid to Flex to Grid ancestry so Flex cannot interrupt structural Grid continuity.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to review. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "code-review",
+    "data_types": [
+      "code-review",
+      "grid-continuity"
+    ],
+    "output": "report",
+    "authority": "read",
+    "rule": "grid-continuity"
+  }
+}

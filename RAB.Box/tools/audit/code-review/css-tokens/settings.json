@@ -1,0 +1,27 @@
+{
+  "id": 1790000001407,
+  "name": "css-tokens",
+  "title": "Audit CSS Token Use",
+  "description": "Flags raw visual CSS values where semantic or theme tokens are required while leaving structural layout values alone.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to review. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "inspect",
+    "target_type": "code-review",
+    "data_types": [
+      "code-review",
+      "css-tokens"
+    ],
+    "output": "report",
+    "authority": "read",
+    "rule": "css-tokens"
+  }
+}

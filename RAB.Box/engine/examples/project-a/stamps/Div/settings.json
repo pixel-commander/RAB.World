@@ -1,0 +1,33 @@
+{
+  "id": 1789380000003,
+  "name": "div-stamp",
+  "title": "Create a div demonstration",
+  "description": "Creates a new folder containing one HTML div with a registered class.",
+  "date_added": 1789380000000,
+  "options": {
+    "name": {
+      "required": true,
+      "type": "text",
+      "validate": "project-name",
+      "default": "demo-div",
+      "language": {
+        "prefixes": [
+          "named",
+          "called"
+        ]
+      }
+    },
+    "class": {
+      "required": true,
+      "type": "text",
+      "role": "class-name",
+      "validate": "css-class",
+      "language": {
+        "prefixes": [
+          "with class",
+          "class"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+RRAABBIITT v0.9.2 WORKING CANDIDATE
+Date: 2026-09-17
+Status: UNVERIFIED — NO TEST SUITE RUN BY FOREMAN
+
+Included work:
+
+1. NEST-001 nested seat-scope repair
+   - bridge/tool-house.mjs only
+   - separates promoted/session seats from task-local seats
+   - ancestor task-local values no longer implicitly satisfy child settings
+   - explicit Runner-owned returned-seat binding remains legal
+   - root promotion is limited to the approved legacy promotion channels
+
+2. Stamp shared-engine dedup
+   - adds tools/_stamp-engines.mjs
+   - 7 existing Stamp executors become thin wrappers
+   - all Stamp IDs, settings, templates, and paths remain in place
+
+3. Addressable construction seats
+   - HTML grid Stamp emits data-rab-seat addresses and marker comments
+   - React DOM-edit Tools can target an exact seat_id
+   - add/wrap operations may assign new_seat_id to newly created structure
+   - move-element may target a to_seat_id destination
+
+4. Scaffolding Cleanup Pass
+   - new read Tool: list-construction-seats (1820000000001)
+   - new write Tool: cleanup-scaffolding (1820000000002)
+   - cleanup removes only data-rab-seat attributes and rab-seat marker comments
+   - cleanup has no seat-resolution or semantic-edit authority
+
+5. Terminology
+   - docs/GLOSSARY.md maps RRAABBIITT terms to common engineering language
+   - docs/CONSTRUCTION_SEATS.md defines the marker/cleanup contract
+
+Not included yet:
+- stamp-new-page
+- stamp-new-dashboard
+- apply-grid-layout composition Tool
+- insert-component-into-area Tool
+- scroll wrapper / scroll-y capability
+
+Those remain in the separate construction-capability audit/build lane.
+
+IMPORTANT:
+BUNDLE_MANIFEST.json has NOT been regenerated and therefore describes the prior verified package, not this working candidate.
+No full suite, focused NEST test, language test, teaching test, or browser test was run during this assembly.

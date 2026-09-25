@@ -1,0 +1,15 @@
+{
+  "id": 1790274306433,
+  "name": "signal",
+  "title": "Add Signal",
+  "description": "Creates a signal folder's settings, contract and README from its template.",
+  "settings": [
+    {"name":"name","type":"text","title":"Name","description":"Signal name. ID is allocated automatically.","required":true},
+    {"name":"path","type":"path","title":"Folder Path","description":"Final output folder: relative to the selected world root, or absolute without a selection. The name is not appended.","required":true},
+    {"name":"title","type":"text","title":"Title","description":"Display title; defaults to name.","required":false},
+    {"name":"description","type":"textarea","title":"Description","description":"What the signal describes.","required":false,"default":""},
+    {"name":"type","type":"text","title":"Type","description":"What the item is, such as component, atom or function. Unclassified when empty.","required":false,"default":""},
+    {"name":"transmitting","type":"boolean","title":"Transmitting","description":"Whether the signal participates in discovery. Preserves an explicit false.","required":false,"default":true}
+  ],
+  "meta":{"domain":"world","operation":"create","target_type":"signal","output":"signal","authority":"write"}
+}

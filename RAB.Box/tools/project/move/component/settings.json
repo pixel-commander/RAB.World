@@ -1,0 +1,47 @@
+{
+  "id": 1800000000047,
+  "name": "component",
+  "title": "Move Component",
+  "description": "Moves a component artifact into another project folder while preserving project containment.",
+  "settings": [
+    {
+      "type": "file",
+      "name": "file",
+      "title": "File",
+      "description": "Optional file/path source.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "component",
+      "title": "Component",
+      "description": "Optional component name source.",
+      "required": false
+    },
+    {
+      "type": "folder",
+      "name": "destination",
+      "title": "Destination Folder",
+      "description": "Project-relative destination folder.",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "new_name",
+      "title": "New Name",
+      "description": "Optional new component name for the copied/moved artifact.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "project",
+    "operation": "move",
+    "target_type": "component",
+    "data_types": [
+      "component",
+      "path"
+    ],
+    "output": "edit-receipt",
+    "authority": "write"
+  }
+}

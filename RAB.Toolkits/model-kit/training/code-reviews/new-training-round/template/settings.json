@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "settings": [],
+  "indexed": false,
+  "kind": "code-review-round",
+  "name": "__ROUND_NAME__",
+  "title": "__ROUND_TITLE__",
+  "description": "One bounded review and correction cycle.",
+  "meta": {
+    "kind": "code-review-round"
+  },
+  "session_settings": "../../settings.json",
+  "focus": "__ROUND_FOCUS__",
+  "status": "draft",
+  "turns": {
+    "path": "turns",
+    "file_pattern": "turn-NNN.json"
+  },
+  "summary": "summary.json"
+}

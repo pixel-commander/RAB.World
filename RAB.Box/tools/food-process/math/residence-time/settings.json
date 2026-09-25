@@ -1,0 +1,56 @@
+{
+  "id": 1810000000102,
+  "name": "residence-time",
+  "title": "Food Process Residence Time",
+  "description": "Calculates conveyor residence time through a visible child Tool invocation of the shared Kitchen deterministic math capability.",
+  "settings": [
+    {
+      "type": "number",
+      "name": "length",
+      "title": "Length",
+      "description": "length",
+      "required": true
+    },
+    {
+      "type": "number",
+      "name": "belt_speed",
+      "title": "Belt Speed",
+      "description": "belt speed",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "length_unit",
+      "title": "Length Unit",
+      "description": "length unit",
+      "required": false,
+      "default": "ft"
+    },
+    {
+      "type": "text",
+      "name": "speed_unit",
+      "title": "Speed Unit",
+      "description": "speed unit",
+      "required": false,
+      "default": "ft/min"
+    },
+    {
+      "type": "text",
+      "name": "output_time_unit",
+      "title": "Output Time Unit",
+      "description": "output time unit",
+      "required": false,
+      "default": "min"
+    }
+  ],
+  "meta": {
+    "domain": "food-process",
+    "authority": "pure",
+    "data_types": [
+      "residence_time"
+    ],
+    "returns": [
+      "residence_time"
+    ]
+  }
+}

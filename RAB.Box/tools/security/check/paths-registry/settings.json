@@ -1,0 +1,16 @@
+{
+  "id": 1790000000995,
+  "name": "paths-registry",
+  "title": "Check PATHS Registry Guards",
+  "description": "Builds an isolated malicious PATHS fixture and verifies that absolute/dot-segment escape paths are rejected before Tool resolution.",
+  "settings": [],
+  "meta": {
+    "domain": "security",
+    "operation": "check",
+    "output": "security-report",
+    "authority": "read",
+    "config": {
+      "check": "paths-registry"
+    }
+  }
+}

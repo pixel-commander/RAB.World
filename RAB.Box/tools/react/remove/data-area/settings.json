@@ -1,0 +1,87 @@
+{
+  "id": 1800000000005,
+  "name": "data-area",
+  "title": "Remove Data Area",
+  "description": "Removes the data-area attribute from a resolved DOM target.",
+  "settings": [
+    {
+      "type": "text",
+      "name": "component",
+      "title": "Component",
+      "description": "Optional React component name used to resolve its source file and scope edits to that component.",
+      "required": false
+    },
+    {
+      "type": "file",
+      "name": "file",
+      "title": "File",
+      "description": "Optional source file. May be absolute or project-relative.",
+      "required": false
+    },
+    {
+      "type": "path",
+      "name": "path",
+      "title": "Path",
+      "description": "Optional project-relative source file path alias.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "seat_id",
+      "title": "Construction Seat ID",
+      "description": "Optional exact data-rab-seat address for the DOM target. This is an internal construction address; human requests may resolve to it semantically.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "data_area",
+      "title": "Data Area",
+      "description": "Optional data-area value identifying the source DOM target.",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "element",
+      "title": "DOM Element",
+      "description": "Optional native DOM element name identifying the source target.",
+      "required": false
+    },
+    {
+      "type": "options",
+      "name": "quantifier",
+      "title": "How Many",
+      "description": "Defaults to one target. Use all to edit every matching target where supported.",
+      "required": false,
+      "options": [
+        {
+          "name": "one",
+          "description": "First matching target"
+        },
+        {
+          "name": "all",
+          "description": "All matching targets"
+        }
+      ]
+    },
+    {
+      "type": "boolean",
+      "name": "dry_run",
+      "title": "Preview Only",
+      "description": "Return the deterministic edit plan without writing the file.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "delete",
+    "target_type": "data-area",
+    "data_types": [
+      "component",
+      "file",
+      "path",
+      "data-area"
+    ],
+    "output": "edit-receipt",
+    "authority": "write"
+  }
+}

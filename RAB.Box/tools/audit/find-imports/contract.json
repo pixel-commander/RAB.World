@@ -1,0 +1,37 @@
+{
+  "version": "tool-contract/v1",
+  "result": {
+    "status": "string",
+    "scan": "string",
+    "root": "string",
+    "totals": {
+      "files_scanned": "number",
+      "files_importing": "number",
+      "imports": "number"
+    },
+    "rows": [
+      {
+        "file": "string",
+        "count": "number",
+        "imports": [
+          {
+            "source": "string",
+            "line": "number",
+            "style": "string"
+          }
+        ]
+      }
+    ],
+    "index": {
+      "by_source": {
+        "[import source]": [
+          {
+            "file": "string",
+            "line": "number",
+            "style": "string"
+          }
+        ]
+      }
+    }
+  }
+}

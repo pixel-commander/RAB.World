@@ -1,0 +1,30 @@
+{
+  "id": 1800000000015,
+  "name": "public-upload-serving",
+  "title": "Find Public Upload Serving",
+  "description": "Finds candidate static/public serving configuration mentioning upload directories.",
+  "settings": [
+    {
+      "type": "folder",
+      "name": "folder",
+      "title": "Folder",
+      "description": "Optional folder to scan. Uses the loaded project root when omitted.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "find",
+    "target_type": "public-upload-serving",
+    "output": "report",
+    "authority": "read",
+    "engine": "line",
+    "config": {
+      "pattern": "(?:express\\.static|serveStatic|static\\s*\\()[^\\n]*(?:upload|uploads)",
+      "scope": "code",
+      "kind": "public-upload-serving-candidate",
+      "heuristic": true,
+      "flags": "i"
+    }
+  }
+}
