@@ -2,7 +2,7 @@ import path from 'node:path';
 import { readFile, readdir, lstat, writeFile, rename, unlink } from 'node:fs/promises';
 import { withMemoryLock } from '../../bridge/rab-memory-lock.mjs';
 import { createRabMemory } from '../../bridge/rab-memory.mjs';
-import { makeItemSettings } from '../../bridge/rab-node.mjs';
+import { makeItemSettings, assertSignalSettings, SIGNAL_KEYS } from '../../bridge/rab-node.mjs';
 import { pathValue } from '../../bridge/project-paths.mjs';
 import { containedPath, insist, record } from '../../engine/src/core.mjs';
 
@@ -14,11 +14,11 @@ const validateType = type => insist(typeof type === 'string' && /^[a-z][a-z0-9_-
 const collectionItems = manifest => Object.values(manifest.items);
 const itemRecord = (input, depth=0) => {
   insist(depth<=64,'INDEX_LIMIT','Item nesting exceeded the supported depth.');
-  const item=makeItemSettings(input),children=item.items===undefined?{}:item.items;
+  const item=typeof input.signal === 'boolean' ? {...assertSignalSettings(Object.fromEntries(SIGNAL_KEYS.map(key=>[key,input[key]]))), ...(input.items === undefined ? {} : {items:input.items})} : makeItemSettings(input),children=item.items===undefined?{}:item.items;
   insist(record(children),'BAD_ITEM_SETTINGS','items must be an object keyed by record ID.');
   const items={};
   for(const [key,child] of Object.entries(children)){
-    if(child?.indexed===false)continue;
+    if(child?.indexed===false || child?.signal===false || child?.transmitting===false)continue;
     const value=itemRecord(child,depth+1);
     insist(key===String(value.id),'BAD_ITEM_SETTINGS','Each items key must match the contained record ID.');
     items[key]=value;
@@ -141,7 +141,7 @@ export const inspectInventory = async (context, type, input = {}) => {
         if (error.code !== 'ENOENT') unavailable.push({ path: slash(path.relative(context.project.root, absolute)) || '.', code: error.code ?? 'BAD_ITEM_SETTINGS', message: error.message });
       }
     }
-    if (descriptor !== undefined && descriptor?.indexed !== false) {
+    if (descriptor !== undefined && descriptor?.indexed !== false && descriptor?.signal !== false && descriptor?.transmitting !== false) {
       try {
         const item = itemRecord(descriptor);
         const locator = slash(path.relative(context.project.root, absolute)) || '.';
@@ -188,4 +188,3 @@ export const updateInventory = async (context, type, conditions = {}) => {
     return { status: 'completed', id:manifest.id, name:manifest.name, title:manifest.title, description:manifest.description, type, count: scan.items.length, items: scan.items, index_status: scan.status, manifest: file };
   });
 };
-

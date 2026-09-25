@@ -1,0 +1,10 @@
+{
+  "id": 1790031603502,
+  "name": "new-container-atom",
+  "title": "New Container Atom scaffold",
+  "description": "Source scaffold for React container atoms.",
+  "path": "ui/scaffolds/new-container-atom",
+  "beacon": "off",
+  "reach": ["project"],
+  "type": "react"
+}

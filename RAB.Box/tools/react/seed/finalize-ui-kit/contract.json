@@ -1,4 +1,0 @@
-{
-  "version": "tool-contract/v1",
-  "source": {"kind":"internal","description":"Transforms only data-rab-kit-class attributes in React source, then verifies no data-rab-kit-* markers remain."}
-}

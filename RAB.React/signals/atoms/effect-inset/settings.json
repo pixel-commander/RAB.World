@@ -1,14 +1,12 @@
 {
-  "title": "effect-inset",
-  "name": "effect-inset",
-  "description": "Recessed-depth effect atom.",
-  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\effect-inset",
-  "type": "effect-atom",
-  "transmitting": true,
-  "settings": [],
-  "meta": {
-    "kind": "signal"
-  },
   "id": 1790304150375,
-  "indexed": true
+  "name": "effect-inset",
+  "title": "effect-inset",
+  "description": "Recessed-depth effect atom.",
+  "type": "effect-atom",
+  "date_created": 1790375569376,
+  "date_modified": 1790375569376,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
 }

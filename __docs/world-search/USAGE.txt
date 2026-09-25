@@ -1,0 +1,37 @@
+WORLD SEARCH COUNTERS
+=====================
+
+Current usage behavior supersedes the original read-only search description.
+One store lives at [user home]/.rab/usage/world-search.json:
+  { "1790372402268": { "used": 1, "shown": 4 } }
+
+Each returned item increments shown once per search, deduplicated by item ID.
+Actual use is reported by report_search_feedback({"id":1790372402268}).
+Each successful call increments used once. It is caller-reported, not inferred
+from selection or successful execution. Retries can double-count; no event
+history or idempotency history is retained. No automatic ranking change.
+
+There are no query logs, per-search records, timestamps, or result copies in
+the counter store. Storage grows with distinct item IDs, not search frequency.
+Updates are serialized across cooperating processes and replaced atomically.
+Tracking failures are returned as tracking_error without hiding search results.
+
+When an enabled local index has a missing item ID, search assigns a permanent
+ID to its source settings.json and syncs that ID into the manifest. IDs come
+from Box's shared observed-timestamp allocator. Existing valid IDs remain.
+Existing source IDs are reused when only the manifest entry lacks its ID.
+Missing source files, unsafe paths, malformed IDs and invalid settings are
+reported, not replaced with fabricated identities. Source/index repair is
+not a transactional multi-file write; a retry reuses the saved source ID.
+
+Before a repair changes files, originals are stored under:
+  .rab/backups/index-identities/[repair ID]/
+Each backup includes the source path and exact original text. These backups
+occur for repairs, not ordinary searches. No saved originals are auto-deleted.
+
+Search therefore has write authority. Beacon registry inspection remains
+read-only. Automatic indexing/watchers remain separate and unfinished.
+Existing ID conflicts are not silently resolved by this missing-ID repair.
+
+Verify from RAB.Box:
+  node --test tests/world-search-counters.test.mjs tests/world-search.test.mjs tests/world-hands-mcp.test.mjs

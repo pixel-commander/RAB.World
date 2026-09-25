@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Machined dark chassis surface adapted from the factory-control-center site chrome."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "container-machine.css"
+    ],
+    "usage": "Import container-machine.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

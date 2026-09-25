@@ -1,0 +1,15 @@
+{
+  "name": "actions",
+  "id": null,
+  "title": "React actions",
+  "description": "React action atoms in this project.",
+  "date_added": null,
+  "path": "src/atoms/actions",
+  "types": [],
+  "beacon": "on",
+  "reach": [
+    "world",
+    "project"
+  ],
+  "type": "react"
+}

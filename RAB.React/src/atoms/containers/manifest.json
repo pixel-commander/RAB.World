@@ -5,9 +5,10 @@
   "title": "containers",
   "description": "Container atoms",
   "date_added": "2026-09-25T02:52:39.070Z",
+  "path": "L:\\RAB.World\\RAB.React\\src\\atoms\\containers",
   "items": [
     {
-      "id": null,
+      "id": 1790374310983,
       "name": "container-cell",
       "title": "container-cell",
       "description": "Neutral cell surface with inset and floating depth modifiers backed by reusable effect atoms.",
@@ -15,7 +16,7 @@
       "path": "container-cell"
     },
     {
-      "id": null,
+      "id": 1790374310994,
       "name": "container-machine",
       "title": "container-machine",
       "description": "Machined dark chassis surface adapted from the factory-control-center site chrome.",
@@ -23,7 +24,7 @@
       "path": "container-machine"
     },
     {
-      "id": null,
+      "id": 1790374311001,
       "name": "container-machine-trim",
       "title": "container-machine-trim",
       "description": "Machined trim container atom. CSS source is pending.",
@@ -31,7 +32,7 @@
       "path": "container-machine-trim"
     },
     {
-      "id": null,
+      "id": 1790374311006,
       "name": "container-metal",
       "title": "container-metal",
       "description": "Flat lighter machined surface with a subtle gradient, strong border, and no depth shadow.",
@@ -39,7 +40,7 @@
       "path": "container-metal"
     },
     {
-      "id": null,
+      "id": 1790374311011,
       "name": "container-neon-corner",
       "title": "container-neon-corner",
       "description": "Reusable neon chassis corner with primary and secondary ink variants.",

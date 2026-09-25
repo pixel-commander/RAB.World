@@ -1,8 +1,12 @@
 {
+  "id": 1790374311052,
   "name": "grid-dashboard-alt",
-  "kind": "grid-atom",
-  "created": "2026-09-03",
-  "type": "dashboard",
+  "title": "grid-dashboard-alt",
   "description": "grid-dashboard without the tabs-nav band (that row left empty)",
-  "modified": "2026-09-03"
+  "type": "grid-atom",
+  "date_created": 1788393600000,
+  "date_modified": 1788393600000,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
 }

@@ -1,0 +1,12 @@
+{
+  "id": 1790000000402,
+  "name": "new-sub-component",
+  "title": "New Sub Component scaffold",
+  "description": "Source scaffold for child React components.",
+  "path": "ui/scaffolds/new-sub-component",
+  "beacon": "off",
+  "reach": [
+    "project"
+  ],
+  "type": "react"
+}

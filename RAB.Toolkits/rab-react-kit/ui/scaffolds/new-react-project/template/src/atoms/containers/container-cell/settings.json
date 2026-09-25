@@ -1,0 +1,12 @@
+{
+  "id": null,
+  "name": "container-cell",
+  "title": "container-cell",
+  "description": "Neutral cell surface with inset and floating depth modifiers backed by reusable effect atoms.",
+  "type": "container-atom",
+  "date_created": null,
+  "date_modified": null,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
+}

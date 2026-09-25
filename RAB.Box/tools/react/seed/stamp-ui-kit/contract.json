@@ -1,4 +1,0 @@
-{
-  "version": "tool-contract/v1",
-  "source": {"kind":"hybrid","description":"Reads this Stamp's template tree and creates the corresponding project-relative files and folders through the shared artifact writer."}
-}

@@ -1,0 +1,6 @@
+{
+  "version": "tool-contract/v1",
+  "input": {},
+  "behavior": ["refreshes Box discovery", "returns available world hands owned by this toolkit with their inputs and callable keys", "includes discovery diagnostics"],
+  "safety": ["does not execute listed hands", "does not start a background process", "does not write world records"]
+}

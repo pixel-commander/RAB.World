@@ -1,0 +1,10 @@
+{
+  "version": "manifest/v1",
+  "id": null,
+  "name": "grids",
+  "title": "grids",
+  "description": "Default grids atoms",
+  "items": [],
+  "indexed": true,
+  "_scaffold": true
+}

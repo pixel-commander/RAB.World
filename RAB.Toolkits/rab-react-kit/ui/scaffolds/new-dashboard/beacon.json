@@ -1,0 +1,10 @@
+{
+  "id": 1830000000006,
+  "name": "new-dashboard",
+  "title": "New Dashboard scaffold",
+  "description": "Source scaffold for React dashboards.",
+  "path": "ui/scaffolds/new-dashboard",
+  "beacon": "off",
+  "reach": ["project"],
+  "type": "react"
+}

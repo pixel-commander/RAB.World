@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Reusable recessed depth treatment backed by the theme inset elevation token."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "effect-inset.css"
+    ],
+    "usage": "Import effect-inset.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

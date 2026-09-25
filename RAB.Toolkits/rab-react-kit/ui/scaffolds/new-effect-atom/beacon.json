@@ -1,0 +1,10 @@
+{
+  "id": 1790031603525,
+  "name": "new-effect-atom",
+  "title": "New Effect Atom scaffold",
+  "description": "Source scaffold for React effect atoms.",
+  "path": "ui/scaffolds/new-effect-atom",
+  "beacon": "off",
+  "reach": ["project"],
+  "type": "react"
+}

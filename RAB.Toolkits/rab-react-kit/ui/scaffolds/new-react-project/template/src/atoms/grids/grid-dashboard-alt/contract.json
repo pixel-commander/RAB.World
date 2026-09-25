@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "grid-dashboard without the tabs-nav band (that row left empty)"
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "grid-dashboard-alt.css"
+    ],
+    "usage": "Import grid-dashboard-alt.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": 1790375911957,
+  "name": "audit-beacons",
+  "title": "Audit Beacons",
+  "description": "Read-only current-format check of beacon records at an explicit beacon root.",
+  "settings": [
+    {
+      "name": "path",
+      "type": "folder",
+      "title": "Beacon Root",
+      "description": "Absolute folder to inspect.",
+      "required": true
+    },
+    {
+      "name": "recursive",
+      "type": "boolean",
+      "title": "Include descendants",
+      "required": false,
+      "default": true
+    }
+  ],
+  "meta": {
+    "domain": "world",
+    "operation": "inspect",
+    "target_type": "beacons",
+    "authority": "read"
+  }
+}

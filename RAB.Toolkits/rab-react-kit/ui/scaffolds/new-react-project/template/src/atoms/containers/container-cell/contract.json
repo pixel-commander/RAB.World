@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Neutral cell surface with inset and floating depth modifiers backed by reusable effect atoms."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "container-cell.css"
+    ],
+    "usage": "Import container-cell.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

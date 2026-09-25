@@ -1,0 +1,10 @@
+{
+  "version": "manifest/v1",
+  "id": null,
+  "name": "actions",
+  "title": "actions",
+  "description": "Default actions atoms",
+  "items": [],
+  "indexed": true,
+  "_scaffold": true
+}

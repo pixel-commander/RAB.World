@@ -1,0 +1,10 @@
+{
+  "version": "manifest/v1",
+  "id": null,
+  "name": "effects",
+  "title": "effects",
+  "description": "Default effects atoms",
+  "items": [],
+  "indexed": true,
+  "_scaffold": true
+}

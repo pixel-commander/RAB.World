@@ -1,14 +1,12 @@
 {
-  "title": "action-ghost",
-  "name": "action-ghost",
-  "description": "Muted action atom.",
-  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\action-ghost",
-  "type": "action-atom",
-  "transmitting": true,
-  "settings": [],
-  "meta": {
-    "kind": "signal"
-  },
   "id": 1790304148714,
-  "indexed": true
+  "name": "action-ghost",
+  "title": "action-ghost",
+  "description": "Muted action atom.",
+  "type": "action-atom",
+  "date_created": 1790375569376,
+  "date_modified": 1790375569376,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
 }

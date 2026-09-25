@@ -1,0 +1,8 @@
+{
+  "id": 1790370534309,
+  "name": "world-hands",
+  "title": "World Hands",
+  "description": "Returns the available hands owned by this world toolkit and their input contracts through Box discovery.",
+  "settings": [],
+  "meta": {"domain":"world","operation":"list","target_type":"hands","output":"world-hands","authority":"read"}
+}

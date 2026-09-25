@@ -1,0 +1,13 @@
+{
+  "name": "containers",
+  "id": null,
+  "title": "Container atoms - __PROJECT_NAME__",
+  "description": "This is the container atom folder for project __PROJECT_NAME__.",
+  "date_added": null,
+  "path": "src/atoms/containers",
+  "types": [],
+  "beacon": "off",
+  "_scaffold": true,
+  "reach": ["world", "project"],
+  "type": "react"
+}

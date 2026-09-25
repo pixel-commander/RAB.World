@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "6-col dashboard shell: main-nav band, side-nav | left | tabs-nav | main | right, footer"
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "grid-dashboard.css"
+    ],
+    "usage": "Import grid-dashboard.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

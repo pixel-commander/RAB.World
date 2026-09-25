@@ -2,7 +2,7 @@ import path from 'node:path';
 import { lstat, mkdir, readFile, readdir, rename, writeFile } from 'node:fs/promises';
 
 const MAX_JSON = 1024 * 1024;
-const SKIP_DIRS = new Set(['.git', '.rab', 'node_modules', 'template']);
+const SKIP_DIRS = new Set(['.git', '.rab', 'node_modules', 'template', 'templates', '__pycache__', 'unsloth_compiled_cache']);
 const fail = (message, code = 'BAD_INPUT') => { throw Object.assign(new Error(message), { code }); };
 const isObject = value => value && typeof value === 'object' && !Array.isArray(value);
 const positiveId = value => Number.isSafeInteger(value) && value > 0;
@@ -14,18 +14,20 @@ const regularJson = async file => {
   catch { fail(`${file} must contain valid JSON.`, 'BAD_JSON'); }
 };
 
-const childItems = async folder => {
-  const entries = (await readdir(folder, { withFileTypes: true })).filter(entry => entry.isDirectory() && !entry.isSymbolicLink()).sort((a, b) => a.name.localeCompare(b.name));
+const childItems = async (folder, recursive = false, base = folder) => {
+  const entries = (await readdir(folder, { withFileTypes: true })).filter(entry => entry.isDirectory() && !entry.isSymbolicLink() && !SKIP_DIRS.has(entry.name)).sort((a, b) => a.name.localeCompare(b.name));
   const items = [];
   for (const entry of entries) {
     const file = path.join(folder, entry.name, 'settings.json');
     try {
       const settings = await regularJson(file);
       if (!isObject(settings) || typeof settings.name !== 'string' || !settings.name.trim()) fail(`${file} needs a nonempty name.`, 'BAD_SETTINGS');
-      const kind = settings.kind ?? settings.type ?? settings.meta?.kind ?? 'item';
-      if (typeof kind !== 'string' || !kind.trim()) fail(`${file} has an invalid kind.`, 'BAD_SETTINGS');
-      items.push({ id: positiveId(settings.id) ? settings.id : null, name: settings.name, title: typeof settings.title === 'string' && settings.title.trim() ? settings.title : settings.name, description: typeof settings.description === 'string' ? settings.description : '', kind, path: entry.name });
-    } catch (error) { if (error.code === 'ENOENT') continue; throw error; }
+      if (settings.signal === false || settings.transmitting === false) continue;
+      const type = settings.type ?? settings.meta?.target_type ?? settings.meta?.kind ?? 'item';
+      if (typeof type !== 'string') fail(`${file} has an invalid type.`, 'BAD_SETTINGS');
+      items.push({ id: positiveId(settings.id) ? settings.id : null, name: settings.name, title: typeof settings.title === 'string' && settings.title.trim() ? settings.title : settings.name, description: typeof settings.description === 'string' ? settings.description : '', type, path: path.relative(base, path.join(folder, entry.name)), ...(typeof settings.signal === 'boolean' ? {signal:settings.signal,transmitting:settings.transmitting} : {}) });
+    } catch (error) { if (error.code !== 'ENOENT') throw error; }
+    if (recursive) items.push(...await childItems(path.join(folder, entry.name), true, base));
   }
   return items;
 };
@@ -44,13 +46,13 @@ const findBeacons = async root => {
   return found.sort((a, b) => a.localeCompare(b));
 };
 
-const worldMap = async worldsPath => {
+export const worldMap = async worldsPath => {
   const worlds = new Map();
   for (const entry of await readdir(worldsPath, { withFileTypes: true })) {
     if (!entry.isDirectory() || entry.isSymbolicLink()) continue;
     try {
       const settings = await regularJson(path.join(worldsPath, entry.name, 'settings.json'));
-      if (isObject(settings) && positiveId(settings.id) && settings.meta?.kind === 'world') worlds.set(settings.id, path.join(worldsPath, entry.name));
+      if (isObject(settings) && positiveId(settings.id) && settings.meta?.kind === 'world') worlds.set(settings.id, { folder: path.join(worldsPath, entry.name), paths: settings.paths ?? [] });
     } catch (error) { if (error.code !== 'ENOENT') throw error; }
   }
   return worlds;
@@ -73,7 +75,26 @@ const existingManifest = async file => {
 
 const manifestFor = async ({ folder, existing, name, title, description, items, helpers }) => {
   const identity = existing ?? await helpers.createItemSettings({ name, title, description, settings: [], meta: { kind: 'manifest' } });
-  return { version: 'manifest/v1', id: identity.id, name, title, description, date_added: existing?.date_added ?? new Date().toISOString(), items, indexed: true };
+  return { version: 'manifest/v1', id: identity.id, name, title, description, date_added: existing?.date_added ?? new Date().toISOString(), path: folder, items, indexed: true };
+};
+
+// The manifest array is the future search-priority order. Keep every still-live
+// record in its existing position, refresh its data, then append new beacons in
+// the scanner's discovery order. Removed beacons naturally fall out.
+const preserveBeaconOrder = (existingItems, discovered) => {
+  const pending = new Map(discovered.map(beacon => [beacon.id, beacon]));
+  const ordered = [];
+  for (const prior of existingItems) {
+    if (!positiveId(prior?.id) || !pending.has(prior.id)) continue;
+    ordered.push(pending.get(prior.id));
+    pending.delete(prior.id);
+  }
+  for (const beacon of discovered) {
+    if (!pending.has(beacon.id)) continue;
+    ordered.push(beacon);
+    pending.delete(beacon.id);
+  }
+  return ordered;
 };
 
 export const run = async ({ options, helpers }) => {
@@ -83,19 +104,44 @@ export const run = async ({ options, helpers }) => {
   const worldsPath = path.resolve(options.worlds_path);
   if (!(await lstat(root)).isDirectory() || !(await lstat(worldsPath)).isDirectory()) fail('Path and Worlds Path must both be directories.');
   const worlds = await worldMap(worldsPath);
-  const beaconFiles = await findBeacons(root);
+  const roots = new Map([[root, null]]);
+  for (const [worldId, world] of worlds) {
+    for (const entry of world.paths) {
+      if (typeof entry?.path !== 'string' || !path.isAbsolute(entry.path)) fail('World paths need an absolute path.');
+      const folder = path.resolve(entry.path);
+      if (roots.has(folder) && roots.get(folder) !== null && roots.get(folder) !== worldId) fail('A registered root belongs to multiple worlds.');
+      roots.set(folder, worldId);
+    }
+  }
+  const owners = new Map();
+  for (const [folder, worldId] of roots) {
+    for (const file of await findBeacons(folder)) {
+      if (!owners.has(file) || worldId !== null) owners.set(file, worldId);
+    }
+  }
+  const beaconFiles = [...owners.keys()].sort();
   const skipped = [], routed = new Map(), refreshed = [];
   for (const beaconFile of beaconFiles) {
     const folder = path.dirname(beaconFile);
     try {
-      const beacon = await regularJson(beaconFile);
+      const source = await regularJson(beaconFile);
+      const beacon = { ...source, world: source.world ?? owners.get(beaconFile) };
       if (!isObject(beacon) || !positiveId(beacon.id) || !positiveId(beacon.world)) fail('beacon needs positive numeric id and world.', 'BAD_BEACON');
       if (beacon.beacon !== 'on') { skipped.push({ path: beaconFile, reason: 'beacon_off' }); continue; }
-      const worldFolder = worlds.get(beacon.world);
+      const worldFolder = worlds.get(beacon.world)?.folder;
       if (!worldFolder) { skipped.push({ path: beaconFile, reason: 'unknown_world', world: beacon.world }); continue; }
       const manifestFile = path.join(folder, 'manifest.json');
       const localExisting = await existingManifest(manifestFile);
-      const local = await manifestFor({ folder, existing: localExisting, name: localExisting?.name ?? path.basename(folder), title: localExisting?.title ?? beacon.title ?? beacon.name, description: localExisting?.description ?? beacon.description ?? '', items: await childItems(folder), helpers });
+      let itemRoot = folder;
+      if (beacon.type === 'toolkit') {
+        const settings = await regularJson(path.join(folder, 'settings.json'));
+        const declared = settings.scaffolds_root ?? 'tools';
+        if (typeof declared !== 'string' || path.isAbsolute(declared) || declared.split(/[\\/]+/).includes('..')) fail('Invalid toolkit source root.');
+        const candidate = path.join(folder, declared);
+        try { if ((await lstat(candidate)).isDirectory()) itemRoot = candidate; }
+        catch (error) { if (error.code !== 'ENOENT') throw error; }
+      }
+      const local = await manifestFor({ folder, existing: localExisting, name: localExisting?.name ?? path.basename(folder), title: localExisting?.title ?? beacon.title ?? beacon.name, description: localExisting?.description ?? beacon.description ?? '', items: await childItems(itemRoot, beacon.type === 'toolkit', folder), helpers });
       await writeJson(manifestFile, local);
       refreshed.push({ beacon: beacon.id, manifest: manifestFile });
       const record = { ...beacon, path: folder };
@@ -105,12 +151,16 @@ export const run = async ({ options, helpers }) => {
     } catch (error) { skipped.push({ path: beaconFile, reason: error.code ?? 'invalid_beacon', message: error.message }); }
   }
   const worldManifests = [];
-  for (const [worldId, beacons] of routed) {
-    const folder = path.join(worlds.get(worldId), 'beacons');
+  for (const [worldId, world] of worlds) {
+    const beacons = routed.get(worldId) ?? [];
+    const folder = path.join(world.folder, 'beacons');
     const file = path.join(folder, 'manifest.json');
     try {
       const existing = await existingManifest(file);
-      const manifest = await manifestFor({ folder, existing, name: existing?.name ?? 'beacons', title: existing?.title ?? 'Beacons', description: existing?.description ?? 'Beacon records for this world.', items: beacons.sort((a, b) => a.id - b.id), helpers });
+      if (!existing && !beacons.length) continue;
+      const within = (base, target) => { const rel = path.relative(base, target); return rel === '' || (!rel.startsWith('..' + path.sep) && rel !== '..' && !path.isAbsolute(rel)); };
+      const retained = (existing?.items ?? []).filter(item => typeof item.path === 'string' && ![...roots.keys()].some(root => within(root, item.path)));
+      const manifest = await manifestFor({ folder, existing, name: existing?.name ?? 'beacons', title: existing?.title ?? 'Beacons', description: existing?.description ?? 'Beacon records for this world.', items: preserveBeaconOrder(existing?.items ?? [], [...retained, ...beacons]), helpers });
       await writeJson(file, manifest);
       worldManifests.push({ world: worldId, manifest: file, count: beacons.length });
     } catch (error) { skipped.push({ path: file, reason: error.code ?? 'world_manifest_error', message: error.message }); }

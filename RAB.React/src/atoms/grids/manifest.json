@@ -5,9 +5,10 @@
   "title": "grids",
   "description": "Grid atoms",
   "date_added": "2026-09-25T02:52:39.781Z",
+  "path": "L:\\RAB.World\\RAB.React\\src\\atoms\\grids",
   "items": [
     {
-      "id": null,
+      "id": 1790374311043,
       "name": "grid-dashboard",
       "title": "grid-dashboard",
       "description": "6-col dashboard shell: main-nav band, side-nav | left | tabs-nav | main | right, footer",
@@ -15,7 +16,7 @@
       "path": "grid-dashboard"
     },
     {
-      "id": null,
+      "id": 1790374311052,
       "name": "grid-dashboard-alt",
       "title": "grid-dashboard-alt",
       "description": "grid-dashboard without the tabs-nav band (that row left empty)",
@@ -23,7 +24,7 @@
       "path": "grid-dashboard-alt"
     },
     {
-      "id": null,
+      "id": 1790374311057,
       "name": "grid-test",
       "title": "grid-test",
       "description": "container grid for component",
@@ -31,7 +32,7 @@
       "path": "grid-test"
     },
     {
-      "id": null,
+      "id": 1790374311062,
       "name": "grid-test-1",
       "title": "grid-test-1",
       "description": "asdfasdf",

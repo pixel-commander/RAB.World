@@ -1,8 +1,12 @@
 {
+  "id": 1790374311057,
   "name": "grid-test",
-  "kind": "grid-atom",
-  "created": "2026-09-15",
-  "type": "misc",
+  "title": "grid-test",
   "description": "container grid for component",
-  "modified": "2026-09-15"
+  "type": "grid-atom",
+  "date_created": 1789430400000,
+  "date_modified": 1789430400000,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
 }

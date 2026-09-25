@@ -19,7 +19,7 @@
     },
     "new-react-project": {
       "id": 1790000000300,
-      "path": "react/add/new/project"
+      "path": "new-react-project"
     },
     "new-html-project": {
       "id": 1790000000301,
@@ -35,7 +35,7 @@
     },
     "add-component": {
       "id": 1790000000401,
-      "path": "react/add/new/component"
+      "path": "new-component"
     },
     "add-sub-component": {
       "id": 1790000000402,
@@ -63,11 +63,11 @@
     },
     "new-page": {
       "id": 1830000000001,
-      "path": "react/add/new/page"
+      "path": "new-page"
     },
     "new-dashboard": {
       "id": 1830000000006,
-      "path": "react/add/new/dashboard"
+      "path": "new-dashboard"
     },
     "new-navigation": {
       "id": 1789877167204,
@@ -75,19 +75,19 @@
     },
     "add-container-atom": {
       "id": 1790031603502,
-      "path": "react/css/add/new/container-atom"
+      "path": "new-container-atom"
     },
     "add-action-atom": {
       "id": 1790031603507,
-      "path": "react/css/add/new/action-atom"
+      "path": "new-action-atom"
     },
     "add-effect-atom": {
       "id": 1790031603525,
-      "path": "react/css/add/new/effect-atom"
+      "path": "new-effect-atom"
     },
     "add-grid-atom": {
       "id": 1790031603528,
-      "path": "react/css/add/new/grid-atom"
+      "path": "new-grid-atom"
     }
   },
   "tools": {

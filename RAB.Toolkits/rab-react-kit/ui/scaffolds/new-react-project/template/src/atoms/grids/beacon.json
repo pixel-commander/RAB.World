@@ -1,0 +1,13 @@
+{
+  "name": "grids",
+  "id": null,
+  "title": "Grid atoms - __PROJECT_NAME__",
+  "description": "This is the grid atom folder for project __PROJECT_NAME__.",
+  "date_added": null,
+  "path": "src/atoms/grids",
+  "types": [],
+  "beacon": "off",
+  "_scaffold": true,
+  "reach": ["world", "project"],
+  "type": "react"
+}

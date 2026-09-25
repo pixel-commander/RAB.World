@@ -1,0 +1,36 @@
+{
+  "version": "manifest/v1",
+  "id": 1790376632174,
+  "name": "model-kit",
+  "title": "Model Kit",
+  "description": "Model training and code-review rules and resources.",
+  "date_added": "2026-09-25T22:50:32.177Z",
+  "path": "L:\\RAB.World\\RAB.Toolkits\\model-kit",
+  "items": [
+    {
+      "id": 1790161768366,
+      "name": "code-reviews",
+      "title": "New Code Review Session",
+      "description": "Creates a new package-review session, links a separate read-only original source folder, and prepares numbered rounds without copying source files.",
+      "type": "code-review-session",
+      "path": "training\\code-reviews"
+    },
+    {
+      "id": 1790163090688,
+      "name": "capture-change",
+      "title": "Capture Review Change",
+      "description": "Records exact file versions and focused change evidence without copying package archives.",
+      "type": "review-change",
+      "path": "training\\code-reviews\\capture-change"
+    },
+    {
+      "id": 1790162067354,
+      "name": "new-training-round",
+      "title": "New Training Round",
+      "description": "Adds the next numbered training round to an existing code-review session, preserving earlier rounds and the separate original source.",
+      "type": "training-round",
+      "path": "training\\code-reviews\\new-training-round"
+    }
+  ],
+  "indexed": true
+}

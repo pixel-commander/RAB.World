@@ -6,6 +6,7 @@ import { makeNode } from '../bridge/rab-node.mjs';
 import { assertNumericId } from '../bridge/rab-id.mjs';
 import { loadToolkit } from '../bridge/toolkit-links.mjs';
 import { prepareComponentInputs } from './react/_component-inputs.mjs';
+import { stampScaffoldRecords } from './_scaffold-records.mjs';
 
 
 export const runProjectStamp=async({options,context,tool,destination,projectId,templateValues={},additionalFiles=[]})=>{
@@ -20,16 +21,24 @@ export const runProjectStamp=async({options,context,tool,destination,projectId,t
   const template=path.join(tool.root,'template');
   const id=assertNumericId(projectId??await memory.allocateId());
   const rendered=await renderTemplateTree(template,{...templateValues,PROJECT_ID:id,PROJECT_NAME:options.name,NPM_NAME:String(options.name).toLowerCase().replace(/[^a-z0-9._-]+/g,'-').replace(/^[._-]+/,'')||'app'});
-  const files=rendered.map(file=>{
+  let files=rendered.map(file=>{
     if(!['settings.json','PATHS.json'].includes(file.path))return file;
     const value=JSON.parse(file.text);
     if(file.path==='PATHS.json')value.project.id=id;
-    else Object.assign(value,makeNode({...value,id,title:options.name,description:value.description??'Local project',custom_toolkit_path:customToolkitPath,settings:[],meta:{kind:'project',source_root:path.resolve(target)}}));
+    else Object.assign(value,makeNode({...value,id,title:options.title??options.name,description:options.description??value.description??'Local project',custom_toolkit_path:customToolkitPath,settings:[],meta:{kind:'project',source_root:path.resolve(target)}}));
     return {...file,text:JSON.stringify(value,null,2)+'\n'};
   });
+  const stampedAt=new Date().toISOString();
+  files=await Promise.all(files.map(async file=>{
+    if(file.path.split(/[\\/]/).at(-1)!=='beacon.json'||file.text===undefined)return file;
+    const beacon=JSON.parse(file.text);
+    if(beacon.beacon!=='on'||beacon._scaffold===true)return file;
+    return {...file,text:JSON.stringify({...beacon,id:await memory.allocateId(),date_added:stampedAt,path:path.resolve(target,path.dirname(file.path))},null,2)+'\n'};
+  }));
   const combined=new Map(files.map(file=>[file.path,file]));
   for(const file of additionalFiles)combined.set(file.path,file);
-  const verification=await memory.registerProject({id,name:options.name,root:path.resolve(target)},()=>writeArtifactPlan({destination:target,files:[...combined.values()]}));
+  const stamped=await stampScaffoldRecords({files:[...combined.values()],target,memory,projectName:options.name});
+  const verification=await memory.registerProject({id,name:options.name,root:path.resolve(target)},()=>writeArtifactPlan({destination:target,files:stamped}));
   const settings=JSON.parse(await readFile(path.join(target,'settings.json'),'utf8'));
   const meta={id,name:options.name,root:await realpath(target)};
   const opened=await memory.openProject(meta);

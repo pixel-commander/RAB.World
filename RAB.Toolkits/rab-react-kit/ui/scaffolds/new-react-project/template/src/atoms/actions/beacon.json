@@ -1,0 +1,13 @@
+{
+  "name": "actions",
+  "id": null,
+  "title": "Action atoms - __PROJECT_NAME__",
+  "description": "This is the action atom folder for project __PROJECT_NAME__.",
+  "date_added": null,
+  "path": "src/atoms/actions",
+  "types": [],
+  "beacon": "off",
+  "_scaffold": true,
+  "reach": ["world", "project"],
+  "type": "react"
+}

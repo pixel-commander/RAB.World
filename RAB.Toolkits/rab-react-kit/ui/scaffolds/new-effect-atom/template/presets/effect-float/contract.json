@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Reusable effect atom preset effect-float."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "effect-float.css"
+    ],
+    "usage": "Import effect-float.css and supply markup matching its selectors and declared areas; shared theme tokens come from the project."
+  }
+}

@@ -1,14 +1,12 @@
 {
-  "title": "action-rail-left",
-  "name": "action-rail-left",
-  "description": "Left accent rail action atom.",
-  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\action-rail-left",
-  "type": "action-atom",
-  "transmitting": true,
-  "settings": [],
-  "meta": {
-    "kind": "signal"
-  },
   "id": 1790304149090,
-  "indexed": true
+  "name": "action-rail-left",
+  "title": "action-rail-left",
+  "description": "Left accent rail action atom.",
+  "type": "action-atom",
+  "date_created": 1790375569376,
+  "date_modified": 1790375569376,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
 }

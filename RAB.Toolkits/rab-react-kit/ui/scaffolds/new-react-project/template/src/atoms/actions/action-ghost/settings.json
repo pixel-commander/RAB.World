@@ -1,0 +1,12 @@
+{
+  "id": null,
+  "name": "action-ghost",
+  "title": "action-ghost",
+  "description": "Muted default skin with the default navigation skin on hover.",
+  "type": "action-atom",
+  "date_created": null,
+  "date_modified": null,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
+}

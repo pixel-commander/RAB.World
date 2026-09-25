@@ -1,0 +1,12 @@
+{
+  "id": null,
+  "name": "container-machine",
+  "title": "container-machine",
+  "description": "Machined dark chassis surface adapted from the factory-control-center site chrome.",
+  "type": "container-atom",
+  "date_created": null,
+  "date_modified": null,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
+}

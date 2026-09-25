@@ -1,7 +1,12 @@
 {
+  "id": null,
   "name": "action-ghost",
-  "kind": "action-atom",
-  "created": "2026-09-17",
+  "title": "action-ghost",
   "description": "Muted default skin with the default navigation skin on hover.",
-  "modified": "2026-09-17"
+  "type": "action-atom",
+  "date_created": 1789603200000,
+  "date_modified": 1789603200000,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
 }

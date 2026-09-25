@@ -115,3 +115,23 @@ export const makeItemSettings = input => {
   assertItemSettings(item);
   return JSON.parse(JSON.stringify(item));
 };
+
+export const SIGNAL_KEYS = Object.freeze(['id', 'name', 'title', 'description', 'type', 'date_created', 'date_modified', 'settings', 'transmitting', 'signal']);
+export const assertSignalSettings = item => {
+  if (!plain(item)) fail('Signal settings must be a plain object.');
+  assertJson(item);
+  if (Object.keys(item).length !== SIGNAL_KEYS.length || SIGNAL_KEYS.some(key => !Object.hasOwn(item, key))) fail('Signal settings must use the canonical signal fields only.');
+  assertNumericId(item.id);
+  if (!text(item.name) || !text(item.title) || typeof item.description !== 'string' || typeof item.type !== 'string') fail('Invalid signal text fields.');
+  for (const key of ['date_created', 'date_modified']) if (!Number.isSafeInteger(item[key]) || item[key] <= 0) fail(`${key} must be a numeric timestamp.`);
+  if (!Array.isArray(item.settings) || typeof item.transmitting !== 'boolean' || typeof item.signal !== 'boolean') fail('Invalid signal settings or flags.');
+  return item;
+};
+export const makeSignalSettings = input => {
+  if (!plain(input)) fail('Signal input must be a plain object.');
+  if (Object.keys(input).some(key => !SIGNAL_KEYS.includes(key))) fail('Unexpected signal field.');
+  const now = Date.now();
+  const item = { id: input.id, name: input.name, title: input.title ?? input.name, description: input.description ?? '', type: input.type ?? '', date_created: input.date_created ?? now, date_modified: input.date_modified ?? now, settings: input.settings ?? [], transmitting: input.transmitting ?? true, signal: input.signal ?? true };
+  assertSignalSettings(item);
+  return JSON.parse(JSON.stringify(item));
+};

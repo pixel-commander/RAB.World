@@ -1,16 +1,12 @@
 {
   "id": null,
-  "title": "",
   "name": "",
+  "title": "",
   "description": "",
-  "path": "",
   "type": "",
-  "transmitting": true,
+  "date_created": null,
+  "date_modified": null,
   "settings": [],
-  "meta": {
-    "kind": "signal"
-  },
-  "imports": [
-    {}
-  ]
+  "transmitting": true,
+  "signal": true
 }

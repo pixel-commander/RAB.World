@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { resolveDestination } from '../../paths/_destination.mjs';
+import { validateSignalContract } from '../../../../RAB.Box/bridge/tool-contract.mjs';
 
 export const run = async ({ options, context, helpers }) => {
   const fail = message => { throw Object.assign(new Error(message), { code: 'BAD_INPUT' }); };
@@ -16,8 +17,11 @@ export const run = async ({ options, context, helpers }) => {
   const files = await helpers.renderTemplateTree(fileURLToPath(new URL('./template', import.meta.url)));
   const definition = files.find(file => file.path === 'settings.json');
   if (!definition) fail('Signal template needs settings.json.');
+  const contract = files.find(file => file.path === 'contract.json');
+  if (!contract) fail('Signal template needs contract.json.');
+  validateSignalContract(JSON.parse(contract.text));
   const { id: placeholder, ...defaults } = JSON.parse(definition.text);
-  const signal = await helpers.createItemSettings({ ...defaults, name: options.name, title, description, path: destination.path, type, transmitting });
+  const signal = await helpers.createSignalSettings({ ...defaults, name: options.name, title, description, type, transmitting, signal: options.signal ?? defaults.signal });
   const rendered = files.map(file => file.path === 'settings.json'
     ? { ...file, text: JSON.stringify(signal, null, 2) + '\n' }
     : file.path === 'README.txt' ? { ...file, text: file.text.replaceAll('__TITLE__', title) } : file);

@@ -1,0 +1,92 @@
+{
+  "version": "manifest/v1",
+  "id": 1790376632183,
+  "name": "rab-react-kit",
+  "title": "React UI Toolkit",
+  "description": "React scaffolds for projects, pages, components, and atoms.",
+  "date_added": "2026-09-25T22:50:32.185Z",
+  "path": "L:\\RAB.World\\RAB.Toolkits\\rab-react-kit",
+  "items": [
+    {
+      "id": 1790031603507,
+      "name": "new-action-atom",
+      "title": "New Action Atom",
+      "description": "Creates a tag-neutral CSS skin for interactive elements, including navigation links and controls, with hover, active, persistent is-active, focus and disabled states plus a React link demo.",
+      "type": "atom",
+      "path": "ui\\scaffolds\\new-action-atom"
+    },
+    {
+      "id": 1790000000401,
+      "name": "new-component",
+      "title": "New Component",
+      "description": "Creates a structural React component with an optional canonical grid and class atoms resolved before any files are written.",
+      "type": "component",
+      "path": "ui\\scaffolds\\new-component"
+    },
+    {
+      "id": 1790031603502,
+      "name": "new-container-atom",
+      "title": "New Container Atom",
+      "description": "Creates a reusable CSS container skin scaffold with inset and float surface hooks, metadata and a React demo. Components own layout.",
+      "type": "atom",
+      "path": "ui\\scaffolds\\new-container-atom"
+    },
+    {
+      "id": 1830000000006,
+      "name": "new-dashboard",
+      "title": "New Dashboard",
+      "description": "Creates a React dashboard by composing New Page, Apply Grid Layout, New Navigation, and Insert Component Into Area. Defaults to a header-main grid with SiteNav in header.",
+      "type": "dashboard",
+      "path": "ui\\scaffolds\\new-dashboard"
+    },
+    {
+      "id": 1789877167204,
+      "name": "navigation",
+      "title": "New Navigation",
+      "description": "Creates a React navigation component from rows with id, name, and path. The generated component accepts selected and handleClick, and marks the selected item for accessibility.",
+      "type": "navigation",
+      "path": "ui\\scaffolds\\new-dashboard\\navigation"
+    },
+    {
+      "id": 1790031603525,
+      "name": "new-effect-atom",
+      "title": "New Effect Atom",
+      "description": "Creates a named CSS effect token alias from an existing float or inset preset, preserving its elevation-token dependency and atom metadata.",
+      "type": "atom",
+      "path": "ui\\scaffolds\\new-effect-atom"
+    },
+    {
+      "id": 1790031603528,
+      "name": "new-grid-atom",
+      "title": "New Grid Atom",
+      "description": "Creates a named CSS grid definition from an existing grid preset using data-grid and data-area selectors, retaining its area names and track topology.",
+      "type": "atom",
+      "path": "ui\\scaffolds\\new-grid-atom"
+    },
+    {
+      "id": 1830000000001,
+      "name": "new-page",
+      "title": "New Page",
+      "description": "Creates a React page with an addressable root construction seat for applying a grid layout and inserting components.",
+      "type": "page",
+      "path": "ui\\scaffolds\\new-page"
+    },
+    {
+      "id": 1790000000300,
+      "name": "new-react-project",
+      "title": "New React Project",
+      "description": "Creates a React project from the project scaffold with a minimal or style-guide starter, optional database example and optional UI kit.",
+      "type": "project",
+      "path": "ui\\scaffolds\\new-react-project"
+    },
+    {
+      "id": 1790000000402,
+      "name": "new-sub-component",
+      "title": "New Sub Component",
+      "description": "Creates a structural React component with an optional canonical grid and class atoms resolved before any files are written.",
+      "type": "component",
+      "path": "ui\\scaffolds\\new-sub-component"
+    }
+  ],
+  "indexed": true
+}

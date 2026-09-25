@@ -1,8 +1,12 @@
 {
+  "id": null,
   "name": "grid-test-1",
-  "kind": "grid-atom",
-  "created": "2026-09-10",
-  "type": "misc",
+  "title": "grid-test-1",
   "description": "asdfasdf",
-  "modified": "2026-09-10"
+  "type": "grid-atom",
+  "date_created": null,
+  "date_modified": null,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
 }

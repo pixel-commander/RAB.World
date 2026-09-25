@@ -1,0 +1,36 @@
+SIGNAL CONTRACTS
+================
+
+Signal sidecars use the existing tool-contract/v1 format, not signal/v1.
+Each signal settings.json is accompanied by contract.json with source.kind,
+a nonempty source.description, a settings array, and a result object.
+An asset contract describes application/consumption, not an executable command.
+
+Box's tool-contract.mjs owns validateSignalContract and loadSignalContract.
+The loader reuses loadToolContract; reading never imports an executor.
+source.kind=unclassified reports ready:false. Valid structure alone is not
+proof of implementation or permission to execute. Asset reads report
+executable:false. An executable tool still needs normal tool registration.
+
+The new-react-project template's populated atom signal folders own contracts.
+The metadata-only container-machine-trim remains explicitly unclassified;
+no CSS implementation is invented. The components and pages folders in that
+project template are currently empty category placeholders, not signals.
+No fake component records were added to fill those folders.
+
+Project stamping validates every opted-in signal's adjacent contract before
+allocating its identities or writing output. The generic signal maker also
+requires and validates the contract from its template. Standalone atom
+creation validates the contract owned by its leaf template or selected preset.
+Existing saved projects are not retroactively migrated by this change.
+
+Inspect an existing signal without executing it through Box:
+  base/check-tool with options {"folder":"absolute/signal/folder"}
+Use either folder for a signal or key for a registered tool, not both.
+Missing/malformed contracts fail; unclassified contracts report incomplete.
+Template naming checks accept semantic scaffold names without stamp- prefixes.
+
+This wires creation and explicit compatibility checking. It does not start
+a watcher, turn assets into executable tools, or make search validate every
+contract automatically. Wiring a selected search result into invocation must
+still respect its contract and tool registration.

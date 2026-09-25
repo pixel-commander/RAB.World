@@ -1,5 +1,6 @@
 import path from 'node:path';
 import { readFile } from 'node:fs/promises';
+import { assertBeacon } from './validate.mjs';
 
 const requireValue = (condition, message) => {
   if (!condition) throw Object.assign(new Error(message), { code: 'BAD_INPUT' });
@@ -39,6 +40,7 @@ export const run = async ({ options, context, tool, helpers }) => {
   const identity = await helpers.createItemSettings({ name: options.name, title: options.name, description, settings: [], meta: { kind: 'beacon' } });
   const values = { name: options.name, id: identity.id, title, description, date_added: new Date().toISOString(), path: projectRoot === undefined ? folder : path.posix.normalize(relative), types: [...types], beacon: state, reach: [...reach] };
   const beacon = Object.fromEntries(Object.keys(template).map(key => [key, Object.hasOwn(values, key) ? values[key] : template[key]]));
+  await assertBeacon(beacon);
   const verification = await helpers.writeArtifactPlan({ destination: folder, allowedRoot: projectRoot ?? folder, uniqueDirectory: false, files: [{ path: 'beacon.json', text: JSON.stringify(beacon, null, 2) + '\n' }] });
   return { status: 'created', beacon, file: path.join(folder, 'beacon.json'), verification };
 };

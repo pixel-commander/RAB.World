@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">World beacons flow</title>
+  <desc id="desc">Signals feed local beacon manifests. Beacon house keys feed the flat .rab world beacon registry. Toolkits are indexed directly into the toolkit registry.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#79d8ff"/></marker>
+    <style>
+      .bg { fill:#10151d; } .box { fill:#182434; stroke:#79d8ff; stroke-width:2; rx:14; }
+      .store { fill:#1f2b22; stroke:#9be27c; stroke-width:2; rx:14; }
+      .tool { fill:#31243a; stroke:#d9a6ff; stroke-width:2; rx:14; }
+      .h { fill:#f2f7ff; font:700 20px system-ui, sans-serif; } .t { fill:#bdcad8; font:15px system-ui, sans-serif; }
+      .small { fill:#8ea4ba; font:13px system-ui, sans-serif; } .line { stroke:#79d8ff; stroke-width:3; fill:none; marker-end:url(#arrow); }
+      .line2 { stroke:#9be27c; stroke-width:3; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="650" rx="20"/>
+  <text x="50" y="55" class="h" font-size="28">World Beacons: local source → flat .rab registry</text>
+  <text x="50" y="82" class="small">Beacon registry order is retained for future search priority.</text>
+
+  <rect class="box" x="55" y="135" width="240" height="150"/>
+  <text x="78" y="172" class="h">Signals</text>
+  <text x="78" y="202" class="t">atom/settings.json</text>
+  <text x="78" y="227" class="small">one per individual atom</text>
+  <text x="78" y="251" class="small">stays in project source</text>
+
+  <rect class="box" x="390" y="135" width="260" height="150"/>
+  <text x="414" y="172" class="h">Shelf Beacon</text>
+  <text x="414" y="202" class="t">actions/beacon.json</text>
+  <text x="414" y="227" class="small">one per shelf folder</text>
+  <text x="414" y="251" class="small">id + world + path</text>
+
+  <rect class="tool" x="745" y="135" width="260" height="150"/>
+  <text x="769" y="172" class="h">World Scanner</text>
+  <text x="769" y="202" class="t">finds beacon.json only</text>
+  <text x="769" y="227" class="small">reads direct-child signals</text>
+  <text x="769" y="251" class="small">explicit scan root</text>
+
+  <path class="line" d="M295 210 H390"/>
+  <path class="line" d="M650 210 H745"/>
+
+  <rect class="box" x="390" y="390" width="260" height="155"/>
+  <text x="414" y="427" class="h">Local Manifest</text>
+  <text x="414" y="457" class="t">&lt;beacon folder&gt;/manifest.json</text>
+  <text x="414" y="482" class="small">items = local signals</text>
+  <text x="414" y="507" class="small">path = described folder</text>
+
+  <rect class="store" x="745" y="370" width="360" height="195"/>
+  <text x="769" y="407" class="h">.rab World Registry</text>
+  <text x="769" y="437" class="t">worlds/&lt;world&gt;/beacons/manifest.json</text>
+  <text x="769" y="466" class="small">items = beacon HouseKeys only</text>
+  <text x="769" y="491" class="small">array order = future search priority</text>
+  <text x="769" y="516" class="small">no folders per beacon</text>
+
+  <path class="line" d="M875 285 V337 H520 V390"/>
+  <path class="line2" d="M875 285 V370"/>
+
+  <rect class="tool" x="55" y="390" width="240" height="155"/>
+  <text x="78" y="427" class="h">Toolkits</text>
+  <text x="78" y="457" class="t">RAB.Box/TOOLKITS.json</text>
+  <text x="78" y="482" class="small">ordered enabled paths</text>
+  <text x="78" y="507" class="small">no beacon / no discovery</text>
+  <path class="line2" d="M295 468 H745"/>
+  <text x="475" y="605" class="small">toolkits/manifest.json is another normal flat manifest beside beacons/manifest.json</text>
+</svg>

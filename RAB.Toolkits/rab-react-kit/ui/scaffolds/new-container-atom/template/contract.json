@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Reusable container atom CSS skin; host markup and shared tokens remain project-owned."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "__ATOM_NAME__.css"
+    ],
+    "usage": "Import the CSS and apply its declared selectors. This is an asset, not an executable tool."
+  }
+}

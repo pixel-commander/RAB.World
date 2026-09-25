@@ -1,0 +1,7 @@
+{
+  "source_tool_id": 1790000000402,
+  "source_tool": "react/stamp-sub-component",
+  "source_root": "//Desktop-t72isdi/f/RAB.Box/tools/react/stamp-sub-component",
+  "relocated_to": "ui/scaffolds/new-sub-component",
+  "note": "Adapted from add/sub/component into the UI scaffold format with its existing numeric identity and parent_path behavior."
+}

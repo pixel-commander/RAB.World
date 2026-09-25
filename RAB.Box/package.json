@@ -7,10 +7,14 @@
     "node": ">=22"
   },
   "scripts": {
+    "mcp:world-hands": "node bridge/world-hands.mjs",
     "start": "node server.mjs --open",
     "test": "node --test tests/*.test.mjs tests/identity-storage/*.test.mjs tests/project-lifecycle/*.test.mjs tests/folder-index/*.test.mjs engine/tests/*.test.mjs",
     "demo": "node engine/demo.mjs",
     "language:audit": "node language/tools/audit_language.mjs verification/language-audit.json",
     "language:review": "node language/tools/review_shape1.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.1"
   }
 }

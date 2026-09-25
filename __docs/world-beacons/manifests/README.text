@@ -1,0 +1,62 @@
+MANIFESTS
+=========
+
+ONE SHAPE
+---------
+Every current manifest uses manifest/v1:
+
+  version
+  id
+  name
+  title
+  description
+  date_added
+  path
+  items
+  indexed
+
+The manifest path is the folder the manifest describes. Each item's path is
+the item's actual source location. The items field is always an array.
+
+LOCAL FOLDER MANIFESTS
+----------------------
+A beacon folder has a local manifest.json. World Scanner reads direct child
+settings.json records and writes one item for each signal/item it finds.
+
+Examples:
+L:\RAB.World\RAB.React\src\atoms\actions\manifest.json
+L:\RAB.World\RAB.React\src\atoms\containers\manifest.json
+L:\RAB.World\RAB.React\src\atoms\effects\manifest.json
+L:\RAB.World\RAB.React\src\atoms\grids\manifest.json
+
+WORLD REGISTRY MANIFESTS
+------------------------
+The user runtime lives next to .codex and .claude:
+C:\Users\gauge\.rab\
+
+World list:
+C:\Users\gauge\.rab\worlds\manifest.json
+
+Server beacon registry:
+C:\Users\gauge\.rab\worlds\server\beacons\manifest.json
+
+Server toolkit registry:
+C:\Users\gauge\.rab\worlds\server\toolkits\manifest.json
+
+These are ordinary manifests. The beacon registry has beacon records as its
+items. The toolkit registry has toolkit records as its items. Neither makes a
+folder per item.
+
+TOOLS USED
+----------
+Generic manifest creator:
+L:\RAB.World\RAB.Toolkits\rab-world\tools\world\add\world-manifest\world-manifest.mjs
+
+Beacon folder refresh and world beacon registry update:
+L:\RAB.World\RAB.Toolkits\rab-world\tools\world\scanner\world-scanner.mjs
+
+Toolkit source list:
+L:\RAB.World\RAB.Box\TOOLKITS.json
+
+The ordered enabled entries in TOOLKITS.json are the direct source for the
+server toolkit manifest. Toolkits are not discovered through beacons.

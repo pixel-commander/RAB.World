@@ -1,0 +1,12 @@
+{
+  "id": null,
+  "name": "container-metal",
+  "title": "container-metal",
+  "description": "Flat lighter machined surface with a subtle gradient, strong border, and no depth shadow.",
+  "type": "container-atom",
+  "date_created": null,
+  "date_modified": null,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
+}

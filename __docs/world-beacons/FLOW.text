@@ -1,0 +1,47 @@
+WORLD BEACONS FLOW
+==================
+
+1. LOCAL SOURCE
+   Each atom keeps its own settings.json. This is the atom's signal.
+
+2. LOCAL BEACON
+   Each atom shelf (actions, containers, effects, grids) has one beacon.json.
+   The beacon identifies its folder with a numeric id, numeric world value, and
+   absolute source path. Individual atoms are signals, not beacons.
+
+3. WORLD SCANNER
+   Tool:
+   L:\RAB.World\RAB.Toolkits\rab-world\tools\world\scanner\world-scanner.mjs
+
+   The scanner is given an explicit scan root. It finds beacon.json records,
+   validates them, and reads direct-child settings.json files only inside each
+   valid beacon folder.
+
+4. LOCAL FOLDER MANIFEST
+   Scanner writes/refreshes:
+   <beacon folder>\manifest.json
+
+   The items array contains direct local signal/item records. Its path is the
+   beacon folder it describes.
+
+5. FLAT WORLD REGISTRY
+   Scanner registers only the beacon HouseKey in:
+   C:\Users\gauge\.rab\worlds\<world>\beacons\manifest.json
+
+   This items array is the future search-priority order. Existing positions are
+   preserved; changed beacons refresh in place; newly discovered beacons append.
+
+6. TOOLKITS
+   Toolkits do not use beacons or discovery. Ordered enabled entries from:
+   L:\RAB.World\RAB.Box\TOOLKITS.json
+
+   become records in:
+   C:\Users\gauge\.rab\worlds\<world>\toolkits\manifest.json
+
+7. WATCHER
+   The saved watcher config is:
+   C:\Users\gauge\.rab\worlds\server\world-watcher.json
+
+   When a host-managed watcher is enabled, it watches registered beacon.json
+   records only and triggers World Scanner on beacon add/change/removal. It
+   does not open a port or crawl drives by itself.

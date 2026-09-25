@@ -1,0 +1,10 @@
+{
+  "id": 1790031603507,
+  "name": "new-action-atom",
+  "title": "New Action Atom scaffold",
+  "description": "Source scaffold for React action atoms.",
+  "path": "ui/scaffolds/new-action-atom",
+  "beacon": "off",
+  "reach": ["project"],
+  "type": "react"
+}

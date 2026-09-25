@@ -1,7 +1,12 @@
 {
+  "id": null,
   "name": "effect-inset",
-  "kind": "effect-atom",
-  "created": "2026-09-14",
+  "title": "effect-inset",
   "description": "Reusable recessed depth treatment backed by the theme inset elevation token.",
-  "modified": "2026-09-14"
+  "type": "effect-atom",
+  "date_created": 1789344000000,
+  "date_modified": 1789344000000,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
 }

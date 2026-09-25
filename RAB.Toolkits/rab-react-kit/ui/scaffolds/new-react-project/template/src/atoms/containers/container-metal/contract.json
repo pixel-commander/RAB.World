@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Flat lighter machined surface with a subtle gradient, strong border, and no depth shadow."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "container-metal.css"
+    ],
+    "usage": "Import container-metal.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

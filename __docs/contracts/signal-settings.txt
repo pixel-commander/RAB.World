@@ -1,0 +1,32 @@
+SIGNAL SETTINGS
+===============
+
+Signal and atom settings.json records use exactly these top-level fields:
+id, name, title, description, type, date_created, date_modified, settings,
+transmitting, signal.
+
+ID and dates are positive numeric timestamps. settings is an array. signal
+and transmitting are booleans; explicit false stays false. Type carries the
+actual item type, such as action-atom. No meta, kind, indexed, path or project
+name is required or emitted in the signal record. Paths belong to discovery
+entries; project wording belongs in the category beacon prose.
+
+makeSignalSettings/assertSignalSettings in RAB.Box/bridge/rab-node.mjs own
+construction and validation. Tool House exposes createSignalSettings with
+the existing shared numeric-ID allocator. Tool and runtime-node definitions
+are separate contracts and retain their own metadata requirements.
+
+Templates use null for ID and dates. Project stamping replaces those values
+for each instance and validates adjacent contracts before writing. Source
+beacons stay off and stamped beacons become on. Standalone signal and atom
+creators use the same record builder. signal:false or transmitting:false
+records are excluded by the updated signal index/search readers.
+
+The explicit settings migration preserved source originals beneath:
+C:\Users\gauge\.rab\backups\signal-schema\1790375569186
+Legacy grid type labels such as dashboard are retained in those originals;
+the current type is grid-atom. Older created/modified dates were converted
+to epoch milliseconds where available. Templates have no stamped dates.
+This migration does not rewrite unrelated tool/runtime-node settings or old
+saved project manifests under .rab. Refresh source indexes through their
+own scanner when needed.

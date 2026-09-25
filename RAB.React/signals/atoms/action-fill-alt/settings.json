@@ -1,14 +1,12 @@
 {
-  "title": "action-fill-alt",
-  "name": "action-fill-alt",
-  "description": "Secondary blue filled action atom.",
-  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\action-fill-alt",
-  "type": "action-atom",
-  "transmitting": true,
-  "settings": [],
-  "meta": {
-    "kind": "signal"
-  },
   "id": 1790304148511,
-  "indexed": true
+  "name": "action-fill-alt",
+  "title": "action-fill-alt",
+  "description": "Secondary blue filled action atom.",
+  "type": "action-atom",
+  "date_created": 1790375569376,
+  "date_modified": 1790375569376,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
 }

@@ -4,13 +4,12 @@ import { pathToFileURL } from 'node:url';
 import { insist, record } from '../engine/src/core.mjs';
 import { createSeatParser } from './seat-parser.mjs';
 import { createRabMemory } from './rab-memory.mjs';
-import { makeItemSettings } from './rab-node.mjs';
+import { makeItemSettings, makeSignalSettings } from './rab-node.mjs';
 import { createPathsRegistry } from './paths-registry.mjs';
 import { readToolkitLinks, readProjectToolkit, loadToolkit, pathIdentity, withinRoot } from './toolkit-links.mjs';
 import { renderTemplateTree, writeArtifactPlan } from '../tools/_artifact-plan.mjs';
 import { runProjectStamp, runReactComponentStamp } from '../tools/_stamp-engines.mjs';
 import { resolveProjectFolder } from '../tools/react/_project-paths.mjs';
-import { inspectUiKitTemplate } from '../tools/react/seed/stamp-ui-kit/stamp-ui-kit.mjs';
 import { makeTransition, normalizeAuthority } from './flow-runtime.mjs';
 import { canonicalizeShape } from './shape-codec.mjs';
 import { createUsageLedger } from './usage-ledger.mjs';
@@ -151,7 +150,7 @@ export const createToolHouse = ({ root, toolsRoot = path.join(root, 'tools'), us
       if (!(await exists(settingsFile))) continue;
       const relative = slash(path.relative(boundary, toolRoot));
       const tags = relative.split('/').filter(Boolean);
-      const domain = tags[0] ?? '';
+      const domain = source.toolkit?.name ?? tags[0] ?? '';
       const folder = tags.at(-1) ?? '';
       const key = relative;
       const templateRoot = path.join(toolRoot, 'template');
@@ -576,12 +575,16 @@ export const createToolHouse = ({ root, toolsRoot = path.join(root, 'tools'), us
       delete publicContext.__rab_run; delete publicContext.__rab_parent_execution_id;
       const scopedHelpers = {
         createItemSettings: async input => makeItemSettings({ ...input, id: Object.hasOwn(input, 'id') ? input.id : await run.memory.allocateId() }),
+        createSignalSettings: async input => makeSignalSettings({ ...input, id: await run.memory.allocateId() }),
         renderTemplateTree,
         writeArtifactPlan,
         runProjectStamp: (extra = {}) => runProjectStamp({...extra,options:bound.options,context:publicContext,tool}),
         runReactComponentStamp: (extra = {}) => runReactComponentStamp({...extra,options:bound.options,context:publicContext,helpers:scopedHelpers}),
         resolveProjectFolder: (extra = {}) => resolveProjectFolder({...extra,context:publicContext}),
-        inspectUiKitTemplate,
+        inspectUiKitTemplate: async (...args) => {
+          const { inspectUiKitTemplate } = await import('../tools/react/seed/stamp-ui-kit/stamp-ui-kit.mjs');
+          return inspectUiKitTemplate(...args);
+        },
         listTools: (args = {}) => listTools({...args,context:publicContext}),
         findTools: (args = {}) => findTools({...args,context:publicContext}),
         getTool: ref => getTool(ref,{context:publicContext}),

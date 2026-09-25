@@ -1,0 +1,40 @@
+@layer atoms {
+  .container-neon-corner {
+    --container-neon-corner-ink: var(--color-primary-rgb);
+    border: var(--container-neon-corner-border, 0.3125rem var(--border-style) transparent);
+    border-radius: var(--container-neon-corner-radius, 0);
+    filter: var(
+      --container-neon-corner-filter,
+      drop-shadow(0 0 0.3125rem rgb(var(--container-neon-corner-ink)))
+      drop-shadow(0 0 1rem rgb(var(--container-neon-corner-ink) / 55%))
+    );
+  }
+
+  .container-neon-corner--secondary {
+    --container-neon-corner-ink: var(--color-secondary-rgb);
+  }
+
+  .container-neon-corner--top-left {
+    border-block-start-color: var(--container-neon-corner-block-start-color, rgb(var(--container-neon-corner-ink)));
+    border-inline-start-color: var(--container-neon-corner-inline-start-color, rgb(var(--container-neon-corner-ink)));
+    border-start-start-radius: var(--container-neon-corner-start-start-radius, 1.625rem);
+  }
+
+  .container-neon-corner--top-right {
+    border-block-start-color: var(--container-neon-corner-block-start-color, rgb(var(--container-neon-corner-ink)));
+    border-inline-end-color: var(--container-neon-corner-inline-end-color, rgb(var(--container-neon-corner-ink)));
+    border-start-end-radius: var(--container-neon-corner-start-end-radius, 1.625rem);
+  }
+
+  .container-neon-corner--bottom-left {
+    border-block-end-color: var(--container-neon-corner-block-end-color, rgb(var(--container-neon-corner-ink)));
+    border-inline-start-color: var(--container-neon-corner-inline-start-color, rgb(var(--container-neon-corner-ink)));
+    border-end-start-radius: var(--container-neon-corner-end-start-radius, 1.625rem);
+  }
+
+  .container-neon-corner--bottom-right {
+    border-block-end-color: var(--container-neon-corner-block-end-color, rgb(var(--container-neon-corner-ink)));
+    border-inline-end-color: var(--container-neon-corner-inline-end-color, rgb(var(--container-neon-corner-ink)));
+    border-end-end-radius: var(--container-neon-corner-end-end-radius, 1.625rem);
+  }
+}

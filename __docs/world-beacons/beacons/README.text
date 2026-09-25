@@ -1,0 +1,51 @@
+BEACONS
+========
+
+WHAT A BEACON IS
+----------------
+A beacon is one local beacon.json record beside the folder it represents. It
+has a numeric id, a numeric world value, and the absolute folder path. The
+beacon is the source record; it stays beside its source folder.
+
+CURRENT EXAMPLE SOURCES
+-----------------------
+L:\RAB.World\RAB.React\src\atoms\actions\beacon.json
+L:\RAB.World\RAB.React\src\atoms\containers\beacon.json
+L:\RAB.World\RAB.React\src\atoms\effects\beacon.json
+L:\RAB.World\RAB.React\src\atoms\grids\beacon.json
+
+TOOL USED
+---------
+World Scanner is the beacon finder:
+L:\RAB.World\RAB.Toolkits\rab-world\tools\world\scanner\world-scanner.mjs
+
+It is given an explicit scan root and the worlds root. It finds files named
+beacon.json only, validates their numeric world value, then routes each beacon
+to that world's registry. It does not copy source atoms, signals, datasets, or
+other project files into .rab.
+
+SAVE LOCATION
+-------------
+For server world id 1790283925818, the registry is:
+C:\Users\gauge\.rab\worlds\server\beacons\manifest.json
+
+That manifest's items array contains beacon HouseKeys only: id, name, title,
+description, world, path, types, beacon state, and reach. It does not contain
+the actual signals or the full contents of a beacon folder.
+
+ORDER
+-----
+The registry items array is the future search-priority order. Scanner keeps
+existing beacons in their positions, refreshes their records in place, and
+appends newly found beacons. It does not sort the registry by name or id.
+
+RELATED
+-------
+Watcher setup tool:
+L:\RAB.World\RAB.Toolkits\rab-world\tools\world\watcher\world-watcher.mjs
+
+Saved watcher configuration:
+C:\Users\gauge\.rab\worlds\server\world-watcher.json
+
+The watcher is configured to watch registered beacon.json records only. It is
+not a running server and does not open a port.

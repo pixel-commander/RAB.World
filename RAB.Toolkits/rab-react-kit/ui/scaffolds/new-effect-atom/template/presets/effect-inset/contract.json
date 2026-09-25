@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Reusable effect atom preset effect-inset."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "effect-inset.css"
+    ],
+    "usage": "Import effect-inset.css and supply markup matching its selectors and declared areas; shared theme tokens come from the project."
+  }
+}

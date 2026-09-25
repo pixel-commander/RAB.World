@@ -1,0 +1,35 @@
+SIGNALS
+=======
+
+WHAT A SIGNAL IS
+----------------
+A signal is the settings.json record for an individual item or atom. Signals
+stay at their local source location. They are not beacons and do not receive
+their own .rab folders.
+
+CURRENT EXAMPLE SOURCES
+-----------------------
+L:\RAB.World\RAB.React\src\atoms\actions\<atom>\settings.json
+L:\RAB.World\RAB.React\src\atoms\containers\<atom>\settings.json
+L:\RAB.World\RAB.React\src\atoms\effects\<atom>\settings.json
+L:\RAB.World\RAB.React\src\atoms\grids\<atom>\settings.json
+
+SIGNAL TOOL
+-----------
+Signal creation tool:
+L:\RAB.World\RAB.Toolkits\rab-world\tools\world\add\signal\signal.mjs
+
+Existing signal records for RAB.React are saved locally here:
+L:\RAB.World\RAB.React\signals\atoms\
+
+SCAN RESULT
+-----------
+When a beacon folder is scanned, its direct child settings.json records become
+items in that local folder's manifest.json. The scanner uses:
+L:\RAB.World\RAB.Toolkits\rab-world\tools\world\scanner\world-scanner.mjs
+
+The signal details stay local. Only the beacon HouseKey reaches:
+C:\Users\gauge\.rab\worlds\server\beacons\manifest.json
+
+This keeps .rab flat: settings.json for the world, beacons/manifest.json,
+toolkits/manifest.json, and only other fixed world-level records when needed.

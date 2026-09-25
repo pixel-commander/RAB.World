@@ -1,0 +1,13 @@
+{
+  "name": "effects",
+  "id": null,
+  "title": "Effect atoms - __PROJECT_NAME__",
+  "description": "This is the effect atom folder for project __PROJECT_NAME__.",
+  "date_added": null,
+  "path": "src/atoms/effects",
+  "types": [],
+  "beacon": "off",
+  "_scaffold": true,
+  "reach": ["world", "project"],
+  "type": "react"
+}

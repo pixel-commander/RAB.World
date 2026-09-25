@@ -1,6 +1,65 @@
 BRIDGE CONTRACT
 ===============
 
+WORLD HANDS MCP
+---------------
+Direct read actions use RAB_WORLD_BEACON_MANIFEST, configured once in the
+MCP host environment with an absolute central beacon manifest path.
+get_world_beacons takes no arguments and returns the ordered registry.
+get_beacon_manifests takes {"beacons":["actions","containers"]}; even one
+selection uses an array. Entries may be exact names or numeric IDs. Returns
+an array in request order, with per-entry errors instead of losing healthy
+results. Empty input returns []; duplicate names require a numeric ID.
+Reads at most three local indexes concurrently; the array is capped at 100.
+search_world takes {"query":"atom"} and reuses World Search with the
+configured manifest path. No discovery round-trip is needed for these calls.
+The direct reads use toolkit-owned implementations without a Box execution
+record or source-tree scan. Each call rereads current disk indexes, not a
+cached snapshot. Reconnect the MCP host after changing exposed actions.
+
+world-hands.mjs exposes the linked sibling rab-world toolkit over MCP stdio.
+It reuses Tool House discovery, validation and execution. No HTTP listener,
+model loop, duplicate toolkit implementation or independent watcher is started.
+The MCP host launches it with Node and owns its process lifetime.
+
+Run: node bridge/world-hands.mjs
+Connect in Codex (replace the absolute path for another machine):
+  codex mcp add world-hands -- node L:\RAB.World\RAB.Box\bridge\world-hands.mjs
+Disable by setting enabled=false in the world-hands MCP configuration;
+disconnect or restart the host to stop an existing connection. Remove with:
+  codex mcp remove world-hands
+
+List World hands before invoking their exact returned keys. Invocation is
+limited to available world-domain tools from the linked sibling rab-world.
+Writing hands require confirm=true after user authorization. This flag is
+an explicit caller assertion, not authentication or a filesystem sandbox.
+Tools retain their existing filesystem authority and Box storage behavior.
+No selected project context is injected; supply the catalog's explicit inputs.
+Unavailable discovery records are reported, not silently made executable.
+React tools are not exposed by this World-only adapter.
+
+Verification: node --test tests/world-hands-mcp.test.mjs
+The integration test needs the local rab-world toolkit link in TOOLKITS.json.
+It checks the MCP handshake, discovery, read call, and rejection boundaries.
+It does not execute a writing hand. Box identity allocation uses home .rab.
+
+ROLE AND LAYOUT
+---------------
+
+bridge/ is RAB.Box's coordination layer between the UI/chat, selected project,
+saved session state, and executable tools. It plans turns, gathers required
+inputs and confirmation, resolves toolkits, invokes tools, and records the
+result in the executing user's .rab directory.
+
+Keep bridge/ flat for now: its modules are direct collaborators in one
+coordination boundary, rather than separate feature-owned tool folders.
+
+The generic new-project chooser remains here in project-conversation.mjs. It
+chooses among React, HTML, Audit, and Magic Box project types, then delegates
+to the selected type's creator. React-specific scaffolds belong in
+RAB.Toolkits/rab-react-kit/ui/scaffolds; moving the generic chooser there
+would incorrectly make shared project selection React-owned.
+
 service.mjs owns saved run records and calls the existing engine:
 prepare -> box.prepare
 answer -> box.answer

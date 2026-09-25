@@ -1,14 +1,12 @@
 {
-  "title": "container-metal",
-  "name": "container-metal",
-  "description": "Flat machined surface container atom.",
-  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\container-metal",
-  "type": "container-atom",
-  "transmitting": true,
-  "settings": [],
-  "meta": {
-    "kind": "signal"
-  },
   "id": 1790304149825,
-  "indexed": true
+  "name": "container-metal",
+  "title": "container-metal",
+  "description": "Flat machined surface container atom.",
+  "type": "container-atom",
+  "date_created": 1790375569376,
+  "date_modified": 1790375569376,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
 }

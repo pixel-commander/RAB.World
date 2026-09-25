@@ -5,9 +5,10 @@
   "title": "effects",
   "description": "Effect atoms",
   "date_added": "2026-09-25T02:52:39.428Z",
+  "path": "L:\\RAB.World\\RAB.React\\src\\atoms\\effects",
   "items": [
     {
-      "id": null,
+      "id": 1790374311019,
       "name": "effect-float",
       "title": "effect-float",
       "description": "Reusable raised depth treatment backed by the theme floating elevation token.",
@@ -15,7 +16,7 @@
       "path": "effect-float"
     },
     {
-      "id": null,
+      "id": 1790374311034,
       "name": "effect-inset",
       "title": "effect-inset",
       "description": "Reusable recessed depth treatment backed by the theme inset elevation token.",

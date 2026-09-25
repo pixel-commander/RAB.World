@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Reusable grid atom preset grid-dashboard."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "grid-dashboard.css"
+    ],
+    "usage": "Import grid-dashboard.css and supply markup matching its selectors and declared areas; shared theme tokens come from the project."
+  }
+}

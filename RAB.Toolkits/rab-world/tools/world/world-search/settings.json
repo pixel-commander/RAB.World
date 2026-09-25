@@ -1,0 +1,27 @@
+{
+  "id": 1790372402268,
+  "name": "world-search",
+  "title": "World Search",
+  "description": "Search enabled beacon manifests in parallel, returning matches in beacon priority order.",
+  "settings": [
+    {
+      "name": "query",
+      "type": "text",
+      "title": "Query",
+      "required": true
+    },
+    {
+      "name": "manifest_path",
+      "type": "file",
+      "title": "Beacon Manifest",
+      "description": "Absolute path to the world beacons manifest.json.",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "world",
+    "operation": "find",
+    "target_type": "items",
+    "authority": "write"
+  }
+}

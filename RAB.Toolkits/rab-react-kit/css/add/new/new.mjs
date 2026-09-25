@@ -31,7 +31,7 @@ export const run = async ({ options, tool, helpers }) => {
     if (!presetField.enum.includes(preset)) throw bad('Choose one of the declared atom presets.');
     const templateRoot = path.join(tool.template, 'presets', preset);
     const source = JSON.parse(await readFile(path.join(templateRoot, 'settings.json'), 'utf8'));
-    if (source.name !== preset || source.kind !== kind) throw bad('Atom preset metadata does not match its folder and house type.');
+    if (source.name !== preset || source.type !== kind) throw bad('Atom preset metadata does not match its folder and house type.');
     files = (await helpers.renderTemplateTree(templateRoot)).filter(file => file.path !== 'settings.json').map(file => ({
       ...file,
       path: file.path.replaceAll(preset, name),
@@ -48,13 +48,13 @@ export const run = async ({ options, tool, helpers }) => {
     settings = { name, kind, description: options.description ?? '', created: today, modified: today };
   }
 
-  settings = await helpers.createItemSettings({
-    ...settings,
+  settings = await helpers.createSignalSettings({
+    name, type: kind,
     title: options.title ?? settings.title ?? name,
     description: options.description ?? settings.description,
     settings: [],
-    meta: { kind: 'atom' },
-    ...(options.indexed === undefined ? {} : { indexed: options.indexed })
+    signal: options.signal ?? true,
+    transmitting: options.transmitting ?? true
   });
   files.push({ path: 'settings.json', text: JSON.stringify(settings, null, 2) + '\n' });
   const verification = await helpers.writeArtifactPlan({ destination: folder, allowedRoot: location, files });

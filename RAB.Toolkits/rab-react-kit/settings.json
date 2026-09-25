@@ -3,6 +3,7 @@
   "name": "react",
   "title": "React UI Toolkit",
   "description": "React UI toolkit with semantic creation paths and the shared container-atom, action-atom, effect-atom and grid-atom types.",
+  "scaffolds_root": "ui/scaffolds",
   "settings": [],
   "meta": {
     "kind": "toolkit",

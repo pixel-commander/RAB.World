@@ -4,6 +4,7 @@
   "title": "Add Signal",
   "description": "Creates a signal folder's settings, contract and README from its template.",
   "settings": [
+    {"name":"signal","type":"boolean","title":"Signal","description":"Whether this record is a signal.","required":false,"default":true},
     {"name":"name","type":"text","title":"Name","description":"Signal name. ID is allocated automatically.","required":true},
     {"name":"path","type":"path","title":"Folder Path","description":"Final output folder: relative to the selected world root, or absolute without a selection. The name is not appended.","required":true},
     {"name":"title","type":"text","title":"Title","description":"Display title; defaults to the signal name.","required":false},

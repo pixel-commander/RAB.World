@@ -41,7 +41,10 @@ export const loadToolkit = async directory => {
   insist(typeof settings.name === 'string' && /^[a-z][a-z0-9-]*$/.test(settings.name), 'BAD_TOOLKIT', 'Toolkit name must be lowercase kebab-case.');
   insist(typeof settings.title === 'string' && settings.title.trim() && typeof settings.description === 'string' && settings.description.trim(), 'BAD_TOOLKIT', 'Toolkit title and description are required.');
   insist(Array.isArray(settings.settings) && record(settings.meta) && settings.meta.kind === 'toolkit', 'BAD_TOOLKIT', 'Toolkit settings must be an input array and meta.kind must be toolkit.');
-  const toolsRoot = path.join(root, 'tools');
+  const declaredRoot = settings.scaffolds_root ?? 'tools';
+  insist(typeof declaredRoot === 'string' && declaredRoot.trim(), 'BAD_TOOLKIT', 'Toolkit scaffolds_root must be a non-empty relative path.');
+  insist(!path.isAbsolute(declaredRoot) && !declaredRoot.split(/[\\/]+/).includes('..'), 'BAD_TOOLKIT', 'Toolkit scaffolds_root must stay within the toolkit root.');
+  const toolsRoot = path.join(root, declaredRoot);
   insist((await lstat(toolsRoot)).isDirectory() && !(await lstat(toolsRoot)).isSymbolicLink() && withinRoot(root, await realpath(toolsRoot)), 'BAD_TOOLKIT', 'Toolkit tools/ must be a real contained directory.');
   return { id:settings.id, name:settings.name, title:settings.title, description:settings.description, root, toolsRoot, settingsFile };
 };

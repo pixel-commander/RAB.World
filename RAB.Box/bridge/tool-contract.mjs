@@ -8,6 +8,22 @@ const within = (root, file) => {
 };
 const get = (value, selector) => selector.split('.').reduce((at, key) => at && Object.hasOwn(at, key) ? at[key] : undefined, value);
 
+export const validateSignalContract = data => {
+  insist(record(data) && data.version === 'tool-contract/v1', 'BAD_TOOL_CONTRACT', 'Signal requires a tool-contract/v1 contract.');
+  insist(record(data.source) && ['template', 'internal', 'hybrid', 'composite', 'file-operation', 'unclassified'].includes(data.source.kind) && typeof data.source.description === 'string' && data.source.description.trim(), 'BAD_TOOL_CONTRACT', 'Signal contract requires its source kind and description.');
+  insist(Array.isArray(data.settings) && record(data.result), 'BAD_TOOL_CONTRACT', 'Signal contract requires settings array and result object.');
+  return data;
+};
+
+export const loadSignalContract = async folder => {
+  const contractFile = path.join(folder, 'contract.json');
+  const resolved = await realpath(contractFile);
+  insist(within(await realpath(folder), resolved), 'BAD_TOOL_CONTRACT', 'Signal contract leaves its folder.');
+  const raw = validateSignalContract(JSON.parse(await readFile(resolved, 'utf8')));
+  const contract = await loadToolContract({ tool: { root: folder, scriptFile: path.join(folder, '_not-executed.mjs'), settings: raw.settings, meta: {} }, boundary: folder });
+  return { ...contract, ready: raw.source.kind !== 'unclassified', executable: false };
+};
+
 // Declarative sidecars only: browsing a contract never imports its executor.
 // The executor's folder owns defaults; a leaf can override supplied fields.
 export async function loadToolContract({ tool, boundary }) {

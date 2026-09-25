@@ -1,0 +1,10 @@
+{
+  "id": 1790000000401,
+  "name": "new-component",
+  "title": "New Component scaffold",
+  "description": "Source scaffold for React components.",
+  "path": "ui/scaffolds/new-component",
+  "beacon": "off",
+  "reach": ["project"],
+  "type": "react"
+}

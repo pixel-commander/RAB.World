@@ -38,7 +38,7 @@ export const run = async ({ options, helpers }) => {
   if (typeof name !== 'string' || !name.trim() || typeof title !== 'string' || !title.trim() || typeof description !== 'string') fail('Name and title must be nonempty text; description must be text.');
   const identity = await helpers.createItemSettings({ name, title, description, settings: [], meta: { kind: 'manifest' } });
   const items = await readItems(folder);
-  const manifest = { version: 'manifest/v1', id: identity.id, name, title, description, date_added: new Date().toISOString(), items, indexed: true };
+  const manifest = { version: 'manifest/v1', id: identity.id, name, title, description, date_added: new Date().toISOString(), path: folder, items, indexed: true };
   const verification = await helpers.writeArtifactPlan({ destination: folder, allowedRoot: folder, uniqueDirectory: false, files: [{ path: 'manifest.json', text: JSON.stringify(manifest, null, 2) + '\n' }] });
   return { status: 'created', manifest, file, verification };
 };

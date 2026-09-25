@@ -1,0 +1,15 @@
+{
+  "name": "grids",
+  "id": null,
+  "title": "React grids",
+  "description": "React grid atoms in this project.",
+  "date_added": null,
+  "path": "src/atoms/grids",
+  "types": [],
+  "beacon": "on",
+  "reach": [
+    "world",
+    "project"
+  ],
+  "type": "react"
+}

@@ -1,14 +1,12 @@
 {
-  "title": "grid-dashboard",
-  "name": "grid-dashboard",
-  "description": "Dashboard layout grid atom.",
-  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\grid-dashboard",
-  "type": "grid-atom",
-  "transmitting": true,
-  "settings": [],
-  "meta": {
-    "kind": "signal"
-  },
   "id": 1790304150550,
-  "indexed": true
+  "name": "grid-dashboard",
+  "title": "grid-dashboard",
+  "description": "Dashboard layout grid atom.",
+  "type": "grid-atom",
+  "date_created": 1790375569376,
+  "date_modified": 1790375569376,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
 }

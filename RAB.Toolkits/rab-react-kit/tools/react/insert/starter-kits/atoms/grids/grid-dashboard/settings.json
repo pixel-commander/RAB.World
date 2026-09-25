@@ -1,8 +1,12 @@
 {
+  "id": null,
   "name": "grid-dashboard",
-  "kind": "grid-atom",
-  "created": "2026-09-03",
-  "type": "dashboard",
+  "title": "grid-dashboard",
   "description": "6-col dashboard shell: main-nav band, side-nav | left | tabs-nav | main | right, footer",
-  "modified": "2026-09-03"
+  "type": "grid-atom",
+  "date_created": 1788393600000,
+  "date_modified": 1788393600000,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
 }

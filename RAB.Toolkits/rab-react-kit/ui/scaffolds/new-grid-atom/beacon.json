@@ -1,0 +1,10 @@
+{
+  "id": 1790031603528,
+  "name": "new-grid-atom",
+  "title": "New Grid Atom scaffold",
+  "description": "Source scaffold for React grid atoms.",
+  "path": "ui/scaffolds/new-grid-atom",
+  "beacon": "off",
+  "reach": ["project"],
+  "type": "react"
+}

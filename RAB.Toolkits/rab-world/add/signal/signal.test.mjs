@@ -10,7 +10,7 @@ test('signal template writes a complete record and preserves false and existing 
   assert.ok(process.env.RAB_BOX_ROOT, 'Set RAB_BOX_ROOT to the Box source root.');
   const load = relative => import(pathToFileURL(path.join(process.env.RAB_BOX_ROOT, relative)));
   const { createRabMemory } = await load('bridge/rab-memory.mjs');
-  const { makeItemSettings, assertItemSettings } = await load('bridge/rab-node.mjs');
+  const { makeSignalSettings, assertSignalSettings } = await load('bridge/rab-node.mjs');
   const { writeArtifactPlan, renderTemplateTree } = await load('tools/_artifact-plan.mjs');
   const { createToolHouse } = await load('bridge/tool-house.mjs');
   const parent = path.join(os.homedir(), '.rab', 'tests');
@@ -20,7 +20,7 @@ test('signal template writes a complete record and preserves false and existing 
   await mkdir(root);
   const memory = createRabMemory({ rabHome: path.join(fixture, 'memory') });
   const tool = JSON.parse(await readFile(new URL('./settings.json', import.meta.url), 'utf8'));
-  const helpers = { writeArtifactPlan, renderTemplateTree, createItemSettings: async input => makeItemSettings({ ...input, id: await memory.allocateId() }) };
+  const helpers = { writeArtifactPlan, renderTemplateTree, createSignalSettings: async input => makeSignalSettings({ ...input, id: await memory.allocateId() }) };
   const create = (options, context = { project: { root } }) => run({ options, context, tool, helpers });
   const options = { name: 'AdminCard', path: 'components/AdminCard', type: 'component', description: 'Quotes "and"\nnewlines', transmitting: false };
   const bound = createToolHouse({ root: process.env.RAB_BOX_ROOT }).bindSettings(tool, { name: 'A', path: 'a' });
@@ -28,8 +28,8 @@ test('signal template writes a complete record and preserves false and existing 
   assert.equal(bound.options.transmitting, true);
   const result = await create(options);
   const signal = JSON.parse(await readFile(result.file, 'utf8'));
-  assertItemSettings(signal);
-  for (const [key, value] of Object.entries(options)) assert.deepEqual(signal[key], value);
+  assertSignalSettings(signal);
+  for (const [key, value] of Object.entries(options)) if (key !== 'path') assert.deepEqual(signal[key], value);
   assert.equal(signal.title, options.name);
   assert.ok(Number.isSafeInteger(signal.id));
   assert.equal(result.verification.files.length, 3);

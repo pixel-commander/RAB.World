@@ -1,0 +1,15 @@
+{
+  "name": "effects",
+  "id": null,
+  "title": "React effects",
+  "description": "React effect atoms in this project.",
+  "date_added": null,
+  "path": "src/atoms/effects",
+  "types": [],
+  "beacon": "on",
+  "reach": [
+    "world",
+    "project"
+  ],
+  "type": "react"
+}

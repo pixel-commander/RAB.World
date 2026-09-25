@@ -1,0 +1,10 @@
+{
+  "version": "manifest/v1",
+  "id": null,
+  "name": "containers",
+  "title": "containers",
+  "description": "Default containers atoms",
+  "items": [],
+  "indexed": true,
+  "_scaffold": true
+}
