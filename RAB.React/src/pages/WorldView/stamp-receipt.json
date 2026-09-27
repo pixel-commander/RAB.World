@@ -1,0 +1,39 @@
+{
+  "status": "created",
+  "type": "dashboard",
+  "name": "WorldView",
+  "page": {
+    "name": "WorldView",
+    "file": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\WorldView\\WorldView.tsx"
+  },
+  "layout": "shell",
+  "nav": {
+    "file": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\App.tsx",
+    "route": "world-view",
+    "added": true
+  },
+  "construction_seats": [
+    {
+      "id": "area-header:a1",
+      "role": "area",
+      "area": "header"
+    },
+    {
+      "id": "area-main:a1",
+      "role": "area",
+      "area": "main"
+    },
+    {
+      "id": "area-footer:a1",
+      "role": "area",
+      "area": "footer"
+    }
+  ],
+  "provided": {
+    "seats": {
+      "file": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\WorldView\\WorldView.tsx",
+      "page": "WorldView",
+      "dashboard": "WorldView"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "Default style-guide page. Assumes shared themes; atom category navigation reads src/atoms/*/manifest.json and renders matching demo/Demo.tsx modules."
+  },
+  "settings": [],
+  "result": {
+    "type": "page"
+  }
+}

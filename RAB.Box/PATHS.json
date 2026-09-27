@@ -1050,6 +1050,10 @@
     "code-review": {
       "id": 1830000000728,
       "path": "code-review"
+    },
+    "index-manifest": {
+      "id": 1790442400619,
+      "path": "base/index/manifest"
     }
   }
 }

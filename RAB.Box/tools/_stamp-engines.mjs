@@ -48,7 +48,7 @@ export const runProjectStamp=async({options,context,tool,destination,projectId,t
   return {status:'created',project:{...meta,type:settings.type},settings,box_memory:opened.dir,project_manifest:projectManifest,verification};
 };
 
-export const runReactComponentStamp=async({options,context,helpers,templateUrl,parentOption,templateValues={}})=>{
+export const runReactComponentStamp=async({options,context,helpers,templateUrl,templateDirectory,parentOption,templateValues={}})=>{
   if(!/^[A-Z][A-Za-z0-9_$]*$/.test(String(options.name??'')))throw Object.assign(new Error('Component name must be a valid capitalized React identifier.'),{code:'BAD_REQUEST'});
   const parent=await checkedAbsolutePath(options[parentOption]),dir=path.join(parent,options.name);
   try{await lstat(dir);throw Object.assign(new Error(`Target already exists: ${dir}`),{code:'EEXIST'});}catch(error){if(error.code!=='ENOENT')throw error;}
@@ -59,7 +59,8 @@ export const runReactComponentStamp=async({options,context,helpers,templateUrl,p
   let text=await readFile(templateUrl,'utf8');
   text=text.replaceAll('__COMPONENT_NAME__',options.name);
   const areas=prepared.grid?.areas??[];
-  const values={...templateValues,DEFAULT_CLASS:JSON.stringify(options.class_name??''),GRID_ATTRIBUTE:prepared.grid?` data-grid="${prepared.grid.name}"`:'',DEFAULT_CHILDREN:prepared.grid?`(\n    <>\n${areas.map(area=>`      <div data-area="${area}" data-rab-seat="area-${area}:a1"></div>`).join('\n')}\n    </>\n  )`:JSON.stringify(options.name)};
+  const slug=options.name.replace(/([A-Z]+)([A-Z][a-z])/g,'$1-$2').replace(/([a-z0-9])([A-Z])/g,'$1-$2').replace(/[_$]+/g,'-').toLowerCase();
+  const values={...templateValues,COMPONENT_NAME:options.name,COMPONENT_SLUG:slug,DEFAULT_CLASS:JSON.stringify(options.class_name??''),GRID_ATTRIBUTE:prepared.grid?` data-grid="${prepared.grid.name}"`:'',DEFAULT_CHILDREN:prepared.grid?`(\n    <>\n${areas.map(area=>`      <div data-area="${area}" data-rab-seat="area-${area}:a1"></div>`).join('\n')}\n    </>\n  )`:JSON.stringify(options.name)};
   for(const [key,value] of Object.entries(values))text=text.replaceAll(`__${key}__`,String(value));
   const ext=options.save_as_text?'.txt':'.tsx',file=path.join(dir,`${options.name}${ext}`);
   const metadata=await helpers.createItemSettings({
@@ -75,10 +76,12 @@ export const runReactComponentStamp=async({options,context,helpers,templateUrl,p
     ...(options.indexed===undefined?{}:{indexed:options.indexed})
   });
   let verification;
+  const supporting=templateDirectory?(await renderTemplateTree(templateDirectory,values)).filter(item=>item.path!=='tmpl.tsx').map(item=>({...item,path:item.path.replace(/__([A-Z_]+)__/g,(token,key)=>values[key]??token)})):[];
   try{
     for(const dependency of prepared.dependencies)dependencies.push(await helpers.runTool({key:dependency.key,options:dependency.options}));
     verification=await writeArtifactPlan({destination:dir,allowedRoot:parent,files:[
       {path:`${options.name}${ext}`,text},
+      ...supporting,
       {path:'settings.json',text:JSON.stringify(metadata,null,2)+'\n'},
       {path:'README.txt',text:`Generated component ${options.name}. Skin is composed from host-owned atoms.\n`}
     ]});

@@ -1,0 +1,12 @@
+React pack — house contract
+G1 Use registered data-grid topologies and data-area names; main is the center area.
+G2 Use data-cols/data-rows for numeric tracks. System grid.css owns grid-template and shrink guards.
+G3 Leaf content may use flex or block. Keep one main landmark per rendered page.
+C1 Components own structure; flat CSS atoms own skin using shared token values.
+C2 Compose root className with the supplied className. Remove custom props before spreading DOM props.
+C3 Action atoms share token-based :active and .is-active skin. Derive is-active and semantic ARIA state from the same owner; retain visible focus styling. Explicit pressed-only feedback may extend :active.
+N1 Components/types use PascalCase; CSS classes use kebab-case; canonical area keys stay lowercase.
+N2 Use arrow functions with explicit return for components; preserve supplied valid values.
+A1 Put related mutable state in one owner hook. Page navigation state belongs in the URL.
+S1 Use existing stamps for canonical shapes and retain their execution receipts.
+V1 Verify actual generated output, typecheck/build, and browser behavior before calling a build complete.

@@ -1,0 +1,33 @@
+{
+  "version": "manifest/v1",
+  "id": 1790380405581,
+  "name": "effects",
+  "title": "effects",
+  "description": "Default effects atoms",
+  "items": [
+    {
+      "id": 1790380405551,
+      "name": "effect-float",
+      "title": "effect-float",
+      "description": "Reusable raised depth treatment backed by the theme floating elevation token.",
+      "type": "effect-atom",
+      "path": "effect-float",
+      "signal": true,
+      "transmitting": true
+    },
+    {
+      "id": 1790380405566,
+      "name": "effect-inset",
+      "title": "effect-inset",
+      "description": "Reusable recessed depth treatment backed by the theme inset elevation token.",
+      "type": "effect-atom",
+      "path": "effect-inset",
+      "signal": true,
+      "transmitting": true
+    }
+  ],
+  "indexed": true,
+  "date_added": "2026-09-25T23:53:25.654Z",
+  "path": "L:\\RAB.World\\world-viewer\\src\\atoms\\effects",
+  "project_name": "world-viewer"
+}

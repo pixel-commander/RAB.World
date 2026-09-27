@@ -1,0 +1,43 @@
+{
+  "id": 1790283925818,
+  "name": "server",
+  "title": "main server for lab work",
+  "description": "5090 32gb running llm and baby and dumbots. home to rraabbiitt.",
+  "date_added": "2026-09-24T21:05:25.822Z",
+  "settings": [],
+  "paths": [
+    {
+      "id": 1790376496188,
+      "name": "house-school",
+      "title": "House School",
+      "description": "Curricula, training fixtures, shared runners, and evaluation tools.",
+      "path": "L:\\RAB.World\\RAB.Toolkits\\house-school"
+    },
+    {
+      "id": 1790376496195,
+      "name": "model-kit",
+      "title": "Model Kit",
+      "description": "Model training and code-review rules and resources.",
+      "path": "L:\\RAB.World\\RAB.Toolkits\\model-kit"
+    },
+    {
+      "id": 1790029669459,
+      "name": "react",
+      "title": "React UI Toolkit",
+      "description": "React UI toolkit with semantic creation paths and the shared container-atom, action-atom, effect-atom and grid-atom types.",
+      "path": "L:\\RAB.World\\RAB.Toolkits\\rab-react-kit"
+    },
+    {
+      "id": 1790303211556,
+      "name": "world",
+      "title": "World Toolkit",
+      "description": "Tools for creating world records, manifests, signals, and folder beacons.",
+      "path": "L:\\RAB.World\\RAB.Toolkits\\rab-world"
+    }
+  ],
+  "meta": {
+    "kind": "world",
+    "source_root": "C:\\Users\\gauge\\.rab\\worlds\\server"
+  },
+  "version": "rab-node/v1"
+}

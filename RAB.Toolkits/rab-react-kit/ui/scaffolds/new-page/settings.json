@@ -2,7 +2,7 @@
   "id": 1830000000001,
   "name": "new-page",
   "title": "New Page",
-  "description": "Creates a React page with an addressable root construction seat for applying a grid layout and inserting components.",
+  "description": "page",
   "settings": [
     {
       "type": "text",

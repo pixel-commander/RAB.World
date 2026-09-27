@@ -1,0 +1,13 @@
+{
+  "id": 1790462035604,
+  "name": "WorldView",
+  "title": "World View",
+  "description": "React page WorldView.",
+  "type": "page",
+  "date_created": 1790462035605,
+  "date_modified": 1790462035605,
+  "settings": [],
+  "transmitting": true,
+  "signal": true,
+  "path": "./WorldView.tsx"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "CodeEditor",
+  "title": "Code Editor",
+  "description": "Code editor and read-only code viewer for World Viewer.",
+  "settings": [],
+  "meta": {
+    "kind": "component"
+  },
+  "type": "component",
+  "class": "container-cell",
+  "parent_path": null,
+  "indexed": true,
+  "id": 1790442977267
+}

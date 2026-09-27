@@ -1,0 +1,81 @@
+{
+  "status": "created",
+  "type": "page",
+  "id": 1790456822730,
+  "name": "StyleGuidePage",
+  "title": "Style Guide",
+  "description": "React page StyleGuidePage.",
+  "settings": {
+    "id": 1790456822730,
+    "name": "StyleGuidePage",
+    "title": "Style Guide",
+    "description": "React page StyleGuidePage.",
+    "type": "page",
+    "date_created": 1790456822731,
+    "date_modified": 1790456822731,
+    "settings": [],
+    "transmitting": true,
+    "signal": true,
+    "path": "./StyleGuidePage.tsx"
+  },
+  "file": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\StyleGuidePage\\StyleGuidePage.tsx",
+  "path": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\StyleGuidePage\\StyleGuidePage.tsx",
+  "folder": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\StyleGuidePage",
+  "verification": {
+    "status": "verified",
+    "verification": "created-files-match-approved-plan-sha256",
+    "destination": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\StyleGuidePage",
+    "files": [
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\StyleGuidePage\\StyleGuidePage.tsx",
+        "bytes": 416,
+        "sha256": "3316281d9b92c71ae09a7b7bfd6e74f9efec555c1b9d02c05135839651db45b9"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\StyleGuidePage\\css\\style-guide-page.css",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\StyleGuidePage\\hooks\\useStyleGuidePage.ts",
+        "bytes": 57,
+        "sha256": "d7bd4b22f2921b791c97a1aebe10c765f20d44c8483f48f316ae5ad9d0e0ca4c"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\StyleGuidePage\\js\\.gitkeep",
+        "bytes": 1,
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\StyleGuidePage\\StyleGuidePage.types.ts",
+        "bytes": 71,
+        "sha256": "e22a8d52101499ad6e05aec99e91e33d2cdf95d197a88f260a131af6227ef00f"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\StyleGuidePage\\settings.json",
+        "bytes": 306,
+        "sha256": "24b055d7d77f9d57815c4f3ae7c8446a65f54c80dd86e64713b9eb63657abc43"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\StyleGuidePage\\README.txt",
+        "bytes": 96,
+        "sha256": "2ffbb74f892fd6101a9f70c21c7e30d4cfaf22a6656013c494deed9c9ed44235"
+      }
+    ]
+  },
+  "construction_seats": [
+    {
+      "id": "page-style-guide-page:p1",
+      "role": "page-root",
+      "owner": "StyleGuidePage"
+    }
+  ],
+  "provided": {
+    "seats": {
+      "file": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\StyleGuidePage\\StyleGuidePage.tsx",
+      "path": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\StyleGuidePage\\StyleGuidePage.tsx",
+      "page": "StyleGuidePage",
+      "page_root_seat": "page-style-guide-page:p1"
+    }
+  }
+}

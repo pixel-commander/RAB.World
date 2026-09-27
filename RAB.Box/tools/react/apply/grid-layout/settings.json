@@ -5,6 +5,13 @@
   "description": "Applies a known grid topology to a React page/component root or exact nested construction target and creates addressable data-area construction seats using existing DOM edit Tools.",
   "settings": [
     {
+      "type": "folder",
+      "name": "root",
+      "title": "Source Root",
+      "description": "Optional explicit project/source boundary for unregistered folders.",
+      "required": false
+    },
+    {
       "type": "text",
       "name": "component",
       "title": "Page or Component",

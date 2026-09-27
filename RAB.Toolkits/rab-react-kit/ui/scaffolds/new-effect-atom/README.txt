@@ -14,3 +14,5 @@ Import the generated CSS and reference var(--name) from another skin rule.
 The project must supply the referenced elevation token.
 
 The generated atom settings.json uses the shared item fields id, name, title, description, settings and meta, plus the house atom kind, dates and indexed.
+
+import_styles defaults to true and registers the generated CSS once in the owning project src/css/style.css. Explicit false skips stylesheet registration and does not require a project root. With registration enabled, the selected context project owns the stylesheet; without a selection, the nearest ancestor package.json identifies the project. Imports are inserted before style rules; existing text is preserved. A registration failure after atom creation reports the created folder in error details.

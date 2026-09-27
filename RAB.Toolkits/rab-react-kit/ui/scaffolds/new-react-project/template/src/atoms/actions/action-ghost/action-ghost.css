@@ -33,7 +33,7 @@
       box-shadow var(--motion-fast);
   }
 
-  .action-ghost:active {
+  .action-ghost:is(:active, .is-active) {
     background: var(--action-ghost-active-background, var(--surface-active));
   }
 

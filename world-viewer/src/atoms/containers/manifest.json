@@ -1,0 +1,63 @@
+{
+  "version": "manifest/v1",
+  "id": 1790380405532,
+  "name": "containers",
+  "title": "containers",
+  "description": "Default containers atoms",
+  "items": [
+    {
+      "id": 1790380405498,
+      "name": "container-cell",
+      "title": "container-cell",
+      "description": "Neutral cell surface with inset and floating depth modifiers backed by reusable effect atoms.",
+      "type": "container-atom",
+      "path": "container-cell",
+      "signal": true,
+      "transmitting": true
+    },
+    {
+      "id": 1790380405499,
+      "name": "container-machine",
+      "title": "container-machine",
+      "description": "Machined dark chassis surface adapted from the factory-control-center site chrome.",
+      "type": "container-atom",
+      "path": "container-machine",
+      "signal": true,
+      "transmitting": true
+    },
+    {
+      "id": 1790380405514,
+      "name": "container-machine-trim",
+      "title": "container-machine-trim",
+      "description": "Machined trim container atom. CSS source is pending.",
+      "type": "container-atom",
+      "path": "container-machine-trim",
+      "signal": true,
+      "transmitting": true
+    },
+    {
+      "id": 1790380405515,
+      "name": "container-metal",
+      "title": "container-metal",
+      "description": "Flat lighter machined surface with a subtle gradient, strong border, and no depth shadow.",
+      "type": "container-atom",
+      "path": "container-metal",
+      "signal": true,
+      "transmitting": true
+    },
+    {
+      "id": 1790380405531,
+      "name": "container-neon-corner",
+      "title": "container-neon-corner",
+      "description": "Reusable neon chassis corner with primary and secondary ink variants.",
+      "type": "container-atom",
+      "path": "container-neon-corner",
+      "signal": true,
+      "transmitting": true
+    }
+  ],
+  "indexed": true,
+  "date_added": "2026-09-25T23:53:25.654Z",
+  "path": "L:\\RAB.World\\world-viewer\\src\\atoms\\containers",
+  "project_name": "world-viewer"
+}

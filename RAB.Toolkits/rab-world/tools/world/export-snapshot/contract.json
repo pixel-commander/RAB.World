@@ -1,0 +1,14 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "file-operation",
+    "description": "Reads world registry records and the tool catalog, then writes a portable viewer snapshot."
+  },
+  "result": {
+    "status": "exported",
+    "file": "snapshot JSON path",
+    "worlds": "count",
+    "beacons": "count",
+    "tools": "count"
+  }
+}

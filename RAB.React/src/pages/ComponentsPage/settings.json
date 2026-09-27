@@ -1,0 +1,13 @@
+{
+  "id": 1790458721095,
+  "name": "ComponentsPage",
+  "title": "Components",
+  "description": "React page ComponentsPage.",
+  "type": "page",
+  "date_created": 1790458721095,
+  "date_modified": 1790458721095,
+  "settings": [],
+  "transmitting": true,
+  "signal": true,
+  "path": "./ComponentsPage.tsx"
+}

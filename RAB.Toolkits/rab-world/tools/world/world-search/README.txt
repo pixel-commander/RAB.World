@@ -29,3 +29,10 @@ No files are written, watchers started, or source files executed. Stale index
 records remain stale until the scanner refreshes them; this tool is not the
 unimplemented background watcher. Box's direct toolkit discovery remains a
 separate mechanism and is not replaced by this tool.
+
+BASE SEARCH ORDER
+Read the selected world settings.json beside its beacons folder. Its absolute
+path field owns the world root. Search <path>/base/manifest.json after all
+beacons and append Base results last. Base uses manifest/v1; no toolkit or
+beacon registration is required. Missing or invalid Base data is a partial
+error, preserving beacon results.

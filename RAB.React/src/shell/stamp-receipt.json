@@ -1,0 +1,32 @@
+{
+  "status": "verified",
+  "verification": "created-files-match-approved-plan-sha256",
+  "destination": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\shell",
+  "files": [
+    {
+      "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\shell\\components\\SiteNav.tsx",
+      "bytes": 722,
+      "sha256": "8d6da8c0e7a7c9224a8f593712f482e66888e77159f85af98134b837e177db0e"
+    },
+    {
+      "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\shell\\components\\SiteShell.tsx",
+      "bytes": 1567,
+      "sha256": "b3bedfe8bcbe3867d9d75b93bc1477100fd9d723e8cb7a39dcbcb089493582e9"
+    },
+    {
+      "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\shell\\css\\shell.css",
+      "bytes": 1899,
+      "sha256": "50c17074a7d9b05f6de10e4f2b44587f2b60c099192b875a02d57797b74e86b6"
+    },
+    {
+      "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\shell\\settings.json",
+      "bytes": 468,
+      "sha256": "79fc3dadec0ee67e33c310bb50c87314a4aac867db2c887a0fe57cb07ee48929"
+    },
+    {
+      "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\shell\\contract.json",
+      "bytes": 252,
+      "sha256": "6997e2edea09544daea299a0cc9020ca0ee1029baf1b040995e2300aba659e98"
+    }
+  ]
+}

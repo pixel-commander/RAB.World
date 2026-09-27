@@ -1,0 +1,33 @@
+@layer atoms {
+  .container-cell {
+    color: var(--container-cell-color, var(--content-default));
+    background: var(--container-cell-background, var(--surface-main));
+    border: var(
+      --container-cell-border,
+      var(--border-width) var(--border-style) var(--border-default)
+    );
+    border-radius: var(--container-cell-radius, var(--radius-container));
+    box-shadow: var(--container-cell-shadow, none);
+  }
+
+  .container-cell--inset {
+    background: var(--container-cell-inset-background, var(--surface-inset));
+    box-shadow: var(--container-cell-inset-shadow, var(--effect-inset));
+  }
+
+  .container-cell--float {
+    background: var(--container-cell-float-background, var(--surface-float));
+    box-shadow: var(--container-cell-float-shadow, var(--effect-float));
+  }
+
+  .container-cell:focus-visible {
+    outline: var(--container-cell-focus-outline, var(--focus-ring));
+    outline-offset: var(--container-cell-focus-offset, var(--focus-offset));
+  }
+
+  .container-cell:is(:disabled, [aria-disabled='true']) {
+    color: var(--container-cell-disabled-color, var(--content-disabled));
+    background: var(--container-cell-disabled-background, var(--surface-disabled));
+    opacity: var(--container-cell-disabled-opacity, var(--disabled-opacity));
+  }
+}

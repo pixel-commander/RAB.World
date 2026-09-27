@@ -1,0 +1,20 @@
+{
+  "id": 1790365893977,
+  "name": "world-viewer",
+  "type": "react",
+  "paths": {
+    "components": "src/components",
+    "pages": "src/pages",
+    "atoms": "src/atoms",
+    "shell": "src/shell"
+  },
+  "title": "World Viewer",
+  "description": "React project for viewing RAB.World.",
+  "custom_toolkit_path": "L:\\RAB.World\\RAB.Toolkits\\rab-react-kit",
+  "settings": [],
+  "meta": {
+    "kind": "project",
+    "source_root": "L:\\RAB.World\\world-viewer"
+  },
+  "version": "rab-node/v1"
+}

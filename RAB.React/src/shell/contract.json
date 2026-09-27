@@ -1,0 +1,11 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "Default React site shell with project identity, URL navigation, main landmark and footer."
+  },
+  "settings": [],
+  "result": {
+    "type": "site shell"
+  }
+}

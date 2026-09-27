@@ -1,0 +1,4 @@
+CONTAINER ATOM
+Components own structure and layout. This class supplies reusable skin.
+Use shared tokens for colors, borders, shadows, and effects.
+Vary the surface with data-layer='inset' or data-layer='float' where applicable.

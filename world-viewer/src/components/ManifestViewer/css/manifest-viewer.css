@@ -1,0 +1,27 @@
+.manifest-viewer { padding: var(--space-xl); margin-block: var(--space-lg); overflow-wrap: anywhere; }
+.manifest-viewer h3 { margin-block: 0 var(--space-sm); font: var(--type-heading); }
+.manifest-viewer p { margin-block: var(--space-sm); }
+.manifest-date { color: var(--content-muted); font: var(--type-code); }
+.manifest-entries { list-style: none; margin: 0; padding: 0; }
+.manifest-entries .manifest-entries { padding-inline-start: var(--space-xl); border-inline-start: var(--border-width) solid var(--border-subtle); }
+.manifest-branch { margin-block: var(--space-sm); }
+.manifest-branch > summary {
+  padding: var(--space-md);
+  cursor: pointer;
+  --action-ghost-font: var(--type-body);
+  --action-ghost-hover-font: var(--type-body);
+  --action-ghost-hover-color: var(--content-strong);
+  --action-ghost-hover-background: var(--surface-hover);
+  --action-ghost-hover-border-color: var(--border-strong);
+  --action-ghost-hover-shadow: var(--elevation-inset);
+}
+.manifest-branch > summary small { margin-inline-start: var(--space-lg); color: var(--content-muted); }
+.manifest-detail { padding: var(--space-md) var(--space-xl); }
+.manifest-detail dl { margin-block: var(--space-sm); }
+.manifest-detail dt { color: var(--content-muted); font: var(--type-label); }
+.manifest-detail dd { margin: var(--space-2xs) 0 var(--space-sm); }
+.manifest-detail summary { cursor: pointer; }
+.manifest-detail summary:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+.manifest-switcher { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+.manifest-switcher button { padding: var(--space-sm) var(--space-lg); }
+.manifest-switcher .is-active { color: var(--content-accent); border-color: var(--accent-default); }

@@ -1,0 +1,23 @@
+.beacon-view { gap: var(--space-lg); align-items: start; }
+.beacon-view > aside { inline-size: clamp(15rem, 25vw, 22rem); padding: var(--space-lg); }
+.beacon-view > section { padding: var(--space-xl); min-inline-size: 0; }
+.beacon-view h1, .beacon-view h2 { margin-block: 0 var(--space-md); }
+.beacon-view p { color: var(--content-muted); line-height: 1.6; }
+.beacon-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); }
+.beacon-list button { display: flex; flex-direction: column; gap: var(--space-xs); inline-size: 100%; text-align: left; padding: var(--space-md); --action-rail-left-border-left: 3px solid transparent; }
+.beacon-list small { color: var(--content-muted); }
+.beacon-list .is-active { --action-rail-left-background: var(--surface-selected); --action-rail-left-border-left: 3px solid var(--accent-default); --action-rail-left-color: var(--content-accent); }
+.beacon-tabs { display: flex; gap: var(--space-sm); margin-block: var(--space-xl); border-bottom: 1px solid var(--border-default); padding-bottom: var(--space-sm); }
+.beacon-tabs button { padding: var(--space-sm) var(--space-lg); --action-ghost-hover-font: var(--type-body); }
+.beacon-tabs .is-active { background: var(--surface-selected); color: var(--content-accent); }
+.beacon-metadata { margin: 0; }
+.beacon-metadata dt { margin-top: var(--space-lg); color: var(--content-muted); font: var(--type-label); }
+.beacon-metadata dd { margin: var(--space-xs) 0 0; overflow-wrap: anywhere; }
+@media(max-width: 700px) { .beacon-view[data-grid] { display: flex; flex-direction: column; } .beacon-view > aside, .beacon-view > section { inline-size: 100%; } }
+
+.beacon-file-link { margin-block: var(--space-xs) var(--space-sm); padding: var(--space-xs) var(--space-sm); text-decoration: underline; --action-ghost-hover-font: var(--type-body); }
+.beacon-editor-popup { width: min(64rem, 94vw); max-height: 90dvh; padding: var(--space-lg); color: var(--content-default); background: var(--surface-app); border: 1px solid var(--border-strong); }
+.beacon-editor-popup::backdrop { background: rgb(0 0 0 / 65%); }
+.beacon-editor-toolbar { display: flex; justify-content: space-between; align-items: center; gap: var(--space-md); }
+.beacon-editor-toolbar button { padding: var(--space-sm) var(--space-lg); }
+.beacon-editor-popup .code-editor { margin-top: var(--space-md); }

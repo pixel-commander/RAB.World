@@ -1,0 +1,14 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "unclassified",
+    "description": "Machined trim container atom. CSS source is pending."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [],
+    "usage": "Metadata placeholder; CSS implementation is pending. Do not apply as an implemented atom."
+  }
+}

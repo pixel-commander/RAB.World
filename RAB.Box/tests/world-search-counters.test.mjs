@@ -26,7 +26,7 @@ test('missing identities persist once; concurrent counters retain all increments
     const usage = createSearchUsage({ rabHome });
     await Promise.all(Array.from({ length: 4 }, () => usage.recordSearch({ items: [{ id }, { id }] })));
     await usage.feedback({ id });
-    const stats = JSON.parse(await readFile(path.join(rabHome, 'usage/world-search.json')));
+    const stats = JSON.parse(await readFile(path.join(rabHome, 'worlds/world-search.json')));
     assert.deepEqual(stats, { [id]: { used: 1, shown: 4 } });
     await assert.rejects(usage.feedback({ id: null }));
   } finally { await rm(root, { recursive: true, force: true }); }

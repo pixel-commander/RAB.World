@@ -1,0 +1,77 @@
+{
+  "status": "created",
+  "type": "component",
+  "id": 1790456184254,
+  "name": "FloatPanel",
+  "title": "FloatPanel",
+  "description": "React component FloatPanel.",
+  "settings": {
+    "id": 1790456184254,
+    "name": "FloatPanel",
+    "title": "FloatPanel",
+    "description": "React component FloatPanel.",
+    "type": "component",
+    "date_created": 1790456184254,
+    "date_modified": 1790456184254,
+    "settings": [],
+    "transmitting": true,
+    "signal": true,
+    "path": "./FloatPanel.tsx"
+  },
+  "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel\\FloatPanel.tsx",
+  "file": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel\\FloatPanel.tsx",
+  "folder": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel",
+  "parent_path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components",
+  "verification": {
+    "status": "verified",
+    "verification": "created-files-match-approved-plan-sha256",
+    "destination": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel",
+    "files": [
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel\\FloatPanel.tsx",
+        "bytes": 414,
+        "sha256": "939e6f984e1b2e1ef939dcce95026f9254fde617bc2fbebbe686dc4d6893a021"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel\\css\\float-panel.css",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel\\hooks\\useFloatPanel.ts",
+        "bytes": 53,
+        "sha256": "11eb5d803e09ad622878a60c8413308fa544f384f5ee5feb5a36ce66fe0ba554"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel\\js\\.gitkeep",
+        "bytes": 1,
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel\\FloatPanel.types.ts",
+        "bytes": 144,
+        "sha256": "1965ec8befe190dafc58b728ecc77c0a244ac91da8a07262d92518f6bc325389"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel\\settings.json",
+        "bytes": 303,
+        "sha256": "42ed593a5cc0b4c5aa1c6c6ced71d521637119159d1ba246996dd264aeec1ec9"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel\\README.txt",
+        "bytes": 72,
+        "sha256": "9baac1126f6e50a6f2ccd0196b53ee61a279d6daa1326dd2ebf41d5beddc6bdf"
+      }
+    ]
+  },
+  "provided": {
+    "seats": {
+      "name": "FloatPanel",
+      "component_name": "FloatPanel",
+      "target": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel\\FloatPanel.tsx",
+      "file": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel\\FloatPanel.tsx",
+      "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel\\FloatPanel.tsx",
+      "folder": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\FloatPanel"
+    }
+  }
+}

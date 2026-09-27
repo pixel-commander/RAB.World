@@ -16,7 +16,7 @@ export const run = async ({options}) => {
   if(!(resource.gaps??[]).includes(gap)) throw Object.assign(new Error(`Unknown grid gap ${gap}. Choose: ${(resource.gaps??[]).join(', ')}`),{code:'BAD_REQUEST'});
   const location=path.resolve(options.location); await mkdir(location,{recursive:true});
   const constructionSeats=shape.areas.map(area=>({id:`area-${area}:a1`,role:'area',area}));
-  const areas=constructionSeats.map(seat=>`  <section data-area="${seat.area}" data-rab-seat="${seat.id}">\n    <!-- [rab-seat:${seat.id}] -->\n  </section>`).join('\n');
+  const areas=constructionSeats.map(seat=>`  <section${resource.scroll_areas.includes(seat.area)?' class="scroll-y"':''} data-area="${seat.area}" data-rab-seat="${seat.id}">\n    <!-- [rab-seat:${seat.id}] -->\n  </section>`).join('\n');
   let text=await readFile(new URL('./template/tmpl.html',import.meta.url),'utf8');
   text=text.replaceAll('__GRID_LAYOUT__',layout).replaceAll('__GRID_GAP__',gap).replaceAll('__GRID_AREAS__',areas);
   const file=path.join(location,`${safeName(options.name)}.html`);

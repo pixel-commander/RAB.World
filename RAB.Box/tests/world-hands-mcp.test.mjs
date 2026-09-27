@@ -15,7 +15,18 @@ test('World Hands stdio discovery, invocation, and write boundary', async () => 
   });
   try {
     await client.connect(transport);
-    assert.deepEqual((await client.listTools()).tools.map(tool => tool.name), ['report_search_feedback', 'get_world_beacons', 'get_beacon_manifests', 'search_world', 'list_world_hands', 'invoke_world_hand']);
+    assert.deepEqual((await client.listTools()).tools.map(tool => tool.name), ['list_machine_hands', 'invoke_machine_hand', 'report_search_feedback', 'get_world_beacons', 'get_beacon_manifests', 'search_world', 'list_world_hands', 'invoke_world_hand']);
+    const machine = await client.callTool({ name: 'list_machine_hands', arguments: {} });
+    assert.ok(!machine.isError, JSON.stringify(machine));
+    const hands = JSON.parse(machine.content[0].text);
+    assert.ok(hands.some(hand => hand.name === 'brain-recall'));
+    assert.ok(hands.some(hand => hand.name === 'summoner'));
+    const guarded = await client.callTool({ name: 'invoke_machine_hand', arguments: { name: 'skill-neuron', search: 'test' } });
+    assert.equal(guarded.isError, true);
+    assert.match(guarded.content[0].text, /CONFIRM_REQUIRED/);
+    const unknown = await client.callTool({ name: 'invoke_machine_hand', arguments: { name: '../no-such-hand', search: 'test', confirm: true } });
+    assert.equal(unknown.isError, true);
+    assert.match(unknown.content[0].text, /not callable/);
     const call = async (name, args) => {
       const response = await client.callTool({ name, arguments: args });
       assert.ok(!response.isError, JSON.stringify(response));

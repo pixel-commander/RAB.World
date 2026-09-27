@@ -1,0 +1,5 @@
+{
+  "version": "tool-contract/v1",
+  "source": { "kind": "file-operation", "description": "Scans the Base directory and writes its folder manifest on demand." },
+  "result": { "status": "updated", "path": "absolute base/manifest.json path", "manifest": "folder-manifest/v1 with nested items, file names and original tool IDs" }
+}

@@ -1,0 +1,11 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "Shared spacing, border, radius, typography, motion and focus tokens. Consume by importing layout.css as a stylesheet."
+  },
+  "settings": [],
+  "result": {
+    "type": "theme"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "version": "manifest/v1",
+  "id": 1790380405465,
+  "name": "actions",
+  "title": "actions",
+  "description": "Default actions atoms",
+  "items": [
+    {
+      "id": 1790380405422,
+      "name": "action-fill-alt",
+      "title": "action-fill-alt",
+      "description": "Secondary blue filled action with a subtle vertical gradient that reverses on hover.",
+      "type": "action-atom",
+      "path": "action-fill-alt",
+      "signal": true,
+      "transmitting": true
+    },
+    {
+      "id": 1790380405431,
+      "name": "action-ghost",
+      "title": "action-ghost",
+      "description": "Muted default skin with the default navigation skin on hover.",
+      "type": "action-atom",
+      "path": "action-ghost",
+      "signal": true,
+      "transmitting": true
+    },
+    {
+      "id": 1790380405447,
+      "name": "action-nav-alt",
+      "title": "action-nav-alt",
+      "description": "Navigation action with a 3px bottom border and secondary-blue hover highlight.",
+      "type": "action-atom",
+      "path": "action-nav-alt",
+      "signal": true,
+      "transmitting": true
+    },
+    {
+      "id": 1790380405449,
+      "name": "action-rail-left",
+      "title": "action-rail-left",
+      "description": "Left accent rail, 3px at the default border token; lighter background that brightens on hover.",
+      "type": "action-atom",
+      "path": "action-rail-left",
+      "signal": true,
+      "transmitting": true
+    }
+  ],
+  "indexed": true,
+  "date_added": "2026-09-25T23:53:25.654Z",
+  "path": "L:\\RAB.World\\world-viewer\\src\\atoms\\actions",
+  "project_name": "world-viewer"
+}

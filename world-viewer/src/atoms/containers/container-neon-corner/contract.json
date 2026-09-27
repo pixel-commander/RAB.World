@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Reusable neon chassis corner with primary and secondary ink variants."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "container-neon-corner.css"
+    ],
+    "usage": "Import container-neon-corner.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

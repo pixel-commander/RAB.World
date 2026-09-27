@@ -1,0 +1,13 @@
+{
+  "id": 1790458693649,
+  "name": "site-shell",
+  "title": "RAB.React shell",
+  "description": "Site shell where pages and dashboards load for the RAB.React React project. Navigation lives in components/SiteNav.tsx; the selected page or dashboard renders in the main area.",
+  "type": "site shell",
+  "date_created": 1790458693650,
+  "date_modified": 1790458693650,
+  "settings": [],
+  "transmitting": true,
+  "signal": true,
+  "path": "./components/SiteShell.tsx"
+}

@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Left accent rail, 3px at the default border token; lighter background that brightens on hover."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "action-rail-left.css"
+    ],
+    "usage": "Import action-rail-left.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

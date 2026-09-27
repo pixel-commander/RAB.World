@@ -1,6 +1,22 @@
 {
   "version": "tool-contract/v1",
-  "input": {"query": "nonempty text", "manifest_path": "absolute world beacon manifest path"},
-  "behavior": ["search enabled beacon manifests with at most three concurrent reads", "preserve beacon and local item order", "match all query terms case-insensitively", "return source provenance and partial index errors"],
-  "safety": ["backs up originals before filling missing source IDs and syncing index entries", "maintains ID-keyed shown counters under .rab", "no directory scan", "no tool execution", "no watcher", "reject item paths outside beacon root"]
+  "input": {
+    "query": "nonempty text",
+    "manifest_path": "absolute world beacon manifest path"
+  },
+  "behavior": [
+    "search enabled beacon manifests with at most three concurrent reads",
+    "preserve beacon and local item order",
+    "match all query terms case-insensitively",
+    "return source provenance and partial index errors",
+    "After beacon search, read settings.path/base/manifest.json and append Base matches last; report missing or invalid Base manifest as a partial error."
+  ],
+  "safety": [
+    "backs up originals before filling missing source IDs and syncing index entries",
+    "maintains ID-keyed shown counters under .rab",
+    "no directory scan",
+    "no tool execution",
+    "no watcher",
+    "reject item paths outside beacon root"
+  ]
 }

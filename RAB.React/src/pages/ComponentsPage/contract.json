@@ -1,0 +1,11 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "Components page lists src/components/manifest.json entries and renders the selected demo using URL navigation."
+  },
+  "settings": [],
+  "result": {
+    "type": "page"
+  }
+}

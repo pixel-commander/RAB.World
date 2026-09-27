@@ -1,0 +1,12 @@
+{
+  "id": 1790380405447,
+  "name": "action-nav-alt",
+  "title": "action-nav-alt",
+  "description": "Navigation action with a 3px bottom border and secondary-blue hover highlight.",
+  "type": "action-atom",
+  "date_created": 1790380405655,
+  "date_modified": 1790380405655,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
+}

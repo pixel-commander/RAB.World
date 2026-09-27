@@ -1,0 +1,11 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "React CodeEditor asset. Import CodeEditor.tsx; internal types, hook, helpers and CSS travel with the component. React is host-provided."
+  },
+  "settings": [],
+  "result": {
+    "type": "component"
+  }
+}

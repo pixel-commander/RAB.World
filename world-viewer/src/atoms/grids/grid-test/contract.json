@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "container grid for component"
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "grid-test.css"
+    ],
+    "usage": "Import grid-test.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

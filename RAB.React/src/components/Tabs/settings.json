@@ -1,0 +1,13 @@
+{
+  "id": 1790459418128,
+  "name": "Tabs",
+  "title": "Tabs",
+  "description": "React component Tabs.",
+  "type": "component",
+  "date_created": 1790459418129,
+  "date_modified": 1790459418129,
+  "settings": [],
+  "transmitting": true,
+  "signal": true,
+  "path": "./Tabs.tsx"
+}

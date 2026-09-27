@@ -2,7 +2,7 @@
   "version": "tool-contract/v1",
   "source": {
     "kind": "hybrid",
-    "description": "Renders the page template with content and construction seats, generates settings, and writes verified page artifacts.",
+    "description": "page",
     "reviewed_at": "2026-09-20"
   },
   "result": {

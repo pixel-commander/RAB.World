@@ -1,0 +1,16 @@
+{
+  "name": "effects",
+  "id": 1790380405548,
+  "title": "Effect atoms - world-viewer",
+  "description": "This is the effect atom folder for project world-viewer.",
+  "date_added": "2026-09-25T23:53:25.654Z",
+  "path": "L:\\RAB.World\\world-viewer\\src\\atoms\\effects",
+  "types": [],
+  "beacon": "on",
+  "reach": [
+    "world",
+    "project"
+  ],
+  "type": "react",
+  "project_name": "world-viewer"
+}

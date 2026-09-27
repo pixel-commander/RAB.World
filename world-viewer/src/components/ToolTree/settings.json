@@ -1,0 +1,13 @@
+{
+  "name": "ToolTree",
+  "title": "Tool Tree",
+  "description": "Browse catalog tools by source and path.",
+  "settings": [],
+  "meta": {
+    "kind": "component"
+  },
+  "type": "component",
+  "parent_path": null,
+  "indexed": true,
+  "id": 1790442121259
+}

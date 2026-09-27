@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Reusable raised depth treatment backed by the theme floating elevation token."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "effect-float.css"
+    ],
+    "usage": "Import effect-float.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": 1790380405422,
+  "name": "action-fill-alt",
+  "title": "action-fill-alt",
+  "description": "Secondary blue filled action with a subtle vertical gradient that reverses on hover.",
+  "type": "action-atom",
+  "date_created": 1790380405654,
+  "date_modified": 1790380405654,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
+}

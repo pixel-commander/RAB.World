@@ -1,0 +1,77 @@
+{
+  "status": "created",
+  "type": "component",
+  "id": 1790459418128,
+  "name": "Tabs",
+  "title": "Tabs",
+  "description": "React component Tabs.",
+  "settings": {
+    "id": 1790459418128,
+    "name": "Tabs",
+    "title": "Tabs",
+    "description": "React component Tabs.",
+    "type": "component",
+    "date_created": 1790459418129,
+    "date_modified": 1790459418129,
+    "settings": [],
+    "transmitting": true,
+    "signal": true,
+    "path": "./Tabs.tsx"
+  },
+  "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs\\Tabs.tsx",
+  "file": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs\\Tabs.tsx",
+  "folder": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs",
+  "parent_path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components",
+  "verification": {
+    "status": "verified",
+    "verification": "created-files-match-approved-plan-sha256",
+    "destination": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs",
+    "files": [
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs\\Tabs.tsx",
+        "bytes": 346,
+        "sha256": "036e5d20619a375cf3b72f146787efbcb6eea612b6ca72ddff538528c5cc5936"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs\\css\\tabs.css",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs\\hooks\\useTabs.ts",
+        "bytes": 47,
+        "sha256": "3e70b8f8d0d8d48b7a924a6e3d754f5928ee52670d158a1e52a9245f3183b9cb"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs\\js\\.gitkeep",
+        "bytes": 1,
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs\\Tabs.types.ts",
+        "bytes": 138,
+        "sha256": "8e3a2bc66b63979a787bc268318a38a5cbcf77ce7f55440d26c624f798fa1835"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs\\settings.json",
+        "bytes": 279,
+        "sha256": "06eac7b66077b7b6516397d503df06586e6b2354c6328f4fc5ce69f546c5fb1c"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs\\README.txt",
+        "bytes": 66,
+        "sha256": "39778cdb17d04cafef1ac88ea5aeaf6bd7e5b1214030e09fa1074afda5b8cb13"
+      }
+    ]
+  },
+  "provided": {
+    "seats": {
+      "name": "Tabs",
+      "component_name": "Tabs",
+      "target": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs\\Tabs.tsx",
+      "file": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs\\Tabs.tsx",
+      "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs\\Tabs.tsx",
+      "folder": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\Tabs"
+    }
+  }
+}

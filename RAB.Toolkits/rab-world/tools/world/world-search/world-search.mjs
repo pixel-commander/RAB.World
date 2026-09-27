@@ -60,6 +60,31 @@ export const run = async ({ options, context = {} }) => {
     }
   };
   await Promise.all(Array.from({ length: Math.min(3, enabled.length) }, worker));
+  // Base is a world-root convention, not a beacon or a toolkit entry.
+  // Read it only after the ordered beacon search has completed.
+  const baseGroup = { beacon_id: null, beacon_path: null, priority: registry.items.length + 1, items: [], errors: [] };
+  try {
+    const worldDirectory = path.dirname(path.dirname(options.manifest_path));
+    const settings = JSON.parse(await readFile(path.join(worldDirectory, 'settings.json'), 'utf8'));
+    if (typeof settings.path !== 'string' || !path.isAbsolute(settings.path)) throw new Error('World settings.path must be an absolute root path.');
+    const baseRoot = path.join(settings.path, 'base');
+    baseGroup.beacon_path = baseRoot;
+    const manifest = await readManifest(path.join(baseRoot, 'manifest.json'));
+    if (manifest.indexed !== false) {
+      for (const item of manifest.items) {
+        if (!item || item.indexed === false || item.signal === false || item.transmitting === false) continue;
+        const text = [item.name, item.title, item.description, item.type, item.path].filter(value => typeof value === 'string').join(' ').toLowerCase();
+        if (!terms.every(term => text.includes(term))) continue;
+        if (typeof item.path !== 'string' || !item.path.trim()) throw new Error('Matching Base item has no path.');
+        const target = path.resolve(baseRoot, item.path);
+        if (!inside(baseRoot, target)) throw new Error('Item path escapes Base root.');
+        baseGroup.items.push({ ...item, source: 'base', source_manifest: path.join(baseRoot, 'manifest.json'), resolved_path: target });
+      }
+    }
+  } catch (error) {
+    baseGroup.errors.push({ code: error.code ?? 'BAD_MANIFEST', message: error.message });
+  }
+  groups.push(baseGroup);
   const result = {
     status: groups.some(group => group.errors.length) ? 'partial' : 'completed',
     query: options.query, manifest_path: options.manifest_path,

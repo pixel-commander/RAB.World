@@ -1,0 +1,12 @@
+{
+  "id": 1790380405514,
+  "name": "container-machine-trim",
+  "title": "container-machine-trim",
+  "description": "Machined trim container atom. CSS source is pending.",
+  "type": "container-atom",
+  "date_created": 1790380405655,
+  "date_modified": 1790380405655,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
+}

@@ -1,0 +1,64 @@
+@property --action-fill-alt-gradient-top {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --action-fill-alt-gradient-bottom {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: transparent;
+}
+
+@layer atoms {
+  .action-fill-alt {
+    --action-fill-alt-gradient-top: color-mix(in srgb, var(--accent-secondary) 94%, var(--content-strong));
+    --action-fill-alt-gradient-bottom: color-mix(in srgb, var(--accent-secondary) 94%, var(--surface-app));
+    color: var(--action-fill-alt-color, var(--content-inverse));
+    background: var(--action-fill-alt-background, linear-gradient(180deg, var(--action-fill-alt-gradient-top), var(--action-fill-alt-gradient-bottom)));
+    border: var(--action-fill-alt-border, none);
+    border-radius: var(--action-fill-alt-radius, var(--radius-control));
+    box-shadow: var(--action-fill-alt-shadow, none);
+    font: var(--action-fill-alt-font, var(--type-body));
+    cursor: var(--action-fill-alt-cursor, pointer);
+    transition: none;
+  }
+
+  button.action-fill-alt {
+    box-shadow: var(--action-fill-alt-button-shadow, inset 0 -4px 0 color-mix(in srgb, var(--content-inverse) 30%, transparent));
+    text-transform: var(--action-fill-alt-text-transform, uppercase);
+    font-weight: var(--action-fill-alt-font-weight, 600);
+    text-shadow: var(--action-fill-alt-text-shadow, 0 1px 0 color-mix(in srgb, var(--content-default) 50%, transparent));
+  }
+
+  .action-fill-alt:hover {
+    --action-fill-alt-gradient-top: color-mix(in srgb, var(--accent-secondary) 94%, var(--surface-app));
+    --action-fill-alt-gradient-bottom: color-mix(in srgb, var(--accent-secondary) 94%, var(--content-strong));
+    color: var(--action-fill-alt-hover-color, var(--content-inverse));
+    background: var(--action-fill-alt-hover-background, linear-gradient(180deg, var(--action-fill-alt-gradient-top), var(--action-fill-alt-gradient-bottom)));
+    border-color: var(--action-fill-alt-hover-border-color, var(--accent-secondary));
+  }
+
+  .action-fill-alt:active {
+    --action-fill-alt-gradient-top: color-mix(in srgb, var(--accent-secondary) 94%, var(--content-strong));
+    --action-fill-alt-gradient-bottom: color-mix(in srgb, var(--accent-secondary) 94%, var(--surface-app));
+    background: var(--action-fill-alt-active-background, var(--action-fill-alt-background, linear-gradient(180deg, var(--action-fill-alt-gradient-top), var(--action-fill-alt-gradient-bottom))));
+  }
+
+  button.action-fill-alt:active:not(:disabled):not([aria-disabled='true']) {
+    box-shadow: var(--action-fill-alt-button-active-shadow, inset 0 4px 0 color-mix(in srgb, var(--content-inverse) 30%, transparent));
+  }
+
+  .action-fill-alt:focus-visible {
+    outline: var(--action-fill-alt-focus-outline, var(--focus-ring));
+    outline-offset: var(--action-fill-alt-focus-offset, var(--focus-offset));
+  }
+
+
+  .action-fill-alt:is(:disabled, [aria-disabled='true']) {
+    color: var(--action-fill-alt-disabled-color, var(--content-disabled));
+    background: var(--action-fill-alt-disabled-background, var(--surface-disabled));
+    cursor: not-allowed;
+    opacity: var(--action-fill-alt-disabled-opacity, var(--disabled-opacity));
+  }
+}

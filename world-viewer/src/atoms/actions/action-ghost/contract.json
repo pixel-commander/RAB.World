@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Muted default skin with the default navigation skin on hover."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "action-ghost.css"
+    ],
+    "usage": "Import action-ghost.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

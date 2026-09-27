@@ -1,0 +1,39 @@
+@layer components {
+  .tabs {
+    display: grid;
+    grid-template-areas: 'nav' 'main';
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+  .tabs--top {
+    grid-template-areas: 'nav' 'main';
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  .tabs--left {
+    grid-template-areas: 'nav main';
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+  }
+  .tabs--right {
+    grid-template-areas: 'main nav';
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .tabs--bottom {
+    grid-template-areas: 'main' 'nav';
+    grid-template-rows: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tabs > [data-area='nav'] { grid-area: nav; }
+  .tabs > [data-area='main'] { grid-area: main; }
+  .tabs-nav { display: flex; gap: var(--space-xs); padding: var(--space-xs); overflow-x: auto; }
+  :is(.tabs--left, .tabs--right) > [data-area='nav'] { flex-direction: column; align-self: start; }
+  :is(.tabs--top, .tabs--bottom) > [data-area='nav'] { flex-direction: row; }
+  .tabs-item { padding: var(--space-sm) var(--space-md); white-space: nowrap; }
+  .tab-container { display: grid; min-inline-size: 0; min-block-size: 0; align-content: start; }
+  .tabs-tab { padding: var(--space-lg); }
+  .tabs-tab[hidden] { display: none; }
+}

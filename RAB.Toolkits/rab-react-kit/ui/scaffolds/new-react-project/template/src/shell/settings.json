@@ -1,0 +1,9 @@
+{
+  "name": "site-shell",
+  "title": "__PROJECT_NAME__ shell",
+  "description": "Site shell where pages and dashboards load for the __PROJECT_NAME__ React project. Navigation lives in components/SiteNav.tsx; the selected page or dashboard renders in the main area.",
+  "type": "site shell",
+  "settings": [],
+  "transmitting": true,
+  "signal": true
+}

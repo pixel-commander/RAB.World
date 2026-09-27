@@ -67,6 +67,14 @@
       "title": "Transmitting",
       "required": false,
       "default": true
+    },
+    {
+      "type": "boolean",
+      "name": "import_styles",
+      "title": "Import into style.css",
+      "description": "Register the generated CSS in the owning project src/css/style.css. No leaves the stylesheet unchanged.",
+      "required": false,
+      "default": true
     }
   ],
   "meta": {

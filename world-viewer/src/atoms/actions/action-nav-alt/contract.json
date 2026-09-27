@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Navigation action with a 3px bottom border and secondary-blue hover highlight."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "action-nav-alt.css"
+    ],
+    "usage": "Import action-nav-alt.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

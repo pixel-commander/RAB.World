@@ -1,0 +1,30 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdir, mkdtemp, writeFile, readFile } from 'node:fs/promises';
+import path from 'node:path';
+import os from 'node:os';
+import { run } from '../tools/base/index/manifest/manifest.mjs';
+
+test('Base manifest retains grouping folders and IDs, and preserves output on failed scans', async () => {
+  const parent = path.join(os.homedir(), '.rab', 'verification');
+  await mkdir(parent, { recursive: true });
+  const root = await mkdtemp(path.join(parent, 'base-manifest-'));
+  const base = path.join(root, 'tools/base');
+  await mkdir(path.join(base, 'find/file/template'), { recursive: true });
+  const tool = { id: 123, name: 'file', title: 'Find File', description: 'Find files', meta: { domain: 'base', authority: 'read' } };
+  await writeFile(path.join(base, 'find/file/settings.json'), JSON.stringify(tool));
+  await writeFile(path.join(base, 'find/file/template/settings.json'), JSON.stringify(tool));
+  const first = await run({ root });
+  const group = first.manifest.items[0];
+  assert.equal(group.type, 'folder');
+  assert.deepEqual(group.files, []);
+  assert.equal(group.items[0].id, 123);
+  assert.equal(group.items[0].items[0].type, 'folder');
+  const second = await run({ root });
+  assert.equal(second.manifest.id, first.manifest.id);
+  assert.ok(!second.manifest.files.includes('manifest.json'));
+  const before = await readFile(second.path, 'utf8');
+  await writeFile(path.join(base, 'find/file/settings.json'), '{broken');
+  await assert.rejects(run({ root }));
+  assert.equal(await readFile(second.path, 'utf8'), before);
+});

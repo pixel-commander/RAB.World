@@ -1,0 +1,13 @@
+{
+  "name": "ManifestViewer",
+  "title": "Manifest Viewer",
+  "description": "Display a supplied manifest or load one by URL.",
+  "settings": [],
+  "meta": {
+    "kind": "component"
+  },
+  "type": "component",
+  "parent_path": null,
+  "indexed": true,
+  "id": 1790442400188
+}

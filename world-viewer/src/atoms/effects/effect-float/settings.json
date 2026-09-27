@@ -1,0 +1,12 @@
+{
+  "id": 1790380405551,
+  "name": "effect-float",
+  "title": "effect-float",
+  "description": "Reusable raised depth treatment backed by the theme floating elevation token.",
+  "type": "effect-atom",
+  "date_created": 1790380405655,
+  "date_modified": 1790380405655,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
+}

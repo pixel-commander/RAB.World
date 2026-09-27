@@ -91,16 +91,6 @@
       "css": "atoms/effects/effect-inset/effect-inset.css"
     },
     {
-      "name": "grid-dashboard",
-      "kind": "grid-atom",
-      "created": "2026-09-03",
-      "type": "dashboard",
-      "description": "6-col dashboard shell: main-nav band, side-nav | left | tabs-nav | main | right, footer",
-      "modified": "2026-09-03",
-      "shelf": "grids",
-      "css": "atoms/grids/grid-dashboard/grid-dashboard.css"
-    },
-    {
       "name": "grid-dashboard-alt",
       "kind": "grid-atom",
       "created": "2026-09-03",

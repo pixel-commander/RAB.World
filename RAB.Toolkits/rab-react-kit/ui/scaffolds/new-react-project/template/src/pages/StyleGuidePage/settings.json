@@ -1,0 +1,13 @@
+{
+  "id": null,
+  "name": "StyleGuidePage",
+  "title": "Style Guide",
+  "description": "React page StyleGuidePage.",
+  "type": "page",
+  "date_created": null,
+  "date_modified": null,
+  "settings": [],
+  "transmitting": true,
+  "signal": true,
+  "path": "./StyleGuidePage.tsx"
+}

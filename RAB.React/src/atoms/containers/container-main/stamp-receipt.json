@@ -1,0 +1,70 @@
+{
+  "status": "created",
+  "type": "atom",
+  "id": 1790458896938,
+  "kind": "container-atom",
+  "name": "container-main",
+  "title": "container-main",
+  "description": "Main container skin copied from stand-alone-react.",
+  "preset": null,
+  "folder": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\atoms\\containers\\container-main",
+  "file": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\atoms\\containers\\container-main\\container-main.css",
+  "path": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\atoms\\containers\\container-main\\container-main.css",
+  "settings": {
+    "id": 1790458896938,
+    "name": "container-main",
+    "title": "container-main",
+    "description": "Main container skin copied from stand-alone-react.",
+    "type": "container-atom",
+    "date_created": 1790458896938,
+    "date_modified": 1790458896938,
+    "settings": [],
+    "transmitting": true,
+    "signal": true
+  },
+  "verification": {
+    "status": "verified",
+    "verification": "created-files-match-approved-plan-sha256",
+    "destination": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\atoms\\containers\\container-main",
+    "files": [
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\atoms\\containers\\container-main\\contract.json",
+        "bytes": 424,
+        "sha256": "11803a7871b629bc2ccec3887a40bd2a79f2a74623af919e609a15a12f532804"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\atoms\\containers\\container-main\\demo\\Demo.tsx",
+        "bytes": 167,
+        "sha256": "42c162fd9f70c0a7826f937b1d4d4c2dbc47c90f45290d0e07908cb2beeea444"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\atoms\\containers\\container-main\\RULES.txt",
+        "bytes": 229,
+        "sha256": "ddbbdb72acda9f925631df904a3650aa944c0c4c25fd1534c4a90fe043e8ee7e"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\atoms\\containers\\container-main\\container-main.css",
+        "bytes": 100,
+        "sha256": "025b42e9f9508b69adaaf89deeba169c8a0b08a4ad0599bc9bd5e9bacdbf5386"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\atoms\\containers\\container-main\\settings.json",
+        "bytes": 309,
+        "sha256": "6137fd39d759dcd2bb42a377dba27e4987509d9dd707319a6c5a6cd54992b47d"
+      }
+    ]
+  },
+  "stylesheetImport": {
+    "file": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\css\\style.css",
+    "import": "../atoms/containers/container-main/container-main.css",
+    "added": true
+  },
+  "provided": {
+    "seats": {
+      "atom_name": "container-main",
+      "file": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\atoms\\containers\\container-main\\container-main.css",
+      "path": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\atoms\\containers\\container-main\\container-main.css",
+      "folder": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\atoms\\containers\\container-main"
+    }
+  }
+}

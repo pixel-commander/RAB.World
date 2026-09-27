@@ -2,8 +2,15 @@
   "id": 1790000000300,
   "name": "new-react-project",
   "title": "New React Project",
-  "description": "Creates a React project from the project scaffold with a minimal or style-guide starter, optional database example and optional UI kit.",
+  "description": "Creates a RAB React project at the supplied path using the built-in project template.",
   "settings": [
+    {
+      "type": "number",
+      "name": "id",
+      "title": "Project ID",
+      "description": "House-key ID stored in the project files; this does not register the project in .rab.",
+      "required": true
+    },
     {
       "type": "text",
       "name": "name",
@@ -12,47 +19,25 @@
       "required": true
     },
     {
-      "type": "folder",
-      "name": "folder",
-      "title": "Parent Folder",
-      "description": "Folder that will contain the project.",
-      "required": true
-    },
-    {
       "type": "text",
       "name": "title",
       "title": "Project Title",
-      "description": "Optional display title; defaults to the project name.",
-      "required": false
+      "description": "Project display title.",
+      "required": true
     },
     {
       "type": "textarea",
       "name": "description",
       "title": "Project Description",
-      "description": "Optional description; defaults to the scaffold description.",
-      "required": false
+      "description": "Project description.",
+      "required": true
     },
     {
-      "type": "options",
-      "name": "starter",
-      "title": "Starter",
-      "description": "Minimal app or token/atom/Button/StyleGuide examples.",
-      "required": false,
-      "default": "minimal",
-      "enum": [
-        "minimal",
-        "style-guide"
-      ],
-      "options": [
-        {
-          "name": "minimal",
-          "description": "Minimal app"
-        },
-        {
-          "name": "style-guide",
-          "description": "Style guide examples"
-        }
-      ]
+      "type": "folder",
+      "name": "path",
+      "title": "Project Path",
+      "description": "Complete destination folder for the project.",
+      "required": true
     },
     {
       "type": "boolean",
@@ -61,21 +46,6 @@
       "description": "Local seed database and inspection script only; does not deploy an API.",
       "required": false,
       "default": false
-    },
-    {
-      "type": "boolean",
-      "name": "add_ui_kit",
-      "title": "Add UI Kit",
-      "description": "Run the React UI-kit seed, then finalize temporary UI-kit markers.",
-      "required": false,
-      "default": false
-    },
-    {
-      "type": "folder",
-      "name": "custom_toolkit_path",
-      "title": "Custom Toolkit Path",
-      "description": "Optional absolute toolkit folder. Defaults to this tool's toolkit; an empty string leaves the new project without a custom toolkit.",
-      "required": false
     }
   ],
   "meta": {

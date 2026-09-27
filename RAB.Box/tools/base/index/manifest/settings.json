@@ -1,0 +1,13 @@
+{
+  "id": 1790442400619,
+  "name": "manifest",
+  "title": "Update Base Manifest",
+  "description": "Scan the Base tool folder on demand and update its local manifest.json.",
+  "settings": [],
+  "meta": {
+    "domain": "base",
+    "operation": "index",
+    "target_type": "manifest",
+    "authority": "write"
+  }
+}

@@ -35,6 +35,7 @@
         "path": "absolute CSS file",
         "folder": "absolute atom folder"
       }
-    }
+    },
+    "stylesheetImport": "null when import_styles is false; otherwise {file, import, added} for the owning project src/css/style.css"
   }
 }

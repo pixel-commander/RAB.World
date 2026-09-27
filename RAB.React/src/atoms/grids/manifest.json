@@ -8,14 +8,6 @@
   "path": "L:\\RAB.World\\RAB.React\\src\\atoms\\grids",
   "items": [
     {
-      "id": 1790374311043,
-      "name": "grid-dashboard",
-      "title": "grid-dashboard",
-      "description": "6-col dashboard shell: main-nav band, side-nav | left | tabs-nav | main | right, footer",
-      "kind": "grid-atom",
-      "path": "grid-dashboard"
-    },
-    {
       "id": 1790374311052,
       "name": "grid-dashboard-alt",
       "title": "grid-dashboard-alt",

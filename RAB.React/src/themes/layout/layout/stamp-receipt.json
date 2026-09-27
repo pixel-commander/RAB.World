@@ -1,0 +1,40 @@
+{
+  "status": "created",
+  "signal": {
+    "id": 1790456560708,
+    "name": "layout",
+    "title": "Layout Tokens",
+    "description": "Shared spacing, border, radius, typography, motion and focus tokens.",
+    "type": "theme",
+    "date_created": 1790456560708,
+    "date_modified": 1790456560708,
+    "settings": [],
+    "transmitting": true,
+    "signal": true,
+    "path": "./layout.css"
+  },
+  "folder": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\themes\\layout\\layout",
+  "file": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\themes\\layout\\layout\\settings.json",
+  "verification": {
+    "status": "verified",
+    "verification": "created-files-match-approved-plan-sha256",
+    "destination": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\themes\\layout\\layout",
+    "files": [
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\themes\\layout\\layout\\contract.json",
+        "bytes": 219,
+        "sha256": "a4818744fa24375c9caa8776f271080d67760479d7d51e3f3e39ad4959b81331"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\themes\\layout\\layout\\README.txt",
+        "bytes": 844,
+        "sha256": "16b75cb1fefc6c35f585b7fa31bd666335668e6a352612fea0e2185fb50f4119"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\themes\\layout\\layout\\settings.json",
+        "bytes": 335,
+        "sha256": "0c5414a30f3ce977e717a21ffbf346a7ccf58cc1dba9a3354b01d766d74de76c"
+      }
+    ]
+  }
+}

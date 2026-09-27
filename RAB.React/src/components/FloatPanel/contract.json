@@ -1,0 +1,11 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "React FloatPanel asset with internal types, behavior hook, helpers and CSS. React and shared host styling are supplied by the consumer."
+  },
+  "settings": [],
+  "result": {
+    "type": "component"
+  }
+}

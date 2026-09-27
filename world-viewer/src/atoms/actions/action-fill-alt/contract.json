@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Secondary blue filled action with a subtle vertical gradient that reverses on hover."
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "action-fill-alt.css"
+    ],
+    "usage": "Import action-fill-alt.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

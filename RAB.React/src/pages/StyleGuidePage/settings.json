@@ -1,0 +1,13 @@
+{
+  "id": 1790456822730,
+  "name": "StyleGuidePage",
+  "title": "Style Guide",
+  "description": "React page StyleGuidePage.",
+  "type": "page",
+  "date_created": 1790456822731,
+  "date_modified": 1790456822731,
+  "settings": [],
+  "transmitting": true,
+  "signal": true,
+  "path": "./StyleGuidePage.tsx"
+}

@@ -1,0 +1,11 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "Dark semantic color, elevation and code syntax token values. Consume by importing colors.css as a stylesheet."
+  },
+  "settings": [],
+  "result": {
+    "type": "theme"
+  }
+}

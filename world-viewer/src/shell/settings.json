@@ -1,0 +1,12 @@
+{
+  "id": 1790441585148,
+  "name": "site-shell",
+  "title": "World Viewer shell",
+  "description": "Site shell where pages and dashboards load for the world-viewer React project. Navigation lives in components/SiteNav.tsx; the selected page or dashboard renders in the main area.",
+  "type": "site shell",
+  "date_created": 1790441585150,
+  "date_modified": 1790441585150,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
+}

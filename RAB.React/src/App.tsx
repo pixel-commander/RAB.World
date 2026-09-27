@@ -1,3 +1,14 @@
+import { WorldView } from "./pages/WorldView/WorldView";
+import './css/style.css';
+import { StyleGuidePage } from './pages/StyleGuidePage/StyleGuidePage';
+import { ComponentsPage } from './pages/ComponentsPage/ComponentsPage';
+import { SiteShell } from './shell/components/SiteShell';
+export const NAV_ITEMS = [
+{ id: 'style-guide', name: 'style-guide', label: 'Style Guide', View: StyleGuidePage },
+    { id: 'components', name: 'components', label: 'Components', View: ComponentsPage },
+  { id: "world-view", name: "world-view", label: "World View", View: WorldView },
+];
+
 export const App = () => {
-  return <main><h1>RAB.React</h1><p>Your React project is ready. Add a page or dashboard with the Box.</p></main>;
+  return <SiteShell items={NAV_ITEMS} />;
 };

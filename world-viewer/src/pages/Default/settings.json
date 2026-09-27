@@ -1,0 +1,13 @@
+{
+  "name": "Default",
+  "title": "World Viewer",
+  "description": "Explore your worlds and beacons.",
+  "settings": [],
+  "meta": {
+    "kind": "page"
+  },
+  "type": "page",
+  "content": "",
+  "indexed": true,
+  "id": 1790441419509
+}

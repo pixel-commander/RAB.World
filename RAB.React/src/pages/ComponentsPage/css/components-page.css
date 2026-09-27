@@ -1,0 +1,8 @@
+@layer components {
+  .components-page { min-block-size: 65dvh; }
+  .components-page__nav { display: grid; gap: var(--space-xs); padding: var(--space-lg); align-content: start; }
+  .components-page__nav a { padding: var(--space-sm) var(--space-md); text-decoration: none; }
+  .components-page__content { padding: var(--space-lg); overflow: auto; }
+  .components-page__demo { min-block-size: 24rem; }
+  .components-page__demo > .code-editor-demo { block-size: 24rem; }
+}

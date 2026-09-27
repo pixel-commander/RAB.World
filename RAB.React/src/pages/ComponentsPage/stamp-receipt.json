@@ -1,0 +1,81 @@
+{
+  "status": "created",
+  "type": "page",
+  "id": 1790458721095,
+  "name": "ComponentsPage",
+  "title": "Components",
+  "description": "React page ComponentsPage.",
+  "settings": {
+    "id": 1790458721095,
+    "name": "ComponentsPage",
+    "title": "Components",
+    "description": "React page ComponentsPage.",
+    "type": "page",
+    "date_created": 1790458721095,
+    "date_modified": 1790458721095,
+    "settings": [],
+    "transmitting": true,
+    "signal": true,
+    "path": "./ComponentsPage.tsx"
+  },
+  "file": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\ComponentsPage\\ComponentsPage.tsx",
+  "path": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\ComponentsPage\\ComponentsPage.tsx",
+  "folder": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\ComponentsPage",
+  "verification": {
+    "status": "verified",
+    "verification": "created-files-match-approved-plan-sha256",
+    "destination": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\ComponentsPage",
+    "files": [
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\ComponentsPage\\ComponentsPage.tsx",
+        "bytes": 411,
+        "sha256": "8df84b00e85053c7bac324309dee9f9dcc68cb471f0b9261a5fa81f25dfd00ef"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\ComponentsPage\\css\\components-page.css",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\ComponentsPage\\hooks\\useComponentsPage.ts",
+        "bytes": 57,
+        "sha256": "2cc31543472736a66fa3bc8fee24ef7c8a69ea2515d876ee09966c10a4eff81d"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\ComponentsPage\\js\\.gitkeep",
+        "bytes": 1,
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\ComponentsPage\\ComponentsPage.types.ts",
+        "bytes": 71,
+        "sha256": "e22a8d52101499ad6e05aec99e91e33d2cdf95d197a88f260a131af6227ef00f"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\ComponentsPage\\settings.json",
+        "bytes": 305,
+        "sha256": "ddeacb84e6c75db4dc3451682c2df584d13029196fbfe4987f449b065ccb5202"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\pages\\ComponentsPage\\README.txt",
+        "bytes": 95,
+        "sha256": "a9f64eeffb5df6d3a4907d673ef6b055053e39e9a46aca82a63289cb398dd26c"
+      }
+    ]
+  },
+  "construction_seats": [
+    {
+      "id": "page-components-page:p1",
+      "role": "page-root",
+      "owner": "ComponentsPage"
+    }
+  ],
+  "provided": {
+    "seats": {
+      "file": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\ComponentsPage\\ComponentsPage.tsx",
+      "path": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\ComponentsPage\\ComponentsPage.tsx",
+      "page": "ComponentsPage",
+      "page_root_seat": "page-components-page:p1"
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { defaultRabHome } from './rab-memory.mjs';
 import { withMemoryLock } from './rab-memory-lock.mjs';
 
 export const createSearchUsage = ({ rabHome = defaultRabHome() } = {}) => {
-  const file = path.join(rabHome, 'usage', 'world-search.json');
+  const file = path.join(rabHome, 'worlds', 'world-search.json');
   const update = operation => withMemoryLock(path.join(rabHome, '.memory-locks', 'world-search-usage'), async () => {
     let data;
     try { data = JSON.parse(await readFile(file, 'utf8')); }

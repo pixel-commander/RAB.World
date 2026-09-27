@@ -1,0 +1,13 @@
+{
+  "id": 1790460047274,
+  "name": "useURL",
+  "title": "useURL",
+  "description": "React hook for reading URL path segments and variables and updating navigation through the shared URL handler.",
+  "type": "hook",
+  "date_created": 1790460047274,
+  "date_modified": 1790460047274,
+  "settings": [],
+  "transmitting": true,
+  "signal": true,
+  "path": "./useURL.ts"
+}

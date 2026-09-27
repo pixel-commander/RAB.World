@@ -1,0 +1,9 @@
+@layer grid {
+  [data-grid='grid-test-1'] {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+  [data-grid='grid-test-1'] > [data-area='hero'] { grid-area: 1 / 1 / 3 / 3; }
+}

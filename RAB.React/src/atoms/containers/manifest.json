@@ -46,6 +46,16 @@
       "description": "Reusable neon chassis corner with primary and secondary ink variants.",
       "kind": "container-atom",
       "path": "container-neon-corner"
+    },
+    {
+      "id": 1790458896938,
+      "name": "container-main",
+      "title": "container-main",
+      "description": "Main container skin copied from stand-alone-react.",
+      "type": "container-atom",
+      "path": "container-main",
+      "signal": true,
+      "transmitting": true
     }
   ],
   "indexed": true

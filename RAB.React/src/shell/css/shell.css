@@ -1,0 +1,22 @@
+/* Default shell uses the shared theme and stamped atoms. */
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface-app); color: var(--content-default); font: var(--type-body); }
+button { font: inherit; touch-action: manipulation; }
+.site-shell { min-block-size: 100dvh; padding: var(--space-lg); gap: var(--space-lg); }
+.site-header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-xl); padding: var(--space-md) var(--space-xl); }
+.site-brand { display: flex; align-items: center; gap: var(--space-sm); white-space: nowrap; font: var(--type-heading); }
+.brand-mark { display: inline-flex; align-items: center; justify-content: center; inline-size: var(--space-xl); block-size: var(--space-xl); border-radius: var(--radius-control); background: var(--accent-default); color: var(--surface-app); font: var(--type-label); }
+.brand-muted { color: var(--content-muted); }
+.site-nav { display: flex; gap: var(--space-2xs); padding: var(--space-2xs); overflow-x: auto; }
+.site-nav button { padding: var(--space-sm) var(--space-xl); white-space: nowrap; --action-ghost-hover-font: var(--type-body); }
+.site-footer { display: flex; justify-content: space-between; padding: var(--space-xs) var(--space-md); color: var(--content-muted); font: var(--type-label); }
+.default-page { padding: clamp(1.5rem, 4vw, 4rem); min-block-size: 65dvh; }
+.default-page h1 { margin: 0 0 var(--space-lg); font: var(--type-heading); font-size: clamp(2rem, 4vw, 3.5rem); }
+.default-page p { margin: 0; color: var(--content-muted); line-height: 1.7; }
+@media (max-width: 640px) {
+  .site-shell { padding: var(--space-sm); gap: var(--space-sm); }
+  .site-header { flex-wrap: wrap; padding: var(--space-lg); gap: var(--space-lg); }
+  .site-nav { inline-size: 100%; }
+  .site-nav button { flex: 1; padding-inline: var(--space-lg); }
+  .site-footer span { display: none; }
+}

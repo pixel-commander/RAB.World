@@ -1,0 +1,4 @@
+.code-editor { margin-top: var(--space-lg); padding: var(--space-lg); }
+.code-editor header { display:flex; justify-content:space-between; gap:var(--space-md); overflow-wrap:anywhere; }
+.code-editor button { padding:var(--space-sm) var(--space-lg); }
+.code-editor textarea { width:100%; min-height:24rem; margin-top:var(--space-md); padding:var(--space-md); background:var(--surface-app); color:var(--content-default); border:1px solid var(--border-default); font: 0.875rem/1.6 monospace; resize:vertical; tab-size:2; }

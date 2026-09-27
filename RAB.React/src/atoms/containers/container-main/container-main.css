@@ -1,0 +1,31 @@
+@layer atoms {
+  .container-main {
+    color: var(--container-main-color, var(--content-default));
+    background: var(
+      --container-main-background,
+      linear-gradient(180deg, var(--surface-main), var(--surface-inset))
+    );
+    border: var(
+      --container-main-border,
+      var(--border-width) var(--border-style) var(--border-subtle)
+    );
+    border-radius: var(--container-main-radius, var(--radius-container));
+    box-shadow: var(
+      --container-main-shadow,
+      inset 0 var(--border-width) 0 color-mix(in srgb, var(--content-strong) 4%, transparent),
+      0 calc(var(--border-width) + var(--border-width)) var(--space-sm) color-mix(in srgb, var(--surface-app) 60%, transparent)
+    );
+  }
+
+  .container-main:focus-visible {
+    outline: var(--container-main-focus-outline, var(--focus-ring));
+    outline-offset: var(--container-main-focus-offset, var(--focus-offset));
+  }
+
+  .container-main:is(:disabled, [aria-disabled='true']) {
+    color: var(--container-main-disabled-color, var(--content-disabled));
+    background: var(--container-main-disabled-background, var(--surface-disabled));
+    opacity: var(--container-main-disabled-opacity, var(--disabled-opacity));
+  }
+
+}

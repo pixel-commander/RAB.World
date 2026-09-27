@@ -1,0 +1,77 @@
+{
+  "status": "created",
+  "type": "component",
+  "id": 1790456028550,
+  "name": "CodeEditor",
+  "title": "CodeEditor",
+  "description": "React component CodeEditor.",
+  "settings": {
+    "id": 1790456028550,
+    "name": "CodeEditor",
+    "title": "CodeEditor",
+    "description": "React component CodeEditor.",
+    "type": "component",
+    "date_created": 1790456028551,
+    "date_modified": 1790456028551,
+    "settings": [],
+    "transmitting": true,
+    "signal": true,
+    "path": "./CodeEditor.tsx"
+  },
+  "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor\\CodeEditor.tsx",
+  "file": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor\\CodeEditor.tsx",
+  "folder": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor",
+  "parent_path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components",
+  "verification": {
+    "status": "verified",
+    "verification": "created-files-match-approved-plan-sha256",
+    "destination": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor",
+    "files": [
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor\\CodeEditor.tsx",
+        "bytes": 414,
+        "sha256": "ed54733936adecadfe9e144adc3ece4cc9d16600b1227609ad05c28f79187d8a"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor\\css\\code-editor.css",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor\\hooks\\useCodeEditor.ts",
+        "bytes": 53,
+        "sha256": "4f885a582a14197c7f7ea6ea5e5265cde603b61876a950436d41309365f7ade7"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor\\js\\.gitkeep",
+        "bytes": 1,
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor\\CodeEditor.types.ts",
+        "bytes": 144,
+        "sha256": "9f215780a5601c22b6a62dd92b8afe52dfd83eb2bc2b6a1b3c275f7c2fbff693"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor\\settings.json",
+        "bytes": 303,
+        "sha256": "3514cfe1f1a2703c415b57026659b68687597d52f921959e0a6dc9d0bd883d04"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor\\README.txt",
+        "bytes": 72,
+        "sha256": "b9f1e7572fecd2585d1b24be1fff28b29fdf2d013018a6bbd92ad25d74d779c4"
+      }
+    ]
+  },
+  "provided": {
+    "seats": {
+      "name": "CodeEditor",
+      "component_name": "CodeEditor",
+      "target": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor\\CodeEditor.tsx",
+      "file": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor\\CodeEditor.tsx",
+      "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor\\CodeEditor.tsx",
+      "folder": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\components\\CodeEditor"
+    }
+  }
+}

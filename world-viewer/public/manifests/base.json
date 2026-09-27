@@ -1,0 +1,658 @@
+{
+  "version": "folder-manifest/v1",
+  "id": 1790442726490,
+  "name": "base",
+  "title": "Base tools",
+  "description": "Folder hierarchy and tool metadata for the built-in Base tools.",
+  "path": ".",
+  "type": "folder",
+  "files": [
+    "_inventory.mjs",
+    "README.txt"
+  ],
+  "items": [
+    {
+      "name": "check-tool",
+      "title": "Check Tool",
+      "description": "Checks a registered Tool's structural visibility and how its own description resolves back through find-tool.",
+      "path": "check-tool",
+      "type": "tool",
+      "files": [
+        "check-tool.mjs",
+        "settings.json"
+      ],
+      "items": [],
+      "id": 1790000000210,
+      "key": "base/check-tool",
+      "authority": "read"
+    },
+    {
+      "name": "create",
+      "title": "create",
+      "description": "",
+      "path": "create",
+      "type": "folder",
+      "files": [],
+      "items": [
+        {
+          "name": "request",
+          "title": "Create request",
+          "description": "Save a global/shared request or a request for a saved project inside its configured .rab home.",
+          "path": "create/request",
+          "type": "tool",
+          "files": [
+            "request.mjs",
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1830000000009,
+          "key": "base/create/request",
+          "authority": "write"
+        }
+      ]
+    },
+    {
+      "name": "determine",
+      "title": "determine",
+      "description": "",
+      "path": "determine",
+      "type": "folder",
+      "files": [
+        "determine.mjs"
+      ],
+      "items": [
+        {
+          "name": "script-type",
+          "title": "Determine Script Type",
+          "description": "Determines the JavaScript and TypeScript source file types present in the loaded project so other Tools can reuse the result.",
+          "path": "determine/script-type",
+          "type": "tool",
+          "files": [
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1790000000801,
+          "key": "base/determine/script-type",
+          "authority": "read"
+        }
+      ]
+    },
+    {
+      "name": "find",
+      "title": "find",
+      "description": "",
+      "path": "find",
+      "type": "folder",
+      "files": [
+        "find.mjs"
+      ],
+      "items": [
+        {
+          "name": "file",
+          "title": "Find File",
+          "description": "Finds a file by name inside the loaded project or supplied folder.",
+          "path": "find/file",
+          "type": "tool",
+          "files": [
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1790000000910,
+          "key": "base/find/file",
+          "authority": "read"
+        },
+        {
+          "name": "folder",
+          "title": "Find Folder",
+          "description": "Finds a folder by name inside the loaded project or supplied folder.",
+          "path": "find/folder",
+          "type": "tool",
+          "files": [
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1790000000911,
+          "key": "base/find/folder",
+          "authority": "read"
+        },
+        {
+          "name": "inventory",
+          "title": "List project inventory",
+          "description": "List items from a saved project-path manifest. Also handles find and scan-for requests without scanning source files.",
+          "path": "find/inventory",
+          "type": "tool",
+          "files": [
+            "contract.json",
+            "inventory.mjs",
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1830100001001,
+          "key": "base/find/inventory",
+          "authority": "read"
+        }
+      ]
+    },
+    {
+      "name": "find-project",
+      "title": "Find Project",
+      "description": "Finds an indexed project by numeric ID, name, title, or description in the high-level projects manifest.",
+      "path": "find-project",
+      "type": "tool",
+      "files": [
+        "contract.json",
+        "find-project.mjs",
+        "settings.json"
+      ],
+      "items": [],
+      "id": 1790000000202,
+      "key": "base/find-project",
+      "authority": "read"
+    },
+    {
+      "name": "find-tool",
+      "title": "Find Tool",
+      "description": "Searches the real tools folder by current domain, function family, settings text, description, and metadata. Discovery never grants execution authority.",
+      "path": "find-tool",
+      "type": "tool",
+      "files": [
+        "find-tool.mjs",
+        "settings.json"
+      ],
+      "items": [],
+      "id": 1790000000102,
+      "key": "base/find-tool",
+      "authority": "read"
+    },
+    {
+      "name": "form",
+      "title": "form",
+      "description": "",
+      "path": "form",
+      "type": "folder",
+      "files": [],
+      "items": [
+        {
+          "name": "stamp-validator",
+          "title": "Stamp FormData Validator",
+          "description": "Creates a deterministic zero-dependency FormData extraction/validation module from an explicit field contract.",
+          "path": "form/stamp-validator",
+          "type": "tool",
+          "files": [
+            "contract.json",
+            "settings.json",
+            "stamp-validator.mjs"
+          ],
+          "items": [
+            {
+              "name": "template",
+              "title": "template",
+              "description": "",
+              "path": "form/stamp-validator/template",
+              "type": "folder",
+              "files": [
+                "tmpl.mjs"
+              ],
+              "items": []
+            }
+          ],
+          "id": 1790000001520,
+          "key": "base/form/stamp-validator",
+          "authority": "write"
+        }
+      ]
+    },
+    {
+      "name": "index",
+      "title": "index",
+      "description": "",
+      "path": "index",
+      "type": "folder",
+      "files": [],
+      "items": [
+        {
+          "name": "inventory",
+          "title": "Index project inventory",
+          "description": "Refresh one saved project manifest from shared item settings, preserving each source ID and excluding indexed:false items.",
+          "path": "index/inventory",
+          "type": "tool",
+          "files": [
+            "contract.json",
+            "inventory.mjs",
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1830100001002,
+          "key": "base/index/inventory",
+          "authority": "write"
+        },
+        {
+          "name": "manifest",
+          "title": "Update Base Manifest",
+          "description": "Scan the Base tool folder on demand and update its local manifest.json.",
+          "path": "index/manifest",
+          "type": "tool",
+          "files": [
+            "contract.json",
+            "manifest.mjs",
+            "README.txt",
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1790442400619,
+          "key": "base/index/manifest",
+          "authority": "write"
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "title": "list",
+      "description": "",
+      "path": "list",
+      "type": "folder",
+      "files": [],
+      "items": [
+        {
+          "name": "requests",
+          "title": "List requests",
+          "description": "List global/shared requests or the selected saved project's requests.",
+          "path": "list/requests",
+          "type": "tool",
+          "files": [
+            "requests.mjs",
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1830000000010,
+          "key": "base/list/requests",
+          "authority": "read"
+        }
+      ]
+    },
+    {
+      "name": "list-projects",
+      "title": "List Projects",
+      "description": "Lists only the names of saved projects found under .rab/projects.",
+      "path": "list-projects",
+      "type": "tool",
+      "files": [
+        "list-projects.mjs",
+        "settings.json"
+      ],
+      "items": [],
+      "id": 1790000000201,
+      "key": "base/list-projects",
+      "authority": "read"
+    },
+    {
+      "name": "load-project",
+      "title": "Load Project",
+      "description": "Loads a known project, snapshots its settings into .rab memory, and restores saved session history. If no project matches, returns the available projects so the caller can retry.",
+      "path": "load-project",
+      "type": "tool",
+      "files": [
+        "load-project.mjs",
+        "settings.json"
+      ],
+      "items": [],
+      "id": 1790000000203,
+      "key": "base/load-project",
+      "authority": "read"
+    },
+    {
+      "name": "move",
+      "title": "move",
+      "description": "",
+      "path": "move",
+      "type": "folder",
+      "files": [
+        "contract.json",
+        "move.mjs"
+      ],
+      "items": [
+        {
+          "name": "stamp",
+          "title": "Move Stamp Path",
+          "description": "Moves an existing Stamp to a new semantic location while preserving its stable ID, atomically updating the selected PATHS registry, rescanning the House, and rolling back if verification fails.",
+          "path": "move/stamp",
+          "type": "tool",
+          "files": [
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1790000000999,
+          "key": "base/move/stamp",
+          "authority": "write"
+        },
+        {
+          "name": "tool",
+          "title": "Move Tool Path",
+          "description": "Moves an existing Tool to a new semantic location while preserving its stable ID, atomically updating the selected PATHS registry, rescanning the House, and rolling back if verification fails.",
+          "path": "move/tool",
+          "type": "tool",
+          "files": [
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1790000000998,
+          "key": "base/move/tool",
+          "authority": "write"
+        }
+      ]
+    },
+    {
+      "name": "re-phrase-check",
+      "title": "Re-phrase Check",
+      "description": "Rephrases known language by compiling words into lexical roles and semantic senses, then generating a different surface form without execution authority.",
+      "path": "re-phrase-check",
+      "type": "tool",
+      "files": [
+        "re-phrase-check.mjs",
+        "settings.json"
+      ],
+      "items": [],
+      "id": 1790000000101,
+      "key": "base/re-phrase-check",
+      "authority": "read"
+    },
+    {
+      "name": "read",
+      "title": "read",
+      "description": "",
+      "path": "read",
+      "type": "folder",
+      "files": [],
+      "items": [
+        {
+          "name": "request",
+          "title": "Read request",
+          "description": "Read a saved request by numeric ID within global/shared or project scope.",
+          "path": "read/request",
+          "type": "tool",
+          "files": [
+            "request.mjs",
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1830000000011,
+          "key": "base/read/request",
+          "authority": "read"
+        }
+      ]
+    },
+    {
+      "name": "stamp-new-key-phrase",
+      "title": "New Key Phrase",
+      "description": "Creates a reviewed key-phrase record for the language decoder without directly granting execution authority.",
+      "path": "stamp-new-key-phrase",
+      "type": "tool",
+      "files": [
+        "contract.json",
+        "settings.json",
+        "stamp-new-key-phrase.mjs"
+      ],
+      "items": [
+        {
+          "name": "template",
+          "title": "template",
+          "description": "",
+          "path": "stamp-new-key-phrase/template",
+          "type": "folder",
+          "files": [
+            "phrase.json"
+          ],
+          "items": []
+        }
+      ],
+      "id": 1790000000207,
+      "key": "base/stamp-new-key-phrase",
+      "authority": "write"
+    },
+    {
+      "name": "stamp-new-project",
+      "title": "New Project",
+      "description": "Creates a project with a name and paths, then adds its ID, name, title and description to the high-level projects manifest.",
+      "path": "stamp-new-project",
+      "type": "tool",
+      "files": [
+        "contract.json",
+        "settings.json",
+        "stamp-new-project.mjs"
+      ],
+      "items": [
+        {
+          "name": "template",
+          "title": "template",
+          "description": "",
+          "path": "stamp-new-project/template",
+          "type": "folder",
+          "files": [
+            "PATHS.json",
+            "README.txt",
+            "settings.json"
+          ],
+          "items": [
+            {
+              "name": "audit-results",
+              "title": "audit-results",
+              "description": "",
+              "path": "stamp-new-project/template/audit-results",
+              "type": "folder",
+              "files": [
+                "README.txt"
+              ],
+              "items": []
+            },
+            {
+              "name": "output",
+              "title": "output",
+              "description": "",
+              "path": "stamp-new-project/template/output",
+              "type": "folder",
+              "files": [
+                "README.txt"
+              ],
+              "items": []
+            }
+          ]
+        }
+      ],
+      "id": 1790000000205,
+      "key": "base/stamp-new-project",
+      "authority": "write"
+    },
+    {
+      "name": "stamp-new-stamp",
+      "title": "New Stamp",
+      "description": "Creates a new stamp-* Tool from the standard Stamp mold. The selected type chooses the tools/<type>/ folder.",
+      "path": "stamp-new-stamp",
+      "type": "tool",
+      "files": [
+        "contract.json",
+        "settings.json",
+        "stamp-new-stamp.mjs"
+      ],
+      "items": [
+        {
+          "name": "template",
+          "title": "template",
+          "description": "",
+          "path": "stamp-new-stamp/template",
+          "type": "folder",
+          "files": [
+            "settings.json",
+            "tmpl.mjs"
+          ],
+          "items": [
+            {
+              "name": "template",
+              "title": "template",
+              "description": "",
+              "path": "stamp-new-stamp/template/template",
+              "type": "folder",
+              "files": [
+                "README.txt"
+              ],
+              "items": []
+            }
+          ]
+        }
+      ],
+      "id": 1790000000103,
+      "key": "base/stamp-new-stamp",
+      "authority": "write"
+    },
+    {
+      "name": "stamp-new-tool",
+      "title": "New Tool",
+      "description": "Creates a non-Stamp Tool at a flat or nested semantic House path. Can inherit a nearest-parent executor and register a flat PATHS address.",
+      "path": "stamp-new-tool",
+      "type": "tool",
+      "files": [
+        "contract.json",
+        "settings.json",
+        "stamp-new-tool.mjs"
+      ],
+      "items": [
+        {
+          "name": "template",
+          "title": "template",
+          "description": "",
+          "path": "stamp-new-tool/template",
+          "type": "folder",
+          "files": [
+            "settings.json",
+            "tmpl.mjs"
+          ],
+          "items": []
+        }
+      ],
+      "id": 1790000000206,
+      "key": "base/stamp-new-tool",
+      "authority": "write"
+    },
+    {
+      "name": "templates",
+      "title": "templates",
+      "description": "",
+      "path": "templates",
+      "type": "folder",
+      "files": [],
+      "items": [
+        {
+          "name": "toolkits",
+          "title": "toolkits",
+          "description": "",
+          "path": "templates/toolkits",
+          "type": "folder",
+          "files": [],
+          "items": [
+            {
+              "name": "ui",
+              "title": "New UI Toolkit",
+              "description": "Creates an empty UI toolkit folder structure for a React, Angular, HTML, or other project type. Includes toolkit settings, usage rules, project and component scaffold folders, and CSS container-atom, action-atom, effect-atom, and grid-atom folders.",
+              "path": "templates/toolkits/ui",
+              "type": "tool",
+              "files": [
+                "contract.json",
+                "README.txt",
+                "settings.json",
+                "ui.mjs"
+              ],
+              "items": [
+                {
+                  "name": "template",
+                  "title": "template",
+                  "description": "",
+                  "path": "templates/toolkits/ui/template",
+                  "type": "folder",
+                  "files": [
+                    "README.txt",
+                    "RULES.txt",
+                    "settings.json"
+                  ],
+                  "items": []
+                }
+              ],
+              "id": 1790029418976,
+              "key": "base/templates/toolkits/ui",
+              "authority": "write"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "view-chat-history",
+      "title": "View Chat History",
+      "description": "Returns saved Magic Box chat turns for a known project. Uses the current project when supplied by context.",
+      "path": "view-chat-history",
+      "type": "tool",
+      "files": [
+        "settings.json",
+        "view-chat-history.mjs"
+      ],
+      "items": [],
+      "id": 1790000000204,
+      "key": "base/view-chat-history",
+      "authority": "read"
+    },
+    {
+      "name": "watch",
+      "title": "watch",
+      "description": "",
+      "path": "watch",
+      "type": "folder",
+      "files": [
+        "contract.json",
+        "watch.mjs"
+      ],
+      "items": [
+        {
+          "name": "add",
+          "title": "Add paths to listener",
+          "description": "Watch an array of configured project paths and update each manifest when settings or folders change.",
+          "path": "watch/add",
+          "type": "tool",
+          "files": [
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1790033965172,
+          "key": "base/watch/add",
+          "authority": "write"
+        },
+        {
+          "name": "list",
+          "title": "List listener paths",
+          "description": "List registered project paths, listener conditions, last update and current errors.",
+          "path": "watch/list",
+          "type": "tool",
+          "files": [
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1790033965848,
+          "key": "base/watch/list",
+          "authority": "read"
+        },
+        {
+          "name": "remove",
+          "title": "Remove path from listener",
+          "description": "Stop listening to a project path while preserving its source and saved manifest.",
+          "path": "watch/remove",
+          "type": "tool",
+          "files": [
+            "settings.json"
+          ],
+          "items": [],
+          "id": 1790033965514,
+          "key": "base/watch/remove",
+          "authority": "write"
+        }
+      ]
+    }
+  ],
+  "generated_at": "2026-09-26T17:12:06.496Z"
+}

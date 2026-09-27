@@ -1,0 +1,10 @@
+@layer pages {
+  .world-view { min-inline-size: 0; min-block-size: 0; }
+}
+
+.world-settings-editor { display: grid; gap: var(--space-sm); min-inline-size: 0; }
+.world-settings-editor .code-editor { block-size: 28rem; min-inline-size: 0; }
+
+.world-paths { display: grid; gap: var(--space-md); padding: 0; list-style: none; }
+.world-paths li { display: grid; gap: var(--space-xs); min-inline-size: 0; }
+.world-paths code { overflow-wrap: anywhere; }

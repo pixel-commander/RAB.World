@@ -1,0 +1,13 @@
+{
+  "id": null,
+  "name": "dark",
+  "title": "Dark Colors",
+  "description": "Dark semantic color, elevation and code syntax token values.",
+  "type": "theme",
+  "date_created": null,
+  "date_modified": null,
+  "settings": [],
+  "transmitting": true,
+  "signal": true,
+  "path": "./colors.css"
+}

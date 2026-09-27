@@ -1,3 +1,10 @@
+import './css/styles.css';
+import { StyleGuidePage } from './pages/StyleGuidePage/StyleGuidePage';
+import { Default } from './pages/Default/Default';
+import { SiteShell } from './shell/components/SiteShell';
+
+export const NAV_ITEMS = [{ id: 'style-guide', name: 'style-guide', label: 'Style Guide', View: StyleGuidePage }, { id: 'default', name: 'default', label: 'Home', View: Default }];
+
 export const App = () => {
-  return <main><h1>__PROJECT_NAME__</h1><p>Your React project is ready. Add a page or dashboard with the Box.</p></main>;
+  return <SiteShell items={NAV_ITEMS} />;
 };

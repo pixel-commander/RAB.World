@@ -35,7 +35,7 @@
       "id": 1830000000006,
       "name": "new-dashboard",
       "title": "New Dashboard",
-      "description": "Creates a React dashboard by composing New Page, Apply Grid Layout, New Navigation, and Insert Component Into Area. Defaults to a header-main grid with SiteNav in header.",
+      "description": "Creates a dashboard page using a chosen grid and optionally adds it to the shell NAV_ITEMS (default yes).",
       "type": "dashboard",
       "path": "ui\\scaffolds\\new-dashboard"
     },

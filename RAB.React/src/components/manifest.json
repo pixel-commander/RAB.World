@@ -1,0 +1,41 @@
+{
+  "version": "manifest/v1",
+  "id": 1790456827964,
+  "name": "components",
+  "title": "Components",
+  "description": "RAB.React component demos.",
+  "date_added": "2026-09-26T21:07:07.964Z",
+  "path": "L:\\RAB.World\\RAB.React\\src\\components",
+  "items": [
+    {
+      "id": 1790456028550,
+      "name": "CodeEditor",
+      "title": "CodeEditor",
+      "description": "React component CodeEditor.",
+      "type": "component",
+      "path": "CodeEditor",
+      "signal": true,
+      "transmitting": true
+    },
+    {
+      "id": 1790456184254,
+      "name": "FloatPanel",
+      "title": "FloatPanel",
+      "description": "React component FloatPanel.",
+      "type": "component",
+      "path": "FloatPanel",
+      "signal": true,
+      "transmitting": true
+    },
+    {
+      "id": 1790459418128,
+      "name": "Tabs",
+      "title": "Tabs",
+      "description": "React component Tabs.",
+      "type": "component",
+      "signal": true,
+      "transmitting": true,
+      "path": "Tabs"
+    }
+  ]
+}

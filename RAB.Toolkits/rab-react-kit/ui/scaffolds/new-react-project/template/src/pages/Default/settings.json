@@ -1,0 +1,9 @@
+{
+  "name": "Default",
+  "title": "__PROJECT_NAME__",
+  "description": "Default project page.",
+  "type": "page",
+  "settings": [],
+  "meta": { "kind": "page" },
+  "indexed": true
+}

@@ -1,0 +1,11 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "internal",
+    "description": "Controlled React tabs with parent-owned selection, keyboard navigation and preset slot skins."
+  },
+  "settings": [],
+  "result": {
+    "type": "component"
+  }
+}

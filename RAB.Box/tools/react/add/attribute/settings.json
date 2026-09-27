@@ -5,6 +5,13 @@
   "description": "Adds a static attribute to a resolved DOM target without modifying dynamic JSX attribute expressions.",
   "settings": [
     {
+      "type": "folder",
+      "name": "root",
+      "title": "Source Root",
+      "description": "Optional explicit project/source boundary for unregistered folders.",
+      "required": false
+    },
+    {
       "type": "text",
       "name": "component",
       "title": "Component",

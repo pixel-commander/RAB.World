@@ -1,0 +1,32 @@
+{
+  "id": 1790444039189,
+  "name": "export-snapshot",
+  "title": "Export World Snapshot",
+  "description": "Reads world records and tool catalog into a portable snapshot for read-only viewers.",
+  "settings": [
+    {
+      "name": "source",
+      "type": "folder",
+      "title": "World Registry",
+      "required": true
+    },
+    {
+      "name": "output",
+      "type": "folder",
+      "title": "Snapshot Output",
+      "required": true
+    },
+    {
+      "name": "base_manifest",
+      "type": "text",
+      "title": "Optional Base Manifest",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "world",
+    "operation": "export",
+    "target_type": "manifest",
+    "authority": "write"
+  }
+}

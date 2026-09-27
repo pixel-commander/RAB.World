@@ -117,21 +117,28 @@ export const makeItemSettings = input => {
 };
 
 export const SIGNAL_KEYS = Object.freeze(['id', 'name', 'title', 'description', 'type', 'date_created', 'date_modified', 'settings', 'transmitting', 'signal']);
+export const OPTIONAL_SIGNAL_KEYS = Object.freeze(['path', 'paths']);
 export const assertSignalSettings = item => {
   if (!plain(item)) fail('Signal settings must be a plain object.');
   assertJson(item);
-  if (Object.keys(item).length !== SIGNAL_KEYS.length || SIGNAL_KEYS.some(key => !Object.hasOwn(item, key))) fail('Signal settings must use the canonical signal fields only.');
+  if (Object.keys(item).some(key => !SIGNAL_KEYS.includes(key) && !OPTIONAL_SIGNAL_KEYS.includes(key)) || SIGNAL_KEYS.some(key => !Object.hasOwn(item, key))) fail('Signal settings must use the canonical signal fields only.');
   assertNumericId(item.id);
   if (!text(item.name) || !text(item.title) || typeof item.description !== 'string' || typeof item.type !== 'string') fail('Invalid signal text fields.');
   for (const key of ['date_created', 'date_modified']) if (!Number.isSafeInteger(item[key]) || item[key] <= 0) fail(`${key} must be a numeric timestamp.`);
   if (!Array.isArray(item.settings) || typeof item.transmitting !== 'boolean' || typeof item.signal !== 'boolean') fail('Invalid signal settings or flags.');
+  if (Object.hasOwn(item, 'path') && typeof item.path !== 'string') fail('Signal path must be a string.');
+  if (Object.hasOwn(item, 'paths')) {
+    if (!plain(item.paths)) fail('Signal paths must be an object of signal records.');
+    for (const child of Object.values(item.paths)) assertSignalSettings(child);
+  }
   return item;
 };
 export const makeSignalSettings = input => {
   if (!plain(input)) fail('Signal input must be a plain object.');
-  if (Object.keys(input).some(key => !SIGNAL_KEYS.includes(key))) fail('Unexpected signal field.');
+  if (Object.keys(input).some(key => !SIGNAL_KEYS.includes(key) && !OPTIONAL_SIGNAL_KEYS.includes(key))) fail('Unexpected signal field.');
   const now = Date.now();
   const item = { id: input.id, name: input.name, title: input.title ?? input.name, description: input.description ?? '', type: input.type ?? '', date_created: input.date_created ?? now, date_modified: input.date_modified ?? now, settings: input.settings ?? [], transmitting: input.transmitting ?? true, signal: input.signal ?? true };
+  for (const key of OPTIONAL_SIGNAL_KEYS) if (Object.hasOwn(input, key)) item[key] = input[key];
   assertSignalSettings(item);
   return JSON.parse(JSON.stringify(item));
 };

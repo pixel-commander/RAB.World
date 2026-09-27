@@ -1,0 +1,12 @@
+{
+  "id": 1790380405615,
+  "name": "grid-dashboard-alt",
+  "title": "grid-dashboard-alt",
+  "description": "grid-dashboard without the tabs-nav band (that row left empty)",
+  "type": "grid-atom",
+  "date_created": 1790380405655,
+  "date_modified": 1790380405655,
+  "settings": [],
+  "transmitting": true,
+  "signal": true
+}

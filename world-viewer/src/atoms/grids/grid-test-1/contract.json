@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "asdfasdf"
+  },
+  "settings": [],
+  "result": {
+    "kind": "asset",
+    "executable": false,
+    "files": [
+      "grid-test-1.css"
+    ],
+    "usage": "Import grid-test-1.css and apply its declared CSS selectors to host markup. Shared theme tokens are supplied by the project."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": null,
+  "name": "layout",
+  "title": "Layout Tokens",
+  "description": "Shared spacing, border, radius, typography, motion and focus tokens.",
+  "type": "theme",
+  "date_created": null,
+  "date_modified": null,
+  "settings": [],
+  "transmitting": true,
+  "signal": true,
+  "path": "./layout.css"
+}

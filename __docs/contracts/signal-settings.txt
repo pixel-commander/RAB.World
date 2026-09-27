@@ -1,15 +1,26 @@
 SIGNAL SETTINGS
 ===============
 
-Signal and atom settings.json records use exactly these top-level fields:
+Signal and atom settings.json records require these top-level fields:
 id, name, title, description, type, date_created, date_modified, settings,
 transmitting, signal.
 
 ID and dates are positive numeric timestamps. settings is an array. signal
 and transmitting are booleans; explicit false stays false. Type carries the
-actual item type, such as action-atom. No meta, kind, indexed, path or project
-name is required or emitted in the signal record. Paths belong to discovery
-entries; project wording belongs in the category beacon prose.
+actual item type, such as action-atom. No meta, kind, indexed or project
+name is required or emitted in the signal record. Project wording belongs
+in the category beacon prose.
+
+Optional fields: path (a string) and paths (an object of named signal records).
+Every value inside paths has the same complete signal shape as its parent,
+including all required fields and optional path and paths. Validation recurses
+through the same shared signal validator. Bare strings or partial path records
+inside paths are invalid. path itself is always a string.
+Omitted optional fields remain absent. An empty path string and an empty paths
+object are valid and preserved. Nested records and false flags are preserved.
+The shared JSON safety bounds apply (no cycles; maximum depth 64).
+Paths are metadata; validation does not resolve them or grant filesystem access.
+Discovery entries retain their own location paths.
 
 makeSignalSettings/assertSignalSettings in RAB.Box/bridge/rab-node.mjs own
 construction and validation. Tool House exposes createSignalSettings with

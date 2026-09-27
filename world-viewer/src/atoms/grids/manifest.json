@@ -1,0 +1,43 @@
+{
+  "version": "manifest/v1",
+  "id": 1790380405648,
+  "name": "grids",
+  "title": "grids",
+  "description": "Default grids atoms",
+  "items": [
+    {
+      "id": 1790380405615,
+      "name": "grid-dashboard-alt",
+      "title": "grid-dashboard-alt",
+      "description": "grid-dashboard without the tabs-nav band (that row left empty)",
+      "type": "grid-atom",
+      "path": "grid-dashboard-alt",
+      "signal": true,
+      "transmitting": true
+    },
+    {
+      "id": 1790380405616,
+      "name": "grid-test",
+      "title": "grid-test",
+      "description": "container grid for component",
+      "type": "grid-atom",
+      "path": "grid-test",
+      "signal": true,
+      "transmitting": true
+    },
+    {
+      "id": 1790380405632,
+      "name": "grid-test-1",
+      "title": "grid-test-1",
+      "description": "asdfasdf",
+      "type": "grid-atom",
+      "path": "grid-test-1",
+      "signal": true,
+      "transmitting": true
+    }
+  ],
+  "indexed": true,
+  "date_added": "2026-09-25T23:53:25.654Z",
+  "path": "L:\\RAB.World\\world-viewer\\src\\atoms\\grids",
+  "project_name": "world-viewer"
+}

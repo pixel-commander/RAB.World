@@ -1,0 +1,40 @@
+{
+  "status": "created",
+  "signal": {
+    "id": 1790456557654,
+    "name": "dark",
+    "title": "Dark Colors",
+    "description": "Dark semantic color, elevation and code syntax token values.",
+    "type": "theme",
+    "date_created": 1790456557654,
+    "date_modified": 1790456557654,
+    "settings": [],
+    "transmitting": true,
+    "signal": true,
+    "path": "./colors.css"
+  },
+  "folder": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\themes\\colors\\dark",
+  "file": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\themes\\colors\\dark\\settings.json",
+  "verification": {
+    "status": "verified",
+    "verification": "created-files-match-approved-plan-sha256",
+    "destination": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\themes\\colors\\dark",
+    "files": [
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\themes\\colors\\dark\\contract.json",
+        "bytes": 219,
+        "sha256": "a4818744fa24375c9caa8776f271080d67760479d7d51e3f3e39ad4959b81331"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\themes\\colors\\dark\\README.txt",
+        "bytes": 842,
+        "sha256": "69c7b2b45609378e18137cec302deafc7ed6ffeb2d1027b06b6fbf3a21294fbd"
+      },
+      {
+        "path": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\themes\\colors\\dark\\settings.json",
+        "bytes": 323,
+        "sha256": "90bad9b83967150c837686f6d8e047c1d02011c75a1ca78cbf76fbaaa5e8e85c"
+      }
+    ]
+  }
+}

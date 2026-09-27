@@ -5,6 +5,13 @@
   "description": "Adds a native DOM element inside a resolved component target. Defaults to adding a div inside the highest-level rendered DOM element and can target one or all matching data-area or element nodes while optionally assigning a class.",
   "settings": [
     {
+      "type": "folder",
+      "name": "root",
+      "title": "Source Root",
+      "description": "Optional explicit project/source boundary for unregistered folders.",
+      "required": false
+    },
+    {
       "type": "text",
       "name": "component",
       "title": "Component",
