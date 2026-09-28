@@ -1,4 +1,5 @@
-import React, { FormEvent, FormEventHandler, useRef, ReactNode } from 'react'
+import type { JSX } from 'react';
+import React, { type FormEvent, type FormEventHandler, useRef, type ReactNode } from 'react'
 import { StatelessInputGroup } from './StatelessInputGroup'
 import type { StatelessFormProps } from './StatelessForm.types'
 import './css/stateless-form.css'

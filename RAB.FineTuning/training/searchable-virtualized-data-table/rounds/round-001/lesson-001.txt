@@ -1,0 +1,44 @@
+LESSON 1: USE THE SHARED SHELL GRID
+=================================
+Status: implemented; static checks passed; visual check pending; training draft.
+
+PROBLEM
+The wrapper defines its own row layout instead of selecting the shared shell.
+Adding the attribute alone would leave competing layout declarations.
+
+BEFORE - src/DataTable.tsx
+<section className={`data-table-wrapper ${className}`}>
+
+BEFORE - src/DataTable.css (complete wrapper rule)
+.data-table-wrapper { display: grid; height: 100%; min-height: 0; overflow: hidden; grid-template-rows: auto 1fr auto; gap: .75rem; color: #334155; font-family: ui-sans-serif, system-ui, sans-serif; }
+
+REFERENCE - css/grid.css (display and shell rules; excerpt)
+@layer grid {
+  [data-grid] { display: grid; }
+  [data-grid='shell'] {
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    grid-template-areas: 'header' 'main' 'footer';
+  }
+}
+The shared file also maps direct header/main/footer data-area children to their
+named grid areas. Those markers already exist in the component and were preserved.
+
+AFTER - src/DataTable.tsx
+<section data-grid="shell" className={`data-table-wrapper ${className}`}>
+
+AFTER - src/DataTable.css (complete wrapper rule)
+.data-table-wrapper { height: 100%; min-height: 0; overflow: hidden; gap: .75rem; color: #334155; font-family: ui-sans-serif, system-ui, sans-serif; }
+
+REASON
+Select shared layout through data-grid="shell". Let grid.css own display and row
+tracks; retain unrelated wrapper declarations and the supplied className.
+The shared center row is minmax(0, 1fr), not a literal copy of the old 1fr row.
+
+VERIFICATION
+Exact scoped diff checked; shared stylesheet and original ZIP unchanged.
+Browser/layout behavior has not been tested. This is not training approval.
+
+EVIDENCE
+changes/change-003/completed/changes.json
+changes/change-003/completed/change.patch
+changes/change-003/completed/verification.json

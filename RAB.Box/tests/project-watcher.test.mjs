@@ -11,6 +11,9 @@ import { createProjectWatcher, getProjectWatcher } from '../tools/base/watch/wat
 import { inventoryManifestPath, readInventory, updateInventory } from '../tools/base/_inventory.mjs';
 import { createToolHouse } from '../bridge/tool-house.mjs';
 import { startServer } from '../server.mjs';
+import { controlWatcher } from '../scripts/watcher.mjs';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const read = file => readFile(file, 'utf8').then(JSON.parse);
@@ -42,6 +45,54 @@ const until = async (operation, check, label) => {
   }
   assert.fail(label + ': ' + JSON.stringify(result ?? { error: error?.message }));
 };
+
+test('start/stop/restart commands control the server watcher without losing registrations', async t => {
+  const f = await fixture();
+  await f.item('src/components/Card');
+  const initial = createProjectWatcher({ rabHome: f.memory.rabHome });
+  const first = await initial.add(f.context, { type: 'components', debounce_ms: 0, reconcile_ms: 250 });
+  await initial.close();
+  const appRoot = path.join(f.temp, 'control-app');
+  for (const folder of ['tools/base/watch', 'language']) await mkdir(path.join(appRoot, folder), { recursive: true });
+  for (const action of ['start', 'stop', 'restart']) {
+    const dir = path.join(appRoot, 'tools/base/watch', action);
+    await mkdir(dir);
+    await writeFile(path.join(dir, 'settings.json'), await readFile(path.join(root, 'tools/base/watch', action, 'settings.json')));
+    await writeFile(path.join(dir, action + '.mjs'), 'export {run} from ' + JSON.stringify(pathToFileURL(path.join(root, 'tools/base/watch', action, action + '.mjs')).href) + ';\n');
+  }
+  await put(path.join(appRoot, 'HOST.json'), { project: 'not-selected', runs: 'runs', interface: 'index.html', language: 'language' });
+  await writeFile(path.join(appRoot, 'index.html'), '<!doctype html><title>Watcher controls</title>');
+  const app = await startServer({ root: appRoot, port: 0, rabHome: f.memory.rabHome });
+  t.after(() => app.close());
+  const listener = getProjectWatcher({ rabHome: f.memory.rabHome });
+  const invoke = async action => {
+    if (process.platform !== 'win32') return controlWatcher(action, app.origin);
+    const { stdout } = await promisify(execFile)('cmd.exe', ['/d', '/c', path.join(root, 'tools/base/watch', action.toUpperCase() + '.cmd'), app.origin], { windowsHide: true });
+    return JSON.parse(stdout);
+  };
+  const manifest = await inventoryManifestPath(f.context, 'components');
+  const saved = path.join(f.memory.paths(f.context.project).project, 'listener.json');
+  const beforeRegistration = await readFile(saved, 'utf8');
+  assert.equal((await invoke('stop')).status, 'stopped');
+  assert.equal(listener.stopped, true);
+  const frozen = await readFile(manifest, 'utf8');
+  await f.item('src/components/WhileStopped');
+  await delay(350);
+  assert.equal(await readFile(manifest, 'utf8'), frozen);
+  assert.equal(await readFile(saved, 'utf8'), beforeRegistration);
+  assert.equal((await listener.add(f.context, { type: 'pages' })).watch.status, 'stopped');
+  assert.equal((await invoke('start')).status, 'started');
+  assert.equal((await read(manifest)).meta.count, 2);
+  assert.equal((await listener.list(f.context)).items.find(item => item.type === 'components').id, first.watch.id);
+  assert.equal((await invoke('restart')).action, 'restart');
+  assert.equal((await invoke('start')).count, 2);
+  assert.equal(getProjectWatcher({ rabHome: f.memory.rabHome }), listener);
+  await Promise.all([controlWatcher('restart', app.origin), controlWatcher('stop', app.origin)]);
+  // Final explicit stop establishes an observable quiescent state.
+  await controlWatcher('stop', app.origin);
+  assert.equal((await listener.list(f.context)).items.every(item => item.status === 'stopped'), true);
+  await assert.rejects(controlWatcher('invalid', app.origin), /Usage/);
+});
 
 test('all roots index the same source descriptor, preserve IDs, honor false and never invent identities', async () => {
   const f = await fixture();

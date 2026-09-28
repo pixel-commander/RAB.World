@@ -1,0 +1,165 @@
+@layer grid {
+  [data-grid] { display: grid; }
+  :where([data-grid], [data-cols], [data-rows]) {
+    display: grid;
+   }
+
+  [data-cols]:not([data-grid]) {
+    grid-template-columns: repeat(var(--grid-column-count), minmax(0, 1fr));
+  }
+
+  [data-rows]:not([data-grid]) {
+    grid-template-rows: repeat(var(--grid-row-count), minmax(0, 1fr));
+  }
+
+  [data-cols='1'] { --grid-column-count: 1; }
+  [data-cols='2'] { --grid-column-count: 2; }
+  [data-cols='3'] { --grid-column-count: 3; }
+  [data-cols='4'] { --grid-column-count: 4; }
+  [data-cols='5'] { --grid-column-count: 5; }
+  [data-cols='6'] { --grid-column-count: 6; }
+  [data-cols='7'] { --grid-column-count: 7; }
+  [data-cols='8'] { --grid-column-count: 8; }
+  [data-cols='9'] { --grid-column-count: 9; }
+  [data-cols='10'] { --grid-column-count: 10; }
+  [data-cols='11'] { --grid-column-count: 11; }
+  [data-cols='12'] { --grid-column-count: 12; }
+
+  [data-rows='1'] { --grid-row-count: 1; }
+  [data-rows='2'] { --grid-row-count: 2; }
+  [data-rows='3'] { --grid-row-count: 3; }
+  [data-rows='4'] { --grid-row-count: 4; }
+  [data-rows='5'] { --grid-row-count: 5; }
+  [data-rows='6'] { --grid-row-count: 6; }
+  [data-rows='7'] { --grid-row-count: 7; }
+  [data-rows='8'] { --grid-row-count: 8; }
+  [data-rows='9'] { --grid-row-count: 9; }
+  [data-rows='10'] { --grid-row-count: 10; }
+  [data-rows='11'] { --grid-row-count: 11; }
+  [data-rows='12'] { --grid-row-count: 12; }
+
+  [data-grid='side-left'] {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas: 'side main';
+  }
+
+  [data-grid='side-right'] {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: 'main side';
+  }
+
+  [data-grid='header-main'] {
+    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-areas: 'header' 'main';
+  }
+
+  [data-grid='main-footer'] {
+    grid-template-rows: minmax(0, 1fr) auto;
+    grid-template-areas: 'main' 'footer';
+  }
+
+  [data-grid='shell'] {
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    grid-template-areas: 'header' 'main' 'footer';
+  }
+
+  [data-grid='side-cols'] {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: 'left main right';
+  }
+
+  /* G3 for every column topology in ONE seat: implicit auto rows defeat
+     cell scroll, so the single row is guarded here — never per page.
+     The tablet block below sets rows explicitly, so it composes. */
+  :is([data-grid='side-left'], [data-grid='side-right'], [data-grid='side-cols']) {
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  [data-grid='holy-grail'] {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      'header header header'
+      'left main right'
+      'footer footer footer';
+  }
+
+  /* tablet: the side topologies stack — rails become bands around main.
+     Rearrangement lives HERE per G2; components never fork topology (G6).
+     side-right and holy-grail carry no narrow variants yet. */
+  @media (max-width: 768px) {
+    [data-grid='side-left'] {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto minmax(0, 1fr);
+      grid-template-areas:
+        'side'
+        'main';
+    }
+
+    [data-grid='side-cols'] {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      grid-template-areas:
+        'left'
+        'main'
+        'right';
+    }
+  }
+
+  [data-area] {
+    display: grid;
+    min-inline-size: 0;
+    min-block-size: 0;
+  }
+
+  :is([data-grid='side-left'], [data-grid='side-right']) > [data-area='side'] {
+    grid-area: side;
+  }
+
+  :is([data-grid='side-left'], [data-grid='side-right']) > [data-area='main'] {
+    grid-area: main;
+  }
+
+  :is([data-grid='header-main'], [data-grid='shell'], [data-grid='holy-grail'])
+    > [data-area='header'] {
+    grid-area: header;
+  }
+
+  :is(
+      [data-grid='header-main'],
+      [data-grid='main-footer'],
+      [data-grid='shell'],
+      [data-grid='side-cols'],
+      [data-grid='holy-grail']
+    )
+    > [data-area='main'] {
+    grid-area: main;
+  }
+
+  :is([data-grid='main-footer'], [data-grid='shell'], [data-grid='holy-grail'])
+    > [data-area='footer'] {
+    grid-area: footer;
+  }
+
+  :is([data-grid='side-cols'], [data-grid='holy-grail']) > [data-area='left'] {
+    grid-area: left;
+  }
+
+  :is([data-grid='side-cols'], [data-grid='holy-grail']) > [data-area='right'] {
+    grid-area: right;
+  }
+
+  [data-gap='control'] { gap: var(--space-sm); }
+  [data-gap='content'] { gap: var(--space-md); }
+  [data-gap='container'] { gap: var(--space-lg); }
+  [data-gap='section'] { gap: var(--space-xl); }
+}
+
+
+@layer overrides {
+  /* the C1 cell utilities: stacked in markup they must win over
+     component structure — the overrides layer is their lawful seat (T2),
+     and bare selectors keep them honest anywhere, not only in the shell */
+  .pad { padding: var(--space-md); }
+  .scroll { overflow: auto; }
+}

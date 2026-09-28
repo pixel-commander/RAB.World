@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "press-record",
+  "id": "",
+  "status": "planned",
+  "base_model": {
+    "name": "",
+    "revision": "",
+    "checkpoint_sha256": null
+  },
+  "dataset": {
+    "approved_lesson_ids": [],
+    "manifest_path": "",
+    "manifest_sha256": "",
+    "export_path": "",
+    "export_sha256": ""
+  },
+  "formatting": {
+    "adapter_name": "",
+    "adapter_revision": "",
+    "chat_template_sha256": "",
+    "loss_masking": "",
+    "truncation_policy": "reject-or-explicitly-reviewed"
+  },
+  "training": {
+    "objective": "sft",
+    "parameter_update_method": null,
+    "hyperparameters": {},
+    "seed": null,
+    "code_revision": "",
+    "environment_record": ""
+  },
+  "evaluation": {
+    "suite_manifest": "",
+    "suite_sha256": "",
+    "inference_settings": {},
+    "repeats": null,
+    "before": {
+      "checkpoint": "",
+      "raw_outputs": "",
+      "scores": ""
+    },
+    "after": {
+      "checkpoint": "",
+      "raw_outputs": "",
+      "scores": ""
+    },
+    "judge": null,
+    "human_review": null
+  },
+  "results": {
+    "absolute_scores": null,
+    "improvement": null,
+    "regressions": [],
+    "limitations": []
+  },
+  "artifacts": []
+}

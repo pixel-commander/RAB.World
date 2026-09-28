@@ -1,0 +1,14 @@
+{
+  "title": "action-nav-alt",
+  "name": "action-nav-alt",
+  "description": "Navigation action atom.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\action-nav-alt",
+  "type": "action-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304148900,
+  "indexed": true
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "kind": "held-out-evaluation",
+  "id": "",
+  "status": "draft",
+  "split": "test",
+  "skill_id": "",
+  "task_family_id": "",
+  "messages": [
+    {
+      "role": "user",
+      "content": ""
+    }
+  ],
+  "context_files": [],
+  "expected_behavior": "",
+  "boundary_case": "",
+  "grading": {
+    "format_checks": [],
+    "behavior_checks": [],
+    "reviewer_rubric": []
+  },
+  "reference_answer": null,
+  "contamination_review": {
+    "status": "pending",
+    "related_training_ids": [],
+    "notes": ""
+  },
+  "human_review": null
+}

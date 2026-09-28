@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "turn": 7,
+  "speaker": "assistant",
+  "reply_to": 6,
+  "recorded_at": "2026-09-23T11:53:51.175984+00:00",
+  "message": "Done. The working copy now matches your edited file exactly.\n\nYour added import is recorded as `change-001`, with before/after versions, a diff, and your confirmation. The ZIP baseline remains intact.",
+  "code_blocks": [],
+  "status": "captured"
+}

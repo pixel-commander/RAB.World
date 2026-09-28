@@ -1,0 +1,17 @@
+{
+  "id": 1790275772878,
+  "name": "restart",
+  "title": "Restart watcher",
+  "description": "Stop the watcher and reload all saved path registrations.",
+  "path": "tools/base/watch/restart",
+  "type": "tool",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "domain": "base",
+    "operation": "update",
+    "target_type": "listener",
+    "authority": "write"
+  },
+  "indexed": true
+}

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "check": "Copied bytes match the requested source",
+      "result": "passed"
+    },
+    {
+      "check": "Existing ../css/grid.css import resolves relative to src/DataTable.tsx",
+      "result": "passed"
+    }
+  ],
+  "limitations": [
+    "No browser or runtime test performed.",
+    "data-grid=\"shell\" has not yet been added to the wrapper."
+  ]
+}

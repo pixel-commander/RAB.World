@@ -1,0 +1,17 @@
+{
+  "name": "actions",
+  "id": 1790304758508,
+  "title": "actions",
+  "description": "Action atoms",
+  "date_added": "2026-09-25T02:52:38.511Z",
+  "path": "L:\\RAB.World\\RAB.React\\src\\atoms\\actions",
+  "world": 1790283925818,
+  "types": [
+    "ui"
+  ],
+  "beacon": "on",
+  "reach": [
+    "world",
+    "project"
+  ]
+}

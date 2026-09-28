@@ -2,7 +2,7 @@ import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { randomBytes } from 'node:crypto';
+import { randomBytes, createHash } from 'node:crypto';
 import { spawn } from 'node:child_process';
 import { createWorkbench } from './bridge/service.mjs';
 import { userRabHome, defaultRabHome } from './bridge/rab-memory.mjs';
@@ -11,6 +11,7 @@ import { createLanguageLibrary } from './bridge/language.mjs';
 import { insist, containedPath } from './engine/src/core.mjs';
 
 const defaultRoot = path.dirname(fileURLToPath(import.meta.url));
+const digest = text => createHash('sha256').update(text).digest('base64');
 const readBody = async req => {
   insist(req.headers['content-type']?.split(';')[0] === 'application/json', 'BAD_REQUEST', 'Use application/json.');
   let bytes = 0;
@@ -49,7 +50,11 @@ export const startServer = async ({ root = defaultRoot, port = 4318, rabHome } =
       if (req.headers['sec-fetch-site']) insist(['same-origin','none'].includes(req.headers['sec-fetch-site']), 'BAD_ORIGIN', 'Open the workbench directly.');
       const url = new URL(req.url, origin);
       if (req.method === 'GET' && ['/', '/magic-box/', '/magic-box/index.html'].includes(url.pathname)) {
-        const html = await readFile(interfaceFile, 'utf8');
+        // HTML parsing normalizes CRLF and CR to LF before CSP checks inline content.
+        const html = (await readFile(interfaceFile, 'utf8')).replace(/\r\n?/g, '\n');
+        const scripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => `'sha256-${digest(m[1])}'`).join(' ');
+        const styles = [...html.matchAll(/<style>([\s\S]*?)<\/style>/g)].map(m => `'sha256-${digest(m[1])}'`).join(' ');
+        res.setHeader('Content-Security-Policy', `default-src 'none'; script-src 'self' ${scripts}; style-src ${styles}; connect-src 'self'; img-src 'self' data:; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'none'`);
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' }); res.end(html); return;
       }
       const uiAssets=new Map([

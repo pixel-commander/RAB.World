@@ -1,0 +1,43 @@
+{
+  "version": "manifest/v1",
+  "id": 1790304759777,
+  "name": "grids",
+  "title": "grids",
+  "description": "Grid atoms",
+  "date_added": "2026-09-25T02:52:39.781Z",
+  "items": [
+    {
+      "id": null,
+      "name": "grid-dashboard",
+      "title": "grid-dashboard",
+      "description": "6-col dashboard shell: main-nav band, side-nav | left | tabs-nav | main | right, footer",
+      "kind": "grid-atom",
+      "path": "grid-dashboard"
+    },
+    {
+      "id": null,
+      "name": "grid-dashboard-alt",
+      "title": "grid-dashboard-alt",
+      "description": "grid-dashboard without the tabs-nav band (that row left empty)",
+      "kind": "grid-atom",
+      "path": "grid-dashboard-alt"
+    },
+    {
+      "id": null,
+      "name": "grid-test",
+      "title": "grid-test",
+      "description": "container grid for component",
+      "kind": "grid-atom",
+      "path": "grid-test"
+    },
+    {
+      "id": null,
+      "name": "grid-test-1",
+      "title": "grid-test-1",
+      "description": "asdfasdf",
+      "kind": "grid-atom",
+      "path": "grid-test-1"
+    }
+  ],
+  "indexed": true
+}

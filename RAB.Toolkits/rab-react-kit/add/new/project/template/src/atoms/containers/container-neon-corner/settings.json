@@ -1,0 +1,14 @@
+{
+  "title": "container-neon-corner",
+  "name": "container-neon-corner",
+  "description": "Neon chassis corner container atom.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\container-neon-corner",
+  "type": "container-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304150011,
+  "indexed": true
+}

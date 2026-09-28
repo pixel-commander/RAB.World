@@ -1,0 +1,11 @@
+{
+  "version": "tool-contract/v1",
+  "source": {
+    "kind": "template",
+    "description": "Site shell where project pages and dashboards render."
+  },
+  "settings": [],
+  "result": {
+    "type": "site shell"
+  }
+}

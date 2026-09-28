@@ -1,4 +1,5 @@
-import React, { ReactNode, useRef } from 'react';
+import type { JSX } from 'react';
+import React, { type ReactNode, useRef } from 'react';
 import type { StatelessInputGroupProps, StatelessInputGroupHandlerProps } from './StatelessForm.types';
 
 interface Props extends StatelessInputGroupProps {

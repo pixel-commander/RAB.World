@@ -12,5 +12,6 @@
   },
   "writes": [
     "Adjacent settings.json required row IDs"
-  ]
+  ],
+  "version": "tool-contract/v1"
 }

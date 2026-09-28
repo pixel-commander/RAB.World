@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "settings": [],
+  "indexed": false,
+  "kind": "code-review-session",
+  "name": "searchable-virtualized-data-table",
+  "title": "Searchable Virtualized Data Table",
+  "description": "One package review recorded one round at a time for future training presses.",
+  "meta": {
+    "kind": "code-review-session"
+  },
+  "original_source": {
+    "path": "L:\\code-training-files\\code-reviews\\react\\searchable-virtualized-data-table",
+    "access": "read-only",
+    "storage": "external-reference"
+  },
+  "rounds": {
+    "path": "rounds",
+    "folder_pattern": "round-NNN",
+    "first_number": 1,
+    "number_padding": 3,
+    "stamp": "model-kit/training/code-reviews/new-training-round"
+  },
+  "created_at": "2026-09-23T11:24:26.325Z",
+  "id": 1790162666328
+}

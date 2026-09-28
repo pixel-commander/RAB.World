@@ -1,0 +1,20 @@
+{
+  "name": "change-002",
+  "title": "Add the user-selected shared grid stylesheet so the existing DataTable import resolves",
+  "description": "Add the user-selected shared grid stylesheet so the existing DataTable import resolves",
+  "settings": [],
+  "meta": {
+    "kind": "review-change"
+  },
+  "indexed": false,
+  "schema_version": 1,
+  "session_id": 1790162666328,
+  "round": "round-001",
+  "source_turns": [
+    "turns/turn-011.json"
+  ],
+  "created_at": "2026-09-23T11:55:32.709Z",
+  "before": "rounds/round-001/changes/change-001/completed/manifest.json",
+  "status": "pending",
+  "id": 1790164532711
+}

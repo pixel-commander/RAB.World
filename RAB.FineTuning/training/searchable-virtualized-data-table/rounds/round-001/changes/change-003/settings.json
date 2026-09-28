@@ -1,0 +1,18 @@
+{
+  "name": "change-003",
+  "title": "Use the shared shell grid in JSX and remove its duplicate layout declarations from the component wrapper",
+  "description": "Use the shared shell grid in JSX and remove its duplicate layout declarations from the component wrapper",
+  "settings": [],
+  "meta": {
+    "kind": "review-change"
+  },
+  "indexed": false,
+  "schema_version": 1,
+  "session_id": 1790162666328,
+  "round": "round-001",
+  "source_turns": [],
+  "created_at": "2026-09-23T11:58:11.179Z",
+  "before": "rounds/round-001/changes/change-002/completed/manifest.json",
+  "status": "pending",
+  "id": 1790164691181
+}

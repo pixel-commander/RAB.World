@@ -1,0 +1,14 @@
+{
+  "title": "action-ghost",
+  "name": "action-ghost",
+  "description": "Muted action atom.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\action-ghost",
+  "type": "action-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304148714,
+  "indexed": true
+}

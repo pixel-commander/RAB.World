@@ -1,0 +1,17 @@
+{
+  "name": "grids",
+  "id": 1790304759599,
+  "title": "grids",
+  "description": "Grid atoms",
+  "date_added": "2026-09-25T02:52:39.603Z",
+  "path": "L:\\RAB.World\\RAB.React\\src\\atoms\\grids",
+  "world": 1790283925818,
+  "types": [
+    "ui"
+  ],
+  "beacon": "on",
+  "reach": [
+    "world",
+    "project"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "draft",
+  "source_turns": [],
+  "problem": "Wrapper duplicated shared shell layout.",
+  "direction": "Use data-grid=\"shell\" and remove duplicate local display/grid-template-rows.",
+  "outcome": "Implemented in DataTable.tsx and DataTable.css.",
+  "lesson": "Select the existing shared layout; remove the corresponding component-owned duplicate.",
+  "scope": "",
+  "boundary": "",
+  "reinforces": [],
+  "verification": {
+    "status": "passed",
+    "evidence": [
+      "changes/change-003/completed/verification.json"
+    ],
+    "limitations": [
+      "Static only; rendered layout pending."
+    ]
+  },
+  "approval": null,
+  "source_changes": [
+    "changes/change-003"
+  ]
+}

@@ -6,7 +6,7 @@ import { makeSignalSettings } from '../bridge/rab-node.mjs';
 export const stampScaffoldRecords = async ({ files, target, memory, projectName }) => {
   const records = new Map();
   for (const file of files) {
-    if (file.path.endsWith('.json') && file.text !== undefined) {
+    if (!file.path.replaceAll('\\', '/').split('/').includes('template') && file.path.endsWith('.json') && file.text !== undefined) {
       const value = JSON.parse(file.text);
       if (value?._scaffold === true || (path.posix.basename(file.path) === 'settings.json' && typeof value?.signal === 'boolean')) records.set(file.path, value);
     }

@@ -1,0 +1,27 @@
+{
+  "version": "manifest/v1",
+  "id": 1790304759424,
+  "name": "effects",
+  "title": "effects",
+  "description": "Effect atoms",
+  "date_added": "2026-09-25T02:52:39.428Z",
+  "items": [
+    {
+      "id": null,
+      "name": "effect-float",
+      "title": "effect-float",
+      "description": "Reusable raised depth treatment backed by the theme floating elevation token.",
+      "kind": "effect-atom",
+      "path": "effect-float"
+    },
+    {
+      "id": null,
+      "name": "effect-inset",
+      "title": "effect-inset",
+      "description": "Reusable recessed depth treatment backed by the theme inset elevation token.",
+      "kind": "effect-atom",
+      "path": "effect-inset"
+    }
+  ],
+  "indexed": true
+}

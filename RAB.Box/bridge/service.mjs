@@ -366,6 +366,9 @@ export const createWorkbench = ({ root, rabHome }) => {
     insist(typeof body.tool === 'string', 'BAD_REQUEST', 'Supply tool as domain/name.');
     if(body.session_id!==undefined)assertNumericId(body.session_id);
     const supplied=body.context??{}; checkKeys(supplied,['domain']);
+    if (['base/watch/start', 'base/watch/stop', 'base/watch/restart'].includes(body.tool)) {
+      return toolHouse.runTool({ key: body.tool, options: body.options ?? {}, context: { rab_home: memory.rabHome } });
+    }
     const cfg=await config(body.session_id);
     const project={id:cfg.project.id,name:cfg.project.manifest?.project?.name??cfg.project.id,root:cfg.projectRoot};
     const bag=body.session_id?(await memory.loadSession(project,body.session_id)).bag:undefined;

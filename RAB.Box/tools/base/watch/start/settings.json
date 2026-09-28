@@ -1,0 +1,17 @@
+{
+  "id": 1790275772853,
+  "name": "start",
+  "title": "Start watcher",
+  "description": "Start monitoring saved paths for all projects in this Box instance.",
+  "path": "tools/base/watch/start",
+  "type": "tool",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "domain": "base",
+    "operation": "update",
+    "target_type": "listener",
+    "authority": "write"
+  },
+  "indexed": true
+}

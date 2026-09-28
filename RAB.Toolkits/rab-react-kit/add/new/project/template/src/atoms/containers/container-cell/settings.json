@@ -1,0 +1,14 @@
+{
+  "title": "container-cell",
+  "name": "container-cell",
+  "description": "Neutral cell surface container atom.",
+  "path": "L:\\RAB.World\\RAB.React\\signals\\atoms\\container-cell",
+  "type": "container-atom",
+  "transmitting": true,
+  "settings": [],
+  "meta": {
+    "kind": "signal"
+  },
+  "id": 1790304149274,
+  "indexed": true
+}

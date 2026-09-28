@@ -1,4 +1,5 @@
-import { FormEvent, ChangeEvent, FocusEvent, ReactNode } from "react";
+import type { JSX } from 'react';
+import type { FormEvent, ChangeEvent, FocusEvent, ReactNode } from "react";
 
 export interface InputGroupBaseProps {
   tabIndex?: number;

@@ -1,0 +1,7 @@
+{
+  "source_turns": [
+    "turns/turn-016.json",
+    "turns/turn-017.json"
+  ],
+  "scope": "Apply the proposed shared-shell correction; no training approval inferred."
+}

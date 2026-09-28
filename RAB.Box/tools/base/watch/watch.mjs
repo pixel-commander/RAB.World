@@ -30,6 +30,7 @@ export const createProjectWatcher = ({ rabHome, watchFactory = watch } = {}) => 
   const memory = createRabMemory({ rabHome });
   const active = new Map();
   let closed = false;
+  let stopped = false;
   const configFile = async context => {
     await memory.readProjectSettings(context.project);
     return containedPath(memory.rabHome, path.relative(memory.rabHome, path.join(memory.paths(context.project).project, 'listener.json')), { allowMissing: true });
@@ -72,7 +73,7 @@ export const createProjectWatcher = ({ rabHome, watchFactory = watch } = {}) => 
     if (active.get(state.key) === state) active.delete(state.key);
   };
   const schedule = state => {
-    if (closed || state.stopped) return;
+    if (closed || stopped || state.stopped) return;
     state.dirty = true;
     if (state.running || state.timer) return;
     state.timer = setTimeout(() => { state.timer = null; void refresh(state); }, state.registration.debounce_ms);
@@ -103,12 +104,13 @@ export const createProjectWatcher = ({ rabHome, watchFactory = watch } = {}) => 
     }
   };
   const refresh = state => {
-    if (closed || state.stopped) return Promise.resolve();
+    if (closed || stopped || state.stopped) return Promise.resolve();
     if (state.running) { state.dirty = true; return state.running; }
     state.dirty = false;
     state.running = (async () => {
       try {
         const saved = (await readConfig(state.context)).paths[state.registration.type];
+        if (closed || stopped || state.stopped) return;
         if (!saved) { dispose(state); return; }
         if (JSON.stringify(saved) !== JSON.stringify(state.registration)) {
           state.registration = saved;
@@ -116,6 +118,7 @@ export const createProjectWatcher = ({ rabHome, watchFactory = watch } = {}) => 
           state.interval = setInterval(() => schedule(state), saved.reconcile_ms); state.interval.unref?.();
         }
         const scope = await resolveInventory(state.context, saved.type);
+        if (closed || stopped || state.stopped) return;
         if (scope.status !== 'configured') {
           state.rootWatch?.close(); state.rootWatch = null;
           state.status = scope.status; state.error = { code: scope.status, message: scope.message }; return;
@@ -181,7 +184,7 @@ export const createProjectWatcher = ({ rabHome, watchFactory = watch } = {}) => 
       data.paths[options.type] = entry;
       return entry;
     });
-    return { status: 'registered', watch: await install(context, item) };
+    return { status: 'registered', watch: stopped ? { ...item, project_id: context.project.id, status: 'stopped' } : await install(context, item) };
   };
   const remove = async (context, { type }) => {
     validateType(type);
@@ -200,21 +203,45 @@ export const createProjectWatcher = ({ rabHome, watchFactory = watch } = {}) => 
   };
   const restore = async () => {
     insist(!closed, 'LISTENER_CLOSED', 'Listener has been closed.');
+    if (stopped) return { items: [], unavailable: [] };
     const projects = await memory.listProjects(), items = [], unavailable = [...projects.unavailable];
     for (const project of projects.items) {
       const context = { rab_home: memory.rabHome, project };
       try {
-        for (const item of Object.values((await readConfig(context)).paths)) items.push(await install(context, item));
+        for (const item of Object.values((await readConfig(context)).paths)) {
+          const existing = active.get(keyFor(context, item.type));
+          const entry = existing ? view(existing) : await install(context, item);
+          items.push(entry);
+          if (!['watching', 'polling'].includes(entry.status)) unavailable.push({ project_id: project.id, type: item.type, ...(entry.error ?? { code: entry.status }) });
+        }
       } catch (error) { unavailable.push({ project_id: project.id, ...errorInfo(error) }); }
     }
     return { items, unavailable };
   };
-  const close = async () => {
-    closed = true;
+  const stop = async () => {
+    insist(!closed, 'LISTENER_CLOSED', 'Listener has been closed.');
+    stopped = true;
     const states = [...active.values()]; states.forEach(dispose);
     await Promise.all(states.map(state => state.running));
+    return { status: 'stopped', count: states.length, items: states.map(state => ({ ...view(state), status: 'stopped' })) };
   };
-  return Object.freeze({ add, remove, list, restore, close, get closed() { return closed; } });
+  const start = async () => {
+    insist(!closed, 'LISTENER_CLOSED', 'Listener has been closed.');
+    stopped = false;
+    const result = await restore();
+    return { status: result.unavailable.length ? 'partial' : 'started', count: result.items.length, ...result };
+  };
+  const restart = async () => { await stop(); return { ...(await start()), action: 'restart' }; };
+  const close = async () => { if (!closed) { await stop(); closed = true; } };
+  // Serialize UI commands and registration changes through the same owner.
+  let pending = Promise.resolve();
+  const serialize = fn => (...args) => {
+    const operation = pending.then(() => fn(...args));
+    pending = operation.catch(() => {});
+    return operation;
+  };
+  const controls = Object.fromEntries(Object.entries({ add, remove, list, restore, start, stop, restart, close }).map(([name, fn]) => [name, serialize(fn)]));
+  return Object.freeze({ ...controls, get closed() { return closed; }, get stopped() { return stopped; } });
 };
 
 export const getProjectWatcher = ({ rabHome } = {}) => {
@@ -225,12 +252,19 @@ export const getProjectWatcher = ({ rabHome } = {}) => {
 };
 
 export const run = async ({ options, context, tool }) => {
+  const action = tool.key.split('/').at(-1);
+  if (['start', 'stop', 'restart'].includes(action)) return runWatcherControl(action, { context });
   if (!context?.project?.root || !context.rab_home) throw Object.assign(new Error('Select a project first.'), { code: 'PROJECT_CONTEXT_REQUIRED' });
   const listener = getProjectWatcher({ rabHome: context.rab_home });
-  const action = tool.key.split('/').at(-1);
   if (action === 'add') return listener.add(context, options);
   if (action === 'remove') return listener.remove(context, options);
   if (action === 'list') return listener.list(context);
   throw Object.assign(new Error('Unknown listener control.'), { code: 'BAD_TOOL' });
+};
+
+export const runWatcherControl = async (action, { context } = {}) => {
+  insist(['start', 'stop', 'restart'].includes(action), 'BAD_TOOL', 'Unknown watcher control.');
+  insist(context?.rab_home, 'STORAGE_CONTEXT_REQUIRED', 'The running Box storage context is required.');
+  return getProjectWatcher({ rabHome: context.rab_home })[action]();
 };
 

@@ -13,5 +13,6 @@
   },
   "writes": [
     "Adjacent settings.json required array"
-  ]
+  ],
+  "version": "tool-contract/v1"
 }

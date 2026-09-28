@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-23T11:36:24.149594+00:00",
+  "source_archive": "C:\\RAB.World\\RAB.FineTuning\\sources\\react\\searchable-virtualized-data-table\\searchable-virtualized-data-table.zip",
+  "source_archive_sha256": "fa013ccbca9177531d7ed4300f6c76e53193951294a9f986a00be2653bbedd85",
+  "working_copy": "C:\\RAB.World\\RAB.FineTuning\\working\\react\\searchable-virtualized-data-table",
+  "files": [
+    {
+      "path": "src/DataTable.css",
+      "bytes": 3300,
+      "sha256": "35609ba90c04debdfa96e1aac647210955a65c26963e7589f7ac739f23fdd534"
+    },
+    {
+      "path": "src/DataTable.demo.tsx",
+      "bytes": 1175,
+      "sha256": "5f12957b72d511f94ec1cf0679e1a9c8340d44c0027580d742fda3cb74a584cc"
+    },
+    {
+      "path": "src/DataTable.tsx",
+      "bytes": 10088,
+      "sha256": "a72487f1af3ee1312a12a9e9247224b3935f24a473d27c42964f4316e81d8f31"
+    },
+    {
+      "path": "src/DataTable.types.ts",
+      "bytes": 2687,
+      "sha256": "897a73f78b589dd0b3a9ee6f6650530803ca0afa6c6dd86d2c75f68b7866f5ec"
+    },
+    {
+      "path": "src/index.ts",
+      "bytes": 211,
+      "sha256": "dd94db2f33b627a006154a138ef5ae1619b473049f9c280ef0df910375abe21d"
+    },
+    {
+      "path": "src/hooks/useDataTable.ts",
+      "bytes": 5975,
+      "sha256": "8298b4d99ab8227f9da1d2b2d1d509f9aed1d5ff1a66f9079449f2f28537b51b"
+    },
+    {
+      "path": "src/hooks/virtualize.ts",
+      "bytes": 910,
+      "sha256": "3111fbadead14e21ca2485e5d9ec1ce99a0a16913dbd71b79d2ec6c00ba3d5f2"
+    },
+    {
+      "path": "package.json",
+      "bytes": 165,
+      "sha256": "f893a9d870aca046546eaa0893af3088cc5c31cbc7ea717b6144e57d936ac356"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3052,
+      "sha256": "93baff36b96ebe8ba4b6cc7527dd6b7fe11ba28f494bb1bdd9eef7e99381d42b"
+    },
+    {
+      "path": "RULES.txt",
+      "bytes": 725,
+      "sha256": "1a6da6eaa3f5ab2d7479bd2089f29672e3f271178f6beeb709684da3242617ea"
+    }
+  ],
+  "verification": "Every extracted file matches its archive entry; original ZIP SHA-256 unchanged."
+}

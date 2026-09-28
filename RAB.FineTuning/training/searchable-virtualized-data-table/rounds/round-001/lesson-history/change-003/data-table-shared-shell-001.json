@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "data-table-shared-shell-001",
+  "kind": "skills",
+  "status": "draft",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Project requirement: use the shared grid.css shell layout through data-grid=\"shell\" instead of defining its auto / 1fr / auto layout in the component wrapper. Preserve the component class and supplied className.\n\nCurrent JSX:\n```tsx\n<section className={`data-table-wrapper ${className}`}>\n```\n\nCurrent component CSS includes:\n```css\n.data-table-wrapper {\n  display: grid;\n  grid-template-rows: auto 1fr auto;\n}\n```\n\nExplain the focused correction."
+    },
+    {
+      "role": "assistant",
+      "content": "Select the shared shell layout in the markup:\n\n```tsx\n<section data-grid=\"shell\" className={`data-table-wrapper ${className}`}>\n```\n\nThe shared grid system should own this layout. Retain the component class and supplied className for their remaining responsibilities. Once the shell definition is verified, remove the duplicate display: grid and grid-template-rows declarations from the component rule; preserve unrelated declarations. Adding the attribute alone would leave two owners for the same layout.\n\nVerify that grid.css is available, the shell selector applies, and the header/main/footer layout still behaves as intended. This change has not been applied or runtime-tested."
+    }
+  ],
+  "reason": "Use the project shared shell grid as the layout owner instead of duplicating its definition in component CSS.",
+  "source_ids": [
+    "review:searchable-virtualized-data-table:round-001:turn-008"
+  ],
+  "verification": "not_tested",
+  "approval": null
+}

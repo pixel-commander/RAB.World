@@ -1,0 +1,10 @@
+{
+  "source_path": "\\\\Desktop-t72isdi\\f\\rraabbiitt.com\\src\\themes\\layout\\grid.css",
+  "destination": "css/grid.css",
+  "sha256": "c40de91c65dcf8ea019ae3324a56cfc474b5c6057952b790680159f2c6ddebfc",
+  "source_turns": [
+    "turns/turn-011.json"
+  ],
+  "operation": "byte-for-byte copy",
+  "training_approval": null
+}

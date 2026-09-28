@@ -7,5 +7,6 @@
   "meta": {
     "kind": "toolkit",
     "domain": "world"
-  }
+  },
+  "scaffolds_root": "."
 }

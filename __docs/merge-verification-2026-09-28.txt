@@ -1,0 +1,25 @@
+RAB.World master reconciliation - 2026-09-28
+
+Combined work branch 60946c2 with master e4b81da without rewriting history.
+Preserved consolidated toolkit locations, current signal identities and UI.
+Restored world storage helpers, watcher lifecycle controls, server CSP and
+React build-output ignore rules. Retained intentional removal of old toolkit
+wrappers instead of reintroducing them through the squash-history conflict.
+
+Integration fixes: toolkit roots follow the consolidated layout; import-audit
+contracts declare their version; React type imports and source encoding build;
+the site-shell template has a signal contract. Nested templates retain their
+placeholder identities. Tests for restored code use the current layout.
+
+Verified: World Viewer production build; RAB.React production build;
+297 discoverable tools with zero unavailable; focused world/storage/watcher/
+CSP/signal tests; project beacon identity and scaffold-record tests.
+
+The complete Box suite is not green. A clean archive of the pre-merge commit
+60946c2 had 133 failures out of 723 tests, including missing mock-project
+fixtures, obsolete tool names and older contract expectations. These are not
+a claim that every device or workflow has been verified. Machine-local
+TOOLKITS.json and .rab storage remain local and must be checked per device.
+
+Final full suite: tests 731, pass 601, fail 130.
+New failing test names compared with baseline: [].

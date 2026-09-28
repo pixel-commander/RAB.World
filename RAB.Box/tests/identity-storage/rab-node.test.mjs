@@ -33,7 +33,7 @@ test('no legacy IDs, unknown roles, or invalid core values', () => {
     assert.throws(() => makeNode({ ...input(), ...change }));
   }
   for (const kind of NODE_KINDS) {
-    const value = { ...input(kind), ...(kind === 'project' ? { type: 'audit' } : kind === 'request' ? { type: 'feature' } : {}) };
+    const value = { ...input(kind), ...(kind === 'project' ? { type: 'audit' } : kind === 'request' ? { type: 'feature' } : kind === 'world' ? { paths: [] } : {}) };
     assert.equal(makeNode(value).meta.kind, kind);
   }
 });
@@ -49,6 +49,8 @@ test('request and project type meanings are not conflated', () => {
   assert.throws(() => makeNode({ ...input('request'), type: 'react' }), { code: 'BAD_NODE' });
   assert.throws(() => makeNode(input('project')), { code: 'BAD_NODE' });
   assert.throws(() => makeNode({ ...input('project'), type: 'react', paths: [] }), { code: 'BAD_NODE' });
+  assert.deepEqual(makeNode({ ...input('world'), paths: [] }).paths, []);
+  assert.throws(() => makeNode({ ...input('world'), paths: {} }), { code: 'BAD_NODE' });
 });
 
 test('parent references are typed numeric records, not self or legacy strings', () => {

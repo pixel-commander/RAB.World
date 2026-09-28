@@ -1,0 +1,11 @@
+AI / LLM RULES
+
+Keep one DataTable component. Nested tables call DataTable with nested=true; nested skips outer controls and virtualization.
+Use semantic HTML tables: table, thead, tbody, tr, th, td.
+Use class hooks: data-table, table-header, table-row, table-cell, table-cell-inner, table-nested.
+Use data-cell for generated field names. Do not reintroduce data-area for cells.
+Keep padding/content inside *-inner wrappers, not td/th.
+Top level virtualizes. Nested tables do not.
+Use DOM event delegation for open/closed panels. Toggle is-open and is-closed; keep one panel open.
+Do not add Tailwind, external table packages, or state for DOM-only layout classes.
+Use optional dynamic access: row?.[key ?? ''], cell?.value.

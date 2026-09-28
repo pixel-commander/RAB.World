@@ -20,3 +20,5 @@ unsloth_compiled_cache/
 .DS_Store
 Thumbs.db
 Desktop.ini
+/RAB.React/dist/
+/RAB.React/node_modules/
