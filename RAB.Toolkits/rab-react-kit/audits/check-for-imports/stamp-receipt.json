@@ -1,0 +1,40 @@
+{
+  "status": "created",
+  "id": 1790586171485,
+  "name": "check-for-imports",
+  "type": "react",
+  "address": "check-for-imports",
+  "path": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.Toolkits\\rab-react-kit\\audits\\check-for-imports",
+  "settings": {
+    "id": 1790586171485,
+    "name": "check-for-imports",
+    "title": "Check for Imports",
+    "description": "Records non-React static imports in adjacent settings.json required entries.",
+    "settings": [
+      {
+        "name": "path",
+        "type": "folder",
+        "title": "Source folder",
+        "required": true
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "title": "Source filename",
+        "required": true
+      }
+    ],
+    "meta": {
+      "domain": "react",
+      "operation": "audit",
+      "target_type": "imports",
+      "authority": "write"
+    }
+  },
+  "registered": false,
+  "inherited_executor": false,
+  "check": {
+    "executor": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.Toolkits\\rab-react-kit\\audits\\check-for-imports\\check-for-imports.mjs",
+    "exists": true
+  }
+}

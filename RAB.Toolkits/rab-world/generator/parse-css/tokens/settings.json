@@ -1,0 +1,17 @@
+{
+  "id": 1790546296474,
+  "name": "tokens",
+  "title": "tokens",
+  "description": "CSS parsing pipeline: tokens",
+  "settings": [
+    {
+      "name": "paths",
+      "type": "json",
+      "required": true
+    }
+  ],
+  "meta": {
+    "authority": "read",
+    "domain": "world"
+  }
+}

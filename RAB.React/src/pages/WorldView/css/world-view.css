@@ -8,3 +8,11 @@
 .world-paths { display: grid; gap: var(--space-md); padding: 0; list-style: none; }
 .world-paths li { display: grid; gap: var(--space-xs); min-inline-size: 0; }
 .world-paths code { overflow-wrap: anywhere; }
+
+.world-view > [data-area='left'] { min-inline-size: 300px; }
+
+.world-view .tabs > [data-area='nav'] { display: flex; flex-direction: row; flex-wrap: nowrap; }
+
+.world-paths .world-beacon-row {display:flex;align-items:center;justify-content:space-between;gap:var(--space-sm);}
+.world-beacon-row > a {min-width:0;flex:1;}
+.world-beacon-types {font-size:.8rem;flex-shrink:0;}

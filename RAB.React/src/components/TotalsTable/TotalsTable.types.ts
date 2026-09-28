@@ -1,0 +1,1 @@
+export type TotalsTableProps={data:Record<string,unknown>[];grouping_key:string;value_key:string;count_key?:string;items?:Record<string,unknown>[];handleCSS?:(item:Record<string,unknown>)=>void;handlePath?:(item:Record<string,unknown>)=>void;colors?:string[]|Record<string,string>;className?:string};

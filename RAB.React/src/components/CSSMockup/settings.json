@@ -1,0 +1,13 @@
+{
+  "id": 1790546409768,
+  "name": "CSSMockup",
+  "title": "CSSMockup",
+  "description": "React component CSSMockup.",
+  "type": "component",
+  "date_created": 1790546409768,
+  "date_modified": 1790546409768,
+  "settings": [],
+  "transmitting": true,
+  "signal": true,
+  "path": "./CSSMockup.tsx"
+}

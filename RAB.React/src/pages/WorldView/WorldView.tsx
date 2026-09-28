@@ -1,3 +1,4 @@
+import {FloatPanel} from '../../components/FloatPanel/FloatPanel';
 import { useURL } from '../../hooks/useURL/useURL';
 import { useMemo } from 'react';
 import { Tabs } from '../../components/Tabs/Tabs';
@@ -8,22 +9,26 @@ import './css/world-view.css';
 
 export const WorldView = (props: WorldViewProps) => {
   props = { ...props, path: props.path ?? String.raw`\\Desktop-t72isdi\c\Users\gauge\.rab\worlds\server` };
-  const [url] = useURL();
+  const [url, handleURL] = useURL();
   const entry = url.url_vars.entry;
   const collection = url.url_vars.tab === 'Beacons' ? 'beacons' : 'toolkits';
   const { settings, loading, error, handleSaved } = useDashboard(props);
   return <section className="world-view" data-grid="holy-grail" data-gap="content">
     <div data-area="header">
       {settings ? <><span>{settings.name}</span><h1>{settings.title}</h1><p>{settings.description}</p></> : <h1>World View</h1>}
+      {settings && <button type="button" className="action-ghost" onClick={()=>handleURL({editor:'settings'},'update-var')}>Edit settings</button>}
     </div>
     <div data-area="left" className="scroll-y"><WorldNavigation path={props.path!} /></div>
     <div data-area="main" className="scroll-y">
-      {loading && <p role="status">Loading world settings�</p>}
+      {loading && <p role="status">Loading world settingsï¿½</p>}
       {error && <p role="alert">{error}</p>}
       {entry && <WorldPaths key={`${collection}:${entry}`} path={props.path!} collection={collection} entry={entry} />}
 
     </div>
-    <div data-area="right" className="scroll-y">{settings && <WorldSettingsEditor key={props.path} path={props.path!} settings={settings} handleSaved={handleSaved} />}</div>
+    <div data-area="right" />
+    {settings && url.url_vars.editor==='settings' && <FloatPanel handleClose={()=>handleURL({editor:''},'remove-var')} data={settings} title="World settings.json" style={{width:'min(52rem,90vw)',height:'min(38rem,80vh)'}}>
+      <div className="scroll-y"><WorldSettingsEditor key={props.path} path={props.path!} settings={settings} handleSaved={handleSaved}/></div>
+    </FloatPanel>}
     <div data-area="footer">{settings?.date_added && <time dateTime={settings.date_added}>Added: {settings.date_added}</time>}</div>
   </section>;
 };
@@ -45,8 +50,8 @@ export const WorldPaths = ({ path, collection, entry }: { path: string; collecti
   const [, handleURL] = useURL();
   if (error) return <p role="alert">{error}</p>;
   if (!items) return <p role="status">Loading...</p>;
-  return <ul className="world-paths">{items.length ? items.map(item => <li key={item.id}>
-    {entry ? <strong>{item.title ?? item.name}</strong> : <a className="action-ghost" href={`#tab=${collection === 'beacons' ? 'Beacons' : 'Toolkits'}&entry=${encodeURIComponent(item.id)}`} onClick={event => { event.preventDefault(); handleURL({ tab: collection === 'beacons' ? 'Beacons' : 'Toolkits', entry: String(item.id) }, 'update-var'); }}>{item.title ?? item.name}</a>}<code>{item.path}</code>
+  return <ul className="world-paths">{items.length ? items.map(item => <li key={item.id} className={collection==='beacons'&&!entry?'world-beacon-row':undefined}>
+    {entry ? <strong>{item.title ?? item.name}</strong> : <a className="action-ghost" href={`#tab=${collection === 'beacons' ? 'Beacons' : 'Toolkits'}&entry=${encodeURIComponent(item.id)}`} onClick={event => { event.preventDefault(); handleURL({ tab: collection === 'beacons' ? 'Beacons' : 'Toolkits', entry: String(item.id) }, 'update-var'); }}>{item.title ?? item.name}</a>}{collection==='beacons'&&!entry?<span className="world-beacon-types">{item.types?.join(', ')||item.type||''}</span>:<code>{item.path}</code>}
   </li>) : <li>No {collection} listed.</li>}</ul>;
 };
 

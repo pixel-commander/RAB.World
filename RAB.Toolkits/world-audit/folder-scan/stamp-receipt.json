@@ -1,0 +1,49 @@
+{
+  "status": "created",
+  "type": "audit",
+  "name": "folder-scan",
+  "address": "folder-scan",
+  "id": 1790538090054,
+  "path": "audit/folder-scan",
+  "settings": {
+    "id": 1790538090054,
+    "name": "folder-scan",
+    "title": "Folder Scan",
+    "description": "Collect direct file counts and sizes for mapped folders.",
+    "settings": [
+      {
+        "name": "path",
+        "type": "folder",
+        "required": true
+      },
+      {
+        "name": "depth",
+        "type": "text",
+        "default": "0"
+      },
+      {
+        "name": "scan_files",
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "exclude",
+        "type": "json",
+        "default": []
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "authority": "write"
+    }
+  },
+  "inherited_executor": false,
+  "registered": false,
+  "check": {
+    "visible": true,
+    "key": "audit/folder-scan",
+    "rank": null,
+    "request_shape": null,
+    "relation_error": null
+  }
+}

@@ -20,13 +20,14 @@ export const run=async({options,helpers})=>{
 
   await runChild(helpers,'react/add/attribute',{...target,attribute_name:'data-grid',attribute_value:layout,dry_run:true});
   await runChild(helpers,'react/add/attribute',{...target,attribute_name:'data-gap',attribute_value:gap,dry_run:true});
-  for(const area of shape.areas)await runChild(helpers,'react/add/element',{...target,tag:'div',class_name:catalog.scroll_areas.includes(area)?'scroll-y':undefined,new_data_area:area,new_seat_id:`area-${area}:a1${suffix}`,dry_run:true});
+  for(const area of shape.areas)await runChild(helpers,'react/add/element',{...target,tag:'div',new_data_area:area,new_seat_id:`area-${area}:a1${suffix}`,dry_run:true});
 
   const grid=await runChild(helpers,'react/add/attribute',{...target,attribute_name:'data-grid',attribute_value:layout});
   await runChild(helpers,'react/add/attribute',{...target,attribute_name:'data-gap',attribute_value:gap});
   const areas=[];
   for(const area of shape.areas){
-    await runChild(helpers,'react/add/element',{...target,tag:'div',class_name:catalog.scroll_areas.includes(area)?'scroll-y':undefined,new_data_area:area,new_seat_id:`area-${area}:a1${suffix}`});
+    await runChild(helpers,'react/add/element',{...target,tag:'div',new_data_area:area,new_seat_id:`area-${area}:a1${suffix}`});
+    if(catalog.scroll_areas.includes(area)) await runChild(helpers,'react/add/element',{root:options.root,file:options.file,path:options.path,component:options.component,seat_id:`area-${area}:a1${suffix}`,tag:'div',class_name:'scroll-y'});
     areas.push({id:`area-${area}:a1${suffix}`,role:'area',area});
   }
   return {status:'updated',type:'grid-layout',layout,gap,file:grid.result.file,component:grid.result.component??options.component??null,target:{seat_id:options.seat_id??null,area:options.area??null,defaulted_to_root:!options.seat_id&&!options.area},areas:shape.areas,construction_seats:areas,provided:{seats:{file:grid.result.file,grid_layout:layout}}};

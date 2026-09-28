@@ -1,0 +1,13 @@
+{
+  "id": 1790541958809,
+  "name": "StatCells",
+  "title": "StatCells",
+  "description": "React component StatCells.",
+  "type": "component",
+  "date_created": 1790541958810,
+  "date_modified": 1790541958810,
+  "settings": [],
+  "transmitting": true,
+  "signal": true,
+  "path": "./StatCells.tsx"
+}

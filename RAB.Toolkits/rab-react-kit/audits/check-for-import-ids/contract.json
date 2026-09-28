@@ -1,0 +1,16 @@
+{
+  "name": "check-for-import-ids",
+  "input": {
+    "path": "source folder",
+    "file": "source filename"
+  },
+  "output": {
+    "message": "ID count",
+    "updated": "number of changed rows",
+    "notes": "lookup issues",
+    "required": "requirements"
+  },
+  "writes": [
+    "Adjacent settings.json required row IDs"
+  ]
+}

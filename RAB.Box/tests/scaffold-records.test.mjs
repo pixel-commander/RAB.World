@@ -13,7 +13,7 @@ test('project template stamps unique signal identities and category indexes', as
   await mkdir(parent, { recursive: true });
   const home = await mkdtemp(path.join(parent, 'scaffold-records-'));
   try {
-    const root = fileURLToPath(new URL('../../RAB.Toolkits/rab-react-kit/ui/scaffolds/new-react-project/template', import.meta.url));
+    const root = fileURLToPath(new URL('../../RAB.Toolkits/rab-react-kit/scaffolds/new-react-project/template', import.meta.url));
     const files = await renderTemplateTree(root, { PROJECT_ID: Date.now(), PROJECT_NAME: 'test', NPM_NAME: 'test' });
     const memory = createRabMemory({ rabHome: home });
     const contractPath = 'src/atoms/actions/action-ghost/contract.json';

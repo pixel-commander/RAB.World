@@ -1,0 +1,48 @@
+{
+  "id": 1790526907851,
+  "name": "file-types",
+  "title": "File Types",
+  "description": "Lists immediate files matching the requested extensions.",
+  "settings": [
+    {
+      "name": "path",
+      "type": "folder",
+      "title": "Path",
+      "description": "Folder whose immediate subfolders are listed.",
+      "required": true
+    },
+    {
+      "name": "types",
+      "type": "text",
+      "title": "File Extensions",
+      "description": "Comma-separated extensions, for example .tsx, .css. An array of extensions is also accepted.",
+      "required": true
+    },
+    {
+      "name": "world",
+      "type": "text",
+      "title": "World Name",
+      "description": "World folder used for the default report location.",
+      "required": true
+    },
+    {
+      "name": "save_file",
+      "type": "file",
+      "title": "Save File",
+      "description": "Optional report destination. Defaults to .rab/worlds/[world]/audits/file-types/report.json.",
+      "required": false
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "list",
+    "target_type": "file",
+    "authority": "write"
+  },
+  "type": "tool",
+  "signal": true,
+  "transmitting": true,
+  "date_created": 1790526908207,
+  "date_modified": 1790527090830,
+  "path": "./file-types.mjs"
+}

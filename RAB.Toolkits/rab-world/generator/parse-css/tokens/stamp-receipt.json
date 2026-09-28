@@ -1,0 +1,25 @@
+{
+  "status": "created",
+  "id": 1790546296474,
+  "name": "tokens",
+  "type": "world",
+  "address": "tokens",
+  "path": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.Toolkits\\rab-world\\generator\\parse-css\\tokens",
+  "settings": {
+    "id": 1790546296474,
+    "name": "tokens",
+    "title": "tokens",
+    "description": "CSS parsing pipeline: tokens",
+    "settings": [],
+    "meta": {
+      "authority": "read",
+      "domain": "world"
+    }
+  },
+  "registered": false,
+  "inherited_executor": false,
+  "check": {
+    "executor": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.Toolkits\\rab-world\\generator\\parse-css\\tokens\\tokens.mjs",
+    "exists": true
+  }
+}

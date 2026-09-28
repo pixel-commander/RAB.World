@@ -1,0 +1,62 @@
+{
+  "status": "created",
+  "type": "audit",
+  "name": "file-types",
+  "address": "file-types",
+  "id": 1790526907851,
+  "path": "audit/file-types",
+  "settings": {
+    "id": 1790526907851,
+    "name": "file-types",
+    "title": "File Types",
+    "description": "Lists immediate files matching the requested extensions.",
+    "settings": [
+      {
+        "name": "path",
+        "type": "folder",
+        "title": "Folder",
+        "description": "Folder whose immediate subfolders are listed.",
+        "required": true
+      },
+      {
+        "name": "types",
+        "type": "text",
+        "title": "File Extensions",
+        "description": "Comma-separated extensions, for example .tsx, .css. An array of extensions is also accepted.",
+        "required": true
+      },
+      {
+        "name": "world",
+        "type": "text",
+        "title": "World Name",
+        "description": "World folder used for the default report location.",
+        "required": true
+      },
+      {
+        "name": "save_file",
+        "type": "file",
+        "title": "Save File",
+        "description": "Optional report destination. Defaults to .rab/worlds/[world]/audits/file-types/data/report.json.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "list",
+      "target_type": "file",
+      "authority": "write"
+    }
+  },
+  "inherited_executor": false,
+  "registered": false,
+  "check": {
+    "visible": true,
+    "key": "audit/file-types",
+    "rank": null,
+    "request_shape": null,
+    "relation_error": {
+      "code": "ENOENT",
+      "message": "ENOENT: no such file or directory, open 'C:\\Users\\pixelcommander\\Documents\\Codex\\2026-09-26\\wel\\work\\file-types-stamp-1790526907313\\language\\type-mapper.json'"
+    }
+  }
+}

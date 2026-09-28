@@ -1,0 +1,26 @@
+{
+  "id": 1790586813923,
+  "name": "check-for-import-ids",
+  "title": "Check for Import IDs",
+  "description": "Resolves dependency settings IDs for required import rows.",
+  "settings": [
+    {
+      "name": "path",
+      "type": "folder",
+      "title": "Source folder",
+      "required": true
+    },
+    {
+      "name": "file",
+      "type": "text",
+      "title": "Source filename",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "react",
+    "operation": "audit",
+    "target_type": "imports",
+    "authority": "write"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "status": "created",
+  "id": 1790546297050,
+  "name": "classes",
+  "type": "world",
+  "address": "classes",
+  "path": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.Toolkits\\rab-world\\generator\\parse-css\\classes",
+  "settings": {
+    "id": 1790546297050,
+    "name": "classes",
+    "title": "classes",
+    "description": "CSS parsing pipeline: classes",
+    "settings": [],
+    "meta": {
+      "authority": "read",
+      "domain": "world"
+    }
+  },
+  "registered": false,
+  "inherited_executor": false,
+  "check": {
+    "executor": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.Toolkits\\rab-world\\generator\\parse-css\\classes\\classes.mjs",
+    "exists": true
+  }
+}

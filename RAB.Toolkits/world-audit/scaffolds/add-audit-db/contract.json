@@ -1,0 +1,16 @@
+{
+  "version": "tool-contract/v1",
+  "result": {
+    "status": "created | existing",
+    "world": "world name",
+    "path": "absolute audits.sqlite path",
+    "schema_version": 2,
+    "tables": [
+      "audit_meta",
+      "runs",
+      "folders",
+      "folder",
+      "run_folders"
+    ]
+  }
+}

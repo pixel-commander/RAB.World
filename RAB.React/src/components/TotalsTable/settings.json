@@ -1,0 +1,13 @@
+{
+  "id": 1790543213763,
+  "name": "TotalsTable",
+  "title": "TotalsTable",
+  "description": "React component TotalsTable.",
+  "type": "component",
+  "date_created": 1790543213763,
+  "date_modified": 1790543213763,
+  "settings": [],
+  "transmitting": true,
+  "signal": true,
+  "path": "./TotalsTable.tsx"
+}

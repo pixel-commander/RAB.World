@@ -2,7 +2,7 @@
   "version": "tool-contract/v1",
   "source": {
     "kind": "hybrid",
-    "description": "Copies the tool scaffold, generates settings and an optional local executor, then verifies discovery and registers the requested address.",
+    "description": "Creates path/name directly, with settings and a local or inherited executor. Registers PATHS only for destinations within the House tools folder.",
     "reviewed_at": "2026-09-20"
   }
 }

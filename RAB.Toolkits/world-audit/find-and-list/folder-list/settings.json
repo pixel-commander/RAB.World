@@ -1,0 +1,72 @@
+{
+  "id": 1790525590864,
+  "name": "folder-list",
+  "title": "Folder List",
+  "description": "Maps folders with parent IDs, optional recursion, depth limits and exclusions.",
+  "settings": [
+    {
+      "name": "path",
+      "type": "folder",
+      "title": "Path",
+      "description": "Folder whose immediate subfolders are listed.",
+      "required": true
+    },
+    {
+      "name": "world",
+      "type": "text",
+      "title": "World Name",
+      "description": "World folder used for the default report location.",
+      "required": true
+    },
+    {
+      "name": "save_file",
+      "type": "file",
+      "title": "Save File",
+      "description": "Optional report destination. Defaults to .rab/worlds/[world]/audits/folder-list/report.json.",
+      "required": false
+    },
+    {
+      "name": "recursive",
+      "type": "boolean",
+      "title": "Walk Subfolders",
+      "required": false,
+      "default": false
+    },
+    {
+      "name": "max_depth",
+      "type": "number",
+      "title": "Maximum Depth",
+      "description": "Root is depth 0; direct children are depth 1. Omit for unlimited recursive depth.",
+      "required": false
+    },
+    {
+      "name": "exclude",
+      "type": "json",
+      "title": "Exclude Paths",
+      "description": "Array of absolute paths or paths relative to the scan root.",
+      "required": false,
+      "default": [
+        "C:\\Program Files (x86)",
+        "C:\\Program Files",
+        "C:\\Users",
+        "C:\\ProgramData",
+        "C:\\Recovery",
+        "C:\\Windows",
+        "C:\\$Recycle.Bin",
+        "C:\\System Volume Information"
+      ]
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "list",
+    "target_type": "folder",
+    "authority": "write"
+  },
+  "type": "tool",
+  "signal": true,
+  "transmitting": true,
+  "date_created": 1790525591173,
+  "date_modified": 1790530699553,
+  "path": "./folder-list.mjs"
+}

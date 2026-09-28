@@ -1,0 +1,60 @@
+{
+  "id": 1790528293046,
+  "name": "audit-runner",
+  "title": "Audit Runner",
+  "description": "Runs a standalone audit in a world, requests missing inputs and records execution timing.",
+  "type": "tool",
+  "signal": true,
+  "transmitting": true,
+  "date_created": 1790528293253,
+  "date_modified": 1790528293253,
+  "path": "./audit-runner.mjs",
+  "settings": [
+    {
+      "name": "world",
+      "title": "World Name",
+      "type": "text",
+      "required": true,
+      "description": ""
+    },
+    {
+      "name": "project_name",
+      "title": "Project Name",
+      "type": "text",
+      "required": false,
+      "description": ""
+    },
+    {
+      "name": "save_path",
+      "title": "Save Path",
+      "type": "file",
+      "required": false,
+      "description": "Optional full report filename."
+    },
+    {
+      "name": "audit_type",
+      "title": "Audit Type",
+      "type": "text",
+      "required": true,
+      "description": ""
+    },
+    {
+      "name": "path",
+      "title": "Path",
+      "type": "folder",
+      "required": false,
+      "description": "Folder supplied to the selected audit."
+    },
+    {
+      "name": "options",
+      "title": "Audit Options",
+      "type": "json",
+      "required": false,
+      "description": "Additional selected-tool inputs, such as types."
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "authority": "write"
+  }
+}

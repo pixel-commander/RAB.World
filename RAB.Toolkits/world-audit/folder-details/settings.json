@@ -1,0 +1,26 @@
+{
+  "id": 1790533002507,
+  "name": "folder-details",
+  "title": "Folder Details",
+  "description": "Collect direct file counts and sizes for mapped folders.",
+  "settings": [
+    {
+      "name": "world",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "paths",
+      "type": "json",
+      "required": true
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "authority": "write"
+  },
+  "type": "tool",
+  "signal": true,
+  "transmitting": true,
+  "path": "./folder-details.mjs"
+}

@@ -1,0 +1,3 @@
+import postcss from 'postcss';
+import {readFile} from 'node:fs/promises';
+export const readRules=async path=>{if(typeof path!=='string'||!path)throw new Error('path is required');const css=await readFile(path,'utf8');const root=postcss.parse(css,{from:path});const rules=[];root.walkRules(rule=>{const declarations=[];for(const node of rule.nodes??[])if(node.type==='decl')declarations.push({name:node.prop,value:node.value,important:node.important===true});const conditions=[];for(let p=rule.parent;p&&p.type!=='root';p=p.parent)if(p.type==='atrule')conditions.unshift({name:p.name,value:p.params});rules.push({selector:rule.selector,declarations,conditions});});return {path,css,rules};};

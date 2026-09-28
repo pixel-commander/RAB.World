@@ -1,0 +1,22 @@
+{
+  "id": 1790546295877,
+  "name": "parse-css",
+  "title": "parse-css",
+  "description": "CSS parsing pipeline: parse-css",
+  "settings": [
+    {
+      "name": "path",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "paths",
+      "type": "json",
+      "required": false
+    }
+  ],
+  "meta": {
+    "authority": "read",
+    "domain": "world"
+  }
+}

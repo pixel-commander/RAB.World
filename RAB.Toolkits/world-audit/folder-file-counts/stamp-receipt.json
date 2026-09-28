@@ -1,0 +1,44 @@
+{
+  "status": "created",
+  "type": "audit",
+  "name": "folder-file-counts",
+  "address": "folder-file-counts",
+  "id": 1790535213011,
+  "path": "audit/folder-file-counts",
+  "settings": {
+    "id": 1790535213011,
+    "name": "folder-file-counts",
+    "title": "Folder File Counts",
+    "description": "Collect direct file counts and sizes for mapped folders.",
+    "settings": [
+      {
+        "name": "path",
+        "type": "folder",
+        "required": true
+      },
+      {
+        "name": "recursive",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "exclude",
+        "type": "json",
+        "default": []
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "authority": "write"
+    }
+  },
+  "inherited_executor": false,
+  "registered": false,
+  "check": {
+    "visible": true,
+    "key": "audit/folder-file-counts",
+    "rank": null,
+    "request_shape": null,
+    "relation_error": null
+  }
+}

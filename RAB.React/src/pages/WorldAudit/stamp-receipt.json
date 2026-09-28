@@ -1,0 +1,34 @@
+{
+  "status": "created",
+  "type": "dashboard",
+  "name": "WorldAudit",
+  "page": {
+    "name": "WorldAudit",
+    "file": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\WorldAudit\\WorldAudit.tsx"
+  },
+  "layout": "header-main",
+  "nav": {
+    "file": "\\\\DESKTOP-T72ISDI\\l\\RAB.World\\RAB.React\\src\\App.tsx",
+    "route": "world-audit",
+    "added": true
+  },
+  "construction_seats": [
+    {
+      "id": "area-header:a1",
+      "role": "area",
+      "area": "header"
+    },
+    {
+      "id": "area-main:a1",
+      "role": "area",
+      "area": "main"
+    }
+  ],
+  "provided": {
+    "seats": {
+      "file": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.React\\src\\pages\\WorldAudit\\WorldAudit.tsx",
+      "page": "WorldAudit",
+      "dashboard": "WorldAudit"
+    }
+  }
+}

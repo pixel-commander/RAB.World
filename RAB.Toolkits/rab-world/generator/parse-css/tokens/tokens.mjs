@@ -1,0 +1,2 @@
+import {readRules} from '../_parse.mjs';
+export const run=async({options={}}={})=>{const paths=options.paths??[];if(!Array.isArray(paths)||paths.some(p=>typeof p!=='string'))throw new Error('paths must be an array of file paths');const sources=[];for(const path of paths){const source=await readRules(path);sources.push({...source,rules:source.rules.map(rule=>({...rule,declarations:rule.declarations.filter(d=>d.name.startsWith('--'))})).filter(rule=>rule.declarations.length)});}return {sources};};

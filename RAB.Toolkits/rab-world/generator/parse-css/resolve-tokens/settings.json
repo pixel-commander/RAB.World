@@ -1,0 +1,22 @@
+{
+  "id": 1790546297617,
+  "name": "resolve-tokens",
+  "title": "resolve-tokens",
+  "description": "CSS parsing pipeline: resolve-tokens",
+  "settings": [
+    {
+      "name": "tokens",
+      "type": "json",
+      "required": true
+    },
+    {
+      "name": "classes",
+      "type": "json",
+      "required": true
+    }
+  ],
+  "meta": {
+    "authority": "read",
+    "domain": "world"
+  }
+}

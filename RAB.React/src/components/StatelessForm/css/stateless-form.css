@@ -1,0 +1,168 @@
+.stateless-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: var(--spacer);
+  color: var(--text-color);
+}
+
+.stateless-form-message {
+  display: none;
+  color: rgb(var(--quaternary));
+  font-size: var(--text-sm);
+}
+
+.stateless-form.has-errors .stateless-form-message {
+  display: block;
+}
+
+.stateless-form-fields,
+.stateless-form-tab-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--spacer);
+}
+
+.stateless-form-children {
+  display: grid;
+  gap: var(--spacer);
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--spacer-xs);
+}
+
+.input-group-label {
+  color: var(--text-color-dim);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.input-group .red-star {
+  color: rgb(var(--quaternary));
+  font-weight: bold;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+  padding: var(--spacer-xs) var(--spacer-sm);
+  background: var(--surface-well);
+  color: var(--text-color);
+  border: var(--border-width) var(--border-style) var(--border-color-main);
+  border-radius: var(--radius-xs);
+  font-family: inherit;
+  font-size: var(--text-base);
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: var(--border-color-light);
+}
+
+.input-group textarea {
+  resize: vertical;
+}
+
+.input-group-message {
+  color: var(--text-color-faint);
+  font-size: var(--text-xs);
+}
+
+.input-group.has-error input,
+.input-group.has-error textarea,
+.input-group.has-error select,
+.input-group.is-required input,
+.input-group.is-required textarea,
+.input-group.is-required select {
+  border-color: rgb(var(--quaternary));
+}
+
+.input-group.has-error .input-group-message {
+  color: rgb(var(--quaternary));
+}
+
+.stateless-form-tabs {
+  display: grid;
+  gap: var(--spacer);
+}
+
+.stateless-form-tabs-nav {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: var(--spacer-xs);
+}
+
+.stateless-form-tab-name {
+  padding: var(--spacer-xs) var(--spacer-md);
+  background: transparent;
+  color: var(--text-color-dim);
+  border: none;
+  border-bottom: var(--border-width) var(--border-style) transparent;
+  font-family: inherit;
+  font-size: var(--text-base);
+  cursor: pointer;
+}
+
+.stateless-form-tab-name.active {
+  color: var(--text-color);
+  border-bottom-color: rgb(var(--primary));
+}
+
+.stateless-form-tab.hidden {
+  display: none;
+}
+
+.stateless-form-buttons {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  gap: var(--spacer-sm);
+}
+
+.stateless-form-buttons .cancel,
+.stateless-form-buttons .submit {
+  padding: var(--spacer-xs) var(--spacer-xl);
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-size: var(--text-base);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.stateless-form-buttons .submit {
+  background: linear-gradient(180deg, var(--primary-light), var(--primary-dark));
+  color: var(--primary-on);
+  border: var(--border-width) var(--border-style) rgb(var(--primary));
+  box-shadow: 0 0 1.2rem rgba(var(--primary), .5), inset 0 1px 0 rgba(255, 255, 255, .35);
+}
+
+.stateless-form-buttons .submit:active {
+  background: linear-gradient(180deg, var(--primary-dark), var(--primary-light));
+  box-shadow: var(--sink);
+}
+
+.stateless-form-buttons .cancel {
+  background: transparent;
+  color: var(--text-color-mid);
+  border: var(--border-width) var(--border-style) var(--border-color-main);
+}
+
+.stateless-form-buttons .cancel:hover {
+  color: var(--text-color);
+  border-color: var(--border-color-light);
+}
+
+.stateless-form.view-mode .form-group-label {
+  color: var(--text-color-dim);
+  font-size: var(--text-sm);
+}
+
+.stateless-form.view-mode .form-group-input {
+  color: var(--text-color);
+}

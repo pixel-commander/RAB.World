@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import path from 'node:path';
 import os from 'node:os';
 import { mkdir, mkdtemp, writeFile, rm } from 'node:fs/promises';
-import { run as search } from '../../RAB.Toolkits/rab-world/tools/world/world-search/world-search.mjs';
+import { run as search } from '../../RAB.Toolkits/rab-world/world-search/world-search.mjs';
 import { createRabMemory } from '../bridge/rab-memory.mjs';
 
 test('World Search preserves priority, excludes off records, reports missing indexes', async () => {

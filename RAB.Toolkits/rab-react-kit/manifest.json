@@ -13,7 +13,7 @@
       "title": "New Action Atom",
       "description": "Creates a tag-neutral CSS skin for interactive elements, including navigation links and controls, with hover, active, persistent is-active, focus and disabled states plus a React link demo.",
       "type": "atom",
-      "path": "ui\\scaffolds\\new-action-atom"
+      "path": "scaffolds\\new-action-atom"
     },
     {
       "id": 1790000000401,
@@ -21,7 +21,7 @@
       "title": "New Component",
       "description": "Creates a structural React component with an optional canonical grid and class atoms resolved before any files are written.",
       "type": "component",
-      "path": "ui\\scaffolds\\new-component"
+      "path": "scaffolds\\new-component"
     },
     {
       "id": 1790031603502,
@@ -29,7 +29,7 @@
       "title": "New Container Atom",
       "description": "Creates a reusable CSS container skin scaffold with inset and float surface hooks, metadata and a React demo. Components own layout.",
       "type": "atom",
-      "path": "ui\\scaffolds\\new-container-atom"
+      "path": "scaffolds\\new-container-atom"
     },
     {
       "id": 1830000000006,
@@ -37,15 +37,15 @@
       "title": "New Dashboard",
       "description": "Creates a dashboard page using a chosen grid and optionally adds it to the shell NAV_ITEMS (default yes).",
       "type": "dashboard",
-      "path": "ui\\scaffolds\\new-dashboard"
+      "path": "scaffolds\\new-dashboard"
     },
     {
       "id": 1789877167204,
-      "name": "navigation",
+      "name": "new-navigation",
       "title": "New Navigation",
       "description": "Creates a React navigation component from rows with id, name, and path. The generated component accepts selected and handleClick, and marks the selected item for accessibility.",
       "type": "navigation",
-      "path": "ui\\scaffolds\\new-dashboard\\navigation"
+      "path": "scaffolds\\new-navigation"
     },
     {
       "id": 1790031603525,
@@ -53,7 +53,7 @@
       "title": "New Effect Atom",
       "description": "Creates a named CSS effect token alias from an existing float or inset preset, preserving its elevation-token dependency and atom metadata.",
       "type": "atom",
-      "path": "ui\\scaffolds\\new-effect-atom"
+      "path": "scaffolds\\new-effect-atom"
     },
     {
       "id": 1790031603528,
@@ -61,7 +61,7 @@
       "title": "New Grid Atom",
       "description": "Creates a named CSS grid definition from an existing grid preset using data-grid and data-area selectors, retaining its area names and track topology.",
       "type": "atom",
-      "path": "ui\\scaffolds\\new-grid-atom"
+      "path": "scaffolds\\new-grid-atom"
     },
     {
       "id": 1830000000001,
@@ -69,7 +69,7 @@
       "title": "New Page",
       "description": "Creates a React page with an addressable root construction seat for applying a grid layout and inserting components.",
       "type": "page",
-      "path": "ui\\scaffolds\\new-page"
+      "path": "scaffolds\\new-page"
     },
     {
       "id": 1790000000300,
@@ -77,7 +77,7 @@
       "title": "New React Project",
       "description": "Creates a React project from the project scaffold with a minimal or style-guide starter, optional database example and optional UI kit.",
       "type": "project",
-      "path": "ui\\scaffolds\\new-react-project"
+      "path": "scaffolds\\new-react-project"
     },
     {
       "id": 1790000000402,
@@ -85,7 +85,23 @@
       "title": "New Sub Component",
       "description": "Creates a structural React component with an optional canonical grid and class atoms resolved before any files are written.",
       "type": "component",
-      "path": "ui\\scaffolds\\new-sub-component"
+      "path": "scaffolds\\new-sub-component"
+    },
+    {
+      "id": 1790586171485,
+      "name": "check-for-imports",
+      "title": "Check for Imports",
+      "description": "Records non-React static imports in adjacent settings.json required entries.",
+      "type": "audit",
+      "path": "audits\\check-for-imports"
+    },
+    {
+      "id": 1790586813923,
+      "name": "check-for-import-ids",
+      "title": "Check for Import IDs",
+      "description": "Resolves dependency settings IDs for required import rows.",
+      "type": "audit",
+      "path": "audits\\check-for-import-ids"
     }
   ],
   "indexed": true

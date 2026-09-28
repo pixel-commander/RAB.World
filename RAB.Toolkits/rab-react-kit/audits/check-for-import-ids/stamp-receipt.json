@@ -1,0 +1,40 @@
+{
+  "status": "created",
+  "id": 1790586813923,
+  "name": "check-for-import-ids",
+  "type": "react",
+  "address": "check-for-import-ids",
+  "path": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.Toolkits\\rab-react-kit\\audits\\check-for-import-ids",
+  "settings": {
+    "id": 1790586813923,
+    "name": "check-for-import-ids",
+    "title": "Check for Import IDs",
+    "description": "Resolves dependency settings IDs for required import rows.",
+    "settings": [
+      {
+        "name": "path",
+        "type": "folder",
+        "title": "Source folder",
+        "required": true
+      },
+      {
+        "name": "file",
+        "type": "text",
+        "title": "Source filename",
+        "required": true
+      }
+    ],
+    "meta": {
+      "domain": "react",
+      "operation": "audit",
+      "target_type": "imports",
+      "authority": "write"
+    }
+  },
+  "registered": false,
+  "inherited_executor": false,
+  "check": {
+    "executor": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.Toolkits\\rab-react-kit\\audits\\check-for-import-ids\\check-for-import-ids.mjs",
+    "exists": true
+  }
+}

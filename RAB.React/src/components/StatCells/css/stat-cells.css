@@ -1,0 +1,5 @@
+.stat-cells {display:flex;flex-wrap:wrap;gap:1rem;margin-block:1rem;}
+.stat-cell {flex:1;min-width:8rem;padding:1rem;}
+.stat-cell-nam {font-size:.8rem;margin-bottom:.5rem;}
+.stat-cell-value {font-size:1.75rem;font-variant-numeric:tabular-nums;display:flex;align-items:baseline;gap:.4rem;}
+.stat-cell-value small {font-size:.8rem;}

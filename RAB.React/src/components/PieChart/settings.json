@@ -1,0 +1,13 @@
+{
+  "id": 1790541965255,
+  "name": "PieChart",
+  "title": "PieChart",
+  "description": "React component PieChart.",
+  "type": "component",
+  "date_created": 1790541965255,
+  "date_modified": 1790541965255,
+  "settings": [],
+  "transmitting": true,
+  "signal": true,
+  "path": "./PieChart.tsx"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "check-for-imports",
+  "input": {
+    "path": "Source folder",
+    "name": "JS/TS filename"
+  },
+  "output": {
+    "path": "Source file",
+    "settings": "Settings file",
+    "imports": "Discovered non-React bindings",
+    "added": "New required rows",
+    "required": "Merged requirements"
+  },
+  "writes": [
+    "Adjacent settings.json required array"
+  ]
+}

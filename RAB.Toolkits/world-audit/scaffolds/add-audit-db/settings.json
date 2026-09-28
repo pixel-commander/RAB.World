@@ -1,0 +1,33 @@
+{
+  "id": 1790529493461,
+  "name": "add-audit-db",
+  "title": "Add Audit DB",
+  "description": "Creates or verifies a local world audit SQLite database without overwriting existing data.",
+  "type": "tool",
+  "signal": true,
+  "transmitting": true,
+  "date_created": 1790529493662,
+  "date_modified": 1790529493662,
+  "path": "./add-audit-db.mjs",
+  "settings": [
+    {
+      "name": "world",
+      "type": "text",
+      "title": "World Name",
+      "required": true
+    },
+    {
+      "name": "path",
+      "type": "folder",
+      "title": "Database Folder",
+      "required": false,
+      "description": "Defaults to the executing user’s .rab/worlds/[world]/audits folder."
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "operation": "create",
+    "target_type": "database",
+    "authority": "write"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": 1790538090054,
+  "name": "folder-scan",
+  "title": "Folder Scan",
+  "description": "Map folders to a chosen depth and optionally inventory their direct files.",
+  "settings": [
+    {
+      "name": "path",
+      "type": "folder",
+      "required": true
+    },
+    {
+      "name": "depth",
+      "type": "text",
+      "default": "0"
+    },
+    {
+      "name": "scan_files",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "name": "exclude",
+      "type": "json",
+      "default": []
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "authority": "write"
+  },
+  "type": "tool",
+  "signal": true,
+  "transmitting": true,
+  "path": "./folder-scan.mjs"
+}

@@ -1,0 +1,25 @@
+{
+  "status": "created",
+  "id": 1790546297617,
+  "name": "resolve-tokens",
+  "type": "world",
+  "address": "resolve-tokens",
+  "path": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.Toolkits\\rab-world\\generator\\parse-css\\resolve-tokens",
+  "settings": {
+    "id": 1790546297617,
+    "name": "resolve-tokens",
+    "title": "resolve-tokens",
+    "description": "CSS parsing pipeline: resolve-tokens",
+    "settings": [],
+    "meta": {
+      "authority": "read",
+      "domain": "world"
+    }
+  },
+  "registered": false,
+  "inherited_executor": false,
+  "check": {
+    "executor": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.Toolkits\\rab-world\\generator\\parse-css\\resolve-tokens\\resolve-tokens.mjs",
+    "exists": true
+  }
+}

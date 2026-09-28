@@ -1,0 +1,41 @@
+{
+  "status": "created",
+  "type": "audit",
+  "name": "folder-list",
+  "address": "folder-list",
+  "id": 1790525590864,
+  "path": "audit/folder-list",
+  "settings": {
+    "id": 1790525590864,
+    "name": "folder-list",
+    "title": "Folder List",
+    "description": "Lists immediate child folders at the supplied path.",
+    "settings": [
+      {
+        "name": "path",
+        "type": "folder",
+        "title": "Folder",
+        "description": "Folder whose immediate subfolders are listed.",
+        "required": true
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "operation": "list",
+      "target_type": "folder",
+      "authority": "read"
+    }
+  },
+  "inherited_executor": false,
+  "registered": false,
+  "check": {
+    "visible": true,
+    "key": "audit/folder-list",
+    "rank": null,
+    "request_shape": null,
+    "relation_error": {
+      "code": "ENOENT",
+      "message": "ENOENT: no such file or directory, open 'C:\\Users\\pixelcommander\\Documents\\Codex\\2026-09-26\\wel\\work\\folder-list-stamp-1790525590390\\language\\type-mapper.json'"
+    }
+  }
+}

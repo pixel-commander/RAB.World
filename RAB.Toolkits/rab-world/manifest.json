@@ -13,7 +13,7 @@
       "title": "Add Beacon Manifest",
       "description": "Creates an empty beacon-owned manifest beside an existing beacon.json, without project registration or project identity.",
       "type": "manifest",
-      "path": "tools\\world\\add\\beacon-manifest"
+      "path": "scaffolds\\beacon-manifest"
     },
     {
       "id": 1790277131328,
@@ -21,7 +21,7 @@
       "title": "Add Manifest",
       "description": "Creates an empty manifest from the existing project inventory shape.",
       "type": "manifest",
-      "path": "tools\\world\\add\\manifest"
+      "path": "scaffolds\\manifest"
     },
     {
       "id": 1790251534124,
@@ -29,7 +29,7 @@
       "title": "New World",
       "description": "Creates a named world for this computer/user instance under .rab/worlds, using the shared memory and template owners.",
       "type": "world",
-      "path": "tools\\world\\add\\new\\world"
+      "path": "scaffolds\\world"
     },
     {
       "id": 1790274306433,
@@ -37,7 +37,7 @@
       "title": "Add Signal",
       "description": "Creates a signal folder's settings, contract and README from its template.",
       "type": "signal",
-      "path": "tools\\world\\add\\signal"
+      "path": "scaffolds\\signal"
     },
     {
       "id": 1790306336499,
@@ -45,7 +45,7 @@
       "title": "Add World Manifest",
       "description": "Creates an empty manifest.json in an existing folder without project or beacon requirements.",
       "type": "manifest",
-      "path": "tools\\world\\add\\world-manifest"
+      "path": "scaffolds\\world-manifest"
     },
     {
       "id": 1790375911957,
@@ -53,7 +53,7 @@
       "title": "Audit Beacons",
       "description": "Read-only current-format check of beacon records at an explicit beacon root.",
       "type": "beacons",
-      "path": "tools\\world\\audit-beacons"
+      "path": "audit-beacons"
     },
     {
       "id": 1790375911585,
@@ -61,7 +61,7 @@
       "title": "Audit Signals",
       "description": "Read-only current-format check of signal settings and contracts at an explicit beacon root.",
       "type": "signals",
-      "path": "tools\\world\\audit-signals"
+      "path": "audit-signals"
     },
     {
       "id": 1790250816592,
@@ -69,7 +69,7 @@
       "title": "Create Folder Beacon",
       "description": "Creates beacon.json in a project-relative folder for an updater to discover.",
       "type": "beacon",
-      "path": "tools\\world\\paths\\beacons"
+      "path": "paths\\beacons"
     },
     {
       "id": 1790307334825,
@@ -77,7 +77,7 @@
       "title": "World Scanner",
       "description": "Indexes beacons and child signals under an explicit root and toolkit paths registered in world settings.",
       "type": "beacons",
-      "path": "tools\\world\\scanner"
+      "path": "scanner"
     },
     {
       "id": 1790374030818,
@@ -85,7 +85,7 @@
       "title": "Count Search Use",
       "description": "Increment the used counter for a returned World Search item.",
       "type": "feedback",
-      "path": "tools\\world\\search-feedback"
+      "path": "search-feedback"
     },
     {
       "id": 1790307445791,
@@ -93,7 +93,7 @@
       "title": "World Watcher",
       "description": "Saves a watcher file that watches only registered beacons; no watcher starts automatically.",
       "type": "beacons",
-      "path": "tools\\world\\watcher"
+      "path": "watcher"
     },
     {
       "id": 1790370534309,
@@ -101,7 +101,7 @@
       "title": "World Hands",
       "description": "Returns the available hands owned by this world toolkit and their input contracts through Box discovery.",
       "type": "hands",
-      "path": "tools\\world\\world-hands"
+      "path": "world-hands"
     },
     {
       "id": 1790372402268,
@@ -109,7 +109,35 @@
       "title": "World Search",
       "description": "Search enabled beacon manifests in parallel, returning matches in beacon priority order.",
       "type": "items",
-      "path": "tools\\world\\world-search"
+      "path": "world-search"
+    },
+    {
+      "id": 1790546295877,
+      "name": "parse-css",
+      "title": "parse-css",
+      "description": "CSS parsing pipeline: parse-css",
+      "path": "generator/parse-css"
+    },
+    {
+      "id": 1790546296474,
+      "name": "tokens",
+      "title": "tokens",
+      "description": "CSS parsing pipeline: tokens",
+      "path": "generator/parse-css/tokens"
+    },
+    {
+      "id": 1790546297050,
+      "name": "classes",
+      "title": "classes",
+      "description": "CSS parsing pipeline: classes",
+      "path": "generator/parse-css/classes"
+    },
+    {
+      "id": 1790546297617,
+      "name": "resolve-tokens",
+      "title": "resolve-tokens",
+      "description": "CSS parsing pipeline: resolve-tokens",
+      "path": "generator/parse-css/resolve-tokens"
     }
   ],
   "indexed": true

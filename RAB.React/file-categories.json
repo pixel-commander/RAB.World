@@ -1,0 +1,9 @@
+{
+  "file_categories": {
+    "typescript": ["ts", "tsx"],
+    "javascript": ["js", "jsx", "mjs", "cjs"],
+    "python": ["py"],
+    "styles": ["css", "scss", "sass"],
+    "data": ["json", "yaml", "yml", "csv"]
+  }
+}

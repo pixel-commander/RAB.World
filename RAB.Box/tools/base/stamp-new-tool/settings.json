@@ -2,20 +2,20 @@
   "id": 1790000000206,
   "name": "stamp-new-tool",
   "title": "New Tool",
-  "description": "Creates a non-Stamp Tool at a flat or nested semantic House path. Can inherit a nearest-parent executor and register a flat PATHS address.",
+  "description": "Creates a tool folder named name directly inside the supplied destination path.",
   "settings": [
     {
       "type": "text",
       "name": "path",
-      "title": "Semantic Path",
-      "description": "Optional tools-root relative semantic path such as audit/find/todos. When supplied it determines domain and leaf name.",
-      "required": false
+      "title": "Destination folder",
+      "description": "Existing parent folder. Creates path/name without adding tools or domain folders.",
+      "required": true
     },
     {
       "type": "options",
       "name": "type",
       "title": "Type",
-      "description": "Domain folder for legacy flat creation when path is omitted.",
+      "description": "Optional domain metadata; does not add a folder.",
       "required": false,
       "options": [
         {
@@ -44,14 +44,14 @@
       "type": "text",
       "name": "name",
       "title": "Name",
-      "description": "Leaf Tool name for legacy flat creation when path is omitted.",
-      "required": false
+      "description": "Name of the new tool folder and executor; lowercase letters, digits and hyphens.",
+      "required": true
     },
     {
       "type": "text",
       "name": "address",
       "title": "House Address",
-      "description": "Optional flat PATHS key. Defaults from the semantic path, for example audit/find/todos -> find-todos.",
+      "description": "Optional PATHS key when the destination is inside the House tools folder. Defaults to name.",
       "required": false
     },
     {

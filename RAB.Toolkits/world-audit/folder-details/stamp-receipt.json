@@ -1,0 +1,39 @@
+{
+  "status": "created",
+  "type": "audit",
+  "name": "folder-details",
+  "address": "folder-details",
+  "id": 1790533002507,
+  "path": "audit/folder-details",
+  "settings": {
+    "id": 1790533002507,
+    "name": "folder-details",
+    "title": "Folder Details",
+    "description": "Collect direct file counts and sizes for mapped folders.",
+    "settings": [
+      {
+        "name": "world",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "ids",
+        "type": "json",
+        "required": true
+      }
+    ],
+    "meta": {
+      "domain": "audit",
+      "authority": "write"
+    }
+  },
+  "inherited_executor": false,
+  "registered": false,
+  "check": {
+    "visible": true,
+    "key": "audit/folder-details",
+    "rank": null,
+    "request_shape": null,
+    "relation_error": null
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": 1790535213011,
+  "name": "folder-file-counts",
+  "title": "Folder File Counts",
+  "description": "Count direct file extensions and bytes per folder; optionally walk descendants without database or report writes.",
+  "settings": [
+    {
+      "name": "path",
+      "type": "folder",
+      "required": true
+    },
+    {
+      "name": "recursive",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "name": "exclude",
+      "type": "json",
+      "default": []
+    }
+  ],
+  "meta": {
+    "domain": "audit",
+    "authority": "write"
+  },
+  "type": "tool",
+  "signal": true,
+  "transmitting": true,
+  "path": "./folder-file-counts.mjs"
+}

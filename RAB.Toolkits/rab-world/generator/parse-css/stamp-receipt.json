@@ -1,0 +1,25 @@
+{
+  "status": "created",
+  "id": 1790546295877,
+  "name": "parse-css",
+  "type": "world",
+  "address": "parse-css",
+  "path": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.Toolkits\\rab-world\\generator\\parse-css",
+  "settings": {
+    "id": 1790546295877,
+    "name": "parse-css",
+    "title": "parse-css",
+    "description": "CSS parsing pipeline: parse-css",
+    "settings": [],
+    "meta": {
+      "authority": "read",
+      "domain": "world"
+    }
+  },
+  "registered": false,
+  "inherited_executor": false,
+  "check": {
+    "executor": "\\\\Desktop-t72isdi\\l\\RAB.World\\RAB.Toolkits\\rab-world\\generator\\parse-css\\parse-css.mjs",
+    "exists": true
+  }
+}

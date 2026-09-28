@@ -12,3 +12,6 @@
   .float-panel--docked { position: static; inline-size: auto; block-size: max-content; }
   .float-panel--docked .float-panel__body { padding: var(--space-md); }
 }
+
+.float-panel__actions {display:flex;align-items:center;gap:var(--space-xs);margin-inline-start:auto;}
+.float-panel.float-panel--collapsed {height:auto;block-size:max-content;}

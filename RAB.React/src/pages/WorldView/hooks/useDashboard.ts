@@ -44,7 +44,7 @@ export const useSettingsEditor = (path: string, settings: WorldSettings, handleS
   return { text, saving, message, error, handleSave, handleChange: (value: string) => { setText(value); setMessage(''); } };
 };
 
-export interface WorldEntry { id: string | number; name: string; title?: string; path: string; }
+export interface WorldEntry { id: string | number; name: string; title?: string; path: string; type?: string; types?: string[]; }
 export const useWorldCollection = (path: string, collection: 'toolkits' | 'beacons', entry?: string) => {
   const [state, setState] = useState<{ items?: WorldEntry[]; error?: string }>({});
   useEffect(() => {

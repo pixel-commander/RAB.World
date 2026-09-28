@@ -1,0 +1,12 @@
+.totals-table {width:100%;border-collapse:collapse;margin-block:1rem;font-variant-numeric:tabular-nums;}
+.totals-table th,.totals-table td {padding:.65rem .75rem;text-align:right;}
+.totals-table th:first-child,.totals-table td:first-child {text-align:left;}
+.totals-table tbody th {font-weight:normal;}
+
+.totals-table-key {display:inline-block;width:.65rem;height:.65rem;border-radius:50%;margin-inline-end:.6rem;vertical-align:middle;}
+
+.totals-table-files {width:100%;table-layout:fixed;}
+.totals-table-files th:nth-child(3),.totals-table-files td:nth-child(3) {width:60%;text-align:left;overflow-wrap:anywhere;}
+.totals-table-files td {vertical-align:top;}
+
+.totals-table-path {text-align:left;white-space:normal;overflow-wrap:anywhere;max-width:100%;}

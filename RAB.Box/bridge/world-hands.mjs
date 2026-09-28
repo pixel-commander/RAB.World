@@ -7,9 +7,9 @@ import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprot
 import { createToolHouse } from './tool-house.mjs';
 import { callMachineHands } from './machine-hands.mjs';
 import { pathIdentity } from './toolkit-links.mjs';
-import { getWorldBeacons, getBeaconManifests } from '../../RAB.Toolkits/rab-world/tools/world/world-hands/indexes.mjs';
-import { run as searchWorld } from '../../RAB.Toolkits/rab-world/tools/world/world-search/world-search.mjs';
-import { run as searchFeedback } from '../../RAB.Toolkits/rab-world/tools/world/search-feedback/search-feedback.mjs';
+import { getWorldBeacons, getBeaconManifests } from '../../RAB.Toolkits/rab-world/world-hands/indexes.mjs';
+import { run as searchWorld } from '../../RAB.Toolkits/rab-world/world-search/world-search.mjs';
+import { run as searchFeedback } from '../../RAB.Toolkits/rab-world/search-feedback/search-feedback.mjs';
 
 const boxRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const isObject = value => value !== null && typeof value === 'object' && !Array.isArray(value);
